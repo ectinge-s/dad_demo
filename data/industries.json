@@ -1,0 +1,1548 @@
+[
+  {
+    "id": "direction-1",
+    "label": "DIGITAL HERITAGE · REGION 01",
+    "title": "数字文旅",
+    "titleEn": "Digital Heritage & Cultural Experience",
+    "trendArrow": "新兴增长",
+    "oneLine": "以数字技术、互动媒体、空间设计、AI服务与文化数据，为美术馆、博物馆、文旅景区、商业空间和城市公共空间创造沉浸式体验。",
+    "parentTrans": "用XR、实时影像、智能导览、数字人和互动装置，把传统展览与城市空间转化为可参与、可探索、可持续运营的体验服务。",
+    "targetCases": "数字展馆、XR大空间、文旅夜游、智能导览与数字人、文化遗产可视化、AI互动装置与城市公共艺术。",
+    "bannerImg": "/industry-cards/digital-tourism.jpg",
+    "sourcePages": "PDF 第 5-28 页；2025-2026新增参考：文旅部统计公报、AI+文化和旅游试点与标准化工作重点",
+    "ugPath": {
+      "focus": "空间叙事、互动逻辑、文化内容转译、三维建模、基础实时引擎与数据意识",
+      "portfolio": "投影 Mapping、音画互动、XR大空间、智能导览原型、文化遗产可视化或AI互动装置",
+      "target": "完成从文化研究、概念、数据与空间模型到交互原型和真实运行记录的完整表达"
+    },
+    "pgPath": {
+      "focus": "大型展陈系统、实时媒体、XR技术、智能导览、文化数据治理、垂直模型与文旅项目统筹",
+      "portfolio": "强调TouchDesigner、Unreal Engine、Unity、Blender/C4D、AI服务、数据资产与硬件协同",
+      "target": "向文旅AI体验主创、XR内容设计、文化数据策划、垂直模型产品或文旅项目负责人发展"
+    },
+    "salary": "入门 8-15K/月 | 成长 20-40W/年 | 成熟 50W+及项目提成",
+    "tiers": [
+      {
+        "badge": "入门期 0-2年",
+        "salary": "8,000-15,000 / 月",
+        "title": "从方案辅助、内容梳理、项目执行与软件流程学习开始",
+        "reps": "风语筑、丝路视觉、OUTPUT、文旅项目团队",
+        "gargs": "助理策划、新媒体交互策划、3D美术、智能导览内容助理",
+        "desc": "参与文化资料整理、三维预演、互动内容制作、导览原型与现场执行，建立空间叙事和项目协作基础。"
+      },
+      {
+        "badge": "成长期 3-5年",
+        "salary": "20-40 万 / 年",
+        "title": "独立负责项目模块、大型提案与客户沟通",
+        "reps": "风语筑、黑弓 BLACKBOW、teamLab、Moment Factory",
+        "gargs": "技术美术、数字体验设计师、文旅AI体验策划、XR大空间内容设计师",
+        "desc": "能够独立推进互动体验、实时媒体、智能导览或空间视觉模块，并与策划、工程、数据和客户团队共同完成落地。"
+      },
+      {
+        "badge": "成熟期 5-10年",
+        "salary": "50 万+ / 年及项目提成",
+        "title": "统筹大型文旅、数字展览与跨界合作",
+        "reps": "大型文旅项目、国际艺术机构、品牌体验项目",
+        "gargs": "创意总监、数字体验总监、文旅垂直模型产品经理、文旅项目负责人",
+        "desc": "负责项目顶层创意、文化数据与AI服务规划、跨团队资源整合和商业交付，并可延伸至国际合作或个人工作室。"
+      }
+    ],
+    "enterprises": [
+      "风语筑",
+      "黑弓 BLACKBOW",
+      "OUTPUT",
+      "丝路视觉",
+      "中国文化传媒集团",
+      "teamLab",
+      "Moment Factory"
+    ],
+    "schools": {
+      "uk": "RCA Information Experience Design、UCL Performance and Interaction、爱丁堡 Design and Digital Media、UAL Interaction Design Communication",
+      "us": "MIT Media Arts and Sciences、NYU ITP/IDM、UCLA Design Media Arts、Parsons Design and Technology",
+      "hkMacau": "港大 Innovative Design and Technology、港科大 Arts and Machine Creativity、港理工 IME/IBD、港城 Creative Media；米兰理工 Digital and Interaction Design"
+    },
+    "studentProfile": "对空间、展览、声光电、互动装置和文化内容转译有持续兴趣，愿意同时处理创意、技术与现场执行。",
+    "highschoolAdvice": "从博物馆或公共空间观察开始，练习文化内容转译、空间叙事、三维预演、智能导览原型和小型传感器互动。",
+    "portfolioKey": "作品必须展示文化研究、数据来源、概念、动线、视觉预演、技术方案与真实运行结果，不能只停留在静态效果图。",
+    "realCase": "建议项目：XR大空间体验、文物智能导览、数字人讲解、文化数据可视化、AI互动装置、投影Mapping与文旅夜游。",
+    "trends": [
+      "市场信号：2025年国内出游65.22亿人次、旅游花费6.30万亿元，数字体验建立在真实文旅增长之上",
+      "政策信号：2026年AI+文化和旅游试点明确覆盖文化遗产修复展示、VR/AR、可穿戴设备、数字人、智能导览与翻译",
+      "体验设计路径：新媒体互动设计师 → 数字体验设计师 → 文旅AI体验主创 → 创意总监",
+      "技术路径：3D设计师 → Unreal/TouchDesigner设计师 → 技术美术 → XR大空间或实时媒体专家",
+      "数据产品路径：文化数据/语料策划 → 智能导览产品 → 文旅垂直模型产品经理"
+    ],
+    "stats": [
+      {
+        "val": "65.22亿",
+        "label": "2025国内出游人次"
+      },
+      {
+        "val": "6.30万亿",
+        "label": "2025国内旅游花费"
+      },
+      {
+        "val": "1-2年",
+        "label": "AI+文旅试点周期"
+      },
+      {
+        "val": "1TB+",
+        "label": "单项试点数据集要求"
+      }
+    ],
+    "hotJobs": [
+      "文旅AI体验策划",
+      "数字体验设计师",
+      "XR大空间内容设计师",
+      "智能导览/数字人产品设计师",
+      "文化数据资产/语料策划",
+      "AI文化遗产可视化设计师"
+    ],
+    "businessAreas": [
+      {
+        "name": "数字展馆",
+        "description": "城市馆、科技馆、企业馆的数字化展示与运营"
+      },
+      {
+        "name": "XR大空间",
+        "description": "VR、AR、MR与可穿戴设备协同体验"
+      },
+      {
+        "name": "智能导览与数字人",
+        "description": "行程规划、讲解、翻译、票务与服务智能体"
+      },
+      {
+        "name": "文化数据资产",
+        "description": "文化语料、图像、三维资产与数据治理"
+      },
+      {
+        "name": "文化遗产可视化",
+        "description": "文物修复展示、非遗动作捕捉与数字叙事"
+      },
+      {
+        "name": "文旅夜游",
+        "description": "灯光秀、山体投影与夜间沉浸式项目"
+      },
+      {
+        "name": "AI互动装置",
+        "description": "AI生成影像、传感器与实时反馈系统"
+      },
+      {
+        "name": "城市公共艺术",
+        "description": "数字公共空间与互动媒体艺术"
+      }
+    ],
+    "roleProfiles": [
+      {
+        "title": "文旅AI体验策划",
+        "business": "景区、博物馆与城市文化空间的AI服务体验",
+        "skills": "文化内容转译、用户旅程、空间叙事、服务蓝图与项目统筹",
+        "software": "Figma、Miro、TouchDesigner、Unreal Engine、AIGC",
+        "salary": "按岗位与项目确定"
+      },
+      {
+        "title": "XR大空间内容设计师",
+        "business": "大空间VR、沉浸式展览与数字演艺",
+        "skills": "空间叙事、实时交互、镜头调度、三维场景与现场协作",
+        "software": "Unreal Engine、Unity、Blender、TouchDesigner",
+        "salary": "按岗位与项目确定"
+      },
+      {
+        "title": "智能导览/数字人产品设计师",
+        "business": "智能讲解、翻译、票务与行程规划服务",
+        "skills": "对话流程、任务编排、角色体验、错误兜底与服务运营",
+        "software": "Figma、原型工具、LLM工作流、数据分析工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "文化数据资产/语料策划",
+        "business": "文化遗产、博物馆与文旅垂直模型数据建设",
+        "skills": "资料研究、元数据、语料结构、版权边界与数据治理",
+        "software": "Notion、Excel、数据库工具、AIGC",
+        "salary": "按岗位与项目确定"
+      },
+      {
+        "title": "AI文化遗产可视化设计师",
+        "business": "文物修复展示、非遗动作捕捉与数字复原",
+        "skills": "视觉研究、三维重建、数据可视化、叙事与真实性说明",
+        "software": "Blender、Unreal Engine、RealityCapture、Adobe Suite",
+        "salary": "按岗位与项目确定"
+      },
+      {
+        "title": "数字体验设计师",
+        "business": "XR互动空间、品牌体验与数字文旅空间",
+        "skills": "用户体验、交互逻辑、空间体验设计与可用性验证",
+        "software": "Figma、Adobe Suite、TouchDesigner、Unreal Engine",
+        "salary": "成长阶段 20-40W/年"
+      },
+      {
+        "title": "3D美术/技术美术",
+        "business": "XR展览、虚拟空间与实时互动媒体",
+        "skills": "实时交互、虚拟空间构建、资产规范与性能优化",
+        "software": "Unity、Unreal Engine、Blender、Houdini",
+        "salary": "成长阶段 20-40W/年"
+      },
+      {
+        "title": "多媒体设计师",
+        "business": "光影艺术、数字演艺与动态视觉项目",
+        "skills": "动态视觉、视频内容、实时媒体与现场调试",
+        "software": "Adobe Suite、TouchDesigner、Unreal Engine、Blender",
+        "salary": "按阶段与项目确定"
+      }
+    ],
+    "internships": [
+      "风语筑/丝路视觉类展陈项目",
+      "黑弓或OUTPUT类实时视觉与沉浸内容",
+      "中国文化传媒集团类文旅策划与传播"
+    ]
+  },
+  {
+    "id": "direction-2",
+    "label": "DIGITAL PRODUCT ECOSYSTEM · REGION 02",
+    "title": "互联网生态",
+    "titleEn": "Digital Product Ecosystem",
+    "trendArrow": "高需求",
+    "oneLine": "围绕数字产品、平台服务、AI智能体、设计系统与数据技术，构建移动互联网、内容平台、智能终端和在线服务。",
+    "parentTrans": "不只是把界面做漂亮，还要设计AI的行为、权限、解释、撤回与人工接管，让数字服务可靠、清楚并可持续迭代。",
+    "targetCases": "社交与内容平台、AI Agent、智能助手、设计系统、企业SaaS、智能终端与数据可视化。",
+    "bannerImg": "/industry-cards/internet-ux.jpg",
+    "sourcePages": "PDF 第 29-57 页；2025-2026新增参考：CNNIC生成式AI应用报告、Figma AI与设计师趋势报告",
+    "ugPath": {
+      "focus": "视觉功底、信息架构、交互原型、用户研究、Agent行为设计与基础设计工程能力",
+      "portfolio": "AI Agent、对话与多模态交互、App、设计系统、数据可视化或智能终端体验",
+      "target": "形成从用户问题、Agent任务与权限、流程设计到高保真方案、可运行原型和测试验证的完整闭环"
+    },
+    "pgPath": {
+      "focus": "Agentic体验、AI产品评测、信任与安全、设计系统、设计工程、数据驱动优化与商业目标协同",
+      "portfolio": "围绕真实用户旅程、模型边界、解释与撤回、人工接管、设计系统、A/B测试和业务指标展开",
+      "target": "向Agent体验设计师、Design Engineer、AI产品评测、设计系统负责人或产品负责人发展"
+    },
+    "salary": "入门 10-18K/月 | 成长 25-50W/年 | 成熟 50-100W+",
+    "tiers": [
+      {
+        "badge": "入门期 0-2年",
+        "salary": "10,000-18,000 / 月",
+        "title": "参与用户调研、原型设计、设计系统与AI功能迭代",
+        "reps": "腾讯、字节跳动、阿里巴巴、小红书、美团",
+        "gargs": "视觉交互设计、产品设计助理、用户研究助理、AI交互设计助理",
+        "desc": "在成熟产品团队中学习信息架构、Agent任务流程、高保真设计、可用性测试和协作落地。"
+      },
+      {
+        "badge": "成长期 3-5年",
+        "salary": "25-50 万 / 年",
+        "title": "独立负责产品模块、Agent体验、设计系统或体验优化",
+        "reps": "头部互联网平台、AI产品团队、企业服务平台",
+        "gargs": "Agent体验设计师、Design Engineer、高级UX、服务设计师、AI产品设计师",
+        "desc": "结合用户研究、模型能力、行为数据和商业目标，推进复杂产品模块与设计开发协同。"
+      },
+      {
+        "badge": "成熟期 5-10年",
+        "salary": "50-100 万+ / 年",
+        "title": "负责平台体验、AI产品方向与跨职能团队",
+        "reps": "大型互联网企业、AI创新团队、设计咨询与创业团队",
+        "gargs": "AI体验负责人、设计系统负责人、产品负责人、Design Director",
+        "desc": "从单点界面走向Agent行为、产品治理和组织层面的决策，可发展为业务负责人或创业者。"
+      }
+    ],
+    "enterprises": [
+      "腾讯",
+      "字节跳动",
+      "阿里巴巴",
+      "小红书",
+      "美团",
+      "快手",
+      "Google",
+      "Apple",
+      "Meta",
+      "Airbnb",
+      "Spotify",
+      "Notion"
+    ],
+    "schools": {
+      "uk": "RCA Information Experience Design、UCL Human Computer Interaction、Loughborough User Experience Design、UAL Interaction Design Communication",
+      "us": "Carnegie Mellon HCI、NYU ITP/IDM、Parsons Design and Technology、University of Washington HCDE",
+      "hkMacau": "港科大 Integrative Systems and Design、港理工 Intelligent Systems Design/Innovation Design、港城 Creative Media、港浸会 Interactive Media；米兰理工 Digital and Interaction Design"
+    },
+    "studentProfile": "对App、平台、信息流程和AI工具如何影响用户行为感兴趣，愿意用研究与数据反复验证设计。",
+    "highschoolAdvice": "拆解常用App与AI助手的任务流程，用Figma或低代码工具制作原型，并测试权限、解释、撤回、错误兜底和人工接管。",
+    "portfolioKey": "必须展示用户研究、Agent任务与权限、信息架构、交互原型、视觉规范、可运行验证、测试数据和迭代结论，而非只放最终界面图。",
+    "realCase": "建议项目：AI Agent、对话与多模态助手、设计系统、Design-to-Code原型、数据可视化、智能终端与AI产品评测。",
+    "trends": [
+      "用户信号：截至2025年6月，中国生成式AI用户达5.15亿，普及率36.5%，图像与视频应用已进入大众使用阶段",
+      "协作信号：Figma 2026调研中，参与开发的设计师由21%升至41%，参与设计的开发者由44%升至60%",
+      "Agent体验路径：UX Designer → Agentic Experience Designer → AI Experience Lead → AI Product Director",
+      "设计工程路径：产品设计师 → Design Engineer → 设计系统与AI运营负责人",
+      "信任体验路径：AI交互设计 → 产品评测与可解释性 → 人机协同与治理负责人"
+    ],
+    "stats": [
+      {
+        "val": "5.15亿",
+        "label": "中国生成式AI用户"
+      },
+      {
+        "val": "36.5%",
+        "label": "2025年6月普及率"
+      },
+      {
+        "val": "41%",
+        "label": "设计师参与开发"
+      },
+      {
+        "val": "60%",
+        "label": "开发者参与设计"
+      }
+    ],
+    "hotJobs": [
+      "Agent智能体体验设计师",
+      "AI交互/对话设计师",
+      "Design Engineer",
+      "设计系统与AI运营设计师",
+      "AI信任与安全UX",
+      "AI产品评测与原型设计师"
+    ],
+    "businessAreas": [
+      {
+        "name": "Agent与智能助手",
+        "description": "任务规划、多轮交互、工具调用与人工接管"
+      },
+      {
+        "name": "设计系统与AI运营",
+        "description": "组件、Token、规范与Agent上下文管理"
+      },
+      {
+        "name": "设计工程",
+        "description": "画布、代码、原型和生产组件的双向协作"
+      },
+      {
+        "name": "信任与安全体验",
+        "description": "权限、解释、撤回、纠错、隐私与风险提示"
+      },
+      {
+        "name": "智能终端",
+        "description": "车载系统、IoT设备、可穿戴与多模态交互"
+      },
+      {
+        "name": "数字平台与数据",
+        "description": "内容平台、企业SaaS、服务设计与数据可视化"
+      }
+    ],
+    "roleProfiles": [
+      {
+        "title": "Agent智能体体验设计师",
+        "business": "智能助手、任务型Agent与AI服务平台",
+        "skills": "任务编排、权限与确认、解释、撤回、错误兜底和人工接管",
+        "software": "Figma、原型工具、LLM API、评测工具",
+        "salary": "成长阶段 25-50W/年"
+      },
+      {
+        "title": "AI交互/对话设计师",
+        "business": "对话、多模态输入输出与服务型AI产品",
+        "skills": "对话流程、语气、上下文管理、模型边界与可用性测试",
+        "software": "Figma、Miro、对话原型、Claude/ChatGPT",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "Design Engineer",
+        "business": "AI产品、设计系统与高保真交互原型",
+        "skills": "产品设计、前端实现、组件系统、动效与设计到代码协作",
+        "software": "Figma、React、TypeScript、Cursor、Storybook",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "设计系统与AI运营设计师",
+        "business": "大型平台、组件库与Agent协作流程",
+        "skills": "组件、Token、内容规范、批量变更和跨团队治理",
+        "software": "Figma、Design Tokens、文档与自动化工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "AI信任与安全UX",
+        "business": "高风险AI功能、隐私与内容安全体验",
+        "skills": "风险分级、权限、透明度、纠错、投诉与人工复核流程",
+        "software": "Figma、研究工具、数据分析与评测平台",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "AI产品评测与原型设计师",
+        "business": "AI功能验证、模型体验与产品实验",
+        "skills": "评测任务、样例集、质量标准、原型验证与指标复盘",
+        "software": "Figma、Python/Notebook、LLM API、数据分析工具",
+        "salary": "按岗位与经验确定"
+      }
+    ],
+    "internships": [
+      "AI Agent产品体验",
+      "设计系统与Design-to-Code",
+      "服务设计与用户研究",
+      "数据可视化",
+      "AI产品评测与内容安全"
+    ]
+  },
+  {
+    "id": "direction-3",
+    "label": "AI CREATIVE TECHNOLOGY · REGION 03",
+    "title": "AI创意科技",
+    "titleEn": "AI Creative Technology",
+    "trendArrow": "前沿增长",
+    "oneLine": "以人工智能与智能体为核心，融合生成式视觉、动态影像、品牌内容、数字角色、工作流编排、质量控制与AI产品。",
+    "parentTrans": "从会使用AI工具升级到会编排可复用工作流，并能控制风格、编辑结果、人工复核、版权溯源和商业效果。",
+    "targetCases": "创意AI工作流、AI品牌与影像、智能体创作、风格一致性、合成媒体审核、版权溯源与AI产品。",
+    "bannerImg": "/industry-cards/ai-tech.jpg",
+    "sourcePages": "PDF 第 115-149 页；2025-2026新增参考：Adobe Creators Toolkit、C2PA Content Credentials与CNNIC生成式AI应用报告",
+    "ugPath": {
+      "focus": "传统审美、图像与视频基础、生成式AI素养、工作流编排、精修、一致性和版权意识",
+      "portfolio": "AI视觉系统、可编辑广告短片、数字角色、品牌内容工厂、智能体创作或AI产品原型",
+      "target": "证明自己能控制风格、镜头、一致性、编辑回退、质量审核和来源说明，而非只会单次出图"
+    },
+    "pgPath": {
+      "focus": "多模型与智能体协同、风格模型、工作流、产品规划、质量评测、内容溯源、数据与商业落地",
+      "portfolio": "围绕真实业务建立可重复、可编辑、可评估、可追溯、可迭代的AI生产或产品系统",
+      "target": "向创意AI工作流设计、AI创意制片、智能体创意总监、内容治理或AI产品负责人发展"
+    },
+    "salary": "视觉/影像入门约15-20K/月 | 成长20-40K/月 | 专家与AI产品岗位25-60K+",
+    "tiers": [
+      {
+        "badge": "入门期 0-2年",
+        "salary": "15,000-20,000 / 月",
+        "title": "完成可编辑、可复核的AI视觉、影像或品牌交付",
+        "reps": "京东云灵境、品牌内容团队、AI视频与数字人工作室",
+        "gargs": "创意AI工作流助理、AI视频制作、AI品牌内容、合成媒体质量审核",
+        "desc": "掌握传统设计与至少一套AI工作流，能进行生成控制、精修、后期、一致性管理和基础来源说明。"
+      },
+      {
+        "badge": "成长期 3-5年",
+        "salary": "20,000-40,000 / 月",
+        "title": "主导AI品牌、动态影像、智能体创作或内容增长项目",
+        "reps": "小红书REDesign、字节跳动、阿里巴巴、蓝色光标",
+        "gargs": "创意AI工作流设计师、AI创意制片、风格一致性设计师、AI产品经理",
+        "desc": "从单点生成走向多模型与Agent协同、项目策略、质量评测、跨部门推进和效果复盘。"
+      },
+      {
+        "badge": "成熟期 5-10年",
+        "salary": "25,000-60,000+ / 月",
+        "title": "定义AI创作、治理、产品或商业增长体系",
+        "reps": "头部AI产品与内容平台、AI Native业务团队",
+        "gargs": "AI智能体创意总监、AI内容总监、内容治理负责人、AI产品负责人",
+        "desc": "负责创意方向、评估与披露标准、团队协作和规模化落地；高阶岗位强调人类最终判断与风险控制。"
+      }
+    ],
+    "enterprises": [
+      "京东云灵境",
+      "蓝色光标",
+      "抖音/字节跳动",
+      "小红书REDesign",
+      "阿里巴巴",
+      "ASTA",
+      "百度",
+      "B站"
+    ],
+    "schools": {
+      "uk": "帝国理工 AI Applications and Innovation、UAL CCI Data Science and AI、UAL Creative Computing、南安普顿 Creative Technologies",
+      "us": "SVA MFA Computer Art、ACCD Media Design Practices、Parsons Design and Technology、SAIC Art and Technology Studies",
+      "hkMacau": "港大 Innovative Design and Technology、港科大 Arts and Machine Creativity、港理工 IME/IBD、港城 Creative Media；米兰理工 Digital and Interaction Design"
+    },
+    "studentProfile": "对生成式图像、视频、智能体或AI产品有强烈好奇心，同时愿意补足审美、叙事、研究、数据、版权和质量判断。",
+    "highschoolAdvice": "围绕一个真实主题搭建完整AI工作流，记录模型与素材来源、失败案例、人工修改、版本回退、最终应用和AI披露。",
+    "portfolioKey": "重点证明视觉质量、一致性控制、工作流复用、人工判断、业务结果、版权边界和内容溯源，不以工具数量代替作品质量。",
+    "realCase": "建议项目：可编辑AI品牌系统、AI广告短片、智能体创作流程、数字角色一致性测试、合成媒体审核与多模态产品原型。",
+    "trends": [
+      "创作者信号：Adobe 2026调研中，75%的创作者已把创意AI视为常规或关键工具，工作流整合取代单次提示词炫技",
+      "质量信号：57%的创作者认为AI结果仍需中度或大量修改，85%认为最终创意决策必须由人完成",
+      "工作流路径：AI视觉/影像执行 → 创意AI工作流设计师 → AI创意制片 → 智能体创意总监",
+      "质量治理路径：风格一致性 → 合成媒体质量审核 → 内容溯源、版权与披露负责人",
+      "产品路径：AI产品助理 → Agent创意与体验设计 → AI Native产品经理 → 产品负责人"
+    ],
+    "stats": [
+      {
+        "val": "75%",
+        "label": "AI已融入创作工作"
+      },
+      {
+        "val": "57%",
+        "label": "仍需较多人工修改"
+      },
+      {
+        "val": "85%",
+        "label": "坚持人类最终决策"
+      },
+      {
+        "val": "90%",
+        "label": "重视作品可版权化"
+      }
+    ],
+    "hotJobs": [
+      "创意AI工作流设计师",
+      "AI创意制片",
+      "AI智能体创意总监",
+      "风格一致性设计师",
+      "合成媒体质量与版权审核",
+      "AI产品/Agent创意设计师"
+    ],
+    "businessAreas": [
+      {
+        "name": "创意工作流编排",
+        "description": "多模型、Agent、人工审核、编辑回退与批量交付"
+      },
+      {
+        "name": "AI品牌与影像",
+        "description": "品牌策略、广告片、动态视觉与跨平台版本生产"
+      },
+      {
+        "name": "智能体创作",
+        "description": "多步骤任务、工具调用、创意方向探索与人工控制"
+      },
+      {
+        "name": "风格与角色一致性",
+        "description": "风格模型、角色规范、镜头连续性与资产管理"
+      },
+      {
+        "name": "质量与内容溯源",
+        "description": "事实核查、合成媒体审核、来源、版权和披露"
+      },
+      {
+        "name": "AI产品",
+        "description": "产品规划、体验设计、评测、运营与跨部门协同"
+      }
+    ],
+    "roleProfiles": [
+      {
+        "title": "创意AI工作流设计师",
+        "business": "视觉、影像、品牌与多模态内容的规模化生产",
+        "skills": "工作流编排、多模型协同、人工审核、编辑回退、模板化与质量评测",
+        "software": "ComfyUI、Adobe Suite、Runway/Kling、LLM与自动化工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "AI创意制片",
+        "business": "AI广告、短片、品牌内容与跨平台交付",
+        "skills": "创意策略、预算排期、模型选择、团队协作、版权与交付管理",
+        "software": "项目管理工具、ComfyUI、生成视频工具、DaVinci Resolve",
+        "salary": "按岗位与项目确定"
+      },
+      {
+        "title": "AI智能体创意设计",
+        "business": "多步骤创作Agent、创意探索与内容生产系统",
+        "skills": "任务拆解、工具调用、控制点、透明度、人工接管和结果评测",
+        "software": "LLM平台、Agent工作流、Figma、API与评测工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "风格一致性设计师",
+        "business": "品牌风格、数字角色和系列化影像资产",
+        "skills": "视觉规范、风格模型、角色一致性、镜头连续性和人工精修",
+        "software": "ComfyUI、LoRA工具、Photoshop、Blender、资产管理工具",
+        "salary": "按岗位与项目确定"
+      },
+      {
+        "title": "合成媒体质量与版权审核",
+        "business": "AI内容平台、品牌资产与影视广告交付",
+        "skills": "质量标准、事实与来源核查、版权边界、披露、Content Credentials与风险升级",
+        "software": "审核平台、C2PA工具、Adobe Suite、数据记录工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "AI产品经理",
+        "business": "AI产品规划、需求定义、研发推进、评测、运营与增长",
+        "skills": "用户研究、PRD、模型能力判断、数据指标、风险治理与跨团队协同",
+        "software": "Figma、Claude/ChatGPT、Cursor、Miro、数据分析工具",
+        "salary": "按岗位与经验确定"
+      }
+    ],
+    "internships": [
+      "创意AI工作流与自动化",
+      "AIGC商业影像与创意制片",
+      "风格/角色一致性测试",
+      "合成媒体审核与版权标注",
+      "AI产品评测与运营"
+    ]
+  },
+  {
+    "id": "direction-4",
+    "label": "GAME & INTERACTIVE ENTERTAINMENT · REGION 04",
+    "title": "游戏娱乐",
+    "titleEn": "Game & Interactive Entertainment",
+    "trendArrow": "岗位细分",
+    "oneLine": "通过实时引擎、技术美术、互动体验、用户界面、程序化内容、虚拟资产和跨媒介娱乐，构建可运行的虚拟世界。",
+    "parentTrans": "行业规模仍在增长，但入行竞争和裁员风险同时存在；作品必须证明可玩、可运行、可优化和能进入团队管线。",
+    "targetCases": "游戏UI/UX、技术UI、PCG程序化内容、工具管线TA、玩法原型、UGC生态、3D资产、动画与特效。",
+    "bannerImg": "/industry-cards/game-entertainment.jpg",
+    "sourcePages": "PDF 第 58-114 页；2025-2026新增参考：中国游戏产业报告、GDC State of the Game Industry与Unreal Engine更新",
+    "ugPath": {
+      "focus": "游戏理解、美术基础、界面与交互、实时引擎、三维资产、动画规律、程序化思维或数据分析中的一条主线",
+      "portfolio": "技术UI/HUD、关卡白盒、PCG场景、3D角色或场景、动画特效、运营方案或可玩的Demo",
+      "target": "让作品对应明确岗位，并展示引擎内实现、玩家测试、性能数据、版本迭代或运营复盘"
+    },
+    "pgPath": {
+      "focus": "技术美术、实时引擎、PCG、工具开发、PBR与Shader、系统策划、跨平台优化、UGC或高级体验设计",
+      "portfolio": "展示跨岗位协作、资源规范、工具链、性能分析、复杂系统和完整生产流程",
+      "target": "向Technical UI、PCG艺术家、工具管线TA、主策划、UGC负责人或技术体验负责人发展"
+    },
+    "salary": "入门约8-15K/月 | 成长约15-30K/月 | 成熟20-45K+/月（岗位差异较大）",
+    "tiers": [
+      {
+        "badge": "入门期 0-2年",
+        "salary": "8,000-15,000 / 月",
+        "title": "从可验证、可运行的岗位作品和项目执行开始",
+        "reps": "腾讯互娱、心动、搜狐畅游、游戏工作室",
+        "gargs": "游戏UI、技术UI助理、玩法原型、3D场景、初级TA、运营",
+        "desc": "建立清晰岗位方向，提交引擎Demo、作品集、策划文档或运营案例，并证明对玩家体验和团队管线的理解。"
+      },
+      {
+        "badge": "成长期 3-5年",
+        "salary": "15,000-30,000 / 月",
+        "title": "独立负责界面、系统、程序化内容、工具或资产模块",
+        "reps": "莉莉丝、网易游戏、完美世界、叠纸、米哈游",
+        "gargs": "Technical UI、PCG艺术家、工具管线TA、资深策划、UGC生态设计",
+        "desc": "需要完整项目经验、跨部门协作和质量把控能力，并能根据测试、数据或性能指标迭代。"
+      },
+      {
+        "badge": "成熟期 5-10年",
+        "salary": "20,000-45,000+ / 月",
+        "title": "统筹大型项目的体验、内容、工具与技术品质",
+        "reps": "头部研发与发行团队、全球化游戏项目",
+        "gargs": "技术体验负责人、制作人、主策划、技术美术专家、管线负责人",
+        "desc": "从模块执行走向整体产品决策、技术管线、跨平台优化或美术品质管理，薪资随岗位和项目显著变化。"
+      }
+    ],
+    "enterprises": [
+      "腾讯互娱",
+      "莉莉丝",
+      "网易游戏",
+      "完美世界",
+      "心动",
+      "叠纸",
+      "FunPlus趣加",
+      "米哈游",
+      "盛趣游戏",
+      "搜狐畅游"
+    ],
+    "schools": {
+      "uk": "UCL Cinematic and Videogame Architecture、UAL Games Design、UAL Virtual Reality、Goldsmiths Computer Games Art & Design",
+      "us": "USC Games、NYU Game Design、UPenn Computer Graphics and Game Technology、RIT Game Design and Development",
+      "hkMacau": "港大 Creative Communication、港科大 Arts and Machine Creativity、港理工 IME、港城 Creative Media；米兰理工 Digital and Interaction Design"
+    },
+    "studentProfile": "重度游戏玩家并愿意把兴趣转化为可验证的美术、体验、策划、数据或引擎能力。",
+    "highschoolAdvice": "先选一条岗位主线，完成技术UI、关卡白盒、PCG场景、3D资产、动画特效或运营策划，并在引擎中运行和测试。",
+    "portfolioKey": "作品集必须对应具体岗位并可验证：UI看规范与实现，策划看文档和白盒，PCG看规则与可控性，3D看PBR流程，TA看工具与性能，运营看数据与复盘。",
+    "realCase": "建议项目：技术UI/HUD、可玩玩法原型、程序化关卡、3D角色/场景、工具插件、动画特效、UGC系统与运营复盘。",
+    "trends": [
+      "市场信号：2025年中国游戏市场收入3507.89亿元，同比增长7.68%；自研游戏海外收入204.55亿美元，同比增长10.23%",
+      "就业风险：GDC 2026调研中28%的从业者两年内经历裁员，74%的受访学生担心未来就业，市场增长不等于入行变容易",
+      "引擎信号：GDC 2026样本中Unreal Engine主引擎占42%，Unity占30%，实时引擎与跨平台优化继续升值",
+      "AI信号：36%的从业者工作中使用生成式AI，但52%认为其对行业影响负面，应用主要集中在研究、代码辅助与原型",
+      "岗位变化：UI执行走向Technical UI，技术美术走向PCG、工具管线、自动化和性能治理"
+    ],
+    "stats": [
+      {
+        "val": "3507.89亿",
+        "label": "2025国内市场收入"
+      },
+      {
+        "val": "+10.23%",
+        "label": "自研游戏海外增长"
+      },
+      {
+        "val": "28%",
+        "label": "两年内经历裁员"
+      },
+      {
+        "val": "52%",
+        "label": "认为生成式AI负面"
+      }
+    ],
+    "hotJobs": [
+      "游戏UI/UX设计师",
+      "Technical UI Designer",
+      "PCG程序化内容艺术家",
+      "工具管线技术美术",
+      "玩法/AI原型设计师",
+      "UGC生态设计师",
+      "3D角色/场景设计师",
+      "游戏动画与特效师"
+    ],
+    "businessAreas": [
+      {
+        "name": "游戏UI与Technical UI",
+        "description": "界面视觉、交互流程、引擎实现与玩家操作体验"
+      },
+      {
+        "name": "PCG程序化内容",
+        "description": "规则驱动场景、关卡、生态与可控内容生成"
+      },
+      {
+        "name": "工具管线技术美术",
+        "description": "Shader、自动化工具、资源规范、性能与生产效率"
+      },
+      {
+        "name": "玩法与AI原型",
+        "description": "玩法验证、智能行为、快速迭代与玩家测试"
+      },
+      {
+        "name": "UGC与运营生态",
+        "description": "创作者工具、社区规则、活动、数据与内容治理"
+      },
+      {
+        "name": "虚拟资产与3D内容",
+        "description": "角色、场景、道具、材质与跨平台资产库"
+      },
+      {
+        "name": "3D动画与游戏特效",
+        "description": "骨骼、动作、动捕、粒子、技能与场景特效"
+      }
+    ],
+    "roleProfiles": [
+      {
+        "title": "Technical UI Designer",
+        "business": "复杂HUD、动效、交互逻辑与引擎内界面实现",
+        "skills": "UI系统、状态逻辑、蓝图/脚本、动效、性能与设计还原",
+        "software": "Figma、Unreal UMG、Unity UI Toolkit、After Effects",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "PCG程序化内容艺术家",
+        "business": "程序化场景、关卡、植被、生态与内容变体",
+        "skills": "规则设计、节点系统、随机性控制、性能与美术方向",
+        "software": "Unreal PCG、Houdini、Blender Geometry Nodes、Python",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "工具管线技术美术",
+        "business": "资产规范、DCC自动化、渲染管线与生产工具",
+        "skills": "Shader、工具开发、资源验证、性能分析与跨岗位沟通",
+        "software": "Unity/UE、Maya/Houdini、Python/C#、Profiler",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "玩法/AI原型设计师",
+        "business": "玩法机制、NPC行为、快速原型与玩家测试",
+        "skills": "系统设计、行为逻辑、原型制作、测试观察与版本迭代",
+        "software": "Unity/UE、蓝图/脚本、数据表与原型工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "UGC生态设计师",
+        "business": "创作者工具、内容规则、社区运营与商业化",
+        "skills": "工具体验、创作者旅程、内容治理、数据分析与活动设计",
+        "software": "Figma、引擎编辑器、SQL/BI、平台运营工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "游戏UI与体验设计",
+        "business": "游戏界面、图标系统、交互流程与体验优化",
+        "skills": "UI规范、图标绘制、视觉层级、用户动线与设计还原",
+        "software": "Figma、Photoshop、Illustrator、After Effects、Unity/UE",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "游戏策划",
+        "business": "玩法、系统、数值、关卡、叙事与流程",
+        "skills": "玩法设计、数值建模、关卡编排、文档和跨岗位协调",
+        "software": "Excel、Visio/XMind、Word/飞书、Unity/UE",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "游戏产品运营",
+        "business": "版本运营、用户增长、活动、数据与社区",
+        "skills": "数据分析、用户研究、活动策划、竞品监测与沟通",
+        "software": "Excel、SQL/BI、Office、剪映/PR、平台运营工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "虚拟资产与3D内容",
+        "business": "次世代建模、PBR材质、场景搭建与资产管理",
+        "skills": "高低模、UV、贴图烘焙、PBR流程、LOD与引擎整合",
+        "software": "Maya/3ds Max、ZBrush、Substance Painter、Unity/UE",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "3D动画与游戏特效",
+        "business": "骨骼绑定、角色动作、实时技能与场景特效",
+        "skills": "运动规律、关键帧、动捕、粒子系统、节奏与性能",
+        "software": "Maya/3ds Max、MotionBuilder、Blender、Unity/UE",
+        "salary": "按岗位与经验确定"
+      }
+    ],
+    "internships": [
+      "Technical UI与引擎实现",
+      "PCG程序化场景",
+      "工具管线TA",
+      "玩法原型与玩家测试",
+      "UGC与社区运营",
+      "3D建模、动画与特效"
+    ]
+  },
+  {
+    "id": "direction-5",
+    "label": "FILM, MEDIA & MOTION · REGION 05",
+    "title": "影视影像",
+    "titleEn": "Film, Media & Motion Design",
+    "trendArrow": "AI融合",
+    "oneLine": "以视听叙事、实时三维、虚拟制作和AI工作流为核心，连接电影、动画、VFX、VR影像、品牌内容与平台传播。",
+    "parentTrans": "这一方向已不再只有传统拍摄与后期，还包括VAD虚拟美术、实时预演、LED虚拟摄影棚、AI后期、数字资产和VR电影。",
+    "targetCases": "AI短片、动画电影、虚拟美术VAD、实时预演、LED虚拟制作、VFX、数字资产管理、VR电影与影视后期。",
+    "bannerImg": "/industry-cards/film-media.jpg",
+    "sourcePages": "PDF 第 150-180 页；2025-2026新增参考：国家电影局年度数据、VR电影政策与北京虚拟制作产业信息",
+    "ugPath": {
+      "focus": "视听语言、剪辑、动态视觉、实时三维、虚拟场景、VFX与可控AI影视工作流",
+      "portfolio": "AI短片、虚拟场景、实时预演、VFX镜头、VR叙事、数字资产、后期剪辑或动画",
+      "target": "形成从脚本、分镜、资产和预演到拍摄/生成、后期、声音与最终成片的完整制作链"
+    },
+    "pgPath": {
+      "focus": "虚拟美术VAD、虚拟制作、实时渲染、Techvis/Previs、AI后期、资产管线、VR电影与内容策略",
+      "portfolio": "强调叙事、镜头、风格一致性、实时资产、现场/后期流程、版本管理和跨部门协作",
+      "target": "向VAD艺术家、虚拟制作协调/主管、实时预演、AI后期流程、VFX或内容负责人发展"
+    },
+    "salary": "入门 8-15K/月 | 成长 20-40W/年 | 成熟 50W+及项目提成",
+    "tiers": [
+      {
+        "badge": "入门期 0-2年",
+        "salary": "8,000-15,000 / 月",
+        "title": "学习视听叙事、实时资产、AI工作流、剪辑或VFX执行",
+        "reps": "可灵AI、光线传媒、B站、芒果TV及内容制作团队",
+        "gargs": "VAD助理、实时预演助理、AI视频设计师、剪辑师、VFX助理",
+        "desc": "从脚本、分镜、虚拟场景、图像/视频生成、资产制作或后期执行中建立可交付的专业基础。"
+      },
+      {
+        "badge": "成长期 3-5年",
+        "salary": "20-40 万 / 年",
+        "title": "独立负责虚拟制作、实时预演、AI后期或VFX模块",
+        "reps": "头部影视、动画、流媒体、虚拟制作与品牌内容团队",
+        "gargs": "VAD艺术家、虚拟制作协调、实时预演设计师、AI后期流程设计师、VFX特效师",
+        "desc": "能够独立把控叙事、风格、镜头和资产流程，并协调现场、引擎、后期、运营和品牌需求。"
+      },
+      {
+        "badge": "成熟期 5-10年",
+        "salary": "50 万+ / 年及项目提成",
+        "title": "统筹内容创意、虚拟制作、资产管线和制作团队",
+        "reps": "影视公司、动画厂牌、虚拟制作棚、AI创意工作室与国际项目",
+        "gargs": "虚拟制作主管、VAD主管、AI内容总监、VFX主管、影视导演",
+        "desc": "从内容制作走向项目决策、技术管线、视觉管理和商业合作，可成立独立创意或虚拟制作工作室。"
+      }
+    ],
+    "enterprises": [
+      "可灵AI",
+      "光线传媒",
+      "哔哩哔哩",
+      "芒果TV",
+      "腾讯视频",
+      "Netflix",
+      "Disney Studios"
+    ],
+    "schools": {
+      "uk": "RCA Digital Direction、UCL Performance and Interaction、爱丁堡 Design and Digital Media、LCC Design for Art Direction",
+      "us": "CMU Video & Media Design、JHU Film and Media、NYU Virtual Production、SAIC Film/Video/New Media/Animation",
+      "hkMacau": "港大 Media, Culture and Creative Cities、港科大 Arts and Machine Creativity、港理工 IME、港城 Creative Media；阿尔托 New Media"
+    },
+    "studentProfile": "喜欢用镜头、动画、实时场景或AI影像讲故事，并愿意理解资产管线、现场协作、后期流程和技术限制。",
+    "highschoolAdvice": "持续拍摄和剪辑短片，练习分镜、节奏、声音和色彩，并完成一条从虚拟场景/AI素材到可复现成片的工作流。",
+    "portfolioKey": "必须展示脚本、分镜、资产清单、预演、素材生成/拍摄、现场或引擎流程、剪辑合成、声音和最终成片，并明确本人职责。",
+    "realCase": "建议项目：VAD虚拟场景、实时Previs/Techvis、AI后期短片、LED虚拟拍摄测试、VFX镜头、VR电影片段与数字资产库。",
+    "trends": [
+      "市场信号：2025年中国电影票房518.32亿元，同比增长21.95%，国产影片票房占比79.67%",
+      "制作信号：国家电影局总结显示，AI生成、云计算和虚拟拍摄已广泛应用，多地虚拟制作与AI全流程基地持续落地",
+      "媒介信号：VR/AR/MR电影已进入制作、发行与放映管理体系，2025年有近20部VR电影取得发行许可",
+      "实时制作路径：3D场景/预演 → VAD艺术家 → 虚拟制作协调/主管 → 虚拟制作总监",
+      "AI后期路径：AI视频执行 → AI后期工作流设计 → 技术导演 → AI内容总监"
+    ],
+    "stats": [
+      {
+        "val": "518.32亿",
+        "label": "2025中国电影票房"
+      },
+      {
+        "val": "+21.95%",
+        "label": "年度票房增长"
+      },
+      {
+        "val": "79.67%",
+        "label": "国产影片票房占比"
+      },
+      {
+        "val": "近20部",
+        "label": "取得许可的VR电影"
+      }
+    ],
+    "hotJobs": [
+      "VAD虚拟美术艺术家",
+      "虚拟制作协调/主管",
+      "实时Previs/Techvis设计师",
+      "AI后期工作流设计师",
+      "VFX视觉特效设计师",
+      "数字场景资产管理",
+      "VR电影体验设计师"
+    ],
+    "businessAreas": [
+      {
+        "name": "VAD虚拟美术",
+        "description": "实时场景、概念验证、资产规划与虚拟勘景"
+      },
+      {
+        "name": "虚拟制作",
+        "description": "LED摄影棚、摄影机跟踪、现场实时合成与协调"
+      },
+      {
+        "name": "Previs与Techvis",
+        "description": "镜头预演、技术预演、调度与拍摄方案验证"
+      },
+      {
+        "name": "AI后期工作流",
+        "description": "生成、修复、合成、版本管理、质量审核与交付"
+      },
+      {
+        "name": "VFX视觉特效",
+        "description": "电影、广告、虚拟拍摄与CG特效"
+      },
+      {
+        "name": "数字资产管理",
+        "description": "角色、场景、材质、镜头版本和资产复用"
+      },
+      {
+        "name": "VR电影",
+        "description": "沉浸叙事、交互体验、空间声音与新型放映"
+      }
+    ],
+    "roleProfiles": [
+      {
+        "title": "VAD虚拟美术艺术家",
+        "business": "虚拟场景、概念验证、实时资产与虚拟勘景",
+        "skills": "美术设计、环境叙事、实时场景、资产规范与摄影需求沟通",
+        "software": "Unreal Engine、Blender/Maya、Substance、版本管理工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "虚拟制作协调/主管",
+        "business": "LED摄影棚、摄影机跟踪、实时渲染与现场协作",
+        "skills": "拍摄流程、引擎、跟踪系统、排期、现场沟通与风险管理",
+        "software": "Unreal Engine、虚拟制作与跟踪系统、项目管理工具",
+        "salary": "按岗位与项目确定"
+      },
+      {
+        "title": "实时Previs/Techvis设计师",
+        "business": "镜头预演、技术预演与拍摄方案验证",
+        "skills": "镜头语言、场面调度、虚拟摄影机、灯光与技术约束",
+        "software": "Unreal Engine、Maya/Blender、剪辑与虚拟摄影工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "AI后期工作流设计师",
+        "business": "AI生成、修复、合成、版本管理与影视交付",
+        "skills": "镜头控制、一致性、人工复核、版权、质量标准与管线整合",
+        "software": "ComfyUI、Kling/Veo、Nuke/AE、DaVinci Resolve",
+        "salary": "按岗位与项目确定"
+      },
+      {
+        "title": "数字场景资产管理",
+        "business": "电影、动画与虚拟制作的场景和镜头资产",
+        "skills": "命名规范、版本、材质、LOD、权限、复用和跨部门交付",
+        "software": "资产管理系统、Unreal Engine、DCC与版本控制",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "VR电影体验设计师",
+        "business": "VR/AR/MR电影、沉浸叙事与新型放映",
+        "skills": "空间叙事、交互、舒适度、空间声音与观众测试",
+        "software": "Unity/Unreal、空间音频、360影像与原型工具",
+        "salary": "按项目与经验确定"
+      },
+      {
+        "title": "VFX视觉特效设计师",
+        "business": "电影、广告、虚拟拍摄与CG特效",
+        "skills": "粒子、合成、光影匹配、镜头质量与技术协作",
+        "software": "Houdini、Nuke、After Effects、Unreal Engine",
+        "salary": "成长阶段 20-40W/年"
+      },
+      {
+        "title": "后期剪辑师",
+        "business": "电影、广告、流媒体与品牌内容",
+        "skills": "叙事结构、音乐节奏、镜头语言、调色与版本交付",
+        "software": "Premiere Pro、DaVinci Resolve、Final Cut Pro、After Effects",
+        "salary": "按项目与经验确定"
+      }
+    ],
+    "internships": [
+      "VAD虚拟场景与实时资产",
+      "虚拟制作现场协调",
+      "Previs/Techvis镜头预演",
+      "AI后期与VFX管线",
+      "VR电影体验",
+      "影视剪辑与声音交付"
+    ]
+  },
+  {
+    "id": "direction-6",
+    "label": "BRANDING & COMMUNICATION · REGION 06",
+    "title": "品牌传播",
+    "titleEn": "Branding & Communication",
+    "trendArrow": "AI重构",
+    "oneLine": "以品牌系统、创作者合作、动态影像、AI内容工作流和效果测量，为品牌建立可识别、可信任、可规模化的传播体验。",
+    "parentTrans": "品牌工作正从少量主视觉扩展到大量内容版本、创作者合作和效果优化，核心仍是策略、品牌一致性、质量与消费者信任。",
+    "targetCases": "品牌系统、AI整合Campaign、创作者营销、效果创意、Agentic客户体验、内容审核、包装与跨媒介传播。",
+    "bannerImg": "/industry-cards/brand-communication.jpg",
+    "sourcePages": "PDF 第 181-209 页；2025-2026新增参考：IAB数字视频、创作者经济与AI广告透明度报告",
+    "ugPath": {
+      "focus": "图形、色彩、版式、字体、品牌识别、动态影像、创作者内容和基础数据意识",
+      "portfolio": "品牌系统、Campaign、创作者合作、包装、动态影像、AI内容版本或公共传播",
+      "target": "建立从调研、策略、概念、品牌规范到多触点制作、披露和效果复盘的完整项目"
+    },
+    "pgPath": {
+      "focus": "品牌策略、AI Campaign编排、创作者生态、Agentic客户体验、效果测量、内容治理与商业提案",
+      "portfolio": "把业务目标、受众洞察、品牌系统、内容变体、创作者合作、AI披露和业务结果连接起来",
+      "target": "向AI Campaign编排、创作者策略、品牌治理、效果创意、美术指导或创意总监发展"
+    },
+    "salary": "入门 8-15K/月 | 成长 20-40W/年 | 成熟 50W+及项目提成",
+    "tiers": [
+      {
+        "badge": "入门期 0-2年",
+        "salary": "8,000-15,000 / 月",
+        "title": "从品牌系统、调研、内容版本与日常物料执行开始",
+        "reps": "品牌工作室、4A广告公司、企业品牌团队",
+        "gargs": "品牌设计助理、内容设计师、创作者运营助理、效果创意助理",
+        "desc": "学习品牌规范、版式、动效、AI内容审核、项目流程和基础数据复盘，建立细节控制与按时交付能力。"
+      },
+      {
+        "badge": "成长期 3-5年",
+        "salary": "20-40 万 / 年",
+        "title": "独立负责Campaign、创作者合作、内容工作流或效果创意",
+        "reps": "Landor、REDesign、UDL、奥美、蓝色光标",
+        "gargs": "AI Campaign编排、创作者合作策略、品牌系统设计、效果创意设计",
+        "desc": "把品牌策略、营销逻辑、视觉系统和内容变体转化为跨媒介方案，并用指标和用户反馈复盘。"
+      },
+      {
+        "badge": "成熟期 5-10年",
+        "salary": "50 万+ / 年及项目提成",
+        "title": "统筹品牌战略、AI治理、创作者生态和团队交付",
+        "reps": "国际品牌咨询、头部品牌方与独立工作室",
+        "gargs": "创意总监、品牌策略师、AI品牌治理负责人、整合营销负责人",
+        "desc": "负责品牌顶层策略、视觉决策、AI披露、跨团队资源和业务效果，可发展为创意合伙人或自主创业。"
+      }
+    ],
+    "enterprises": [
+      "不亦乐乎 by enjoy",
+      "Landor",
+      "小红书 REDesign",
+      "UDL",
+      "奥美",
+      "蓝色光标",
+      "阳狮集团",
+      "Pentagram"
+    ],
+    "schools": {
+      "uk": "RCA Visual Communication、UCL Publishing、爱丁堡 Graphic Design、LCC Graphic Media Design、CSM Graphic Communication Design",
+      "us": "Yale Graphic Design、CMU Design、RISD Graphic Design、ACCD Graphic Design、Pratt Communication Design",
+      "hkMacau": "港大 Creative Communication、港中文 Global Communication、港理工 IME/IBD、港城 Creative Media；米兰理工 Communication Design"
+    },
+    "studentProfile": "对图形、版式、字体、品牌故事和商业传播敏感，愿意把审美判断转化成可执行的系统。",
+    "highschoolAdvice": "持续分析品牌VI、Campaign、创作者内容和动态广告，练习从调研、概念到多版本生产，并记录受众反馈和效果指标。",
+    "portfolioKey": "完整展示洞察、策略、创意概念、品牌系统、内容版本、创作者协作、多媒介落地、AI披露与效果复盘，避免只放孤立海报。",
+    "realCase": "建议项目：AI整合Campaign、创作者合作方案、品牌内容工厂、效果创意测试、Agentic客户旅程、品牌VI与包装。",
+    "trends": [
+      "生产信号：IAB 2025调研中86%的数字视频广告买方已使用或计划使用生成式AI，预计2026年约40%的视频广告由AI生成或增强",
+      "创作者信号：美国创作者广告支出2025年预计达370亿美元，同比增长26%，品牌把创作者视为完整传播渠道",
+      "信任信号：广告主快速采用AI，但消费者对低质量AI广告和不透明使用更敏感，质量、披露与品牌治理成为竞争力",
+      "工作流路径：品牌/内容设计 → AI Campaign编排 → 整合营销与Agentic客户体验负责人",
+      "创作者路径：社媒运营 → 创作者合作与社群策略 → 创作者生态与商业化负责人"
+    ],
+    "stats": [
+      {
+        "val": "86%",
+        "label": "买方使用或计划用AI"
+      },
+      {
+        "val": "40%",
+        "label": "2026 AI视频广告预期"
+      },
+      {
+        "val": "$37B",
+        "label": "2025创作者广告支出"
+      },
+      {
+        "val": "+26%",
+        "label": "创作者广告同比增长"
+      }
+    ],
+    "hotJobs": [
+      "AI Campaign编排设计师",
+      "创作者合作与社群策略师",
+      "生成内容质量与品牌治理",
+      "效果创意设计师",
+      "Agentic客户体验设计师",
+      "品牌系统设计师",
+      "品牌策略/美术指导"
+    ],
+    "businessAreas": [
+      {
+        "name": "品牌系统",
+        "description": "品牌策略、VI、动态规范、内容模板与资产治理"
+      },
+      {
+        "name": "AI Campaign编排",
+        "description": "洞察、创意、内容变体、媒介协同与流程自动化"
+      },
+      {
+        "name": "创作者与社群",
+        "description": "达人选择、合作机制、社区运营与可信内容"
+      },
+      {
+        "name": "效果创意",
+        "description": "版本测试、转化指标、受众反馈与持续优化"
+      },
+      {
+        "name": "Agentic客户体验",
+        "description": "智能导购、服务Agent与跨触点品牌体验"
+      },
+      {
+        "name": "内容治理",
+        "description": "质量、版权、品牌一致性、AI透明度与披露"
+      },
+      {
+        "name": "包装与空间",
+        "description": "包装结构、零售陈列、快闪与线下品牌体验"
+      }
+    ],
+    "roleProfiles": [
+      {
+        "title": "AI Campaign编排设计师",
+        "business": "品牌Campaign、内容变体、渠道协同与自动化生产",
+        "skills": "创意策略、工作流编排、品牌一致性、版本管理与效果复盘",
+        "software": "Adobe Suite、生成式AI、自动化工具、项目与数据平台",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "创作者合作与社群策略师",
+        "business": "达人合作、社区内容、品牌关系与商业转化",
+        "skills": "创作者筛选、内容共创、合同边界、社群运营与效果评估",
+        "software": "内容平台、CRM、数据分析与项目管理工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "生成内容质量与品牌治理",
+        "business": "AI内容审核、品牌资产与跨渠道发布",
+        "skills": "品牌规范、质量标准、版权、AI披露、风险升级与审批流程",
+        "software": "DAM、审核平台、C2PA/元数据工具、Adobe Suite",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "效果创意设计师",
+        "business": "数字视频、社交广告、零售媒体与转化增长",
+        "skills": "创意变量、A/B测试、指标分析、受众洞察与快速迭代",
+        "software": "Adobe Suite、Figma、数据看板、生成式AI",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "Agentic客户体验设计师",
+        "business": "智能导购、客户服务Agent与跨触点体验",
+        "skills": "用户旅程、对话体验、品牌语气、人工接管与业务指标",
+        "software": "Figma、对话原型、LLM工作流、分析工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "品牌系统设计师",
+        "business": "品牌VI、动态规范、模板、包装与数字资产",
+        "skills": "图形语言、版式字体、设计系统、资产治理和多媒介落地",
+        "software": "Photoshop、Illustrator、InDesign、Figma、After Effects",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "品牌策略/美术指导",
+        "business": "品牌全案、创意方向与整合传播",
+        "skills": "消费者洞察、叙事、审美判断、提案与团队管理",
+        "software": "Adobe Suite、研究工具、AIGC与项目管理工具",
+        "salary": "成长及成熟阶段差异较大"
+      }
+    ],
+    "internships": [
+      "AI Campaign与内容工作流",
+      "创作者合作与社群运营",
+      "效果创意与A/B测试",
+      "品牌系统与资产治理",
+      "AI内容审核、版权与披露",
+      "包装与零售体验"
+    ]
+  },
+  {
+    "id": "direction-7",
+    "label": "EDUCATION, RESEARCH & LEARNING · REGION 07",
+    "title": "教育学术",
+    "titleEn": "Education, Research & Learning Experience",
+    "trendArrow": "研究驱动",
+    "oneLine": "以教育、研究、学习体验、AI课程、评估改革与创意科技实验室为核心，用设计方法和数字技术推动学习与知识传播。",
+    "parentTrans": "除了高校教师和研究员，还可以进入AI学习体验、课程产品、学习分析、教育治理、实验室运营和校企合作。",
+    "targetCases": "高校教学与研究、AI学习体验、课程产品、学习分析与评估、教育AI治理、创意科技实验室与微证书项目。",
+    "bannerImg": "/industry-cards/education.jpg",
+    "sourcePages": "PDF 第 210-218 页；2025-2026新增参考：UNESCO创意产业技能与AI教育报告、WEF未来就业报告",
+    "ugPath": {
+      "focus": "设计研究、文献阅读、课程辅助、学习者研究、数字内容、基础数据与AI素养",
+      "portfolio": "学习体验、AI课程原型、工作坊、学习评估、创意科技实验或研究型出版物",
+      "target": "建立研究问题、学习目标、方法、证据、评估过程和可解释的教育设计成果"
+    },
+    "pgPath": {
+      "focus": "学术写作、实验设计、AI课程、学习分析、评估改革、隐私伦理、教育产品与实验室运营",
+      "portfolio": "结合论文、研究方法、教学实验、学习数据、AI治理或教育产品原型",
+      "target": "向高校教师、AI学习体验设计、评估研究、教育产品、创意科技Lab或教育创新负责人发展"
+    },
+    "salary": "入门 8-15K/月 | 成长 20-45W/年 | 成熟 50W+及项目提成",
+    "tiers": [
+      {
+        "badge": "入门期 0-2年",
+        "salary": "8,000-15,000 / 月",
+        "title": "从文献、课程、研究执行、学习数据和数字内容开始",
+        "reps": "高校实验室、教育科技公司、课程与内容团队",
+        "gargs": "助教、RA、AI课程助理、学习体验设计助理、Lab运营助理",
+        "desc": "参与文献阅读、课程辅助、学习者访谈、数据整理、研究执行、内容制作和基础AI使用规范。"
+      },
+      {
+        "badge": "成长期 3-5年",
+        "salary": "20-45 万 / 年",
+        "title": "独立开发AI课程、评估研究、实验室项目或教育产品",
+        "reps": "同济设计创意学院、清华美院、教育科技与AI学习团队",
+        "gargs": "AI学习体验设计师、课程产品设计师、学习分析与评估设计师、高校讲师",
+        "desc": "需要独立研究、课程或产品能力，并能形成论文、教学实验、学习数据和产品成果。"
+      },
+      {
+        "badge": "成熟期 5-10年",
+        "salary": "50 万+ / 年及项目提成",
+        "title": "负责学科、AI教育治理、实验室或教育创新方向",
+        "reps": "高校、国际研究项目、教育科技创新机构",
+        "gargs": "副教授、Lab负责人、AI教育治理负责人、教育创新总监",
+        "desc": "统筹研究、教学、评估、产品与团队，可发展为学科负责人、实验室负责人或教育科技创业者。"
+      }
+    ],
+    "enterprises": [
+      "同济大学设计创意学院",
+      "清华大学美术学院",
+      "有道",
+      "高途",
+      "科大讯飞",
+      "Duolingo",
+      "Coursera"
+    ],
+    "schools": {
+      "uk": "RCA Master of Research、RCA Creative Education、RCA Visual Communication、Cambridge Global Collaborative Design Practice",
+      "us": "Harvard MDes、Harvard Ed.M. Learning Design Innovation and Technology、CMU METALS、NYU Learning Technology and Experience Design",
+      "hkMacau": "港大 Creative Communications、港大 Technology Design and Leadership for Learning、香港教育大学 Digital Learning and Technology/Visual Arts Education"
+    },
+    "studentProfile": "愿意长期阅读、研究、写作、教学或设计教育产品，能够把创作兴趣转化为明确的学习问题、证据和评估。",
+    "highschoolAdvice": "从小型研究、工作坊或AI课程原型开始，练习文献梳理、学习者访谈、目标设计、过程评估和隐私说明。",
+    "portfolioKey": "作品要呈现学习问题、目标、方法、证据、实验过程、评估结果、AI使用边界和结论，并说明教学或社会价值。",
+    "realCase": "建议项目：AI学习体验、创意科技工作坊、学习分析仪表板、替代性评估、教师AI素养课程、实验室项目与研究出版物。",
+    "trends": [
+      "技能信号：WEF预计到2030年约39%的岗位技能会变化，课程更新、跨学科技能和持续学习成为教育设计的直接任务",
+      "产业信号：UNESCO指出创意产业课程滞后、教师短缺、资格体系过时和数据不足，微证书与校企合作成为补位方式",
+      "治理信号：AI教育必须同时处理隐私、安全、伦理与公平，不能只追求自动化和个性化",
+      "评估变化：生成式AI推动课程从结果检测转向过程证据、批判判断、人机共创和真实性评估",
+      "应用路径：课程/内容设计 → AI学习体验与评估设计 → 教育产品或创意科技Lab负责人"
+    ],
+    "stats": [
+      {
+        "val": "39%",
+        "label": "2030前岗位技能变化"
+      },
+      {
+        "val": "40%",
+        "label": "创意从业者低于最低工资"
+      },
+      {
+        "val": "微证书",
+        "label": "产业技能衔接方式"
+      },
+      {
+        "val": "人机共创",
+        "label": "学习与评估新重点"
+      }
+    ],
+    "hotJobs": [
+      "AI学习体验设计师",
+      "AI课程产品设计师",
+      "学习分析与评估设计师",
+      "教育AI伦理与治理",
+      "创意科技实验室运营",
+      "微证书/校企合作项目设计",
+      "高校教师/研究员"
+    ],
+    "businessAreas": [
+      {
+        "name": "高校教学与研究",
+        "description": "课程体系、教学指导、论文、科研与学科建设"
+      },
+      {
+        "name": "AI学习体验",
+        "description": "AI Tutor、人机共创、学习旅程与教师支持"
+      },
+      {
+        "name": "课程与微证书",
+        "description": "产业技能、模块课程、认证与校企合作"
+      },
+      {
+        "name": "学习分析与评估",
+        "description": "过程证据、学习数据、替代性评估与反馈"
+      },
+      {
+        "name": "教育AI治理",
+        "description": "隐私、安全、伦理、公平、透明度与使用规范"
+      },
+      {
+        "name": "创意科技实验室",
+        "description": "设备、工作坊、研究项目、跨学科协作与Lab运营"
+      }
+    ],
+    "roleProfiles": [
+      {
+        "title": "AI学习体验设计师",
+        "business": "AI Tutor、人机共创课程与智能学习平台",
+        "skills": "学习科学、用户研究、对话与任务设计、教师支持和可用性评估",
+        "software": "Figma、LMS、LLM原型、研究与分析工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "AI课程产品设计师",
+        "business": "AI素养、创意科技、微证书与产业课程",
+        "skills": "学习目标、课程结构、活动设计、内容生产、认证与迭代",
+        "software": "LMS、Notion、Miro、AIGC与内容制作工具",
+        "salary": "按岗位与项目确定"
+      },
+      {
+        "title": "学习分析与评估设计师",
+        "business": "学习平台、课程评估与教育研究",
+        "skills": "指标设计、过程证据、数据分析、反馈机制与评估效度",
+        "software": "Excel/SQL、BI、问卷研究、LMS分析工具",
+        "salary": "按岗位与经验确定"
+      },
+      {
+        "title": "教育AI伦理与治理",
+        "business": "学校、教育平台与公共教育项目",
+        "skills": "隐私、安全、公平、透明度、政策转译和风险处置",
+        "software": "治理文档、审核系统、数据记录与研究工具",
+        "salary": "按机构与经验确定"
+      },
+      {
+        "title": "创意科技实验室运营",
+        "business": "高校Lab、创新中心、工作坊与跨学科项目",
+        "skills": "设备与安全、项目管理、教学支持、技术文档和合作伙伴协调",
+        "software": "项目管理、设备与资产系统、创意技术工具链",
+        "salary": "按机构与项目确定"
+      },
+      {
+        "title": "微证书/校企合作项目设计",
+        "business": "短周期技能课程、企业项目与职业发展项目",
+        "skills": "产业需求调研、能力标准、课程映射、认证与合作管理",
+        "software": "课程平台、项目管理、数据与沟通工具",
+        "salary": "按机构与项目确定"
+      },
+      {
+        "title": "高校教师/研究员",
+        "business": "本科教学、研究生指导、课程、科研与公共项目",
+        "skills": "教学设计、研究方法、学术写作、项目指导和公开表达",
+        "software": "研究、课程、协作与数据分析工具",
+        "salary": "按机构与职级确定"
+      }
+    ],
+    "internships": [
+      "AI学习体验与教育产品",
+      "课程研发与微证书",
+      "学习分析与评估",
+      "教育AI治理与政策研究",
+      "高校/创意科技Lab运营",
+      "研究助理与教学支持"
+    ]
+  },
+  {
+    "id": "direction-8",
+    "label": "INDEPENDENT DIGITAL ART · REGION 08",
+    "title": "独立艺术家",
+    "titleEn": "Independent Digital Art Practice",
+    "trendArrow": "项目制",
+    "oneLine": "结合个人艺术语言、数字媒介、实验技术、委托项目与社群经营，通过影像、交互、装置、生成艺术和公共空间建立持续实践。",
+    "parentTrans": "没有标准化晋升路线，稳定发展通常依靠委托、展览、驻地、公共艺术、版本销售、授权、社群、研究与教学等多元收入。",
+    "targetCases": "Artist-Technologist、沉浸式委托、互动装置、数据/公共艺术、数字版本、驻地项目、社群运营与AI艺术版权溯源。",
+    "bannerImg": "/industry-cards/independent-artist.jpg",
+    "sourcePages": "PDF 第 219-228 页；2025-2026新增参考：Art Basel与UBS全球艺术市场报告、UNESCO文化创意与AI报告、C2PA内容溯源规范",
+    "ugPath": {
+      "focus": "个人艺术语言、创意研究、跨媒介表达、空间叙事、基础创意编程、版权与受众意识",
+      "portfolio": "互动装置、AI艺术、生成艺术、数据艺术、公共艺术、实验影像、XR、声音或数字版本",
+      "target": "完成从概念研究、权利与来源说明到真实制作、展出/发布、受众反馈和反思文本的完整作品"
+    },
+    "pgPath": {
+      "focus": "艺术科技、算法与传感器、策展研究、项目制作、机构合作、国际驻地、数字发行、版权与内容溯源",
+      "portfolio": "建立连续创作体系，并证明观念、技术、空间、项目管理、权利边界和受众经营能够统一",
+      "target": "向Artist-Technologist、委托项目艺术家、公共艺术/数据艺术、项目制作人、策展研究或艺术科技负责人发展"
+    },
+    "salary": "探索期 8-15K/月 | 成长期 20-50W/年 | 成熟期高度项目制",
+    "tiers": [
+      {
+        "badge": "探索期 0-2年",
+        "salary": "8,000-15,000 / 月",
+        "title": "参与展览、公共项目或工作室制作并建立个人艺术语言",
+        "reps": "艺术家工作室、美术馆、新媒体艺术机构",
+        "gargs": "艺术家助理、展览制作助理、技术艺术助理、项目研究员、社群运营助理",
+        "desc": "学习创作方法、技术制作、布展、权利记录和机构协作，持续积累作品、发布与参展记录。"
+      },
+      {
+        "badge": "成长期 3-5年",
+        "salary": "20-50 万 / 年",
+        "title": "形成连续创作、获得委托、申请驻地并经营受众",
+        "reps": "Rhizome、ZKM、Ars Electronica、Chronus Art Center",
+        "gargs": "Artist-Technologist、沉浸式委托艺术家、公共艺术/数据艺术、项目制作人",
+        "desc": "通过艺术节、驻地、公共项目、品牌委托、版本销售或授权建立作品线和多元收入。"
+      },
+      {
+        "badge": "成熟期 5-10年",
+        "salary": "高度项目制，跨度较大",
+        "title": "进入国际展览、公共委托、策展、教学或艺术科技创业",
+        "reps": "国际双年展、美术馆、公共艺术与艺术科技机构、个人工作室",
+        "gargs": "国际艺术家、艺术科技总监、策展人、工作室/艺术机构创始人",
+        "desc": "通过个展、公共委托、国际合作、授权、研究、教学和技术服务形成多元收入与长期影响力。"
+      }
+    ],
+    "enterprises": [
+      "Refik Anadol Studio",
+      "teamLab",
+      "Rhizome",
+      "ZKM",
+      "Ars Electronica",
+      "FACT Liverpool",
+      "Eyebeam",
+      "Chronus Art Center",
+      "UCCA",
+      "M+"
+    ],
+    "schools": {
+      "uk": "RCA Contemporary Art Practice、RCA Information Experience Design、UAL Computational Arts、CSM Art and Science、Goldsmiths Computational Arts",
+      "us": "MIT Media Arts and Sciences、NYU ITP、UCLA Design Media Arts、SAIC Art and Technology Studies、RISD Digital Media",
+      "hkMacau": "港城 Creative Media、港大 Innovative Design and Technology、港科大 Arts and Machine Creativity、港浸会 AI and Digital Media；阿尔托 New Media"
+    },
+    "studentProfile": "有强烈个人表达和研究愿望，愿意长期试验媒介、技术与社会议题，并能接受项目制、主动经营合作与多元收入。",
+    "highschoolAdvice": "从一个持续关心的主题出发，完成小型装置、生成艺术或实验影像，同时记录素材来源、权利边界、制作预算、现场和观众反馈。",
+    "portfolioKey": "核心是连续自洽的艺术语言、研究深度、真实落地、项目与受众经营、版权及内容溯源，不是软件展示或孤立视觉效果。",
+    "realCase": "建议项目：沉浸式委托、互动装置、AI/数据艺术、公共艺术提案、数字版本、实验影像、XR、声音艺术、驻地与社群计划。",
+    "trends": [
+      "市场信号：2025年全球艺术市场销售额回升4%至596亿美元，但恢复不均，高端交易贡献更明显",
+      "渠道信号：线上艺术销售降至92亿美元，为2019年以来最低，线下关系、机构合作与新买家经营仍然关键",
+      "AI风险：UNESCO引用预测称，到2028年生成式AI可能使音乐创作者收入损失24%、视听创作者损失21%",
+      "收入路径：个人创作 → 驻地/公共委托 → 版本与授权 → 品牌/机构合作 → 教学、研究或工作室服务",
+      "治理路径：AI艺术创作 → 来源与权利记录 → Content Credentials/披露 → 艺术科技版权与溯源顾问"
+    ],
+    "stats": [
+      {
+        "val": "$59.6B",
+        "label": "2025全球艺术市场"
+      },
+      {
+        "val": "+4%",
+        "label": "全球市场年度增长"
+      },
+      {
+        "val": "$9.2B",
+        "label": "2025线上艺术销售"
+      },
+      {
+        "val": "24%/21%",
+        "label": "音乐/视听AI收入风险"
+      }
+    ],
+    "hotJobs": [
+      "Artist-Technologist",
+      "沉浸式委托项目艺术家",
+      "公共艺术/数据艺术工作室",
+      "数字版本与社群运营",
+      "驻地/公共项目制作人",
+      "AI艺术版权与溯源顾问",
+      "策展人与艺术研究者"
+    ],
+    "businessAreas": [
+      {
+        "name": "Artist-Technologist",
+        "description": "艺术概念、创意技术、系统整合与真实落地"
+      },
+      {
+        "name": "沉浸式委托",
+        "description": "美术馆、品牌、文旅与公共空间的项目制创作"
+      },
+      {
+        "name": "公共与数据艺术",
+        "description": "城市、环境、实时数据、媒体立面与公共议题"
+      },
+      {
+        "name": "数字版本与社群",
+        "description": "限量版本、线上发布、授权、收藏者与观众经营"
+      },
+      {
+        "name": "驻地与项目制作",
+        "description": "申请、预算、合作、展陈、传播和成果归档"
+      },
+      {
+        "name": "版权与内容溯源",
+        "description": "训练与素材来源、授权、AI披露和Content Credentials"
+      },
+      {
+        "name": "策展与研究",
+        "description": "新媒体展览、理论写作、机构合作与知识传播"
+      }
+    ],
+    "roleProfiles": [
+      {
+        "title": "Artist-Technologist",
+        "business": "艺术科技、互动装置、实时影像与跨媒介项目",
+        "skills": "艺术研究、创意编程、技术开发、空间叙事与系统整合",
+        "software": "TouchDesigner、Unreal Engine、Python、Arduino、Blender",
+        "salary": "按项目与经验确定"
+      },
+      {
+        "title": "沉浸式委托项目艺术家",
+        "business": "美术馆、品牌、文旅与公共空间委托",
+        "skills": "概念发展、空间体验、预算排期、合作沟通、现场制作与维护",
+        "software": "TouchDesigner、Unity/UE、DCC、项目管理工具",
+        "salary": "按委托规模确定"
+      },
+      {
+        "title": "公共艺术/数据艺术工作室",
+        "business": "城市数据、环境议题、媒体立面与公共装置",
+        "skills": "数据叙事、公共沟通、场地研究、工程协作和长期运行",
+        "software": "Processing/Python、TouchDesigner、GIS/数据工具、实时引擎",
+        "salary": "按项目与团队分工确定"
+      },
+      {
+        "title": "数字版本与社群运营",
+        "business": "数字版本、线上发布、授权、收藏者与观众关系",
+        "skills": "版本策划、内容传播、社群、定价、授权和数据复盘",
+        "software": "内容平台、CRM、电商/发行与分析工具",
+        "salary": "按机构、销售与项目确定"
+      },
+      {
+        "title": "驻地/公共项目制作人",
+        "business": "艺术驻地、公共委托、艺术节与跨机构合作",
+        "skills": "申请写作、预算、合同、排期、制作、传播与成果归档",
+        "software": "项目管理、预算、文档与资产管理工具",
+        "salary": "按机构与项目确定"
+      },
+      {
+        "title": "AI艺术版权与溯源顾问",
+        "business": "AI艺术、数字影像、机构收藏与品牌委托",
+        "skills": "素材与训练来源、授权、披露、Content Credentials和风险记录",
+        "software": "C2PA/元数据工具、DAM、文档与审核平台",
+        "salary": "按咨询与项目确定"
+      },
+      {
+        "title": "策展人与艺术研究者",
+        "business": "数字艺术展览、公共项目与研究",
+        "skills": "研究、策展、理论写作、项目筹资与机构协作",
+        "software": "Adobe Suite、Notion、Miro、数据库工具",
+        "salary": "按机构与项目确定"
+      },
+      {
+        "title": "实验影像/声音艺术家",
+        "business": "艺术电影、视频装置、声音装置与沉浸音景",
+        "skills": "视听叙事、空间呈现、版权管理和现场调试",
+        "software": "DaVinci Resolve、After Effects、Ableton Live、Max MSP",
+        "salary": "按委托与项目确定"
+      }
+    ],
+    "internships": [
+      "艺术家工作室与展览制作",
+      "沉浸式/公共艺术项目",
+      "驻地与艺术节项目助理",
+      "数字版本与社群运营",
+      "AI艺术版权与内容溯源",
+      "策展研究与机构合作"
+    ]
+  }
+]

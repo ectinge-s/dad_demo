@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SFK 数字艺术与设计科系</title>
+<meta name="description" content="SFK 数字艺术与设计（DAD）科系官网：8大行业就业全景、职业规划与升学路径。">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/ist-shared.css">
+</head>
+<body>
+
+<!-- ═══ NAVBAR (same two-part structure as IST: anchor-scroll buttons,
+     then separate-page buttons, then the CTA) ═══ -->
+<nav class="navbar">
+  <div class="container navbar__inner">
+    <span class="navbar__logo" onclick="Router.go('home')" style="cursor:pointer">
+      <img class="navbar__logo-img" src="assets/img/logo.png" alt="SFK">
+      <span class="navbar__logo-tag">数字艺术与设计</span>
+    </span>
+    <div class="navbar__links">
+      <button class="navbar__btn is-active" onclick="Router.go('home')">首页</button>
+      <button class="navbar__btn navbar__btn--accent" onclick="Router.go('home',{scrollTo:'#career-planning'})">职业规划</button>
+      <button class="navbar__btn" onclick="Router.go('home',{scrollTo:'#offers'})">offer展示</button>
+      <button class="navbar__btn" onclick="Router.go('home',{scrollTo:'#instructors'})">导师团队</button>
+      <button class="navbar__btn" onclick="Router.go('home',{scrollTo:'#resources'})">资源网络</button>
+      <span class="navbar__divider" aria-hidden="true"></span>
+      <button class="navbar__btn navbar__btn--page" onclick="Router.go('portfolio')">案例展示</button>
+      <button class="navbar__btn navbar__btn--page" onclick="Router.go('timeline')">时间轴</button>
+      <button class="navbar__btn navbar__btn--page" onclick="Router.go('course-products')">课程</button>
+    </div>
+    <button class="navbar__cta" onclick="Router.go('planning')">职业规划</button>
+    <button class="navbar__menu-toggle" id="nav-menu-toggle" aria-expanded="false" aria-controls="nav-menu-overlay" aria-label="展开全部导航">
+      <span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ EXPANDABLE NAV MENU (additive — mirrors the navbar's own links) ═══ -->
+<div id="nav-menu-overlay" class="nav-menu-overlay" aria-hidden="true">
+  <div class="nav-menu-overlay__inner">
+    <div class="nav-menu-overlay__group">
+      <a class="nav-menu-overlay__link" onclick="NavMenu.go('home')">首页</a>
+      <a class="nav-menu-overlay__link nav-menu-overlay__link--accent" onclick="NavMenu.go('home',{scrollTo:'#career-planning'})">职业规划</a>
+      <a class="nav-menu-overlay__link" onclick="NavMenu.go('home',{scrollTo:'#offers'})">offer展示</a>
+      <a class="nav-menu-overlay__link" onclick="NavMenu.go('home',{scrollTo:'#instructors'})">导师团队</a>
+      <a class="nav-menu-overlay__link" onclick="NavMenu.go('home',{scrollTo:'#resources'})">资源网络</a>
+    </div>
+    <span class="nav-menu-overlay__div" aria-hidden="true"></span>
+    <div class="nav-menu-overlay__group">
+      <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('portfolio')">案例展示</a>
+      <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('timeline')">时间轴</a>
+      <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('course-products')">课程</a>
+    </div>
+    <a class="nav-menu-overlay__cta" onclick="NavMenu.go('planning')">职业规划</a>
+  </div>
+</div>
+
+<!-- ═══ PAGE: HOME ═══ -->
+<main class="page is-active" id="page-home">
+  <section class="hero" id="hero-root"></section>
+  <section class="section" id="career-planning" style="scroll-margin-top:var(--navbar-h)"><div class="container" id="career-planning-root"></div></section>
+  <section class="section" id="offers" style="scroll-margin-top:var(--navbar-h)"><div class="container" id="offers-root"></div></section>
+  <section class="section" id="instructors" style="scroll-margin-top:var(--navbar-h)"><div class="container" id="instructors-root"></div></section>
+  <section class="section" id="resources" style="scroll-margin-top:var(--navbar-h)"><div class="container" id="resources-root"></div></section>
+  <section class="section" id="courses" style="scroll-margin-top:var(--navbar-h)"><div class="container" id="courses-root"></div></section>
+</main>
+
+<!-- ═══ PAGE: PLANNING ═══ -->
+<main class="page" id="page-planning">
+  <section class="hero" id="planning-hero-root"></section>
+  <nav class="industry-nav" id="planning-nav-root"></nav>
+  <div id="planning-panels-root"></div>
+
+  <!-- ── Detailed career-planning content, moved here from the homepage
+       2026-09 (see docs/PROJECT_NOTES.md) ── -->
+  <section class="section" id="pl-industries"><div class="container" id="pl-industries-root"></div></section>
+  <section class="section" id="pl-heatmap"><div class="container" id="pl-heatmap-root"></div></section>
+  <section class="section" id="pl-jd"><div class="container" id="pl-jd-root"></div></section>
+  <section class="section" id="pl-pathways"><div class="container" id="pl-pathways-root"></div></section>
+  <section class="section" id="pl-faq"><div class="container" id="pl-faq-root"></div></section>
+  <section class="section" id="pl-quiz"><div class="container" id="pl-quiz-root"></div></section>
+  <section class="section" id="pl-roadmap"><div class="container" id="pl-roadmap-root"></div></section>
+  <section class="section" id="pl-capabilities"><div class="container" id="pl-capabilities-root"></div></section>
+  <section class="section" id="pl-data-insights"><div class="container" id="pl-data-insights-root"></div></section>
+</main>
+
+<!-- ═══ PAGE: 案例展示 / 学生案例 (duplicates IST's Portfolio page structure —
+     placeholder images/text, NOT real student data; see assets/js/pages/portfolio.js
+     and data/portfolio-placeholder.json) ═══ -->
+<main class="page" id="page-portfolio">
+  <section class="hero" style="min-height:auto;padding:64px 24px 40px;">
+    <div class="container hero__content">
+      <span class="eyebrow eyebrow--on-void u-en">Student Work</span>
+      <h1>案例展示</h1>
+      <p class="hero__subtitle">学生作品案例精选，覆盖八大行业方向的升学与实践成果 — 以下为占位图片与示例文字，真实案例正在整理中。</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="pending-badge">⏳ 示例数据，待替换为真实学生案例</div>
+      <div class="filter-bar fade-up" id="portfolio-filter-bar"></div>
+      <div class="card-grid fade-up" id="portfolio-grid"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ═══ PAGE: TIMELINE (copied from IST as-is — GM: "时间轴...先复制一份ist的放这里") ═══ -->
+<main class="page" id="page-timeline">
+  <section class="timeline-hero">
+    <h1 class="timeline-hero__title">成长时间轴</h1>
+    <p class="timeline-hero__sub">选择就读阶段，灵活查看全程规划路径。点击相应模块可查询可报名课程列表。</p>
+  </section>
+  <div class="timeline-section">
+    <div class="tl-controls">
+      <div class="tl-ctrl-group">
+        <div class="tl-ctrl-label">本科阶段</div>
+        <div class="tl-seg-tabs" id="tl-tabs-ug">
+          <button class="tl-seg-tab" data-val="uk3">英国本科 3年</button>
+          <button class="tl-seg-tab" data-val="us4">美国本科 4年</button>
+          <button class="tl-seg-tab" data-val="arch5">建筑学 5年</button>
+          <button class="tl-seg-tab" data-val="">不含本科</button>
+        </div>
+      </div>
+      <div class="tl-ctrl-group">
+        <div class="tl-ctrl-label">研究生阶段</div>
+        <div class="tl-seg-tabs" id="tl-tabs-pg">
+          <button class="tl-seg-tab" data-val="pg1">研究生 1年</button>
+          <button class="tl-seg-tab" data-val="pg15">研究生 1.5年</button>
+          <button class="tl-seg-tab" data-val="pg2">研究生 2年</button>
+          <button class="tl-seg-tab" data-val="">不含研究生</button>
+        </div>
+      </div>
+    </div>
+    <div class="tl-legend">
+      <div class="tl-legend__item"><div class="tl-legend__dot tl-legend__dot--milestone"></div>关键节点</div>
+      <div class="tl-legend__item"><div class="tl-legend__dot tl-legend__dot--summer"></div>夏冬校</div>
+      <div class="tl-legend__item"><div class="tl-legend__dot tl-legend__dot--biz"></div>商业实践</div>
+      <div class="tl-legend__item"><div class="tl-legend__dot tl-legend__dot--master"></div>大师课</div>
+      <div class="tl-legend__item"><div class="tl-legend__dot tl-legend__dot--gpa"></div>学业支持</div>
+      <div class="tl-legend__item"><div class="tl-legend__dot tl-legend__dot--internship"></div>求职准备</div>
+    </div>
+    <div class="tl-gantt-wrap" id="tl-gantt-wrap">
+      <div class="tl-gantt" id="tl-gantt"></div>
+    </div>
+  </div>
+</main>
+
+<!-- ═══ PAGE: COURSE PRODUCTS (copied from IST as-is) ═══ -->
+<main class="page" id="page-course-products">
+  <section class="timeline-hero">
+    <h1 class="timeline-hero__title">课程产品</h1>
+    <p class="timeline-hero__sub">从长线旗舰项目到分类课程目录，覆盖学术探索、行业实习与商业实践的完整课程体系。点击任意卡片查看完整介绍。</p>
+  </section>
+  <div class="cp-page">
+    <div class="cp-zone">
+      <div class="section-eyebrow">Signature Programs</div>
+      <h2 class="section-title">长线旗舰产品</h2>
+      <div class="cp-grid" id="cp-longform-grid"></div>
+    </div>
+    <div class="cp-zone cp-zone--catalog">
+      <div class="section-eyebrow">Program Catalog</div>
+      <h2 class="section-title">课程目录</h2>
+      <div class="cp-grid" id="cp-catalog-grid"></div>
+    </div>
+  </div>
+</main>
+
+<!-- ═══ COURSE OVERLAY (full-screen, from a course card) ═══ -->
+<div id="course-overlay" class="course-overlay">
+  <div class="course-overlay__backdrop"></div>
+  <div class="course-overlay__panel">
+    <button class="course-overlay__close" aria-label="Close">✕</button>
+    <div id="course-overlay-body" class="cd-page__body"></div>
+  </div>
+</div>
+
+<!-- ═══ MINI-COURSE DETAIL MODAL ═══ -->
+<div id="minicourse-modal" class="minicourse-modal">
+  <div class="minicourse-modal__backdrop"></div>
+  <div class="minicourse-modal__panel">
+    <button class="minicourse-modal__close" aria-label="Close">✕</button>
+    <div id="minicourse-body"></div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER (shared across all pages, same 4-column structure as IST) ═══ -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <div>
+        <div class="site-footer__brand-name"><span class="u-en">SFK</span>数字艺术与设计</div>
+        <p class="site-footer__brand-desc">用真实行业数据规划你的求职与升学路径 — 8大行业、69家企业岗位解读，直连申请与职业发展。</p>
+      </div>
+    </div>
+    <div class="site-footer__grid">
+      <div class="site-footer__col">
+        <h2 class="site-footer__col-title">页面导航<span class="u-en">Pages</span></h2>
+        <a onclick="Router.go('home')"><strong>首页</strong><span class="u-en">Home</span></a>
+        <a onclick="Router.go('portfolio')"><strong>案例展示</strong><span class="u-en">Student Work</span></a>
+        <a onclick="Router.go('timeline')"><strong>时间轴</strong><span class="u-en">Timeline</span></a>
+        <a onclick="Router.go('course-products')"><strong>课程</strong><span class="u-en">Courses</span></a>
+        <a onclick="Router.go('planning')"><strong>职业规划</strong><span class="u-en">Planning</span></a>
+      </div>
+      <div class="site-footer__col">
+        <h2 class="site-footer__col-title">科系板块<span class="u-en">Sections</span></h2>
+        <a onclick="Router.go('home',{scrollTo:'#offers'})"><strong>offer 展示</strong><span class="u-en">Offers</span></a>
+        <a onclick="Router.go('home',{scrollTo:'#instructors'})"><strong>导师团队</strong><span class="u-en">Instructors</span></a>
+        <a onclick="Router.go('home',{scrollTo:'#resources'})"><strong>资源网络</strong><span class="u-en">Network</span></a>
+        <a onclick="Router.go('home',{scrollTo:'#courses'})"><strong>精选课程</strong><span class="u-en">Featured Courses</span></a>
+      </div>
+      <div class="site-footer__col">
+        <h2 class="site-footer__col-title">八大行业方向<span class="u-en">Industries</span></h2>
+        <a onclick="Router.goToIndustry('数字文旅')"><strong>数字文旅</strong></a>
+        <a onclick="Router.goToIndustry('互联网生态')"><strong>互联网生态</strong></a>
+        <a onclick="Router.goToIndustry('AI创意科技')"><strong>AI创意科技</strong></a>
+        <a onclick="Router.goToIndustry('游戏娱乐')"><strong>游戏娱乐</strong></a>
+        <a onclick="Router.goToIndustry('影视影像')"><strong>影视影像</strong></a>
+        <a onclick="Router.goToIndustry('品牌传播')"><strong>品牌传播</strong></a>
+        <a onclick="Router.goToIndustry('教育学术')"><strong>教育学术</strong></a>
+        <a onclick="Router.goToIndustry('独立艺术家')"><strong>独立艺术家</strong></a>
+      </div>
+      <div class="site-footer__col">
+        <h2 class="site-footer__col-title">规划咨询<span class="u-en">Get in Touch</span></h2>
+        <span class="site-footer__cta" onclick="Router.go('planning')" style="cursor:pointer">开始职业规划</span>
+        <p class="site-footer__contact"><span class="u-en">Email</span>admissions@sfk-edu.demo</p>
+        <p class="site-footer__contact"><span class="u-en">Tel</span>400-000-0000</p>
+        <p class="site-footer__contact">上海市 · 校区地址待定</p>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <p>© <span id="footer-year"></span> SFK 数字艺术与设计科系 · 本页面为课程与案例演示站点，数据仅供展示</p>
+  </div>
+</footer>
+
+<div id="app-loading" style="position:fixed;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;font-family:sans-serif;color:#999;z-index:9999">加载中…</div>
+
+<script src="assets/js/effects.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/ist-data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/router.js"></script>
+<script src="assets/js/course-demo.js"></script>
+<script src="assets/js/pages/home.js"></script>
+<script src="assets/js/pages/planning.js"></script>
+<script src="assets/js/pages/timeline.js"></script>
+<script src="assets/js/pages/course-products.js"></script>
+<script src="assets/js/pages/portfolio.js"></script>
+<script>
+(async function boot() {
+  try {
+    const data = await Data.loadAll();
+    await DATA.load();
+    await HomePage.render(data);
+    await PlanningPage.render(data);
+    TimelinePage.build();
+    CourseProductsPage.build();
+    await PortfolioPage.build();
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    const PAGES = ['planning', 'timeline', 'course-products', 'portfolio'];
+    const hashPage = location.hash.replace('#', '');
+    Router.go(PAGES.includes(hashPage) ? hashPage : 'home');
+  } catch (err) {
+    console.error(err);
+    document.getElementById('app-loading').textContent = '内容加载失败，请检查 data/ 目录是否随页面一并部署。';
+    return;
+  }
+  document.getElementById('app-loading').remove();
+})();
+</script>
+</body>
+</html>

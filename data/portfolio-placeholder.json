@@ -1,0 +1,18 @@
+[
+  { "id": "p01", "academic_branch": "数字文旅",   "primary_school": "示例院校 A", "primary_program": "示例项目方向", "other_schools": ["示例院校 B"], "tags": ["示例标签", "示例标签"] },
+  { "id": "p02", "academic_branch": "数字文旅",   "primary_school": "示例院校 C", "primary_program": "示例项目方向", "other_schools": [], "tags": ["示例标签"] },
+  { "id": "p03", "academic_branch": "互联网生态", "primary_school": "示例院校 D", "primary_program": "示例项目方向", "other_schools": ["示例院校 E"], "tags": ["示例标签", "示例标签"] },
+  { "id": "p04", "academic_branch": "互联网生态", "primary_school": "示例院校 F", "primary_program": "示例项目方向", "other_schools": [], "tags": ["示例标签"] },
+  { "id": "p05", "academic_branch": "AI创意科技", "primary_school": "示例院校 G", "primary_program": "示例项目方向", "other_schools": ["示例院校 H"], "tags": ["示例标签", "示例标签"] },
+  { "id": "p06", "academic_branch": "AI创意科技", "primary_school": "示例院校 I", "primary_program": "示例项目方向", "other_schools": [], "tags": ["示例标签"] },
+  { "id": "p07", "academic_branch": "游戏娱乐",   "primary_school": "示例院校 J", "primary_program": "示例项目方向", "other_schools": ["示例院校 K"], "tags": ["示例标签", "示例标签"] },
+  { "id": "p08", "academic_branch": "游戏娱乐",   "primary_school": "示例院校 L", "primary_program": "示例项目方向", "other_schools": [], "tags": ["示例标签"] },
+  { "id": "p09", "academic_branch": "影视影像",   "primary_school": "示例院校 M", "primary_program": "示例项目方向", "other_schools": ["示例院校 N"], "tags": ["示例标签", "示例标签"] },
+  { "id": "p10", "academic_branch": "影视影像",   "primary_school": "示例院校 O", "primary_program": "示例项目方向", "other_schools": [], "tags": ["示例标签"] },
+  { "id": "p11", "academic_branch": "品牌传播",   "primary_school": "示例院校 P", "primary_program": "示例项目方向", "other_schools": ["示例院校 Q"], "tags": ["示例标签", "示例标签"] },
+  { "id": "p12", "academic_branch": "品牌传播",   "primary_school": "示例院校 R", "primary_program": "示例项目方向", "other_schools": [], "tags": ["示例标签"] },
+  { "id": "p13", "academic_branch": "教育学术",   "primary_school": "示例院校 S", "primary_program": "示例项目方向", "other_schools": ["示例院校 T"], "tags": ["示例标签", "示例标签"] },
+  { "id": "p14", "academic_branch": "教育学术",   "primary_school": "示例院校 U", "primary_program": "示例项目方向", "other_schools": [], "tags": ["示例标签"] },
+  { "id": "p15", "academic_branch": "独立艺术家", "primary_school": "示例院校 V", "primary_program": "示例项目方向", "other_schools": ["示例院校 W"], "tags": ["示例标签", "示例标签"] },
+  { "id": "p16", "academic_branch": "独立艺术家", "primary_school": "示例院校 X", "primary_program": "示例项目方向", "other_schools": [], "tags": ["示例标签"] }
+]
