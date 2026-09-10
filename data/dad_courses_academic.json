@@ -1,0 +1,696 @@
+[
+  {
+    "tab": "winter 27",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "27冬校-UCL艺术与科技本科班",
+    "suitable_for": "视传/数媒",
+    "location": "北京-中传",
+    "level": "本科",
+    "outcomes": "作品展览海外教授推荐信项目作品",
+    "poster": "assets/img/courses/27冬校-UCL艺术与科技本科班.jpg",
+    "university": "UCL",
+    "professor": "Alfonso",
+    "type": "大师共创",
+    "课程介绍": [
+      {
+        "name": "27冬校-UCL艺术与科技本科 0827 （外宣）.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAksY7DOjUAUAAhwYEACM",
+        "size": 3348572,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "winter 27",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "27冬校-费俊xRCA 生命艺术研究生班",
+    "suitable_for": "数字媒体，视觉传达",
+    "location": "北京今日美术馆",
+    "level": "研究生",
+    "outcomes": "海外教授推荐信实习证明企业推荐信作品集项目艺术展览",
+    "poster": "assets/img/courses/27冬校-费俊xRCA 生命艺术研究生班.jpg",
+    "university": "RCA",
+    "professor": "Luke",
+    "type": "大师共创",
+    "课程介绍": [
+      {
+        "name": "27冬校-费俊xRCA 生命艺术研究生班0831.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkbgqrKSJAXEAYQYBADQ",
+        "size": 11244975,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "winter 27",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "27冬校-费俊xUCLA 生命艺术研究生班",
+    "suitable_for": "数字媒体，视觉传达",
+    "location": "北京今日美术馆",
+    "level": "研究生",
+    "outcomes": "海外教授推荐信实习证明企业推荐信作品集项目艺术展览",
+    "poster": "assets/img/courses/27冬校-费俊xUCLA 生命艺术研究生班.jpg",
+    "university": "UCLA",
+    "professor": "Victoria",
+    "type": "大师共创",
+    "课程介绍": [
+      {
+        "name": "27冬校-费俊xUCLA 生命艺术研究生班0831.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkMs0Ru97AXEAYQYBADQ",
+        "size": 11053982,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "winter 27",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "27冬校-阿里xRCA数字媒体研究生班",
+    "suitable_for": "数字媒体，视觉传达",
+    "location": "杭州",
+    "level": "研究生",
+    "outcomes": "海外教授推荐信艺术展览企业推荐信作品集项目",
+    "poster": "assets/img/courses/27冬校-阿里xRCA数字媒体研究生班.jpg",
+    "university": "RCA",
+    "professor": "Jack",
+    "type": "名企实战",
+    "课程介绍": [
+      {
+        "name": "27冬校-阿里xRCA数字媒体研究生班0828.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkt1iYb1nAXEAYQYBADQ",
+        "size": 11538144,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "winter 27",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "27冬校-香港科技大学（广）官方课程数字媒体研究生班",
+    "suitable_for": "数字媒体，视觉传达",
+    "location": "广州",
+    "level": "研究生",
+    "outcomes": "海外教授推荐信艺术展览作品集项目高校课程证书",
+    "poster": "assets/img/courses/27冬校-香港科技大学（广）官方课程数字媒体研究生班.jpg",
+    "university": "UCL",
+    "professor": "",
+    "type": "高校合作",
+    "课程介绍": [
+      {
+        "name": "27冬校-香港科技大学广州xUCL数字媒体研究生班0828.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAk1x1Zf0DAXEAYQYBADQ",
+        "size": 4693524,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "winter 27",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "27冬校-同济x香港大学 后人类媒介场研究生班",
+    "suitable_for": "工业交互，空间，数字媒体，视觉传达",
+    "location": "上海",
+    "level": "研究生",
+    "outcomes": "海外教授推荐信企业推荐信艺术展览作品集项目实习证明",
+    "poster": "assets/img/courses/27冬校-同济x香港大学 后人类媒介场研究生班.jpg",
+    "university": "港大",
+    "professor": "L.R",
+    "type": "高校合作",
+    "课程介绍": [
+      {
+        "name": "27冬校-同济x香港大学 后人类媒介场研究生班0828.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkGb9Jw1oAXEAYQYBADQ",
+        "size": 6482171,
+        "fileExt": "pdf"
+      },
+      {
+        "name": "27冬校-同济x香港大学 后人类媒介场研究生班数媒0828.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAklVttreeAXEAYQYBADQ",
+        "size": 8706257,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "winter 27",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "27冬校-香港理工大学官方课程",
+    "suitable_for": "工业交互，空间，数字媒体，视觉传达",
+    "location": "香港",
+    "level": "研究生",
+    "outcomes": "作品集项目高校课程证书艺术展览",
+    "poster": "assets/img/courses/27冬校-香港理工大学官方课程.jpg",
+    "university": "港理工",
+    "professor": "",
+    "type": "高校合作",
+    "课程介绍": [
+      {
+        "name": "27冬校-香港理工官方课程交互0828.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAk5YIDCE0AXEAYQYBADQ",
+        "size": 4296790,
+        "fileExt": "pdf"
+      },
+      {
+        "name": "27冬校-香港理工官方课程数字艺术0828.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkPy5vBLtAXEAYQYBADQ",
+        "size": 1852438,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "summer 26",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "NYU数媒交互本科班",
+    "suitable_for": "数字媒体、工业交互",
+    "location": "北京",
+    "level": "本科",
+    "outcomes": "作品展览海外教授推荐信项目作品",
+    "poster": "assets/img/courses/NYU数媒交互本科班.jpg",
+    "university": "NYU",
+    "professor": "Chika",
+    "type": "大师共创",
+    "课程介绍": [
+      {
+        "name": "26夏- NYU数媒交互本科班0409-两个科系.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAk9m9YLmZAUAAhwYEACM",
+        "size": 9868791,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "summer 26",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "UAL视觉传达本科班",
+    "suitable_for": "视觉传达｜平面设计",
+    "location": "北京",
+    "level": "本科",
+    "outcomes": "作品展览海外教授推荐信项目作品UAL官方线上课程证书",
+    "poster": "assets/img/courses/UAL视觉传达本科班.jpg",
+    "university": "UAL",
+    "professor": "Sarah",
+    "type": "大师共创",
+    "课程介绍": [
+      {
+        "name": "26夏校- UAL视觉传达本科班0424.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkzLw0zQ7AeAAQgZYAKg",
+        "size": 61738425,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "summer 26",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "UCL生物艺术与科技本科班",
+    "suitable_for": "工业交互｜视觉传达",
+    "location": "湖州",
+    "level": "本科",
+    "outcomes": "作品展览海外教授推荐信项目作品",
+    "poster": "assets/img/courses/UCL生物艺术与科技本科班.jpg",
+    "university": "UCL",
+    "professor": "Alfonso",
+    "type": "大师共创",
+    "课程介绍": [
+      {
+        "name": "26夏校-UCL生物艺术与科技本科班 0409.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkinb82eJAUAAhwYEACM",
+        "size": 32927022,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "summer 26",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "同济｜UCB算据艺术创作研究生班",
+    "suitable_for": "数字媒体与⼯业交互、对数据、社会议题与艺术结合感兴趣者 有科研或申博计划的学⽣",
+    "location": "同济",
+    "level": "研究生",
+    "outcomes": "实习证明海外教授推荐信高校课程证书高校教授推荐信科研论文艺术展览作品集项目",
+    "poster": "assets/img/courses/同济｜UCB算据艺术创作研究生班.jpg",
+    "university": "UCB",
+    "professor": "Greg",
+    "type": "高校合作",
+    "课程介绍": [
+      {
+        "name": "26夏校- UCBx同济 算据艺术创作与研究0512.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkdfpj5RUAUAAhwYEACM",
+        "size": 8837854,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "summer 26",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "华科｜哈佛响应式环境建筑数媒交互研究生班",
+    "suitable_for": "工业交互 视觉传达 空间",
+    "location": "武汉",
+    "level": "研究生",
+    "outcomes": "作品集项目海外教授推荐信高校课程证书高校教授推荐信艺术展览",
+    "poster": "assets/img/courses/华科｜哈佛响应式环境建筑数媒交互研究生班.jpg",
+    "university": "Harvard",
+    "professor": "Allen",
+    "type": "高校合作",
+    "课程介绍": [
+      {
+        "name": "26夏校- Harvard x 华科 响应式环境 0401.1.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkc4ugsEiAUAAhwYEACM",
+        "size": 18654869,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "summer 26",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "BranD x The Rodina Studio荷兰著名工作室 | 视传研究生班",
+    "suitable_for": "视觉传达 /数字媒体",
+    "location": "广州",
+    "level": "研究生",
+    "outcomes": "海外教授推荐信企业推荐信实习证明艺术展览作品集项目",
+    "poster": "assets/img/courses/BranD x The Rodina Studio荷兰著名工作室 - 视传研究生班.jpg",
+    "university": "Rca",
+    "professor": "Jamie",
+    "type": "名企实战",
+    "课程介绍": [
+      {
+        "name": "26夏 BranD x The Rodina Studio荷兰著名工作室 | 视传研究生班0320.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkyfbBz3xAXEAYQYBADQ",
+        "size": 29765000,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "summer 26",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "曹雨西 | NYU数媒研究生班",
+    "suitable_for": "视觉传达 /数字媒体",
+    "location": "北京今日美术馆",
+    "level": "研究生",
+    "outcomes": "海外教授推荐信实习证明艺术展览作品集项目",
+    "poster": "assets/img/courses/曹雨西 - NYU数媒研究生班.jpg",
+    "university": "NYU",
+    "professor": "Kevin",
+    "type": "大师共创",
+    "课程介绍": [
+      {
+        "name": "26夏 曹雨西 | NYU数媒研究生班 0401.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkPIrt8C4AXEAYQYBADQ",
+        "size": 38491947,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "summer 26",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "费俊x某集体 | 艺术与科技研究生班",
+    "suitable_for": "视觉传达 /数字媒体/空间",
+    "location": "北京今日美术馆",
+    "level": "研究生",
+    "outcomes": "海外教授推荐信实习证明高校教授推荐信艺术展览作品集项目",
+    "poster": "assets/img/courses/费俊x某集体 - 艺术与科技研究生班.jpg",
+    "university": "Harvard",
+    "professor": "Krzysztof",
+    "type": "大师共创",
+    "课程介绍": [
+      {
+        "name": "26 夏费俊x某集体 | 艺术与科技研究生班0526.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkRGNAan2AXEAYQYBADQ",
+        "size": 36443384,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "summer 26",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "同济｜MIT Media Lab官方夏校",
+    "suitable_for": "视觉传达 /数字媒体/空间 /工业交互",
+    "location": "同济",
+    "level": "研究生",
+    "outcomes": "高校课程证书海外教授推荐信实习证明艺术展览作品集项目",
+    "poster": "assets/img/courses/同济｜MIT Media Lab官方夏校.jpg",
+    "university": "MIT Media Lab",
+    "professor": "",
+    "type": "高校合作",
+    "课程介绍": [
+      {
+        "name": "26夏 MIT Media Lab官方夏校0306.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkgVfOeQIAXEAYQYBADQ",
+        "size": 24666900,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "summer 26",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "香港理工官方课程",
+    "suitable_for": "工业交互 视觉传达 空间",
+    "location": "香港理工",
+    "level": "研究生",
+    "outcomes": "作品集项目艺术展览高校课程证书",
+    "poster": "assets/img/courses/香港理工官方课程.jpg",
+    "university": "港理工",
+    "professor": "Sky",
+    "type": "高校合作",
+    "课程介绍": [
+      {
+        "name": "26夏校-香港理工官方课程（研究生班）0416.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkllWV6FxAUAAhwYEACM",
+        "size": 14702550,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "summer 26",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "TEA | UCL光影科技艺术研究生班",
+    "suitable_for": "视觉传达 /数字媒体",
+    "location": "重庆",
+    "level": "研究生",
+    "outcomes": "海外教授推荐信实习证明企业推荐信艺术展览作品集项目",
+    "poster": "assets/img/courses/TEA - UCL光影科技艺术研究生班.jpg",
+    "university": "UCL",
+    "professor": "Brigitta",
+    "type": "名企实战",
+    "课程介绍": [
+      {
+        "name": "26夏 TEA | UCL光影科技艺术研究生班 0608.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkgfg39xBAXEAYQYBADQ",
+        "size": 107301724,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "summer 26",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "沉浸式视听媒体与空间装置展研究生班",
+    "suitable_for": "视觉传达 /数字媒体",
+    "location": "北京",
+    "level": "研究生",
+    "outcomes": "企业推荐信实习证明艺术展览作品集项目",
+    "poster": "assets/img/courses/沉浸式视听媒体与空间装置展研究生班.jpg",
+    "university": "拟像",
+    "professor": "",
+    "type": "名企实战",
+    "课程介绍": [
+      {
+        "name": "26夏-沉浸式装置展演研究班.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkCWXhPH6AXEAYQYBADQ",
+        "size": 58774508,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "masterclass 26",
+    "program_type": "海外大师课",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "26S-平面本科大师课-BA",
+    "suitable_for": "平面设计，视觉传达",
+    "location": "线上",
+    "level": "本科",
+    "outcomes": "海外教授线上+地方导师线下",
+    "poster": "assets/img/courses/26S-平面本科大师课-BA.jpg",
+    "university": "UAL",
+    "professor": "Sheena",
+    "type": "暑假大师课1V20+",
+    "课程介绍": [
+      {
+        "name": "26S-平面&数媒本科班-BA.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAknllsP1VAacAMQaYAIk",
+        "size": 8360346,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "masterclass 26",
+    "program_type": "海外大师课",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "26S-数媒研究生大师课-MA",
+    "suitable_for": "数字媒体",
+    "location": "线上",
+    "level": "研究生",
+    "outcomes": "海外教授线上+地方导师线下",
+    "poster": "assets/img/courses/26S-数媒研究生大师课-MA.jpg",
+    "university": "RCA",
+    "professor": "Jack",
+    "type": "暑假大师课1V20+",
+    "课程介绍": [
+      {
+        "name": "26S-数媒研究生-MA-Jack.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkYpgMrQiAacAMQaYAIk",
+        "size": 5174213,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "masterclass 26",
+    "program_type": "海外大师课",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "26S-数媒研究生大师课-MA1",
+    "suitable_for": "数字媒体",
+    "location": "线上",
+    "level": "研究生",
+    "outcomes": "海外教授线上+地方导师线下",
+    "poster": "assets/img/courses/26S-数媒研究生大师课-MA1.jpg",
+    "university": "RISD",
+    "professor": "Griffin",
+    "type": "暑假大师课1V20+",
+    "课程介绍": [
+      {
+        "name": "26S-数媒研究生大师课-MA-Griffin(2).pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkzm4eaesAacAMQaYAIk",
+        "size": 5683240,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "masterclass 26",
+    "program_type": "海外大师课",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "26S-平面&数媒研究生大师课-MA",
+    "suitable_for": "数字媒体",
+    "location": "线上",
+    "level": "研究生",
+    "outcomes": "海外教授线上+地方导师线下",
+    "poster": "assets/img/courses/26S-平面&数媒研究生大师课-MA.jpg",
+    "university": "RCA",
+    "professor": "Matt",
+    "type": "暑假大师课1V20+",
+    "课程介绍": [
+      {
+        "name": "26S-平面&数媒研究生-MA-Matt.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkAUYdGuSAacAMQaYAIk",
+        "size": 4523820,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "masterclass 26",
+    "program_type": "海外大师课",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "26SP-平面&数媒-BA-10",
+    "suitable_for": "平面设计、数字媒体",
+    "location": "线上",
+    "level": "本科",
+    "outcomes": "海外教授线上+地方导师线下",
+    "poster": "assets/img/courses/26SP-平面&数媒-BA-10.jpg",
+    "university": "UAL",
+    "professor": "Maria",
+    "type": "春季大师课1V20+",
+    "课程介绍": [
+      {
+        "name": "26SP-平面&数媒-BA-10.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAk7dUPPhdAacAMQaYAIk",
+        "size": 3294101,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "masterclass 26",
+    "program_type": "海外大师课",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "26SP-平面-MA-11",
+    "suitable_for": "数字媒体、视觉传达",
+    "location": "线上",
+    "level": "研究生",
+    "outcomes": "海外教授线上+地方导师线下",
+    "poster": "assets/img/courses/26SP-平面-MA-11.jpg",
+    "university": "RCA",
+    "professor": "Celine",
+    "type": "春季大师课1V20+",
+    "课程介绍": [
+      {
+        "name": "26SP-平面-MA-11.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAk628nLBeAacAMQaYAIk",
+        "size": 2826945,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "masterclass 26",
+    "program_type": "海外大师课",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "26SP-数媒-MA-12",
+    "suitable_for": "数字媒体、视觉传达",
+    "location": "线上",
+    "level": "研究生",
+    "outcomes": "海外教授线上+地方导师线下",
+    "poster": "assets/img/courses/26SP-数媒-MA-12.jpg",
+    "university": "RCA",
+    "professor": "Jack",
+    "type": "春季大师课1V20+",
+    "课程介绍": [
+      {
+        "name": "26SP-数媒-MA-12.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkNpb2RgzAacAMQaYAIk",
+        "size": 3649385,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "masterclass 26",
+    "program_type": "海外大师课",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "26SP-数媒-MA-13",
+    "suitable_for": "数字媒体、视觉传达",
+    "location": "线上",
+    "level": "研究生",
+    "outcomes": "海外教授线上+地方导师线下",
+    "poster": "assets/img/courses/26SP-数媒-MA-13.jpg",
+    "university": "UCL",
+    "professor": "Ludo",
+    "type": "春季大师课1V20+",
+    "课程介绍": [
+      {
+        "name": "26SP-数媒-MA-13.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkLKPY1ztAacAMQaYAIk",
+        "size": 4359354,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "masterclass 26",
+    "program_type": "海外大师课",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "26W-平面研究生-MA-10",
+    "suitable_for": "视觉传达、平面设计",
+    "location": "线上",
+    "level": "研究生",
+    "outcomes": "海外教授线上+地方导师线下",
+    "poster": "assets/img/courses/26W-平面研究生-MA-10.jpg",
+    "university": "UAL",
+    "professor": "Ben",
+    "type": "寒假大师课1V20+",
+    "课程介绍": [
+      {
+        "name": "26W-平面研究生-MA-Ben.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkhae0BvqAaEAwgbUAHM",
+        "size": 8721539,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "masterclass 26",
+    "program_type": "海外大师课",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "26W-数媒研究生-MA-11",
+    "suitable_for": "数字媒体、视觉传达",
+    "location": "线上",
+    "level": "研究生",
+    "outcomes": "海外教授线上+地方导师线下",
+    "poster": "assets/img/courses/26W-数媒研究生-MA-11.jpg",
+    "university": "RCA",
+    "professor": "Matt",
+    "type": "寒假大师课1V20+",
+    "课程介绍": [
+      {
+        "name": "26W-数媒研究生-MA-Matt.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkuyZOkzCAaEAwgbUAHM",
+        "size": 3031971,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "masterclass 26",
+    "program_type": "海外大师课",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "25A-平面设计-BA-1V501",
+    "suitable_for": "平面设计",
+    "location": "线上",
+    "level": "本科",
+    "outcomes": "海外教授线上+地方导师线下",
+    "poster": "assets/img/courses/25A-平面设计-BA-1V501.jpg",
+    "university": "UAL",
+    "professor": "Robert",
+    "type": "秋季大师课1V5",
+    "课程介绍": [
+      {
+        "name": "25A-平面设计-BA-1V501.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkViHxZo7AaEAwgbUAHM",
+        "size": 1980076,
+        "fileExt": "pdf"
+      }
+    ]
+  },
+  {
+    "tab": "masterclass 26",
+    "program_type": "海外大师课",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "25A-数字媒体-BA-1V501",
+    "suitable_for": "数字媒体/交互设计",
+    "location": "线上",
+    "level": "本科",
+    "outcomes": "海外教授线上+地方导师线下",
+    "poster": "",
+    "university": "NYU",
+    "professor": "Chika",
+    "type": "秋季大师课1V5",
+    "课程介绍": [
+      {
+        "name": "25A-数字媒体-BA-1V501.pdf",
+        "url": "https://drive.weixin.qq.com/s?k=AOUAowcBAAkGqT33JAAaEAwgbUAHM",
+        "size": 6923955,
+        "fileExt": "pdf"
+      }
+    ]
+  }
+]
