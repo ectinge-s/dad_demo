@@ -1,0 +1,898 @@
+[
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "BranD主编",
+    "img": "assets/img/instructors/业界导师/BranD主编.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "中国时尚品牌先锋",
+    "img": "assets/img/instructors/业界导师/中国时尚品牌先锋.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "中国美术学院数字媒体名师",
+    "img": "assets/img/instructors/业界导师/中国美术学院数字媒体名师.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "中国美术报新媒体中心主任",
+    "img": "assets/img/instructors/业界导师/中国美术报新媒体中心主任.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "中国著名雕塑家",
+    "img": "assets/img/instructors/业界导师/中国著名雕塑家.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "今日美术馆馆长晏燕",
+    "img": "assets/img/instructors/业界导师/今日美术馆馆长晏燕.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "全球高端零售市场标杆",
+    "img": "assets/img/instructors/业界导师/全球高端零售市场标杆.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "华人第一女策展人陆蓉之",
+    "img": "assets/img/instructors/业界导师/华人第一女策展人陆蓉之.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "朱会长",
+    "title": "国家级插画协会会长",
+    "img": "assets/img/instructors/业界导师/国家级插画协会会长-朱会长.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "曹雨西",
+    "title": "国家级盛典视觉艺术家",
+    "img": "assets/img/instructors/业界导师/国家级盛典视觉艺术家-曹雨西.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "大城小村合伙人",
+    "img": "assets/img/instructors/业界导师/大城小村合伙人.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "奥本辛斯中国区负责人",
+    "img": "assets/img/instructors/业界导师/奥本辛斯中国区负责人.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "完美世界首席运行官",
+    "img": "assets/img/instructors/业界导师/完美世界首席运行官.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "影视制作人交互设计师",
+    "img": "assets/img/instructors/业界导师/影视制作人交互设计师.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "新一代动画产业代表人物",
+    "img": "assets/img/instructors/业界导师/新一代动画产业代表人物.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "歌华设计文创项目打造者",
+    "img": "assets/img/instructors/业界导师/歌华设计文创项目打造者.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "百度无人汽车设计专家",
+    "img": "assets/img/instructors/业界导师/百度无人汽车设计专家.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "资深中英双语影视制片人",
+    "img": "assets/img/instructors/业界导师/资深中英双语影视制片人.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "阿里巴巴体验设计师",
+    "img": "assets/img/instructors/业界导师/阿里巴巴体验设计师.jpg"
+  },
+  {
+    "category": "industry",
+    "categoryLabel": "业界导师",
+    "name": "",
+    "title": "黑神话悟空分集导演",
+    "img": "assets/img/instructors/业界导师/黑神话悟空分集导演.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "Canqi老师",
+    "title": "AA建筑联盟学院",
+    "img": "assets/img/instructors/学术导师/Canqi老师-AA建筑联盟学院.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "Chief老师",
+    "title": "皇家艺术学院 数字指导",
+    "img": "assets/img/instructors/学术导师/Chief老师-皇家艺术学院 数字指导.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "Ehan老师",
+    "title": "皇家墨尔本理工大学 传播设计",
+    "img": "assets/img/instructors/学术导师/Ehan老师-皇家墨尔本理工大学 传播设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "Heidi老师",
+    "title": "普瑞特艺术学院 包装设计",
+    "img": "assets/img/instructors/学术导师/Heidi老师-普瑞特艺术学院 包装设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "Kio老师",
+    "title": "芝加哥艺术学院 艺术与科技",
+    "img": "assets/img/instructors/学术导师/Kio老师-芝加哥艺术学院 艺术与科技.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "Lia老师",
+    "title": "皇家艺术学院 信息体验设计",
+    "img": "assets/img/instructors/学术导师/Lia老师-皇家艺术学院 信息体验设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "Magi老师",
+    "title": "伦敦艺术大学",
+    "img": "assets/img/instructors/学术导师/Magi老师-伦敦艺术大学.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "Stevie老师",
+    "title": "伦敦艺术大学 数据可视化",
+    "img": "assets/img/instructors/学术导师/Stevie老师-伦敦艺术大学 数据可视化.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "Till老师",
+    "title": "伦敦艺术大学",
+    "img": "assets/img/instructors/学术导师/Till老师-伦敦艺术大学.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "Vivi老师",
+    "title": "香港理工大学 互动媒体娱乐",
+    "img": "assets/img/instructors/学术导师/Vivi老师-香港理工大学 互动媒体娱乐.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "febe老师",
+    "title": "赫特福德大学 数字媒体艺术专业",
+    "img": "assets/img/instructors/学术导师/febe老师-赫特福德大学 数字媒体艺术专业.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "kingking老师",
+    "title": "伦敦艺术大学",
+    "img": "assets/img/instructors/学术导师/kingking老师-伦敦艺术大学.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "mogo老师",
+    "title": "伦敦大学金史密斯学院 数字媒体专业",
+    "img": "assets/img/instructors/学术导师/mogo老师-伦敦大学金史密斯学院 数字媒体专业.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "tico老师",
+    "title": "皇家艺术学院 视觉传达",
+    "img": "assets/img/instructors/学术导师/tico老师-皇家艺术学院 视觉传达.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "丁老师",
+    "title": "皇家艺术学院-视觉传达设计",
+    "img": "assets/img/instructors/学术导师/丁老师-皇家艺术学院-视觉传达设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "何老师",
+    "title": "爱丁堡大学 平面设计",
+    "img": "assets/img/instructors/学术导师/何老师-爱丁堡大学 平面设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "何老师",
+    "title": "纽约大学",
+    "img": "assets/img/instructors/学术导师/何老师-纽约大学.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "刘老师",
+    "title": "伦敦艺术大学",
+    "img": "assets/img/instructors/学术导师/刘老师-伦敦艺术大学.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "刘老师",
+    "title": "爱丁堡大学平面设计",
+    "img": "assets/img/instructors/学术导师/刘老师-爱丁堡大学平面设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "吕老师",
+    "title": "伦敦艺术学院 交互设计",
+    "img": "assets/img/instructors/学术导师/吕老师-伦敦艺术学院 交互设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "吴老师",
+    "title": "伦敦艺术大学 平面媒体设计",
+    "img": "assets/img/instructors/学术导师/吴老师-伦敦艺术大学 平面媒体设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "周老师",
+    "title": "伦敦大学金史密斯学院",
+    "img": "assets/img/instructors/学术导师/周老师-伦敦大学金史密斯学院.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "夏老师",
+    "title": "芝加哥艺术学院 电影、影像、新媒体与动画专业",
+    "img": "assets/img/instructors/学术导师/夏老师-芝加哥艺术学院 电影、影像、新媒体与动画专业.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "姚老师",
+    "title": "金史密斯学院 计算机艺术",
+    "img": "assets/img/instructors/学术导师/姚老师-金史密斯学院 计算机艺术.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "孔老师",
+    "title": "爱丁堡大学 平面设计",
+    "img": "assets/img/instructors/学术导师/孔老师-爱丁堡大学 平面设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "孙老师",
+    "title": "皇家艺术学院 信息体验设计",
+    "img": "assets/img/instructors/学术导师/孙老师-皇家艺术学院 信息体验设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "宋老师",
+    "title": "皇家艺术学院 视觉传达专业",
+    "img": "assets/img/instructors/学术导师/宋老师-皇家艺术学院 视觉传达专业.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "宋老师",
+    "title": "纽约艺术学院 视觉传达 皇家艺术学院 视觉传达",
+    "img": "assets/img/instructors/学术导师/宋老师-纽约艺术学院 视觉传达 皇家艺术学院 视觉传达.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "张老师",
+    "title": "伦敦大学金匠学院 数字媒体专业",
+    "img": "assets/img/instructors/学术导师/张老师-伦敦大学金匠学院 数字媒体专业.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "张老师",
+    "title": "加州艺术学院（calarts）艺术与科技",
+    "img": "assets/img/instructors/学术导师/张老师-加州艺术学院（calarts）艺术与科技.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "张老师",
+    "title": "皇家艺术学院 信息体验设计",
+    "img": "assets/img/instructors/学术导师/张老师-皇家艺术学院 信息体验设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "张老师",
+    "title": "皇家艺术学院 数字指导",
+    "img": "assets/img/instructors/学术导师/张老师-皇家艺术学院 数字指导.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "支老师",
+    "title": "伦敦艺术大学 视觉艺术",
+    "img": "assets/img/instructors/学术导师/支老师-伦敦艺术大学 视觉艺术.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "易老师",
+    "title": "皇家艺术学院 数字指导专业",
+    "img": "assets/img/instructors/学术导师/易老师-皇家艺术学院 数字指导专业.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "李老师",
+    "title": "皇家艺术学院 视觉传达设计",
+    "img": "assets/img/instructors/学术导师/李老师-皇家艺术学院 视觉传达设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "李老师",
+    "title": "金史密斯学院",
+    "img": "assets/img/instructors/学术导师/李老师-金史密斯学院.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "汪老师",
+    "title": "皇家艺术学院 数字指导",
+    "img": "assets/img/instructors/学术导师/汪老师-皇家艺术学院 数字指导.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "狄老师",
+    "title": "伦敦艺术大学  数字媒体专业",
+    "img": "assets/img/instructors/学术导师/狄老师-伦敦艺术大学  数字媒体专业.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "王老师",
+    "title": "伦敦艺术大学 平面品牌与识别",
+    "img": "assets/img/instructors/学术导师/王老师-伦敦艺术大学 平面品牌与识别.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "王老师",
+    "title": "伦敦艺术大学 视觉媒体",
+    "img": "assets/img/instructors/学术导师/王老师-伦敦艺术大学 视觉媒体.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "王老师",
+    "title": "伦敦艺术学院",
+    "img": "assets/img/instructors/学术导师/王老师-伦敦艺术学院.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "王老师",
+    "title": "金史密斯学院 拓展设计实践专业",
+    "img": "assets/img/instructors/学术导师/王老师-金史密斯学院 拓展设计实践专业.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "王老师",
+    "title": "金斯顿大学 传达设计",
+    "img": "assets/img/instructors/学术导师/王老师-金斯顿大学 传达设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "祝老师",
+    "title": "MA伦敦大学金史密斯学院,  拓展实践",
+    "img": "assets/img/instructors/学术导师/祝老师-MA伦敦大学金史密斯学院,  拓展实践.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "范老师",
+    "title": "悉尼大学 交互设计与电子艺术",
+    "img": "assets/img/instructors/学术导师/范老师-悉尼大学 交互设计与电子艺术.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "蒋老师",
+    "title": "爱丁堡大学 设计与数字媒体专业",
+    "img": "assets/img/instructors/学术导师/蒋老师-爱丁堡大学 设计与数字媒体专业.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "蓓蓓老师",
+    "title": "爱丁堡大学 平面设计",
+    "img": "assets/img/instructors/学术导师/蓓蓓老师-爱丁堡大学 平面设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "薛老师",
+    "title": "伦敦大学金史密斯学院   用户体验工程",
+    "img": "assets/img/instructors/学术导师/薛老师-伦敦大学金史密斯学院   用户体验工程.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "袁老师",
+    "title": "欧洲设计学院",
+    "img": "assets/img/instructors/学术导师/袁老师-欧洲设计学院.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "豆豆老师",
+    "title": "伦敦艺术大学坎伯韦尔学院 计算机艺术",
+    "img": "assets/img/instructors/学术导师/豆豆老师-伦敦艺术大学坎伯韦尔学院 计算机艺术.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "赵老师",
+    "title": "MA皇家艺术学院",
+    "img": "assets/img/instructors/学术导师/赵老师-MA皇家艺术学院.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "赵老师",
+    "title": "伦敦艺术大学",
+    "img": "assets/img/instructors/学术导师/赵老师-伦敦艺术大学.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "赵老师",
+    "title": "普瑞特艺术学院 数字艺术3D动画",
+    "img": "assets/img/instructors/学术导师/赵老师-普瑞特艺术学院 数字艺术3D动画.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "邵老师",
+    "title": "伦敦艺术大学中央圣马丁学院 叙事环境设计",
+    "img": "assets/img/instructors/学术导师/邵老师-伦敦艺术大学中央圣马丁学院 叙事环境设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "郭老师",
+    "title": "伦敦传媒学院 平面媒体设计",
+    "img": "assets/img/instructors/学术导师/郭老师-伦敦传媒学院 平面媒体设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "郭老师",
+    "title": "伦敦艺术大学 平面媒体设计",
+    "img": "assets/img/instructors/学术导师/郭老师-伦敦艺术大学 平面媒体设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "金老师",
+    "title": "金史密斯学院-拓展实践",
+    "img": "assets/img/instructors/学术导师/金老师-金史密斯学院-拓展实践.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "钱老师",
+    "title": "伦敦艺术大学 插画专业",
+    "img": "assets/img/instructors/学术导师/钱老师-伦敦艺术大学 插画专业.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "陈老师",
+    "title": "伦敦大学金匠学院 服务设计",
+    "img": "assets/img/instructors/学术导师/陈老师-伦敦大学金匠学院 服务设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "陈老师",
+    "title": "伦敦艺术大学 平面媒体设计",
+    "img": "assets/img/instructors/学术导师/陈老师-伦敦艺术大学 平面媒体设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "陈老师",
+    "title": "米兰理工大学 交互&传达设计",
+    "img": "assets/img/instructors/学术导师/陈老师-米兰理工大学 交互&传达设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "顾老师",
+    "title": "金史密斯学院 计算机艺术",
+    "img": "assets/img/instructors/学术导师/顾老师-金史密斯学院 计算机艺术.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "鲁老师",
+    "title": "伦敦艺术大学",
+    "img": "assets/img/instructors/学术导师/鲁老师-伦敦艺术大学.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "黄老师",
+    "title": "普瑞特普瑞特艺术学院 传达设计",
+    "img": "assets/img/instructors/学术导师/黄老师-普瑞特普瑞特艺术学院 传达设计.jpg"
+  },
+  {
+    "category": "academic",
+    "categoryLabel": "学术导师",
+    "name": "黄老师",
+    "title": "金史密斯学院 游戏美术设计",
+    "img": "assets/img/instructors/学术导师/黄老师-金史密斯学院 游戏美术设计.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "A.P.",
+    "title": "约翰霍普金斯大学 电影与媒体硕士项目教授 艾美奖获奖导演",
+    "img": "assets/img/instructors/海外教授/A.P.-约翰霍普金斯大学 电影与媒体硕士项目教授 艾美奖获奖导演.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "A.R.",
+    "title": "埃因霍芬设计学院 Information design课程导师 阿姆斯特丹建筑学院教授 视觉文化专业",
+    "img": "assets/img/instructors/海外教授/A.R.-埃因霍芬设计学院 Information design课程导师 阿姆斯特丹建筑学院教授 视觉文化专业.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "A.S.",
+    "title": "伦敦大学学院 艺术与科技专业教授",
+    "img": "assets/img/instructors/海外教授/A.S.-伦敦大学学院 艺术与科技专业教授.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "A.S.",
+    "title": "哈佛大学 设计学院 GSD MDes Medium负责⼈ 哈佛REALab跨学科实验室负责⼈",
+    "img": "assets/img/instructors/海外教授/A.S.-哈佛大学 设计学院 GSD MDes Medium负责⼈ 哈佛REALab跨学科实验室负责⼈.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "B.B.",
+    "title": "伦敦传媒学院 平面媒体设计讲师",
+    "img": "assets/img/instructors/海外教授/B.B.-伦敦传媒学院 平面媒体设计讲师.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "B.Z.",
+    "title": "伦敦大学学院 数字媒体教授 实践经验丰富的 艺术家",
+    "img": "assets/img/instructors/海外教授/B.Z.-伦敦大学学院 数字媒体教授 实践经验丰富的 艺术家.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "C.I.",
+    "title": "纽约大学 数媒交互教授 Map Pathon™ 投影技术工作坊创始⼈",
+    "img": "assets/img/instructors/海外教授/C.I.-纽约大学 数媒交互教授 Map Pathon™ 投影技术工作坊创始⼈.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "C.R.",
+    "title": "皇家艺术学院 信息体验设计硕士 高级研究导师",
+    "img": "assets/img/instructors/海外教授/C.R.-皇家艺术学院 信息体验设计硕士 高级研究导师.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "C.S.",
+    "title": "皇家艺术学院 视觉传达讲师 A.M. Bureau d'échanges européens工作室主理人",
+    "img": "assets/img/instructors/海外教授/C.S.-皇家艺术学院 视觉传达讲师 A.M. Bureau d'échanges européens工作室主理人.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "D.D.",
+    "title": "卡耐基梅隆大学 娱乐技术中心教授",
+    "img": "assets/img/instructors/海外教授/D.D.-卡耐基梅隆大学 娱乐技术中心教授.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "D.L.",
+    "title": "伦敦大学学院 沉浸叙事Experimental Storytelling项目负责人",
+    "img": "assets/img/instructors/海外教授/D.L.-伦敦大学学院 沉浸叙事Experimental Storytelling项目负责人.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "G.N.",
+    "title": "加州大学伯克利分校 媒体创新教授 数据艺术家",
+    "img": "assets/img/instructors/海外教授/G.N.-加州大学伯克利分校 媒体创新教授 数据艺术家.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "G.S",
+    "title": "罗德岛设计学院 数字媒体方向讲师 布朗大学数字艺术专业硕士学位",
+    "img": "assets/img/instructors/海外教授/G.S-罗德岛设计学院 数字媒体方向讲师 布朗大学数字艺术专业硕士学位.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "H.A.",
+    "title": "耶鲁大学艺术学院 平面设计资深评论家 纽约市设计工作室HVAD的负责人",
+    "img": "assets/img/instructors/海外教授/H.A.-耶鲁大学艺术学院 平面设计资深评论家 纽约市设计工作室HVAD的负责人.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "H.S.",
+    "title": "加州大学洛杉矶分校 数字媒体讲师",
+    "img": "assets/img/instructors/海外教授/H.S.-加州大学洛杉矶分校 数字媒体讲师.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "J.H.",
+    "title": "皇家艺术学院数 字媒体导师",
+    "img": "assets/img/instructors/海外教授/J.H.-皇家艺术学院数 字媒体导师.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "J.J.",
+    "title": "皇家艺术学院视 觉传达讲师",
+    "img": "assets/img/instructors/海外教授/J.J.-皇家艺术学院视 觉传达讲师.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "J.T.",
+    "title": "加州大学洛杉矶分校 数字媒体讲师",
+    "img": "assets/img/instructors/海外教授/J.T.-加州大学洛杉矶分校 数字媒体讲师.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "K.C.",
+    "title": "皇家艺术学院 信息体验设计讲师 传播学硕士导师",
+    "img": "assets/img/instructors/海外教授/K.C.-皇家艺术学院 信息体验设计讲师 传播学硕士导师.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "K.C.",
+    "title": "纽约大学 数媒交互教授 3-Legged Dog 媒体开发公司创始人",
+    "img": "assets/img/instructors/海外教授/K.C.-纽约大学 数媒交互教授 3-Legged Dog 媒体开发公司创始人.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "K.W.",
+    "title": "哈佛大学 设计研究生院 艺术、设计和公共领域的名誉教授",
+    "img": "assets/img/instructors/海外教授/K.W.-哈佛大学 设计研究生院 艺术、设计和公共领域的名誉教授.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "L.F.",
+    "title": "伦敦大学学院 实验叙事教授",
+    "img": "assets/img/instructors/海外教授/L.F.-伦敦大学学院 实验叙事教授.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "L.P.",
+    "title": "皇家艺术学院视觉传达高级导 师_学术负责人",
+    "img": "assets/img/instructors/海外教授/L.P.-皇家艺术学院视觉传达高级导 师_学术负责人.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "M.C.",
+    "title": "罗德岛设计学院 数字媒体专业教授",
+    "img": "assets/img/instructors/海外教授/M.C.-罗德岛设计学院 数字媒体专业教授.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "M.D.",
+    "title": "伦敦传媒学院 交互设计 _传播学硕士讲师",
+    "img": "assets/img/instructors/海外教授/M.D.-伦敦传媒学院 交互设计 _传播学硕士讲师.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "M.L.",
+    "title": "皇家艺术学院信息体验设计_数媒传 播导师 Sound Pathway负责人",
+    "img": "assets/img/instructors/海外教授/M.L.-皇家艺术学院信息体验设计_数媒传 播导师 Sound Pathway负责人.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "M.N.",
+    "title": "创新多媒体娱乐理学硕士（MScIME） 项目副主任 实务副教授 高级教学研究员",
+    "img": "assets/img/instructors/海外教授/M.N.-创新多媒体娱乐理学硕士（MScIME） 项目副主任 实务副教授 高级教学研究员.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "P.M.",
+    "title": "伦敦传媒学院平面媒体设计硕 士讲师",
+    "img": "assets/img/instructors/海外教授/P.M.-伦敦传媒学院平面媒体设计硕 士讲师.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "R.F.",
+    "title": "金史密斯学院 创意技术学科负责人_高级讲师 计算艺术硕士_艺术硕士课程 联合项目负责人",
+    "img": "assets/img/instructors/海外教授/R.F.-金史密斯学院 创意技术学科负责人_高级讲师 计算艺术硕士_艺术硕士课程 联合项目负责人.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "R.G.",
+    "title": "伦敦传媒学院 平面媒体设计讲师 品牌空间设计学士（荣誉）讲师",
+    "img": "assets/img/instructors/海外教授/R.G.-伦敦传媒学院 平面媒体设计讲师 品牌空间设计学士（荣誉）讲师.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "R.G.",
+    "title": "伦敦大学学院 UCL-Design for Performance & Interaction MArch 课程负责人",
+    "img": "assets/img/instructors/海外教授/R.G.-伦敦大学学院 UCL-Design for Performance & Interaction MArch 课程负责人.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "R.S.",
+    "title": "坎伯韦尔艺术学院 平面设计高级讲师 Europa设计工作室创立人",
+    "img": "assets/img/instructors/海外教授/R.S.-坎伯韦尔艺术学院 平面设计高级讲师 Europa设计工作室创立人.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "S.C.",
+    "title": "坎伯韦尔艺术学院平面设 计高级讲师",
+    "img": "assets/img/instructors/海外教授/S.C.-坎伯韦尔艺术学院平面设 计高级讲师.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "S.G.",
+    "title": "伦敦大学学院 实验叙事方向导师 教授非线性叙事课程",
+    "img": "assets/img/instructors/海外教授/S.G.-伦敦大学学院 实验叙事方向导师 教授非线性叙事课程.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "S.M.",
+    "title": "伦敦传媒学院 品牌形象设计讲师",
+    "img": "assets/img/instructors/海外教授/S.M.-伦敦传媒学院 品牌形象设计讲师.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "S.Y.",
+    "title": "康奈尔大学 人类生态学院 设计与环境分析教授 _DUET研究实验室主任",
+    "img": "assets/img/instructors/海外教授/S.Y.-康奈尔大学 人类生态学院 设计与环境分析教授 _DUET研究实验室主任.jpg"
+  },
+  {
+    "category": "overseas",
+    "categoryLabel": "海外教授",
+    "name": "Y. F",
+    "title": "创新多媒体娱乐理学硕士（MScIME） 讲师",
+    "img": "assets/img/instructors/海外教授/Y. F-创新多媒体娱乐理学硕士（MScIME） 讲师.jpg"
+  },
+  {
+    "category": "scholar",
+    "categoryLabel": "顶尖学者",
+    "name": "于幸泽",
+    "title": "同济大学 AI人工智能工业交互领域教授",
+    "img": "assets/img/instructors/顶尖学者/于幸泽-同济大学 AI人工智能工业交互领域教授.jpg"
+  },
+  {
+    "category": "scholar",
+    "categoryLabel": "顶尖学者",
+    "name": "俞同舟",
+    "title": "中国美术学院 中国美术学院数字媒体名师",
+    "img": "assets/img/instructors/顶尖学者/俞同舟-中国美术学院 中国美术学院数字媒体名师.jpg"
+  },
+  {
+    "category": "scholar",
+    "categoryLabel": "顶尖学者",
+    "name": "岳嵩",
+    "title": "清华美院 工艺美术系主任副教授",
+    "img": "assets/img/instructors/顶尖学者/岳嵩-清华美院 工艺美术系主任副教授.jpg"
+  },
+  {
+    "category": "scholar",
+    "categoryLabel": "顶尖学者",
+    "name": "蔡新元",
+    "title": "华中科技大学 设计学院院长光影交互服务技术文旅部重点实验室主任中组部国家特聘专家",
+    "img": "assets/img/instructors/顶尖学者/蔡新元-华中科技大学 设计学院院长光影交互服务技术文旅部重点实验室主任中组部国家特聘专家.jpg"
+  },
+  {
+    "category": "scholar",
+    "categoryLabel": "顶尖学者",
+    "name": "蔡潇",
+    "title": "中央美术学院 央美生物设计实验室负责人",
+    "img": "assets/img/instructors/顶尖学者/蔡潇-中央美术学院 央美生物设计实验室负责人.jpg"
+  },
+  {
+    "category": "scholar",
+    "categoryLabel": "顶尖学者",
+    "name": "费俊",
+    "title": "中央美术学院 艺术与科技国内数字媒体领军人物",
+    "img": "assets/img/instructors/顶尖学者/费俊-中央美术学院 艺术与科技国内数字媒体领军人物.jpg"
+  }
+]

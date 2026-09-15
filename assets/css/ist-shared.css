@@ -121,7 +121,9 @@ body.nav-menu-open { overflow: hidden; }
   width: 100%; aspect-ratio: 1; background: var(--color-surface-2); border: 1px solid var(--color-border); border-radius: var(--radius-md);
   display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);
   font-family: var(--font-en); font-size: 26px; font-weight: 700; color: var(--color-text-faint); letter-spacing: .04em;
+  overflow: hidden; position: relative;
 }
+.person-card__avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 .person-card__name { font-size: var(--text-md); font-weight: 700; margin-bottom: 3px; color: var(--color-text); }
 .person-card__title { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; }
 .offer-card__count { font-family: var(--font-mono); font-size: var(--text-2xl); font-weight: 500; line-height: 1; color: var(--color-text); letter-spacing: -.02em; margin-bottom: var(--space-3); transition: color var(--transition-fast); }

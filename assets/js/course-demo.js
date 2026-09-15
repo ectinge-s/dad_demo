@@ -408,16 +408,16 @@ const PRODUCTS = {
   internship: {
     group: 'catalog',
     catalogSource: { file: 'industry', tabs: ['internship', 'mentoring', 'industry_class', 'cert'] },
-    count: 125,
+    count: 97,
     meta: {
       eyebrow: 'Employment Track｜岗位实习 × 行业导师带训',
       titleEn: 'Career Internship Program',
       titleCn: '就业实习课程 · 岗位实习与导师带训',
       desc: '面向希望获得真实行业经验、积累作品集与推荐信的学生，通过岗位制实地实习与线上行业导师带训两种路径，进入头部大厂、行业名企与创意工作室的真实项目。',
-      chips: ['125个岗位/课程', '实地+线上', '头部大厂', '招募中'],
+      chips: ['97个岗位/课程', '实地+线上', '头部大厂', '招募中'],
     },
     snapshot: [
-      { k: '125个',   v: '在招岗位与带训课程' },
+      { k: '97个',   v: '在招岗位与带训课程' },
       { k: '2种路径', v: '岗位制实地实习 / 导师带训' },
       { k: '4类企业', v: '头部大厂·行业名企·创意工作室·其他' },
       { k: '真实产出', v: '作品集 + 导师推荐信' },
@@ -450,16 +450,16 @@ const PRODUCTS = {
   summerwinter: {
     group: 'catalog',
     catalogSource: { file: 'academic', tabs: ['summer'] },
-    count: 12,
+    count: 19,
     meta: {
       eyebrow: 'Academic Track｜海外院校冬夏校',
       titleEn: 'Overseas Summer & Winter School',
       titleCn: '海外冬夏校课程 · 顶尖院校在地学习',
       desc: '走进海外顶尖院校的官方冬夏校项目，在真实校园环境中体验前沿学术方向，积累院校认可的学术背景与教授推荐资源。',
-      chips: ['12个项目', '在地学习', '顶尖院校', '招募中'],
+      chips: ['19个项目', '在地学习', '顶尖院校', '招募中'],
     },
     snapshot: [
-      { k: '12个',     v: '覆盖院校冬夏校项目' },
+      { k: '19个',     v: '覆盖院校冬夏校项目' },
       { k: '在地体验', v: '真实校园与课堂环境' },
       { k: '多学术方向', v: '覆盖设计 / 商科 / 工程等' },
       { k: '官方认证', v: '院校官方项目背书' },
@@ -492,16 +492,16 @@ const PRODUCTS = {
   bizpractice: {
     group: 'catalog',
     catalogSource: { file: 'industry', tabs: ['bizpractice'] },
-    count: 9,
+    count: 14,
     meta: {
       eyebrow: 'Practice Track｜真实商业项目实战',
       titleEn: 'Business Practice Program',
       titleCn: '商业实践课程 · 真实商业项目实战',
       desc: '以真实企业命题为起点，在导师带领下完成从市场调研、方案设计到路演展示的完整商业实践闭环，锻炼商业思维与团队协作能力。',
-      chips: ['9个项目', '真实命题', '路演展示', '招募中'],
+      chips: ['14个项目', '真实命题', '路演展示', '招募中'],
     },
     snapshot: [
-      { k: '9个',     v: '在招商业实践项目' },
+      { k: '14个',     v: '在招商业实践项目' },
       { k: '真实命题', v: '源自真实企业需求' },
       { k: '完整闭环', v: '调研 → 方案 → 路演' },
       { k: '团队协作', v: '小组制项目产出' },
@@ -534,16 +534,16 @@ const PRODUCTS = {
   masterclass: {
     group: 'catalog',
     catalogSource: { file: 'academic', tabs: ['masterclass'] },
-    count: 11,
+    count: 12,
     meta: {
       eyebrow: 'Academic Track｜海外教授大师课',
       titleEn: 'Overseas Masterclass',
       titleCn: '海外大师课程 · 教授视角与方法论',
       desc: '由海外院校教授亲自授课，围绕特定学术方向展开深度方法论训练，为学生带来教授视角的专业指导与推荐信资源。',
-      chips: ['11个课程', '教授亲授', '方法论训练', '招募中'],
+      chips: ['12个课程', '教授亲授', '方法论训练', '招募中'],
     },
     snapshot: [
-      { k: '11个',       v: '在招大师课程' },
+      { k: '12个',       v: '在招大师课程' },
       { k: '教授亲授',    v: '海外院校教授直接授课' },
       { k: '方法论导向',  v: '聚焦专业方法论训练' },
       { k: '推荐信资源',  v: '教授视角评价与推荐' },
@@ -623,12 +623,14 @@ const SCHOOL_RECS = [
 
 /* ── Shared HTML builder ── */
 function buildCatalogGridHTML(product) {
-  // NOTE (DAD copy, 2026-09): the real catalog grid reuses IST's
-  // HomePage._buildInternshipPanel/_buildCourseGrid/_buildAcademicGrid
-  // helpers + courses_industry/courses_academic data, neither of which
-  // exist on this site yet (this page was copied here as-is per GM's
-  // request; redesigning it for DAD is a later task). Degrade to a
-  // plain placeholder instead of throwing.
+  // NOTE (DAD copy, 2026-09; wired to real data 2026-09 v3.2): the
+  // catalog grid calls HomePage._buildInternshipPanel/_buildCourseGrid/
+  // _buildAcademicGrid (assets/js/pages/home.js, bottom) against
+  // DATA.courses_industry/DATA.courses_academic (assets/js/ist-data.js,
+  // loaded from data/dad_courses_industry.json / dad_courses_academic.json).
+  // The `hasHelpers` guard below is kept as a defensive degrade — if
+  // either file fails to load, this still shows the placeholder instead
+  // of throwing — rather than because the helpers are unimplemented.
   const src = product.catalogSource;
   if (!src) return '';
   const hasHelpers = window.HomePage && window.HomePage._buildInternshipPanel
