@@ -1,0 +1,786 @@
+[
+  {
+    "nameEn": "Royal College of Art (RCA)",
+    "nameCn": "皇家艺术学院",
+    "intro": "伦敦皇家艺术学院（RCA），全球顶尖全研究生艺术设计学府，常年稳居 QS 艺术设计学科世界首位。",
+    "collab": [
+      "海外教授领航课",
+      "海外教授项目课(大师课)",
+      "冬夏校合作课程",
+      "海外教授审核"
+    ],
+    "logo": "assets/img/partners/02_Royal_College_of_Art_RCA.png"
+  },
+  {
+    "nameEn": "University of California, Los Angeles (UCLA)",
+    "nameCn": "加利福尼亚大学洛杉矶分校",
+    "intro": "加利福尼亚大学洛杉矶分校（UCLA），美国顶尖公立常春藤研究型大学，坐落洛杉矶西木区，其艺术与建筑学院、戏剧电影电视学院享誉全球，依托好莱坞区位优势深耕跨媒介创意与前沿设计研究。",
+    "collab": [
+      "海外教授领航课",
+      "海外教授项目课(大师课)",
+      "冬夏校合作课程",
+      "海外教授审核"
+    ],
+    "logo": "assets/img/partners/03_University_of_California_Los_Angeles_UCLA.png"
+  },
+  {
+    "nameEn": "Tongji University",
+    "nameCn": "同济大学",
+    "intro": "同济大学始建于 1907 年，坐落上海，是国内顶尖综合性研究型高校，秉持 “同舟共济” 的治学理念，深耕跨学科融合，在科创、人文与创意创新领域持续探索。",
+    "collab": [
+      "冬夏校官方合作课程"
+    ],
+    "logo": "assets/img/partners/04_Tongji_University.png"
+  },
+  {
+    "nameEn": "The University of Hong Kong (HKU)",
+    "nameCn": "香港大学",
+    "intro": "香港大学始建于 1911 年，是亚洲历史悠久的顶尖综合性研究型高等学府，立足国际化视野，在人文、科创与前沿交叉领域开展深度探索。",
+    "collab": [
+      "冬夏校合作课程"
+    ],
+    "logo": "assets/img/partners/05_The_University_of_Hong_Kong_HKU.png"
+  },
+  {
+    "nameEn": "Columbia University (GSAPP)",
+    "nameCn": "哥伦比亚大学",
+    "intro": "哥伦比亚大学坐落纽约，依托城市丰富的创意生态，在数字艺术、新兴媒介与跨媒体创作领域构建前沿的艺术研究与实践平台，探索技术与艺术融合的创新表达。",
+    "collab": [
+      "海外教授领航课",
+      "海外教授项目课(大师课)",
+      "冬夏校合作课程"
+    ],
+    "logo": "assets/img/partners/06_Columbia_University_GSAPP.png"
+  },
+  {
+    "nameEn": "The Hong Kong Polytechnic University (PolyU)",
+    "nameCn": "香港理工大学",
+    "intro": "香港理工大学立足大湾区创意生态，搭建前沿的数字艺术与交互媒体研究平台，深耕艺术与科技的跨媒介创作，探索沉浸式、人工智能赋能的创意表达。",
+    "collab": [
+      "教授领航课",
+      "冬夏校官方合作课程"
+    ],
+    "logo": "assets/img/partners/07_The_Hong_Kong_Polytechnic_University_PolyU.png"
+  },
+  {
+    "nameEn": "The Hong Kong University of Science and Technology (Guangzhou) [HKUST(GZ)]",
+    "nameCn": "香港科技大学（广州）",
+    "intro": "香港科技大学（广州）立足粤港澳大湾区，打造艺术、科技与数字媒介交叉创新场域，探索数据艺术、沉浸式媒介与技术驱动的创意实践。",
+    "collab": [
+      "冬夏校官方合作课程"
+    ],
+    "logo": "assets/img/partners/08_The_Hong_Kong_University_of_Science_and_Technology_Guangzhou_HKUST_GZ.png"
+  },
+  {
+    "nameEn": "University College London (UCL)",
+    "nameCn": "伦敦大学学院",
+    "intro": "伦敦大学学院（UCL），1826 年建校于伦敦，世界顶尖的综合性研究学府，也是英国 G5 超级精英大学之一。",
+    "collab": [
+      "海外教授领航课",
+      "海外教授项目课(大师课)",
+      "冬夏校合作课程"
+    ],
+    "logo": "assets/img/partners/09_University_College_London_UCL.png"
+  },
+  {
+    "nameEn": "Rhode Island School of Design (RISD)",
+    "nameCn": "罗德岛设计学院",
+    "intro": "罗德岛设计学院（RISD）创立于 1877 年，坐落于美国普罗维登斯，是全球极具影响力的顶尖私立艺术学府，拥有深厚的美育底蕴与国际化创意育人体系。",
+    "collab": [
+      "海外教授领航课",
+      "海外教授项目课(大师课)",
+      "冬夏校合作课程",
+      "海外教授审核"
+    ],
+    "logo": "assets/img/partners/10_Rhode_Island_School_of_Design_RISD.png"
+  },
+  {
+    "nameEn": "Pratt Institute",
+    "nameCn": "普瑞特艺术学院",
+    "intro": "普瑞特艺术学院（Pratt Institute）创立于 1887 年，位于美国纽约布鲁克林，是一所历史悠久的顶尖私立创意学府，依托纽约多元的城市文化环境，培养具备独立思辨能力的创意实践者。",
+    "collab": [
+      "海外教授领航课",
+      "海外教授项目课(大师课)"
+    ],
+    "logo": "assets/img/partners/11_Pratt_Institute.png"
+  },
+  {
+    "nameEn": "ART+TECH",
+    "nameCn": "某集体",
+    "intro": "某集体 ART+TECH 是专注艺术与科技的跨学科创意集合体，汇聚多领域创作者，在多元公共场域开展作品创制、策展与体验设计实践。",
+    "collab": [
+      "冬夏校合作课程"
+    ],
+    "logo": "assets/img/partners/12_ART_TECH.png"
+  },
+  {
+    "nameEn": "Alibaba",
+    "nameCn": "阿里巴巴",
+    "intro": "阿里巴巴集团，1999 年在杭州成立，立足技术创新的全球化科技集团。致力于提供技术基础设施，助力企业数字化创新与高效经营。",
+    "collab": [
+      "冬夏校合作课程",
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/13_Alibaba.png"
+  },
+  {
+    "nameEn": "Today Art Museum",
+    "nameCn": "今日美术馆",
+    "intro": "今日美术馆，2002 年成立于北京，中国首家民营非营利当代美术馆，致力于当代艺术研究与国际文化对话。",
+    "collab": [
+      "冬夏校合作课程",
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/14_Today_Art_Museum.png"
+  },
+  {
+    "nameEn": "Beijing Art and Technology Biennale (BATB)",
+    "nameCn": "北京艺术与科技双年展",
+    "intro": "北京艺术与科技双年展（BATB），全球首个聚焦艺术与科技的双年展，以国际跨学科展览推动前沿文化对话。",
+    "collab": [
+      "冬夏校合作课程",
+      "参展合作"
+    ],
+    "logo": "assets/img/partners/15_Beijing_Art_and_Technology_Biennale_BATB.png"
+  },
+  {
+    "nameEn": "University of the Arts London (UAL)",
+    "nameCn": "伦敦艺术大学",
+    "intro": "伦敦艺术大学（UAL）坐落英国伦敦，由六所历史悠久的艺术学院联合组成，是全球顶尖公立创意大学，依托伦敦丰富的文化生态，汇聚全球创意学习者与实践者。",
+    "collab": [
+      "海外教授领航课",
+      "海外教授项目课(大师课)",
+      "冬夏校合作课程",
+      "海外教授审核"
+    ],
+    "logo": "assets/img/partners/16_University_of_the_Arts_London_UAL.png"
+  },
+  {
+    "nameEn": "New York University (NYU)",
+    "nameCn": "纽约大学",
+    "intro": "纽约大学（NYU）始建于 1831 年，扎根纽约曼哈顿，是世界顶尖私立综合性研究大学，拥有覆盖全球的校区与学术网络，倡导无边界的国际化治学理念。",
+    "collab": [
+      "海外教授领航课",
+      "海外教授项目课(大师课)",
+      "冬夏校合作课程",
+      "海外教授审核"
+    ],
+    "logo": "assets/img/partners/17_New_York_University_NYU.png"
+  },
+  {
+    "nameEn": "Harvard University",
+    "nameCn": "哈佛大学",
+    "intro": "哈佛大学（Harvard University）始建于 1636 年，是美国历史最悠久的顶尖私立研究型大学，常春藤盟校成员，以追求真理、探索新知为核心，汇聚全球学者持续推动前沿学术探索。",
+    "collab": [
+      "海外教授领航课",
+      "海外教授项目课(大师课)",
+      "冬夏校合作课程"
+    ],
+    "logo": "assets/img/partners/18_Harvard_University.png"
+  },
+  {
+    "nameEn": "MIT Media Lab",
+    "nameCn": "麻省理工学院媒体实验室",
+    "intro": "麻省理工学院媒体实验室（MIT Media Lab）成立于 1985 年，隶属于麻省理工学院，是全球顶尖的无边界跨学科研究机构，打破传统学科壁垒，汇聚多元背景研究者共同探索未来创新。",
+    "collab": [
+      "海外教授领航课",
+      "冬夏校合作课程"
+    ],
+    "logo": "assets/img/partners/19_MIT_Media_Lab.png"
+  },
+  {
+    "nameEn": "Stanford University",
+    "nameCn": "斯坦福大学",
+    "intro": "斯坦福大学（Stanford University）于 1891 年正式开学，坐落美国加州硅谷腹地，是全球顶尖私立研究型大学，秉持自由探索的治学精神，融合学术研究与创新实践，持续推动跨领域知识突破。",
+    "collab": [
+      "海外教授领航课",
+      "冬夏校合作课程"
+    ],
+    "logo": "assets/img/partners/20_Stanford_University.png"
+  },
+  {
+    "nameEn": "Johns Hopkins University (JHU)",
+    "nameCn": "约翰霍普金斯大学",
+    "intro": "约翰・霍普金斯大学（Johns Hopkins University）创立于 1876 年，是全球顶尖私立研究型大学，开创现代研究型大学范式，鼓励多元视角下的前沿学术探索。",
+    "collab": [
+      "海外教授领航课",
+      "海外教授项目课(大师课)",
+      "冬夏校合作课程",
+      "海外教授审核"
+    ],
+    "logo": "assets/img/partners/21_Johns_Hopkins_University_JHU.png"
+  },
+  {
+    "nameEn": "Huazhong University of Science and Technology (HUST)",
+    "nameCn": "华中科技大学",
+    "intro": "华中科技大学（HUST）坐落湖北武汉，2000 年由多所院校合并组建，是教育部直属的重点综合性研究型高校，首批双一流建设大学，学科门类完备，崇尚求实创新，深耕跨领域学术探索。",
+    "collab": [
+      "冬夏校官方合作课程"
+    ],
+    "logo": "assets/img/partners/22_Huazhong_University_of_Science_and_Technology_HUST.png"
+  },
+  {
+    "nameEn": "Central Academy of Fine Arts (CAFA)",
+    "nameCn": "中央美术学院",
+    "intro": "中央美术学院（CAFA）始建于 1918 年，坐落北京，是中国历史悠久的顶尖美术学府，教育部直属双一流高校，立足本土文化，面向国际，持续推动艺术教育、创作与学术研究。",
+    "collab": [
+      "冬夏校官方合作课程"
+    ],
+    "logo": "assets/img/partners/23_Central_Academy_of_Fine_Arts_CAFA.png"
+  },
+  {
+    "nameEn": "Communication University of China (CUC)",
+    "nameCn": "中国传媒大学",
+    "intro": "中国传媒大学（CUC）始建于 1954 年，位于北京，教育部直属双一流高校，是国内传媒与视听领域的核心高等学府，立足媒介文化研究，面向全球开展传播、艺术与技术方向的学术探索。",
+    "collab": [
+      "冬夏校官方合作课程"
+    ],
+    "logo": "assets/img/partners/24_Communication_University_of_China_CUC.png"
+  },
+  {
+    "nameEn": "DXC",
+    "nameCn": "大城小村",
+    "intro": "大城小村工作室 2019 年在成都发起，专注社区营造、城市微更新与乡村地方创生，以社群共创的方式链接城乡，推动人居环境改造与公共文化实践。",
+    "collab": [
+      "商业实践课程",
+      "冬夏校官方合作课程"
+    ],
+    "logo": "assets/img/partners/25_DXC.png"
+  },
+  {
+    "nameEn": "TEA Community",
+    "nameCn": "TEA 新媒体艺术社区",
+    "intro": "TEA 新媒体艺术社区 2019 年成立，是聚焦艺术与科技的跨领域开源创意社群，作为 TouchDesigner 全球教育合作伙伴，联动海内外高校与产业资源，以教育研发、工作坊与光点国际新媒体艺术节推动跨媒介艺术实践与产学研融合。",
+    "collab": [
+      "商业实践课程",
+      "冬夏校官方合作课程"
+    ],
+    "logo": "assets/img/partners/26_TEA_Community.png"
+  },
+  {
+    "nameEn": "BranD",
+    "nameCn": "BranD",
+    "intro": "BranD 创立于 2012 年，是立足中国、面向全球的双语平面设计杂志，以主题策划的方式系统梳理视觉传达、品牌设计与当代创作趋势，连接国内外设计师与创意社群。",
+    "collab": [
+      "商业实践课程",
+      "冬夏校官方合作课程"
+    ],
+    "logo": "assets/img/partners/27_BranD.png"
+  },
+  {
+    "nameEn": "Chongqing Light and Shadow Art Festival",
+    "nameCn": "重庆光影科技艺术节",
+    "intro": "流光绘影重庆光影科技艺术节，始于 2023 年，聚焦光影与数字科技，依托重庆城市空间呈现沉浸式艺术作品，兼具展览、学术交流与公共美育。",
+    "collab": [
+      "冬夏校官方合作课程"
+    ],
+    "logo": "assets/img/partners/28_Chongqing_Light_and_Shadow_Art_Festival.png"
+  },
+  {
+    "nameEn": "Institute of Computing Technology, Chinese Academy of Sciences",
+    "nameCn": "中国科学院计算技术研究所",
+    "intro": "中国科学院计算技术研究所（ICT），1956 年成立，国内计算机领域源头科研机构，聚焦计算机与智能技术前沿研究，兼顾基础创新与产业转化。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/29_Institute_of_Computing_Technology_Chinese_Academy_of_Sciences.png"
+  },
+  {
+    "nameEn": "China Academy of Art",
+    "nameCn": "中国美术学院",
+    "intro": "中国美术学院（CAA）始建于 1928 年，坐落杭州，教育部直属双一流高校，中国第一所综合性国立高等美术院校，立足东方艺术文脉，持续推动艺术创作、设计创新与跨媒介学术研究，构建开放的国际艺术对话平台。",
+    "collab": [
+      "商业实践课程",
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/30_China_Academy_of_Art.png"
+  },
+  {
+    "nameEn": "Fudan University",
+    "nameCn": "复旦大学",
+    "intro": "复旦大学（Fudan University）始建于 1905 年，位于上海，教育部直属双一流综合性研究型大学，秉承博学笃志的治学传统，学科底蕴深厚，鼓励跨学科探索，持续开展前沿学术研究与国际化学术交流。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/31_Fudan_University.png"
+  },
+  {
+    "nameEn": "Xi'an Jiaotong University",
+    "nameCn": "西安交通大学",
+    "intro": "西安交通大学（Xi’an Jiaotong University）肇始于 1896 年，坐落陕西西安，教育部直属双一流综合性研究型高校，秉持 “精勤求学、敦笃励志” 的校训，学科实力雄厚，深耕前沿科研，推动跨学科创新与产学研协同发展。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/32_Xi_an_Jiaotong_University.png"
+  },
+  {
+    "nameEn": "36Kr",
+    "nameCn": "36氪",
+    "intro": "36 氪（36Kr），国内前沿科技与新经济媒体平台，聚焦创新产业报道，搭建技术、商业与创意之间的交流网络。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/33_36Kr.png"
+  },
+  {
+    "nameEn": "JUST FOTO",
+    "nameCn": "JUST FOTO",
+    "intro": "JUST.FOTO，2018 年诞生的潮流智能影像品牌，落地线下自助拍摄装置，通过 IP 跨界与公共场景项目，探索即时影像、青年社交与媒介创作。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/34_JUST_FOTO.png"
+  },
+  {
+    "nameEn": "LVMH Moët Hennessy Louis Vuitton",
+    "nameCn": "路威酩轩集团",
+    "intro": "路威酩轩集团（LVMH），1987 年成立于巴黎，全球头部奢侈品集团，传承精工技艺，长期扶持艺术创作与跨媒介设计实践。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/35_LVMH_Moët_Hennessy_Louis_Vuitton.png"
+  },
+  {
+    "nameEn": "MUSINESS Music",
+    "nameCn": "MUSINESS 音乐公司",
+    "intro": "MUSINESS（奕颗贝壳），上海商用版权音乐平台，拥有海量正版曲库，提供配乐授权与定制音频，服务新媒体、影像与沉浸式艺术项目。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/36_MUSINESS_Music.png"
+  },
+  {
+    "nameEn": "Pixar Animation Studios",
+    "nameCn": "皮克斯动画工作室",
+    "intro": "皮克斯动画工作室，1986 年成立于加州，全球顶尖三维动画创作机构，以计算机图形技术结合人文叙事，持续探索数字影像艺术与动画技术创新。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/37_Pixar_Animation_Studios.png"
+  },
+  {
+    "nameEn": "Electronic Arts (EA)",
+    "nameCn": "美国艺电",
+    "intro": "美国艺电（EA），1982 年成立于加州，全球头部互动娱乐厂商，研发发行多品类电子游戏，依托实时图形与交互技术，探索游戏叙事与数字沉浸式媒介创作，同时扶持独立创意项目。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/38_Electronic_Arts_EA.png"
+  },
+  {
+    "nameEn": "Industrial Light & Magic (ILM)",
+    "nameCn": "工业光魔",
+    "intro": "工业光魔（ILM），1975 年成立，全球顶尖影视视效工作室，开创现代电影特效范式，横跨实体特效、CG 与虚拟制作，持续探索影像技术与叙事艺术的融合，拓展沉浸式媒介创作。",
+    "collab": [
+      "商业实践课程",
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/39_Industrial_Light_Magic_ILM.png"
+  },
+  {
+    "nameEn": "Shanghai Media Group (SMG)",
+    "nameCn": "上海广播电视台",
+    "intro": "上海广播电视台（SMG），上海综合性全媒体文化集团，深耕视听内容创作与媒体技术研发，融合广电、新媒体、演艺与文旅，探索沉浸式视听与跨媒介文化实践。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/40_Shanghai_Media_Group_SMG.png"
+  },
+  {
+    "nameEn": "Shanghai Television (STV)",
+    "nameCn": "上海电视台",
+    "intro": "上海电视台，1958 年开播，上海老牌电视播出平台，隶属 SMG，深耕城市内容制播与融媒创新，探索大屏视听的当代表达。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/41_Shanghai_Television_STV.png"
+  },
+  {
+    "nameEn": "Yuguang Tongchen",
+    "nameCn": "与光同尘",
+    "intro": "与光同尘，杭州 AIGC 影像创作机构，专注 AI 动画、动态漫与数字短片，以人机协同的创作模式，探索东方叙事与生成式视觉媒介的融合创新。",
+    "collab": [
+      "冬夏校合作课程",
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/42_Yuguang_Tongchen.png"
+  },
+  {
+    "nameEn": "China Animation Group",
+    "nameCn": "中国动漫集团",
+    "intro": "中国动漫集团，2009 年组建的国家级动漫文化央企，深耕动画内容、IP 开发与沉浸式数字项目，搭建产业平台，推动传统文化与动漫科技融合创新。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/43_China_Animation_Group.png"
+  },
+  {
+    "nameEn": "China Art News",
+    "nameCn": "中国美术报",
+    "intro": "《中国美术报》，国家级美术专业全媒体平台，2016 年正式创刊，深耕美术、当代艺术与跨媒介创作报道，举办艺术项目与学术活动，促进国内外艺术交流。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/44_China_Art_News.png"
+  },
+  {
+    "nameEn": "China Media Group (CMG)",
+    "nameCn": "中央广播电视总台",
+    "intro": "中央广播电视总台（CMG），2018 年正式组建的国家级全媒体机构，深耕视听内容、文化创作与国际传播，依托超高清、虚拟制作等技术，探索沉浸式视听与跨媒介文化实践。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/45_China_Media_Group_CMG.png"
+  },
+  {
+    "nameEn": "China Film Animation",
+    "nameCn": "中影年年",
+    "intro": "中影年年，国内头部三维动画创制企业，代表作《少年歌行》，深耕国产 3D 动画、数字人与 AIGC 动画技术，探索国风 CG 叙事与数字内容 IP 开发。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/46_China_Film_Animation.png"
+  },
+  {
+    "nameEn": "People's Daily Online",
+    "nameCn": "人民网",
+    "intro": "人民网，人民日报社旗下国家级主流全媒体平台，1997 年上线，深耕新闻、文化与美育内容，探索数字影像、虚拟演播等媒介技术，推动跨媒介文化传播实践。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/47_People_s_Daily_Online.png"
+  },
+  {
+    "nameEn": "Porsche",
+    "nameCn": "保时捷",
+    "intro": "保时捷（Porsche），1931 年创立于德国，全球知名豪华跑车品牌，以经典工业设计与赛道工程技术为核心，持续跨界艺术、数字展演与沉浸式创意项目。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/48_Porsche.png"
+  },
+  {
+    "nameEn": "Enlight Media",
+    "nameCn": "光线传媒",
+    "intro": "光线传媒（Enlight Media），国内头部影视动漫内容出品公司，深耕电影、剧集与动画 IP 开发，持续探索数字影像与跨媒介叙事创作。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/49_Enlight_Media.png"
+  },
+  {
+    "nameEn": "Common Art Center",
+    "nameCn": "共同艺术中心",
+    "intro": "共同艺术中心（Common Art Center），当代艺术展览机构，专注实验艺术、新媒体艺术展览与公共艺术项目，搭建艺术家与大众交流的展示平台。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/50_Common_Art_Center.png"
+  },
+  {
+    "nameEn": "Beijing Tsingshang Architectural Design and Research Institute",
+    "nameCn": "北京清尚建筑设计研究院",
+    "intro": "北京清尚建筑设计研究院，国内建筑与室内空间设计机构，擅长展馆、公共文化空间设计，融合空间叙事、数字展陈与沉浸式环境营造。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/51_Beijing_Tsingshang_Architectural_Design_and_Research_Institute.png"
+  },
+  {
+    "nameEn": "Beijing Yanshan Press",
+    "nameCn": "北京燕山出版社",
+    "intro": "北京燕山出版社（Beijing Yanshan Press），综合性地方出版社，深耕人文艺术、古籍与地域文化图书出版，传播文史与艺术研究内容。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/52_Beijing_Yanshan_Press.png"
+  },
+  {
+    "nameEn": "Shilifangfei",
+    "nameCn": "十里芳菲",
+    "intro": "十里芳菲（Shilifangfei），沉浸式乡村文旅品牌，依托自然村落打造体验空间，以场景美学、在地文化，探索文旅空间的沉浸式体验设计。",
+    "collab": [
+      "商业实践课程"
+    ],
+    "logo": "assets/img/partners/53_Shilifangfei.png"
+  },
+  {
+    "nameEn": "Ximalaya",
+    "nameCn": "喜马拉雅",
+    "intro": "喜马拉雅（Ximalaya），国内头部音频内容平台，覆盖播客、有声书与原创声音作品，探索声音媒介、空间音频与听觉沉浸式内容创作。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/54_Ximalaya.png"
+  },
+  {
+    "nameEn": "CCTV.com (CCTV Network)",
+    "nameCn": "央视网",
+    "intro": "央视网（[CCTV.com]，中央广播电视总台官方网络平台，国家级视听新媒体门户，深耕融媒体传播、虚拟演播与超高清数字视听实践。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/55_CCTV_com_CCTV_Network.png"
+  },
+  {
+    "nameEn": "Ogilvy",
+    "nameCn": "奥美",
+    "intro": "奥美（Ogilvy），全球顶尖品牌传播创意机构，以策略与视觉创意为核心，持续探索数字媒介、交互内容与沉浸式品牌艺术项目。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/56_Ogilvy.png"
+  },
+  {
+    "nameEn": "The Third Floor",
+    "nameCn": "THE THIRD FLOOR（好莱坞视效公司）",
+    "intro": "The Third Floor，好莱坞知名预演与视效工作室，专注影视虚拟预览、可视化设计，依托实时引擎技术，服务电影与沉浸式叙事项目。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/57_The_Third_Floor.png"
+  },
+  {
+    "nameEn": "ByteDance",
+    "nameCn": "字节跳动",
+    "intro": "字节跳动（ByteDance），全球化数字科技企业，依托 AI 与实时多媒体技术，开发短视频、虚拟内容，探索交互媒介与数字创意生态。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/58_ByteDance.png"
+  },
+  {
+    "nameEn": "Xiaohongshu (RED)",
+    "nameCn": "小红书",
+    "intro": "小红书（RED），国内生活方式内容社区平台，汇聚 UGC 视觉内容，推动青年文化、数字影像与跨媒介创意传播。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/59_Xiaohongshu_RED.png"
+  },
+  {
+    "nameEn": "XPENG",
+    "nameCn": "小鹏汽车",
+    "intro": "小鹏汽车（XPENG），国内智能电动汽车品牌，聚焦智能座舱与车载交互设计，探索空间 UI、虚拟视觉与未来出行的沉浸式体验。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/60_XPENG.png"
+  },
+  {
+    "nameEn": "Guangzhou Yitu Design",
+    "nameCn": "广州壹图设计",
+    "intro": "广州壹图设计，本土综合设计事务所，深耕品牌视觉、展览与空间设计，打造融合数字媒介的沉浸式展陈项目。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/61_Guangzhou_Yitu_Design.png"
+  },
+  {
+    "nameEn": "Trip.com Group",
+    "nameCn": "携程",
+    "intro": "携程，全球在线旅行服务集团，依托文旅大数据，探索目的地数字内容、虚拟漫游与沉浸式文旅体验设计。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/62_Trip_com_Group.png"
+  },
+  {
+    "nameEn": "Zcygov",
+    "nameCn": "政采云",
+    "intro": "政采云（Zcygov），数字化政府采购服务平台，依托云技术构建线上政务生态，探索公共项目数字化展陈与线上可视化交互设计。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/63_Zcygov.png"
+  },
+  {
+    "nameEn": "Xinhua News Agency",
+    "nameCn": "新华社",
+    "intro": "新华社（Xinhua News Agency），国家级权威新闻通讯社，深耕全球视听内容采集与融媒体传播，探索数字影像、虚拟主播与跨媒介纪实创作。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/64_Xinhua_News_Agency.png"
+  },
+  {
+    "nameEn": "Wuyou Media",
+    "nameCn": "无忧传媒",
+    "intro": "无忧传媒（Wuyou Media），国内头部 MCN 机构，深耕短视频、直播 IP 孵化，探索新媒体视觉、虚拟人内容与数字社交创意实践。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/65_Wuyou_Media.png"
+  },
+  {
+    "nameEn": "Tokyo Gallery (Japan)",
+    "nameCn": "日本当代东京画廊",
+    "intro": "日本当代东京画廊（Tokyo Gallery (Japan)），亚洲老牌当代艺术空间，持续推介实验艺术、新媒体作品，搭建东亚跨媒介艺术交流平台。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/66_Tokyo_Gallery_Japan.png"
+  },
+  {
+    "nameEn": "Trends Group",
+    "nameCn": "时尚传媒集团",
+    "intro": "时尚传媒集团（Trends Group），国内顶尖时尚内容集团，深耕时尚视觉、影像创作，联动艺术与数字项目，探索时尚媒介与沉浸式展览实践。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/67_Trends_Group.png"
+  },
+  {
+    "nameEn": "Hangzhou Sudian Design",
+    "nameCn": "杭州素点设计",
+    "intro": "杭州素点设计（Hangzhou Sudian Design），本土创意设计事务所，专注品牌视觉、展览空间设计，擅长数字展陈与沉浸式场景视觉营造。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/68_Hangzhou_Sudian_Design.png"
+  },
+  {
+    "nameEn": "European Art Union",
+    "nameCn": "欧洲艺术联盟",
+    "intro": "欧洲艺术联盟（European Art Union），欧洲跨地域艺术协作组织，推动多国艺术家联合创作，促进当代艺术、新媒体项目与跨文化艺术交流。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/69_European_Art_Union.png"
+  },
+  {
+    "nameEn": "POP MART",
+    "nameCn": "泡泡玛特",
+    "intro": "POP MART 泡泡玛特，国内头部潮流文化娱乐集团，深耕潮玩 IP 孵化、艺术家合作与潮玩零售，推动潮流玩具、数字收藏与青年消费文化创意生态。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/70_POP_MART.png"
+  },
+  {
+    "nameEn": "Zhejiang Handu Design",
+    "nameCn": "浙江汉度设计",
+    "intro": "浙江汉度设计（Zhejiang Handu Design），本土创意设计机构，专注品牌视觉、空间展陈与新媒体设计，融合数字媒介与场景叙事打造沉浸式视觉项目。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/71_Zhejiang_Handu_Design.png"
+  },
+  {
+    "nameEn": "The Paper",
+    "nameCn": "澎湃新闻",
+    "intro": "澎湃新闻（The Paper），上海报业集团旗下主流新媒体平台，深耕深度报道与数字视听内容，探索数据新闻、影像叙事与跨媒介传播创新。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/72_The_Paper.png"
+  },
+  {
+    "nameEn": "Baidu",
+    "nameCn": "百度",
+    "intro": "百度（Baidu），国内头部人工智能与互联网科技企业，深耕搜索、大模型与智能云，推动 AI 技术在数字影像、虚拟内容与智能交互中的应用实践。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/73_Baidu.png"
+  },
+  {
+    "nameEn": "miHoYo",
+    "nameCn": "米哈游",
+    "intro": "米哈游（miHoYo），全球顶尖二次元互动娱乐公司，以《原神》《崩坏》系列游戏著称，自研实时渲染与数字内容技术，探索游戏作为跨媒介叙事艺术的创作边界。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/74_miHoYo.png"
+  },
+  {
+    "nameEn": "Red Brick Art Museum",
+    "nameCn": "红砖美术馆",
+    "intro": "红砖美术馆（Red Brick Art Museum），由董豫赣设计的北京当代艺术美术馆，以中式园林与红砖建筑为空间特色，专注当代艺术、新媒体与跨媒介展览实践。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/75_Red_Brick_Art_Museum.png"
+  },
+  {
+    "nameEn": "GroupM",
+    "nameCn": "群邑",
+    "intro": "群邑（GroupM），WPP 旗下全球领先媒介投资管理集团，整合品牌传播与数字营销资源，探索数据驱动的创意媒介、沉浸式体验与跨界艺术合作。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/76_GroupM.png"
+  },
+  {
+    "nameEn": "UNESCO ICEE Future Science and Technology Education Base",
+    "nameCn": "联合国教科文 ICEE 未来科技教育基地",
+    "intro": "联合国教科文 ICEE 未来科技教育基地（UNESCO ICEE Future Science and Technology Education Base），面向青少年的国际科教平台，融合艺术、科技与跨媒介项目，开展数字美育与未来创意实践。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/77_UNESCO_ICEE_Future_Science_and_Technology_Education_Base.png"
+  },
+  {
+    "nameEn": "BlueFocus",
+    "nameCn": "蓝色光标",
+    "intro": "蓝色光标（BlueFocus），国内头部营销传播集团，深耕数字营销、虚拟人、AIGC 内容，探索沉浸式品牌创意与跨媒介数字内容生产。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/78_BlueFocus.png"
+  },
+  {
+    "nameEn": "NIO",
+    "nameCn": "蔚来汽车",
+    "intro": "蔚来汽车（NIO），本土高端智能电动汽车品牌，以用户社区与创新空间设计为特色，探索车载交互、数字视觉与线下沉浸式品牌体验。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/79_NIO.png"
+  },
+  {
+    "nameEn": "Fengqun Media",
+    "nameCn": "蜂群传媒",
+    "intro": "蜂群传媒（Fengqun Media），国内新锐内容 MCN 机构，聚焦网红 IP、短视频视觉创作，探索新媒体影像、虚拟内容与社交创意传播。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/80_Fengqun_Media.png"
+  },
+  {
+    "nameEn": "Google",
+    "nameCn": "谷歌",
+    "intro": "谷歌（Google），全球顶尖互联网科技企业，深耕 AI、计算机图形与开源创意工具，持续推动交互媒介、虚拟现实与数字艺术技术研发。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/81_Google.png"
+  },
+  {
+    "nameEn": "Intime Retail",
+    "nameCn": "银泰商业",
+    "intro": "银泰商业（Intime Retail），国内线下商业零售集团，打造商业空间艺术展、数字装置，探索购物中心场景下的沉浸式新媒体艺术落地。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/82_Intime_Retail.png"
+  },
+  {
+    "nameEn": "Publicis",
+    "nameCn": "阳狮广告",
+    "intro": "阳狮广告（Publicis），全球大型传播集团，整合创意、技术与媒介资源，以数据与数字创意，打造跨平台品牌叙事与沉浸式体验项目。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/83_Publicis.png"
+  },
+  {
+    "nameEn": "EGO Group",
+    "nameCn": "颐高集团",
+    "intro": "颐高集团（EGO Group），国内数字产业运营集团，深耕文创园区与数字科创空间运营，推动数字艺术、新媒体展览与文创产业的落地实践。",
+    "collab": [
+      "就业力实习实训"
+    ],
+    "logo": "assets/img/partners/84_EGO_Group.png"
+  }
+]
