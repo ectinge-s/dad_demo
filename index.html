@@ -18,8 +18,7 @@
 <nav class="navbar">
   <div class="container navbar__inner">
     <span class="navbar__logo" onclick="Router.go('home')" style="cursor:pointer">
-      <img class="navbar__logo-img" src="assets/img/logo.png" alt="SFK">
-      <span class="navbar__logo-tag">数字艺术与设计</span>
+      <img class="navbar__logo-img" src="assets/img/logo-full.png" alt="SFK 数字艺术与设计科系 · Faculty of Digital Arts and Design">
     </span>
     <div class="navbar__links">
       <button class="navbar__btn is-active" onclick="Router.go('home')">首页</button>
@@ -30,7 +29,7 @@
       <span class="navbar__divider" aria-hidden="true"></span>
       <button class="navbar__btn navbar__btn--page" onclick="Router.go('portfolio')">案例展示</button>
       <button class="navbar__btn navbar__btn--page" onclick="Router.go('timeline')">时间轴</button>
-      <button class="navbar__btn navbar__btn--page" onclick="Router.go('course-products')">课程</button>
+      <button class="navbar__btn navbar__btn--page" onclick="Router.go('course-products')">课程产品</button>
     </div>
     <button class="navbar__cta" onclick="Router.go('planning')">职业规划</button>
     <button class="navbar__menu-toggle" id="nav-menu-toggle" aria-expanded="false" aria-controls="nav-menu-overlay" aria-label="展开全部导航">
@@ -53,7 +52,7 @@
     <div class="nav-menu-overlay__group">
       <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('portfolio')">案例展示</a>
       <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('timeline')">时间轴</a>
-      <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('course-products')">课程</a>
+      <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('course-products')">课程产品</a>
     </div>
     <a class="nav-menu-overlay__cta" onclick="NavMenu.go('planning')">职业规划</a>
   </div>
@@ -73,37 +72,65 @@
 <main class="page" id="page-planning">
   <section class="hero" id="planning-hero-root"></section>
   <nav class="industry-nav" id="planning-nav-root"></nav>
-  <div id="planning-panels-root"></div>
 
-  <!-- ── Detailed career-planning content, moved here from the homepage
-       2026-09 (see docs/PROJECT_NOTES.md) ── -->
-  <section class="section" id="pl-industries"><div class="container" id="pl-industries-root"></div></section>
-  <section class="section" id="pl-heatmap"><div class="container" id="pl-heatmap-root"></div></section>
-  <section class="section" id="pl-jd"><div class="container" id="pl-jd-root"></div></section>
-  <section class="section" id="pl-pathways"><div class="container" id="pl-pathways-root"></div></section>
-  <section class="section" id="pl-faq"><div class="container" id="pl-faq-root"></div></section>
-  <section class="section" id="pl-quiz"><div class="container" id="pl-quiz-root"></div></section>
-  <section class="section" id="pl-roadmap"><div class="container" id="pl-roadmap-root"></div></section>
-  <section class="section" id="pl-capabilities"><div class="container" id="pl-capabilities-root"></div></section>
-  <section class="section" id="pl-data-insights"><div class="container" id="pl-data-insights-root"></div></section>
+  <!-- v3.3: 职业规划 rebuilt as deep-linkable subpages (#planning/<id>) —
+       one subpage for the cross-industry "总览" content (unchanged from
+       before), one for whichever single industry's Figma-style detail
+       page (数字艺术就业海报) is active. PlanningPage.showSubpage() toggles
+       [hidden] between them; only one is ever visible at a time. ── -->
+  <div class="planning-subpage" id="pl-overview-subpage">
+    <section class="section" id="pl-industries"><div class="container" id="pl-industries-root"></div></section>
+    <section class="section" id="pl-heatmap"><div class="container" id="pl-heatmap-root"></div></section>
+    <section class="section" id="pl-pathways"><div class="container" id="pl-pathways-root"></div></section>
+    <section class="section" id="pl-faq"><div class="container" id="pl-faq-root"></div></section>
+    <section class="section" id="pl-quiz"><div class="container" id="pl-quiz-root"></div></section>
+    <section class="section" id="pl-roadmap"><div class="container" id="pl-roadmap-root"></div></section>
+    <section class="section" id="pl-capabilities"><div class="container" id="pl-capabilities-root"></div></section>
+    <section class="section" id="pl-data-insights"><div class="container" id="pl-data-insights-root"></div></section>
+  </div>
+
+  <div class="planning-subpage" id="pl-industry-subpage" hidden></div>
 </main>
 
-<!-- ═══ PAGE: 案例展示 / 学生案例 (duplicates IST's Portfolio page structure —
-     placeholder images/text, NOT real student data; see assets/js/pages/portfolio.js
-     and data/portfolio-placeholder.json) ═══ -->
+<!-- ═══ PAGE: 案例展示 / 学生案例 — real MA (研究生) offer cases, from
+     data/portfolio-cases.json (transcribed from GM's team's
+     DAD MA 网站信息包.xlsx「MA案例卡」tab, 70 real cases — see
+     docs/PROJECT_NOTES.md). Two independent multi-select filter rows
+     (国家/地区, 项目类型); assets/js/pages/portfolio.js ═══ -->
 <main class="page" id="page-portfolio">
-  <section class="hero" style="min-height:auto;padding:64px 24px 40px;">
+  <section class="hero">
     <div class="container hero__content">
       <span class="eyebrow eyebrow--on-void u-en">Student Work</span>
       <h1>案例展示</h1>
-      <p class="hero__subtitle">学生作品案例精选，覆盖八大行业方向的升学与实践成果 — 以下为占位图片与示例文字，真实案例正在整理中。</p>
+      <p class="hero__subtitle">学生录取案例精选，覆盖10个申请地区、5大数字艺术分支的真实录取成果与作品案例，点击卡片查看完整案例卡。</p>
     </div>
   </section>
   <section class="section">
     <div class="container">
-      <div class="pending-badge">⏳ 示例数据，待替换为真实学生案例</div>
-      <div class="filter-bar fade-up" id="portfolio-filter-bar"></div>
-      <div class="card-grid fade-up" id="portfolio-grid"></div>
+      <!-- v3.11: group labels use .portfolio-filter-label, NOT the shared
+           .tl-ctrl-label (kept as-is for the timeline page's own 本科/研究生
+           阶段 labels, which GM didn't flag) — GM found .tl-ctrl-label's
+           10px uppercase mono style too small/quiet for these two Chinese
+           group names; see the CSS comment in pages.css. -->
+      <div class="tl-controls fade-up">
+        <div class="tl-ctrl-group">
+          <div class="portfolio-filter-label">国家/地区</div>
+          <div class="filter-bar" id="portfolio-filter-region"></div>
+        </div>
+        <div class="tl-ctrl-group">
+          <div class="portfolio-filter-label">项目类型</div>
+          <div class="filter-bar" id="portfolio-filter-type"></div>
+        </div>
+      </div>
+      <!-- no `fade-up` here on purpose: unlike offers/instructors, this
+           grid renders all 70 cases un-paginated, so its box is much
+           taller than the viewport — the shared .fade-up reveal (10%-of-
+           its-OWN-height IntersectionObserver threshold, see effects.js)
+           never reaches 10% from a normal scroll-in position and the
+           whole grid would sit stuck at opacity:0 forever (see v3.10 in
+           docs/PROJECT_NOTES.md). -->
+      <div class="card-grid" id="portfolio-grid"></div>
+      <div id="portfolio-more-wrap" style="text-align:center;margin-top:20px;"></div>
     </div>
   </section>
 </main>
@@ -111,6 +138,7 @@
 <!-- ═══ PAGE: TIMELINE (copied from IST as-is — GM: "时间轴...先复制一份ist的放这里") ═══ -->
 <main class="page" id="page-timeline">
   <section class="timeline-hero">
+    <span class="eyebrow eyebrow--on-void u-en">Growth Timeline</span>
     <h1 class="timeline-hero__title">成长时间轴</h1>
     <p class="timeline-hero__sub">选择就读阶段，灵活查看全程规划路径。点击相应模块可查询可报名课程列表。</p>
   </section>
@@ -121,7 +149,6 @@
         <div class="tl-seg-tabs" id="tl-tabs-ug">
           <button class="tl-seg-tab" data-val="uk3">英国本科 3年</button>
           <button class="tl-seg-tab" data-val="us4">美国本科 4年</button>
-          <button class="tl-seg-tab" data-val="arch5">建筑学 5年</button>
           <button class="tl-seg-tab" data-val="">不含本科</button>
         </div>
       </div>
@@ -152,6 +179,7 @@
 <!-- ═══ PAGE: COURSE PRODUCTS (copied from IST as-is) ═══ -->
 <main class="page" id="page-course-products">
   <section class="timeline-hero">
+    <span class="eyebrow eyebrow--on-void u-en">Course Products</span>
     <h1 class="timeline-hero__title">课程产品</h1>
     <p class="timeline-hero__sub">从长线旗舰项目到分类课程目录，覆盖学术探索、行业实习与商业实践的完整课程体系。点击任意卡片查看完整介绍。</p>
   </section>
@@ -187,6 +215,15 @@
   </div>
 </div>
 
+<!-- ═══ STICKY COLLAPSE BAR — ported from ist_demo's home.js
+     _initStickyCollapse/_updateStickyBar: when an expand/fold grid
+     (导师团队 全部导师, offer 展示) is open and its own 展开/收起 button has
+     scrolled out of view, this floating pill takes over so the user
+     doesn't have to scroll back up to collapse it. ═══ -->
+<div id="sticky-collapse" class="sticky-collapse" style="display:none">
+  <button class="sticky-collapse__btn" id="sticky-collapse-btn">↑ 收起</button>
+</div>
+
 <!-- ═══ FOOTER (shared across all pages, same 4-column structure as IST) ═══ -->
 <footer class="site-footer">
   <div class="site-footer__inner">
@@ -202,7 +239,7 @@
         <a onclick="Router.go('home')"><strong>首页</strong><span class="u-en">Home</span></a>
         <a onclick="Router.go('portfolio')"><strong>案例展示</strong><span class="u-en">Student Work</span></a>
         <a onclick="Router.go('timeline')"><strong>时间轴</strong><span class="u-en">Timeline</span></a>
-        <a onclick="Router.go('course-products')"><strong>课程</strong><span class="u-en">Courses</span></a>
+        <a onclick="Router.go('course-products')"><strong>课程产品</strong><span class="u-en">Courses</span></a>
         <a onclick="Router.go('planning')"><strong>职业规划</strong><span class="u-en">Planning</span></a>
       </div>
       <div class="site-footer__col">
@@ -240,6 +277,7 @@
 <div id="app-loading" style="position:fixed;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;font-family:sans-serif;color:#999;z-index:9999">加载中…</div>
 
 <script src="assets/js/effects.js"></script>
+<script src="assets/js/marquee.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/ist-data.js"></script>
 <script src="assets/js/components.js"></script>
@@ -262,8 +300,9 @@
     await PortfolioPage.build();
     document.getElementById('footer-year').textContent = new Date().getFullYear();
     const PAGES = ['planning', 'timeline', 'course-products', 'portfolio'];
-    const hashPage = location.hash.replace('#', '');
-    Router.go(PAGES.includes(hashPage) ? hashPage : 'home');
+    const hashRaw = location.hash.replace('#', '');
+    const [hashPage, hashSub] = hashRaw.split('/');
+    Router.go(PAGES.includes(hashPage) ? hashPage : 'home', hashPage === 'planning' ? { industryId: hashSub || null } : {});
   } catch (err) {
     console.error(err);
     document.getElementById('app-loading').textContent = '内容加载失败，请检查 data/ 目录是否随页面一并部署。';

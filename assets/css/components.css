@@ -232,6 +232,15 @@
   content: ''; position: absolute; inset: 0; z-index: 0;
   background: radial-gradient(circle at 22% 18%, rgba(255,255,255,.3), transparent 55%);
 }
+/* v3.4: real photo layer, used when industries.json's bannerImg is set
+   for that industry (see planning.js renderIndustryDetailHTML). Sits
+   below the overlay/content/tag (z-index 0) and fills the existing
+   4:1 / 2.2:1 (mobile) box via object-fit:cover, since the source
+   Figma posters are natively ~2.6:1. */
+.industry-panel__banner-img {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%; object-fit: cover;
+}
 .industry-panel__banner-tag {
   position: absolute; top: 14px; left: 16px; z-index: 2;
   font-family: var(--font-mono); font-size: 10px; letter-spacing: .05em;
@@ -274,20 +283,155 @@
 .schools-col h5 { font-size: 12px; font-weight: 700; color: var(--color-text-faint); margin-bottom: 6px; }
 .schools-col p { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.6; }
 
-/* ── CAREER PLANNING TEASER (homepage) ──────────
-   v3.1: converted from a manual scroll-snap rail into an auto-looping
-   marquee, same idiom as the 精选课程/.featured-rail section (mask-
-   fade edges, duplicated list, translateX loop via the shared
-   featured-scroll-fwd keyframe, paused on hover/out-of-view), per
-   GM's follow-up request — replaces the old fixed circular arrow CTA
-   with a below-center .section-cta button to the full /planning page. */
+/* ── PLANNING SUBPAGES (v3.3) ────────────────
+   #pl-overview-subpage / #pl-industry-subpage — only one visible at a
+   time, toggled via the native [hidden] attribute by
+   PlanningPage.showSubpage(). No display override needed since
+   .planning-subpage sets none of its own, but stated explicitly here
+   so a future rule doesn't accidentally win over the UA default. */
+.planning-subpage[hidden] { display: none; }
+
+/* Independent fold/collapse per section inside one industry's detail
+   subpage — mirrors the 数字艺术就业海报 Figma file's stacked-section
+   layout. Unlike .accordion (FAQ), these do NOT close each other;
+   every section starts open (confirmed default) and toggles alone.
+   v3.5: a slim yellow left spine + an outlined index badge per section
+   (GM asked for a bright-yellow-outline treatment to make the 9
+   sections easier to tell apart while scrolling) — reuses the site's
+   one reserved accent color rather than introducing a second hue, so
+   it reads as "more of the existing accent", not a new color language. */
+.fold-section {
+  border-top: 1px solid var(--color-border); padding: 24px 0 28px 18px;
+  border-left: 3px solid var(--color-accent-dim);
+}
+.fold-section:first-of-type { border-top: none; }
+.fold-section.is-open { border-left-color: var(--color-accent); }
+.fold-section__head { width: 100%; display: flex; align-items: center; gap: 14px; text-align: left; margin-bottom: 18px; }
+.fold-section__index {
+  font-size: 11px; font-weight: 800; color: var(--color-accent); flex-shrink: 0;
+  font-family: var(--font-mono); letter-spacing: .02em;
+  border: 1px solid var(--color-accent); border-radius: var(--radius-sm); padding: 3px 9px;
+}
+.fold-section__title { flex: 1; font-size: 17px; font-weight: 800; margin: 0; }
+.fold-section__icon { font-family: var(--font-mono); font-size: 20px; color: var(--color-text-faint); flex-shrink: 0; }
+.fold-section:not(.is-open) .fold-section__head { margin-bottom: 0; }
+.fold-section:not(.is-open) .fold-section__body { display: none; }
+
+/* "行业正在做什么业务" phrase-card grid — a plain tile grid didn't
+   already exist anywhere on the site, so this is the one genuinely
+   new small component. */
+.tag-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 10px; }
+.tag-card { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 12.5px; font-weight: 700; text-align: center; }
+
+/* v3.7: richer title+body variant of the same grid, used once an
+   industry has ind.businessCardsDetailed (Figma-sourced business-line
+   name + one-sentence explanation) instead of just a plain phrase —
+   falls back to the plain .tag-card above when that data isn't set yet. */
+.tag-card-grid--detailed { grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); }
+.tag-card--detailed { text-align: left; padding: 16px 18px; }
+.tag-card__title { font-size: 13px; font-weight: 800; margin-bottom: 6px; }
+.tag-card__body { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); line-height: 1.6; }
+
+/* "学生能进入哪些岗位" role pills — click opens the "岗位解读" overlay
+   (PlanningPage.openRoleInsight / RoleInsight), matching this role
+   against real company job postings for the industry. */
+.role-pill-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.role-pill { border: 1px solid var(--color-border-2); border-radius: 999px; padding: 8px 16px; font-size: 12.5px; font-weight: 700; transition: border-color .15s var(--ease), background .15s var(--ease); }
+.role-pill:hover { border-color: var(--color-accent-deep); background: var(--color-accent-veil); }
+
+/* "具体可以做什么" — v3.5: the 3 real photos (ind.outputShowcase) are
+   their own fixed 3-in-a-row flex strip (equal auto-sizing, wraps on
+   narrow viewports), separate from the realCase-derived phrases, which
+   render underneath as a row of small pill tags rather than sharing the
+   photo grid's big 4:3 cells — GM asked for the photos and the "rest"
+   to read as two visibly different weights, not one uniform grid. */
+.output-showcase-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+.output-tile {
+  flex: 1 1 0; min-width: 160px;
+  aspect-ratio: 4 / 3; border-radius: var(--radius); display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 14px; color: #fff; font-size: 12.5px; font-weight: 700; line-height: 1.4;
+}
+.output-tile--photo {
+  background-size: cover; background-position: center;
+  align-items: flex-end; justify-content: flex-start; text-align: left;
+  position: relative; overflow: hidden;
+}
+.output-tile--photo::after {
+  content: ''; position: absolute; inset: 0; border-radius: inherit;
+  background: linear-gradient(0deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.1) 60%, transparent 100%);
+}
+.output-tile--photo span { position: relative; z-index: 1; }
+/* The realCase phrases with no matching photo — small non-interactive
+   pills (not full tile cells), visually lighter-weight than the photo
+   strip above. */
+.output-tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.output-tag {
+  border-radius: var(--radius-pill); padding: 6px 14px;
+  font-size: 11.5px; font-weight: 700; line-height: 1.4;
+  border: 1px dashed var(--color-border-2); color: var(--color-text-secondary);
+}
+
+/* "职业发展路径" — reuses .tier-card, adds a per-step expand toggle
+   (PlanningPage.toggleCareerStep) instead of showing every step's
+   full description at once. */
+.tier-card__head { width: 100%; text-align: left; display: block; position: relative; padding-right: 24px; }
+.tier-card__expand-icon { position: absolute; top: 0; right: 0; font-family: var(--font-mono); font-size: 16px; color: var(--color-text-faint); }
+.tier-card__detail { max-height: 0; overflow: hidden; transition: max-height .25s var(--ease); }
+.tier-card.is-expanded .tier-card__detail { max-height: 480px; margin-top: 10px; }
+
+/* v3.7: "职业发展路径" now renders from ind.careerPath (transcribed
+   verbatim from the Figma/PDF poster's own 4-stage + 3-salary-band
+   structure) when present, falling back to the older tiers-based
+   .tier-card accordion above when it isn't — same hasImg-style
+   graceful-fallback pattern used elsewhere in this file. Kept as
+   outline cards (not solid) so the one truly solid-fill accent block
+   on this page stays the .jd-insight-block below it, per GM's "yellow
+   blocks... for visual impact" instruction targeting that callout. */
+.stage-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 12px; margin-bottom: 14px; }
+.stage-card { border: 1px solid var(--color-accent-dim); border-radius: var(--radius-sm); padding: 14px 16px; }
+.stage-card__head { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; margin-bottom: 8px; }
+.stage-card__step { color: var(--color-accent); font-size: 11px; font-family: var(--font-mono); border: 1px solid var(--color-accent); border-radius: 999px; padding: 2px 8px; flex-shrink: 0; }
+.stage-card__skills { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; }
+.salary-band-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.salary-band-chip { border: 1px dashed var(--color-border-2); border-radius: 999px; padding: 8px 16px; font-size: 12px; color: var(--color-text-secondary); }
+.salary-band-chip strong { color: var(--color-text-primary); margin-right: 6px; font-weight: 800; }
+
+/* v3.7: "隐性能力要求" callout inside 职业发展路径 — surfaces this
+   industry's own real-JD card from 总览's JD decoder (jdDecoder.cards,
+   see PlanningPage._jdCardForIndustry) without leaving the industry
+   subpage. GM asked for "yellow blocks + black text" for visual
+   impact here, so unlike the outline-only accent used elsewhere on
+   this page, this is a solid accent fill — the one place on the
+   industry subpage that goes solid instead of outlined, on purpose. */
+.jd-insight-block {
+  background: var(--color-accent); color: var(--color-accent-ink);
+  border-radius: var(--radius); padding: 18px 20px; margin-top: 16px;
+}
+.jd-insight-block__head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.jd-insight-block__tag {
+  font-size: 11px; font-weight: 800; background: var(--color-accent-ink); color: var(--color-accent);
+  padding: 3px 10px; border-radius: 999px;
+}
+.jd-insight-block__label { font-size: 11.5px; font-weight: 700; opacity: .75; }
+.jd-insight-block__quote { font-size: 13px; font-weight: 600; line-height: 1.6; margin-bottom: 10px; }
+.jd-insight-block__insight { font-size: 12.5px; font-weight: 700; line-height: 1.6; }
+
+/* ── CAREER/INDUSTRY REEL — v3.1: an auto-looping marquee, same idiom
+   as the 精选课程/.featured-rail section (mask-fade edges, duplicated
+   list). Originally lived on the homepage as the 职业规划 teaser; v3.13
+   (GM) moved that reel onto the /planning page's own 总览 overview tab
+   instead (see PlanningPage.renderIndustriesOverview) and replaced the
+   homepage section with a plain editorial teaser — this CSS is now
+   used only there. Also v3.13: the scroll itself is driven by
+   Marquee.init() (assets/js/marquee.js), not a CSS keyframe animation
+   — GM reported reels disappearing after running a while; see
+   marquee.js's header comment for why. */
 .career-rail-wrap {
   position: relative; overflow: hidden; padding: 4px 0 14px;
   mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
 }
-.career-rail { display: flex; gap: 16px; width: max-content; will-change: transform; animation: featured-scroll-fwd 42s linear infinite; }
-.career-rail-wrap:hover .career-rail, .career-rail.is-paused { animation-play-state: paused; }
+.career-rail { display: flex; gap: 16px; width: max-content; will-change: transform; }
 .career-card {
   flex: 0 0 240px; cursor: pointer;
   border: 1px solid var(--color-border); border-radius: var(--radius); padding: 20px;
@@ -305,3 +449,77 @@
 @media (max-width: 640px) {
   .career-card { flex-basis: 210px; }
 }
+
+/* ── Image Modal (shared) — ported from ist_demo, backs ImageModal in
+   assets/js/components.js. See home.js's `_buildCatalogCard` for the
+   click that opens it. ── */
+.img-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  background: rgba(5,6,8,.82);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .25s ease;
+  cursor: pointer;
+}
+.img-modal-backdrop.is-visible { opacity: 1; }
+.img-modal-flipper {
+  perspective: 1200px;
+  /* v3.11: was min(92vw,800px) — on any normal-width monitor the 800px
+     cap kicked in well before 92vw did, so a 1600px-wide case-card
+     poster (assets/img/portfolio-cases/*_full.jpg) rendered at half its
+     real resolution and its infographic text was hard to read. Raised
+     so the modal only downscales on genuinely small viewports; the
+     images themselves already top out around 1600px so this isn't
+     upscaling anything past its native resolution. */
+  max-width: min(90vw, 1700px);
+  max-height: 90vh;
+  cursor: default;
+}
+.img-modal-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(-90deg) scale(.88);
+  transition: transform .55s cubic-bezier(.34,1.56,.64,1),
+              opacity .25s ease;
+  opacity: 0;
+  border-radius: 16px;
+  box-shadow: 0 32px 80px -16px rgba(0,0,0,.9);
+  line-height: 0;
+}
+.img-modal-backdrop.is-visible .img-modal-inner {
+  transform: rotateY(0deg) scale(1);
+  opacity: 1;
+}
+.img-modal-inner img {
+  display: block;
+  max-width: min(90vw, 1700px);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+}
+.img-modal-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-2);
+  color: var(--color-text-muted);
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color .15s, background .15s;
+  z-index: 1;
+}
+.img-modal-close:hover { color: var(--color-text); background: var(--color-surface); }

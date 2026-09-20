@@ -1,37 +1,106 @@
 /* ═══════════════════════════════════════════
    PLANNING PAGE — industry → company/job/school drill-down.
-   Same shape as IST's planning.js (industry nav + per-industry
-   panel), scaled to DAD's richer data: 8 industries, each with
-   salary tiers, enterprises, schools, and a full company-insight
-   modal (69 companies total, kept at full detail per project decision).
+
+   v3.3 rebuild (2026-09), following the "数字艺术就业海报" Figma file
+   (https://figma.com/design/unFUcOlfIw8zwl7YMwRDbb) per GM's explicit
+   UX brief + confirmed answers — see docs/PROJECT_NOTES.md for the
+   full writeup. Summary of what changed vs. the v1/v3.1 single long
+   scroll page:
+     - The 8 industries are no longer stacked panels on one endless
+       scroll. Each is its own deep-linkable subpage (#planning/<id>),
+       swapped in by showSubpage() and driven by Router — confirmed
+       choice over an instant-swap-same-URL alternative.
+     - Everything that ISN'T industry-specific (heatmap, JD decoder,
+       overseas pathways, FAQ, quiz, roadmap, capabilities, data
+       insights) now lives together on its own "总览" overview subpage
+       (#planning), reachable from the same top nav bar as the 8
+       industries — confirmed choice over repeating it on every
+       industry subpage.
+     - Within one industry's subpage: banner stays exactly as v3.1
+       designed it (image, gradient overlay, title/intro/tags on top)
+       per GM's explicit instruction to keep that part as-is. v3.4
+       (2026-09-19) wires it to a real photo when industries.json's
+       bannerImg is set for that industry (<img>, object-fit:cover),
+       falling back to the original gradient + "占位图" tag exactly as
+       before when it's empty — same hasImg-driven pattern already
+       used by home.js's _buildCatalogCard, no onerror needed. Photos
+       are sourced from the Figma poster file per industry and land at
+       assets/img/industry-cards/<slug>.jpg; see PROJECT_NOTES.md for
+       why this had to be a manual export/attach step rather than an
+       automated download. Everything below it is restructured into the Figma
+       poster's own section order (行业是什么 / 代表企业 / 业务内容 /
+       岗位 / 具体产出 / 发展路径 / 能力要求 / 作品集对标), each an
+       independently foldable section (open by default — confirmed),
+       built with existing site styles wherever a fit existed
+       (company-chip/company-grid, tier-card, capability-card,
+       pathway-card__row, schools-grid) and only three small new CSS
+       components added where nothing already fit: .fold-section,
+       .tag-card(-grid), .role-pill(-grid), .output-tile(-grid).
+     - Confirmed interactive additions: 职业发展路径 steps (reusing the
+       existing tiers data) expand in place instead of showing full
+       detail for all three at once; role pills cross-link into the
+       overview subpage's JD decoder, pre-filtered to this industry.
+       (Sample-output tiles originally opened a Lightbox on click —
+       removed in v3.6 per GM's request once real photos were in place
+       and already legible at tile size; see PROJECT_NOTES.md.)
+     - No new data was needed — every section above is built from
+       fields industries.json already had (parentTrans, targetCases,
+       realCase, tiers[].gargs, ugPath/pgPath, studentProfile,
+       portfolioKey, schools). See splitPhraseList() in components.js
+       for how the two comma/顿号-separated sentence fields become
+       card grids.
 ═══════════════════════════════════════════ */
 
 const PlanningPage = {
   industries: [],
   companies: {},
+  currentIndustryId: null,
+
+  // industries.json titles that don't literally match a jdDecoder
+  // card's "industry" label (site-content.json uses shorter labels for
+  // these two) — used by _jdCardForIndustry().
+  JD_CARD_LABEL: {
+    '互联网生态': '互联网',
+    'AI创意科技': 'AI科创',
+  },
 
   async render(data) {
     this.industries = data.industries;
     this.companies = data.companies;
     this.renderHero();
     this.renderNav();
-    this.renderPanels();
     // ── Content moved here from the homepage, 2026-09 restructuring:
     // home now only teases 8 industries (see HomePage.renderCareerTeaser);
     // the full detail — industry overview, heatmap, JD decoder, overseas
     // pathways, FAQ, quiz, roadmap, capabilities, data insights — lives
-    // on this page so nothing built in v1 was deleted, only relocated.
+    // on this page's "总览" overview subpage.
     const { site, cityHeat } = data;
+    // v3.7: kept for renderIndustryDetailHTML — each industry's career
+    // path section surfaces its own JD-decoder card (see JD_CARD_LABEL)
+    // as a "行业真实声音" callout. v3.12 (GM): the standalone JD decoder
+    // section that used to also live on 总览 (rendered by the old
+    // renderJD()) has been removed — GM: that information is already
+    // covered inside each industry's own detail subpage via this same
+    // jdDecoder data, so the overview-page copy was redundant. This
+    // this.jdDecoder assignment and JD_CARD_LABEL are NOT dead code —
+    // _jdCardForIndustry()/_jdInsightBlockHTML() (used by
+    // renderIndustryDetailHTML) still depend on them.
+    this.jdDecoder = site.jdDecoder;
     this.renderIndustriesOverview(site.industriesIntro, this.industries);
     this.renderHeatmap(site.heatmap, cityHeat);
-    this.renderJD(site.jdDecoder);
     this.renderPathways(site.overseasPathways);
     this.renderFAQ(site.faq);
     this.renderQuiz(site.quiz);
     this.renderRoadmap(site.roadmap);
     this.renderCapabilities(site.capabilities);
     this.renderDataInsights(site.dataInsights);
-    Effects.init(document.getElementById('page-planning'));
+    // Default state: overview subpage visible, industry subpage empty/
+    // hidden. Router.go (called right after this from the boot script,
+    // reading the real initial #planning[/id] hash) will override this
+    // via showSubpage() if the page is loading straight into an
+    // industry deep link.
+    this.showSubpage(null);
+    Effects.init(document.getElementById('pl-overview-subpage'));
   },
 
   renderHero() {
@@ -47,16 +116,182 @@ const PlanningPage = {
   renderNav() {
     document.getElementById('planning-nav-root').innerHTML = `
       <div class="container industry-nav__scroll">
-        ${this.industries.map((ind, i) => `
-          <button class="industry-nav__btn${i === 0 ? ' is-active' : ''}" id="nav-${ind.id}" onclick="PlanningPage.focusIndustry('${escapeHTML(ind.title)}')">${escapeHTML(ind.title)}</button>`).join('')}
+        <button class="industry-nav__btn is-active" id="nav-overview" onclick="Router.go('planning', {})">总览</button>
+        ${this.industries.map(ind => `
+          <button class="industry-nav__btn" id="nav-${ind.id}" onclick="Router.go('planning', {industryId:'${ind.id}'})">${escapeHTML(ind.title)}</button>`).join('')}
       </div>`;
   },
 
-  renderPanels() {
-    document.getElementById('planning-panels-root').innerHTML = this.industries.map(ind => `
+  /* ═══ Subpage switching (Router calls this on every #planning[/id] nav) ═══ */
+
+  showSubpage(industryId) {
+    this.currentIndustryId = industryId || null;
+    document.querySelectorAll('.industry-nav__btn').forEach(b => b.classList.remove('is-active'));
+    document.getElementById(industryId ? `nav-${industryId}` : 'nav-overview')?.classList.add('is-active');
+
+    const overviewEl = document.getElementById('pl-overview-subpage');
+    const industryEl = document.getElementById('pl-industry-subpage');
+    if (!overviewEl || !industryEl) return;
+
+    if (industryId) {
+      const ind = this.industries.find(i => i.id === industryId);
+      if (!ind) { this.showSubpage(null); return; }
+      overviewEl.hidden = true;
+      industryEl.hidden = false;
+      industryEl.innerHTML = this.renderIndustryDetailHTML(ind);
+      Effects.init(industryEl);
+    } else {
+      industryEl.hidden = true;
+      industryEl.innerHTML = '';
+      overviewEl.hidden = false;
+    }
+  },
+
+  openCompany(industryId, industryTitle, companyName) {
+    const entry = (this.companies[industryId] || {})[companyName];
+    if (!entry) return;
+    CompanyModal.open(industryTitle, companyName, entry);
+  },
+
+  // Back-compat: several other pages/sections still call this by title
+  // (home's industry cards, quiz result CTA, heatmap row click, footer
+  // quick links via Router.goToIndustry). Now navigates to the
+  // industry's deep-linkable subpage instead of scrolling.
+  focusIndustry(title) {
+    const ind = this.industries.find(i => i.title === title);
+    if (!ind) return;
+    Router.go('planning', { industryId: ind.id });
+  },
+
+  toggleFold(btn) {
+    const section = btn.closest('.fold-section');
+    if (!section) return;
+    const isOpen = section.classList.toggle('is-open');
+    const icon = btn.querySelector('.fold-section__icon');
+    if (icon) icon.textContent = isOpen ? '−' : '+';
+  },
+
+  toggleCareerStep(btn) {
+    const card = btn.closest('.tier-card');
+    if (!card) return;
+    const isOpen = card.classList.toggle('is-expanded');
+    const icon = card.querySelector('.tier-card__expand-icon');
+    if (icon) icon.textContent = isOpen ? '−' : '+';
+  },
+
+  // v3.7: role pill click -> "岗位解读" overlay showing this industry's
+  // REAL company job postings (companies.json) that best match the
+  // clicked role, restoring a feature GM said existed a few versions
+  // back and asked to bring back in place of jumping to 总览's JD
+  // decoder (which only ever filtered by industry, never by role).
+  // Matching is fuzzy (role titles and job titles are two independently
+  // written lists, not a shared vocabulary): exact match scores
+  // highest, then substring containment, then shared-bigram count as a
+  // loose relevance signal. If nothing scores above 0, falls back to
+  // showing this industry's real jobs generally rather than an empty
+  // overlay — the point is always "here's the real hiring language",
+  // never a fabricated precise match.
+  openRoleInsight(roleTitle, industryTitle) {
+    const ind = this.industries.find(i => i.title === industryTitle);
+    if (!ind) return;
+    const companyMap = this.companies[ind.id] || {};
+    const allJobs = [];
+    Object.entries(companyMap).forEach(([company, c]) => {
+      (c.jobs || []).forEach(([jobTitle, jobDesc]) => allJobs.push({ company, jobTitle, jobDesc }));
+    });
+    const norm = s => (s || '').replace(/[\/\s·、,，]/g, '');
+    const roleN = norm(roleTitle);
+    const score = (job) => {
+      const jobN = norm(job.jobTitle);
+      if (!jobN || !roleN) return 0;
+      if (jobN === roleN) return 100;
+      if (jobN.includes(roleN) || roleN.includes(jobN)) return 50;
+      let shared = 0;
+      for (let i = 0; i < roleN.length - 1; i++) {
+        if (jobN.includes(roleN.slice(i, i + 2))) shared++;
+      }
+      return shared;
+    };
+    let matches = allJobs.map(j => ({ ...j, _s: score(j) })).filter(j => j._s > 0).sort((a, b) => b._s - a._s);
+    let note;
+    if (matches.length) {
+      matches = matches.slice(0, 4);
+      note = '真实企业岗位描述 · 供对照参考';
+    } else {
+      matches = allJobs.slice(0, 4);
+      note = `暂无与"${roleTitle}"直接对应的岗位描述，以下为该行业其他真实岗位参考`;
+    }
+    RoleInsight.open(roleTitle, industryTitle, matches, note);
+  },
+
+  _rolesForIndustry(ind) {
+    const seen = [];
+    (ind.tiers || []).forEach(t => {
+      (t.gargs || '').split(/[、，,]/).map(s => s.trim()).filter(Boolean).forEach(r => {
+        if (!seen.includes(r)) seen.push(r);
+      });
+    });
+    return seen;
+  },
+
+  // v3.7: site-content.json's jdDecoder.cards has one entry per industry
+  // (using its own shorter labels for two industries — see JD_CARD_LABEL),
+  // originally surfaced only inside 总览's JD decoder. Looked up here so
+  // 职业发展路径 can show this industry's own real-JD "隐性能力要求"
+  // insight without requiring the visitor to leave the industry subpage.
+  _jdCardForIndustry(industryTitle) {
+    if (!this.jdDecoder || !this.jdDecoder.cards) return null;
+    const label = this.JD_CARD_LABEL[industryTitle] || industryTitle;
+    return this.jdDecoder.cards.find(c => c.industry === label) || null;
+  },
+
+  // Renders that card as a yellow-block/black-text callout (GM: "use
+  // yellow blocks+black text when needed for visual impact") — reuses
+  // the site's single accent token rather than a new color, consistent
+  // with the rest of the industry subpage. Renders nothing when this
+  // industry has no matching card.
+  _jdInsightBlockHTML(industryTitle) {
+    const card = this._jdCardForIndustry(industryTitle);
+    if (!card) return '';
+    return `
+      <div class="jd-insight-block">
+        <div class="jd-insight-block__head">
+          <span class="jd-insight-block__tag">${escapeHTML(card.tag)}</span>
+          <span class="jd-insight-block__label">真实JD 隐性能力要求</span>
+        </div>
+        <div class="jd-insight-block__quote">"${escapeHTML(card.quote)}"</div>
+        <div class="jd-insight-block__insight">🔍 ${escapeHTML(card.insight)}</div>
+      </div>`;
+  },
+
+  _foldSection(index, title, bodyHTML) {
+    return `
+      <section class="fold-section is-open fade-up" data-fold="${index}">
+        <button class="fold-section__head" onclick="PlanningPage.toggleFold(this)">
+          <span class="fold-section__index u-mono">${index}</span>
+          <h3 class="fold-section__title">${title}</h3>
+          <span class="fold-section__icon">−</span>
+        </button>
+        <div class="fold-section__body">${bodyHTML}</div>
+      </section>`;
+  },
+
+  /* ═══ One industry's full Figma-style detail subpage ═══ */
+
+  renderIndustryDetailHTML(ind) {
+    const roles = this._rolesForIndustry(ind);
+    const businessCards = splitPhraseList(ind.targetCases);
+    const outputs = splitPhraseList(ind.realCase, /^建议项目[:：]\s*/);
+    const hasBanner = !!ind.bannerImg;
+    let idx = 0;
+    const nextIndex = () => String(++idx).padStart(2, '0');
+
+    return `
       <section class="industry-panel container" id="sec-${ind.id}" style="border-top-color:${industryColor(ind.title)}">
-        <div class="industry-panel__banner fade-up" style="background:linear-gradient(135deg, ${industryColor(ind.title)} 0%, #262626 55%, var(--color-void) 100%)">
-          <span class="industry-panel__banner-tag">占位图 · Placeholder</span>
+        <div class="industry-panel__banner fade-up"${hasBanner ? '' : ` style="background:linear-gradient(135deg, ${industryColor(ind.title)} 0%, #262626 55%, var(--color-void) 100%)"`}>
+          ${hasBanner
+            ? `<img class="industry-panel__banner-img" src="${escapeHTML(ind.bannerImg)}" alt="${escapeHTML(ind.title)}" loading="lazy">`
+            : `<span class="industry-panel__banner-tag">占位图 · Placeholder</span>`}
           <div class="industry-panel__banner-overlay"></div>
           <div class="industry-panel__banner-content">
             <div>
@@ -68,28 +303,126 @@ const PlanningPage = {
           </div>
         </div>
 
-        <div class="industry-panel__tiers fade-up">
-          ${(ind.tiers || []).map(t => `
-            <div class="tier-card">
-              <span class="tier-card__badge">${escapeHTML(t.badge)}</span>
-              <div class="tier-card__salary u-mono">${escapeHTML(t.salary)}</div>
-              <div class="tier-card__title">${escapeHTML(t.title)}</div>
-              <div class="tier-card__desc">${escapeHTML(t.desc)}</div>
-              <div class="tier-card__roles">代表岗位：${escapeHTML(t.gargs)}</div>
-              <div class="tier-card__roles">代表企业：${escapeHTML(t.reps)}</div>
-            </div>`).join('')}
-        </div>
+        ${this._foldSection(nextIndex(), '行业解读', `
+          <p style="font-size:13.5px;color:var(--color-text-secondary);line-height:1.7;max-width:820px">${escapeHTML(ind.industryExplainer || ind.parentTrans || ind.oneLine || '')}</p>
+        `)}
 
-        <div class="fade-up" style="margin-bottom:32px">
-          <div class="section-head" style="margin-bottom:16px"><h3 style="margin:0">代表企业 <span style="font-weight:500;font-size:12px;color:var(--color-text-faint)">· 点击查看岗位解读</span></h3></div>
+        ${this._foldSection(nextIndex(), '代表企业', `
           <div class="company-grid">
             ${(ind.enterprises || []).map(name => `
               <button class="company-chip" onclick="PlanningPage.openCompany('${escapeHTML(ind.id)}','${escapeHTML(ind.title)}','${escapeHTML(name).replace(/'/g, "\\'")}')">${escapeHTML(name)}</button>`).join('')}
           </div>
-        </div>
+        `)}
 
-        <div class="fade-up" style="margin-bottom:32px">
-          <h3>对口院校方向</h3>
+        ${this._foldSection(nextIndex(), '行业正在做什么业务', `
+          ${(ind.businessCardsDetailed && ind.businessCardsDetailed.length) ? `
+            <div class="tag-card-grid tag-card-grid--detailed">
+              ${ind.businessCardsDetailed.map(c => `
+                <div class="tag-card tag-card--detailed">
+                  <div class="tag-card__title">${escapeHTML(c.title)}</div>
+                  <div class="tag-card__body">${escapeHTML(c.body)}</div>
+                </div>`).join('')}
+            </div>
+          ` : `
+            <div class="tag-card-grid">
+              ${businessCards.map(p => `<div class="tag-card">${escapeHTML(p)}</div>`).join('')}
+            </div>
+          `}
+        `)}
+
+        ${this._foldSection(nextIndex(), '学生能进入哪些岗位', `
+          <div class="role-pill-grid">
+            ${roles.map(r => `<button class="role-pill" onclick="PlanningPage.openRoleInsight('${escapeHTML(r).replace(/'/g, "\\'")}','${escapeHTML(ind.title)}')">${escapeHTML(r)}</button>`).join('')}
+          </div>
+        `)}
+
+        ${this._foldSection(nextIndex(), '具体可以做什么', `
+          <div class="output-showcase-row">
+            ${(ind.outputShowcase || []).map(item => `
+                <div class="output-tile output-tile--photo" style="background-image:url('${escapeHTML(item.img)}')">
+                  <span>${escapeHTML(item.label)}</span>
+                </div>`).join('')}
+          </div>
+          <div class="output-tag-row">
+            ${outputs.map(o =>
+              /* realCase-derived phrase, kept as a plain non-interactive
+                 tag — these use different wording than outputShowcase's
+                 Figma-native labels (a different source, not a 1:1 list),
+                 so no attempt is made to match/dedupe them positionally;
+                 every one of them has no photo, by definition. */
+              `<span class="output-tag">${escapeHTML(o)}</span>`
+            ).join('')}
+          </div>
+        `)}
+
+        ${this._foldSection(nextIndex(), '职业发展路径', `
+          ${ind.careerPath ? `
+            <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.7;max-width:820px;margin-bottom:16px">${escapeHTML(ind.careerPath.intro)}</p>
+            <div class="stage-card-grid">
+              ${ind.careerPath.stages.map(s => `
+                <div class="stage-card">
+                  <div class="stage-card__head"><span class="stage-card__step u-mono">${escapeHTML(s.step)}</span>${escapeHTML(s.title)}</div>
+                  <div class="stage-card__skills">${escapeHTML(s.skills)}</div>
+                </div>`).join('')}
+            </div>
+            <div class="salary-band-row">
+              ${ind.careerPath.salaryBands.map(b => `
+                <div class="salary-band-chip"><strong>${escapeHTML(b.stage)}</strong>薪资参考：${escapeHTML(b.range)}</div>`).join('')}
+            </div>
+          ` : `
+            <div class="industry-panel__tiers">
+              ${(ind.tiers || []).map((t, i) => `
+                <div class="tier-card" data-step="${i}">
+                  <button class="tier-card__head" onclick="PlanningPage.toggleCareerStep(this)">
+                    <span class="tier-card__badge">${escapeHTML(t.badge)}</span>
+                    <span class="tier-card__expand-icon">+</span>
+                    <div class="tier-card__salary u-mono">${escapeHTML(t.salary)}</div>
+                    <div class="tier-card__title">${escapeHTML(t.title)}</div>
+                  </button>
+                  <div class="tier-card__detail">
+                    <div class="tier-card__desc">${escapeHTML(t.desc)}</div>
+                    <div class="tier-card__roles">代表岗位：${escapeHTML(t.gargs)}</div>
+                    <div class="tier-card__roles">代表企业：${escapeHTML(t.reps)}</div>
+                  </div>
+                </div>`).join('')}
+            </div>
+          `}
+          ${this._jdInsightBlockHTML(ind.title)}
+        `)}
+
+        ${this._foldSection(nextIndex(), '需要建立哪些能力', `
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:20px">
+            <div class="capability-card">
+              <div class="capability-card__num u-mono">UG</div>
+              <div class="capability-card__title">本科阶段重点能力</div>
+              <div class="capability-card__skills">${escapeHTML((ind.ugPath || {}).focus || '')}</div>
+            </div>
+            <div class="capability-card">
+              <div class="capability-card__num u-mono">PG</div>
+              <div class="capability-card__title">研究生阶段重点能力</div>
+              <div class="capability-card__skills">${escapeHTML((ind.pgPath || {}).focus || '')}</div>
+            </div>
+          </div>
+          <div>
+            <h5 style="font-size:12px;color:var(--color-text-faint);margin-bottom:6px">适合怎样的学生</h5>
+            <p style="font-size:12.5px;color:var(--color-text-secondary);line-height:1.6">${escapeHTML(ind.studentProfile || '')}</p>
+          </div>
+        `)}
+
+        ${this._foldSection(nextIndex(), '作品集项目如何对应就业方向', `
+          <div style="margin-bottom:16px">
+            <h5 style="font-size:12px;color:var(--color-text-faint);margin-bottom:6px">作品集定位</h5>
+            <p style="font-size:12.5px;color:var(--color-text-secondary);line-height:1.6">${escapeHTML(ind.portfolioKey || '')}</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div class="pathway-card__row"><strong>UG 作品集方向</strong>${escapeHTML((ind.ugPath || {}).portfolio || '')}</div>
+            <div class="pathway-card__row"><strong>UG 申请目标</strong>${escapeHTML((ind.ugPath || {}).target || '')}</div>
+            <div class="pathway-card__row"><strong>PG 作品集方向</strong>${escapeHTML((ind.pgPath || {}).portfolio || '')}</div>
+            <div class="pathway-card__row"><strong>PG 申请目标</strong>${escapeHTML((ind.pgPath || {}).target || '')}</div>
+          </div>
+        `)}
+
+        ${this._foldSection(nextIndex(), '对口院校方向', `
           <div class="schools-grid">
             ${ind.schools ? Object.entries(ind.schools).map(([region, val]) => `
               <div class="schools-col">
@@ -97,61 +430,54 @@ const PlanningPage = {
                 <p>${escapeHTML(val)}</p>
               </div>`).join('') : ''}
           </div>
-        </div>
-
-        <div class="fade-up" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
-          <div>
-            <h5 style="font-size:12px;color:var(--color-text-faint);margin-bottom:6px">学生适配画像</h5>
-            <p style="font-size:12.5px;color:var(--color-text-secondary);line-height:1.6">${escapeHTML(ind.studentProfile || '')}</p>
-          </div>
-          <div>
-            <h5 style="font-size:12px;color:var(--color-text-faint);margin-bottom:6px">作品集关键</h5>
-            <p style="font-size:12.5px;color:var(--color-text-secondary);line-height:1.6">${escapeHTML(ind.portfolioKey || '')}</p>
-          </div>
-        </div>
-      </section>`).join('');
+        `)}
+      </section>`;
   },
 
-  openCompany(industryId, industryTitle, companyName) {
-    const entry = (this.companies[industryId] || {})[companyName];
-    if (!entry) return;
-    CompanyModal.open(industryTitle, companyName, entry);
-  },
+  /* ═══ Everything below is the "总览" overview subpage — unchanged
+     content/behavior from before v3.3, just now living inside
+     #pl-overview-subpage instead of sharing the page with the 8
+     industry panels. ═══ */
 
-  focusIndustry(title) {
-    const ind = this.industries.find(i => i.title === title);
-    if (!ind) return;
-    document.querySelectorAll('.industry-nav__btn').forEach(b => b.classList.remove('is-active'));
-    document.getElementById(`nav-${ind.id}`)?.classList.add('is-active');
-    const el = document.getElementById(`sec-${ind.id}`);
-    if (el) Router.scrollTo(el);
-  },
-
-  /* ═══ Everything below was HomePage's, moved here 2026-09 ═══ */
-
+  // v3.12 (GM): the overview tab's 8-industry display was a static
+  // .industry-grid of cards; GM asked for it to become the same
+  // auto-scrolling horizontal reel format previously used for the
+  // homepage's career teaser — same .career-rail/.career-card markup,
+  // duplicated-list seamless loop, pause-on-hover/out-of-view. Only the
+  // click handler differs: this page's own PlanningPage.focusIndustry()
+  // (already used by the old grid) instead of Router.goToIndustry().
+  // Uses a page-scoped rail id (pl-industry-rail) — both #page-home and
+  // #page-planning stay in the DOM at once (only one is .is-active), so
+  // reusing the same id elsewhere would make getElementById ambiguous.
+  // v3.13 (GM): the scroll itself is now driven by Marquee.init() (see
+  // assets/js/marquee.js) instead of a CSS keyframe animation — GM
+  // reported reels disappearing after running for a while; see
+  // marquee.js's header comment for why. Speed (47px/s) matches the
+  // site's other reels/marquee (originally established for the
+  // 资源网络 partner marquee to match IST's own pacing).
   renderIndustriesOverview(intro, industries) {
+    const cardHTML = (ind, i) => `
+      <div class="career-card" onclick="PlanningPage.focusIndustry('${escapeHTML(ind.title)}')" style="border-top:3px solid ${industryColor(ind.title)}">
+        <div class="career-card__top">
+          <span class="career-card__num u-mono">0${i + 1}</span>
+          <span class="career-card__trend">${escapeHTML(ind.trendArrow)}</span>
+        </div>
+        <div>
+          <div class="career-card__title">${escapeHTML(ind.title)}</div>
+          <div class="career-card__title-en">${escapeHTML(ind.titleEn)}</div>
+        </div>
+        <p class="career-card__desc">${escapeHTML(ind.oneLine)}</p>
+      </div>`;
+
     document.getElementById('pl-industries-root').innerHTML = `
       <div class="section-head fade-up">
         <span class="eyebrow u-en">${escapeHTML(intro.sectionLabel)}</span>
         <h2>${escapeHTML(intro.title)}</h2>
         <p>${escapeHTML(intro.description)}</p>
       </div>
-      <div class="industry-grid">
-        ${industries.map((ind, i) => `
-          <div class="industry-card fade-up" onclick="PlanningPage.focusIndustry('${escapeHTML(ind.title)}')" style="border-top:3px solid ${industryColor(ind.title)}">
-            <div class="industry-card__top">
-              <span class="industry-card__num u-mono">0${i + 1}</span>
-              <span class="industry-card__trend">${escapeHTML(ind.trendArrow)}</span>
-            </div>
-            <div>
-              <div class="industry-card__title">${escapeHTML(ind.title)}</div>
-              <div class="industry-card__title-en">${escapeHTML(ind.titleEn)}</div>
-            </div>
-            <p class="industry-card__desc">${escapeHTML(ind.oneLine)}</p>
-            <div class="industry-card__enterprises">${escapeHTML((ind.enterprises || []).slice(0, 3).join(' · '))}</div>
-            <div class="industry-card__cta">${escapeHTML(intro.cta)} →</div>
-          </div>`).join('')}
-      </div>`;
+      <div class="career-rail-wrap fade-up"><div class="career-rail" id="pl-industry-rail">${[...industries, ...industries].map((ind, i) => cardHTML(ind, i % industries.length)).join('')}</div></div>`;
+
+    Marquee.init(document.getElementById('pl-industry-rail'), 47, 'pl-industry-rail');
   },
 
   renderHeatmap(hm, cityHeat) {
@@ -201,54 +527,11 @@ const PlanningPage = {
     });
   },
 
-  renderJD(jd) {
-    document.getElementById('pl-jd-root').innerHTML = `
-      <div class="section-head fade-up">
-        <span class="eyebrow u-en">${escapeHTML(jd.sectionLabel)}</span>
-        <h2>${escapeHTML(jd.title)}</h2>
-        <p>${escapeHTML(jd.description)}</p>
-      </div>
-      <div class="jd-filters fade-up">
-        ${jd.filters.map((f, i) => `<button class="chip jd-filter${i === 0 ? ' is-active' : ''}" data-filter="${escapeHTML(f)}">${escapeHTML(f)}</button>`).join('')}
-      </div>
-      <div class="jd-grid fade-up">
-        ${jd.cards.map(c => `
-          <div class="jd-card" data-industry="${escapeHTML(c.industry)}">
-            <div class="jd-card__tags">
-              <span class="jd-card__industry">${escapeHTML(c.industry)}</span>
-              <span class="jd-card__tag">${escapeHTML(c.tag)}</span>
-            </div>
-            <div class="jd-card__quote">${escapeHTML(c.quote)}</div>
-            <div class="jd-card__label">🔍 隐性能力要求</div>
-            <div class="jd-card__insight">${escapeHTML(c.insight)}</div>
-          </div>`).join('')}
-      </div>
-      <div class="comparison fade-up">
-        <div class="comparison__col">
-          <h4>🌟 ${escapeHTML(jd.comparison.junior.label)}</h4>
-          <div class="comparison__quote">${escapeHTML(jd.comparison.junior.quote)}</div>
-          <div class="comparison__row"><strong>看重</strong>${escapeHTML(jd.comparison.junior.valued)}</div>
-          <div class="comparison__row"><strong>隐性要求</strong>${escapeHTML(jd.comparison.junior.hidden)}</div>
-        </div>
-        <div class="comparison__col">
-          <h4>🚀 ${escapeHTML(jd.comparison.senior.label)}</h4>
-          <div class="comparison__quote">${escapeHTML(jd.comparison.senior.quote)}</div>
-          <div class="comparison__row"><strong>看重</strong>${escapeHTML(jd.comparison.senior.valued)}</div>
-          <div class="comparison__row"><strong>隐性要求</strong>${escapeHTML(jd.comparison.senior.hidden)}</div>
-        </div>
-      </div>`;
-
-    document.querySelectorAll('#pl-jd-root .jd-filter').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('#pl-jd-root .jd-filter').forEach(b => b.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        const f = btn.dataset.filter;
-        document.querySelectorAll('#pl-jd-root .jd-card').forEach(card => {
-          card.hidden = f !== '全部行业' && card.dataset.industry !== f;
-        });
-      });
-    });
-  },
+  // v3.12 (GM): the standalone renderJD() overview section was removed
+  // here (see the render() comment above) — its data (site.jdDecoder)
+  // is still used, just not as its own 总览 section anymore; see
+  // _jdCardForIndustry()/_jdInsightBlockHTML() below for where it now
+  // surfaces instead (per-industry "行业真实声音" callout).
 
   renderPathways(p) {
     document.getElementById('pl-pathways-root').innerHTML = `

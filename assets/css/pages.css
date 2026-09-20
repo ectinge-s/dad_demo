@@ -85,8 +85,85 @@
 #page-planning .hero { min-height: auto; padding: 64px 24px 32px; }
 #page-planning .hero__subtitle { max-width: 680px; }
 
+/* ── 案例展示 (PORTFOLIO) HERO ───────────────────
+   v3.9: block-alignment now matches 时间轴/课程产品's title block
+   (.timeline-hero in ist-shared.css) — a full-width padded section
+   whose content starts right at the section's own padding, instead of
+   this page's own centered max-width-1180px `.container`, which on
+   wide viewports left it visibly more indented than the timeline/
+   course-products titles. Font-size/style is untouched (still the
+   site's normal h1 + .hero__subtitle rules) — only the timeline page's
+   own title CSS was changed to match THIS page's typography instead
+   (see .timeline-hero__title/__sub in ist-shared.css). ── */
+#page-portfolio .hero {
+  display: block;
+  min-height: auto;
+  padding: var(--space-7) var(--space-9) var(--space-6);
+}
+#page-portfolio .hero .container.hero__content {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 640px) {
+  #page-portfolio .hero { padding: var(--space-6) 24px var(--space-5); }
+}
+
+/* v3.11: 案例展示's own filter-group label style — GM found the shared
+   .tl-ctrl-label (10px, uppercase, letter-spaced, English-mono styling —
+   built for timeline's "UG/PG STAGE"-style read-outs) too small/quiet for
+   Chinese group names like 国家/地区、项目类型, so these two get their own,
+   more prominent, plain-Chinese label style instead — a small accent bar
+   prefix (matching the site's existing small-accent-mark language) plus
+   real body-text size/weight, not the timeline page's own labels. */
+#page-portfolio .portfolio-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-cn);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--color-text);
+}
+#page-portfolio .portfolio-filter-label::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--color-accent);
+}
+
 @media (max-width: 640px) {
   .section { padding: 56px 0; }
   .hero { padding: 56px 0 40px; }
   .hero__ctas { flex-direction: column; align-items: stretch; }
+}
+
+/* ── STICKY COLLAPSE BAR ─────────────────────
+   Ported from ist_demo's pages.css (.sticky-collapse), recolored to
+   this site's single yellow accent instead of IST's blue --color-
+   primary-bright. Shown/hidden and re-targeted by HomePage's
+   _updateStickyBar (assets/js/pages/home.js). ── */
+.sticky-collapse {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  z-index: 200; pointer-events: none;
+}
+.sticky-collapse__btn {
+  pointer-events: all;
+  background: rgba(10,10,10,.92);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border: 1px solid var(--color-accent-deep);
+  color: #fff;
+  font-family: var(--font-cn); font-size: 13px; font-weight: 600; letter-spacing: .02em;
+  padding: 10px 22px; border-radius: 999px;
+  cursor: pointer; white-space: nowrap;
+  box-shadow: 0 0 0 1px rgba(255,255,0,.22), 0 8px 28px -6px rgba(0,0,0,.55), 0 4px 16px rgba(0,0,0,.5);
+  transition: transform .15s var(--ease), box-shadow .15s, background .15s, color .15s, opacity .2s;
+}
+.sticky-collapse__btn:hover {
+  background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink);
+  transform: translateY(-1px);
+  box-shadow: var(--glow-accent), 0 6px 20px rgba(0,0,0,.5);
 }

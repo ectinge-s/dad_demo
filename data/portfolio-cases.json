@@ -1,0 +1,1477 @@
+[
+  {
+    "id": "美研01",
+    "name": "叶同学",
+    "regions": [
+      "美国",
+      "英国"
+    ],
+    "background": "海本",
+    "branch": "综合&艺术",
+    "schools": [
+      "哈佛",
+      "南加大",
+      "UAL"
+    ],
+    "types": [
+      "多媒介装置",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研01.jpg",
+    "full": "assets/img/portfolio-cases/美研01_full.jpg"
+  },
+  {
+    "id": "美研02",
+    "name": "陈同学",
+    "regions": [
+      "美国"
+    ],
+    "background": "海本",
+    "branch": "综合",
+    "schools": [
+      "哈佛",
+      "宾大",
+      "哥大"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研02.jpg",
+    "full": "assets/img/portfolio-cases/美研02_full.jpg"
+  },
+  {
+    "id": "美研03",
+    "name": "李同学",
+    "regions": [
+      "美国"
+    ],
+    "background": "海本",
+    "branch": "综合&艺术",
+    "schools": [
+      "南加大",
+      "纽大",
+      "约翰霍普金斯"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研03.jpg",
+    "full": "assets/img/portfolio-cases/美研03_full.jpg"
+  },
+  {
+    "id": "美研04",
+    "name": "谭同学",
+    "regions": [
+      "美国",
+      "英国",
+      "澳洲"
+    ],
+    "background": "海本",
+    "branch": "综合&艺术",
+    "schools": [
+      "约翰霍普金斯",
+      "纽大",
+      "UCL"
+    ],
+    "types": [
+      "3D虚拟"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研04.jpg",
+    "full": "assets/img/portfolio-cases/美研04_full.jpg"
+  },
+  {
+    "id": "美研05",
+    "name": "HE同学",
+    "regions": [
+      "美国"
+    ],
+    "background": "双非",
+    "branch": "综合",
+    "schools": [
+      "南加大",
+      "纽大",
+      "华盛顿"
+    ],
+    "types": [
+      "视觉策略传播",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研05.jpg",
+    "full": "assets/img/portfolio-cases/美研05_full.jpg"
+  },
+  {
+    "id": "美研06",
+    "name": "刘同学",
+    "regions": [
+      "美国",
+      "英国"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "罗德岛",
+      "RCA",
+      "CalArts"
+    ],
+    "types": [
+      "多媒介装置",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研06.jpg",
+    "full": "assets/img/portfolio-cases/美研06_full.jpg"
+  },
+  {
+    "id": "美研07",
+    "name": "赖同学",
+    "regions": [
+      "美国",
+      "英国"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "南加大",
+      "纽大",
+      "RCA"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研07.jpg",
+    "full": "assets/img/portfolio-cases/美研07_full.jpg"
+  },
+  {
+    "id": "美研08",
+    "name": "丁同学",
+    "regions": [
+      "美国",
+      "英国"
+    ],
+    "background": "985&211",
+    "branch": "综合&艺术",
+    "schools": [
+      "Pratt",
+      "RCA",
+      "UCL"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研08.jpg",
+    "full": "assets/img/portfolio-cases/美研08_full.jpg"
+  },
+  {
+    "id": "美研09",
+    "name": "范同学",
+    "regions": [
+      "美国",
+      "英国",
+      "中国香港"
+    ],
+    "background": "985&211",
+    "branch": "综合&艺术",
+    "schools": [
+      "帝国理工",
+      "康奈尔",
+      "港理工"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研09.jpg",
+    "full": "assets/img/portfolio-cases/美研09_full.jpg"
+  },
+  {
+    "id": "美研10",
+    "name": "张同学",
+    "regions": [
+      "美国",
+      "英国"
+    ],
+    "background": "985&211",
+    "branch": "综合&艺术",
+    "schools": [
+      "纽大",
+      "东北",
+      "迈阿密"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研10.jpg",
+    "full": "assets/img/portfolio-cases/美研10_full.jpg"
+  },
+  {
+    "id": "美研11",
+    "name": "谢同学",
+    "regions": [
+      "美国"
+    ],
+    "background": "211",
+    "branch": "综合&艺术",
+    "schools": [
+      "帕森斯",
+      "ACCD",
+      "Pratt"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研11.jpg",
+    "full": "assets/img/portfolio-cases/美研11_full.jpg"
+  },
+  {
+    "id": "美研12",
+    "name": "范同学",
+    "regions": [
+      "美国"
+    ],
+    "background": "美院",
+    "branch": "综合&艺术",
+    "schools": [
+      "罗德岛",
+      "东北",
+      "罗切斯特理工"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研12.jpg",
+    "full": "assets/img/portfolio-cases/美研12_full.jpg"
+  },
+  {
+    "id": "美研13",
+    "name": "张同学",
+    "regions": [
+      "美国",
+      "英国"
+    ],
+    "background": "美院",
+    "branch": "综合&艺术",
+    "schools": [
+      "Pratt",
+      "SVA",
+      "RCA"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研13.jpg",
+    "full": "assets/img/portfolio-cases/美研13_full.jpg"
+  },
+  {
+    "id": "美研14",
+    "name": "姚同学",
+    "regions": [
+      "美国",
+      "英国"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "Pratt",
+      "RCA",
+      "UAL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研14.jpg",
+    "full": "assets/img/portfolio-cases/美研14_full.jpg"
+  },
+  {
+    "id": "美研15",
+    "name": "刘同学",
+    "regions": [
+      "美国"
+    ],
+    "background": "211",
+    "branch": "艺术",
+    "schools": [
+      "Pratt",
+      "MICA",
+      "SAIC"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研15.jpg",
+    "full": "assets/img/portfolio-cases/美研15_full.jpg"
+  },
+  {
+    "id": "美研17",
+    "name": "陈同学",
+    "regions": [
+      "美国",
+      "英国",
+      "北欧"
+    ],
+    "background": "海本",
+    "branch": "艺术",
+    "schools": [
+      "埃因霍芬",
+      "SVA",
+      "UAL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研17.jpg",
+    "full": "assets/img/portfolio-cases/美研17_full.jpg"
+  },
+  {
+    "id": "美研18",
+    "name": "刘同学",
+    "regions": [
+      "美国",
+      "英国",
+      "北欧"
+    ],
+    "background": "985&211",
+    "branch": "综合&艺术",
+    "schools": [
+      "耶鲁",
+      "阿尔托",
+      "埃因霍芬"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研18.jpg",
+    "full": "assets/img/portfolio-cases/美研18_full.jpg"
+  },
+  {
+    "id": "美研19",
+    "name": "彭同学",
+    "regions": [
+      "美国"
+    ],
+    "background": "海本",
+    "branch": "综合&艺术",
+    "schools": [
+      "哈佛",
+      "罗德岛",
+      "Pratt"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/美研19.jpg",
+    "full": "assets/img/portfolio-cases/美研19_full.jpg"
+  },
+  {
+    "id": "港研01",
+    "name": "冯同学",
+    "regions": [
+      "美国",
+      "英国",
+      "中国香港"
+    ],
+    "background": "海本",
+    "branch": "综合&艺术",
+    "schools": [
+      "港科",
+      "卡梅",
+      "RCA"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研01.jpg",
+    "full": "assets/img/portfolio-cases/港研01_full.jpg"
+  },
+  {
+    "id": "港研02",
+    "name": "郑同学",
+    "regions": [
+      "中国香港",
+      "英国"
+    ],
+    "background": "海本",
+    "branch": "综合",
+    "schools": [
+      "港中文",
+      "LSE/USC",
+      "UCL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研02.jpg",
+    "full": "assets/img/portfolio-cases/港研02_full.jpg"
+  },
+  {
+    "id": "港研03",
+    "name": "李同学",
+    "regions": [
+      "美国",
+      "英国",
+      "中国香港"
+    ],
+    "background": "海本",
+    "branch": "综合",
+    "schools": [
+      "港科",
+      "纽大",
+      "UCL"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研03.jpg",
+    "full": "assets/img/portfolio-cases/港研03_full.jpg"
+  },
+  {
+    "id": "港研04",
+    "name": "代同学",
+    "regions": [
+      "中国香港",
+      "中国澳门"
+    ],
+    "background": "985&211",
+    "branch": "综合",
+    "schools": [
+      "港大",
+      "港科",
+      "港城"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研04.jpg",
+    "full": "assets/img/portfolio-cases/港研04_full.jpg"
+  },
+  {
+    "id": "港研05",
+    "name": "孙同学",
+    "regions": [
+      "中国香港"
+    ],
+    "background": "985&211",
+    "branch": "综合",
+    "schools": [
+      "港科",
+      "港理工"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研05.jpg",
+    "full": "assets/img/portfolio-cases/港研05_full.jpg"
+  },
+  {
+    "id": "港研06",
+    "name": "张同学",
+    "regions": [
+      "美国",
+      "英国",
+      "中国香港",
+      "中国澳门",
+      "澳洲"
+    ],
+    "background": "985&211",
+    "branch": "综合&艺术",
+    "schools": [
+      "港大",
+      "港科",
+      "UCL"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研06.jpg",
+    "full": "assets/img/portfolio-cases/港研06_full.jpg"
+  },
+  {
+    "id": "港研07",
+    "name": "张同学",
+    "regions": [
+      "中国香港"
+    ],
+    "background": "985&211",
+    "branch": "综合",
+    "schools": [
+      "港中文",
+      "港城"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研07.jpg",
+    "full": "assets/img/portfolio-cases/港研07_full.jpg"
+  },
+  {
+    "id": "港研08",
+    "name": "方同学",
+    "regions": [
+      "中国香港"
+    ],
+    "background": "美院",
+    "branch": "综合",
+    "schools": [
+      "港理工"
+    ],
+    "types": [
+      "多媒介装置",
+      "信息体验应用",
+      "3D虚拟"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研08.jpg",
+    "full": "assets/img/portfolio-cases/港研08_full.jpg"
+  },
+  {
+    "id": "港研09",
+    "name": "董同学",
+    "regions": [
+      "中国香港",
+      "英国"
+    ],
+    "background": "美院",
+    "branch": "综合&艺术",
+    "schools": [
+      "港科",
+      "港城",
+      "UAL"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "AI机械",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研09.jpg",
+    "full": "assets/img/portfolio-cases/港研09_full.jpg"
+  },
+  {
+    "id": "港研10",
+    "name": "朱同学",
+    "regions": [
+      "中国香港"
+    ],
+    "background": "211",
+    "branch": "综合",
+    "schools": [
+      "港理工",
+      "港浸会"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研10.jpg",
+    "full": "assets/img/portfolio-cases/港研10_full.jpg"
+  },
+  {
+    "id": "港研11",
+    "name": "李同学",
+    "regions": [
+      "中国香港",
+      "新加坡"
+    ],
+    "background": "211",
+    "branch": "综合",
+    "schools": [
+      "港理工",
+      "港城",
+      "南洋理工"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研11.jpg",
+    "full": "assets/img/portfolio-cases/港研11_full.jpg"
+  },
+  {
+    "id": "港研12",
+    "name": "赵同学",
+    "regions": [
+      "中国香港",
+      "英国"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "港中文",
+      "UAL"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研12.jpg",
+    "full": "assets/img/portfolio-cases/港研12_full.jpg"
+  },
+  {
+    "id": "港研13",
+    "name": "高同学",
+    "regions": [
+      "中国香港",
+      "英国",
+      "加拿大",
+      "澳洲"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "港城",
+      "UAL",
+      "莫纳什"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研13.jpg",
+    "full": "assets/img/portfolio-cases/港研13_full.jpg"
+  },
+  {
+    "id": "港研14",
+    "name": "黎同学",
+    "regions": [
+      "中国香港",
+      "英国"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "港浸会",
+      "RCA",
+      "爱丁堡"
+    ],
+    "types": [
+      "视觉策略传播",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研14.jpg",
+    "full": "assets/img/portfolio-cases/港研14_full.jpg"
+  },
+  {
+    "id": "港研15",
+    "name": "苏同学",
+    "regions": [
+      "中国澳门",
+      "中国香港"
+    ],
+    "background": "双非",
+    "branch": "综合",
+    "schools": [
+      "港浸会",
+      "澳科",
+      "岭南"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研15.jpg",
+    "full": "assets/img/portfolio-cases/港研15_full.jpg"
+  },
+  {
+    "id": "港研16",
+    "name": "文同学",
+    "regions": [
+      "中国香港",
+      "英国"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "UAL",
+      "港教育"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研16.jpg",
+    "full": "assets/img/portfolio-cases/港研16_full.jpg"
+  },
+  {
+    "id": "港研17",
+    "name": "刘同学",
+    "regions": [
+      "英国",
+      "中国香港"
+    ],
+    "background": "211",
+    "branch": "综合&艺术",
+    "schools": [
+      "港科广",
+      "UAL",
+      "爱丁堡"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研17.jpg",
+    "full": "assets/img/portfolio-cases/港研17_full.jpg"
+  },
+  {
+    "id": "港研18",
+    "name": "林同学",
+    "regions": [
+      "中国香港"
+    ],
+    "background": "美院",
+    "branch": "综合",
+    "schools": [
+      "港科广",
+      "岭南",
+      "爱丁堡"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/港研18.jpg",
+    "full": "assets/img/portfolio-cases/港研18_full.jpg"
+  },
+  {
+    "id": "加拿大研01",
+    "name": "叶同学",
+    "regions": [
+      "加拿大"
+    ],
+    "background": "美院",
+    "branch": "综合&艺术",
+    "schools": [
+      "怀卡托",
+      "安大略"
+    ],
+    "types": [
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/加拿大研01.jpg",
+    "full": "assets/img/portfolio-cases/加拿大研01_full.jpg"
+  },
+  {
+    "id": "加拿大研02",
+    "name": "谷同学",
+    "regions": [
+      "加拿大"
+    ],
+    "background": "985&211",
+    "branch": "综合",
+    "schools": [
+      "艾米丽卡尔",
+      "康考迪亚"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/加拿大研02.jpg",
+    "full": "assets/img/portfolio-cases/加拿大研02_full.jpg"
+  },
+  {
+    "id": "加拿大研03",
+    "name": "潘同学",
+    "regions": [
+      "加拿大"
+    ],
+    "background": "海本",
+    "branch": "综合&艺术",
+    "schools": [
+      "NSCAD",
+      "OCAD"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/加拿大研03.jpg",
+    "full": "assets/img/portfolio-cases/加拿大研03_full.jpg"
+  },
+  {
+    "id": "澳门研01",
+    "name": "曹同学",
+    "regions": [
+      "中国澳门"
+    ],
+    "background": "双非",
+    "branch": "综合",
+    "schools": [
+      "澳大"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "信息体验应用",
+      "3D虚拟"
+    ],
+    "thumb": "assets/img/portfolio-cases/澳门研01.jpg",
+    "full": "assets/img/portfolio-cases/澳门研01_full.jpg"
+  },
+  {
+    "id": "澳门研02",
+    "name": "林同学",
+    "regions": [
+      "中国澳门"
+    ],
+    "background": "美院",
+    "branch": "综合",
+    "schools": [
+      "澳大",
+      "澳科"
+    ],
+    "types": [
+      "信息体验应用",
+      "3D虚拟",
+      "多媒介装置",
+      "视觉策略传播"
+    ],
+    "thumb": "assets/img/portfolio-cases/澳门研02.jpg",
+    "full": "assets/img/portfolio-cases/澳门研02_full.jpg"
+  },
+  {
+    "id": "澳门研03",
+    "name": "闫同学",
+    "regions": [
+      "中国澳门"
+    ],
+    "background": "985&211",
+    "branch": "综合",
+    "schools": [
+      "澳大",
+      "澳科"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/澳门研03.jpg",
+    "full": "assets/img/portfolio-cases/澳门研03_full.jpg"
+  },
+  {
+    "id": "澳门研04",
+    "name": "郝同学",
+    "regions": [
+      "中国澳门"
+    ],
+    "background": "美院",
+    "branch": "综合",
+    "schools": [
+      "澳科"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/澳门研04.jpg",
+    "full": "assets/img/portfolio-cases/澳门研04_full.jpg"
+  },
+  {
+    "id": "新加坡研01",
+    "name": "黎同学",
+    "regions": [
+      "新加坡"
+    ],
+    "background": "双非",
+    "branch": "综合",
+    "schools": [
+      "南洋理工"
+    ],
+    "types": [
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/新加坡研01.jpg",
+    "full": "assets/img/portfolio-cases/新加坡研01_full.jpg"
+  },
+  {
+    "id": "新加坡研03",
+    "name": "李同学",
+    "regions": [
+      "新加坡"
+    ],
+    "background": "双非",
+    "branch": "综合",
+    "schools": [
+      "SUTD"
+    ],
+    "types": [
+      "视觉策略传播",
+      "3D虚拟"
+    ],
+    "thumb": "assets/img/portfolio-cases/新加坡研03.jpg",
+    "full": "assets/img/portfolio-cases/新加坡研03_full.jpg"
+  },
+  {
+    "id": "意研01",
+    "name": "",
+    "regions": [
+      "意大利"
+    ],
+    "background": "海本",
+    "branch": "综合",
+    "schools": [
+      "米理"
+    ],
+    "types": [
+      "信息体验应用",
+      "3D虚拟",
+      "多媒介装置",
+      "视觉策略传播"
+    ],
+    "thumb": "assets/img/portfolio-cases/意研01.jpg",
+    "full": "assets/img/portfolio-cases/意研01_full.jpg"
+  },
+  {
+    "id": "意研02",
+    "name": "",
+    "regions": [
+      "意大利"
+    ],
+    "background": "美院",
+    "branch": "艺术",
+    "schools": [
+      "罗马一大"
+    ],
+    "types": [
+      "3D虚拟",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/意研02.jpg",
+    "full": "assets/img/portfolio-cases/意研02_full.jpg"
+  },
+  {
+    "id": "意研03",
+    "name": "",
+    "regions": [
+      "意大利"
+    ],
+    "background": "双非",
+    "branch": "综合",
+    "schools": [
+      "布雷拉"
+    ],
+    "types": [
+      "3D虚拟",
+      "信息体验应用",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/意研03.jpg",
+    "full": "assets/img/portfolio-cases/意研03_full.jpg"
+  },
+  {
+    "id": "意研04",
+    "name": "",
+    "regions": [
+      "意大利"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "罗马一大",
+      "多莫斯",
+      "NABA"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/意研04.jpg",
+    "full": "assets/img/portfolio-cases/意研04_full.jpg"
+  },
+  {
+    "id": "英研01",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "美院",
+    "branch": "综合&艺术",
+    "schools": [
+      "RCA",
+      "UAL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研01.jpg",
+    "full": "assets/img/portfolio-cases/英研01_full.jpg"
+  },
+  {
+    "id": "英研02",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "UCL",
+      "RCA",
+      "UAL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研02.jpg",
+    "full": "assets/img/portfolio-cases/英研02_full.jpg"
+  },
+  {
+    "id": "英研03",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "211",
+    "branch": "综合&艺术",
+    "schools": [
+      "RCA",
+      "UAL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "信息体验应用",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研03.jpg",
+    "full": "assets/img/portfolio-cases/英研03_full.jpg"
+  },
+  {
+    "id": "英研04",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "UCL",
+      "RCA",
+      "UAL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研04.jpg",
+    "full": "assets/img/portfolio-cases/英研04_full.jpg"
+  },
+  {
+    "id": "英研05",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "海本",
+    "branch": "综合&艺术",
+    "schools": [
+      "UCL",
+      "RCA",
+      "UAL"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研05.jpg",
+    "full": "assets/img/portfolio-cases/英研05_full.jpg"
+  },
+  {
+    "id": "英研06",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "RCA",
+      "UAL",
+      "爱丁堡"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研06.jpg",
+    "full": "assets/img/portfolio-cases/英研06_full.jpg"
+  },
+  {
+    "id": "英研07",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "985&211",
+    "branch": "综合&艺术",
+    "schools": [
+      "UCL",
+      "RCA",
+      "UAL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研07.jpg",
+    "full": "assets/img/portfolio-cases/英研07_full.jpg"
+  },
+  {
+    "id": "英研08",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "985&211",
+    "branch": "综合&艺术",
+    "schools": [
+      "UAL",
+      "金匠"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研08.jpg",
+    "full": "assets/img/portfolio-cases/英研08_full.jpg"
+  },
+  {
+    "id": "英研09",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "美院",
+    "branch": "综合&艺术",
+    "schools": [
+      "UCL",
+      "RCA",
+      "UAL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研09.jpg",
+    "full": "assets/img/portfolio-cases/英研09_full.jpg"
+  },
+  {
+    "id": "英研10",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "美院",
+    "branch": "综合&艺术",
+    "schools": [
+      "RCA",
+      "爱丁堡",
+      "金匠"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "3D虚拟",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研10.jpg",
+    "full": "assets/img/portfolio-cases/英研10_full.jpg"
+  },
+  {
+    "id": "英研11",
+    "name": "",
+    "regions": [
+      "英国",
+      "澳洲"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "RCA",
+      "UAL",
+      "悉尼大学"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研11.jpg",
+    "full": "assets/img/portfolio-cases/英研11_full.jpg"
+  },
+  {
+    "id": "英研12",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "双非",
+    "branch": "综合&艺术",
+    "schools": [
+      "RCA",
+      "UAL",
+      "GSA"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研12.jpg",
+    "full": "assets/img/portfolio-cases/英研12_full.jpg"
+  },
+  {
+    "id": "英研13",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "双非",
+    "branch": "艺术",
+    "schools": [
+      "RCA",
+      "UAL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研13.jpg",
+    "full": "assets/img/portfolio-cases/英研13_full.jpg"
+  },
+  {
+    "id": "英研14",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "211",
+    "branch": "艺术",
+    "schools": [
+      "RCA",
+      "UAL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研14.jpg",
+    "full": "assets/img/portfolio-cases/英研14_full.jpg"
+  },
+  {
+    "id": "英研15",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "美院",
+    "branch": "综合&艺术",
+    "schools": [
+      "UCL",
+      "RCA",
+      "爱丁堡"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研15.jpg",
+    "full": "assets/img/portfolio-cases/英研15_full.jpg"
+  },
+  {
+    "id": "英研16",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "海本",
+    "branch": "综合&艺术",
+    "schools": [
+      "UCL",
+      "RCA",
+      "UAL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研16.jpg",
+    "full": "assets/img/portfolio-cases/英研16_full.jpg"
+  },
+  {
+    "id": "英研17",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "985&211",
+    "branch": "综合&艺术",
+    "schools": [
+      "UCL",
+      "RCA",
+      "UAL"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研17.jpg",
+    "full": "assets/img/portfolio-cases/英研17_full.jpg"
+  },
+  {
+    "id": "英研18",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "985&211",
+    "branch": "艺术",
+    "schools": [
+      "RCA"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研18.jpg",
+    "full": "assets/img/portfolio-cases/英研18_full.jpg"
+  },
+  {
+    "id": "英研19",
+    "name": "",
+    "regions": [
+      "英国"
+    ],
+    "background": "美院",
+    "branch": "综合&艺术",
+    "schools": [
+      "RCA",
+      "UAL",
+      "爱丁堡"
+    ],
+    "types": [
+      "视觉策略传播",
+      "多媒介装置"
+    ],
+    "thumb": "assets/img/portfolio-cases/英研19.jpg",
+    "full": "assets/img/portfolio-cases/英研19_full.jpg"
+  },
+  {
+    "id": "韩研01",
+    "name": "",
+    "regions": [
+      "韩国"
+    ],
+    "background": "双非",
+    "branch": "综合",
+    "schools": [
+      "弘大",
+      "中央",
+      "汉阳"
+    ],
+    "types": [
+      "多媒介装置",
+      "3D虚拟",
+      "AI机械"
+    ],
+    "thumb": "assets/img/portfolio-cases/韩研01.jpg",
+    "full": "assets/img/portfolio-cases/韩研01_full.jpg"
+  },
+  {
+    "id": "韩研02",
+    "name": "",
+    "regions": [
+      "韩国"
+    ],
+    "background": "美院",
+    "branch": "综合",
+    "schools": [
+      "弘大",
+      "汉阳"
+    ],
+    "types": [
+      "视觉策略传播",
+      "信息体验应用"
+    ],
+    "thumb": "assets/img/portfolio-cases/韩研02.jpg",
+    "full": "assets/img/portfolio-cases/韩研02_full.jpg"
+  }
+]

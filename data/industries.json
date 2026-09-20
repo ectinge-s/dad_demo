@@ -8,7 +8,7 @@
     "oneLine": "以数字技术、互动媒体、空间设计、AI服务与文化数据，为美术馆、博物馆、文旅景区、商业空间和城市公共空间创造沉浸式体验。",
     "parentTrans": "用XR、实时影像、智能导览、数字人和互动装置，把传统展览与城市空间转化为可参与、可探索、可持续运营的体验服务。",
     "targetCases": "数字展馆、XR大空间、文旅夜游、智能导览与数字人、文化遗产可视化、AI互动装置与城市公共艺术。",
-    "bannerImg": "/industry-cards/digital-tourism.jpg",
+    "bannerImg": "assets/img/industry-cards/digital-tourism.jpg",
     "sourcePages": "PDF 第 5-28 页；2025-2026新增参考：文旅部统计公报、AI+文化和旅游试点与标准化工作重点",
     "ugPath": {
       "focus": "空间叙事、互动逻辑、文化内容转译、三维建模、基础实时引擎与数据意识",
@@ -194,7 +194,87 @@
       "风语筑/丝路视觉类展陈项目",
       "黑弓或OUTPUT类实时视觉与沉浸内容",
       "中国文化传媒集团类文旅策划与传播"
-    ]
+    ],
+    "outputShowcase": [
+      {
+        "img": "assets/img/industry-cards/output-digital-tourism-1.jpg",
+        "label": "XR互动体验"
+      },
+      {
+        "img": "assets/img/industry-cards/output-digital-tourism-2.jpg",
+        "label": "光影艺术"
+      },
+      {
+        "img": "assets/img/industry-cards/output-digital-tourism-3.jpg",
+        "label": "沉浸式文化空间"
+      }
+    ],
+    "industryExplainer": "数字文旅是文化、旅游、展览、商业空间与数字技术结合的新型体验产业。它通过光影影像、互动装置、XR、虚拟空间、AI 内容生成等方式，让观众在博物馆、文旅景区、城市公共空间和商业场景中获得更强的参与感与记忆点。",
+    "businessCardsDetailed": [
+      {
+        "title": "光影艺术",
+        "body": "建筑投影、夜游演艺、城市灯光秀、文化视觉转译。"
+      },
+      {
+        "title": "沉浸式展览",
+        "body": "博物馆展陈、艺术展、品牌空间、主题体验馆。"
+      },
+      {
+        "title": "XR 互动体验",
+        "body": "AR 导览、VR 场景、互动屏幕、体感与实时反馈。"
+      },
+      {
+        "title": "数字展陈",
+        "body": "文物数字化、交互信息展示、叙事型展项设计。"
+      },
+      {
+        "title": "虚拟空间",
+        "body": "虚拟博物馆、线上展厅、3D 城市文化空间。"
+      },
+      {
+        "title": "AI 内容生成",
+        "body": "AI 影像、数字角色、文化 IP 内容、视觉概念生成。"
+      }
+    ],
+    "careerPath": {
+      "intro": "数字文旅方向通常不是从“单一岗位”出发，而是从视觉执行、项目协作逐步走向体验设计、内容策划和创意统筹。",
+      "stages": [
+        {
+          "step": "01",
+          "title": "入门阶段",
+          "skills": "视觉设计/动态影像/展陈素材制作/3D 场景辅助"
+        },
+        {
+          "step": "02",
+          "title": "项目阶段",
+          "skills": "参与沉浸展、光影秀、XR 互动和数字展项设计"
+        },
+        {
+          "step": "03",
+          "title": "进阶阶段",
+          "skills": "负责体验流程、空间叙事、交互原型和视觉系统"
+        },
+        {
+          "step": "04",
+          "title": "发展阶段",
+          "skills": "成长为体验设计师、创意策划、艺术指导或项目主创"
+        }
+      ],
+      "salaryBands": [
+        {
+          "stage": "入门阶段（0-2年）",
+          "range": "8k-15k / 月"
+        },
+        {
+          "stage": "成长阶段（3-5年）",
+          "range": "20-40w / 年"
+        },
+        {
+          "stage": "成熟阶段（5-10年）",
+          "range": "50w+ / 年"
+        }
+      ]
+    }
   },
   {
     "id": "direction-2",
@@ -205,7 +285,7 @@
     "oneLine": "围绕数字产品、平台服务、AI智能体、设计系统与数据技术，构建移动互联网、内容平台、智能终端和在线服务。",
     "parentTrans": "不只是把界面做漂亮，还要设计AI的行为、权限、解释、撤回与人工接管，让数字服务可靠、清楚并可持续迭代。",
     "targetCases": "社交与内容平台、AI Agent、智能助手、设计系统、企业SaaS、智能终端与数据可视化。",
-    "bannerImg": "/industry-cards/internet-ux.jpg",
+    "bannerImg": "assets/img/industry-cards/internet-ux.jpg",
     "sourcePages": "PDF 第 29-57 页；2025-2026新增参考：CNNIC生成式AI应用报告、Figma AI与设计师趋势报告",
     "ugPath": {
       "focus": "视觉功底、信息架构、交互原型、用户研究、Agent行为设计与基础设计工程能力",
@@ -376,7 +456,87 @@
       "服务设计与用户研究",
       "数据可视化",
       "AI产品评测与内容安全"
-    ]
+    ],
+    "outputShowcase": [
+      {
+        "img": "assets/img/industry-cards/output-internet-ux-1.jpg",
+        "label": "AI产品原型"
+      },
+      {
+        "img": "assets/img/industry-cards/output-internet-ux-2.jpg",
+        "label": "数字产品UI/UX设计"
+      },
+      {
+        "img": "assets/img/industry-cards/output-internet-ux-3.jpg",
+        "label": "营销视觉设计"
+      }
+    ],
+    "industryExplainer": "互联网生态覆盖我们日常使用的 App、网站、小程序、社交媒体、内容平台、在线服务和智能终端。无论是网购、短视频、社交聊天、出行打车，还是在线教育、金融科技和 AI 助手，背后都需要产品、视觉、交互、数据和技术共同协作。互联网生态不是单纯做“软件技术”，而是把视觉表达、用户体验、交互逻辑和商业目标结合起来，设计更好用、更好看、更能持续迭代的数字产品。",
+    "businessCardsDetailed": [
+      {
+        "title": "数字产品体验设计",
+        "body": "App、网站、小程序、后台系统、智能终端界面的用户体验与视觉设计。"
+      },
+      {
+        "title": "平台与内容生态设计",
+        "body": "社交平台、内容社区、短视频平台、电商平台中的内容结构与用户路径。"
+      },
+      {
+        "title": "AI 产品体验设计",
+        "body": "AI 助手、Agent 产品、智能推荐、生成式工具的界面与交互体验。"
+      },
+      {
+        "title": "品牌与营销视觉设计",
+        "body": "活动页、品牌 IP、运营视觉、H5、Banner 与专题页面设计。"
+      },
+      {
+        "title": "数据可视化设计",
+        "body": "将复杂数据转化为图表、看板、信息图和业务分析界面。"
+      },
+      {
+        "title": "智能终端体验设计",
+        "body": "车载系统、IoT 设备、智能硬件与多端产品体验设计。"
+      }
+    ],
+    "careerPath": {
+      "intro": "互联网生态方向通常从界面视觉、产品模块和用户流程入手，逐步走向体验策略、AI 产品设计、数据驱动优化和产品体验负责人。",
+      "stages": [
+        {
+          "step": "01",
+          "title": "入门阶段",
+          "skills": "视觉设计师/UI 设计师/产品设计助理/用户研究助理"
+        },
+        {
+          "step": "02",
+          "title": "项目阶段",
+          "skills": "交互视觉设计师/UX 设计师/AI 产品设计师/数据可视化设计师"
+        },
+        {
+          "step": "03",
+          "title": "进阶阶段",
+          "skills": "高级 UX 设计师/高级体验设计师/AI 体验设计师/产品体验负责人"
+        },
+        {
+          "step": "04",
+          "title": "发展阶段",
+          "skills": "体验设计负责人、产品设计负责人、设计总监或产品体验负责人"
+        }
+      ],
+      "salaryBands": [
+        {
+          "stage": "入门阶段（0-2年）",
+          "range": "10k-18k / 月"
+        },
+        {
+          "stage": "成长阶段（3-5年）",
+          "range": "25-50w / 年"
+        },
+        {
+          "stage": "成熟阶段（5-10年）",
+          "range": "50w-100w+ / 年"
+        }
+      ]
+    }
   },
   {
     "id": "direction-3",
@@ -387,7 +547,7 @@
     "oneLine": "以人工智能与智能体为核心，融合生成式视觉、动态影像、品牌内容、数字角色、工作流编排、质量控制与AI产品。",
     "parentTrans": "从会使用AI工具升级到会编排可复用工作流，并能控制风格、编辑结果、人工复核、版权溯源和商业效果。",
     "targetCases": "创意AI工作流、AI品牌与影像、智能体创作、风格一致性、合成媒体审核、版权溯源与AI产品。",
-    "bannerImg": "/industry-cards/ai-tech.jpg",
+    "bannerImg": "assets/img/industry-cards/ai-tech.jpg",
     "sourcePages": "PDF 第 115-149 页；2025-2026新增参考：Adobe Creators Toolkit、C2PA Content Credentials与CNNIC生成式AI应用报告",
     "ugPath": {
       "focus": "传统审美、图像与视频基础、生成式AI素养、工作流编排、精修、一致性和版权意识",
@@ -554,7 +714,87 @@
       "风格/角色一致性测试",
       "合成媒体审核与版权标注",
       "AI产品评测与运营"
-    ]
+    ],
+    "outputShowcase": [
+      {
+        "img": "assets/img/industry-cards/output-ai-tech-1.jpg",
+        "label": "AI产品原型与交互"
+      },
+      {
+        "img": "assets/img/industry-cards/output-ai-tech-2.jpg",
+        "label": "AI图像生成与视觉设计"
+      },
+      {
+        "img": "assets/img/industry-cards/output-ai-tech-3.jpg",
+        "label": "虚拟人形象开发"
+      }
+    ],
+    "industryExplainer": "AI 创意科技已从概念验证进入商业落地，视觉设计、内容生产、动态影像、虚拟角色与交互体验等领域的人才需求正在快速增长。对数字艺术与设计学生来说，这个方向的核心不是“让 AI 替人画图”，而是理解如何把 AI 变成创意生产、品牌传播、影像实验、角色开发和产品体验的一部分。学生需要同时具备审美判断、工具链整合、视觉叙事和商业落地意识，才能在 AI 创意产业中形成真正的竞争力。",
+    "businessCardsDetailed": [
+      {
+        "title": "AI 视觉设计",
+        "body": "通过 AI 生成概念视觉、品牌图像、风格化画面、广告素材和视觉实验。"
+      },
+      {
+        "title": "AI 品牌营销与内容策划",
+        "body": "把 AI 作为品牌内容生产工具，批量生成营销物料、社交内容和 Campaign 视觉。"
+      },
+      {
+        "title": "AI 动态影像/广告流媒体",
+        "body": "使用 AI 视频工具完成短片、广告、动态视觉、PV 和流媒体内容生产。"
+      },
+      {
+        "title": "数字人/AI 角色",
+        "body": "设计虚拟角色形象、动作、语音、交互逻辑和数字人内容场景。"
+      },
+      {
+        "title": "AI 产品与交互体验",
+        "body": "围绕 AI 工具、智能助手、创意平台和生成式产品进行界面、流程和体验设计。"
+      },
+      {
+        "title": "AI 创意工作流搭建",
+        "body": "组合多模态工具、提示词、模型和自动化流程，提高创意生产效率。"
+      }
+    ],
+    "careerPath": {
+      "intro": "AI 创意科技方向通常从视觉生成、提示词、内容运营、产品助理或动态影像协作开始，逐步走向 AI 创意方向把控、产品体验、虚拟人开发和创意管理。",
+      "stages": [
+        {
+          "step": "01",
+          "title": "入门阶段",
+          "skills": "AI 视觉设计师/提示工程师/AI 内容策划助理/AI 产品助理"
+        },
+        {
+          "step": "02",
+          "title": "项目阶段",
+          "skills": "资深 AI 设计师/AI 内容主管/AI 交互设计师/虚拟人设计师"
+        },
+        {
+          "step": "03",
+          "title": "进阶阶段",
+          "skills": "AIGC 艺术指导/创意主管/AI 产品负责人/创意技术实践者"
+        },
+        {
+          "step": "04",
+          "title": "发展阶段",
+          "skills": "AI 创意总监、创意合伙人、独立 AI 艺术家或 AI 工作室主理人"
+        }
+      ],
+      "salaryBands": [
+        {
+          "stage": "入门阶段（0-2年）",
+          "range": "8k-18k / 月"
+        },
+        {
+          "stage": "成长阶段（3-5年）",
+          "range": "25-40k / 月"
+        },
+        {
+          "stage": "成熟阶段（5-10年）",
+          "range": "40w-100w / 年"
+        }
+      ]
+    }
   },
   {
     "id": "direction-4",
@@ -565,7 +805,7 @@
     "oneLine": "通过实时引擎、技术美术、互动体验、用户界面、程序化内容、虚拟资产和跨媒介娱乐，构建可运行的虚拟世界。",
     "parentTrans": "行业规模仍在增长，但入行竞争和裁员风险同时存在；作品必须证明可玩、可运行、可优化和能进入团队管线。",
     "targetCases": "游戏UI/UX、技术UI、PCG程序化内容、工具管线TA、玩法原型、UGC生态、3D资产、动画与特效。",
-    "bannerImg": "/industry-cards/game-entertainment.jpg",
+    "bannerImg": "assets/img/industry-cards/game-entertainment.jpg",
     "sourcePages": "PDF 第 58-114 页；2025-2026新增参考：中国游戏产业报告、GDC State of the Game Industry与Unreal Engine更新",
     "ugPath": {
       "focus": "游戏理解、美术基础、界面与交互、实时引擎、三维资产、动画规律、程序化思维或数据分析中的一条主线",
@@ -769,7 +1009,87 @@
       "玩法原型与玩家测试",
       "UGC与社区运营",
       "3D建模、动画与特效"
-    ]
+    ],
+    "outputShowcase": [
+      {
+        "img": "assets/img/industry-cards/output-game-entertainment-1.jpg",
+        "label": "技术美术"
+      },
+      {
+        "img": "assets/img/industry-cards/output-game-entertainment-2.jpg",
+        "label": "游戏UI与交互系统"
+      },
+      {
+        "img": "assets/img/industry-cards/output-game-entertainment-3.jpg",
+        "label": "游戏产品运营"
+      }
+    ],
+    "industryExplainer": "游戏娱乐行业已经不只是“做一款游戏”，而是在围绕玩家体验构建完整的内容生态。它包括游戏研发、视觉风格、玩法机制、实时引擎表现、IP 衍生、社群运营、活动内容和全球化发行。对数字艺术与设计学生来说，进入游戏行业不一定只走传统游戏美术或程序路线，也可以从游戏 UI、交互体验、技术美术、角色与场景资产、动态影像、活动视觉和游戏运营内容切入，用设计能力连接游戏内容、玩家行为和商业传播。",
+    "businessCardsDetailed": [
+      {
+        "title": "游戏 UI & 体验设计",
+        "body": "界面视觉、交互流程、信息层级、按钮反馈和玩家操作体验。"
+      },
+      {
+        "title": "游戏产品运营",
+        "body": "用户拉新、留存、活动策划、社群维护、版本内容传播和商业化转化。"
+      },
+      {
+        "title": "游戏策划",
+        "body": "玩法机制、系统数值、剧情世界观、任务流程和关卡节奏设计。"
+      },
+      {
+        "title": "技术美术 TA",
+        "body": "引擎表现优化、Shader、材质、特效工具、流程搭建和美术效果落地。"
+      },
+      {
+        "title": "虚拟资产与 3D 内容",
+        "body": "角色、道具、场景、皮肤、装备和游戏内数字资产的设计与生产。"
+      },
+      {
+        "title": "3D 动画与游戏特效",
+        "body": "角色动作、过场演绎、技能特效、打击反馈、场景氛围和视觉表现。"
+      }
+    ],
+    "careerPath": {
+      "intro": "游戏娱乐方向通常从 UI、体验、策划助理、美术助理、技术美术或运营内容协作开始，逐步走向体验负责人、技术美术主管、主美、制作人或独立开发。",
+      "stages": [
+        {
+          "step": "01",
+          "title": "入门阶段",
+          "skills": "UI 设计师/初级 UX/初级 TA/美术助理/游戏策划助理"
+        },
+        {
+          "step": "02",
+          "title": "项目阶段",
+          "skills": "高级 UI 设计师/资深 UX/资深 TA/3D 组长/系统策划"
+        },
+        {
+          "step": "03",
+          "title": "进阶阶段",
+          "skills": "UX 负责人/体验主管/技术美术主管/主美/创意策划"
+        },
+        {
+          "step": "04",
+          "title": "发展阶段",
+          "skills": "体验设计专家、设计总监、技术美术总监、创意总监或工作室主理人"
+        }
+      ],
+      "salaryBands": [
+        {
+          "stage": "入门阶段（0-2年）",
+          "range": "7k-18k / 月"
+        },
+        {
+          "stage": "成长阶段（3-5年）",
+          "range": "18-40k / 月"
+        },
+        {
+          "stage": "成熟阶段（5-10年）",
+          "range": "40w-80w / 年"
+        }
+      ]
+    }
   },
   {
     "id": "direction-5",
@@ -780,7 +1100,7 @@
     "oneLine": "以视听叙事、实时三维、虚拟制作和AI工作流为核心，连接电影、动画、VFX、VR影像、品牌内容与平台传播。",
     "parentTrans": "这一方向已不再只有传统拍摄与后期，还包括VAD虚拟美术、实时预演、LED虚拟摄影棚、AI后期、数字资产和VR电影。",
     "targetCases": "AI短片、动画电影、虚拟美术VAD、实时预演、LED虚拟制作、VFX、数字资产管理、VR电影与影视后期。",
-    "bannerImg": "/industry-cards/film-media.jpg",
+    "bannerImg": "assets/img/industry-cards/film-media.jpg",
     "sourcePages": "PDF 第 150-180 页；2025-2026新增参考：国家电影局年度数据、VR电影政策与北京虚拟制作产业信息",
     "ugPath": {
       "focus": "视听语言、剪辑、动态视觉、实时三维、虚拟场景、VFX与可控AI影视工作流",
@@ -966,7 +1286,87 @@
       "AI后期与VFX管线",
       "VR电影体验",
       "影视剪辑与声音交付"
-    ]
+    ],
+    "outputShowcase": [
+      {
+        "img": "assets/img/industry-cards/output-film-media-1.jpg",
+        "label": "AI影视创作"
+      },
+      {
+        "img": "assets/img/industry-cards/output-film-media-2.jpg",
+        "label": "影视宣发"
+      },
+      {
+        "img": "assets/img/industry-cards/output-film-media-3.jpg",
+        "label": "虚拟制片"
+      }
+    ],
+    "industryExplainer": "影视影像行业正在从传统拍摄和后期制作，逐步扩展到 AI 视频生成、短剧/漫剧、虚拟制作、动画电影、品牌广告、平台内容和新媒体传播。对数字艺术与设计学生来说，这个方向的核心机会不一定是传统导演或编剧，而是视觉风格、动态影像、AI 工具流、虚拟场景、影视宣发、短视频内容、后期剪辑和平台视觉运营。学生可以用设计能力参与影视内容从概念、画面、角色、场景到传播落地的完整流程。",
+    "businessCardsDetailed": [
+      {
+        "title": "AI 影视创作",
+        "body": "AI 短片、AI 广告、AI 动画、AI 音乐 MV、数字人内容和实验影像制作。"
+      },
+      {
+        "title": "虚拟制作与虚拟场景",
+        "body": "XR 拍摄、LED 虚拟摄影棚、影视预演、虚拟场景搭建和实时渲染。"
+      },
+      {
+        "title": "VFX 视觉特效与后期合成",
+        "body": "电影特效、广告特效、CG 特效、粒子系统、合成、调色和后期包装。"
+      },
+      {
+        "title": "动画电影与场景设计",
+        "body": "角色动画、场景建模、概念设计、分镜、灯光、渲染和动画生产流程。"
+      },
+      {
+        "title": "新媒体内容与平台视觉",
+        "body": "短视频、B 站、小红书、抖音、品牌账号运营和社交媒体视觉内容。"
+      },
+      {
+        "title": "影视宣发与品牌传播",
+        "body": "电影海报、字体设计、预告片视觉、IP 宣传片和节目包装。"
+      }
+    ],
+    "careerPath": {
+      "intro": "影视影像方向通常从视频剪辑、AI 内容生成、场景资产、动态视觉或平台视觉执行开始，逐步走向影像风格把控、虚拟制作、内容导演和创意总监。",
+      "stages": [
+        {
+          "step": "01",
+          "title": "入门阶段",
+          "skills": "AI 视频设计师/视频剪辑师/新媒体视觉设计师/场景模型师助理"
+        },
+        {
+          "step": "02",
+          "title": "项目阶段",
+          "skills": "AI 影视创作设计师/Motion Designer/场景模型师/品牌内容导演"
+        },
+        {
+          "step": "03",
+          "title": "进阶阶段",
+          "skills": "AI 导演/视觉开发主管/后期导演/美术指导/创意设计师"
+        },
+        {
+          "step": "04",
+          "title": "发展阶段",
+          "skills": "AI 内容总监、影视视觉总监、创意总监或 AI 创意工作室创始人"
+        }
+      ],
+      "salaryBands": [
+        {
+          "stage": "入门阶段（0-2年）",
+          "range": "8k-15k / 月"
+        },
+        {
+          "stage": "成长阶段（3-5年）",
+          "range": "20-40w / 年"
+        },
+        {
+          "stage": "成熟阶段（5-10年）",
+          "range": "50w+ 项目提成 / 年"
+        }
+      ]
+    }
   },
   {
     "id": "direction-6",
@@ -977,7 +1377,7 @@
     "oneLine": "以品牌系统、创作者合作、动态影像、AI内容工作流和效果测量，为品牌建立可识别、可信任、可规模化的传播体验。",
     "parentTrans": "品牌工作正从少量主视觉扩展到大量内容版本、创作者合作和效果优化，核心仍是策略、品牌一致性、质量与消费者信任。",
     "targetCases": "品牌系统、AI整合Campaign、创作者营销、效果创意、Agentic客户体验、内容审核、包装与跨媒介传播。",
-    "bannerImg": "/industry-cards/brand-communication.jpg",
+    "bannerImg": "assets/img/industry-cards/brand-communication.jpg",
     "sourcePages": "PDF 第 181-209 页；2025-2026新增参考：IAB数字视频、创作者经济与AI广告透明度报告",
     "ugPath": {
       "focus": "图形、色彩、版式、字体、品牌识别、动态影像、创作者内容和基础数据意识",
@@ -1157,7 +1557,87 @@
       "品牌系统与资产治理",
       "AI内容审核、版权与披露",
       "包装与零售体验"
-    ]
+    ],
+    "outputShowcase": [
+      {
+        "img": "assets/img/industry-cards/output-brand-communication-1.jpg",
+        "label": "Campaign传播方案"
+      },
+      {
+        "img": "assets/img/industry-cards/output-brand-communication-2.jpg",
+        "label": "包装/印刷"
+      },
+      {
+        "img": "assets/img/industry-cards/output-brand-communication-3.jpg",
+        "label": "品牌VI/主视觉系统"
+      }
+    ],
+    "industryExplainer": "品牌传播行业连接商业品牌、设计工作室、广告公司、互联网平台和文化机构，核心是把品牌的定位、价值和故事转化为用户能感知、记住并愿意传播的视觉体验。在今天的数字传播环境里，品牌需要在社交媒体、短视频、活动现场、包装、网页、App、空间和线下快闪中保持统一又有变化的表达。数字艺术与设计学生可以通过视觉系统、动态影像、交互媒体、AIGC 和跨媒介叙事参与完整品牌项目。",
+    "businessCardsDetailed": [
+      {
+        "title": "品牌视觉设计",
+        "body": "Logo、VI 系统、品牌手册、主视觉、字体、图形语言和品牌延展设计。"
+      },
+      {
+        "title": "传播策略/Campaign",
+        "body": "从品牌洞察、创意概念到媒介触点整合，完成活动传播方案。"
+      },
+      {
+        "title": "动态设计与内容视觉",
+        "body": "品牌动画、动态图形、短视频包装、社交媒体视觉和广告片视觉系统。"
+      },
+      {
+        "title": "包装与印刷设计",
+        "body": "产品包装、礼盒文创、书籍装帧、材料研究和印刷工艺落地。"
+      },
+      {
+        "title": "空间与展陈视觉",
+        "body": "品牌快闪、商业展会、导视系统、艺术展览和零售空间视觉设计。"
+      },
+      {
+        "title": "AIGC 视觉创意",
+        "body": "使用 AI 工具进行概念图、视觉素材、风格探索和跨媒介内容生成。"
+      }
+    ],
+    "careerPath": {
+      "intro": "品牌传播方向通常从视觉执行、方案辅助和项目落地开始，逐步走向品牌系统设计、创意提案、美术指导、品牌策略和创意管理。",
+      "stages": [
+        {
+          "step": "01",
+          "title": "入门阶段",
+          "skills": "设计师助理/视觉设计师/平面设计师/包装设计师"
+        },
+        {
+          "step": "02",
+          "title": "项目阶段",
+          "skills": "品牌设计师/中级视觉设计师/动态设计师/美术指导助理"
+        },
+        {
+          "step": "03",
+          "title": "进阶阶段",
+          "skills": "资深视觉设计师/设计主管/美术指导/品牌策略师"
+        },
+        {
+          "step": "04",
+          "title": "发展阶段",
+          "skills": "创意总监、设计总监、品牌顾问或创意合伙人"
+        }
+      ],
+      "salaryBands": [
+        {
+          "stage": "入门阶段（0-2年）",
+          "range": "8k-15k / 月"
+        },
+        {
+          "stage": "成长阶段（3-5年）",
+          "range": "20-40w / 年"
+        },
+        {
+          "stage": "成熟阶段（5-10年）",
+          "range": "50w+ 项目提成 / 年"
+        }
+      ]
+    }
   },
   {
     "id": "direction-7",
@@ -1168,7 +1648,7 @@
     "oneLine": "以教育、研究、学习体验、AI课程、评估改革与创意科技实验室为核心，用设计方法和数字技术推动学习与知识传播。",
     "parentTrans": "除了高校教师和研究员，还可以进入AI学习体验、课程产品、学习分析、教育治理、实验室运营和校企合作。",
     "targetCases": "高校教学与研究、AI学习体验、课程产品、学习分析与评估、教育AI治理、创意科技实验室与微证书项目。",
-    "bannerImg": "/industry-cards/education.jpg",
+    "bannerImg": "assets/img/industry-cards/education.jpg",
     "sourcePages": "PDF 第 210-218 页；2025-2026新增参考：UNESCO创意产业技能与AI教育报告、WEF未来就业报告",
     "ugPath": {
       "focus": "设计研究、文献阅读、课程辅助、学习者研究、数字内容、基础数据与AI素养",
@@ -1343,7 +1823,87 @@
       "教育AI治理与政策研究",
       "高校/创意科技Lab运营",
       "研究助理与教学支持"
-    ]
+    ],
+    "outputShowcase": [
+      {
+        "img": "assets/img/industry-cards/output-education-1.jpg",
+        "label": "教育产品原型"
+      },
+      {
+        "img": "assets/img/industry-cards/output-education-2.jpg",
+        "label": "数字学习内容设计"
+      },
+      {
+        "img": "assets/img/industry-cards/output-education-3.jpg",
+        "label": "高校课程/工作坊设计"
+      }
+    ],
+    "industryExplainer": "教育学术方向连接高校、研究机构、实验室和教育科技企业，核心是通过研究、教学、设计和数字技术，推动未来学习方式与知识传播方式的更新。在 AI 时代，教育行业正在从传统课堂转向“研究驱动+技术赋能+体验导向”。数字艺术与设计学生可以把视觉表达、交互体验、内容设计、研究方法和 AI 工具结合起来，参与课程开发、教育产品设计、学术研究和数字学习体验创新。",
+    "businessCardsDetailed": [
+      {
+        "title": "高校教学与课程开发",
+        "body": "本科教学、研究生指导、课程体系建设、工作坊和毕业设计指导。"
+      },
+      {
+        "title": "学术研究与实验室项目",
+        "body": "围绕设计研究、艺术科技、社会创新、数字媒介开展课题和实验。"
+      },
+      {
+        "title": "AI 教育产品设计",
+        "body": "AI Tutor、智能学习系统、教育 Agent 和学习反馈系统设计。"
+      },
+      {
+        "title": "学习体验设计",
+        "body": "线上课程、学习平台、互动课堂和数字学习内容的体验优化。"
+      },
+      {
+        "title": "数字教育内容设计",
+        "body": "微课、互动课件、教育视频、信息图、出版物和跨媒介内容开发。"
+      },
+      {
+        "title": "研究传播与学术表达",
+        "body": "学术写作、研究可视化、讲座宣讲、展览出版和项目汇报。"
+      }
+    ],
+    "careerPath": {
+      "intro": "教育学术方向通常从助教、研究助理、课程内容或教育产品协作开始，逐步走向高校教学、实验室研究、教育产品设计和教育创新负责人。",
+      "stages": [
+        {
+          "step": "01",
+          "title": "入门阶段",
+          "skills": "助教/研究助理/教育内容设计师/用户研究助理"
+        },
+        {
+          "step": "02",
+          "title": "项目阶段",
+          "skills": "高校讲师/研究员/教育产品设计师/教育产品经理"
+        },
+        {
+          "step": "03",
+          "title": "进阶阶段",
+          "skills": "副教授/研究室负责人/学科负责人/教育创新负责人"
+        },
+        {
+          "step": "04",
+          "title": "发展阶段",
+          "skills": "教授、博士生导师、教育科技创业者或国际研究项目负责人"
+        }
+      ],
+      "salaryBands": [
+        {
+          "stage": "入门阶段（0-2年）",
+          "range": "8k-15k / 月"
+        },
+        {
+          "stage": "成长阶段（3-5年）",
+          "range": "20-45w / 年"
+        },
+        {
+          "stage": "成熟阶段（5-10年）",
+          "range": "50w+ 项目提成 / 年"
+        }
+      ]
+    }
   },
   {
     "id": "direction-8",
@@ -1354,7 +1914,7 @@
     "oneLine": "结合个人艺术语言、数字媒介、实验技术、委托项目与社群经营，通过影像、交互、装置、生成艺术和公共空间建立持续实践。",
     "parentTrans": "没有标准化晋升路线，稳定发展通常依靠委托、展览、驻地、公共艺术、版本销售、授权、社群、研究与教学等多元收入。",
     "targetCases": "Artist-Technologist、沉浸式委托、互动装置、数据/公共艺术、数字版本、驻地项目、社群运营与AI艺术版权溯源。",
-    "bannerImg": "/industry-cards/independent-artist.jpg",
+    "bannerImg": "assets/img/industry-cards/independent-artist.jpg",
     "sourcePages": "PDF 第 219-228 页；2025-2026新增参考：Art Basel与UBS全球艺术市场报告、UNESCO文化创意与AI报告、C2PA内容溯源规范",
     "ugPath": {
       "focus": "个人艺术语言、创意研究、跨媒介表达、空间叙事、基础创意编程、版权与受众意识",
@@ -1543,6 +2103,86 @@
       "数字版本与社群运营",
       "AI艺术版权与内容溯源",
       "策展研究与机构合作"
-    ]
+    ],
+    "outputShowcase": [
+      {
+        "img": "assets/img/industry-cards/output-independent-artist-1.jpg",
+        "label": "AI/生成艺术项目"
+      },
+      {
+        "img": "assets/img/industry-cards/output-independent-artist-2.jpg",
+        "label": "互动装置&品牌营销"
+      },
+      {
+        "img": "assets/img/industry-cards/output-independent-artist-3.jpg",
+        "label": "沉浸式艺术空间"
+      }
+    ],
+    "industryExplainer": "独立艺术家方向处在当代艺术、数字技术、实验媒介和社会议题的交叉地带。学生不只是做一个“好看的作品”，而是通过作品提出问题、建立个人表达，并探索人与技术、空间、感知和社会之间的关系。随着 AI 艺术、生成艺术、XR 艺术和艺术科技的发展，越来越多艺术家正在以“艺术家+研究者+技术实践者”的身份进入国际艺术生态。",
+    "businessCardsDetailed": [
+      {
+        "title": "新媒体艺术创作",
+        "body": "通过影像、装置、交互、算法、声音和空间体验进行当代艺术表达。"
+      },
+      {
+        "title": "AI 艺术与生成艺术",
+        "body": "使用机器学习、神经网络、生成式图像、AI 影像和数据训练进行创作。"
+      },
+      {
+        "title": "互动装置与沉浸体验",
+        "body": "结合传感器、体感交互、实时反馈、空间影像和观众行为。"
+      },
+      {
+        "title": "数字公共艺术",
+        "body": "建筑投影、城市媒体立面、数字雕塑、公共空间互动作品和艺术节项目。"
+      },
+      {
+        "title": "声音艺术与实验影像",
+        "body": "声音装置、空间音景、艺术电影、视频装置和影像实验。"
+      },
+      {
+        "title": "策展研究与艺术传播",
+        "body": "围绕数字艺术、媒介理论、艺术科技和社会议题展开研究、写作与策展。"
+      }
+    ],
+    "careerPath": {
+      "intro": "独立艺术家方向通常从展览制作、技术协作、创作研究和作品积累开始，逐步走向个人创作、驻地项目、艺术机构合作、国际展览和个人工作室。",
+      "stages": [
+        {
+          "step": "01",
+          "title": "入门阶段",
+          "skills": "新媒体艺术家助理/展览助理/技术艺术家助理/创作研究员"
+        },
+        {
+          "step": "02",
+          "title": "项目阶段",
+          "skills": "独立艺术家/创意技术实践者/艺术科技设计师/驻地艺术家"
+        },
+        {
+          "step": "03",
+          "title": "进阶阶段",
+          "skills": "国际艺术家/策展人/艺术科技总监/艺术机构创始人"
+        },
+        {
+          "step": "04",
+          "title": "发展阶段",
+          "skills": "个人艺术工作室、国际展览合作、学术研究与策展或艺术科技品牌"
+        }
+      ],
+      "salaryBands": [
+        {
+          "stage": "入门阶段（0-2年）",
+          "range": "8k-15k / 月"
+        },
+        {
+          "stage": "成长阶段（3-5年）",
+          "range": "20-50w / 年"
+        },
+        {
+          "stage": "成熟阶段（5-10年）",
+          "range": "高度项目制 / 收入跨度极大"
+        }
+      ]
+    }
   }
 ]

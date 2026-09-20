@@ -7,6 +7,13 @@
    of this router: it's on hold (see docs/PROJECT_NOTES.md) and, when
    it returns, is planned as its own set of real, deep-linkable static
    pages rather than a hash route.
+
+   v3.3: 'planning' now carries an optional deep-linkable sub-route —
+   #planning (总览 overview) or #planning/<industryId> (one industry's
+   Figma-style detail subpage, see PlanningPage.showSubpage()). Resolved
+   via opts.industryId (preferred) or opts.industry (a title, looked up
+   against PlanningPage.industries for back-compat with existing
+   goToIndustry/focusIndustry call sites across home/timeline/footer).
 ═══════════════════════════════════════════ */
 
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -24,18 +31,49 @@ const Router = {
     page.classList.add('is-active');
     this.current = pageId;
 
+    // v3.10 fix: every page's builder runs while ITS OWN section is still
+    // display:none (all page builders run up-front in index.html's boot
+    // sequence, before this first Router.go() call ever fires), so the
+    // single global Effects.init() registered on DOMContentLoaded observes
+    // every .fade-up element while hidden and — since a hidden element
+    // never intersects — never fires again once the page is shown later
+    // (confirmed: this left 案例展示's whole grid/filter-bars stuck at
+    // opacity:0 on every path to that page, not just a direct #portfolio
+    // load). Re-running Effects.init() on the page we just revealed
+    // re-observes any of its .fade-up descendants that haven't already
+    // been marked .is-visible — safe to call repeatedly (see effects.js).
+    Effects.init(page);
+
+    let industryId = opts.industryId || null;
+    if (!industryId && opts.industry && window.PlanningPage) {
+      const ind = window.PlanningPage.industries.find(i => i.title === opts.industry);
+      if (ind) industryId = ind.id;
+    }
+
     const hashPages = ['planning', 'timeline', 'course-products', 'portfolio'];
-    const newHash = hashPages.includes(pageId) ? '#' + pageId : location.pathname + location.search;
-    if (!this._fromPopstate && location.hash !== '#' + pageId) {
+    let newHash;
+    if (pageId === 'planning') {
+      newHash = industryId ? `#planning/${industryId}` : '#planning';
+    } else {
+      newHash = hashPages.includes(pageId) ? '#' + pageId : location.pathname + location.search;
+    }
+    if (!this._fromPopstate && location.hash !== newHash) {
       history.pushState(null, '', newHash);
     }
 
-    if (opts.industry && pageId === 'planning' && window.PlanningPage) {
-      setTimeout(() => window.PlanningPage.focusIndustry(opts.industry), 80);
+    if (pageId === 'planning' && window.PlanningPage) {
+      window.PlanningPage.showSubpage(industryId);
     }
 
     if (opts.scrollTo) {
       setTimeout(() => this.scrollTo(opts.scrollTo), 100);
+    } else if (pageId === 'planning' && industryId) {
+      /* v3.5: switching industries via the top tabs (or landing on one
+         directly) jumps to that industry's banner, not page 0 — GM
+         didn't want every tab click re-showing the shared "CAREER
+         PLANNING · INDUSTRY MAP" hero above the tab row. 总览 (no
+         industryId) keeps the normal scroll-to-top. */
+      setTimeout(() => this.scrollTo('.industry-panel__banner'), 100);
     } else {
       window.scrollTo(0, 0);
     }
@@ -71,10 +109,11 @@ const Router = {
 };
 
 window.addEventListener('popstate', () => {
-  const hashPage = location.hash.replace('#', '');
+  const hashRaw = location.hash.replace('#', '');
+  const [hashPage, hashSub] = hashRaw.split('/');
   const PAGES = ['planning', 'timeline', 'course-products', 'portfolio'];
   Router._fromPopstate = true;
-  Router.go(PAGES.includes(hashPage) ? hashPage : 'home');
+  Router.go(PAGES.includes(hashPage) ? hashPage : 'home', hashPage === 'planning' ? { industryId: hashSub || null } : {});
   Router._fromPopstate = false;
 });
 

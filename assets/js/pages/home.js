@@ -30,14 +30,66 @@
 
 const HomePage = {
   async render(data) {
-    const { site, industries, companies } = data;
+    const { site } = data;
     this.renderHero(site.hero);
-    this.renderCareerTeaser(industries);
+    this.renderCareerTeaser();
     await this.renderOffers();
     await this.renderInstructors();
-    this.renderResources(companies);
+    await this.renderResources();
     this.renderFeaturedCourses();
+    this._initStickyCollapse();
     Effects.init(document.getElementById('page-home'));
+  },
+
+  /* ── STICKY COLLAPSE BAR — ported from ist_demo's home.js
+     (_initStickyCollapse/_updateStickyBar), generalized from ist_demo's
+     single instructor-only candidate to cover BOTH expand/fold grids
+     this site has: offers AND instructors (per GM's 2026-09 follow-up:
+     "check ist-demo project for it's UX of expanding/folding instrctor
+     list using stick button. implement that to dad-demo's instructor
+     and offer section."). While a grid is open and its OWN 展开/收起
+     button has scrolled out of view, this floating pill (#sticky-
+     collapse, markup in index.html) takes over so the user doesn't have
+     to scroll back up just to collapse it. Candidates are listed in the
+     page's own visual order (offers-root sits above instructors-root —
+     see render() above) so that if both grids are open and both buttons
+     have scrolled past, the sticky bar tracks whichever section the
+     user is currently below (the LAST out-of-view candidate). ── */
+  _initStickyCollapse() {
+    const bar = document.getElementById('sticky-collapse');
+    const btn = document.getElementById('sticky-collapse-btn');
+    if (!bar || !btn || this._stickyBound) return;
+    this._stickyBound = true;
+    this._stickyTarget = null; // { collapseBtn, onCollapse }
+    window.addEventListener('scroll', () => this._updateStickyBar(), { passive: true });
+    btn.addEventListener('click', () => { if (this._stickyTarget) this._stickyTarget.onCollapse(); });
+    this._updateStickyBar();
+  },
+  _updateStickyBar() {
+    const bar = document.getElementById('sticky-collapse');
+    if (!bar) return;
+    const candidates = [
+      { el: document.getElementById('offers-expand-btn'), open: !!this._offerExpanded[this._activeOfferGroup], collapse: () => this.toggleOffersExpanded(this._activeOfferGroup) },
+      { el: document.getElementById('instructors-expand-btn'), open: !!this._instExpanded, collapse: () => this.toggleInstructorsExpanded() },
+    ].filter(c => c.open && c.el);
+
+    if (!candidates.length) {
+      bar.style.display = 'none';
+      this._stickyTarget = null;
+      return;
+    }
+    const outOfView = candidates.filter(c => {
+      const r = c.el.getBoundingClientRect();
+      return r.bottom < 0 || r.top > window.innerHeight;
+    });
+    if (!outOfView.length) {
+      bar.style.display = 'none';
+      this._stickyTarget = null;
+      return;
+    }
+    const active = outOfView[outOfView.length - 1];
+    bar.style.display = '';
+    this._stickyTarget = { collapseBtn: active.el, onCollapse: active.collapse };
   },
 
   /* ── HERO — v3: IST-style grid/bloom/HUD/readout/logomark hero,
@@ -80,61 +132,70 @@ const HomePage = {
       </div>`;
   },
 
-  /* ── 职业规划 teaser — 8 industry cards, auto-looping horizontal
-     marquee — same pattern as the 精选课程/featured-rail section below
-     (duplicated list, CSS translateX loop, pause on hover/out-of-view)
-     per GM's 2026-09 follow-up request, replacing the earlier manual
-     scroll-snap rail + fixed circular arrow CTA. Destination is the
-     same full /planning page as the navbar's "职业规划" CTA. ── */
-  renderCareerTeaser(industries) {
-    const cardHTML = (ind, i) => `
-      <div class="career-card" onclick="Router.goToIndustry('${escapeHTML(ind.title)}')" style="border-top:3px solid ${industryColor(ind.title)}">
-        <div class="career-card__top">
-          <span class="career-card__num u-mono">0${i + 1}</span>
-          <span class="career-card__trend">${escapeHTML(ind.trendArrow)}</span>
-        </div>
-        <div>
-          <div class="career-card__title">${escapeHTML(ind.title)}</div>
-          <div class="career-card__title-en">${escapeHTML(ind.titleEn)}</div>
-        </div>
-        <p class="career-card__desc">${escapeHTML(ind.oneLine)}</p>
-      </div>`;
-
+  /* ── 职业规划 teaser — v3.13 (GM): the auto-scrolling 8-industry reel
+     that used to live here has moved onto the /planning page's own
+     "总览" overview tab instead (see
+     PlanningPage.renderIndustriesOverview) — since a click on any of
+     these cards always landed on that same page anyway, GM asked for
+     this homepage section to become a plain editorial teaser instead:
+     title, a formal paragraph on the digital-art-and-design division's
+     industry/career-planning scope, and one prominent accent-colored
+     CTA button into the full page (replacing both the old reel and its
+     understated text-colored .section-cta button — GM wanted this one
+     to read as the highlighted "primary" action, using the same
+     .btn--primary the hero's own main CTA uses). ── */
+  renderCareerTeaser() {
     document.getElementById('career-planning-root').innerHTML = `
       <div class="section-head fade-up">
         <span class="eyebrow u-en">Career Planning</span>
         <h2>职业规划</h2>
-        <p>从八大行业出发，先看一眼全景 — 点击任意行业卡片，或下方的按钮，进入完整的职业规划页面：头部企业、核心岗位与对应升学路径。</p>
+        <p>数字艺术与设计学科的职业发展，横跨数字文旅、互联网生态、AI创意科技、游戏娱乐、影视影像、品牌传播、教育学术、独立艺术家八大方向，贯穿内容创作、技术开发与商业转化的完整链条。职业规划板块基于头部企业的真实招聘信息与历年录取案例，为每一个方向梳理核心岗位、能力要求与对应的院校申请路径，帮助学生在留学申请与职业选择之间建立清晰、可执行的坐标。</p>
       </div>
-      <div class="career-rail-wrap fade-up"><div class="career-rail" id="career-rail">${[...industries, ...industries].map((ind, i) => cardHTML(ind, i % industries.length)).join('')}</div></div>
-      <div style="text-align:center;margin-top:24px;">
-        <button class="section-cta" onclick="Router.go('planning')">进入完整职业规划页面 <span class="u-en">/ View All</span></button>
+      <div class="fade-up" style="text-align:center;margin-top:8px;">
+        <button class="btn btn--primary" onclick="Router.go('planning')">进入职业规划页面 <span class="u-en">/ View Career Planning</span></button>
       </div>`;
+  },
 
-    const rail = document.getElementById('career-rail');
-    const wrap = rail && rail.closest('.career-rail-wrap');
-    if (wrap && 'IntersectionObserver' in window) {
-      new IntersectionObserver(entries => {
-        entries.forEach(e => rail.classList.toggle('is-paused', !e.isIntersecting));
-      }, { threshold: 0.1 }).observe(wrap);
-    }
+  /* ── shared grid clamp utility — ported from ist_demo's home.js
+     _gridClamp (assets/js/pages/home.js there). Instead of a fixed
+     page-size slice, it reads the grid's OWN computed column count
+     (getComputedStyle().gridTemplateColumns) and clamps to whole rows
+     (cols * rows), so there's never a sparse partial last row — and a
+     resize listener re-clamps live, so a 6-per-row layout that becomes
+     4-per-row (or vice versa) never leaves a half-empty trailing row
+     either. Toggling `open` reveals everything; the caller supplies its
+     own expand/collapse button markup/text so each section keeps its
+     existing copy (查看更多 for offers, etc). ── */
+  _gridClamp(gridEl, rows, open) {
+    if (!gridEl) return { limit: Infinity, total: 0 };
+    const tpl = getComputedStyle(gridEl).gridTemplateColumns;
+    const cols = (tpl && tpl !== 'none') ? tpl.split(' ').length : 1;
+    const limit = cols * rows;
+    const children = Array.from(gridEl.children);
+    children.forEach((card, i) => { card.style.display = (open || i < limit) ? '' : 'none'; });
+    return { limit, total: children.length };
   },
 
   /* ── OFFERS — real 2026 offer counts (data/dad_offers.json, 159
      schools). Grouped by region (US/UK/HK_SG/OTHER — normalizing the
      JSON's "HK-SG" spelling to match this site's existing filter id),
-     sorted by offer count descending. Each tab shows the top 20 with a
-     "查看更多" expand for the rest, since OTHER (58) and US (49) would
-     otherwise be very long grids on first paint. ── */
+     sorted by offer count descending. Each tab renders its FULL list
+     into the DOM and clamps to whole rows via `_gridClamp` (see above)
+     with a "查看更多" expand for the rest — replaces the old fixed
+     OFFER_PAGE_SIZE=20 slice, which could leave a sparse last row (e.g.
+     20 items / 6 cols = 3 full rows + a trailing row of only 2). Each
+     group remembers its own open/closed state across filter switches
+     and re-clamps on window resize while collapsed. ── */
   OFFER_FILTERS: [
     { id: 'US', label: '🇺🇸 美国' },
     { id: 'UK', label: '🇬🇧 英国' },
     { id: 'HK_SG', label: '🇭🇰 港新' },
     { id: 'OTHER', label: '🌏 其他' },
   ],
-  OFFER_PAGE_SIZE: 20,
+  OFFER_ROWS: 4,
   _offersByGroup: {},
   _offerExpanded: {},
+  _activeOfferGroup: 'US',
   async renderOffers() {
     const raw = await Data.load('dad_offers');
     const groups = { US: [], UK: [], HK_SG: [], OTHER: [] };
@@ -155,13 +216,21 @@ const HomePage = {
         ${this.OFFER_FILTERS.map((f, i) => `<button class="filter-btn${i === 0 ? ' is-active' : ''}" data-group="${f.id}" onclick="HomePage.filterOffers('${f.id}',this)">${f.label}</button>`).join('')}
       </div>
       <div class="rough-grid fade-up" id="offers-grid">${this._offerRowsHTML('US')}</div>
-      <div id="offers-more-wrap" style="text-align:center;margin-top:20px;">${this._offerMoreButtonHTML('US')}</div>`;
+      <div id="offers-more-wrap" style="text-align:center;margin-top:20px;"></div>`;
+    this._applyOfferClamp();
+
+    if (!this._offerResizeBound) {
+      this._offerResizeBound = true;
+      let t;
+      window.addEventListener('resize', () => {
+        clearTimeout(t);
+        t = setTimeout(() => { if (!this._offerExpanded[this._activeOfferGroup]) this._applyOfferClamp(); }, 150);
+      });
+    }
   },
   _offerRowsHTML(groupId) {
     const list = this._offersByGroup[groupId] || [];
-    const expanded = !!this._offerExpanded[groupId];
-    const visible = expanded ? list : list.slice(0, this.OFFER_PAGE_SIZE);
-    return visible.map(row => {
+    return list.map(row => {
       const zh = (row['学校名称(中文)'] || '').split('/')[0];
       const en = row['学校名称(英文)'] || '';
       return `
@@ -172,31 +241,38 @@ const HomePage = {
       </div>`;
     }).join('');
   },
-  _offerMoreButtonHTML(groupId) {
-    const list = this._offersByGroup[groupId] || [];
-    const expanded = !!this._offerExpanded[groupId];
-    if (list.length <= this.OFFER_PAGE_SIZE) return '';
-    return expanded
-      ? `<button class="section-cta" onclick="HomePage.toggleOffersExpanded('${groupId}')">收起</button>`
-      : `<button class="section-cta" onclick="HomePage.toggleOffersExpanded('${groupId}')">查看更多 <span class="u-en">/ ${list.length - this.OFFER_PAGE_SIZE} more</span></button>`;
+  _applyOfferClamp() {
+    const groupId = this._activeOfferGroup;
+    const open = !!this._offerExpanded[groupId];
+    const { limit, total } = this._gridClamp(document.getElementById('offers-grid'), this.OFFER_ROWS, open);
+    const wrap = document.getElementById('offers-more-wrap');
+    if (!wrap) return;
+    wrap.innerHTML = total <= limit ? '' : (open
+      ? `<button class="section-cta" id="offers-expand-btn" onclick="HomePage.toggleOffersExpanded('${groupId}')">收起</button>`
+      : `<button class="section-cta" id="offers-expand-btn" onclick="HomePage.toggleOffersExpanded('${groupId}')">查看更多 <span class="u-en">/ ${total - limit} more</span></button>`);
+    this._updateStickyBar();
   },
   filterOffers(groupId, btn) {
     document.querySelectorAll('#offers-filter-bar .filter-btn').forEach(b => b.classList.remove('is-active'));
     btn.classList.add('is-active');
-    document.getElementById('offers-grid').innerHTML = this._offerRowsHTML(groupId);
-    document.getElementById('offers-more-wrap').innerHTML = this._offerMoreButtonHTML(groupId);
     this._activeOfferGroup = groupId;
+    document.getElementById('offers-grid').innerHTML = this._offerRowsHTML(groupId);
+    this._applyOfferClamp();
   },
   toggleOffersExpanded(groupId) {
     this._offerExpanded[groupId] = !this._offerExpanded[groupId];
-    document.getElementById('offers-grid').innerHTML = this._offerRowsHTML(groupId);
-    document.getElementById('offers-more-wrap').innerHTML = this._offerMoreButtonHTML(groupId);
+    this._applyOfferClamp();
   },
 
   /* ── INSTRUCTORS — real photos (data/instructors.json, 128 records
      transcribed from assets/img/instructors/, 4 categories with photos:
      海外教授/学术导师/业界导师/顶尖学者[new]). 教研导师/校友导师 have no
-     photos yet and show an empty state rather than fabricated cards. ── */
+     photos yet and show an empty state rather than fabricated cards.
+     v3.9: 全部 (all) now renders every instructor and clamps to whole
+     rows via the shared `_gridClamp` (same expand/fold pattern as
+     ist_demo's instructor section — see its home.js `_gridClamp` /
+     `toggleInstructors`), with a 展开/收起 button and a resize listener
+     so the clamp always matches the live column count. ── */
   INSTRUCTOR_FILTERS: [
     { id: 'all', label: '全部' },
     { id: 'overseas', label: '海外教授' },
@@ -206,6 +282,9 @@ const HomePage = {
     { id: 'alumni', label: '校友导师' },
     { id: 'scholar', label: '顶尖学者' },
   ],
+  INSTRUCTOR_ROWS: 4,
+  _instExpanded: false,
+  _activeInstType: 'all',
   async renderInstructors() {
     this._instructors = await Data.load('instructors');
     document.getElementById('instructors-root').innerHTML = `
@@ -217,7 +296,18 @@ const HomePage = {
       <div class="filter-bar fade-up" id="instructors-filter-bar">
         ${this.INSTRUCTOR_FILTERS.map((f, i) => `<button class="filter-btn${i === 0 ? ' is-active' : ''}" data-itype="${f.id}" onclick="HomePage.filterInstructors('${f.id}',this)">${f.label}</button>`).join('')}
       </div>
-      <div class="rough-grid fade-up" id="instructors-grid">${this._instructorCardsHTML('all')}</div>`;
+      <div class="rough-grid fade-up" id="instructors-grid">${this._instructorCardsHTML('all')}</div>
+      <div id="instructors-more-wrap" style="text-align:center;margin-top:20px;"></div>`;
+    this._applyInstClamp();
+
+    if (!this._instResizeBound) {
+      this._instResizeBound = true;
+      let t;
+      window.addEventListener('resize', () => {
+        clearTimeout(t);
+        t = setTimeout(() => { if (!this._instExpanded) this._applyInstClamp(); }, 150);
+      });
+    }
   },
   _instructorCardsHTML(typeId) {
     const list = typeId === 'all' ? this._instructors : this._instructors.filter(r => r.category === typeId);
@@ -231,43 +321,141 @@ const HomePage = {
         ${r.name ? `<div class="person-card__title">${escapeHTML(r.title)}</div>` : ''}
       </div>`).join('');
   },
+  _applyInstClamp() {
+    const open = !!this._instExpanded;
+    const { limit, total } = this._gridClamp(document.getElementById('instructors-grid'), this.INSTRUCTOR_ROWS, open);
+    const wrap = document.getElementById('instructors-more-wrap');
+    if (!wrap) return;
+    wrap.innerHTML = total <= limit ? '' : (open
+      ? `<button class="section-cta" id="instructors-expand-btn" onclick="HomePage.toggleInstructorsExpanded()">收起</button>`
+      : `<button class="section-cta" id="instructors-expand-btn" onclick="HomePage.toggleInstructorsExpanded()">展开查看更多 <span class="u-en">/ ${total - limit} more</span></button>`);
+    this._updateStickyBar();
+  },
   filterInstructors(typeId, btn) {
     document.querySelectorAll('#instructors-filter-bar .filter-btn').forEach(b => b.classList.remove('is-active'));
     btn.classList.add('is-active');
+    this._activeInstType = typeId;
     document.getElementById('instructors-grid').innerHTML = this._instructorCardsHTML(typeId);
+    this._applyInstClamp();
+  },
+  toggleInstructorsExpanded() {
+    this._instExpanded = !this._instExpanded;
+    this._applyInstClamp();
   },
 
-  /* ── RESOURCES — real company names (from data/companies.json, kept at
-     full detail per project decision) run as a marquee, standing in for
-     IST's coop-logo network until DAD has its own partner-logo assets.
-     v3: animation-duration is now computed from the actual track width
-     so the visual scroll SPEED matches IST's (IST's fixed 48s duration
-     was calibrated for its own, much shorter, 14-company list — reusing
-     that duration verbatim on DAD's 69-company list made the marquee
-     run ~5x faster than intended). ── */
+  /* ── RESOURCES — v3.10 real-data pass: data/resource-partners.json (83
+     real校企资源logo partners, name + logo image extracted from GM's
+     team's DAD MA 网站信息包.xlsx「校企资源logo」tab — see
+     docs/PROJECT_NOTES.md) replaces the old plain-text company-name
+     marquee.
+     v3.10.1 (GM follow-up): card markup/size now mirrors ist_demo's own
+     `.coop-card` (116px card, 60×60 white-backed logo box, English +
+     Chinese name below — see the CSS comment in ist-shared.css). The
+     Intro/Collab info (sheet's 文字展现合作内容 field) no longer lives in
+     an in-card overlay — GM asked for it to float ABOVE the card instead
+     — so hovering delegates to `_showCoopOverlay`/`_hideCoopOverlay`,
+     which position a single shared `#coop-hover-overlay` element
+     (position:fixed, appended to <body> — see the CSS comment for why)
+     above whichever card is hovered. v3.13 (GM): dropped the little
+     speech-bubble pointer triangle — GM just wants the bordered box,
+     no arrow. Scroll SPEED (not duration — see
+     v3.13 below) is fixed at COOP_SPEED_PX_PER_SEC so it matches IST's
+     pace regardless of partner count.
+     v3.13 (GM): scroll is now driven by Marquee.init() (see
+     assets/js/marquee.js) instead of a CSS keyframe animation — GM
+     reported reels disappearing after running for a while; see
+     marquee.js's header comment for why. ── */
   COOP_SPEED_PX_PER_SEC: 47, // IST's own effective speed: 14 cards × (150+12)px / 48s
-  renderResources(companies) {
-    const names = [];
-    Object.values(companies || {}).forEach(byIndustry => {
-      Object.keys(byIndustry).forEach(name => names.push(name));
-    });
-    const track = [...names, ...names].map(name => `
+  async renderResources() {
+    const partners = await Data.load('resource-partners');
+    this._coopPartners = partners;
+    const cardHTML = (p) => `
       <div class="coop-card">
-        <div class="coop-card__name-cn">${escapeHTML(name)}</div>
-      </div>`).join('');
+        <div class="coop-card__logo"><img src="${escapeHTML(p.logo)}" alt="${escapeHTML(p.nameCn || p.nameEn)}" loading="lazy"></div>
+        <div class="coop-card__name-en">${escapeHTML(p.nameEn || '')}</div>
+        <div class="coop-card__name-cn">${escapeHTML(p.nameCn || '')}</div>
+      </div>`;
+    const track = [...partners, ...partners].map(cardHTML).join('');
     document.getElementById('resources-root').innerHTML = `
       <div class="section-head fade-up">
         <span class="eyebrow u-en">Network</span>
         <h2>资源网络</h2>
-        <p>横跨八大行业方向、深度覆盖的企业资源网络 — 完整的 69 家企业岗位解读见「职业规划」页。</p>
+        <p>横跨八大行业方向、深度覆盖的校企资源网络 — 累计 ${partners.length} 家合作院校与企业，鼠标悬停查看具体合作内容，完整企业岗位解读见「职业规划」页。</p>
       </div>
       <div class="coop-marquee-section fade-up">
         <div class="coop-marquee-wrap"><div class="coop-marquee-track" id="coop-marquee-track">${track}</div></div>
       </div>`;
-    const singleSetWidthPx = names.length * 162; // .coop-card is 150px + 12px gap
-    const durationSec = Math.round(singleSetWidthPx / this.COOP_SPEED_PX_PER_SEC);
     const trackEl = document.getElementById('coop-marquee-track');
-    if (trackEl) trackEl.style.animationDuration = durationSec + 's';
+    Marquee.init(trackEl, this.COOP_SPEED_PX_PER_SEC, 'coop-marquee-track');
+    this._bindCoopHover(trackEl, partners);
+  },
+
+  /* ── shared floating hover overlay ── delegated so we don't attach
+     166 listeners; `mouseover`/`mouseout` bubble, unlike `mouseenter`/
+     `mouseleave`, so a single pair of listeners on the track covers
+     every card (including its duplicate half of the marquee loop). ── */
+  _bindCoopHover(trackEl, partners) {
+    if (!trackEl) return;
+    trackEl.addEventListener('mouseover', (e) => {
+      const card = e.target.closest('.coop-card');
+      if (!card || !trackEl.contains(card)) return;
+      const idx = Array.from(trackEl.children).indexOf(card) % partners.length;
+      this._showCoopOverlay(card, partners[idx]);
+    });
+    trackEl.addEventListener('mouseout', (e) => {
+      const card = e.target.closest('.coop-card');
+      if (!card || (e.relatedTarget && card.contains(e.relatedTarget))) return;
+      this._hideCoopOverlay();
+    });
+    if (!this._coopScrollBound) {
+      this._coopScrollBound = true;
+      window.addEventListener('scroll', () => this._hideCoopOverlay(), { passive: true });
+    }
+  },
+  _ensureCoopOverlayEl() {
+    if (this._coopOverlayEl) return this._coopOverlayEl;
+    const el = document.createElement('div');
+    el.className = 'coop-hover-overlay';
+    el.innerHTML = `
+      <div class="coop-hover-overlay__name"></div>
+      <div class="coop-hover-overlay__intro"></div>
+      <div class="coop-hover-overlay__collab"></div>`;
+    document.body.appendChild(el);
+    this._coopOverlayEl = el;
+    return el;
+  },
+  _showCoopOverlay(cardEl, partner) {
+    if (!partner) return;
+    const el = this._ensureCoopOverlayEl();
+    el.querySelector('.coop-hover-overlay__name').textContent = partner.nameCn || partner.nameEn || '';
+    el.querySelector('.coop-hover-overlay__intro').textContent = partner.intro || '';
+    el.querySelector('.coop-hover-overlay__collab').innerHTML = (partner.collab || [])
+      .map(c => `<span class="coop-card__collab-tag">${escapeHTML(c)}</span>`).join('');
+    const rect = cardEl.getBoundingClientRect();
+    const width = 220;
+    let left = rect.left + rect.width / 2 - width / 2;
+    left = Math.max(8, Math.min(left, window.innerWidth - width - 8));
+    el.style.width = width + 'px';
+    el.style.left = left + 'px';
+
+    // Default placement is ABOVE the card (per GM: "overlay 在上方浮现").
+    // But a card near the top of the viewport (or of the page, right below
+    // the sticky navbar) may not have 上方 room for the overlay's real
+    // (content-dependent) height — measure it with the overlay already
+    // positioned/placed above, and flip to below the card if that would
+    // tuck it under the navbar.
+    const navbarH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-h'), 10) || 60;
+    el.classList.remove('coop-hover-overlay--below');
+    el.style.top = (rect.top - 10) + 'px';
+    const overlayH = el.offsetHeight;
+    if (rect.top - overlayH - 10 < navbarH + 8) {
+      el.classList.add('coop-hover-overlay--below');
+      el.style.top = (rect.bottom + 10) + 'px';
+    }
+    el.classList.add('is-visible');
+  },
+  _hideCoopOverlay() {
+    if (this._coopOverlayEl) this._coopOverlayEl.classList.remove('is-visible');
   },
 
   /* ── COURSES — v3: same style AND content as IST's own homepage
@@ -312,13 +500,11 @@ const HomePage = {
           <button class="section-cta" onclick="Router.go('course-products')">查看更多 <span class="u-en">/ View All Courses</span></button>
         </div>` : ''}`;
 
-    const rail = document.getElementById('featured-courses-rail');
-    const wrap = rail && rail.closest('.featured-rail-wrap');
-    if (wrap && 'IntersectionObserver' in window) {
-      new IntersectionObserver(entries => {
-        entries.forEach(e => rail.classList.toggle('is-paused', !e.isIntersecting));
-      }, { threshold: 0.1 }).observe(wrap);
-    }
+    // v3.13 (GM): driven by Marquee.init() (assets/js/marquee.js)
+    // instead of a CSS keyframe animation — see marquee.js's header
+    // comment (GM reported reels disappearing after running a while).
+    // Speed matches the site's other reels (COOP_SPEED_PX_PER_SEC).
+    Marquee.init(document.getElementById('featured-courses-rail'), this.COOP_SPEED_PX_PER_SEC, 'featured-courses-rail');
   },
 
   /* ── COURSE CATALOG GRIDS — real listings for the internship/
@@ -334,8 +520,13 @@ const HomePage = {
   _buildCatalogCard({ poster, title, sub, tagLabel, tags }) {
     const hasImg = !!poster;
     const imgStyle = hasImg ? '' : ' style="background:linear-gradient(135deg, var(--color-void) 0%, #2b2b2b 45%, var(--color-accent) 100%)"';
+    // click-to-open-poster: ImageModal (assets/js/components.js, ported
+    // from ist_demo) — the JS-string args need their own escaping since
+    // this whole thing already lives inside an onclick="" HTML attribute.
+    const jsEscape = s => String(s || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    const posterClick = hasImg ? ` onclick="ImageModal.open('${jsEscape(poster)}','${jsEscape(title)}')" style="cursor:pointer"` : '';
     return `
-      <div class="port-card">
+      <div class="port-card"${posterClick}>
         <div class="port-card__img"${imgStyle}>
           ${hasImg ? `<img src="${escapeHTML(poster)}" alt="" loading="lazy">` : `<span class="port-card__img-placeholder">占位图 · Placeholder</span>`}
           ${tagLabel ? `<span class="port-card__cat-tag">${escapeHTML(tagLabel)}</span>` : ''}

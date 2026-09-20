@@ -30,6 +30,32 @@ function industryColor(title) {
   return v ? `var(${v})` : 'var(--color-text-muted)';
 }
 
+/* v3.3: turns one of industries.json's Chinese enumeration sentences
+   ("数字展馆、XR大空间、…、AI互动装置与城市公共艺术。", optionally prefixed
+   "建议项目：") into an array of individual phrases, for the planning
+   page's per-industry "行业正在做什么业务" / "具体可以做什么" card grids.
+   Splits on 、/，/, first; the final segment often reads "X与Y"/"X和Y"
+   (standard Chinese list style — a conjunction before the last item
+   instead of another 、), so that segment is split once more on 与/和
+   when it cleanly yields two non-empty halves. */
+function splitPhraseList(str, stripPrefixRe) {
+  if (!str) return [];
+  let s = String(str).trim();
+  if (stripPrefixRe) s = s.replace(stripPrefixRe, '');
+  s = s.replace(/[。.]\s*$/, '');
+  const parts = s.split(/[、，,]/).map(p => p.trim()).filter(Boolean);
+  if (parts.length) {
+    const last = parts.pop();
+    const m = last.split(/与|和/);
+    if (m.length === 2 && m[0].trim() && m[1].trim()) {
+      parts.push(m[0].trim(), m[1].trim());
+    } else {
+      parts.push(last);
+    }
+  }
+  return parts;
+}
+
 const Accordion = {
   init(container) {
     container.querySelectorAll('.accordion__item').forEach(item => {
@@ -112,6 +138,69 @@ const CompanyModal = {
   },
 };
 
+/* v3.7: "岗位解读" overlay — opened by clicking a role pill on an
+   industry subpage (see PlanningPage.openRoleInsight). Shows the real
+   company job postings (companies.json) that best fuzzy-match the
+   clicked role, restoring a feature GM recalled from a few versions
+   back. Mirrors CompanyModal's ensure/open/close shell and reuses its
+   .modal__job* row markup — no new CSS needed for the job rows. */
+const RoleInsight = {
+  el: null,
+
+  ensure() {
+    if (this.el) return this.el;
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
+    overlay.id = 'role-insight-overlay';
+    overlay.innerHTML = `
+      <div class="modal" role="dialog" aria-modal="true">
+        <button class="modal__close" aria-label="关闭">&times;</button>
+        <div class="modal__industry" id="ri-industry"></div>
+        <h3 class="modal__title" id="ri-title"></h3>
+        <div class="modal__section">
+          <div class="modal__text" id="ri-note"></div>
+        </div>
+        <div class="modal__section">
+          <div class="modal__label">真实岗位描述</div>
+          <div class="modal__jobs" id="ri-jobs"></div>
+        </div>
+      </div>`;
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) this.close(); });
+    overlay.querySelector('.modal__close').addEventListener('click', () => this.close());
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') this.close(); });
+    this.el = overlay;
+    return overlay;
+  },
+
+  open(roleTitle, industryTitle, matches, note) {
+    const overlay = this.ensure();
+    overlay.querySelector('#ri-industry').textContent = industryTitle;
+    overlay.querySelector('#ri-title').textContent = roleTitle;
+    overlay.querySelector('#ri-note').textContent = note || '';
+    const jobsEl = overlay.querySelector('#ri-jobs');
+    jobsEl.innerHTML = (matches || []).map(job => `
+      <div class="modal__job">
+        <div class="modal__job-title">${escapeHTML(job.jobTitle)} <span style="font-weight:400;color:var(--color-text-faint)">· ${escapeHTML(job.company)}</span></div>
+        <div class="modal__job-desc">${escapeHTML(job.jobDesc)}</div>
+      </div>`).join('');
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  },
+
+  close() {
+    if (!this.el) return;
+    this.el.classList.remove('is-open');
+    document.body.style.overflow = '';
+  },
+};
+
+/* A Lightbox component lived here from v3.3 through v3.5, opened by
+   clicking a "具体可以做什么" sample-output tile to view its photo
+   enlarged. Removed in v3.6 per GM's request once all 24 real photos
+   were in place — the tiles are no longer clickable (see
+   PROJECT_NOTES.md and planning.js's section-05 render). */
+
 /* ── EXPANDABLE NAV MENU (additive to .navbar — copied from IST) ── */
 const NavMenu = {
   toggle() {
@@ -136,3 +225,51 @@ const NavMenu = {
 };
 document.getElementById('nav-menu-toggle')?.addEventListener('click', () => NavMenu.toggle());
 document.addEventListener('keydown', e => { if (e.key === 'Escape') NavMenu.close(); });
+
+/* ── Shared Image Modal — ported from ist_demo's components.js
+   (ImageModal). Used by the 课程目录 catalog cards (see home.js's
+   `_buildCatalogCard`, called from `_buildInternshipPanel` /
+   `_buildCourseGrid` / `_buildAcademicGrid`) to open a poster image
+   full-size on click. Was never carried over when course-demo.js /
+   the catalog-card renderer were copied from ist_demo, so the
+   click-to-open-poster interaction had no handler at all — this and
+   the onclick wiring in home.js fix that. ── */
+const ImageModal = {
+  _el: null,
+
+  _build() {
+    if (this._el) return;
+    const el = document.createElement('div');
+    el.className = 'img-modal-backdrop';
+    el.innerHTML = `
+      <div class="img-modal-flipper">
+        <div class="img-modal-inner">
+          <img id="img-modal-img" src="" alt="">
+          <button class="img-modal-close" id="img-modal-close">✕</button>
+        </div>
+      </div>`;
+    document.body.appendChild(el);
+    el.addEventListener('click', e => { if (e.target === el) this.close(); });
+    el.querySelector('#img-modal-close').addEventListener('click', () => this.close());
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') this.close(); });
+    this._el = el;
+  },
+
+  open(src, alt = '') {
+    this._build();
+    this._el.querySelector('#img-modal-img').src = src;
+    this._el.querySelector('#img-modal-img').alt = alt;
+    this._el.style.display = 'flex';
+    this._el.offsetHeight; // force reflow so the transition fires
+    this._el.classList.add('is-visible');
+    document.body.style.overflow = 'hidden';
+  },
+
+  close() {
+    if (!this._el) return;
+    this._el.classList.remove('is-visible');
+    document.body.style.overflow = '';
+    setTimeout(() => { if (this._el) this._el.style.display = 'none'; }, 300);
+  },
+};
+window.ImageModal = ImageModal;

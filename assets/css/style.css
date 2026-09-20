@@ -201,8 +201,15 @@ p { margin: 0; }
   gap: 24px;
 }
 .navbar__logo { display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: 15px; }
-.navbar__logo-img { height: 28px; width: auto; display: block; }
-.navbar__logo-tag { font-size: var(--fs-tiny); font-weight: 700; color: var(--color-text-muted); }
+/* v3.9: single official brand lockup asset (icon + 数字艺术与设计科系 +
+   Faculty of Digital Arts and Design, all baked in as yellow-on-
+   transparent per the VI file) replaces the old icon-image + separate
+   CSS text tag — see PROJECT_NOTES.md. Bumped from 28px to 34px so the
+   two-line wordmark stays legible; still comfortably inside the 60px
+   navbar.
+   v3.11: GM asked for the top-left lockup at 80% scale — 34px × .8 =
+   27.2px (width is auto, so the whole lockup scales proportionally). */
+.navbar__logo-img { height: 27.2px; width: auto; display: block; }
 .navbar__links { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
 .navbar__btn {
   font-size: 13px; font-weight: 600; padding: 8px 12px; border-radius: 999px;
