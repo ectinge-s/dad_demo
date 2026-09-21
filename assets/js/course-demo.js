@@ -911,13 +911,13 @@ const CourseOverlay = {
     body.innerHTML = buildProductHTML(product, productId);
     body.classList.toggle('is-wide', product.group === 'catalog');
     document.getElementById('course-overlay').classList.add('is-open');
-    document.body.style.overflow = 'hidden';
+    ScrollLock.lock();
     body.scrollTop = 0;
   },
 
   close() {
     document.getElementById('course-overlay').classList.remove('is-open');
-    document.body.style.overflow = '';
+    ScrollLock.unlock();
   },
 };
 window.CourseOverlay = CourseOverlay;

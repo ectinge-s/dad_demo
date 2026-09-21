@@ -285,7 +285,7 @@
     "oneLine": "围绕数字产品、平台服务、AI智能体、设计系统与数据技术，构建移动互联网、内容平台、智能终端和在线服务。",
     "parentTrans": "不只是把界面做漂亮，还要设计AI的行为、权限、解释、撤回与人工接管，让数字服务可靠、清楚并可持续迭代。",
     "targetCases": "社交与内容平台、AI Agent、智能助手、设计系统、企业SaaS、智能终端与数据可视化。",
-    "bannerImg": "assets/img/industry-cards/internet-ux.jpg",
+    "bannerImg": "assets/img/industry-cards/internet-ux.png",
     "sourcePages": "PDF 第 29-57 页；2025-2026新增参考：CNNIC生成式AI应用报告、Figma AI与设计师趋势报告",
     "ugPath": {
       "focus": "视觉功底、信息架构、交互原型、用户研究、Agent行为设计与基础设计工程能力",
@@ -547,7 +547,7 @@
     "oneLine": "以人工智能与智能体为核心，融合生成式视觉、动态影像、品牌内容、数字角色、工作流编排、质量控制与AI产品。",
     "parentTrans": "从会使用AI工具升级到会编排可复用工作流，并能控制风格、编辑结果、人工复核、版权溯源和商业效果。",
     "targetCases": "创意AI工作流、AI品牌与影像、智能体创作、风格一致性、合成媒体审核、版权溯源与AI产品。",
-    "bannerImg": "assets/img/industry-cards/ai-tech.jpg",
+    "bannerImg": "assets/img/industry-cards/ai-tech.png",
     "sourcePages": "PDF 第 115-149 页；2025-2026新增参考：Adobe Creators Toolkit、C2PA Content Credentials与CNNIC生成式AI应用报告",
     "ugPath": {
       "focus": "传统审美、图像与视频基础、生成式AI素养、工作流编排、精修、一致性和版权意识",

@@ -272,16 +272,22 @@ const HomePage = {
      rows via the shared `_gridClamp` (same expand/fold pattern as
      ist_demo's instructor section — see its home.js `_gridClamp` /
      `toggleInstructors`), with a 展开/收起 button and a resize listener
-     so the clamp always matches the live column count. ── */
-  INSTRUCTOR_FILTERS: [
-    { id: 'all', label: '全部' },
-    { id: 'overseas', label: '海外教授' },
-    { id: 'research', label: '教研导师' },
-    { id: 'academic', label: '学术导师' },
-    { id: 'industry', label: '业界导师' },
-    { id: 'alumni', label: '校友导师' },
-    { id: 'scholar', label: '顶尖学者' },
-  ],
+     so the clamp always matches the live column count.
+     v3.15 (GM): each record used to carry a `category` id (e.g.
+     "research") AND a separate `categoryLabel` Chinese string (e.g.
+     "教研导师") that had to be kept in sync by hand — GM edited a few
+     records' category text in instructors.json and the filter didn't
+     pick up the change, because the filter buttons compare against the
+     id field, not the label text someone would actually think to edit.
+     Fixed by dropping the id entirely: instructors.json now stores ONE
+     `category` field holding the exact Chinese label, and
+     INSTRUCTOR_CATEGORIES below (used both as the filter tabs AND the
+     match value) is that same text — so editing a record's `category`
+     field in the JSON is now the whole story, no second field to
+     forget. Order here is the deliberate tab order (kept even for
+     校友导师, which currently has 0 records, so its empty state still
+     shows — see the comment above). ── */
+  INSTRUCTOR_CATEGORIES: ['海外教授', '教研导师', '学术导师', '业界导师', '校友导师', '顶尖学者'],
   INSTRUCTOR_ROWS: 4,
   _instExpanded: false,
   _activeInstType: 'all',
@@ -294,7 +300,8 @@ const HomePage = {
         <p>来自顶尖高校与业界的导师团队 — 覆盖海外教授、学术导师、业界导师与顶尖学者共 ${this._instructors.length} 位。</p>
       </div>
       <div class="filter-bar fade-up" id="instructors-filter-bar">
-        ${this.INSTRUCTOR_FILTERS.map((f, i) => `<button class="filter-btn${i === 0 ? ' is-active' : ''}" data-itype="${f.id}" onclick="HomePage.filterInstructors('${f.id}',this)">${f.label}</button>`).join('')}
+        <button class="filter-btn is-active" data-itype="all" onclick="HomePage.filterInstructors('all',this)">全部</button>
+        ${this.INSTRUCTOR_CATEGORIES.map(c => `<button class="filter-btn" data-itype="${escapeHTML(c)}" onclick="HomePage.filterInstructors('${c}',this)">${escapeHTML(c)}</button>`).join('')}
       </div>
       <div class="rough-grid fade-up" id="instructors-grid">${this._instructorCardsHTML('all')}</div>
       <div id="instructors-more-wrap" style="text-align:center;margin-top:20px;"></div>`;
@@ -314,11 +321,19 @@ const HomePage = {
     if (!list.length) {
       return `<div class="tl-gantt-empty" style="padding:32px 0;grid-column:1/-1">该分类暂无导师数据 · 敬请期待</div>`;
     }
+    // v3.15 (GM): card body is now name / background (bold) / title,
+    // background and title split from what used to be one combined
+    // `title` field in instructors.json (see data/instructors.json and
+    // PROJECT_NOTES.md for the split rule and the handful of manual
+    // special cases). Either half can be empty (a bare-school-name
+    // record has no separate title; a few industry credentials have no
+    // company/university at all) — each line only renders when present.
     return list.map(r => `
       <div class="person-card">
         <div class="person-card__avatar"><img src="${escapeHTML(r.img)}" alt="" loading="lazy"></div>
-        <div class="person-card__name">${escapeHTML(r.name || r.title)}</div>
-        ${r.name ? `<div class="person-card__title">${escapeHTML(r.title)}</div>` : ''}
+        <div class="person-card__name">${escapeHTML(r.name)}</div>
+        ${r.background ? `<div class="person-card__background">${escapeHTML(r.background)}</div>` : ''}
+        ${r.title ? `<div class="person-card__title">${escapeHTML(r.title)}</div>` : ''}
       </div>`).join('');
   },
   _applyInstClamp() {

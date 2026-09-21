@@ -56,6 +56,38 @@ function splitPhraseList(str, stripPrefixRe) {
   return parts;
 }
 
+/* v3.16 (GM): shared scroll-lock — every full-screen overlay (company
+   modal, role-insight modal, image modal, course overlay, nav menu) was
+   independently setting `document.body.style.overflow = 'hidden'` to
+   stop background scrolling while it's open. Hiding the scrollbar that
+   way shrinks the *viewport* width without changing the page's layout
+   width, so the whole page visibly shifts sideways by the scrollbar's
+   width the instant any of these opens (worse on Windows/Linux Chrome
+   and on macOS with "always show scrollbars" — the reported bug).
+   Fixed by compensating with an equal `padding-right` on body whenever
+   the scrollbar is actually removed, so the content column doesn't
+   move. A small lock counter lets overlays nest/overlap safely (e.g.
+   opening a modal from underneath an already-open one) without the
+   first `close()` prematurely restoring scrolling. */
+const ScrollLock = {
+  _count: 0,
+  lock() {
+    if (this._count === 0) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      if (scrollbarWidth > 0) document.body.style.paddingRight = scrollbarWidth + 'px';
+    }
+    this._count++;
+  },
+  unlock() {
+    this._count = Math.max(0, this._count - 1);
+    if (this._count === 0) {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }
+  },
+};
+
 const Accordion = {
   init(container) {
     container.querySelectorAll('.accordion__item').forEach(item => {
@@ -128,13 +160,13 @@ const CompanyModal = {
         <div class="modal__job-desc">${escapeHTML(job[1])}</div>
       </div>`).join('');
     overlay.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
+    ScrollLock.lock();
   },
 
   close() {
     if (!this.el) return;
     this.el.classList.remove('is-open');
-    document.body.style.overflow = '';
+    ScrollLock.unlock();
   },
 };
 
@@ -185,13 +217,13 @@ const RoleInsight = {
         <div class="modal__job-desc">${escapeHTML(job.jobDesc)}</div>
       </div>`).join('');
     overlay.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
+    ScrollLock.lock();
   },
 
   close() {
     if (!this.el) return;
     this.el.classList.remove('is-open');
-    document.body.style.overflow = '';
+    ScrollLock.unlock();
   },
 };
 
@@ -211,12 +243,14 @@ const NavMenu = {
     document.getElementById('nav-menu-overlay').classList.add('is-open');
     document.getElementById('nav-menu-overlay').setAttribute('aria-hidden', 'false');
     document.body.classList.add('nav-menu-open');
+    ScrollLock.lock();
   },
   close() {
     document.getElementById('nav-menu-toggle').setAttribute('aria-expanded', 'false');
     document.getElementById('nav-menu-overlay').classList.remove('is-open');
     document.getElementById('nav-menu-overlay').setAttribute('aria-hidden', 'true');
     document.body.classList.remove('nav-menu-open');
+    ScrollLock.unlock();
   },
   go(pageId, opts) {
     this.close();
@@ -262,13 +296,13 @@ const ImageModal = {
     this._el.style.display = 'flex';
     this._el.offsetHeight; // force reflow so the transition fires
     this._el.classList.add('is-visible');
-    document.body.style.overflow = 'hidden';
+    ScrollLock.lock();
   },
 
   close() {
     if (!this._el) return;
     this._el.classList.remove('is-visible');
-    document.body.style.overflow = '';
+    ScrollLock.unlock();
     setTimeout(() => { if (this._el) this._el.style.display = 'none'; }, 300);
   },
 };

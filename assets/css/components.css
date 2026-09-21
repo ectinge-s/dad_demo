@@ -271,7 +271,11 @@
 .tier-card__desc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.55; margin-bottom: 8px; }
 .tier-card__roles { font-size: 11.5px; color: var(--color-text-faint); }
 
-.company-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 10px; }
+/* v3.15 (GM): narrower minmax basis (was 180px) so more 代表企业 chips
+   fit per row before wrapping — company names vary a lot in length, so
+   this stays an auto-fill flex grid rather than a fixed column count. */
+.company-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 10px; }
+@media (max-width: 640px) { .company-grid { grid-template-columns: repeat(auto-fill, minmax(120px,1fr)); } }
 .company-chip {
   border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px 14px;
   font-size: 13px; font-weight: 700; text-align: left;
@@ -319,18 +323,26 @@
 
 /* "行业正在做什么业务" phrase-card grid — a plain tile grid didn't
    already exist anywhere on the site, so this is the one genuinely
-   new small component. */
-.tag-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 10px; }
+   new small component.
+   v3.15 (GM): fixed 6-per-row (was an auto-fill flex grid that
+   typically landed on 5) since most industries carry exactly 6 of
+   these cards — a fixed column count lines them up as one clean row
+   instead of leaving the last slot's width ambiguous. Applies to both
+   the plain and --detailed variants; collapses at narrower widths
+   below via the shared media queries. */
+.tag-card-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
 .tag-card { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 12.5px; font-weight: 700; text-align: center; }
 
 /* v3.7: richer title+body variant of the same grid, used once an
    industry has ind.businessCardsDetailed (Figma-sourced business-line
    name + one-sentence explanation) instead of just a plain phrase —
    falls back to the plain .tag-card above when that data isn't set yet. */
-.tag-card-grid--detailed { grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); }
-.tag-card--detailed { text-align: left; padding: 16px 18px; }
-.tag-card__title { font-size: 13px; font-weight: 800; margin-bottom: 6px; }
-.tag-card__body { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); line-height: 1.6; }
+.tag-card--detailed { text-align: left; padding: 12px 14px; }
+.tag-card__title { font-size: 12.5px; font-weight: 800; margin-bottom: 6px; }
+.tag-card__body { font-size: 11.5px; font-weight: 500; color: var(--color-text-secondary); line-height: 1.55; }
+
+@media (max-width: 900px) { .tag-card-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .tag-card-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* "学生能进入哪些岗位" role pills — click opens the "岗位解读" overlay
    (PlanningPage.openRoleInsight / RoleInsight), matching this role

@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SFK 数字艺术与设计科系</title>
 <meta name="description" content="SFK 数字艺术与设计（DAD）科系官网：8大行业就业全景、职业规划与升学路径。">
+<!-- v3.15 (GM): favicon set — generated from the brand's original standalone
+     mark (assets/img/logo.png), the icon later folded into the logo+text
+     combomark (logo-full.png) used in the navbar. -->
+<link rel="icon" href="assets/img/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/favicon-180.png">
+<!-- v3.18 (GM): 本网站使用了 MiSans 字体 (This site uses the MiSans font,
+     courtesy of Xiaomi Corporation, under MiSans's free commercial-use
+     license — attribution required, redistribution of the font itself
+     is not). Other type: Argentum Sans (OFL-1.1) and Martian Mono (OFL-1.1). -->
 <link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/components.css">
@@ -22,7 +34,7 @@
     </span>
     <div class="navbar__links">
       <button class="navbar__btn is-active" onclick="Router.go('home')">首页</button>
-      <button class="navbar__btn navbar__btn--accent" onclick="Router.go('home',{scrollTo:'#career-planning'})">职业规划</button>
+      <button class="navbar__btn" onclick="Router.go('home',{scrollTo:'#career-planning'})">职业规划</button>
       <button class="navbar__btn" onclick="Router.go('home',{scrollTo:'#offers'})">offer展示</button>
       <button class="navbar__btn" onclick="Router.go('home',{scrollTo:'#instructors'})">导师团队</button>
       <button class="navbar__btn" onclick="Router.go('home',{scrollTo:'#resources'})">资源网络</button>
@@ -31,28 +43,37 @@
       <button class="navbar__btn navbar__btn--page" onclick="Router.go('timeline')">时间轴</button>
       <button class="navbar__btn navbar__btn--page" onclick="Router.go('course-products')">课程产品</button>
     </div>
-    <button class="navbar__cta" onclick="Router.go('planning')">职业规划</button>
+    <button class="navbar__cta" onclick="Router.go('planning')">
+      <span class="navbar__cta-full">就业全景 × 职业规划</span>
+      <span class="navbar__cta-short">职业规划</span>
+    </button>
     <button class="navbar__menu-toggle" id="nav-menu-toggle" aria-expanded="false" aria-controls="nav-menu-overlay" aria-label="展开全部导航">
       <span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- ═══ EXPANDABLE NAV MENU (additive — mirrors the navbar's own links) ═══ -->
+<!-- ═══ EXPANDABLE NAV MENU (additive — mirrors the navbar's own links)
+     v3.15 (GM): two-column layout ported from ftam_demo's menu-overlay
+     style — big "page" links on the left, smaller in-page anchor links
+     on the right, divided by a vertical rule; collapses back to a
+     single centered column on narrow screens (see ist-shared.css). ═══ -->
 <div id="nav-menu-overlay" class="nav-menu-overlay" aria-hidden="true">
   <div class="nav-menu-overlay__inner">
-    <div class="nav-menu-overlay__group">
-      <a class="nav-menu-overlay__link" onclick="NavMenu.go('home')">首页</a>
-      <a class="nav-menu-overlay__link nav-menu-overlay__link--accent" onclick="NavMenu.go('home',{scrollTo:'#career-planning'})">职业规划</a>
-      <a class="nav-menu-overlay__link" onclick="NavMenu.go('home',{scrollTo:'#offers'})">offer展示</a>
-      <a class="nav-menu-overlay__link" onclick="NavMenu.go('home',{scrollTo:'#instructors'})">导师团队</a>
-      <a class="nav-menu-overlay__link" onclick="NavMenu.go('home',{scrollTo:'#resources'})">资源网络</a>
-    </div>
-    <span class="nav-menu-overlay__div" aria-hidden="true"></span>
-    <div class="nav-menu-overlay__group">
-      <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('portfolio')">案例展示</a>
-      <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('timeline')">时间轴</a>
-      <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('course-products')">课程产品</a>
+    <div class="nav-menu-overlay__row">
+      <div class="nav-menu-overlay__col nav-menu-overlay__col--primary">
+        <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('portfolio')">案例展示</a>
+        <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('timeline')">时间轴</a>
+        <a class="nav-menu-overlay__link nav-menu-overlay__link--page" onclick="NavMenu.go('course-products')">课程产品</a>
+      </div>
+      <span class="nav-menu-overlay__div" aria-hidden="true"></span>
+      <div class="nav-menu-overlay__col nav-menu-overlay__col--secondary">
+        <a class="nav-menu-overlay__link" onclick="NavMenu.go('home')">首页</a>
+        <a class="nav-menu-overlay__link nav-menu-overlay__link--accent" onclick="NavMenu.go('home',{scrollTo:'#career-planning'})">职业规划</a>
+        <a class="nav-menu-overlay__link" onclick="NavMenu.go('home',{scrollTo:'#offers'})">offer展示</a>
+        <a class="nav-menu-overlay__link" onclick="NavMenu.go('home',{scrollTo:'#instructors'})">导师团队</a>
+        <a class="nav-menu-overlay__link" onclick="NavMenu.go('home',{scrollTo:'#resources'})">资源网络</a>
+      </div>
     </div>
     <a class="nav-menu-overlay__cta" onclick="NavMenu.go('planning')">职业规划</a>
   </div>
@@ -276,8 +297,25 @@
 
 <div id="app-loading" style="position:fixed;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;font-family:sans-serif;color:#999;z-index:9999">加载中…</div>
 
+<!-- v3.19 (GM): hero cursor rebuilt again — GM's smooth-gradient v3.17.1
+     dart read as "super ugly", new reference is a chunky pixel/voxel
+     cursor (a jagged, staircase-edged arrow silhouette extruded as flat
+     pixel "cubes", not smooth gradient shading). Built programmatically
+     from a pixel bitmap: each filled cell is drawn twice — once as a
+     dark rect offset down-right (the extrusion's shadow/side faces,
+     visible only along the jagged silhouette's edge) and once as a
+     yellow rect at its true position with a thin dark stroke (the grid
+     seams between "cubes"), re-colored to the site's signature yellow +
+     near-black instead of the reference's pink + brown. Shown/positioned
+     by hero-cursor.js while the mouse is over the HOMEPAGE hero only
+     (#hero-root). -->
+<svg id="hero-cursor" class="hero-cursor" aria-hidden="true" viewBox="0 0 192.8 128.8">
+  <g fill="#6b4a00"><rect x="103.80" y="39.80" width="8" height="8"/><rect x="127.80" y="39.80" width="8" height="8"/><rect x="111.80" y="31.80" width="8" height="8"/><rect x="87.80" y="47.80" width="8" height="8"/><rect x="47.80" y="79.80" width="8" height="8"/><rect x="135.80" y="31.80" width="8" height="8"/><rect x="55.80" y="71.80" width="8" height="8"/><rect x="71.80" y="79.80" width="8" height="8"/><rect x="143.80" y="7.80" width="8" height="8"/><rect x="119.80" y="23.80" width="8" height="8"/><rect x="103.80" y="15.80" width="8" height="8"/><rect x="119.80" y="7.80" width="8" height="8"/><rect x="167.80" y="7.80" width="8" height="8"/><rect x="143.80" y="23.80" width="8" height="8"/><rect x="127.80" y="15.80" width="8" height="8"/><rect x="63.80" y="63.80" width="8" height="8"/><rect x="151.80" y="15.80" width="8" height="8"/><rect x="71.80" y="55.80" width="8" height="8"/><rect x="87.80" y="63.80" width="8" height="8"/><rect x="95.80" y="55.80" width="8" height="8"/><rect x="31.80" y="103.80" width="8" height="8"/><rect x="7.80" y="119.80" width="8" height="8"/><rect x="103.80" y="31.80" width="8" height="8"/><rect x="79.80" y="47.80" width="8" height="8"/><rect x="95.80" y="39.80" width="8" height="8"/><rect x="127.80" y="31.80" width="8" height="8"/><rect x="103.80" y="47.80" width="8" height="8"/><rect x="119.80" y="39.80" width="8" height="8"/><rect x="47.80" y="87.80" width="8" height="8"/><rect x="63.80" y="79.80" width="8" height="8"/><rect x="15.80" y="111.80" width="8" height="8"/><rect x="23.80" y="111.80" width="8" height="8"/><rect x="111.80" y="7.80" width="8" height="8"/><rect x="159.80" y="7.80" width="8" height="8"/><rect x="119.80" y="15.80" width="8" height="8"/><rect x="135.80" y="7.80" width="8" height="8"/><rect x="183.80" y="7.80" width="8" height="8"/><rect x="111.80" y="23.80" width="8" height="8"/><rect x="143.80" y="15.80" width="8" height="8"/><rect x="79.80" y="55.80" width="8" height="8"/><rect x="135.80" y="23.80" width="8" height="8"/><rect x="167.80" y="15.80" width="8" height="8"/><rect x="87.80" y="55.80" width="8" height="8"/><rect x="79.80" y="63.80" width="8" height="8"/><rect x="111.80" y="55.80" width="8" height="8"/><rect x="87.80" y="39.80" width="8" height="8"/><rect x="119.80" y="31.80" width="8" height="8"/><rect x="111.80" y="39.80" width="8" height="8"/><rect x="95.80" y="31.80" width="8" height="8"/><rect x="143.80" y="31.80" width="8" height="8"/><rect x="63.80" y="71.80" width="8" height="8"/><rect x="55.80" y="79.80" width="8" height="8"/><rect x="95.80" y="47.80" width="8" height="8"/><rect x="31.80" y="95.80" width="8" height="8"/><rect x="39.80" y="87.80" width="8" height="8"/><rect x="127.80" y="7.80" width="8" height="8"/><rect x="103.80" y="23.80" width="8" height="8"/><rect x="135.80" y="15.80" width="8" height="8"/><rect x="151.80" y="7.80" width="8" height="8"/><rect x="127.80" y="23.80" width="8" height="8"/><rect x="111.80" y="15.80" width="8" height="8"/><rect x="159.80" y="15.80" width="8" height="8"/><rect x="175.80" y="7.80" width="8" height="8"/><rect x="71.80" y="63.80" width="8" height="8"/><rect x="103.80" y="55.80" width="8" height="8"/><rect x="23.80" y="103.80" width="8" height="8"/></g><g fill="#FFFF00" stroke="#0D0D00" stroke-width="0.6"><rect x="97.00" y="33.00" width="8" height="8"/><rect x="121.00" y="33.00" width="8" height="8"/><rect x="105.00" y="25.00" width="8" height="8"/><rect x="81.00" y="41.00" width="8" height="8"/><rect x="41.00" y="73.00" width="8" height="8"/><rect x="129.00" y="25.00" width="8" height="8"/><rect x="49.00" y="65.00" width="8" height="8"/><rect x="65.00" y="73.00" width="8" height="8"/><rect x="137.00" y="1.00" width="8" height="8"/><rect x="113.00" y="17.00" width="8" height="8"/><rect x="97.00" y="9.00" width="8" height="8"/><rect x="113.00" y="1.00" width="8" height="8"/><rect x="161.00" y="1.00" width="8" height="8"/><rect x="137.00" y="17.00" width="8" height="8"/><rect x="121.00" y="9.00" width="8" height="8"/><rect x="57.00" y="57.00" width="8" height="8"/><rect x="145.00" y="9.00" width="8" height="8"/><rect x="65.00" y="49.00" width="8" height="8"/><rect x="81.00" y="57.00" width="8" height="8"/><rect x="89.00" y="49.00" width="8" height="8"/><rect x="25.00" y="97.00" width="8" height="8"/><rect x="1.00" y="113.00" width="8" height="8"/><rect x="97.00" y="25.00" width="8" height="8"/><rect x="73.00" y="41.00" width="8" height="8"/><rect x="89.00" y="33.00" width="8" height="8"/><rect x="121.00" y="25.00" width="8" height="8"/><rect x="97.00" y="41.00" width="8" height="8"/><rect x="113.00" y="33.00" width="8" height="8"/><rect x="41.00" y="81.00" width="8" height="8"/><rect x="57.00" y="73.00" width="8" height="8"/><rect x="9.00" y="105.00" width="8" height="8"/><rect x="17.00" y="105.00" width="8" height="8"/><rect x="105.00" y="1.00" width="8" height="8"/><rect x="153.00" y="1.00" width="8" height="8"/><rect x="113.00" y="9.00" width="8" height="8"/><rect x="129.00" y="1.00" width="8" height="8"/><rect x="177.00" y="1.00" width="8" height="8"/><rect x="105.00" y="17.00" width="8" height="8"/><rect x="137.00" y="9.00" width="8" height="8"/><rect x="73.00" y="49.00" width="8" height="8"/><rect x="129.00" y="17.00" width="8" height="8"/><rect x="161.00" y="9.00" width="8" height="8"/><rect x="81.00" y="49.00" width="8" height="8"/><rect x="73.00" y="57.00" width="8" height="8"/><rect x="105.00" y="49.00" width="8" height="8"/><rect x="81.00" y="33.00" width="8" height="8"/><rect x="113.00" y="25.00" width="8" height="8"/><rect x="105.00" y="33.00" width="8" height="8"/><rect x="89.00" y="25.00" width="8" height="8"/><rect x="137.00" y="25.00" width="8" height="8"/><rect x="57.00" y="65.00" width="8" height="8"/><rect x="49.00" y="73.00" width="8" height="8"/><rect x="89.00" y="41.00" width="8" height="8"/><rect x="25.00" y="89.00" width="8" height="8"/><rect x="33.00" y="81.00" width="8" height="8"/><rect x="121.00" y="1.00" width="8" height="8"/><rect x="97.00" y="17.00" width="8" height="8"/><rect x="129.00" y="9.00" width="8" height="8"/><rect x="145.00" y="1.00" width="8" height="8"/><rect x="121.00" y="17.00" width="8" height="8"/><rect x="105.00" y="9.00" width="8" height="8"/><rect x="153.00" y="9.00" width="8" height="8"/><rect x="169.00" y="1.00" width="8" height="8"/><rect x="65.00" y="57.00" width="8" height="8"/><rect x="97.00" y="49.00" width="8" height="8"/><rect x="17.00" y="97.00" width="8" height="8"/></g>
+</svg>
+
 <script src="assets/js/effects.js"></script>
 <script src="assets/js/marquee.js"></script>
+<script src="assets/js/hero-cursor.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/ist-data.js"></script>
 <script src="assets/js/components.js"></script>

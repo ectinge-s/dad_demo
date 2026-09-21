@@ -58,9 +58,9 @@
   --color-warning-veil:   rgba(224,168,62,.14);
 
   /* Type */
-  --font-en:    'Archivo', 'Noto Sans SC', sans-serif;
-  --font-cn:    'Noto Sans SC', 'Archivo', sans-serif;
-  --font-mono:  'JetBrains Mono', monospace;
+  --font-en:    'Argentum Sans', 'MiSans', sans-serif;
+  --font-cn:    'MiSans', 'Argentum Sans', sans-serif;
+  --font-mono:  'Martian Mono', monospace;
 
   /* Scale */
   --fs-h1: clamp(32px, 4.6vw, 56px);
@@ -217,20 +217,44 @@ p { margin: 0; }
   white-space: nowrap;
 }
 .navbar__btn:hover, .navbar__btn.is-active { background: var(--color-surface-2); color: var(--color-text); }
-.navbar__btn--accent { color: var(--color-accent); font-weight: 800; }
-.navbar__btn--accent:hover, .navbar__btn--accent.is-active { background: var(--color-accent-veil); color: var(--color-accent); }
 .navbar__divider { width: 1px; height: 20px; background: var(--color-border-2); margin: 0 8px; }
 .navbar__link-out {
   font-size: 13px; font-weight: 800; padding: 8px 14px; border-radius: 999px;
   border: 1px solid var(--color-border-2);
 }
 .navbar__link-out:hover { border-color: var(--color-text); }
+/* v3.17 (GM): "职业规划" in-page nav link reverted to the plain white
+   .navbar__btn treatment (the old .navbar__btn--accent yellow-text
+   variant is retired — this was its only usage). The signature-yellow
+   treatment now lives solely on the top-right CTA below, so there's
+   one clear accent moment in the navbar instead of two competing ones.
+   CTA itself: solid accent-yellow pill + the site's existing glow
+   tokens (same --glow-accent/--glow-accent-soft recipe already used
+   for the nav-menu-overlay's own CTA and the active filter-pill state)
+   — an always-on soft ambient glow so it reads as "the" call to action
+   at a glance, with a crisper glow ring added on hover/focus. */
 .navbar__cta {
   font-size: 13px; font-weight: 800; padding: 9px 18px; border-radius: 999px;
-  background: var(--color-text); color: var(--color-bg);
-  transition: transform .15s var(--ease), background .15s var(--ease);
+  background: var(--color-accent); color: var(--color-accent-ink);
+  box-shadow: var(--glow-accent-soft);
+  white-space: nowrap; flex-shrink: 0;
+  transition: transform .15s var(--ease), box-shadow .15s var(--ease), background .15s var(--ease);
 }
-.navbar__cta:hover { background: var(--color-accent); color: var(--color-accent-ink); }
+.navbar__cta:hover, .navbar__cta:focus-visible {
+  background: var(--color-accent-deep);
+  box-shadow: var(--glow-accent), var(--glow-accent-soft);
+  transform: translateY(-1px);
+}
+/* The full "就业全景 × 职业规划" label wraps to two lines and turns the
+   pill into an oval blob below ~600px, where the navbar has little
+   room left beside the logo + hamburger toggle — swap to a short
+   "职业规划"-only label there instead of shrinking type past
+   legibility. */
+.navbar__cta-short { display: none; }
+@media (max-width: 600px) {
+  .navbar__cta-full { display: none; }
+  .navbar__cta-short { display: inline; }
+}
 .navbar__menu-btn { display: none; font-size: 20px; }
 
 @media (max-width: 980px) {
@@ -303,3 +327,27 @@ p { margin: 0; }
 }
 .filter-btn:hover { border-color: var(--color-accent-deep); color: var(--color-text); background: var(--color-surface-2); }
 .filter-btn.is-active { background: var(--color-accent); color: var(--color-accent-ink); border-color: var(--color-accent); box-shadow: var(--glow-primary-soft); font-weight: 700; }
+
+/* ── HERO CUSTOM CURSOR (v3.19, GM) ─────────────────────────
+   Replaces the OS cursor with a chunky yellow pixel/voxel arrow while
+   the mouse is over the HOMEPAGE hero specifically (#hero-root) — NOT
+   every page's `.hero` section (narrowed to homepage-only in v3.17.1).
+   v3.19 replaced the smooth-gradient 3D dart from v3.17.1 (GM: "super
+   ugly") with a jagged, staircase-edged pixel silhouette extruded as
+   flat "cubes" per GM's new reference — see index.html for the shape
+   itself (inline SVG, non-square viewBox, built from a pixel bitmap).
+   JS (hero-cursor.js) shows/hides/positions it via a mousemove listener
+   scoped to #hero-root only. */
+#hero-root, #hero-root * { cursor: none !important; }
+.hero-cursor {
+  position: fixed; top: 0; left: 0; width: 96px; height: 64px;
+  pointer-events: none; z-index: 9999; overflow: visible;
+  opacity: 0; transform: translate3d(-200px, -200px, 0);
+  transition: opacity .12s var(--ease), transform .06s linear;
+  will-change: transform, opacity;
+}
+.hero-cursor.is-visible { opacity: 1; }
+/* .is-pressed's scale is applied by hero-cursor.js directly in the same
+   inline `transform` it uses for position (an inline style always wins
+   over a class rule for the same property, so a separate CSS rule here
+   would never actually apply). */
