@@ -18,11 +18,47 @@ const CourseProductsPage = {
     if (cat) cat.innerHTML = this.CATALOG_ORDER.map(id => this._catalogCard(id)).join('');
   },
 
+  // v3.25 (GM): "将点开长线产品卡-overlay逻辑，改为点击打开新页面（仍承载在
+  // '课程产品'大title下）。里面还会再有overlay功能" — a 长线产品 card now
+  // navigates to a real sub-route (#course-products/<id>) instead of
+  // opening CourseOverlay, following the exact same overview/subpage
+  // pattern PlanningPage already uses for #planning/<industryId> (see
+  // showSubpage() there): the page's own hero ("课程产品" title, still
+  // outside both subpages in index.html) stays put, and the body swaps
+  // between the card-grid overview and one product's full detail page.
+  // 课程目录 (catalog) cards are UNCHANGED — they still open CourseOverlay,
+  // since GM's request was specific to 长线产品卡. MiniCourseModal/
+  // ImageModal etc. keep working exactly as before inside the new page —
+  // they're independent fixed-position overlays, not tied to the old
+  // course-overlay DOM, so "里面还会再有overlay功能" needed no extra work.
+  showSubpage(productId) {
+    this.currentProductId = productId || null;
+    const overviewEl = document.getElementById('cp-overview-subpage');
+    const productEl = document.getElementById('cp-product-subpage');
+    if (!overviewEl || !productEl) return;
+
+    if (productId && this.LONGFORM_ORDER.includes(productId) && window.PRODUCTS && window.PRODUCTS[productId]) {
+      overviewEl.hidden = true;
+      productEl.hidden = false;
+      const product = window.PRODUCTS[productId];
+      productEl.innerHTML = `
+        <button type="button" class="cp-product-back" onclick="Router.go('course-products', {})" aria-label="返回课程产品"><span class="cp-product-back__arrow">←</span><span class="cp-product-back__text">返回课程产品</span></button>
+        ${window.buildProductHTML(product, productId)}`;
+      productEl.classList.add('is-wide');
+      Effects.init(productEl);
+    } else {
+      productEl.hidden = true;
+      productEl.innerHTML = '';
+      overviewEl.hidden = false;
+    }
+  },
+
   _longformCard(id) {
     const p = window.PRODUCTS[id];
     const bannerCls = 'cp-card__banner' + (p.tileVariant ? ' cp-card__banner--' + p.tileVariant : '');
-    return `<div class="cp-card cp-card--longform" onclick="CourseOverlay.open('${id}')">
+    return `<div class="cp-card cp-card--longform" onclick="Router.go('course-products', {productId:'${id}'})">
       <div class="${bannerCls}">
+        ${p.cover ? `<img src="${p.cover}" alt="" loading="lazy">` : ''}
         <span class="cp-card__badge cp-card__badge--longform">长线内容</span>
       </div>
       <div class="cp-card__body">
@@ -39,6 +75,7 @@ const CourseProductsPage = {
     const p = window.PRODUCTS[id];
     return `<div class="cp-card cp-card--catalog" onclick="CourseOverlay.open('${id}')">
       <div class="cp-card__banner cp-card__banner--catalog">
+        ${p.cover ? `<img src="${p.cover}" alt="" loading="lazy">` : ''}
         <span class="cp-card__badge cp-card__badge--catalog">${p.count}个课程</span>
       </div>
       <div class="cp-card__body">

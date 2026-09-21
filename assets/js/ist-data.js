@@ -43,7 +43,17 @@ const DATA = (() => {
       if (Array.isArray(json)) {
         json.forEach(rec => {
           const mapped = PROGRAM_TYPE_TO_TAB[rec.program_type];
-          if (mapped) rec.tab = mapped;
+          if (mapped) {
+            // v3.22: preserve the original raw `tab` value (e.g. "winter 27" /
+            // "summer 26" / "masterclass 26") as `.season` before it's
+            // overwritten below — both "winter 27" and "summer 26" records
+            // share program_type '海外冬夏校' and so remap to the same
+            // 'summer' tab code, so anything that needs to tell them apart
+            // (see summerwinter's catalogSource.extraFilter in course-demo.js)
+            // needs this preserved separately.
+            rec.season = rec.tab;
+            rec.tab = mapped;
+          }
         });
       }
       cache[cacheKey] = json;

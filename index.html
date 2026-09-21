@@ -75,7 +75,7 @@
         <a class="nav-menu-overlay__link" onclick="NavMenu.go('home',{scrollTo:'#resources'})">资源网络</a>
       </div>
     </div>
-    <a class="nav-menu-overlay__cta" onclick="NavMenu.go('planning')">职业规划</a>
+    <a class="nav-menu-overlay__cta" onclick="NavMenu.go('planning')">就业全景 × 职业规划</a>
   </div>
 </div>
 
@@ -204,18 +204,24 @@
     <h1 class="timeline-hero__title">课程产品</h1>
     <p class="timeline-hero__sub">从长线旗舰项目到分类课程目录，覆盖学术探索、行业实习与商业实践的完整课程体系。点击任意卡片查看完整介绍。</p>
   </section>
-  <div class="cp-page">
-    <div class="cp-zone">
-      <div class="section-eyebrow">Signature Programs</div>
-      <h2 class="section-title">长线旗舰产品</h2>
-      <div class="cp-grid" id="cp-longform-grid"></div>
-    </div>
-    <div class="cp-zone cp-zone--catalog">
-      <div class="section-eyebrow">Program Catalog</div>
-      <h2 class="section-title">课程目录</h2>
-      <div class="cp-grid" id="cp-catalog-grid"></div>
+  <!-- v3.25: overview/product subpage split, same pattern as PlanningPage's
+       #planning/<industryId> — the hero above stays visible in both states;
+       CourseProductsPage.showSubpage() toggles which of these two shows. -->
+  <div id="cp-overview-subpage">
+    <div class="cp-page">
+      <div class="cp-zone">
+        <div class="section-eyebrow">Signature Programs</div>
+        <h2 class="section-title">长线旗舰产品</h2>
+        <div class="cp-grid" id="cp-longform-grid"></div>
+      </div>
+      <div class="cp-zone cp-zone--catalog">
+        <div class="section-eyebrow">Program Catalog</div>
+        <h2 class="section-title">课程目录</h2>
+        <div class="cp-grid" id="cp-catalog-grid"></div>
+      </div>
     </div>
   </div>
+  <div id="cp-product-subpage" class="cd-page__body" hidden></div>
 </main>
 
 <!-- ═══ COURSE OVERLAY (full-screen, from a course card) ═══ -->
@@ -297,20 +303,71 @@
 
 <div id="app-loading" style="position:fixed;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;font-family:sans-serif;color:#999;z-index:9999">加载中…</div>
 
-<!-- v3.19 (GM): hero cursor rebuilt again — GM's smooth-gradient v3.17.1
-     dart read as "super ugly", new reference is a chunky pixel/voxel
-     cursor (a jagged, staircase-edged arrow silhouette extruded as flat
-     pixel "cubes", not smooth gradient shading). Built programmatically
-     from a pixel bitmap: each filled cell is drawn twice — once as a
-     dark rect offset down-right (the extrusion's shadow/side faces,
-     visible only along the jagged silhouette's edge) and once as a
-     yellow rect at its true position with a thin dark stroke (the grid
-     seams between "cubes"), re-colored to the site's signature yellow +
-     near-black instead of the reference's pink + brown. Shown/positioned
+<!-- v3.34 (GM): hero cursor swapped for the delivered vector
+     (_supplement-912/dad-cursor.svg) — a proper extruded-arrow pointer
+     silhouette (yellow faces + olive extrusion sides), replacing the
+     v3.19 pixel/voxel dart built from bitmap rects. Inlined directly
+     (same approach as before) so hero-cursor.js can keep driving it with
+     a plain CSS transform with no extra <img>/<use> indirection. viewBox
+     is the source file's own 0 0 300 300 (square, vs. the old shape's
+     non-square 192.8x128.8) — see hero-cursor.js/style.css for the
+     matching TIP_X/TIP_Y and .hero-cursor size updates. Shown/positioned
      by hero-cursor.js while the mouse is over the HOMEPAGE hero only
      (#hero-root). -->
-<svg id="hero-cursor" class="hero-cursor" aria-hidden="true" viewBox="0 0 192.8 128.8">
-  <g fill="#6b4a00"><rect x="103.80" y="39.80" width="8" height="8"/><rect x="127.80" y="39.80" width="8" height="8"/><rect x="111.80" y="31.80" width="8" height="8"/><rect x="87.80" y="47.80" width="8" height="8"/><rect x="47.80" y="79.80" width="8" height="8"/><rect x="135.80" y="31.80" width="8" height="8"/><rect x="55.80" y="71.80" width="8" height="8"/><rect x="71.80" y="79.80" width="8" height="8"/><rect x="143.80" y="7.80" width="8" height="8"/><rect x="119.80" y="23.80" width="8" height="8"/><rect x="103.80" y="15.80" width="8" height="8"/><rect x="119.80" y="7.80" width="8" height="8"/><rect x="167.80" y="7.80" width="8" height="8"/><rect x="143.80" y="23.80" width="8" height="8"/><rect x="127.80" y="15.80" width="8" height="8"/><rect x="63.80" y="63.80" width="8" height="8"/><rect x="151.80" y="15.80" width="8" height="8"/><rect x="71.80" y="55.80" width="8" height="8"/><rect x="87.80" y="63.80" width="8" height="8"/><rect x="95.80" y="55.80" width="8" height="8"/><rect x="31.80" y="103.80" width="8" height="8"/><rect x="7.80" y="119.80" width="8" height="8"/><rect x="103.80" y="31.80" width="8" height="8"/><rect x="79.80" y="47.80" width="8" height="8"/><rect x="95.80" y="39.80" width="8" height="8"/><rect x="127.80" y="31.80" width="8" height="8"/><rect x="103.80" y="47.80" width="8" height="8"/><rect x="119.80" y="39.80" width="8" height="8"/><rect x="47.80" y="87.80" width="8" height="8"/><rect x="63.80" y="79.80" width="8" height="8"/><rect x="15.80" y="111.80" width="8" height="8"/><rect x="23.80" y="111.80" width="8" height="8"/><rect x="111.80" y="7.80" width="8" height="8"/><rect x="159.80" y="7.80" width="8" height="8"/><rect x="119.80" y="15.80" width="8" height="8"/><rect x="135.80" y="7.80" width="8" height="8"/><rect x="183.80" y="7.80" width="8" height="8"/><rect x="111.80" y="23.80" width="8" height="8"/><rect x="143.80" y="15.80" width="8" height="8"/><rect x="79.80" y="55.80" width="8" height="8"/><rect x="135.80" y="23.80" width="8" height="8"/><rect x="167.80" y="15.80" width="8" height="8"/><rect x="87.80" y="55.80" width="8" height="8"/><rect x="79.80" y="63.80" width="8" height="8"/><rect x="111.80" y="55.80" width="8" height="8"/><rect x="87.80" y="39.80" width="8" height="8"/><rect x="119.80" y="31.80" width="8" height="8"/><rect x="111.80" y="39.80" width="8" height="8"/><rect x="95.80" y="31.80" width="8" height="8"/><rect x="143.80" y="31.80" width="8" height="8"/><rect x="63.80" y="71.80" width="8" height="8"/><rect x="55.80" y="79.80" width="8" height="8"/><rect x="95.80" y="47.80" width="8" height="8"/><rect x="31.80" y="95.80" width="8" height="8"/><rect x="39.80" y="87.80" width="8" height="8"/><rect x="127.80" y="7.80" width="8" height="8"/><rect x="103.80" y="23.80" width="8" height="8"/><rect x="135.80" y="15.80" width="8" height="8"/><rect x="151.80" y="7.80" width="8" height="8"/><rect x="127.80" y="23.80" width="8" height="8"/><rect x="111.80" y="15.80" width="8" height="8"/><rect x="159.80" y="15.80" width="8" height="8"/><rect x="175.80" y="7.80" width="8" height="8"/><rect x="71.80" y="63.80" width="8" height="8"/><rect x="103.80" y="55.80" width="8" height="8"/><rect x="23.80" y="103.80" width="8" height="8"/></g><g fill="#FFFF00" stroke="#0D0D00" stroke-width="0.6"><rect x="97.00" y="33.00" width="8" height="8"/><rect x="121.00" y="33.00" width="8" height="8"/><rect x="105.00" y="25.00" width="8" height="8"/><rect x="81.00" y="41.00" width="8" height="8"/><rect x="41.00" y="73.00" width="8" height="8"/><rect x="129.00" y="25.00" width="8" height="8"/><rect x="49.00" y="65.00" width="8" height="8"/><rect x="65.00" y="73.00" width="8" height="8"/><rect x="137.00" y="1.00" width="8" height="8"/><rect x="113.00" y="17.00" width="8" height="8"/><rect x="97.00" y="9.00" width="8" height="8"/><rect x="113.00" y="1.00" width="8" height="8"/><rect x="161.00" y="1.00" width="8" height="8"/><rect x="137.00" y="17.00" width="8" height="8"/><rect x="121.00" y="9.00" width="8" height="8"/><rect x="57.00" y="57.00" width="8" height="8"/><rect x="145.00" y="9.00" width="8" height="8"/><rect x="65.00" y="49.00" width="8" height="8"/><rect x="81.00" y="57.00" width="8" height="8"/><rect x="89.00" y="49.00" width="8" height="8"/><rect x="25.00" y="97.00" width="8" height="8"/><rect x="1.00" y="113.00" width="8" height="8"/><rect x="97.00" y="25.00" width="8" height="8"/><rect x="73.00" y="41.00" width="8" height="8"/><rect x="89.00" y="33.00" width="8" height="8"/><rect x="121.00" y="25.00" width="8" height="8"/><rect x="97.00" y="41.00" width="8" height="8"/><rect x="113.00" y="33.00" width="8" height="8"/><rect x="41.00" y="81.00" width="8" height="8"/><rect x="57.00" y="73.00" width="8" height="8"/><rect x="9.00" y="105.00" width="8" height="8"/><rect x="17.00" y="105.00" width="8" height="8"/><rect x="105.00" y="1.00" width="8" height="8"/><rect x="153.00" y="1.00" width="8" height="8"/><rect x="113.00" y="9.00" width="8" height="8"/><rect x="129.00" y="1.00" width="8" height="8"/><rect x="177.00" y="1.00" width="8" height="8"/><rect x="105.00" y="17.00" width="8" height="8"/><rect x="137.00" y="9.00" width="8" height="8"/><rect x="73.00" y="49.00" width="8" height="8"/><rect x="129.00" y="17.00" width="8" height="8"/><rect x="161.00" y="9.00" width="8" height="8"/><rect x="81.00" y="49.00" width="8" height="8"/><rect x="73.00" y="57.00" width="8" height="8"/><rect x="105.00" y="49.00" width="8" height="8"/><rect x="81.00" y="33.00" width="8" height="8"/><rect x="113.00" y="25.00" width="8" height="8"/><rect x="105.00" y="33.00" width="8" height="8"/><rect x="89.00" y="25.00" width="8" height="8"/><rect x="137.00" y="25.00" width="8" height="8"/><rect x="57.00" y="65.00" width="8" height="8"/><rect x="49.00" y="73.00" width="8" height="8"/><rect x="89.00" y="41.00" width="8" height="8"/><rect x="25.00" y="89.00" width="8" height="8"/><rect x="33.00" y="81.00" width="8" height="8"/><rect x="121.00" y="1.00" width="8" height="8"/><rect x="97.00" y="17.00" width="8" height="8"/><rect x="129.00" y="9.00" width="8" height="8"/><rect x="145.00" y="1.00" width="8" height="8"/><rect x="121.00" y="17.00" width="8" height="8"/><rect x="105.00" y="9.00" width="8" height="8"/><rect x="153.00" y="9.00" width="8" height="8"/><rect x="169.00" y="1.00" width="8" height="8"/><rect x="65.00" y="57.00" width="8" height="8"/><rect x="97.00" y="49.00" width="8" height="8"/><rect x="17.00" y="97.00" width="8" height="8"/></g>
+<svg id="hero-cursor" class="hero-cursor" aria-hidden="true" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .hc-st0 { fill: none; stroke: #ff0; stroke-linecap: round; stroke-linejoin: round; }
+      .hc-st1 { fill: #57571d; }
+      .hc-st2 { fill: #ff0; }
+    </style>
+  </defs>
+  <g>
+    <path class="hc-st1" d="M239.62,42.07l47.53,66.09-29.06,3.7-1.65.21-5.77-8.03-.54-.75-31.66-44.05-9.64-13.4c.55-.07,1.11-.13,1.66-.2,9.72-1.19,19.42-2.38,29.13-3.57Z"/>
+    <polygon points="287.15 108.16 267.62 125.11 236.88 129.06 256.44 112.07 258.09 111.86 287.15 108.16"/>
+    <path class="hc-st1" d="M167.99,118.62l88.6,123.4c-10.25,1.4-20.5,2.79-30.75,4.18l-95.05-132.44c9.67-1.22,19.35-2.44,29.03-3.66l6.29,8.76c.63-.08,1.25-.16,1.88-.24Z"/>
+    <path d="M256.59,242.02l-39,33.78c-10.27,1.42-20.54,2.83-30.81,4.25l20.88-18.09,18.18-15.76c10.25-1.39,20.5-2.78,30.75-4.18Z"/>
+    <polygon class="hc-st2" points="250.67 104.04 256.44 112.07 236.88 129.06 230.55 120.24 221.02 106.98 201.48 123.95 195.17 115.17 185.63 101.89 167.37 117.76 166.11 118.86 159.82 110.1 150.28 96.8 130.79 113.76 225.84 246.2 207.66 261.96 186.78 280.05 117.76 183.79 117.08 182.84 101.3 160.85 91.84 147.65 72.39 164.58 88.19 186.62 68.74 203.54 84.53 225.58 66.64 241.14 65.09 242.48 80.88 264.53 61.44 281.41 14.11 215.3 33.52 198.41 17.75 176.38 37.17 159.47 21.39 137.46 40.81 120.53 25.03 98.52 44.46 81.58 28.67 59.57 67.55 25.64 77.85 39.99 83.35 47.66 102.81 30.69 112.45 44.12 118.63 52.72 138.11 35.73 147.75 49.15 153.95 57.78 173.46 40.79 183.09 54.19 189.3 62.84 208.83 45.84 218.47 59.24 250.13 103.29 250.67 104.04"/>
+    <path d="M221.02,106.98l9.53,13.26c-9.69,1.24-19.38,2.47-29.07,3.71l19.54-16.97Z"/>
+    <path class="hc-st1" d="M204.3,37.03l6.19,8.61c-.55.07-1.11.13-1.66.2l-19.53,17-6.21-8.65-9.63-13.4c.58-.07,1.15-.14,1.73-.21,9.7-1.19,19.41-2.37,29.11-3.55Z"/>
+    <path d="M185.63,101.89l9.54,13.28c-9.06,1.14-18.12,2.3-27.18,3.45l-.62-.86,18.26-15.87Z"/>
+    <path class="hc-st1" d="M169.02,31.99l6.17,8.59c-.58.07-1.15.14-1.73.21l-19.51,16.99-6.2-8.63-9.64-13.42c.6-.07,1.21-.15,1.81-.22,9.71-1.18,19.4-2.34,29.1-3.52Z"/>
+    <path d="M150.28,96.8l9.54,13.3c-9.68,1.22-19.36,2.44-29.03,3.66l19.49-16.96Z"/>
+    <path class="hc-st1" d="M133.77,26.95l6.15,8.56c-.6.07-1.21.15-1.81.22l-19.48,16.99-6.18-8.6-9.64-13.43c.63-.08,1.25-.15,1.88-.23,9.69-1.17,19.39-2.34,29.08-3.51Z"/>
+    <path d="M117.08,182.84l.68.95-18.02,15.66c-10.33,1.36-20.67,2.72-31,4.09l19.45-16.92,28.89-3.78Z"/>
+    <path class="hc-st1" d="M101.3,160.85l15.78,21.99-28.89,3.78-15.8-22.04c9.63-1.24,19.27-2.49,28.91-3.73Z"/>
+    <path class="hc-st1" d="M99.74,199.45l15.77,22c-10.33,1.38-20.65,2.75-30.98,4.13l-15.79-22.04c10.33-1.37,20.67-2.73,31-4.09Z"/>
+    <path d="M115.51,221.45l-19.42,16.86c-9.57,1.29-19.14,2.57-28.71,3.86-.76.1-1.53.21-2.29.31l1.55-1.34,17.89-15.56c10.33-1.38,20.65-2.75,30.98-4.13Z"/>
+    <path class="hc-st1" d="M96.09,238.31l15.77,22.01c-9.57,1.3-19.12,2.59-28.69,3.9-.76.1-1.53.21-2.29.31l-15.79-22.05c.76-.1,1.53-.21,2.29-.31,9.57-1.29,19.14-2.57,28.71-3.86Z"/>
+    <path d="M111.86,260.32l-19.41,16.85c-10.34,1.41-20.67,2.83-31.01,4.24l19.44-16.88c.76-.1,1.53-.21,2.29-.31,9.57-1.31,19.12-2.6,28.69-3.9Z"/>
+    <path class="hc-st1" d="M98.56,21.92l6.13,8.54c-.63.08-1.25.15-1.88.23l-19.46,16.97-5.5-7.67-10.3-14.35c10.33-1.24,20.67-2.48,31.01-3.72Z"/>
+    <path d="M91.84,147.65l9.46,13.2c-9.64,1.24-19.28,2.49-28.91,3.73l19.45-16.93Z"/>
+  </g>
+  <g>
+    <path class="hc-st0" d="M230.55,120.24c-9.69,1.24-19.38,2.47-29.07,3.71"/>
+    <path class="hc-st0" d="M195.17,115.17c-9.06,1.14-18.12,2.3-27.18,3.45-.63.08-1.25.16-1.88.24"/>
+    <path class="hc-st0" d="M130.79,113.76c9.67-1.22,19.35-2.44,29.03-3.66"/>
+    <path class="hc-st0" d="M256.59,242.02l-39,33.78c-10.27,1.42-20.54,2.83-30.81,4.25"/>
+    <path class="hc-st0" d="M72.39,164.58c9.63-1.24,19.27-2.49,28.91-3.73"/>
+    <line class="hc-st0" x1="88.19" y1="186.62" x2="117.08" y2="182.84"/>
+    <path class="hc-st0" d="M68.74,203.54c10.33-1.37,20.67-2.73,31-4.09"/>
+    <line class="hc-st0" x1="96.09" y1="238.31" x2="111.86" y2="260.32"/>
+    <path class="hc-st0" d="M115.51,221.45l-19.42,16.86c-9.57,1.29-19.14,2.57-28.71,3.86-.76.1-1.53.21-2.29.31"/>
+    <path class="hc-st0" d="M210.49,45.64c9.72-1.19,19.42-2.38,29.13-3.57l47.53,66.09"/>
+    <polyline class="hc-st0" points="208.83 45.84 218.47 59.24 250.13 103.29 250.67 104.04 256.44 112.07"/>
+    <polyline class="hc-st0" points="61.44 281.41 14.11 215.3 33.52 198.41 17.75 176.38 37.17 159.47 21.39 137.46 40.81 120.53 25.03 98.52 44.46 81.58 28.67 59.57 67.55 25.64"/>
+    <polyline class="hc-st0" points="84.53 225.58 66.64 241.14 65.09 242.48 80.88 264.53"/>
+    <polyline class="hc-st0" points="225.84 246.2 207.66 261.96 186.78 280.05 117.76 183.79"/>
+    <polyline class="hc-st0" points="236.88 129.06 230.55 120.24 221.02 106.98 201.48 123.95 195.17 115.17 185.63 101.89 167.37 117.76"/>
+    <path class="hc-st0" d="M111.86,260.32l-19.41,16.85c-10.34,1.41-20.67,2.83-31.01,4.24l19.44-16.88c.76-.1,1.53-.21,2.29-.31,9.57-1.31,19.12-2.6,28.69-3.9Z"/>
+    <path class="hc-st0" d="M99.74,199.45l15.77,22c-10.33,1.38-20.65,2.75-30.98,4.13l-15.79-22.04,19.45-16.92-15.8-22.04,19.45-16.93,9.46,13.2,15.78,21.99.68.95-18.02,15.66Z"/>
+    <path class="hc-st0" d="M256.59,242.02c-10.25,1.4-20.5,2.79-30.75,4.18l-95.05-132.44,19.49-16.96,9.54,13.3,6.29,8.76,1.26-1.1.62.86,88.6,123.4Z"/>
+    <path class="hc-st0" d="M102.81,30.69l-19.46,16.97-5.5-7.67-10.3-14.35c10.33-1.24,20.67-2.48,31.01-3.72l6.13,8.54"/>
+    <path class="hc-st0" d="M138.11,35.73l-19.48,16.99-6.18-8.6-9.64-13.43c.63-.08,1.25-.15,1.88-.23,9.69-1.17,19.39-2.34,29.08-3.51l6.15,8.56"/>
+    <path class="hc-st0" d="M173.46,40.79l-19.51,16.99-6.2-8.63-9.64-13.42c.6-.07,1.21-.15,1.81-.22,9.71-1.18,19.4-2.34,29.1-3.52l6.17,8.59"/>
+    <path class="hc-st0" d="M210.49,45.64c-.55.07-1.11.13-1.66.2l-19.53,17-6.21-8.65-9.63-13.4c.58-.07,1.15-.14,1.73-.21,9.7-1.19,19.41-2.37,29.11-3.55l6.19,8.61Z"/>
+    <polygon class="hc-st0" points="287.15 108.16 267.62 125.11 236.88 129.06 256.44 112.07 258.09 111.86 287.15 108.16"/>
+  </g>
 </svg>
 
 <script src="assets/js/effects.js"></script>
@@ -340,7 +397,10 @@
     const PAGES = ['planning', 'timeline', 'course-products', 'portfolio'];
     const hashRaw = location.hash.replace('#', '');
     const [hashPage, hashSub] = hashRaw.split('/');
-    Router.go(PAGES.includes(hashPage) ? hashPage : 'home', hashPage === 'planning' ? { industryId: hashSub || null } : {});
+    let bootOpts = {};
+    if (hashPage === 'planning') bootOpts = { industryId: hashSub || null };
+    else if (hashPage === 'course-products') bootOpts = { productId: hashSub || null };
+    Router.go(PAGES.includes(hashPage) ? hashPage : 'home', bootOpts);
   } catch (err) {
     console.error(err);
     document.getElementById('app-loading').textContent = '内容加载失败，请检查 data/ 目录是否随页面一并部署。';

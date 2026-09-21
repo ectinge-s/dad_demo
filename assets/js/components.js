@@ -307,3 +307,231 @@ const ImageModal = {
   },
 };
 window.ImageModal = ImageModal;
+
+/* ── Gallery Viewer — v3.26, for the "1 cover image, click → scroll through
+   all N images in order" pattern GM asked for on the course-product pages
+   (see course-demo.js's buildGalleryCoverHTML / GalleryRegistry). Unlike
+   ImageModal (single image) or the paged PdfViewer below (left/right),
+   this scrolls vertically through an ordered set — closer to reading a
+   short deck top-to-bottom than flipping pages. ── */
+const GalleryViewer = {
+  _el: null,
+
+  _build() {
+    if (this._el) return;
+    const el = document.createElement('div');
+    el.className = 'gallery-viewer';
+    el.innerHTML = `
+      <div class="gallery-viewer__bar">
+        <div class="gallery-viewer__title" id="gv-title"></div>
+        <div class="gallery-viewer__count" id="gv-count"></div>
+        <button type="button" class="gallery-viewer__close" id="gv-close" aria-label="关闭">✕</button>
+      </div>
+      <div class="gallery-viewer__stage" id="gv-stage"></div>`;
+    document.body.appendChild(el);
+    el.querySelector('#gv-close').addEventListener('click', () => this.close());
+    el.addEventListener('click', e => { if (e.target === el) this.close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && this.isOpen()) this.close(); });
+    this._el = el;
+  },
+
+  isOpen() { return !!this._el && this._el.classList.contains('is-open'); },
+
+  open(key) {
+    const item = (window.GalleryRegistry || {})[key];
+    if (!item) return;
+    this._build();
+    const el = this._el;
+    el.querySelector('#gv-title').textContent = item.alt || '';
+    el.querySelector('#gv-count').textContent = `${item.count} 张`;
+    const stage = el.querySelector('#gv-stage');
+    stage.innerHTML = Array.from({ length: item.count }, (_, i) => {
+      const n = String(i + 1).padStart(2, '0');
+      return `<img class="gallery-viewer__img" src="${item.dir}/${n}.webp" alt="${escapeHTML(item.alt || '')} ${n}" loading="lazy">`;
+    }).join('');
+    stage.scrollTop = 0;
+    el.classList.add('is-open');
+    ScrollLock.lock();
+  },
+
+  close() {
+    if (!this._el) return;
+    this._el.classList.remove('is-open');
+    ScrollLock.unlock();
+  },
+};
+window.GalleryViewer = GalleryViewer;
+
+/* ── PDF Viewer — v3.26, for a product's pre-rendered comparison-PDF
+   pages (see course-demo.js's registerPdfDoc/PdfRegistry). v3.27 (GM):
+   switched from ist_demo's left/right paged SlideViewer pattern to a
+   vertical scroll through every page in order — the comparison sheets
+   are tall single-page tables (see PROJECT_NOTES.md), so scrolling top
+   to bottom reads far more naturally than flipping. Same registry shape
+   as before (dir + count of NN.webp pages); click a page to zoom it. ── */
+const PdfViewer = {
+  _el: null,
+
+  _build() {
+    if (this._el) return;
+    const el = document.createElement('div');
+    el.className = 'pdf-viewer';
+    el.innerHTML = `
+      <div class="pdf-viewer__bar">
+        <div class="pdf-viewer__title" id="pv-title"></div>
+        <div class="pdf-viewer__count" id="pv-count"></div>
+        <button type="button" class="pdf-viewer__close" id="pv-close" aria-label="关闭">✕</button>
+      </div>
+      <div class="pdf-viewer__stage" id="pv-stage"></div>`;
+    document.body.appendChild(el);
+    el.querySelector('#pv-close').addEventListener('click', () => this.close());
+    el.addEventListener('click', e => { if (e.target === el) this.close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && this.isOpen()) this.close(); });
+    this._el = el;
+  },
+
+  isOpen() { return !!this._el && this._el.classList.contains('is-open'); },
+
+  open(productId) {
+    const item = (window.PdfRegistry || {})[productId];
+    if (!item) return;
+    this._build();
+    const el = this._el;
+    el.querySelector('#pv-title').textContent = item.label || '';
+    el.querySelector('#pv-count').textContent = `共 ${item.count} 页`;
+    const stage = el.querySelector('#pv-stage');
+    stage.innerHTML = Array.from({ length: item.count }, (_, i) => {
+      const n = String(i + 1).padStart(2, '0');
+      return `<img class="pdf-viewer__img" src="${item.dir}/${n}.webp" alt="${escapeHTML(item.label || '')} · 第 ${i + 1} 页" loading="lazy">`;
+    }).join('');
+    stage.scrollTop = 0;
+    el.classList.add('is-open');
+    ScrollLock.lock();
+  },
+
+  close() {
+    if (!this.isOpen()) return;
+    this._el.classList.remove('is-open');
+    ScrollLock.unlock();
+  },
+};
+window.PdfViewer = PdfViewer;
+
+/* ── Slide Viewer — v3.28, ported (near-verbatim) from ist_demo's own
+   SlideViewer: a left/right PAGED flip through a course's real deck
+   (keyboard ←/→, touch swipe, click-to-zoom), distinct from the two
+   vertical-scroll viewers above. GM's 冬夏校 spec: "cover用海报，点开是
+   压缩处理左右翻页的pdf" — each 27冬校/研究生 catalog card that has a
+   real deck (dad_courses_academic.json's `slides: {dir, count}`, set on
+   exactly the 6 winter-27 研究生 records) opens this instead of the plain
+   ImageModal poster (see pages/home.js's _buildCatalogCard deckSlug
+   branch). Looked up the same way ist_demo does it — a direct find()
+   against the already-loaded DATA global (ist-data.js's top-level
+   `const DATA`, confirmed reliably accessible as a bare identifier from
+   any later classic <script> — course-demo.js already relies on this
+   same fact) — rather than a separate registry, since the record itself
+   already carries both its `slug` and its `slides` field. ── */
+const SlideViewer = {
+  _el: null, _item: null, _i: 0, _opener: null,
+
+  _build() {
+    if (this._el) return;
+    const el = document.createElement('div');
+    el.className = 'slide-viewer';
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-modal', 'true');
+    el.setAttribute('aria-label', '课程详情');
+    el.innerHTML = `
+      <div class="slide-viewer__bar">
+        <div class="slide-viewer__title" id="sv-title"></div>
+        <div class="slide-viewer__count" id="sv-count" aria-live="polite"></div>
+        <button type="button" class="slide-viewer__close" id="sv-close" aria-label="关闭">✕</button>
+      </div>
+      <div class="slide-viewer__stage" id="sv-stage">
+        <button type="button" class="slide-viewer__nav slide-viewer__nav--prev" id="sv-prev" aria-label="上一页">‹</button>
+        <img class="slide-viewer__img" id="sv-img" alt="" draggable="false">
+        <button type="button" class="slide-viewer__nav slide-viewer__nav--next" id="sv-next" aria-label="下一页">›</button>
+      </div>
+      <div class="slide-viewer__foot">
+        <input type="range" class="slide-viewer__range" id="sv-range" min="1" value="1" aria-label="页码">
+        <span class="slide-viewer__hint">← → 翻页 · 点击图片放大 · Esc 关闭</span>
+      </div>`;
+    document.body.appendChild(el);
+    el.querySelector('#sv-close').addEventListener('click', () => this.close());
+    el.querySelector('#sv-prev').addEventListener('click', () => this.go(this._i - 1));
+    el.querySelector('#sv-next').addEventListener('click', () => this.go(this._i + 1));
+    el.querySelector('#sv-range').addEventListener('input', e => this.go(+e.target.value - 1));
+    el.querySelector('#sv-img').addEventListener('click', () => el.classList.toggle('is-zoom'));
+    el.addEventListener('click', e => { if (e.target.id === 'sv-stage') this.close(); });
+    // touch swipe
+    let x0 = null;
+    const stage = el.querySelector('#sv-stage');
+    stage.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener('touchend', e => {
+      if (x0 === null || el.classList.contains('is-zoom')) { x0 = null; return; }
+      const dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 50) this.go(this._i + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+    // capture phase so Esc / arrows never leak to the course overlay underneath
+    document.addEventListener('keydown', e => {
+      if (!this.isOpen()) return;
+      const k = e.key;
+      if (k === 'Escape') { e.stopImmediatePropagation(); e.preventDefault(); this.close(); }
+      else if (k === 'ArrowRight' || k === 'PageDown') { e.preventDefault(); this.go(this._i + 1); }
+      else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); this.go(this._i - 1); }
+      else if (k === 'Home') { e.preventDefault(); this.go(0); }
+      else if (k === 'End') { e.preventDefault(); this.go(this._item.slides.count - 1); }
+      else if (k === 'Tab') { // keep focus inside the dialog
+        const f = [...el.querySelectorAll('button, input')].filter(b => !b.disabled);
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }, true);
+    this._el = el;
+  },
+
+  isOpen() { return !!this._el && this._el.classList.contains('is-open'); },
+
+  open(slug, page = 0) {
+    const item = (window.DATA || (typeof DATA !== 'undefined' ? DATA : null))?.courses_academic?.find(c => c.slug === slug && c.slides);
+    if (!item) return;
+    this._build();
+    this._item = item; this._opener = document.activeElement;
+    const el = this._el;
+    el.querySelector('#sv-title').textContent = item.role_or_course;
+    const r = el.querySelector('#sv-range'); r.max = item.slides.count;
+    el.classList.remove('is-zoom');
+    el.classList.add('is-open');
+    ScrollLock.lock();
+    this.go(page);
+    el.querySelector('#sv-close').focus();
+  },
+
+  close() {
+    if (!this.isOpen()) return;
+    this._el.classList.remove('is-open', 'is-zoom');
+    this._el.querySelector('#sv-img').removeAttribute('src');
+    ScrollLock.unlock();
+    if (this._opener && this._opener.focus) this._opener.focus();
+  },
+
+  _src(i) { const s = this._item.slides; return `${s.dir}/${String(i + 1).padStart(2, '0')}.webp`; },
+
+  go(i) {
+    const n = this._item.slides.count;
+    i = Math.max(0, Math.min(n - 1, i));
+    this._i = i;
+    const el = this._el, img = el.querySelector('#sv-img');
+    img.src = this._src(i);
+    img.alt = `${this._item.role_or_course} · 第 ${i + 1} 页`;
+    el.querySelector('#sv-count').textContent = `${i + 1} / ${n}`;
+    el.querySelector('#sv-range').value = i + 1;
+    el.querySelector('#sv-prev').disabled = i === 0;
+    el.querySelector('#sv-next').disabled = i === n - 1;
+    el.querySelector('#sv-stage').scrollTo(0, 0);
+    // warm the neighbours
+    [i - 1, i + 1].forEach(j => { if (j >= 0 && j < n) { const im = new Image(); im.src = this._src(j); } });
+  },
+};
+window.SlideViewer = SlideViewer;

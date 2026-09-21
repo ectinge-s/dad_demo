@@ -15,140 +15,362 @@
 
 const PRODUCTS = {
 
-  /* ── LONGFORM 1 — 美国研究生未来精英计划 ── */
+  /* ── LONGFORM 1 — 美国研究生未来精英计划 ──
+     v3.32 (GM's US/HK rich-content pass): rebuilt from the real "美研产品
+     解读.docx" + "美国研究生未来精英计划-总对比.pdf" content, following
+     longform2/UK's exact `useRichContent` schema and section order (see the
+     long comment above longform2 below). Field-by-field provenance:
+       - positioningIntro/advantagePairs/overallAdvantages: docx 一/二/三
+       - tierTable: the 总对比.pdf page-2 comparison matrix (5 tiers —
+         艺术TOP1/3/5/8/10, each with a 专业综合TOP3/5/10/15/20 sub-label;
+         `config` transcribes that PDF's real 收获 row per tier, not the
+         full cell-by-cell matrix, which stays viewable via "查看比价")
+       - coreModules/employability/timeline/otherHighlights: docx 四/六/七
+       - industryCases: 案例卡 folder categories (now 6, not UK's 5 — US
+         and HK both add 教育与科技) with real schools/programs/URLs from
+         美国院校-分支-案例卡.xlsx
+     No `dualTrack`: unlike UK's docx, the US material never describes a
+     separate 求职陪跑/upgrade-path product — 就业力课程 is just one more
+     docx section, so it becomes a plain `employability` block instead of
+     fabricating an upsell structure that isn't in the source. ── */
   changemakers: {
     group: 'longform',
     tileVariant: null,
+    // v3.29 (GM): real cover art for the 3 长线产品 (dad_demo/_supplement-912/
+    // cover/美研.png etc, compressed to WebP) — used both as the 课程产品
+    // overview card's banner (.cp-card__banner) and the product's own hero
+    // tile (.cd-hero__tile), replacing the gradient-only placeholder.
+    cover: 'assets/img/course-products/covers/changemakers.webp',
+    useRichContent: true,
     meta: {
-      eyebrow: 'US Graduate Admissions｜研究生申请 · 作品集孵化',
+      eyebrow: 'US Graduate Admissions｜研究生申请 · 作品集 + 科研双轨',
       titleEn: 'US Graduate Elite Program',
       titleCn: '美国研究生未来精英计划',
-      desc: '面向计划申请美国研究生院校的学生，通过作品集孵化、选校定位与全程导师陪伴，系统化提升申请竞争力，冲刺藤校及顶尖院校研究生offer。',
-      chips: ['30+ 藤校及Top30offer', '作品集孵化', '全程导师制', '招募中'],
+      desc: '面向冲刺美国顶尖艺术院校、藤校及综合大学艺术设计/跨学科创意方向的长期规划型产品：以作品集为核心，整合 AI 前沿技术、科研论文、海外教授项目与商业实践，建立更完整、更有说服力的美研申请竞争力。',
+      chips: ['TOP1 – TOP10 五层级', 'AI全线覆盖', '科研论文双收获', '招募中'],
     },
+    comparePdf: { label: '美国研究生 · 未来精英计划总对比', dir: 'assets/img/course-products/us/pdf', count: 2 },
     snapshot: [
-      { k: '30+',  v: '藤校及Top30 offer' },
-      { k: '92%',  v: '目标院校录取率' },
-      { k: '1对1', v: '导师全程陪伴' },
-      { k: '6周',  v: '作品集集中孵化' },
+      { k: 'TOP1–10', v: '5 个产品层级，匹配院校目标与预算' },
+      { k: '5类核心项目', v: '自主命题 · 商业实践 · Meta Lab · 教授项目 · 科研双收' },
+      { k: 'AI全线覆盖', v: 'AI图像生成 · AI视频生成 · AI Coding · AI 3D' },
+      { k: '海外教授资源', v: '在职教授项目课 · Critique · 推荐信' },
     ],
-    highlightCourses: [
-      { title: '在职海外教授项目课', desc: '藤校在职教授亲自授课，方法论与推荐信资源双重加持。',
-        detail: { duration: '20H · 教授在职亲授', highlights: ['海外顶尖院校在职教授亲自授课', '围绕真实学术方法论展开深度训练', '课程表现优秀者可获教授推荐信'], sampleCourses: ['人机交互方法论项目课', '建筑设计研究方法项目课', '服务设计战略项目课'], intro: '由目标院校方向的在职教授亲自授课，围绕其专业领域的研究方法论展开深度训练，是"藤校教授视角"真正进入学生作品集的关键环节。' } },
-      { title: 'Meta Lab革新研创项目', desc: '跨学科深度研创，两阶段打磨申请季最核心的旗舰项目。',
-        detail: { duration: '20H×2 · 分两阶段推进', highlights: ['聚焦前沿跨学科议题的深度研创', '与Meta Lab研究团队共同推进项目', '产出可支撑顶尖院校申请的旗舰项目'], sampleCourses: ['Meta Lab革新研创项目-1', 'Meta Lab革新研创项目-2', '跨学科课题共创工作坊'], intro: 'Meta Lab是项目组内部的前沿研创平台，分两个阶段带领学生深入一个跨学科议题，产出兼具学术深度与视觉呈现的旗舰级项目，是申请材料中的核心亮点。' } },
-      { title: '商业实践项目', desc: '真实企业命题实战，为作品集补上商业语境与团队协作证明。',
-        detail: { duration: '20H · 小组制项目', highlights: ['对接真实企业命题', '完整走完调研到路演的商业流程', '训练团队协作与商业表达能力'], sampleCourses: ['真实企业命题合作', '商业方案路演', '跨学科小组协作'], intro: '以真实企业命题为起点，小组制完成从市场调研、方案设计到路演展示的完整商业实践闭环，为作品集补上"真实商业语境"这一维度。' } },
+    positioningIntro: '美国研究生未来精英计划是一套面向高目标申请者的长期规划型产品，适合希望冲刺美国顶尖艺术院校、藤校、综合大学艺术设计专业及跨学科创意方向的学生。课程以作品集为核心，进一步整合 AI 前沿技术、科研论文、海外教授项目、商业实践和就业力资源，帮助学生建立更完整、更有说服力的美研申请竞争力。',
+    advantagePairs: [
+      { trait: '美国院校看综合能力', traitDesc: '美国研究生申请不只看作品集，也会综合评估 GPA、语言成绩、推荐信、文书、科研/实习/竞赛经历、专业方向和未来发展潜力。', edge: '学生可以通过长期规划，把作品集、学术背景、项目经历和个人叙事整合成更完整的申请形象，不完全依赖单一作品集结果。' },
+      { trait: '艺术院校与综合大学逻辑不同', traitDesc: '艺术院校更看重创作能力、视觉表达和作品集完成度；藤校与综合大学更关注研究能力、学术背景、跨学科能力和项目逻辑。', edge: '学生可以根据目标院校类型制定不同申请策略，在艺术表达和研究深度之间找到更适合自己的申请路径。' },
+      { trait: '适合做长期规划', traitDesc: '美研申请周期较长，竞争维度多，尤其是顶尖院校通常需要提前布局作品集、科研、竞赛、实习、语言和文书方向。', edge: '学生有机会在申请前逐步补齐短板，把普通项目转化为更有研究价值、国际视野和职业延展性的申请成果。' },
     ],
-    fitAudience: [
-      '计划申请美国研究生院校（藤校及Top30）的设计/艺术/建筑类学生',
-      '已有一定作品基础，但缺乏清晰个人视角与叙事主线的学生',
-      '希望获得海外教授一手指导、积累教授推荐信资源的学生',
-      '两年内有稳定时间投入、愿意接受高强度项目制训练的学生',
+    overallAdvantages: [
+      { t: '分层目标规划', d: '根据学生目标院校和现有基础，匹配 TOP1 / TOP3 / TOP5 / TOP8 / TOP10 不同申请路径。' },
+      { t: '作品集系统训练', d: '通过自主命题项目、商业实践项目、Meta Lab 研创项目、海外教授项目课等方式，完成更完整的作品集结构。' },
+      { t: 'AI与前沿技术补强', d: '加入 AI 基础课、AI 图像生成、AI 视频生成、AI Coding、AI 3D 等课程，强化数字艺术方向学生的技术表达能力。' },
+      { t: '科研论文双收获', d: '通过设计项目与科研方法论结合，帮助学生将创作项目转化为具备研究表达和学术证明力的成果。' },
+      { t: '海外教授与顶校资源', d: '结合海外教授课程、Critique、推荐信、视频反馈和书面评估，提升项目国际化视角。' },
+      { t: '申请与就业延展', d: '覆盖文书、选校、网申、面试、签证、行前准备，同时提供就业力测评、实习资源、作品集商业化改造等支持。' },
     ],
-    curriculumTable: {
-      categories: [
-        { name: '专业升学定位起航', color: 'internet', items: [
-          { name: '首课规划课程', hours: '2H',
-            detail: { duration: '2H · 1对1首课', highlights: ['诊断学术背景与作品基础', '初步锁定申请方向与院校梯度', '规划两年期学习与申请节奏'], sampleCourses: ['学术背景诊断', '专业方向初筛', '申请时间线规划'], intro: '整个项目的起点。通过1对1深度访谈梳理学生的学术背景、作品基础与兴趣方向，初步锁定申请赛道与院校梯度，为后续所有课程规划清晰的时间线。' } },
-        ] },
-        { name: '个性化作品集训练', color: 'hardware', items: [
-          { name: '基础课·20H（七选四）', hours: '40H',
-            detail: { duration: '七选四，共40H · 每模块10H', highlights: ['Design/Art/Tech/Humanity/Business/AI/软件7大模块自由组合', '按个人申请方向定制修读组合', '为自主命题与商业实践打好方法论基础'], sampleCourses: ['Design：辩证设计思维-10H', 'Art：当代艺术思潮-10H', 'Tech：前沿技术工具-10H', 'Humanity：人文学术专研-10H', 'Business：商业管理战-10H', 'AI应用实战-10H', '软件课程-10H'], intro: '7大模块覆盖设计方法、艺术思潮、前沿技术、人文研究、商业管理与AI应用，学生按自身申请方向自由选修其中4项，组成个性化的基础训练路径。' } },
-          { name: '自主命题项目', hours: '12H',
-            detail: { duration: '12H · 学生自主选题', highlights: ['学生自主提出研究或设计命题', '导师把关命题的可行性与深度', '产出体现个人视角的独立项目'], sampleCourses: ['命题工作坊', '独立研究方法训练', '项目产出评审'], intro: '在基础课程之上，由学生自主提出感兴趣的研究或设计命题，导师全程把关命题深度与执行可行性，产出第一份真正"属于自己"的独立项目。' } },
-          { name: '商业实践项目', hours: '20H',
-            detail: { duration: '20H · 小组制项目', highlights: ['对接真实企业命题', '完整走完调研到路演的商业流程', '训练团队协作与商业表达能力'], sampleCourses: ['真实企业命题合作', '商业方案路演', '跨学科小组协作'], intro: '以真实企业命题为起点，小组制完成从市场调研、方案设计到路演展示的完整商业实践闭环，为作品集补上"真实商业语境"这一维度。' } },
-        ] },
-        { name: '国际前沿作品集训练', color: 'culture', items: [
-          { name: 'Meta Lab革新研创项目', hours: '20H×2',
-            detail: { duration: '20H×2 · 分两阶段推进', highlights: ['聚焦前沿跨学科议题的深度研创', '与Meta Lab研究团队共同推进项目', '产出可支撑顶尖院校申请的旗舰项目'], sampleCourses: ['Meta Lab革新研创项目-1', 'Meta Lab革新研创项目-2', '跨学科课题共创工作坊'], intro: 'Meta Lab是项目组内部的前沿研创平台，分两个阶段带领学生深入一个跨学科议题，产出兼具学术深度与视觉呈现的旗舰级项目，是申请材料中的核心亮点。' } },
-        ] },
-        { name: '海外教授直连', color: 'brand', subLabel: 'IvyLink · 藤校联盟', items: [
-          { name: '在职海外教授项目课', hours: '20H',
-            detail: { duration: '20H · 教授在职亲授', highlights: ['海外顶尖院校在职教授亲自授课', '围绕真实学术方法论展开深度训练', '课程表现优秀者可获教授推荐信'], sampleCourses: ['人机交互方法论项目课', '建筑设计研究方法项目课', '服务设计战略项目课'], intro: '由目标院校方向的在职教授亲自授课，围绕其专业领域的研究方法论展开深度训练，是"藤校教授视角"真正进入学生作品集的关键环节。' } },
-          { name: '夏/冬校·教授实地训练营', hours: '14天',
-            detail: { duration: '14天 · 海外在地训练营', highlights: ['与海外教授面对面在地学习', '真实校园环境沉浸式训练', '积累教授联系与院校认可背景'], sampleCourses: ['IvyLink藤校联盟冬令营', 'IvyLink藤校联盟夏令营', '教授工作坊实地考察'], intro: '走进海外顶尖院校校园，与教授团队进行为期14天的实地训练营，是全年项目中最沉浸式的一段学习体验，也是建立教授联系的重要窗口。' } },
-        ] },
-        { name: '差异化亮点塑造', color: 'arch', items: [
-          { name: '作品集建站辅导', hours: '10H',
-            detail: { duration: '10H · 一对一建站辅导', highlights: ['将作品集转化为专业排版的个人网站', '建站规范匹配藤校审核习惯', '建站后仍可自主更新维护'], sampleCourses: ['作品集网站架构设计', '视觉排版一对一辅导', '建站工具实操指导'], intro: '把已经打磨完成的作品集内容，转化为一个排版专业、浏览流畅的个人网站，符合藤校及顶尖院校招生官的在线审阅习惯。' } },
-          { name: '面试辅导', hours: '8H',
-            detail: { duration: '8H · 模拟面试+复盘', highlights: ['多轮模拟面试，覆盖常见问题类型', '逐题复盘表达逻辑与呈现方式', '熟悉目标院校的面试风格'], sampleCourses: ['院校面试真题模拟', '表达逻辑与临场训练', '面试复盘与迭代'], intro: '通过多轮模拟面试熟悉目标院校的面试风格与常见问题，并对每一轮表现进行逐题复盘，让学生带着从容和准备走进真实面试。' } },
-          { name: 'Study Proposal', hours: '4H',
-            detail: { duration: '4H · 1对1写作辅导', highlights: ['明确研究问题与研究方法', '匹配目标院校教授的研究方向', '产出符合学术规范的研究计划书'], sampleCourses: ['研究问题聚焦工作坊', '研究方法论写作辅导', '教授研究方向匹配咨询'], intro: '针对研究型硕士项目，1对1指导学生撰写符合学术规范的Study Proposal，明确研究问题与方法，并与目标院校教授的研究方向精准对接。' } },
-          { name: '美研高端教研人设挖掘', hours: '4H',
-            detail: { duration: '4H · 定位咨询', highlights: ['挖掘学生区别于同背景申请者的独特视角', '将教授互动经历转化为申请素材', '形成贯穿文书与面试的一致人设'], sampleCourses: ['申请人设定位工作坊', '教授互动素材梳理', '文书人设一致性检查'], intro: '在申请冲刺阶段，帮助学生从已完成的教授项目课、研创项目等经历中，挖掘出一个区别于同背景申请者的独特"人设"，并让这一视角贯穿文书与面试始终。' } },
-        ] },
+    tierTable: [
+      { name: '艺术TOP1 · 专业综合TOP3', audience: '冲刺美国艺术院校顶尖梯队与专业综合类院校前3的学生', config: '40H七选四基础课、4个项目（自主命题×2/商业实践/Meta Lab研创）、在职教授项目课、冬夏校、2封海外教授推荐信、4个实习证明、1次展览、8个入围或奖项' },
+      { name: '艺术TOP3 · 专业综合TOP5', audience: '冲刺美国艺术院校前3、专业综合类院校前5的学生', config: '40H七选四基础课、4个项目、在职教授项目课、冬夏校、2封海外教授推荐信、3个实习证明、1次展览、4个入围或奖项' },
+      { name: '艺术TOP5 · 专业综合TOP10', audience: '目标艺术院校前5、专业综合类院校前10，兼顾配置与预算', config: '30H七选三基础课、4个项目（含自主命题/商业实践/Meta Lab研创）、在职教授项目课、2封海外教授推荐信、2个实习证明' },
+      { name: '艺术TOP8 · 专业综合TOP15', audience: '目标院校前15，注重性价比但仍需完整作品集与教授资源', config: '20H七选二基础课、2-3个项目、在职教授项目课、1封海外教授推荐信、1个实习证明' },
+      { name: '艺术TOP10 · 专业综合TOP20', audience: '申请目标相对明确，主要需要项目与申请基础支持', config: '20H七选二基础课、3个项目（含1个科研项目）、1个实习证明' },
+    ],
+    coreModules: [
+      { title: '专业升学定位', desc: '通过首课规划，帮助学生明确目标院校、申请方向、作品集结构、背景短板和整体时间安排。' },
+      { title: '专业基础课与软件课', desc: '课程覆盖设计思维、当代艺术思潮、前沿技术工具、人文学术专题、商业管理、AI应用实战和软件技能，为后续项目创作建立基础能力。' },
+      { title: 'AI基础与应用实战', desc: '课程包括 AI 认知、AI 图像生成、ComfyUI / Stable Diffusion 工作流、AI 视频生成、AI Coding 和 AI 3D，帮助学生掌握数字艺术与设计方向常用的生成式工具和创作流程。', gallery: { slug: 'ai-course', count: 1 } },
+      { title: '个性化作品集项目', desc: '学生将围绕个人主题完成自主命题项目或跨媒介项目，逐步形成能够体现个人研究兴趣和创作方法的作品集内容。' },
+      { title: 'Meta Lab 革新研创项目', desc: '围绕前沿设计、AI创意科技、交互体验、数字媒体与跨学科研究方向展开。学生将在导师、教研和顶校学长学姐支持下，完成具有研究逻辑和创作深度的作品集项目。', gallery: { slug: 'metalab', count: 2 } },
+      { title: '科研论文双收获课程', desc: '将作品集项目与科研方法结合，帮助学生从设计问题、研究方法、案例分析、原型实验到论文写作建立完整路径。适合冲刺综合大学、研究型专业及高目标院校的学生。', gallery: { slug: 'research-paper', count: 6 } },
+      { title: '冬夏校', subtitle: '国际化项目强化模块', desc: '通过海外教授带教、实地项目训练和研究型产出，帮助学生补充高质量作品集项目和海外学习经历。课程可结合 AI、交互、数字媒体、艺术科技等前沿方向，支持学生获得项目成果、科研论文、推荐信或相关证明，提升美研申请中的差异化竞争力。', catalogRef: 'summerwinter' },
+      { title: '海外教授课', desc: '由海外教授围绕国际前沿课题开展 5次线上课程，引导学生理解新的研究方向、创作方法与专业趋势；地区导师在线下持续推进调研、实验、制作与项目落地，并由教研团队进行阶段性 Critique 与质量审核。学生最终完成可纳入作品集的专业项目，优秀成果可争取海外教授推荐信。', gallery: { slug: 'professor-course', count: 3 } },
+      { title: '商业实践课程', desc: '以企业、品牌或行业机构的真实需求为项目背景，由行业导师带领学生完成从 Brief 解读、调研分析、创意提案到成果交付的完整实践流程。学生不仅能够积累真实项目经验、理解行业协作与交付标准，还可形成用于作品集和求职展示的商业项目成果，并有机会获得实习证明与推荐信。', gallery: { slug: 'biz-practice', count: 6 }, catalogRef: 'bizpractice' },
+      { title: '文书与申请护航', desc: '覆盖选校定校、文书头脑风暴、申请策略、网申材料、面试辅导、签证与行前准备，帮助学生完成完整申请流程。' },
+    ],
+    employability: {
+      intro: '围绕学生未来的职业方向，提供行业与岗位定位、求职作品集改造、简历优化、面试辅导及求职策略支持，帮助学生将学术项目转化为企业能够理解的专业能力与业务价值，建立从升学作品集到求职材料的完整衔接。',
+      items: [
+        { title: '行业与岗位定位', desc: '结合学生专业方向与项目积累，明确适合的行业、岗位与职业发展路径。' },
+        { title: '求职作品集改造', desc: '将升学作品集中的项目重新梳理为企业能够理解的问题、方法与成果，突出可迁移的专业能力。' },
+        { title: '简历优化与面试辅导', desc: '完成简历重塑与求职材料准备，并通过面试辅导帮助学生更从容地应对求职环节。' },
       ],
     },
-    appTimeline: [
-      { q: '01', phase: '专业升学定位起航', type: '首课规划课程', desc: '诊断学术背景，锁定申请方向与两年期时间线。',
-        detail: { duration: '2H · 1对1首课', highlights: ['诊断学术背景与作品基础', '初步锁定申请方向与院校梯度', '规划两年期学习与申请节奏'], sampleCourses: ['学术背景诊断', '专业方向初筛', '申请时间线规划'], intro: '整个项目的起点。通过1对1深度访谈梳理学生的学术背景、作品基础与兴趣方向，初步锁定申请赛道与院校梯度，为后续所有课程规划清晰的时间线。' } },
-      { q: '02', phase: '个性化作品集训练', type: '基础课·20H（七选四）', desc: '7大模块自由组合，打好方法论基础。',
-        detail: { duration: '七选四，共40H · 每模块10H', highlights: ['Design/Art/Tech/Humanity/Business/AI/软件7大模块自由组合', '按个人申请方向定制修读组合', '为自主命题与商业实践打好方法论基础'], sampleCourses: ['Design：辩证设计思维-10H', 'Art：当代艺术思潮-10H', 'Tech：前沿技术工具-10H', 'Humanity：人文学术专研-10H', 'Business：商业管理战-10H', 'AI应用实战-10H', '软件课程-10H'], intro: '7大模块覆盖设计方法、艺术思潮、前沿技术、人文研究、商业管理与AI应用，学生按自身申请方向自由选修其中4项，组成个性化的基础训练路径。' } },
-      { q: '03', phase: '个性化作品集训练', type: '自主命题项目', desc: '学生自主选题，产出第一份独立项目。',
-        detail: { duration: '12H · 学生自主选题', highlights: ['学生自主提出研究或设计命题', '导师把关命题的可行性与深度', '产出体现个人视角的独立项目'], sampleCourses: ['命题工作坊', '独立研究方法训练', '项目产出评审'], intro: '在基础课程之上，由学生自主提出感兴趣的研究或设计命题，导师全程把关命题深度与执行可行性，产出第一份真正"属于自己"的独立项目。' } },
-      { q: '04', phase: '个性化作品集训练', type: '商业实践项目', desc: '真实企业命题实战，补上商业语境。',
-        detail: { duration: '20H · 小组制项目', highlights: ['对接真实企业命题', '完整走完调研到路演的商业流程', '训练团队协作与商业表达能力'], sampleCourses: ['真实企业命题合作', '商业方案路演', '跨学科小组协作'], intro: '以真实企业命题为起点，小组制完成从市场调研、方案设计到路演展示的完整商业实践闭环，为作品集补上"真实商业语境"这一维度。' } },
-      { q: '05', phase: '国际前沿作品集训练', type: 'Meta Lab革新研创项目', desc: '跨学科深度研创，打磨旗舰级项目。',
-        detail: { duration: '20H×2 · 分两阶段推进', highlights: ['聚焦前沿跨学科议题的深度研创', '与Meta Lab研究团队共同推进项目', '产出可支撑顶尖院校申请的旗舰项目'], sampleCourses: ['Meta Lab革新研创项目-1', 'Meta Lab革新研创项目-2', '跨学科课题共创工作坊'], intro: 'Meta Lab是项目组内部的前沿研创平台，分两个阶段带领学生深入一个跨学科议题，产出兼具学术深度与视觉呈现的旗舰级项目，是申请材料中的核心亮点。' } },
-      { q: '06', phase: '海外教授直连', type: '在职海外教授项目课', desc: '教授亲授方法论，积累推荐信资源。',
-        detail: { duration: '20H · 教授在职亲授', highlights: ['海外顶尖院校在职教授亲自授课', '围绕真实学术方法论展开深度训练', '课程表现优秀者可获教授推荐信'], sampleCourses: ['人机交互方法论项目课', '建筑设计研究方法项目课', '服务设计战略项目课'], intro: '由目标院校方向的在职教授亲自授课，围绕其专业领域的研究方法论展开深度训练，是"藤校教授视角"真正进入学生作品集的关键环节。' } },
-      { q: '07', phase: '海外教授直连', type: '夏/冬校教授实地训练营', desc: '14天海外在地沉浸训练。',
-        detail: { duration: '14天 · 海外在地训练营', highlights: ['与海外教授面对面在地学习', '真实校园环境沉浸式训练', '积累教授联系与院校认可背景'], sampleCourses: ['IvyLink藤校联盟冬令营', 'IvyLink藤校联盟夏令营', '教授工作坊实地考察'], intro: '走进海外顶尖院校校园，与教授团队进行为期14天的实地训练营，是全年项目中最沉浸式的一段学习体验，也是建立教授联系的重要窗口。' } },
-      { q: '08', phase: '差异化亮点塑造', type: '申请冲刺', desc: '作品集建站、面试辅导、Study Proposal与人设挖掘，全部收束进最后的冲刺阶段。', merged: true },
+    timeline: [
+      { q: '阶段 1', phase: '申请定位', desc: '目标院校分析、专业方向确认、背景短板评估、作品集规划。' },
+      { q: '阶段 2', phase: '基础补强', desc: '专业基础课、软件课、AI基础课、研究方法训练。' },
+      { q: '阶段 3', phase: '项目创作', desc: '自主命题项目、商业实践项目、Meta Lab 研创项目。' },
+      { q: '阶段 4', phase: '国际化提升', desc: '海外教授项目课、冬夏校、Critique、推荐信或反馈评估。' },
+      { q: '阶段 5', phase: '科研与背景提升', desc: '科研论文、竞赛投递、实习证明、展览或奖项规划。' },
+      { q: '阶段 6', phase: '申请材料准备', desc: '选校定校、文书写作、Study Proposal、人设挖掘、网申材料。' },
+      { q: '阶段 7', phase: '面试与递交', desc: '面试辅导、作品集建站、申请递交、奖学金申请。' },
+      { q: '阶段 8', phase: '后续衔接', desc: '签证、体检、行前准备、就业力规划、作品商业化延展。', merged: true },
     ],
-    topicWall: [
-      '《城市代谢：模块化社区更新系统设计》',
-      '《数字孪生博物馆：文化遗产的沉浸式再叙事》',
-      '《共情算法：面向老年群体的人机交互产品设计》',
-      '《可持续消费品包装的全生命周期设计研究》',
-      '《后疫情时代的弹性办公空间设计策略》',
-      '《AI辅助创作中的作者身份与伦理边界》',
+    industryCases: [
+      { key: 'visual-comm', nameCn: '视觉语言与策略传播', nameEn: 'Visual Communication & Brand Strategy', color: 'brand', caseCount: 4,
+        schools: [
+          { school: '耶鲁大学', program: 'MFA Graphic Design', url: 'https://www.art.yale.edu/about/study-areas/graduate-study-areas' },
+          { school: '南加州大学', program: 'MFA Design', url: 'https://roski.usc.edu/academic/mfa-design' },
+          { school: '南加州大学', program: 'MS Integrated Design, Business and Technology', url: 'https://iovine-young.usc.edu/learn/graduate/ms-integrated-design-business-tech' },
+          { school: '纽约大学', program: 'MS in Integrated Marketing', url: 'https://www.sps.nyu.edu/homepage/academics/masters-degrees/ms-in-integrated-marketing/brand-management.html' },
+          { school: '波士顿大学', program: 'MFA in Graphic Design', url: 'https://www.bu.edu/academics/cfa/programs/school-of-visual-arts/graphic-design/mfa/' },
+          { school: '罗德岛设计学院', program: 'MFA Graphic Design', url: 'http://www.risd.edu/academics/graphic-design/graduate/' },
+          { school: '纽约视觉艺术学院', program: 'MFA Design', url: 'http://www.sva.edu/graduate/mfa-design' },
+        ] },
+      { key: '3d-art', nameCn: '3D虚拟艺术制作', nameEn: '3D Virtual Art & Production', color: 'game', caseCount: 4,
+        schools: [
+          { school: '加州大学洛杉矶分校', program: 'MFA Design Media Arts', url: 'http://dma.ucla.edu/grad/program/' },
+          { school: '卡内基梅隆大学', program: 'Entertainment Technology Center (MET)', url: 'https://www.etc.cmu.edu/learn/curriculum/' },
+          { school: '哥伦比亚大学', program: 'MA in Design and Development of Digital Games', url: 'https://www.tc.columbia.edu/mathematics-science-and-technology/communication-media-and-learning-technologies-design/degrees--requirements/design-and-development-of-digital-games-ma/' },
+          { school: '宾夕法尼亚大学', program: 'MSE in Computer Graphics and Game Technology', url: 'https://www.cis.upenn.edu/graduate/program-offerings/mse-in-computer-graphics-and-game-technology/' },
+          { school: '纽约大学', program: 'MPS Virtual Production', url: 'https://tisch.nyu.edu/virtual-production' },
+          { school: '纽约大学', program: 'MS Integrated Digital Media', url: 'https://engineering.nyu.edu/academics/programs/integrated-digital-media-ms-campus' },
+          { school: '南加州大学', program: 'MFA Interactive Media & Games', url: 'https://catalogue.usc.edu/preview_program.php?catoid=16&poid=20876' },
+          { school: '约翰霍普金斯大学', program: 'MA in Film and Media', url: 'https://landing.advanced.jhu.edu/mafm/' },
+          { school: '纽约视觉艺术学院', program: 'MFA Computer Art', url: 'https://sva.edu/academics/graduate/mfa-computer-art' },
+          { school: '萨凡纳艺术设计学院', program: 'MA/MFA Interactive Design and Game Development', url: 'https://www.scad.edu/academics/programs/interactive-design-and-game-development/degrees/mfa' },
+        ] },
+      { key: 'info-experience', nameCn: '信息体验与应用设计', nameEn: 'Information Experience & Applied Design', color: 'internet', caseCount: 1,
+        schools: [
+          { school: '哈佛大学', program: 'MDes Master in Design Studies', url: 'https://www.gsd.harvard.edu/design-studies/' },
+          { school: '加利福尼亚大学伯克利分校', program: 'Master of Design', url: 'https://grad.berkeley.edu/program/master-of-design/' },
+          { school: '卡内基梅隆大学', program: 'Master of Design', url: 'https://design.cmu.edu/content/master-design' },
+          { school: '华盛顿大学', program: 'Master of Communication in Digital Media', url: 'https://commlead.uw.edu/mcdm/' },
+          { school: '佐治亚理工学院', program: 'MS Digital Media', url: 'https://dm.lmc.gatech.edu/program/ms-program/' },
+          { school: '东北大学', program: 'Master of Professional Studies in Digital Media', url: 'https://cps.northeastern.edu/program/master-of-professional-studies-in-digital-media-boston/' },
+          { school: '加州艺术中心学院', program: 'MFA Media Design Practices', url: 'http://www.artcenter.edu/academics/graduate-degrees/media-design-practices/overview.html' },
+          { school: '纽约视觉艺术学院', program: 'MFA Design for Social Innovation', url: 'https://dsi.sva.edu/' },
+          { school: '帕森斯设计学院', program: 'MPS Communication Design', url: 'https://www.newschool.edu/parsons/mps-communication-design/' },
+          { school: '普瑞特艺术学院', program: 'MFA Communications Design', url: 'https://www.pratt.edu/art/digital-arts-and-animation/digital-arts-mfa-interactive-arts-concentration/' },
+          { school: '萨凡纳艺术设计学院', program: 'MA/MFA in Motion Media Design', url: 'https://www.scad.edu/academics/programs/motion-media-design/degrees/mfa' },
+        ] },
+      { key: 'mixed-media', nameCn: '多媒介与装置艺术', nameEn: 'Mixed Media & Installation Art', color: 'indie', caseCount: 4,
+        schools: [
+          { school: '麻省理工学院', program: 'MAS Media Arts and Sciences', url: 'https://www.media.mit.edu/graduate-program/about-media-arts-sciences/' },
+          { school: '哈佛大学', program: 'MDes Master in Design Studies', url: 'https://www.gsd.harvard.edu/design-studies/' },
+          { school: '纽约大学', program: 'MPS in Interactive Telecommunications', url: 'https://tisch.nyu.edu/itp/courses/itp-courses' },
+          { school: '加州大学洛杉矶分校', program: 'MFA Design Media Arts', url: 'http://dma.ucla.edu/grad/program/' },
+          { school: '加州大学圣塔芭芭拉分校', program: 'MS Media Arts and Technology', url: 'https://www.mat.ucsb.edu/degreePrograms/' },
+          { school: '加州大学圣迭戈分校', program: 'MFA in Visual Arts', url: 'https://apply.grad.ucsd.edu/departments/visual-arts' },
+          { school: '罗德岛设计学院', program: 'MFA Digital + Media', url: 'https://www.risd.edu/academics/digital-media/masters-program' },
+          { school: '加州艺术学院', program: 'MFA in Art and Technology', url: 'https://art.calarts.edu/programs/art-and-technology' },
+          { school: '帕森斯设计学院', program: 'MFA Design and Technology', url: 'https://www.newschool.edu/parsons/mfa-design-technology/' },
+          { school: '普瑞特艺术学院', program: 'Graduate Digital Arts — Interactive Arts MFA', url: 'https://www.pratt.edu/academics/school-of-art/graduate-school-of-art/digital-arts-grad/dda-grad-degrees/interactive-arts/' },
+        ] },
+      { key: 'ai-computing', nameCn: 'AI创意计算机与互动机械', nameEn: 'AI Creative Computing & Interactive Systems', color: 'ai', caseCount: 3,
+        schools: [
+          { school: '杜克大学', program: 'MA in Computational Media', url: 'https://aahvs.duke.edu/graduate/ma-cmac' },
+          { school: '约翰霍普金斯大学', program: 'MS in AI and Innovation', url: 'https://education.jhu.edu/masters-programs/ms-in-education-international-teaching-global-leadership-cohort/' },
+          { school: '康奈尔大学', program: 'MS in Design Technology', url: 'https://tech.cornell.edu/programs/masters-programs/master-of-science-in-design-technology/' },
+          { school: '纽约大学', program: 'MPS in Interactive Telecommunications', url: 'https://tisch.nyu.edu/itp/courses/itp-courses' },
+          { school: '罗德岛设计学院', program: 'MFA Digital + Media', url: 'https://www.risd.edu/academics/digital-media/masters-program' },
+          { school: '普瑞特艺术学院', program: 'Graduate Digital Arts — Interactive Arts MFA', url: 'https://www.pratt.edu/academics/school-of-art/graduate-school-of-art/digital-arts-grad/dda-grad-degrees/interactive-arts/' },
+        ] },
+      { key: 'edu-tech', nameCn: '教育与科技', nameEn: 'EdTech & Learning Design', color: 'edu', caseCount: 1,
+        schools: [
+          { school: '哈佛大学', program: 'Ed.M. Learning Design, Innovation, and Technology', url: 'https://www.gse.harvard.edu/masters/programs/ldit' },
+          { school: '哥伦比亚大学', program: 'MA in Instructional Technology & Media', url: 'https://www.tc.columbia.edu/mathematics-science-and-technology/communication-media-and-learning-technologies-design/degrees--requirements/instructional-technology-and-media-ma/' },
+          { school: '哥伦比亚大学', program: 'Master of Education (Art Pedagogy / Creative Technologies / Community Arts)', url: 'https://www.tc.columbia.edu/arts-and-humanities/art-and-art-education/degrees--requirements/art-and-art-education-edm/' },
+          { school: '宾夕法尼亚大学', program: 'Master of Science, Learning Sciences and Technologies (M.S.Ed.)', url: 'https://www.gse.upenn.edu/academics/programs/learning-sciences-technology-masters' },
+          { school: '纽约大学', program: 'MA in Learning Technology and Experience Design', url: 'https://steinhardt.nyu.edu/degree/ma-learning-technology-experience-design' },
+        ] },
     ],
-    studentCases: [
-      {
-        name: 'W同学', schools: ['Harvard GSD', 'Columbia GSAPP', 'UC Berkeley CED'],
-        highlights: '2段建筑事务所实习 · 1段研究性课题 · 3封导师推荐信',
-        tagline: '从设计基础出发，系统打磨建筑作品集叙事，最终斩获Harvard GSD建筑硕士offer，现于本地知名建筑事务所担任设计师。',
-        bio: '两年申请周期中完成了从单体建筑设计到城市尺度议题的转变，累计参与2段事务所实习与1项研究性课题，建立起清晰的个人设计语言。',
-        quote: '"导师帮我把散乱的项目串成了一条完整的叙事线，这是作品集能打动招生官的关键。" — W同学',
-      },
-      {
-        name: 'L同学', schools: ['Columbia GSAPP', 'UPenn Weitzman', 'SCI-Arc'],
-        highlights: '1段城市规划事务所实习 · 2段研究性课题 · 2封导师推荐信',
-        tagline: '聚焦城市更新议题，凭借扎实的研究方法论斩获Columbia GSAPP城市设计硕士offer。',
-        bio: '在导师带领下完成了2项城市尺度研究课题，并将田野调查方法系统融入作品集叙事，形成鲜明的研究型设计视角。',
-        quote: '"研究方法的训练让我的作品集不只是好看，更有说服力。" — L同学',
-      },
-      {
-        name: 'Z同学', schools: ['Pratt Institute', 'ArtCenter', 'RISD'],
-        highlights: '2段消费品公司实习 · 1封导师推荐信',
-        tagline: '从产品草图到量产级方案的完整训练，成功拿下Pratt Institute工业设计硕士offer。',
-        bio: '通过2段消费品公司实习积累真实产品开发经验，作品集聚焦可持续设计方向，形成统一的设计主张。',
-        quote: '"实习经验让我的设计提案更接近真实市场语境。" — Z同学',
-      },
-      {
-        name: 'C同学', schools: ['SCAD', 'Pratt Institute', 'IIT ID'],
-        highlights: '1段互联网大厂实习 · 1段研究性课题 · 2封导师推荐信',
-        tagline: '从视觉设计转向交互设计，凭借清晰的用户研究逻辑拿下SCAD交互设计硕士offer。',
-        bio: '通过大厂实习积累真实产品设计流程经验，并在导师指导下完成一项用户行为研究课题，补齐交互设计的方法论短板。',
-        quote: '"转专业申请最难的是建立说服力，导师帮我找到了自己的视角。" — C同学',
-      },
+    otherHighlights: [
+      { t: '顶校学长学姐 Lecture / Critique', d: 'Meta Lab 研创项目由顶校学长学姐参与支持，为学生带来贴近申请一线的项目反馈与经验分享。' },
+      { t: '作品集建站辅导', d: '把打磨完成的作品集内容转化为排版专业、浏览流畅的个人网站，符合海外院校招生官的在线审阅习惯。' },
+      { t: 'Study Proposal 指导', d: '针对研究型硕士项目，指导学生撰写符合学术规范的研究计划书，明确研究问题与方法。' },
+      { t: '高端教研人设挖掘', d: '从教授项目课、研创项目等经历中挖掘学生的独特申请人设，并让这一视角贯穿文书与面试。' },
+      { t: '国际奖项投递', d: '协助学生梳理项目成果，规划适合的国际竞赛与奖项投递方向，充实申请背景。' },
     ],
-    whySFK: [
-      { t: '选校精准', d: '基于学术背景与作品方向匹配院校偏好，而非广撒网式投递。' },
-      { t: '作品集孵化', d: '从选题、叙事到视觉呈现全程带教，产出有清晰个人视角的作品集。' },
-      { t: '导师全程陪伴', d: '1对1导师贯穿选校、文书与作品集全流程，而非阶段性辅导。' },
-      { t: '真实offer验证', d: '方法论已在藤校及Top30院校研究生申请中反复验证。' },
-    ],
-    closingStatementCn: '你的作品集，你的offer —— 我们一起打磨。',
-    closingStatement: 'Your portfolio, your offer — built together.',
+    closingStatementCn: '作品集见深度，申请见格局 —— 冲刺美国顶尖院校，我们一起规划。',
+    closingStatement: 'Portfolio depth, application vision — built together for top US programs.',
   },
 
-  /* ── LONGFORM 2 — 英国研究生 ── */
+  /* ── LONGFORM 2 — 英国研究生 ──
+     v3.26 (GM's 3-part course-page overhaul, part 3/UK): rebuilt from the
+     real "英国研究生产品解读.docx" content (see docs/PROJECT_NOTES.md) —
+     `useRichContent: true` switches buildProductHTML() over to the new
+     section renderers below (positioningIntro/advantagePairs/
+     overallAdvantages/tierTable/coreModules/employability/dualTrack/
+     timeline/industryCases/otherHighlights) instead of the old generic
+     highlightCourses/fitAudience/curriculumTable/appTimeline/topicWall/
+     studentCases/generic-SCHOOL_RECS blocks, which stay in the codebase
+     (untouched, just gated off) as the template for any longform product
+     that hasn't been rebuilt yet. See buildProductHTML's `if
+     (product.useRichContent)` branches. ── */
   longform2: {
+    group: 'longform',
+    tileVariant: 'v2',
+    cover: 'assets/img/course-products/covers/longform2.webp',
+    useRichContent: true,
+    meta: {
+      eyebrow: 'UK Graduate Admissions｜研究生申请 · 升学就业一体化',
+      titleEn: 'UK Graduate Program',
+      titleCn: '英国研究生未来成长计划',
+      desc: '同时面向名校申请与长期职业发展的升学就业一体化产品：以个性化作品集和英国研究生申请为基础，向前加入专业定位与项目规划，向后衔接商业实践、岗位制实习、求职作品集与企业内推。',
+      chips: ['TOP1 – TOP9 多层级', '升学就业一体化', '5个项目建高匹配作品集', '招募中'],
+    },
+    comparePdf: { label: '英国研究生 · 未来成长计划总对比', dir: 'assets/img/course-products/uk/pdf', count: 2 },
+    snapshot: [
+      { k: 'TOP1–9', v: '5 个产品层级，匹配院校目标与预算' },
+      { k: '5个项目', v: '高阶产品建立高匹配度作品集' },
+      { k: '双路径',  v: '升学产品 + 求职陪跑 A 计划可灵活组合' },
+      { k: '分层实习', v: '头部大厂 · 行业名企 · 创意工作室 · 海外' },
+    ],
+    positioningIntro: '英国研究生未来成长计划是一套同时面向名校申请与长期职业发展的升学就业一体化产品。产品以个性化作品集和英国研究生申请为基础，向前加入专业定位、基础补强与项目规划，向后衔接商业实践、岗位制实习、求职作品集、投递辅导和企业内推，帮助学生建立从申请、在读到入职的连续成长路径。产品设置 TOP1、TOP3、TOP5、TOP7 和 TOP9 不同层级，匹配学生的目标院校、专业基础、项目需求、就业诉求与预算。对就业结果有明确要求的学生，可在相应升学产品基础上升级求职陪跑 A 计划，形成升学就业双路径方案。',
+    advantagePairs: [
+      { trait: '英国院校看重独立研究与过程表达', traitDesc: '英国视觉传达、数字媒体专业不只评估最终作品，也关注议题选择、研究方法、实验过程、跨媒介能力和个人观点。', edge: '通过首课规划、自主命题项目、教研审核和海外教授反馈，帮助学生建立完整的研究过程与作品集叙事。' },
+      { trait: '名校申请需要院校定制化表达', traitDesc: '不同英国院校在作品集结构、项目数量、Video Task、Study Proposal、面试和专业方向上存在明显差异。', edge: '根据目标院校完成项目筛选、院校改版、Video Task、学习计划、作品集建站与面试训练，提高申请材料的针对性。' },
+      { trait: '升学结果需要与职业准备同步推进', traitDesc: '英国艺术与设计类研究生学制紧凑，学生若等到毕业后再开始实习和求职，容易缺少行业经验、商业项目和系统的投递准备。', edge: '在申请阶段即引入商业实践、分层实习、求职作品集和投递辅导，让作品集同时支持申请与未来就业。' },
+    ],
+    overallAdvantages: [
+      { t: '升学就业一体化', d: '从目标院校、作品集结构到实习和求职岗位进行统一规划，避免升学项目与职业目标脱节。' },
+      { t: '多层级产品匹配', d: 'TOP1 至 TOP9 覆盖不同院校目标、基础与预算，就业资源随产品层级递进。' },
+      { t: '五个项目建立高匹配作品集', d: '高阶产品结合自主命题、商业实践、海外教授项目与夏冬校，兼顾个人研究、专业能力和行业应用。' },
+      { t: '真实线下实习分层交付', d: '根据产品配置头部大厂、行业名企、创意工作室或海外实习，强调岗位任务、团队协作和真实交付。' },
+      { t: '作品集从申请语言转向求职语言', d: '通过商业化改造、求职作品集指导和简历重塑，让企业看懂学生能解决什么问题。' },
+      { t: '求职陪跑可灵活升级', d: '对就业需求强的学生，可在升学产品上增加行业导师、AI 商业应用、代投递、笔试面试与入职指导。' },
+    ],
+    tierTable: [
+      { name: '升学就业双保录', audience: '名校申请与就业结果需求都较强', config: '5个项目、多段头部大厂线下实习、求职作品集、AI 商业应用、投递与入职指导' },
+      { name: 'TOP1', audience: '目标英国头部院校，同时重视高质量实习', config: '5个项目、教授项目、夏冬校、头部大厂及海外实习可选、商业化改造与投递指导' },
+      { name: 'TOP3', audience: '目标英国头部艺术设计院校', config: '5个项目、头部大厂实习、创意工作室实习、作品集商业化评估与完整求职训练' },
+      { name: 'TOP5', audience: '希望兼顾名校申请、实践背景与预算', config: '4个项目、行业名企实习、行业推荐、职业规划、简历与笔试面试资源' },
+      { name: 'TOP7', audience: '注重性价比，但仍需要完整作品集和基础就业支持', config: '4个项目、职业规划、简历重塑、笔试面试题库与头部企业内推' },
+      { name: 'TOP9', audience: '申请目标相对明确，主要需要项目与申请基础支持', config: '4个项目、求职规划、笔试面试题库与增值内推' },
+    ],
+    coreModules: [
+      { title: '专业定位与长线规划', desc: '通过首课规划明确目标院校、专业路线、项目结构、申请节奏与职业方向。' },
+      { title: '专业前置必修课', desc: '由 MA基础课、MA软件课和MA AI课程 三个模块组成，根据学生的专业方向与能力基础进行匹配，为后续作品集项目建立研究、设计、技术与创意表达能力。', bullets: [
+        { t: 'MA基础课', d: '围绕研究方法、项目设计流程、批判性思维及跨媒介表达展开，帮助学生建立符合英国研究生学习要求的项目逻辑与研究框架。' },
+        { t: 'MA软件课', d: '覆盖平面视觉、多媒体与装置、3D虚拟艺术、信息体验和创意计算等工具方向，帮助学生将创意概念转化为可执行、可展示的作品。' },
+        { t: 'MA AI课程', d: '涵盖AI视觉生成、3D虚拟场景、动态影像、交互体验及 Vibe Coding 原型，引导学生建立AI工作流，并将新技术融入项目研究与创作。' },
+      ], gallery: { slug: 'pre-req', count: 3 } },
+      { title: '个性化作品集项目', desc: '围绕学生的个人兴趣、专业方向、目标院校与申请定位进行一对一定制。导师从选题规划、背景调研、概念发展、媒介选择到最终呈现持续辅导，帮助学生将个人经历和创作特点转化为具有完整逻辑、鲜明表达与院校适配性的作品集项目。' },
+      { title: '教研课', desc: '由科系教研团队根据院校趋势、专业方向与前沿议题研发项目课题，为学生提供清晰的研究框架、创作路径与阶段任务。课程通过专题教学、项目推进和阶段 Critique，帮助学生拓展专业认知，提升研究、创意与跨媒介表达能力，并完成可纳入作品集的项目成果。', gallery: { slug: 'teaching-research', count: 3 } },
+      { title: '冬夏校', subtitle: '国际化项目强化模块', desc: '通过海外教授带教、实地项目训练和研究型产出，帮助学生补充高质量作品集项目和海外学习经历。课程可结合 AI、交互、数字媒体、艺术科技等前沿方向，支持学生获得项目成果、科研论文、推荐信或相关证明，提升申请中的差异化竞争力。', catalogRef: 'summerwinter' },
+      { title: '海外教授课', desc: '由海外教授围绕国际前沿课题开展 5次线上课程，引导学生理解新的研究方向、创作方法与专业趋势；地区导师在线下持续推进调研、实验、制作与项目落地，并由教研团队进行阶段性 Critique 与质量审核。学生最终完成可纳入作品集的专业项目，优秀成果可争取海外教授推荐信。', gallery: { slug: 'professor-course', count: 3 } },
+      { title: '商业实践', desc: '以企业、品牌或行业机构的真实需求为项目背景，由行业导师带领学生完成从 Brief 解读、调研分析、创意提案到成果交付的完整实践流程。学生不仅能够积累真实项目经验、理解行业协作与交付标准，还可形成用于作品集和求职展示的商业项目成果，并有机会获得实习证明与推荐信。', gallery: { slug: 'biz-practice', count: 6 }, catalogRef: 'bizpractice' },
+      { title: '海外教授领航课', desc: '由海外教授围绕学生的个人定位、专业方向与目标院校进行阶段性领航指导，从国际院校视角帮助学生审视项目组合、研究方向与作品集整体逻辑。教授通过关键节点反馈，协助学生判断项目发展方向、调整作品集策略，并提升整体表达与目标院校的匹配度。', gallery: { slug: 'pilot-course', count: 2 } },
+      { title: '海外教授审核', desc: '由具有海外院校教学或评审经验的教授，对学生作品集进行阶段性或申请前审核。教授从项目选题、研究逻辑、创意表达、媒介运用、作品完成度及院校适配性等维度提供专业反馈，帮助学生识别作品集中的关键问题，并形成清晰、可执行的修改方向。', gallery: { slug: 'professor-review', count: 1 } },
+      { title: 'Video Task辅导', desc: '针对英国院校申请中的 Video Task 要求，结合不同院校与专业的题目形式，指导学生完成内容策划、回答结构、个人表达、作品讲解和镜头呈现。通过脚本梳理、模拟录制与针对性反馈，帮助学生在有限时间内清晰呈现个人特点、专业能力、项目思考及申请动机。', gallery: { slug: 'video-task', count: 1 } },
+      { title: 'Study Proposal辅导', desc: '针对英国院校部分专业的 Study Proposal 要求，结合目标院校、专业方向与学生已有项目，指导学生明确研究主题、核心问题、研究背景、方法路径和预期成果。通过选题讨论、结构梳理与多轮修改，帮助学生形成逻辑清晰、方向具体，并能体现个人研究潜力及专业匹配度的学习研究计划。', gallery: { slug: 'study-proposal', count: 1 } },
+      { title: '面试辅导', desc: '针对英国院校及目标专业的面试要求，围绕个人背景、申请动机、作品集项目、研究兴趣与未来规划进行系统准备。通过问题梳理、作品讲解训练、英文表达优化和模拟面试，帮助学生建立清晰的回答逻辑，在面试中准确呈现个人特点、专业能力与院校匹配度。', gallery: { slug: 'interview-coaching', count: 1 } },
+      { title: '学业补强与作品集整合', desc: '通过毕设辅导、海外教授领航、作品集排版和院校改版，完成申请版本的整合与最终输出。' },
+    ],
+    employability: {
+      intro: '就业力不是升学产品之后的附加课程，而是从项目选题、商业实践到求职交付的第二条主线。不同层级产品提供不同深度的实习、作品集转化与投递支持。',
+      items: [
+        { title: '职业定位', desc: '结合学生专业、作品集特征和个人优势，确定行业、岗位、目标公司与长期发展方向。' },
+        { title: '岗位制实习', subtitle: '放总部海报', desc: '高阶产品根据层级配置头部大厂、行业名企、创意工作室或海外实习，让学生在真实岗位中参与任务、汇报与交付。', catalogRef: 'internship' },
+        { title: '作品集商业化改造', desc: '由行业导师评估申请项目的岗位适配性，重新整理项目背景、问题、角色、流程、成果和商业价值。', gallery: { slug: 'portfolio-commercialize', count: 1 } },
+        { title: '简历与求职材料', desc: '完成简历重塑、求职作品集、个人介绍、项目话术和岗位版本调整。' },
+        { title: '岗位筛选与投递', desc: '根据学生能力、地区、行业和求职阶段建立岗位池，提供投递辅导、进度管理及部分产品的代投递支持。' },
+        { title: '笔试面试与企业内推', desc: '提供笔试面试题库、模拟训练、面试反馈、Offer 分析、入职指导和相应层级的头部企业内推资源。' },
+      ],
+    },
+    dualTrack: {
+      intro: '双路径方案将英国研究生升学产品与求职陪跑 A 计划进行组合。前半段解决院校定位、作品集、申请材料与录取；后半段解决实习、求职作品集、投递、笔试面试、内推及入职辅导。',
+      aiBusiness: { title: 'AI 商业应用', desc: '双保产品由行业导师带领学生将 AI 工具用于创意生产、商业设计、效率提升与岗位任务，形成可向企业展示的应用能力。', gallery: { slug: 'ai-business', count: 1 } },
+      fitFor: [
+        '适合希望同时确保英国研究生升学质量和毕业后就业竞争力的学生。',
+        '适合家长对留学投入的长期回报、实习质量和正式入职结果较为关注的家庭。',
+        '可在 TOP1、TOP3、TOP5、TOP7 或 TOP9 产品基础上按需升级，实际服务内容和结果边界以正式合同为准。',
+      ],
+    },
+    timeline: [
+      { q: '阶段 1', phase: '定位与评估', desc: '院校与专业定位、背景评估、作品集结构、职业方向和整体时间规划。' },
+      { q: '阶段 2', phase: '基础与方法补强', desc: '专业前置必修课、跨学科、AI 或软件训练。' },
+      { q: '阶段 3', phase: '作品集项目开发', desc: '自主命题、教研课题、商业实践、教授项目或夏冬校项目。' },
+      { q: '阶段 4', phase: '实习与背景提升', desc: '头部大厂、行业名企、创意工作室或海外实习，并整理阶段成果。' },
+      { q: '阶段 5', phase: '作品集整合', desc: '项目筛选、叙事优化、视觉排版、英文信息、院校改版与商业化评估。' },
+      { q: '阶段 6', phase: '申请与差异化任务', desc: '文书、简历、推荐信、网申、Video Task、Study Proposal 与面试。' },
+      { q: '阶段 7', phase: '求职材料转化', desc: '求职作品集、简历重塑、岗位项目话术、求职定位与岗位池。' },
+      { q: '阶段 8', phase: '投递与入职陪跑', desc: '投递管理、笔试面试、企业内推、Offer 分析与入职指导。', merged: true },
+    ],
+    industryCases: [
+      { key: 'visual-comm', nameCn: '视觉语言与策略传播', nameEn: 'Visual Communication & Brand Strategy', color: 'brand', caseCount: 6,
+        schools: [
+          { school: '皇家艺术学院', program: 'MA Visual Communication', url: 'https://www.rca.ac.uk/study/programme-finder/visual-communication-ma/' },
+          { school: '皇家艺术学院', program: 'MA Information Experience Design', url: 'https://www.rca.ac.uk/study/programme-finder/information-experience-design-ma/' },
+          { school: '伦敦大学学院', program: 'MA Publishing', url: 'https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/publishing-ma' },
+          { school: '伦敦传媒学院', program: 'MA Graphic Branding And Identity', url: 'https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-graphic-branding-and-identity-lcc' },
+          { school: '伦敦传媒学院', program: 'MA Graphic Media Design', url: 'https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-graphic-media-design-lcc' },
+          { school: '伦敦传媒学院', program: 'MA Design for Art Direction', url: 'https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-design-for-art-direction-lcc' },
+          { school: '伦敦传媒学院', program: 'MA Advertising', url: 'https://www.arts.ac.uk/subjects/journalism-pr-media-and-publishing/postgraduate/ma-advertising-lcc' },
+          { school: '中央圣马丁艺术与设计学院', program: 'MA Graphic Communication Design', url: 'https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-graphic-communication-design-csm' },
+          { school: '爱丁堡大学', program: 'Graphic Design MA', url: 'https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&id=735' },
+          { school: '格拉斯哥艺术学院', program: 'MDes Communication Design', url: 'https://www.gsa.ac.uk/postgraduate-degrees/communication-design' },
+        ] },
+      { key: '3d-art', nameCn: '3D虚拟艺术制作', nameEn: '3D Virtual Art & Production', color: 'game', caseCount: 5,
+        schools: [
+          { school: '伦敦大学学院', program: 'Digital Media: Production MA', url: 'https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/digital-media-production-ma' },
+          { school: '伦敦大学学院', program: 'Immersive Factual Storytelling MA', url: 'https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/immersive-factual-storytelling-ma' },
+          { school: '伦敦大学学院', program: 'Cinematic and Videogame Architecture MArch', url: 'https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/cinematic-and-videogame-architecture' },
+          { school: '皇家艺术学院', program: 'MA Digital Direction', url: 'https://www.rca.ac.uk/study/programme-finder/digital-direction-ma/' },
+          { school: '皇家艺术学院', program: 'MA Animation', url: 'https://www.rca.ac.uk/study/programme-finder/animation-ma/' },
+          { school: '伦敦传媒学院', program: 'MA Visual Effects', url: 'https://www.arts.ac.uk/subjects/animation-interactive-film-and-sound/postgraduate/ma-visual-effects-lcc' },
+          { school: '伦敦传媒学院', program: 'MA Virtual Reality', url: 'https://www.arts.ac.uk/subjects/animation-interactive-film-and-sound/postgraduate/ma-virtual-reality-lcc' },
+          { school: '爱丁堡大学', program: 'MSc Design and Digital Media', url: 'https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2023&id=37' },
+          { school: '布里斯托大学', program: 'MSc Immersive Technologies (VR & AR)', url: 'https://www.bristol.ac.uk/study/postgraduate/taught/msc-immersive-technologies-virtual-and-augmented-reality/' },
+          { school: '拉夫堡大学', program: 'MSc Digital Creative Media', url: 'https://www.lboro.ac.uk/study/postgraduate/masters-degrees/a-z/digital-creative-media/' },
+        ] },
+      { key: 'info-experience', nameCn: '信息体验与应用设计', nameEn: 'Information Experience & Applied Design', color: 'internet', caseCount: 4,
+        schools: [
+          { school: '皇家艺术学院', program: 'MA Information Experience Design', url: 'https://www.rca.ac.uk/study/programme-finder/information-experience-design-ma/' },
+          { school: '帝国理工学院', program: 'MSc Science Communication', url: 'https://www.imperial.ac.uk/study/courses/postgraduate-taught/science-communication/' },
+          { school: '伦敦政治经济学院', program: 'MSc Media and Communications', url: 'https://www.lse.ac.uk/study-at-lse/graduate/msc-media-and-communications' },
+          { school: '伦敦政治经济学院', program: 'MSc Media, Communication and Development', url: 'https://www.lse.ac.uk/study-at-lse/graduate/msc-media-communication-and-development' },
+          { school: '伦敦大学学院', program: 'Digital Media: Production MA', url: 'https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/digital-media-production-ma' },
+          { school: '伦敦传媒学院', program: 'MA Design for Data Visualisation', url: 'https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-data-visualisation-lcc' },
+          { school: '伦敦传媒学院', program: 'MA Design for Social Innovation and Sustainable Futures', url: 'https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-design-for-social-innovation-and-sustainable-futures-lcc' },
+        ] },
+      { key: 'mixed-media', nameCn: '多媒介与装置艺术', nameEn: 'Mixed Media & Installation Art', color: 'indie', caseCount: 5,
+        schools: [
+          { school: '皇家艺术学院', program: 'MA Contemporary Art Practice', url: 'https://www.rca.ac.uk/study/programme-finder/contemporary-art-practice-ma/' },
+          { school: '坎伯韦尔艺术学院', program: 'MA Fine Art: Computational Arts', url: 'https://www.arts.ac.uk/subjects/fine-art/postgraduate/ma-fine-art-camberwell' },
+          { school: '爱丁堡大学', program: 'Contemporary Art Practice MA', url: 'https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2021&id=747' },
+          { school: '伦敦国王学院', program: 'Contemporary Art and the Moving Image MA', url: 'https://www.kcl.ac.uk/study/postgraduate-taught/courses/contemporary-art-and-the-moving-image-ma' },
+          { school: '中央圣马丁艺术与设计学院', program: 'MA Fine Art: Digital (Online)', url: 'https://www.arts.ac.uk/subjects/fine-art/postgraduate/ma-fine-art-digital-csm' },
+          { school: '伦敦大学金史密斯学院', program: 'MA/MFA Computational Arts', url: 'https://www.gold.ac.uk/pg/ma-computational-arts/' },
+        ] },
+      { key: 'ai-computing', nameCn: 'AI创意计算机与互动机械', nameEn: 'AI Creative Computing & Interactive Systems', color: 'ai', caseCount: 3,
+        schools: [
+          { school: '皇家艺术学院', program: 'MA/MFA Digital Narrative Arts', url: 'https://www.rca.ac.uk/study/programme-finder/digital-narrative-arts-ma-mfa/' },
+          { school: '皇家艺术学院', program: 'MA Information Experience Design', url: 'https://www.rca.ac.uk/study/programme-finder/information-experience-design-ma/' },
+          { school: '帝国理工学院', program: 'MRes Artificial Intelligence and Machine Learning', url: 'https://www.imperial.ac.uk/study/courses/postgraduate-taught/artificial-intelligence-machine-learning/' },
+          { school: '帝国理工学院', program: 'MSc Artificial Intelligence Applications and Innovation', url: 'https://www.imperial.ac.uk/study/courses/postgraduate-taught/applications-innovation/' },
+          { school: '坎伯韦尔艺术学院', program: 'MA Fine Art: Computational Arts', url: 'https://www.arts.ac.uk/subjects/fine-art/postgraduate/ma-fine-art-camberwell' },
+          { school: '创意计算机学院', program: 'MSc Data Science and AI', url: 'https://www.arts.ac.uk/subjects/creative-computing/postgraduate/msc-data-science-and-ai' },
+          { school: '创意计算机学院', program: 'MSc Applied Machine Learning for Creatives', url: 'https://www.arts.ac.uk/subjects/creative-computing/postgraduate/msc-data-science-and-ai-for-the-creative-industries' },
+          { school: '创意计算机学院', program: 'MSc Creative Computing', url: 'https://www.arts.ac.uk/subjects/creative-computing/postgraduate/msc-creative-computing' },
+          { school: '伦敦大学金史密斯学院', program: 'MA/MFA Computational Arts', url: 'https://www.gold.ac.uk/pg/ma-computational-arts/' },
+        ] },
+    ],
+    otherHighlights: [
+      { t: '全程教研审核', d: '覆盖首课规划、项目过程、项目终期、作品集排版和院校改版。' },
+      { t: '海外教授反馈', d: '高阶产品根据配置提供 critique、视频反馈、书面评估或教授项目。' },
+      { t: '英国院校特殊任务辅导', d: '针对 Video Task、Study Proposal、作品集网站和院校面试进行专项训练。' },
+      { t: '学业与毕设支持', d: '通过毕设辅导和海外教授领航课，补强现有学业成果与申请项目之间的联系。' },
+      { t: '行业推荐与实习证明', d: '不同层级产品根据配置交付实习实训证明、行业推荐信与线下实习经历。' },
+      { t: '申请后续与长期支持', d: '包含申请进度跟踪、Offer 分析、签证行前以及相应层级的求职辅导。' },
+    ],
+    whySFK: [
+      { t: '升学就业一体化', d: '从目标院校、作品集结构到实习和求职岗位进行统一规划，避免升学项目与职业目标脱节。' },
+      { t: '真实线下实习分层交付', d: '根据产品配置头部大厂、行业名企、创意工作室或海外实习，强调岗位任务、团队协作和真实交付。' },
+      { t: '作品集从申请语言转向求职语言', d: '通过商业化改造、求职作品集指导和简历重塑，让企业看懂学生能解决什么问题。' },
+      { t: '求职陪跑可灵活升级', d: '对就业需求强的学生，可在升学产品上增加行业导师、AI 商业应用、代投递、笔试面试与入职指导。' },
+    ],
+    closingStatementCn: '从名校申请，到真实入职 —— 一条连续的成长路径。',
+    closingStatement: 'From admission to employment — one continuous growth path.',
+  },
+
+  /* ── LONGFORM 2 (legacy generic content, kept for reference / as the
+     template shape for US & HK before their own rebuild — no longer
+     reachable now that longform2.useRichContent short-circuits
+     buildProductHTML before any of these fields are read) ── */
+  _longform2Legacy: {
     group: 'longform',
     tileVariant: 'v2',
     meta: {
@@ -275,138 +497,193 @@ const PRODUCTS = {
     closingStatement: 'Timed right, positioned right — the UK offer within reach.',
   },
 
-  /* ── LONGFORM 3 — 香港研究生 ── */
+  /* ── LONGFORM 3 — 香港研究生 ──
+     v3.32 (GM's US/HK rich-content pass): rebuilt from the real "香港研究生
+     产品解读_常规与学霸双版本.docx" + both "总对比.pdf"s. Unlike UK/US, HK's
+     source material genuinely splits into two parallel sub-products —
+     常规计划 (regular, for students who need to build professional +
+     portfolio ability from the ground up) and 学霸计划 (elite, for
+     strong-foundation students on a tighter timeline who need precise
+     diagnosis + gap-filling) — so this is the one product using the new
+     `product.tracks = { regular, elite }` shape instead of flat top-level
+     fields. Fields the docx genuinely shares across both plans
+     (positioningIntro, meta, snapshot, industryCases, otherHighlights,
+     closingStatement) stay at the top level and render once, above the
+     sticky track switcher; everything that differs per plan
+     (advantagePairs/tierTable/coreModules/timeline/comparePdf) lives
+     inside `tracks.regular`/`tracks.elite` and is rendered by the exact
+     same renderAdvantagePairs/renderTierGrid/renderModuleGrid/
+     renderTimeline helpers the single-track products use — see
+     buildRichLongformSections's `if (product.tracks)` branch and the
+     TrackSwitcher component below IndustryCases. ── */
   longform3: {
     group: 'longform',
     tileVariant: 'v3',
+    cover: 'assets/img/course-products/covers/longform3.webp',
+    useRichContent: true,
     meta: {
-      eyebrow: 'HK Graduate Admissions｜研究生申请 · 港校申请一站式',
+      eyebrow: 'HK Graduate Admissions｜研究生申请 · 常规计划 + 学霸计划',
       titleEn: 'Hong Kong Graduate Program',
-      titleCn: '香港研究生',
-      desc: '面向计划申请香港研究生院校的学生，结合港校滚动审核机制与本地行业资源，提供作品集打磨、文书写作与院校定位的全流程支持，冲刺港三大及优势专业院校offer。',
-      chips: ['20+ 港校offer', '作品集打磨', '滚动审核陪跑', '招募中'],
+      titleCn: '香港研究生升学计划',
+      desc: '以作品集为核心，结合目标院校定位、专业能力补强、个性化项目、香港高校夏冬校、商业实践、实习推荐和全流程申请服务的港研升学产品。分为常规计划与学霸计划两条路径：常规计划面向需要系统建立专业与作品集能力的学生，学霸计划面向基础较强、目标明确、时间有限的学生。',
+      chips: ['常规计划 · 学霸计划', 'TOP3 – TOP8 分层', '作品集+商业实践+实习', '招募中'],
     },
     snapshot: [
-      { k: '20+',  v: '港三大及优势专业offer' },
-      { k: '95%',  v: '目标院校录取率' },
-      { k: '1对1', v: '申请顾问陪伴' },
-      { k: '4周',  v: '作品集集中打磨' },
+      { k: '2个计划', v: '常规计划 · 学霸计划，按基础与时间灵活匹配' },
+      { k: 'TOP3–TOP8', v: '常规计划三档配置，学霸计划两档聚焦补强' },
+      { k: '4个项目', v: '两个计划均以4个作品集项目为核心产出' },
+      { k: '真实实习', v: '头部大厂岗位实习 · 行业推荐信 · 商业实践' },
     ],
-    highlightCourses: [
-      { title: '港校在职教授连线项目课', desc: '港三大教授亲自连线授课，专业方向审核偏好的第一手信息。',
-        detail: { duration: '16H · 教授在职连线', highlights: ['港三大在职教授亲自授课', '了解目标专业审核委员会的真实偏好', '课程表现优秀者可获教授推荐信'], sampleCourses: ['创新设计科技项目课', '文化管理项目课', '设计学研究方法项目课'], intro: '由港三大方向的在职教授亲自连线授课，帮助学生真正理解目标专业审核委员会的偏好，是专业方向匹配环节最直接的"内部视角"。' } },
-      { title: '行业实习内推计划', desc: '本地行业内推真实岗位，实习经历与目标专业强绑定。',
-        detail: { duration: '20H · 实习内推+带训', highlights: ['内推对接本地行业真实岗位', '积累与目标专业强相关的实习经验', '获得岗位导师推荐信'], sampleCourses: ['本地行业实习内推', '岗位导师带训', '实习成果转化辅导'], intro: '借助本地行业资源内推真实岗位实习，确保实习内容与学生的目标专业强相关，积累的实习经验与推荐信能够直接支撑专业匹配定校。' } },
-      { title: '跨境联合工作坊', desc: '与内地/海外院校联合课题，积累国际化协作经历。',
-        detail: { duration: '16H · 跨境联合课题', highlights: ['与内地/海外院校师生联合完成课题', '训练跨地域协作与视角切换能力', '积累港校审核看重的国际化经历'], sampleCourses: ['跨境联合工作坊-1', '跨境联合工作坊-2', '联合课题成果展示'], intro: '与内地或海外院校的师生联合完成一项跨境课题，训练学生在不同地域视角间切换协作的能力，也是港校审核中颇为看重的国际化经历。' } },
-    ],
-    fitAudience: [
-      '计划申请香港研究生院校（港三大及优势专业）的学生',
-      '已有申请意向，但对专业方向与作品适配度把握不准的学生',
-      '希望借助本地行业资源积累实习与推荐信的学生',
-      '需要在滚动审核节奏下快速推进、抢占早申窗口的学生',
-    ],
-    curriculumTable: {
-      categories: [
-        { name: '专业方向定位起航', color: 'internet', items: [
-          { name: '首课定位课程', hours: '2H',
-            detail: { duration: '2H · 1对1首课', highlights: ['诊断学术背景与专业适配方向', '结合港校审核偏好初筛专业', '规划滚动申请节奏与院校梯度'], sampleCourses: ['学术背景诊断', '专业适配性初筛', '港校滚动审核节奏解读'], intro: '项目起点。通过1对1访谈梳理学生的学术背景与兴趣方向，重点确认专业适配性，并结合港校滚动审核机制规划申请节奏。' } },
-        ] },
-        { name: '个性化作品集训练', color: 'hardware', items: [
-          { name: '专业基础课·24H（五选三）', hours: '24H',
-            detail: { duration: '五选三，共24H · 每模块8H', highlights: ['设计思维/数字媒体/商业创新/人文研究/跨专业实践5大模块自由组合', '按目标专业方向定制修读组合', '为专业方向匹配打好方法论基础'], sampleCourses: ['设计思维与专业方法-8H', '数字媒体与技术实践-8H', '商业创新与管理-8H', '人文社会研究-8H', '跨专业项目实践-8H'], intro: '港校专业设置普遍跨学科，5大模块覆盖设计、数字媒体、商业、人文与跨专业实践，学生按目标专业自由选修其中3项，为专业匹配打好基础。' } },
-          { name: '自主命题项目', hours: '10H',
-            detail: { duration: '10H · 学生自主选题', highlights: ['学生自主提出研究或设计命题', '导师把关命题与目标专业的适配度', '产出体现个人视角的独立项目'], sampleCourses: ['命题工作坊', '独立研究方法训练', '项目产出评审'], intro: '由学生自主提出感兴趣的命题，导师重点把关命题方向与目标专业的适配度，确保产出的项目能够精准支撑后续的专业匹配定校。' } },
-          { name: '专业方向匹配项目', hours: '14H',
-            detail: { duration: '14H · 项目制小班', highlights: ['围绕目标专业方向定制项目内容', '强化项目与专业培养方向的关联度', '产出体现专业适配性的核心作品'], sampleCourses: ['专业方向适配工作坊', '项目内容定制辅导', '作品与专业关联性打磨'], intro: '围绕学生最终锁定的目标专业方向，定制项目内容与呈现重点，确保作品集中至少有一件作品能够直接回应该专业的培养方向。' } },
-        ] },
-        { name: '国际前沿作品集训练', color: 'culture', items: [
-          { name: '跨境联合工作坊', hours: '16H',
-            detail: { duration: '16H · 跨境联合课题', highlights: ['与内地/海外院校师生联合完成课题', '训练跨地域协作与视角切换能力', '积累港校审核看重的国际化经历'], sampleCourses: ['跨境联合工作坊-1', '跨境联合工作坊-2', '联合课题成果展示'], intro: '与内地或海外院校的师生联合完成一项跨境课题，训练学生在不同地域视角间切换协作的能力，也是港校审核中颇为看重的国际化经历。' } },
-        ] },
-        { name: '港校教授直连', color: 'brand', subLabel: '港三大教授连线', items: [
-          { name: '港校在职教授连线项目课', hours: '16H',
-            detail: { duration: '16H · 教授在职连线', highlights: ['港三大在职教授亲自授课', '了解目标专业审核委员会的真实偏好', '课程表现优秀者可获教授推荐信'], sampleCourses: ['创新设计科技项目课', '文化管理项目课', '设计学研究方法项目课'], intro: '由港三大方向的在职教授亲自连线授课，帮助学生真正理解目标专业审核委员会的偏好，是专业方向匹配环节最直接的"内部视角"。' } },
-          { name: '行业实习内推计划', hours: '20H',
-            detail: { duration: '20H · 实习内推+带训', highlights: ['内推对接本地行业真实岗位', '积累与目标专业强相关的实习经验', '获得岗位导师推荐信'], sampleCourses: ['本地行业实习内推', '岗位导师带训', '实习成果转化辅导'], intro: '借助本地行业资源内推真实岗位实习，确保实习内容与学生的目标专业强相关，积累的实习经验与推荐信能够直接支撑专业匹配定校。' } },
-        ] },
-        { name: '差异化亮点塑造', color: 'arch', items: [
-          { name: '作品集建站辅导', hours: '8H',
-            detail: { duration: '8H · 一对一建站辅导', highlights: ['将作品集转化为专业排版网站', '建站规范贴合港校审核习惯', '建站后仍可自主更新维护'], sampleCourses: ['作品集网站架构设计', '视觉排版一对一辅导', '建站工具实操指导'], intro: '把打磨完成的作品集转化为排版专业、浏览流畅的个人网站，贴合港校招生官在线审阅材料的习惯。' } },
-          { name: '面试辅导（粤语/英语双语备战）', hours: '6H',
-            detail: { duration: '6H · 双语模拟面试', highlights: ['粤语/英语双语模拟面试', '覆盖港校常见面试提问类型', '逐题复盘表达逻辑与呈现方式'], sampleCourses: ['粤语面试模拟', '英语面试模拟', '面试复盘与迭代'], intro: '港校面试可能涉及粤语或英语，通过双语模拟面试熟悉不同语言环境下的表达节奏，并对每一轮表现进行复盘。' } },
-          { name: 'Study Proposal打磨', hours: '4H',
-            detail: { duration: '4H · 1对1写作辅导', highlights: ['明确研究问题与研究方法', '匹配目标专业教授的研究方向', '产出符合学术规范的研究计划书'], sampleCourses: ['研究问题聚焦工作坊', '研究方法论写作辅导', '教授研究方向匹配咨询'], intro: '针对研究型专业方向，1对1指导学生撰写符合学术规范的Study Proposal，并与目标专业教授的研究方向精准对接。' } },
-          { name: '专业方向匹配复核', hours: '4H',
-            detail: { duration: '4H · 定位复核咨询', highlights: ['结合最终作品复核专业匹配度', '梯度化确认港三大投递清单', '规避"专业方向不适配"的常见风险'], sampleCourses: ['专业匹配复核工作坊', '投递清单梯度确认', '跨专业申请风险评估'], intro: '在正式投递前，结合最终定稿的作品方向复核每一个目标专业的匹配度，这是港校申请中最容易被忽视、却决定成败的一步。' } },
-        ] },
-      ],
+    positioningIntro: '香港研究生升学计划以作品集为核心，结合目标院校定位、专业能力补强、个性化项目、香港高校夏冬校、商业实践、实习推荐和全流程申请服务，帮助学生在较紧凑的申请周期内建立与目标专业匹配的竞争力。产品分为常规计划与学霸计划：常规计划面向需要系统建立专业与作品集能力的学生；学霸计划面向基础较强、目标明确、时间有限的学生，强调精准诊断与短板补强。',
+    tracksLabel: '选择你的计划',
+    tracks: {
+      regular: {
+        label: '常规计划',
+        labelSub: '系统建立专业与作品集能力',
+        comparePdf: { label: '香港研究生常规计划 · 总对比', dir: 'assets/img/course-products/hk/pdf-regular', count: 2 },
+        advantagePairs: [
+          { trait: '申请节奏紧凑且强调专业匹配', traitDesc: '香港研究生项目学制短，申请开放与审理节奏集中，不同院校和专业对作品集、学术背景、语言成绩及项目方向要求差异明显。', edge: '通过首课规划与长期时间管理，提前确认目标院校、专业方向、作品集结构和背景短板。' },
+          { trait: '港校重视商业实践与实战经验', traitDesc: '香港高校的艺术设计、数字媒体与创意科技专业与产业联系紧密。除作品集完成度外，也关注商业实践、实习经历、团队协作和解决实际问题的能力。', edge: '通过商业实践项目、岗位制实习、行业导师带训与推荐资源，将真实项目过程转化为作品集和申请材料中的能力证明。' },
+          { trait: '不同背景需要不同培养路径', traitDesc: '申请者可能来自艺术设计、传媒、计算机、商科或其他背景，专业基础和项目经验差异较大。', edge: '常规计划提供从基础补强到申请递交的完整路径，依据学生背景匹配专业课、AI课程、项目训练和背景提升。' },
+        ],
+        tierTable: [
+          { name: 'TOP 3', audience: '目标香港顶尖专业方向，需要教研与项目配置最完整的常规计划档位', config: '86H课时、4个作品集项目、2封实习/实训证明、1段线下实习、2封行业推荐信、1封名校教授推荐信、1个名校教授项目、1次毕业展览' },
+          { name: 'TOP 5', audience: '目标香港中坚强势专业方向，兼顾项目完整度与预算', config: '76H课时、4个作品集项目、2封实习/实训证明、1封行业推荐信、1封院校短期课程证书、1个名校教授项目、1次毕业展览' },
+          { name: 'TOP 8', audience: '注重性价比，仍需要完整的4个作品集项目与基础申请护航', config: '60H课时、4个作品集项目、教学审核（首课/过程/终期/排版/院校改版）与留学指导服务全程覆盖' },
+        ],
+        coreModules: [
+          { title: '专业升学定位', desc: '首课规划明确目标院校、申请专业、作品集结构、背景短板和整体时间安排。' },
+          { title: '专业基础与 AI 应用', desc: '按学生基础配置艺术概论、基础入门、基础深入、跨学科或 AI 应用课程。', gallery: { slug: 'ai-course', count: 1 } },
+          { title: '个性化作品集项目', desc: '围绕学生的个人兴趣、专业方向、目标院校与申请定位进行一对一定制。导师从选题规划、背景调研、概念发展、媒介选择到最终呈现持续辅导，帮助学生将个人经历和创作特点转化为具有完整逻辑、鲜明表达与院校适配性的作品集项目。' },
+          { title: '香港高校夏冬校', desc: '学生在香港高校教学语境中完成集中式项目训练，进一步了解目标专业的教学方式，并将项目成果和学习经历纳入申请背景。', gallery: { slug: 'winter-summer', count: 2 } },
+          { title: '商业实践', desc: '以企业、品牌或行业机构的真实需求为项目背景，由行业导师带领学生完成从 Brief 解读、调研分析、创意提案到成果交付的完整实践流程。学生不仅能够积累真实项目经验、理解行业协作与交付标准，还可形成用于作品集和求职展示的商业项目成果，并有机会获得实习证明与推荐信。', gallery: { slug: 'biz-practice', count: 6 }, catalogRef: 'bizpractice' },
+          { title: '头部大厂岗位实习', desc: '根据学生的专业背景、能力基础与目标岗位，匹配头部企业或行业领先公司的相关实习机会。学生在真实岗位环境中参与业务项目与团队协作，了解行业工作流程、岗位职责和企业交付标准，将专业能力转化为可验证的实战经历，为港研申请和后续就业补充更具说服力的职业背景。', catalogRef: 'internship' },
+          { title: '文书与申请护航', desc: '覆盖背景规划、选校定校、个人陈述、简历、推荐信、网申、面试和行前服务。' },
+        ],
+        timeline: [
+          { q: '阶段 1', phase: '申请定位', desc: '目标院校分析、专业方向确认、背景短板评估、作品集与时间规划。' },
+          { q: '阶段 2', phase: '基础补强', desc: '专业基础课、跨学科课程、AI 应用或软件训练。' },
+          { q: '阶段 3', phase: '项目启动', desc: '自主命题项目研究、主题确立、媒介实验与阶段教研审核。' },
+          { q: '阶段 4', phase: '项目深化', desc: '自主命题与商业实践并行，完善项目逻辑、过程和最终呈现。' },
+          { q: '阶段 5', phase: '院校与背景提升', desc: '香港高校夏冬校、实习实训、行业推荐、竞赛或相关经历。' },
+          { q: '阶段 6', phase: '作品集整合', desc: '项目筛选、结构调整、视觉排版、英文信息整理与最终审核。' },
+          { q: '阶段 7', phase: '申请材料', desc: '选校定校、个人陈述、简历、推荐信、网申与面试准备。' },
+          { q: '阶段 8', phase: '递交与后续', desc: '申请递交、进度跟踪、Offer 分析、奖学金、签证与行前准备。', merged: true },
+        ],
+        otherHighlights: [
+          { t: '高频教研审核', d: '覆盖首课规划、过程、阶段、项目终期、排版和院校改版审核。' },
+          { t: 'VIP 助教服务', d: '协助学习节奏管理、课程衔接和申请任务推进。' },
+          { t: '作品集排版与英文信息整理', d: '统一项目叙事、视觉呈现与申请版本。' },
+          { t: '面试辅导与申请后续', d: '往年真题、模拟面试、沟通表达、Offer 分析、签证及行前指导。' },
+        ],
+      },
+      elite: {
+        label: '学霸计划',
+        labelSub: '精准诊断，聚焦补强',
+        comparePdf: { label: '香港研究生学霸计划 · 总对比', dir: 'assets/img/course-products/hk/pdf-elite', count: 2 },
+        advantagePairs: [
+          { trait: '适合基础较强且目标明确的学生', traitDesc: '部分学生已具备较好的专业基础、项目能力或学术背景，但需要在较短周期内完成作品集与申请。', edge: '学霸计划通过前期诊断取消不必要的重复学习，把课时和资源集中到项目、商业实践、实习推荐和申请材料上。' },
+          { trait: '港校重视真实项目与职业潜力', traitDesc: '对于申请香港头部院校的学生，作品集不仅需要成熟表达，也需要真实项目、商业语境、实习经历和可被验证的实践能力。', edge: '四个作品集项目与商业实践、岗位制实习、行业推荐信联动，把学生已有优势转化为更清晰的申请证据。' },
+          { trait: '强调精准补强与结果导向', traitDesc: '高基础学生的关键不是重新学习通用基础，而是识别影响录取的关键短板，例如项目结构、研究深度、商业经历或申请表达。', edge: '围绕目标院校和个人短板进行定制训练，不浪费学习时间，提高项目、背景提升和申请任务的优先级。' },
+        ],
+        tierTable: [
+          { name: 'TOP 3', audience: '目标香港头部院校，需要四个项目均具备成熟商业与实践证据', config: '78H课时、4个高完成度作品集项目、2封实习/实训证明、1段线下实习、2封行业推荐信' },
+          { name: 'TOP 5', audience: '基础较强、目标明确，聚焦精准补强与效率', config: '68H课时、4个高完成度作品集项目、1封实习/实训证明、1封行业推荐信' },
+        ],
+        coreModules: [
+          { title: '精准诊断与目标定位', desc: '从现有作品、专业能力、学术背景、商业经历和目标院校出发，确定真正需要补强的环节。' },
+          { title: '聚焦式 AI 与项目训练', desc: '保留与目标专业、项目生成和录取直接相关的 AI 应用与项目方法训练。', gallery: { slug: 'ai-course', count: 1 } },
+          { title: '四个高完成度作品集项目', desc: '围绕目标专业建立高匹配度的项目组合，提高研究深度、个人特征、视觉完成度和项目叙事。' },
+          { title: '商业实践', desc: '以企业、品牌或行业机构的真实需求为项目背景，由行业导师带领学生完成从 Brief 解读、调研分析、创意提案到成果交付的完整实践流程。学生不仅能够积累真实项目经验、理解行业协作与交付标准，还可形成用于作品集和求职展示的商业项目成果，并有机会获得实习证明与推荐信。', gallery: { slug: 'biz-practice', count: 6 }, catalogRef: 'bizpractice' },
+          { title: '头部大厂岗位实习', desc: '根据学生的专业背景、能力基础与目标岗位，匹配头部企业或行业领先公司的相关实习机会。学生在真实岗位环境中参与业务项目与团队协作，了解行业工作流程、岗位职责和企业交付标准，将专业能力转化为可验证的实战经历，为港研申请和后续就业补充更具说服力的职业背景。', catalogRef: 'internship' },
+          { title: '作品集精修与申请表达', desc: '集中完成项目筛选、逻辑调整、视觉排版、英文信息整理、个人陈述与面试准备。' },
+          { title: '全流程申请护航', desc: '围绕目标院校和时间节点完成选校定校、文书、网申、递交、跟踪与行前服务。' },
+        ],
+        timeline: [
+          { q: '阶段 1', phase: '诊断定位', desc: '现有作品与背景评估、目标院校确认、关键短板与资源配置。' },
+          { q: '阶段 2', phase: '精准补强', desc: '仅保留影响项目和录取的关键 AI、专业方法或软件训练。' },
+          { q: '阶段 3', phase: '项目集中开发', desc: '四个项目的主题确立、研究、媒介实验、过程审核与成果完善。' },
+          { q: '阶段 4', phase: '实践背景增强', desc: '商业实践、实习实训、线下实习、行业导师带训与推荐信。' },
+          { q: '阶段 5', phase: '作品集整合', desc: '项目筛选、逻辑调整、视觉排版、英文信息和目标院校改版。' },
+          { q: '阶段 6', phase: '申请材料', desc: '选校定校、个人陈述、简历、推荐信、网申与面试准备。' },
+          { q: '阶段 7', phase: '递交与后续', desc: '申请递交、进度跟踪、Offer 分析、奖学金、签证与行前准备。', merged: true },
+        ],
+        otherHighlights: [
+          { t: '教研精准审核', d: '将审核集中在关键节点、项目短板和目标院校改版上。' },
+          { t: '项目与申请并行', d: '不等待全部项目完成后再启动申请，文书、选校和网申准备与作品集同步推进。' },
+          { t: '行业导师与推荐资源', d: '用实习任务、行业反馈和推荐信为学生建立更可验证的实践背景。' },
+          { t: '时间效率优先', d: '把学生已有优势转化为更清晰、更有说服力的作品集和申请成果。' },
+        ],
+      },
     },
-    appTimeline: [
-      { q: '01', phase: '专业方向定位起航', type: '首课定位课程', desc: '诊断学术背景，确认专业适配方向。',
-        detail: { duration: '2H · 1对1首课', highlights: ['诊断学术背景与专业适配方向', '结合港校审核偏好初筛专业', '规划滚动申请节奏与院校梯度'], sampleCourses: ['学术背景诊断', '专业适配性初筛', '港校滚动审核节奏解读'], intro: '项目起点。通过1对1访谈梳理学生的学术背景与兴趣方向，重点确认专业适配性，并结合港校滚动审核机制规划申请节奏。' } },
-      { q: '02', phase: '个性化作品集训练', type: '专业基础课·24H（五选三）', desc: '5大模块自由组合，打好专业匹配基础。',
-        detail: { duration: '五选三，共24H · 每模块8H', highlights: ['设计思维/数字媒体/商业创新/人文研究/跨专业实践5大模块自由组合', '按目标专业方向定制修读组合', '为专业方向匹配打好方法论基础'], sampleCourses: ['设计思维与专业方法-8H', '数字媒体与技术实践-8H', '商业创新与管理-8H', '人文社会研究-8H', '跨专业项目实践-8H'], intro: '港校专业设置普遍跨学科，5大模块覆盖设计、数字媒体、商业、人文与跨专业实践，学生按目标专业自由选修其中3项，为专业匹配打好基础。' } },
-      { q: '03', phase: '个性化作品集训练', type: '自主命题项目', desc: '学生自主选题，把关专业适配度。',
-        detail: { duration: '10H · 学生自主选题', highlights: ['学生自主提出研究或设计命题', '导师把关命题与目标专业的适配度', '产出体现个人视角的独立项目'], sampleCourses: ['命题工作坊', '独立研究方法训练', '项目产出评审'], intro: '由学生自主提出感兴趣的命题，导师重点把关命题方向与目标专业的适配度，确保产出的项目能够精准支撑后续的专业匹配定校。' } },
-      { q: '04', phase: '个性化作品集训练', type: '专业方向匹配项目', desc: '定制项目内容，强化专业关联度。',
-        detail: { duration: '14H · 项目制小班', highlights: ['围绕目标专业方向定制项目内容', '强化项目与专业培养方向的关联度', '产出体现专业适配性的核心作品'], sampleCourses: ['专业方向适配工作坊', '项目内容定制辅导', '作品与专业关联性打磨'], intro: '围绕学生最终锁定的目标专业方向，定制项目内容与呈现重点，确保作品集中至少有一件作品能够直接回应该专业的培养方向。' } },
-      { q: '05', phase: '国际前沿作品集训练', type: '跨境联合工作坊', desc: '与内地/海外院校联合课题，积累国际化经历。',
-        detail: { duration: '16H · 跨境联合课题', highlights: ['与内地/海外院校师生联合完成课题', '训练跨地域协作与视角切换能力', '积累港校审核看重的国际化经历'], sampleCourses: ['跨境联合工作坊-1', '跨境联合工作坊-2', '联合课题成果展示'], intro: '与内地或海外院校的师生联合完成一项跨境课题，训练学生在不同地域视角间切换协作的能力，也是港校审核中颇为看重的国际化经历。' } },
-      { q: '06', phase: '港校教授直连', type: '港校在职教授连线项目课', desc: '教授连线亲授，获取审核第一手信息。',
-        detail: { duration: '16H · 教授在职连线', highlights: ['港三大在职教授亲自授课', '了解目标专业审核委员会的真实偏好', '课程表现优秀者可获教授推荐信'], sampleCourses: ['创新设计科技项目课', '文化管理项目课', '设计学研究方法项目课'], intro: '由港三大方向的在职教授亲自连线授课，帮助学生真正理解目标专业审核委员会的偏好，是专业方向匹配环节最直接的"内部视角"。' } },
-      { q: '07', phase: '港校教授直连', type: '行业实习内推计划', desc: '本地行业内推，积累实习与推荐信资源。',
-        detail: { duration: '20H · 实习内推+带训', highlights: ['内推对接本地行业真实岗位', '积累与目标专业强相关的实习经验', '获得岗位导师推荐信'], sampleCourses: ['本地行业实习内推', '岗位导师带训', '实习成果转化辅导'], intro: '借助本地行业资源内推真实岗位实习，确保实习内容与学生的目标专业强相关，积累的实习经验与推荐信能够直接支撑专业匹配定校。' } },
-      { q: '08', phase: '差异化亮点塑造', type: '申请冲刺', desc: '作品集建站、双语面试辅导、Study Proposal与专业匹配复核，全部收束进最后的冲刺阶段。', merged: true },
+    industryCases: [
+      { key: 'visual-comm', nameCn: '视觉语言与策略传播', nameEn: 'Visual Communication & Brand Strategy', color: 'brand', caseCount: 2,
+        schools: [
+          { school: '香港大学', program: 'Master of Arts in the field of Creative Communications', url: 'https://admissions.hku.hk/tpg/programme/master-arts-field-creative-communications' },
+          { school: '香港中文大学', program: 'MSc in New Media', url: 'https://pg.com.cuhk.edu.hk/pgp_nm/index.html' },
+          { school: '香港中文大学', program: 'MSSc in Advertising', url: 'https://pg.com.cuhk.edu.hk/pgp_adv/' },
+          { school: '香港城市大学', program: 'MA Communication and New Media', url: 'https://www.cityu.edu.hk/pg/programme/p25' },
+          { school: '香港浸会大学', program: 'Master of Arts (MA) in Visual Arts', url: 'https://ar.hkbu.edu.hk/tpg-admissions/programmes/master-of-arts-ma-in-visual-arts' },
+          { school: '香港岭南大学', program: 'Master of Arts in Creative and Media Industries', url: 'https://www.ln.edu.hk/daci/macmi' },
+        ] },
+      { key: '3d-art', nameCn: '3D虚拟艺术制作', nameEn: '3D Virtual Art & Production', color: 'game', caseCount: 5,
+        schools: [
+          { school: '香港理工大学', program: 'MSc Innovative Multimedia Entertainment', url: 'https://www.polyu.edu.hk/sd/study/tpg/innovative-multimedia-entertainment/' },
+          { school: '香港城市大学', program: 'MFA Creative Media', url: 'https://www.cityu.edu.hk/pg/programme/p80' },
+          { school: '香港城市大学', program: 'MA Creative Media', url: 'https://www.cityu.edu.hk/pg/programme/p81' },
+          { school: '香港浸会大学', program: 'MA in Communication (Interactive Media Concentration)', url: 'https://ar.hkbu.edu.hk/tpg-admissions/programmes/master-of-arts-ma-in-communication' },
+          { school: '北师港浸会大学', program: 'Artificial Intelligence & Digital Media Concentration', url: 'https://gs.uic.edu.cn/graduate1/Taught_Postgraduate_Programme/Artificial_Intelligence___Digital_Media_Concentrat.htm' },
+          { school: '北师港浸会大学', program: 'Interactive Media Studies Concentration', url: 'https://gs.uic.edu.cn/graduate1/Taught_Postgraduate_Programme/imsc.htm' },
+          { school: '香港恒生大学', program: 'Master of Arts in Entertainment Media Management and Communication', url: 'https://scom.hsu.edu.hk/en/master-of-arts-in-entertainment-media-management-and-communication/' },
+        ] },
+      { key: 'info-experience', nameCn: '信息体验与应用设计', nameEn: 'Information Experience & Applied Design', color: 'internet', caseCount: 1,
+        schools: [
+          { school: '香港大学', program: 'MSSc in the field of Media, Culture and Creative Cities', url: 'https://sociology.hku.hk/taught-postgraduate/tpg-media-culture-creative-cities' },
+          { school: '香港大学', program: 'Master of Science in Engineering (Innovative Design and Technology)', url: 'https://admissions.hku.hk/tpg/programme/master-science-engineering-innovative-design-and-technology' },
+          { school: '香港科技大学', program: 'Master of Arts (MA) in Arts and Machine Creativity', url: 'https://amc.hkust.edu.hk/master-arts-ma-program-program-objective' },
+          { school: '香港科技大学', program: 'MSc Technology Leadership and Entrepreneurship', url: 'https://isd.hkust.edu.hk/academics/msc-tle' },
+          { school: '香港中文大学', program: 'M.Sc. in Artificial Intelligence and Communication', url: 'https://aicomm.com.cuhk.edu.hk' },
+          { school: '香港理工大学', program: 'Innovative Business Design (MDes)', url: 'https://www.sd.polyu.edu.hk/en/study-detail/innovative-business-design' },
+          { school: '香港教育大学', program: 'Master of Arts in New Media and Social Media', url: 'https://aedi.eduhk.hk/programmes/postgraduate-programmes/master-of-arts-in-new-media-and-social-media' },
+        ] },
+      { key: 'mixed-media', nameCn: '多媒介与装置艺术', nameEn: 'Mixed Media & Installation Art', color: 'indie', caseCount: 4,
+        schools: [
+          { school: '香港科技大学', program: 'Master of Arts (MA) in Arts and Machine Creativity', url: 'https://amc.hkust.edu.hk/master-arts-ma-program-program-objective' },
+          { school: '香港理工大学', program: 'Multimedia & Entertainment Technology (MSc)', url: 'https://www.sd.polyu.edu.hk/en/study-detail/multimedia-and-entertainment-technology' },
+          { school: '香港城市大学', program: 'MFA Creative Media', url: 'https://www.cityu.edu.hk/pg/programme/p80' },
+          { school: '香港城市大学', program: 'MA Creative Media', url: 'https://www.cityu.edu.hk/pg/programme/p81' },
+        ] },
+      { key: 'ai-computing', nameCn: 'AI创意计算机与互动机械', nameEn: 'AI Creative Computing & Interactive Systems', color: 'ai', caseCount: 1,
+        schools: [
+          { school: '香港大学', program: 'Master of Science in Engineering (Innovative Design and Technology)', url: 'https://admissions.hku.hk/tpg/programme/master-science-engineering-innovative-design-and-technology' },
+          { school: '香港大学', program: 'Master of Science in Technology, Design and Leadership for Learning', url: 'https://web.edu.hku.hk/programme/tdll' },
+          { school: '香港科技大学', program: 'Master of Arts (MA) in Arts and Machine Creativity', url: 'https://amc.hkust.edu.hk/master-arts-ma-program-program-objective' },
+          { school: '香港科技大学', program: 'MSc Technology Leadership and Entrepreneurship', url: 'https://isd.hkust.edu.hk/academics/msc-tle' },
+          { school: '香港理工大学', program: 'MSc Innovative Multimedia Entertainment', url: 'https://www.polyu.edu.hk/sd/study/tpg/innovative-multimedia-entertainment/' },
+          { school: '香港浸会大学', program: 'MSc in AI and Digital Media', url: 'https://comm.hkbu.edu.hk/en/programmes/taught-postgraduate-programmes/aidm.html' },
+          { school: '香港教育大学', program: 'Master of Arts in Emerging Technology for Future Workforce', url: 'https://aapsef.eduhk.hk/study/prospective-students/academic-programmes/master-of-arts-in-emerging-technology-for-future-workforce' },
+          { school: '北师港浸会大学', program: 'Artificial Intelligence & Digital Media Concentration', url: 'https://gs.uic.edu.cn/graduate1/Taught_Postgraduate_Programme/Artificial_Intelligence___Digital_Media_Concentrat.htm' },
+        ] },
+      { key: 'edu-tech', nameCn: '教育与科技', nameEn: 'EdTech & Learning Design', color: 'edu', caseCount: 2,
+        schools: [
+          { school: '香港教育大学', program: 'Master of Arts in Visual Arts Education and Creative Practice', url: 'https://mavaecp.eduhk.hk/' },
+          { school: '香港大学', program: 'Master of Science in Technology, Design and Leadership for Learning', url: 'https://web.edu.hku.hk/programme/tdll' },
+        ] },
     ],
-    topicWall: [
-      '《跨境数据下的城市感知：深港双城可视化研究》',
-      '《非遗新生：传统工艺的数字化转译》',
-      '《共享的边界：高密度城市中的临时公共空间》',
-      '《本地品牌的全球叙事：中小企业的品牌焕新设计》',
-      '《声景香港：城市噪音与文化记忆的空间转译》',
-      '《适老化改造：老旧屋邨的微更新设计策略》',
-    ],
-    studentCases: [
-      {
-        name: 'S同学', schools: ['香港大学 HKU', '香港中文大学 CUHK', '新加坡国立大学 NUS'],
-        highlights: '1段建筑事务所实习 · 1封导师推荐信',
-        tagline: '把握港校滚动审核窗口，抢先锁定香港大学建筑硕士offer。',
-        bio: '在申请季初期即完成作品集初稿，抢占港校滚动审核的时间优势，最终顺利拿到心仪院校offer。',
-        quote: '"早规划真的很重要，港校审核比想象中快。" — S同学',
-      },
-      {
-        name: 'T同学', schools: ['香港科技大学 HKUST', '香港理工大学 PolyU'],
-        highlights: '1段科技公司实习 · 1段研究性课题',
-        tagline: '融合科技与设计双背景，拿下港科大创新设计科技硕士offer。',
-        bio: '通过一段科技公司实习积累产品开发经验，并将技术能力转化为设计提案的核心竞争力。',
-      },
-      {
-        name: 'R同学', schools: ['香港中文大学 CUHK', '香港大学 HKU'],
-        highlights: '2段文化机构实习 · 2封导师推荐信',
-        tagline: '深耕文化项目策划，成功拿下香港中文大学文化管理硕士offer。',
-        bio: '两段文化机构实习为申请材料提供了扎实的项目案例，个人陈述聚焦本地文化资源活化议题。',
-        quote: '"两段实习让我的申请故事有了真实落点。" — R同学',
-      },
-      {
-        name: 'M同学', schools: ['香港理工大学 PolyU', '香港大学 HKU'],
-        highlights: '1段设计工作室实习 · 1封导师推荐信',
-        tagline: '凭借扎实的设计基本功与清晰的作品集叙事，拿下香港理工大学设计学硕士offer。',
-        bio: '在顾问指导下重新梳理作品集结构，将分散的课程项目整合为统一的设计主张。',
-      },
-    ],
-    whySFK: [
-      { t: '滚动审核把控', d: '熟悉港校滚动录取节奏，第一时间锁定早申优势窗口。' },
-      { t: '港校偏好定制', d: '针对港三大及各校专业侧重定制作品集主线与文书重点。' },
-      { t: '顾问全程陪伴', d: '1对1申请顾问贯穿选校、文书与作品集全流程。' },
-      { t: '真实offer验证', d: '方法论已在港三大及优势专业研究生申请中反复验证。' },
-    ],
-    closingStatementCn: '滚动审核，先人一步 —— 抢先锁定香港offer。',
-    closingStatement: 'Rolling admissions, seized early — your Hong Kong offer.',
+    closingStatementCn: '常规打基础，学霸提效率 —— 两条路径，同一个港校offer目标。',
+    closingStatement: 'Two tracks, one Hong Kong offer — built to fit where you\'re starting from.',
   },
   /* ── CATALOG 1 — 就业实习课程 ── */
   internship: {
     group: 'catalog',
+    // v3.34 (GM): "pick 1 img from each 课程目录 and use as cover img" — a
+    // real photo from this catalog's own course content (dad_courses_
+    // industry.json's `poster` field), cropped to the top photo-only
+    // strip (no baked-in body text) and re-encoded, same pipeline as the
+    // longform product covers above. Picked the 泡泡玛特(POP MART) 岗位制
+    // 实习 poster's mall-display photo — a real partner-company shot, not
+    // a stock image.
+    cover: 'assets/img/course-products/covers/internship.webp',
     catalogSource: { file: 'industry', tabs: ['internship', 'mentoring', 'industry_class', 'cert'] },
     count: 97,
     meta: {
@@ -449,17 +726,30 @@ const PRODUCTS = {
   /* ── CATALOG 2 — 海外冬夏校课程 ── */
   summerwinter: {
     group: 'catalog',
-    catalogSource: { file: 'academic', tabs: ['summer'] },
-    count: 19,
+    // v3.22 (GM): "冬夏校中只保留27冬校系列的研究生课程。所有本科与26年课程先
+    // 拿掉。" — dad_courses_academic.json's `program_type` (海外冬夏校) covers
+    // BOTH the "winter 27" batch and the "summer 26" batch, so a plain
+    // tabs:['summer'] filter can't tell them apart on its own; ist-data.js
+    // now preserves each record's original season under `.season` (see its
+    // header comment) before overwriting `.tab`, so `extraFilter` here can
+    // require season === 'winter 27' AND level === '研究生', temporarily
+    // dropping all 本科 rows and the whole "summer 26" batch. Remove
+    // extraFilter to restore the full 19-item catalog later.
+    // v3.34 (GM): cover picked from this catalog's own poster set — the
+    // 费俊×某集体×RCAxUCLA 27冬校 poster's title/art panel, cropped above
+    // the speaker headshots.
+    cover: 'assets/img/course-products/covers/summerwinter.webp',
+    catalogSource: { file: 'academic', tabs: ['summer'], extraFilter: c => c.season === 'winter 27' && c.level === '研究生' },
+    count: 6,
     meta: {
       eyebrow: 'Academic Track｜海外院校冬夏校',
       titleEn: 'Overseas Summer & Winter School',
       titleCn: '海外冬夏校课程 · 顶尖院校在地学习',
       desc: '走进海外顶尖院校的官方冬夏校项目，在真实校园环境中体验前沿学术方向，积累院校认可的学术背景与教授推荐资源。',
-      chips: ['19个项目', '在地学习', '顶尖院校', '招募中'],
+      chips: ['6个项目', '27冬校 · 研究生', '在地学习', '招募中'],
     },
     snapshot: [
-      { k: '19个',     v: '覆盖院校冬夏校项目' },
+      { k: '6个',      v: '27冬校研究生项目（本科/26年课程筹备中）' },
       { k: '在地体验', v: '真实校园与课堂环境' },
       { k: '多学术方向', v: '覆盖设计 / 商科 / 工程等' },
       { k: '官方认证', v: '院校官方项目背书' },
@@ -491,6 +781,9 @@ const PRODUCTS = {
   /* ── CATALOG 3 — 商业实践课程 ── */
   bizpractice: {
     group: 'catalog',
+    // v3.34 (GM): cover picked from this catalog's own poster set — the
+    // SFKx北京冬奥会开幕式视效导演 poster's AI ink-art installation photo.
+    cover: 'assets/img/course-products/covers/bizpractice.webp',
     catalogSource: { file: 'industry', tabs: ['bizpractice'] },
     count: 14,
     meta: {
@@ -533,6 +826,9 @@ const PRODUCTS = {
   /* ── CATALOG 4 — 海外大师课程 ── */
   masterclass: {
     group: 'catalog',
+    // v3.34 (GM): cover picked from this catalog's own poster set — the
+    // 皇家艺术学院(RCA) 暑假大师课 poster's title/headshot panel.
+    cover: 'assets/img/course-products/covers/masterclass.webp',
     catalogSource: { file: 'academic', tabs: ['masterclass'] },
     count: 12,
     meta: {
@@ -644,11 +940,26 @@ function buildCatalogGridHTML(product) {
     return window.HomePage._buildInternshipPanel();
   }
   const dataset = src.file === 'industry' ? DATA.courses_industry : DATA.courses_academic;
-  const items = (dataset || []).filter(c => src.tabs.includes(c.tab));
+  let items = (dataset || []).filter(c => src.tabs.includes(c.tab));
+  // v3.22: optional extra predicate beyond the tab match (see summerwinter's
+  // catalogSource for why — a tab alone can't distinguish "27冬校" from
+  // "summer 26" once both are remapped to the same tab code).
+  if (src.extraFilter) items = items.filter(src.extraFilter);
   return src.file === 'industry'
     ? window.HomePage._buildCourseGrid(items)
     : window.HomePage._buildAcademicGrid(items);
 }
+
+// v3.22 (GM, temporary): "暂时去掉短期课程目录overlay中除title block与速览外
+// 的内容" — 短期课程目录 (catalog) overlays are trimmed down while the rest of
+// the course-page overhaul GM flagged ("接下来大改course page") is worked
+// out. GM then clarified "真实课程列表还是要的" — the real course-listing
+// grid (buildCatalogGridHTML, reusing HomePage's card grid against the
+// real dad_courses_*.json data) stays; it's just the surrounding pitch
+// copy (why-now / simple curriculum overview cards / why-SFK / CTA) that's
+// skipped. Flip this back to false to restore all of it — nothing below
+// was deleted, it's just skipped while this is true.
+const CATALOG_OVERLAY_MINIMAL = true;
 
 function buildProductHTML(product, productId) {
   const sec = (id, cnLabel, enLabel, inner) => `
@@ -659,16 +970,58 @@ function buildProductHTML(product, productId) {
 
   const tileCls = 'cd-hero__tile' + (product.tileVariant ? ' cd-hero__tile--' + product.tileVariant : '');
 
-  let html = `
+  // v3.26: an optional "查看比价" button next to the title, opening a
+  // paged PdfViewer over the product's pre-rendered comparison-PDF pages
+  // (see registerPdfDoc/PdfViewer in components.js — same pattern as
+  // ist_demo's 冬夏校 PDF viewer, ported for DAD). v3.32 (GM): a
+  // `product.tracks` product (HK's 常规/学霸) has one comparePdf PER
+  // track instead of one for the whole product — each gets registered
+  // under `${productId}__${trackKey}`, and the button opens whichever
+  // one TrackSwitcher says is currently active (defaulting to the first
+  // track before the visitor has clicked either tab).
+  let compareBtn = '';
+  if (product.comparePdf) {
+    registerPdfDoc(productId, product.comparePdf);
+    compareBtn = `
+        <button type="button" class="cd-compare-btn" onclick="PdfViewer.open('${productId}')">
+          查看比价 <span class="u-en">Compare Plans ›</span>
+        </button>`;
+  } else if (product.tracks) {
+    const trackKeys = Object.keys(product.tracks);
+    trackKeys.forEach(k => {
+      if (product.tracks[k].comparePdf) registerPdfDoc(`${productId}__${k}`, product.tracks[k].comparePdf);
+    });
+    if (trackKeys.some(k => product.tracks[k].comparePdf)) {
+      compareBtn = `
+        <button type="button" class="cd-compare-btn" onclick="PdfViewer.open(TrackSwitcher.pdfKey('${productId}','${trackKeys[0]}'))">
+          查看比价 <span class="u-en">Compare Plans ›</span>
+        </button>`;
+    }
+  }
+
+  // v3.28 (GM): "需要加上返回按钮回到上一级（课程目录）" — catalog-group
+  // products (bizpractice/summerwinter/internship/masterclass) only ever
+  // render inside CourseOverlay, which previously had just an X close
+  // button (reads as "close everything", not "go back a level"). Reuses
+  // the same .cp-product-back link CourseProductsPage's full-page longform
+  // route already uses for "← 返回课程产品", just closing the overlay
+  // instead of routing.
+  const overlayBack = product.group === 'catalog' ? `
+    <button type="button" class="cp-product-back" onclick="CourseOverlay.close()" aria-label="返回课程目录"><span class="cp-product-back__arrow">←</span><span class="cp-product-back__text">返回课程目录</span></button>` : '';
+
+  let html = `${overlayBack}
     <div class="cd-hero">
       <div class="cd-hero__content">
         <div class="cd-hero__eyebrow">${product.meta.eyebrow}</div>
-        <h1 class="cd-hero__title">${product.meta.titleCn}</h1>
+        <div class="cd-hero__title-row">
+          <h1 class="cd-hero__title">${product.meta.titleCn}</h1>
+          ${compareBtn}
+        </div>
         <div class="cd-hero__subtitle"><span class="u-en">${product.meta.titleEn}</span></div>
         <p class="cd-hero__desc">${product.meta.desc}</p>
         <div class="cd-chips">${product.meta.chips.map(c => `<span class="cd-chip">${c}</span>`).join('')}</div>
       </div>
-      <div class="${tileCls}" aria-hidden="true"></div>
+      <div class="${tileCls}" aria-hidden="true">${product.cover ? `<img src="${product.cover}" alt="" loading="lazy">` : ''}</div>
     </div>`;
 
   html += sec('snapshot', '速览', 'Snapshot', `
@@ -679,6 +1032,15 @@ function buildProductHTML(product, productId) {
           <div class="cd-stat__v">${s.v}</div>
         </div>`).join('')}
     </div>`);
+
+  if (CATALOG_OVERLAY_MINIMAL && product.group === 'catalog') {
+    html += `
+      <section class="cd-section cd-section--wide">
+        <div class="cd-section__label">课程目录 <span class="u-en">Catalog</span></div>
+        ${buildCatalogGridHTML(product)}
+      </section>`;
+    return html;
+  }
 
   // Catalog products keep their original "why now" pitch; longform products
   // replace it with highlight courses + fit-audience further below.
@@ -705,11 +1067,20 @@ function buildProductHTML(product, productId) {
       }).join('')}
     </div>`;
 
-  if (product.group === 'longform' && product.highlightCourses) {
+  // ── v3.26 rich-content branch (real docx-sourced longform pages,
+  // e.g. longform2/UK) — takes over from here in place of everything
+  // below down to the studentCases/appTimeline/topicWall/school-recs
+  // blocks, all of which stay gated with `!product.useRichContent` as
+  // the still-live template for any longform product not yet rebuilt. ──
+  if (product.useRichContent) {
+    html += buildRichLongformSections(product, productId, sec);
+  }
+
+  if (product.group === 'longform' && product.highlightCourses && !product.useRichContent) {
     html += sec('highlights', '亮点课程', 'Highlight Courses', courseCardGrid(product.highlightCourses, 'hl'));
   }
 
-  if (product.group === 'longform' && product.fitAudience) {
+  if (product.group === 'longform' && product.fitAudience && !product.useRichContent) {
     html += sec('fit-audience', '适配人群', 'Who It\'s For', `
       <ul class="cd-list">
         ${product.fitAudience.map(a => `<li>${a}</li>`).join('')}
@@ -722,7 +1093,7 @@ function buildProductHTML(product, productId) {
   }
 
   // Longform products: detailed category → item → hours table, each item clickable.
-  if (product.curriculumTable) {
+  if (product.curriculumTable && !product.useRichContent) {
     html += sec('curriculum', '核心课程', 'Curriculum', `
       <div class="cd-curric-table">
         ${product.curriculumTable.categories.map((cat, ci) => `
@@ -747,7 +1118,7 @@ function buildProductHTML(product, productId) {
       </div>`);
   }
 
-  if (product.group === 'longform') {
+  if (product.group === 'longform' && !product.useRichContent) {
     html += sec('school-recs', '院校与专业推荐', 'School & Major Recommendations', `
       <div class="cd-schoolrec">
         ${SCHOOL_RECS.map(b => `
@@ -777,7 +1148,7 @@ function buildProductHTML(product, productId) {
       </div>`);
   }
 
-  if (product.studentCases) {
+  if (product.studentCases && !product.useRichContent) {
     html += sec('cases', '优秀成功案例', 'Success Stories', `
       <div class="cd-case-grid">
         ${product.studentCases.map((c, i) => `
@@ -796,7 +1167,7 @@ function buildProductHTML(product, productId) {
       </div>`);
   }
 
-  if (product.group === 'longform' && product.appTimeline) {
+  if (product.group === 'longform' && product.appTimeline && !product.useRichContent) {
     const timeline = product.appTimeline;
     const renderStep = (s) => {
       const key = `tl-${productId}-${s.q}`;
@@ -817,7 +1188,7 @@ function buildProductHTML(product, productId) {
       </div>`);
   }
 
-  if (product.group === 'longform' && product.topicWall) {
+  if (product.group === 'longform' && product.topicWall && !product.useRichContent) {
     html += sec('topic-wall', '学员课题墙', 'Student Topics', `
       <div class="cd-topic-wall">
         ${product.topicWall.map(t => `<div class="cd-topic-chip">${t}</div>`).join('')}
@@ -867,6 +1238,338 @@ function buildProductHTML(product, productId) {
   return html;
 }
 
+/* ── v3.26 rich-content section renderers (real docx-sourced longform
+   product pages — first used by longform2/UK, same shape reusable for
+   US/HK once their own decode passes are done). One function per section
+   "type" so a future product just supplies its own data through the same
+   fields (positioningIntro/advantagePairs/overallAdvantages/tierTable/
+   coreModules/employability/dualTrack/timeline/industryCases/
+   otherHighlights) rather than needing new renderer code. ── */
+
+// A single supplement-image gallery: a click-through cover thumbnail that
+// opens GalleryViewer (components.js) to page through every image in
+// order. `slug` is a folder under assets/img/course-products/<market>/core/.
+function buildGalleryCoverHTML(market, slug, count, alt) {
+  if (!slug || !count) return '';
+  const dir = `assets/img/course-products/${market}/core/${slug}`;
+  const key = `${market}-${slug}`;
+  GalleryRegistry[key] = { dir, count, alt };
+  const multi = count > 1;
+  return `
+    <div class="cd-gallery-cover" onclick="GalleryViewer.open('${key}')">
+      <img src="${dir}/01.webp" alt="${escapeHTML(alt || '')}" loading="lazy">
+      <span class="cd-gallery-cover__hint">${multi ? `查看全部 ${count} 张 ›` : '查看大图 ›'}</span>
+    </div>`;
+}
+
+// A compact embed of one of the four existing 课程目录 (catalog) products —
+// reuses buildCatalogGridHTML verbatim (same real data, same poster wall,
+// same click-through), just clipped to a peek height with a fade + a CTA
+// that opens the exact same CourseOverlay the catalog page itself uses.
+// v3.27 fix (GM): the peek grid itself has NO click handler of its own —
+// it used to, and that bubbled underneath a poster card's own click, so
+// clicking one example poster opened BOTH its ImageModal AND the full
+// CourseOverlay at once. A poster click now only ever opens that poster's
+// ImageModal (_buildCatalogCard already wires that); the overlay opens
+// only from the explicit "查看完整目录" button below.
+function buildCatalogEmbedHTML(catalogId) {
+  const cat = PRODUCTS[catalogId];
+  if (!cat) return '';
+  const grid = buildCatalogGridHTML(cat);
+  return `
+    <div class="cd-catalog-embed">
+      <div class="cd-catalog-embed__head">
+        <span class="cd-catalog-embed__tag">课程目录 <span class="u-en">Catalog</span></span>
+        <span class="cd-catalog-embed__title">${cat.meta.titleCn}</span>
+      </div>
+      <div class="cd-catalog-embed__grid">${grid}</div>
+      <button type="button" class="cd-catalog-embed__more" onclick="CourseOverlay.open('${catalogId}')">
+        查看完整课程目录与详情 <span class="u-en">View Full Catalog ›</span>
+      </button>
+    </div>`;
+}
+
+// ── Reusable fragment renderers, factored out of buildRichLongformSections
+// so both a single-track product (UK/US) and a tracks-branch panel (HK's
+// 常规计划/学霸计划) can render the exact same markup for each block. Every
+// helper returns a plain HTML string (no `sec()` label wrapper) — callers
+// decide whether/how to wrap it. ──
+function renderAdvantagePairs(pairs) {
+  return `
+    <div class="cd-transform-grid">
+      ${pairs.map(p => `
+        <div class="cd-transform">
+          <div class="cd-transform__side cd-transform__side--trait">
+            <div class="cd-transform__label">升学特性 <span class="u-en">Trait</span></div>
+            <div class="cd-transform__title">${p.trait}</div>
+            <p class="cd-transform__desc">${p.traitDesc}</p>
+          </div>
+          <div class="cd-transform__arrow" aria-hidden="true">›</div>
+          <div class="cd-transform__side cd-transform__side--edge">
+            <div class="cd-transform__label">课程优势 <span class="u-en">Edge</span></div>
+            <p class="cd-transform__desc">${p.edge}</p>
+          </div>
+        </div>`).join('')}
+    </div>`;
+}
+
+function renderWhyGrid(items) {
+  return `
+    <div class="cd-why-grid">
+      ${items.map((w, i) => `
+        <div class="cd-why">
+          <div class="cd-why__num">0${i + 1}</div>
+          <div class="cd-why__title">${w.t}</div>
+          <div class="cd-why__desc">${w.d}</div>
+        </div>`).join('')}
+    </div>`;
+}
+
+function renderTierGrid(tiers) {
+  return `
+    <div class="cd-tier-grid">
+      ${tiers.map(t => `
+        <div class="cd-tier">
+          <div class="cd-tier__name">${t.name}</div>
+          <div class="cd-tier__audience">${t.audience}</div>
+          <div class="cd-tier__config">${t.config}</div>
+        </div>`).join('')}
+    </div>`;
+}
+
+function renderModuleGrid(items, market, keyPrefix) {
+  return `
+    <div class="cd-core-modules">
+      ${items.map((m, i) => {
+        const gallery = m.gallery ? buildGalleryCoverHTML(market, m.gallery.slug, m.gallery.count, m.title) : '';
+        const catalog = m.catalogRef ? buildCatalogEmbedHTML(m.catalogRef) : '';
+        return `
+        <div class="cd-core-module${gallery ? ' has-gallery' : ''}">
+          <div class="cd-core-module__body">
+            <div class="cd-core-module__title">${m.title}${m.subtitle ? `<span class="cd-core-module__subtitle">${m.subtitle}</span>` : ''}</div>
+            <p class="cd-core-module__desc">${m.desc}</p>
+            ${m.bullets ? `
+              <div class="cd-core-module__bullets">
+                ${m.bullets.map(b => `<div class="cd-core-module__bullet"><span class="cd-core-module__bullet-t">${b.t}</span><span class="cd-core-module__bullet-d">${b.d}</span></div>`).join('')}
+              </div>` : ''}
+          </div>
+          ${gallery}
+          ${catalog}
+        </div>`;
+      }).join('')}
+    </div>`;
+}
+
+function renderTimeline(timeline) {
+  const renderStep = (s) => `
+      <div class="cd-timeline__step${s.merged ? ' cd-timeline__step--final' : ''}">
+        <div class="cd-timeline__day">${s.q}</div>
+        <div class="cd-timeline__title">${s.phase}</div>
+        <div class="cd-timeline__desc">${s.desc}</div>
+      </div>`;
+  const tlHalf = Math.ceil(timeline.length / 2);
+  const tlCols = [timeline.slice(0, tlHalf), timeline.slice(tlHalf)];
+  return `
+    <div class="cd-timeline">
+      ${tlCols.map(col => `<div class="cd-timeline__col">${col.map(renderStep).join('')}</div>`).join('')}
+    </div>`;
+}
+
+function buildRichLongformSections(product, productId, sec) {
+  const market = productId === 'longform2' ? 'uk' : productId === 'longform3' ? 'hk' : 'us';
+  let out = '';
+
+  if (product.positioningIntro) {
+    out += sec('positioning', '产品定位', 'Positioning', `<p class="cd-lead">${product.positioningIntro}</p>`);
+  }
+
+  if (product.advantagePairs) {
+    out += sec('advantages', '升学方向特性与优势', 'Track Traits & Edge', renderAdvantagePairs(product.advantagePairs));
+  }
+
+  if (product.overallAdvantages) {
+    out += sec('overall-advantages', '产品整体优势', 'Why This Product', renderWhyGrid(product.overallAdvantages));
+  }
+
+  if (product.tierTable) {
+    out += sec('tiers', '产品分层与匹配', 'Tiers & Fit', renderTierGrid(product.tierTable));
+  }
+
+  if (product.coreModules) {
+    out += sec('core-modules', '核心课程模块', 'Core Curriculum', renderModuleGrid(product.coreModules, market, `cm-${productId}`));
+  }
+
+  if (product.employability) {
+    out += sec('employability', '就业力体系', 'Employability', `
+      <p class="cd-lead">${product.employability.intro}</p>
+      ${renderModuleGrid(product.employability.items, market, `em-${productId}`)}`);
+  }
+
+  if (product.dualTrack) {
+    const ai = product.dualTrack.aiBusiness;
+    const gallery = ai.gallery ? buildGalleryCoverHTML(market, ai.gallery.slug, ai.gallery.count, ai.title) : '';
+    out += sec('dual-track', '升学就业双路径方案', 'Dual-Track Plan', `
+      <p class="cd-lead">${product.dualTrack.intro}</p>
+      <div class="cd-flow">
+        <div class="cd-flow__step"><div class="cd-flow__step-label">前半段</div><div class="cd-flow__step-title">院校定位 · 作品集 · 申请材料 · 录取</div></div>
+        <div class="cd-flow__arrow" aria-hidden="true">→</div>
+        <div class="cd-flow__step cd-flow__step--accent"><div class="cd-flow__step-label">后半段 · 求职陪跑 A 计划</div><div class="cd-flow__step-title">实习 · 求职作品集 · 投递 · 笔试面试 · 内推 · 入职</div></div>
+      </div>
+      <div class="cd-core-module has-gallery" style="margin-top:var(--space-5)">
+        <div class="cd-core-module__body">
+          <div class="cd-core-module__title">${ai.title}</div>
+          <p class="cd-core-module__desc">${ai.desc}</p>
+        </div>
+        ${gallery}
+      </div>
+      <ul class="cd-list" style="margin-top:var(--space-4)">
+        ${product.dualTrack.fitFor.map(f => `<li>${f}</li>`).join('')}
+      </ul>`);
+  }
+
+  if (product.timeline) {
+    out += sec('course-timeline', '课程时间线', 'Timeline', renderTimeline(product.timeline));
+  }
+
+  // ── HK-style dual sub-product (常规计划/学霸计划): a sticky left/right
+  // tab switcher, each side pre-rendering its own advantagePairs/tierTable/
+  // coreModules/timeline/otherHighlights via the exact same helpers as the
+  // single-track branches above, just scoped inside a `.cd-track-panel`
+  // that TrackSwitcher.switchTrack() shows/hides (same mechanic as
+  // IndustryCases.switchTab below). Shared fields (positioningIntro, meta,
+  // industryCases, closingStatement) stay outside `tracks` at the top
+  // level and are rendered once, not per-track.
+  //
+  // v3.33 (GM bug report): the tab bar and the track panels must live
+  // inside the SAME `.cd-section` (one `sec()` call), not two separate
+  // sibling blocks. CSS `position:sticky` only holds an element pinned
+  // while its own containing block (here, that `.cd-section`) is still
+  // in view — a section that wrapped ONLY the tab bar was barely taller
+  // than the bar itself, so it unstuck and scrolled away almost
+  // immediately. Nesting `.cd-track-panels` inside the same section as
+  // `.cd-track-tabs` makes the section's height match the ACTIVE panel's
+  // full content (the inactive one is `display:none` and contributes no
+  // height), so the tab bar now stays docked under the navbar for the
+  // entire scroll length of whichever track is open. ──
+  if (product.tracks) {
+    const keys = Object.keys(product.tracks);
+    const tabsHTML = `
+      <div class="cd-track-tabs" id="track-tabs-${productId}" role="tablist">
+        ${keys.map((k, i) => `
+          <button type="button" class="cd-track-tab${i === 0 ? ' is-active' : ''}" data-track-tab="${k}" onclick="TrackSwitcher.switchTrack('${productId}','${k}')">
+            <span class="cd-track-tab__label">${product.tracks[k].label}</span>
+            ${product.tracks[k].labelSub ? `<span class="cd-track-tab__sub">${product.tracks[k].labelSub}</span>` : ''}
+          </button>`).join('')}
+      </div>`;
+
+    const panelsHTML = `<div class="cd-track-panels" id="track-panels-${productId}">
+      ${keys.map((k, i) => {
+        const t = product.tracks[k];
+        const tp = (id2, cn, en, inner) => sec(id2, cn, en, inner);
+        let panel = '';
+        if (t.advantagePairs) panel += tp(`${k}-advantages`, '升学特性与课程优势', 'Track Traits & Edge', renderAdvantagePairs(t.advantagePairs));
+        if (t.tierTable) panel += tp(`${k}-tiers`, '产品分层与匹配', 'Tiers & Fit', renderTierGrid(t.tierTable));
+        if (t.coreModules) panel += tp(`${k}-core-modules`, '核心课程模块', 'Core Curriculum', renderModuleGrid(t.coreModules, market, `cm-${productId}-${k}`));
+        if (t.timeline) panel += tp(`${k}-timeline`, '课程时间线', 'Timeline', renderTimeline(t.timeline));
+        if (t.otherHighlights) panel += tp(`${k}-highlights`, '其他课程与服务亮点', 'More Highlights', renderWhyGrid(t.otherHighlights));
+        return `<div class="cd-track-panel${i === 0 ? ' is-active' : ''}" data-track-panel="${k}">${panel}</div>`;
+      }).join('')}
+    </div>`;
+
+    out += sec('track-switch', product.tracksLabel || '选择计划', 'Choose Your Plan', `${tabsHTML}${panelsHTML}`);
+  }
+
+  if (product.industryCases) {
+    const tabs = product.industryCases;
+    out += sec('industry-cases', '学生作品 · 产业方向选校与案例', 'Portfolio Cases by Direction', `
+      <div class="cd-ind-cases" id="ind-cases-${productId}">
+        <div class="cd-ind-tabs" role="tablist">
+          ${tabs.map((t, i) => `
+            <button type="button" class="cd-ind-tab${i === 0 ? ' is-active' : ''}" data-ind-tab="${t.key}" style="--tab-color:var(--color-ind-${t.color})" onclick="IndustryCases.switchTab('${productId}','${t.key}')">${t.nameCn}</button>`).join('')}
+        </div>
+        ${tabs.map((t, i) => `
+          <div class="cd-ind-panel${i === 0 ? ' is-active' : ''}" data-ind-panel="${t.key}">
+            <div class="cd-ind-panel__head">
+              <span class="cd-ind-panel__dot" style="background:var(--color-ind-${t.color})"></span>
+              <span class="cd-ind-panel__name">${t.nameCn}</span>
+              <span class="cd-ind-panel__name-en u-en">${t.nameEn}</span>
+            </div>
+            <div class="cd-ind-schools">
+              ${t.schools.map(s => `
+                <a class="cd-ind-school" href="${s.url}" target="_blank" rel="noopener">
+                  <span class="cd-ind-school__name">${s.school}</span>
+                  <span class="cd-ind-school__program">${s.program}</span>
+                </a>`).join('')}
+            </div>
+            <div class="cd-ind-cases-label">成功案例 <span class="u-en">Success Cases</span></div>
+            <div class="cd-ind-case-grid">
+              ${Array.from({ length: t.caseCount }, (_, ci) => {
+                const n = String(ci + 1).padStart(2, '0');
+                const src = `assets/img/course-products/${market}/cases/${t.key}/${n}.webp`;
+                return `<div class="cd-ind-case" onclick="ImageModal.open('${src}','${escapeHTML(t.nameCn)}')"><img src="${src}" alt="${escapeHTML(t.nameCn)} 学生作品案例 ${n}" loading="lazy"></div>`;
+              }).join('')}
+            </div>
+          </div>`).join('')}
+      </div>`);
+  }
+
+  if (product.otherHighlights) {
+    out += sec('other-highlights', '其他课程与服务亮点', 'More Highlights', renderWhyGrid(product.otherHighlights));
+  }
+
+  return out;
+}
+
+/* ── v3.26 registries feeding GalleryViewer / PdfViewer (components.js) —
+   both viewers are generic (dir + count of NN.webp files); course-demo.js
+   just populates the lookup table as it renders each section, keyed by
+   whatever the click handler was given inline. ── */
+const GalleryRegistry = {};
+const PdfRegistry = {};
+function registerPdfDoc(productId, comparePdf) {
+  PdfRegistry[productId] = comparePdf;
+}
+window.GalleryRegistry = GalleryRegistry;
+window.PdfRegistry = PdfRegistry;
+
+/* ── 学生作品·产业方向选校与案例 module's tab switcher (see
+   buildRichLongformSections's industryCases branch). Plain show/hide
+   toggle, same shape as PlanningPage's industry-nav tabs. ── */
+const IndustryCases = {
+  switchTab(productId, key) {
+    const root = document.getElementById(`ind-cases-${productId}`);
+    if (!root) return;
+    root.querySelectorAll('.cd-ind-tab').forEach(b => b.classList.toggle('is-active', b.dataset.indTab === key));
+    root.querySelectorAll('.cd-ind-panel').forEach(p => p.classList.toggle('is-active', p.dataset.indPanel === key));
+  },
+};
+window.IndustryCases = IndustryCases;
+
+/* ── HK-style dual sub-product (常规计划/学霸计划) sticky tab switcher —
+   same plain show/hide mechanic as IndustryCases.switchTab above, just
+   scoped to `#track-tabs-${productId}`/`#track-panels-${productId}`
+   (see buildRichLongformSections's `tracks` branch). Also tracks which
+   track is active per productId so the "查看比价" button (registered per
+   track in PdfRegistry as `${productId}__${trackKey}`) opens the PDF for
+   whichever track is currently showing. ── */
+const TrackSwitcher = {
+  _active: {},
+  switchTrack(productId, key) {
+    const tabs = document.getElementById(`track-tabs-${productId}`);
+    const panels = document.getElementById(`track-panels-${productId}`);
+    if (tabs) tabs.querySelectorAll('.cd-track-tab').forEach(b => b.classList.toggle('is-active', b.dataset.trackTab === key));
+    if (panels) panels.querySelectorAll('.cd-track-panel').forEach(p => p.classList.toggle('is-active', p.dataset.trackPanel === key));
+    this._active[productId] = key;
+  },
+  activeKey(productId, fallback) {
+    return this._active[productId] || fallback;
+  },
+  pdfKey(productId, fallback) {
+    return `${productId}__${this.activeKey(productId, fallback)}`;
+  },
+};
+window.TrackSwitcher = TrackSwitcher;
+
 /* ── Mini-course detail modal — a smaller click-through popover for any
    specific small course referenced inside the overlay (a timeline quarter's
    course type, a curriculum card), so "基础课" or "软件课" isn't just a
@@ -909,9 +1612,19 @@ const CourseOverlay = {
     if (!product) return;
     const body = document.getElementById('course-overlay-body');
     body.innerHTML = buildProductHTML(product, productId);
-    body.classList.toggle('is-wide', product.group === 'catalog');
+    // v3.21: longform overlays now share catalog's wider content column
+    // (.is-wide, 980px) instead of the narrower 760px default — GM asked
+    // for the 长线产品 overlay's content area to match 课程目录's width.
+    body.classList.add('is-wide');
     document.getElementById('course-overlay').classList.add('is-open');
     ScrollLock.lock();
+    // v3.22 fix: the element that actually scrolls is .course-overlay__panel
+    // (overflow-y:auto in CSS) — #course-overlay-body itself has no scroll
+    // of its own, so resetting only body.scrollTop (as before) never moved
+    // the visible scroll position. GM: overlays were opening mid-scroll,
+    // carried over from whatever position the previous overlay was left at.
+    const panel = document.querySelector('#course-overlay .course-overlay__panel');
+    if (panel) panel.scrollTop = 0;
     body.scrollTop = 0;
   },
 
@@ -922,6 +1635,10 @@ const CourseOverlay = {
 };
 window.CourseOverlay = CourseOverlay;
 window.PRODUCTS = PRODUCTS;
+// v3.25: exposed so CourseProductsPage.showSubpage() (the new full-page
+// route for 长线产品 cards) can render a product's content directly,
+// without going through CourseOverlay.open()'s overlay-specific DOM.
+window.buildProductHTML = buildProductHTML;
 
 document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('course-overlay');

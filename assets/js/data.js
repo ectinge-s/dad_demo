@@ -17,13 +17,14 @@ const Data = {
   },
 
   async loadAll() {
-    const [site, industries, companies, cityHeat] = await Promise.all([
+    const [site, industries, companies, cityHeat, schools] = await Promise.all([
       this.load('site-content'),
       this.load('industries'),
       this.load('companies'),
       this.load('city-heat'),
+      this.load('schools'),
     ]);
-    return { site, industries, companies, cityHeat };
+    return { site, industries, companies, cityHeat, schools };
   },
 };
 

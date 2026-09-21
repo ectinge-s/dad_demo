@@ -116,7 +116,7 @@ const HomePage = {
         <p class="hero__subtitle fade-up">${escapeHTML(hero.subtitle)}</p>
         <div class="hero__ctas fade-up">
           <button class="btn btn--primary" onclick="Router.go('planning')">${escapeHTML(hero.ctaPrimary)}</button>
-          <button class="btn btn--ghost" style="color:var(--color-text-on-void);border-color:rgba(255,255,255,.3)" onclick="Router.scrollTo('#courses')">${escapeHTML(hero.ctaSecondary)}</button>
+          <button class="btn btn--ghost-on-void" onclick="Router.go('course-products')">${escapeHTML(hero.ctaSecondary)}</button>
         </div>
         <div class="hero__stats fade-up">
           ${hero.stats.map(s => `
@@ -493,8 +493,15 @@ const HomePage = {
         ? (p.tileVariant ? ' featured-rail__banner--' + p.tileVariant : '')
         : ' featured-rail__banner--catalog');
       const tag = isLongform ? '长线' : ('目录 · ' + (p.count || ''));
-      return `<div class="featured-rail__card" onclick="CourseOverlay.open('${id}')">
-        <div class="${bannerCls}"><span class="featured-rail__tag">${escapeHTML(tag)}</span></div>
+      // v3.25: 长线产品 cards now match the course-products page's own
+      // overlay→page change — a click here routes to the product's full
+      // page instead of opening CourseOverlay, everywhere a longform card
+      // can be clicked from, not just the course-products page itself.
+      const onclick = isLongform
+        ? `Router.go('course-products', {productId:'${id}'})`
+        : `CourseOverlay.open('${id}')`;
+      return `<div class="featured-rail__card" onclick="${onclick}">
+        <div class="${bannerCls}">${p.cover ? `<img src="${p.cover}" alt="" loading="lazy">` : ''}<span class="featured-rail__tag">${escapeHTML(tag)}</span></div>
         <div class="featured-rail__body">
           <div class="featured-rail__title">${escapeHTML(p.meta.titleCn.split(' · ')[0])}</div>
           <div class="featured-rail__desc">${escapeHTML(p.meta.chips ? p.meta.chips[0] : p.meta.desc)}</div>
@@ -532,16 +539,32 @@ const HomePage = {
      language used by PortfolioPage). A missing poster (2 known gaps —
      see docs/PROJECT_NOTES.md) falls back to the site's yellow-black
      gradient placeholder tile instead of a broken <img>. ── */
-  _buildCatalogCard({ poster, title, sub, tagLabel, tags }) {
+  // v3.28 (GM): optional deckSlug/deckCount — set only for 冬夏校 items that
+  // have a real paginated slide deck (dad_courses_academic.json's `slides`
+  // field, see _buildAcademicGrid). When present the whole card opens
+  // SlideViewer (a left/right paged flip through the deck, components.js)
+  // instead of ImageModal, and a CTA line under the tags names the page
+  // count — same pattern as ist_demo's SlideViewer.open(slug).
+  _buildCatalogCard({ poster, title, sub, tagLabel, tags, deckSlug, deckCount }) {
     const hasImg = !!poster;
     const imgStyle = hasImg ? '' : ' style="background:linear-gradient(135deg, var(--color-void) 0%, #2b2b2b 45%, var(--color-accent) 100%)"';
     // click-to-open-poster: ImageModal (assets/js/components.js, ported
     // from ist_demo) — the JS-string args need their own escaping since
     // this whole thing already lives inside an onclick="" HTML attribute.
-    const jsEscape = s => String(s || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-    const posterClick = hasImg ? ` onclick="ImageModal.open('${jsEscape(poster)}','${jsEscape(title)}')" style="cursor:pointer"` : '';
+    // v3.22 (GM): 商业实践's "Al-Driven 体验创新" card wouldn't open its
+    // modal — its role_or_course field has a literal embedded newline
+    // ("Al-Driven\n 体验创新" in data/dad_courses_industry.json), which,
+    // unescaped, breaks the onclick JS string literal (unterminated
+    // string), silently killing that one card's click handler. Escaping
+    // \n/\r here (same fix protects any future data with the same issue)
+    // fixes it without touching the source data.
+    const jsEscape = s => String(s || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\r?\n/g, '\\n');
+    const isDeck = hasImg && !!deckSlug;
+    const posterClick = isDeck
+      ? ` onclick="SlideViewer.open('${jsEscape(deckSlug)}')" style="cursor:pointer"`
+      : (hasImg ? ` onclick="ImageModal.open('${jsEscape(poster)}','${jsEscape(title)}')" style="cursor:pointer"` : '');
     return `
-      <div class="port-card"${posterClick}>
+      <div class="port-card${isDeck ? ' port-card--deck' : ''}"${posterClick}>
         <div class="port-card__img"${imgStyle}>
           ${hasImg ? `<img src="${escapeHTML(poster)}" alt="" loading="lazy">` : `<span class="port-card__img-placeholder">占位图 · Placeholder</span>`}
           ${tagLabel ? `<span class="port-card__cat-tag">${escapeHTML(tagLabel)}</span>` : ''}
@@ -550,6 +573,7 @@ const HomePage = {
           <div class="port-card__title">${escapeHTML(title || '')}</div>
           ${sub ? `<div class="port-card__program">${escapeHTML(sub)}</div>` : ''}
           ${tags && tags.length ? `<div class="port-card__tags">${tags.map(t => `<span class="port-card__tag">${escapeHTML(t)}</span>`).join('')}</div>` : ''}
+          ${isDeck ? `<div class="port-card__cta">查看课程详情 · ${deckCount || ''}页 →</div>` : ''}
         </div>
       </div>`;
   },
@@ -592,6 +616,12 @@ const HomePage = {
       sub: c.university,
       tagLabel: c.program_type === '海外大师课' ? '大师课' : '冬夏校',
       tags: [c.level, c.location].filter(Boolean),
+      // v3.28 (GM): 27冬校 research-level records carry a real `slides`
+      // deck (dad_courses_academic.json) — those cards open SlideViewer
+      // instead of a plain poster modal; every other academic item is
+      // unaffected (deckSlug undefined → _buildCatalogCard's normal path).
+      deckSlug: c.slides ? c.slug : undefined,
+      deckCount: c.slides ? c.slides.count : undefined,
     })).join('');
     return `<div class="card-grid">${cards}</div>`;
   },

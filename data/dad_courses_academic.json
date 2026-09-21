@@ -30,7 +30,7 @@
     "location": "北京今日美术馆",
     "level": "研究生",
     "outcomes": "海外教授推荐信实习证明企业推荐信作品集项目艺术展览",
-    "poster": "assets/img/courses/夏冬校/27冬校-费俊xRCA 生命艺术研究生班.png",
+    "poster": "assets/img/course-products/summerwinter/posters/feijun.webp",
     "university": "RCA",
     "professor": "Luke",
     "type": "大师共创",
@@ -41,7 +41,12 @@
         "size": 11244975,
         "fileExt": "pdf"
       }
-    ]
+    ],
+    "slug": "feijun-rca",
+    "slides": {
+      "dir": "assets/img/course-products/summerwinter/pdf/feijun",
+      "count": 30
+    }
   },
   {
     "tab": "winter 27",
@@ -52,7 +57,7 @@
     "location": "北京今日美术馆",
     "level": "研究生",
     "outcomes": "海外教授推荐信实习证明企业推荐信作品集项目艺术展览",
-    "poster": "assets/img/courses/夏冬校/27冬校-费俊xUCLA 生命艺术研究生班.png",
+    "poster": "assets/img/course-products/summerwinter/posters/feijun.webp",
     "university": "UCLA",
     "professor": "Victoria",
     "type": "大师共创",
@@ -63,7 +68,12 @@
         "size": 11053982,
         "fileExt": "pdf"
       }
-    ]
+    ],
+    "slug": "feijun-ucla",
+    "slides": {
+      "dir": "assets/img/course-products/summerwinter/pdf/feijun",
+      "count": 30
+    }
   },
   {
     "tab": "winter 27",
@@ -74,7 +84,7 @@
     "location": "杭州",
     "level": "研究生",
     "outcomes": "海外教授推荐信艺术展览企业推荐信作品集项目",
-    "poster": "assets/img/courses/夏冬校/27冬校-阿里xRCA数字媒体研究生班.png",
+    "poster": "assets/img/course-products/summerwinter/posters/rcax-ali.webp",
     "university": "RCA",
     "professor": "Jack",
     "type": "名企实战",
@@ -85,7 +95,12 @@
         "size": 11538144,
         "fileExt": "pdf"
       }
-    ]
+    ],
+    "slug": "rcax-ali",
+    "slides": {
+      "dir": "assets/img/course-products/summerwinter/pdf/rcax-ali",
+      "count": 20
+    }
   },
   {
     "tab": "winter 27",
@@ -96,7 +111,7 @@
     "location": "广州",
     "level": "研究生",
     "outcomes": "海外教授推荐信艺术展览作品集项目高校课程证书",
-    "poster": "assets/img/courses/夏冬校/27冬校-香港科技大学（广）官方课程数字媒体研究生班.png",
+    "poster": "assets/img/course-products/summerwinter/posters/kegan.webp",
     "university": "UCL",
     "professor": "",
     "type": "高校合作",
@@ -107,7 +122,12 @@
         "size": 4693524,
         "fileExt": "pdf"
       }
-    ]
+    ],
+    "slug": "kegan",
+    "slides": {
+      "dir": "assets/img/course-products/summerwinter/pdf/kegan",
+      "count": 16
+    }
   },
   {
     "tab": "winter 27",
@@ -118,7 +138,7 @@
     "location": "上海",
     "level": "研究生",
     "outcomes": "海外教授推荐信企业推荐信艺术展览作品集项目实习证明",
-    "poster": "assets/img/courses/夏冬校/27冬校-同济x香港大学 后人类媒介场研究生班.png",
+    "poster": "assets/img/course-products/summerwinter/posters/gangda-tongji.webp",
     "university": "港大",
     "professor": "L.R",
     "type": "高校合作",
@@ -135,7 +155,12 @@
         "size": 8706257,
         "fileExt": "pdf"
       }
-    ]
+    ],
+    "slug": "gangda-tongji",
+    "slides": {
+      "dir": "assets/img/course-products/summerwinter/pdf/gangda-tongji",
+      "count": 31
+    }
   },
   {
     "tab": "winter 27",
@@ -146,7 +171,7 @@
     "location": "香港",
     "level": "研究生",
     "outcomes": "作品集项目高校课程证书艺术展览",
-    "poster": "assets/img/courses/夏冬校/27冬校-香港理工大学官方课程.png",
+    "poster": "assets/img/course-products/summerwinter/posters/ganglig.webp",
     "university": "港理工",
     "professor": "",
     "type": "高校合作",
@@ -163,7 +188,12 @@
         "size": 1852438,
         "fileExt": "pdf"
       }
-    ]
+    ],
+    "slug": "ganglig",
+    "slides": {
+      "dir": "assets/img/course-products/summerwinter/pdf/ganglig",
+      "count": 17
+    }
   },
   {
     "tab": "summer 26",

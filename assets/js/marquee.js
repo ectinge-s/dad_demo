@@ -71,8 +71,37 @@ const Marquee = {
       const singleCopyWidth = trackEl.scrollWidth / 2;
       if (!paused && !outOfView && singleCopyWidth > 0) {
         x -= speedPxPerSec * dt;
-        if (x <= -singleCopyWidth) x += singleCopyWidth; // seamless wrap, never an unbounded number
-        trackEl.style.transform = `translateX(${x}px)`;
+        // v3.36 (GM): this used to be `if (x <= -singleCopyWidth) x +=
+        // singleCopyWidth;` — a single best-effort correction that only
+        // recovers from an overshoot of at most one frame's movement. It
+        // silently assumed singleCopyWidth is stable frame to frame, but
+        // scrollWidth is read fresh every tick specifically because it
+        // ISN'T always stable (see the comment above) — a transient
+        // reflow (a webfont swap, a subpage toggle, any one-frame layout
+        // glitch) can make scrollWidth read abnormally small for just
+        // that one frame. When it does, a long-running x (which spends
+        // its whole cycle somewhere in (-singleCopyWidth, 0]) can land
+        // far outside the NEW, shrunk singleCopyWidth — and one `+=` isn't
+        // enough to bring it back, so the reel's visible strip lands
+        // beyond the track's actual rendered content: a real blank gap,
+        // reproduced and confirmed with an adversarial stress test (see
+        // PROJECT_NOTES.md v3.36). Using `%` instead of a single `if`
+        // brings x into (-singleCopyWidth, 0] in one step regardless of
+        // how far it drifted, however much singleCopyWidth changed.
+        if (singleCopyWidth > 0) {
+          x = x % singleCopyWidth;
+          if (x > 0) x -= singleCopyWidth;
+        }
+        // translate3d, not translateX — forces one consistent GPU-
+        // composited layer for the loop's whole lifetime instead of
+        // leaving 2D-vs-3D layer promotion up to the engine's own
+        // heuristics. Paired with dropping mask-image from the wraps
+        // (components.css/.career-rail-wrap has the full writeup) — GM
+        // reported the reels still going blank after a while even after
+        // v3.13's CSS-animation-to-rAF rewrite, and this pair of changes
+        // targets the other remaining risk factor: a browser/GPU
+        // compositing layer that's masked *and* continuously transformed.
+        trackEl.style.transform = `translate3d(${x}px, 0, 0)`;
       }
       rafId = requestAnimationFrame(tick);
     };

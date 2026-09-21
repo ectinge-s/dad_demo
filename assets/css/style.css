@@ -287,6 +287,19 @@ p { margin: 0; }
 .btn--primary:hover { background: var(--color-accent-deep); transform: translateY(-1px); }
 .btn--ghost { border: 1px solid var(--color-border-2); color: var(--color-text); }
 .btn--ghost:hover { border-color: var(--color-text); }
+/* v3.35 (GM): "查看阶段路线 has no hover effect, leading to unclear UX
+   hint" — the hero's secondary CTA used `.btn--ghost` with an inline
+   `style="color:...;border-color:..."` to re-color it for the dark hero
+   background. An inline style attribute always beats a stylesheet rule
+   for the same property, even a `:hover` one, so `.btn--ghost:hover`'s
+   `border-color` change was silently inert here — the button never
+   visibly reacted to hover at all. Replaced the inline-style hack with
+   a real modifier class carrying its own hover state (border brightens
+   to full white, background gets a faint on-void tint, plus the same
+   translateY lift `.btn--primary:hover` already uses elsewhere), so nothing
+   in a stylesheet is fighting an inline override anymore. */
+.btn--ghost-on-void { border: 1px solid rgba(255,255,255,.3); color: var(--color-text-on-void); }
+.btn--ghost-on-void:hover { border-color: var(--color-text-on-void); background: rgba(255,255,255,.08); transform: translateY(-1px); }
 .btn--dark { background: var(--color-text); color: var(--color-bg); }
 .btn--dark:hover { background: var(--color-accent); color: var(--color-accent-ink); }
 
@@ -328,19 +341,19 @@ p { margin: 0; }
 .filter-btn:hover { border-color: var(--color-accent-deep); color: var(--color-text); background: var(--color-surface-2); }
 .filter-btn.is-active { background: var(--color-accent); color: var(--color-accent-ink); border-color: var(--color-accent); box-shadow: var(--glow-primary-soft); font-weight: 700; }
 
-/* ── HERO CUSTOM CURSOR (v3.19, GM) ─────────────────────────
-   Replaces the OS cursor with a chunky yellow pixel/voxel arrow while
+/* ── HERO CUSTOM CURSOR (v3.34, GM) ─────────────────────────
+   Replaces the OS cursor with a chunky yellow extruded arrow while
    the mouse is over the HOMEPAGE hero specifically (#hero-root) — NOT
    every page's `.hero` section (narrowed to homepage-only in v3.17.1).
-   v3.19 replaced the smooth-gradient 3D dart from v3.17.1 (GM: "super
-   ugly") with a jagged, staircase-edged pixel silhouette extruded as
-   flat "cubes" per GM's new reference — see index.html for the shape
-   itself (inline SVG, non-square viewBox, built from a pixel bitmap).
-   JS (hero-cursor.js) shows/hides/positions it via a mousemove listener
-   scoped to #hero-root only. */
+   v3.34 swapped in GM's delivered vector (_supplement-912/dad-cursor.svg,
+   inlined in index.html, square 0 0 300 300 viewBox) in place of the
+   v3.19 pixel/voxel dart built from a bitmap of rects. JS (hero-cursor.js)
+   shows/hides/positions it via a mousemove listener scoped to #hero-root
+   only, and holds the matching TIP_X/TIP_Y offset for this shape's
+   actual arrow tip (not just its bounding-box corner). */
 #hero-root, #hero-root * { cursor: none !important; }
 .hero-cursor {
-  position: fixed; top: 0; left: 0; width: 96px; height: 64px;
+  position: fixed; top: 0; left: 0; width: 80px; height: 80px;
   pointer-events: none; z-index: 9999; overflow: visible;
   opacity: 0; transform: translate3d(-200px, -200px, 0);
   transition: opacity .12s var(--ease), transform .06s linear;

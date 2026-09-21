@@ -14,15 +14,19 @@
   const cursorEl = document.getElementById('hero-cursor');
   if (!cursorEl) return;
 
-  // v3.19's pixel/voxel cursor is a non-square SVG (viewBox 192.8x128.8,
-  // rendered at 96x64 css px — see style.css) whose tip sits right at
-  // the bottom-left corner of the artwork (~0.5%, 93.9% of the box).
+  // v3.34's arrow cursor (_supplement-912/dad-cursor.svg) is a square
+  // SVG (viewBox 0 0 300 300, rendered at 80x80 css px — see style.css)
+  // whose pointed tip sits at roughly (29.25, 58) of the 300x300 artwork
+  // — found by rendering the SVG to a bitmap and taking the opaque pixel
+  // closest to the top-left corner (the up-left-pointing arrowhead's
+  // actual vertex, not just the shape's bounding-box corner, which is
+  // empty space here). As a fraction of the box that's (~9.75%, ~19.3%).
   // Convert that fraction into a pixel offset so the visual tip (not
   // the box's own top-left corner) lands under the actual pointer.
-  const CURSOR_W = 96;
-  const CURSOR_H = 64;
-  const TIP_X = 0.0052 * CURSOR_W;
-  const TIP_Y = 0.9394 * CURSOR_H;
+  const CURSOR_W = 80;
+  const CURSOR_H = 80;
+  const TIP_X = 0.0975 * CURSOR_W;
+  const TIP_Y = 0.1933 * CURSOR_H;
 
   let inHero = false;
   let pressed = false;

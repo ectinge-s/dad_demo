@@ -64,13 +64,24 @@
 .nav-menu-overlay__link--page { font-size: var(--text-2xl); color: var(--color-text-on-void); }
 .nav-menu-overlay__link--page::after { content: "↗"; font-size: .5em; margin-left: 6px; vertical-align: super; color: var(--color-text-on-void-muted); }
 .nav-menu-overlay__link--page:hover::after { color: var(--color-accent); }
+/* v3.34 (GM): "the yellow button in menu - keep it identical to the top
+   right planning page button in navbar" — matched to `.navbar__cta`'s
+   exact look (padding, always-on ambient glow, hover darken+glow), not
+   just its color/shape. Kept `margin-top`/`cursor` here since those are
+   this button's own placement inside the menu overlay, not part of the
+   "look" GM is pointing at. */
 .nav-menu-overlay__cta {
-  margin-top: var(--space-2); padding: 12px 30px; cursor: pointer;
-  background: var(--color-accent); color: var(--color-accent-ink); font-size: var(--text-sm); font-weight: 800;
-  border-radius: var(--radius-pill);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  margin-top: var(--space-2); cursor: pointer;
+  font-size: 13px; font-weight: 800; padding: 9px 18px; border-radius: 999px;
+  background: var(--color-accent); color: var(--color-accent-ink);
+  box-shadow: var(--glow-accent-soft);
+  transition: transform .15s var(--ease), box-shadow .15s var(--ease), background .15s var(--ease);
 }
-.nav-menu-overlay__cta:hover { transform: translateY(-1px); box-shadow: var(--glow-accent); }
+.nav-menu-overlay__cta:hover {
+  background: var(--color-accent-deep);
+  box-shadow: var(--glow-accent), var(--glow-accent-soft);
+  transform: translateY(-1px);
+}
 body.nav-menu-open { overflow: hidden; }
 @keyframes navMenuRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: no-preference) {
@@ -199,7 +210,19 @@ body.nav-menu-open { overflow: hidden; }
    out reserved vertical padding for an overlay that would otherwise get
    clipped. ── */
 .coop-marquee-section { margin-top: var(--space-5); }
-.coop-marquee-wrap { overflow: hidden; padding-top: 6px; mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%); }
+/* v3.36 (GM): mask-image edge-fade replaced with gradient-overlay
+   pseudo-elements — see the full explanation on .career-rail-wrap in
+   components.css. Same latent bug (mask-image on a wrap whose child
+   is continuously transformed under will-change), same fix. z-index:50
+   comfortably clears .coop-card:hover's z-index:20 lift, so a hovered
+   card near either edge still fades correctly instead of drawing over
+   the overlay. */
+.coop-marquee-wrap { position: relative; overflow: hidden; padding-top: 6px; }
+.coop-marquee-wrap::before, .coop-marquee-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 7%; z-index: 50; pointer-events: none;
+}
+.coop-marquee-wrap::before { left: 0; background: linear-gradient(to right, var(--color-bg) 0%, transparent 100%); }
+.coop-marquee-wrap::after { right: 0; background: linear-gradient(to left, var(--color-bg) 0%, transparent 100%); }
 /* v3.13 (GM): scroll driven by Marquee.init() (assets/js/marquee.js),
    not a CSS keyframe animation — GM reported reels disappearing after
    running a while; see marquee.js's header comment for why. Pause on
@@ -259,7 +282,15 @@ body.nav-menu-open { overflow: hidden; }
 .coop-card__collab-tag { font-size: 8.5px; font-weight: 700; letter-spacing: .01em; color: var(--color-accent-ink); background: var(--color-accent); padding: 2px 7px; border-radius: var(--radius-pill); white-space: nowrap; }
 
 /* ── FEATURED COURSES RAIL (homepage) + section CTA ── */
-.featured-rail-wrap { overflow: hidden; padding: 4px 0 14px; mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%); }
+/* v3.36 (GM): mask-image edge-fade replaced with gradient-overlay
+   pseudo-elements — see the full explanation on .career-rail-wrap in
+   components.css. Same latent bug, same fix. */
+.featured-rail-wrap { position: relative; overflow: hidden; padding: 4px 0 14px; }
+.featured-rail-wrap::before, .featured-rail-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 6%; z-index: 50; pointer-events: none;
+}
+.featured-rail-wrap::before { left: 0; background: linear-gradient(to right, var(--color-bg) 0%, transparent 100%); }
+.featured-rail-wrap::after { right: 0; background: linear-gradient(to left, var(--color-bg) 0%, transparent 100%); }
 /* v3.13 (GM): scroll driven by Marquee.init() (assets/js/marquee.js),
    not a CSS keyframe animation — GM reported reels disappearing after
    running a while; see marquee.js's header comment for why. */
@@ -268,6 +299,14 @@ body.nav-menu-open { overflow: hidden; }
 .featured-rail__card:hover { transform: translateY(-3px); border-color: var(--color-accent); box-shadow: var(--glow-primary); }
 .featured-rail__banner { position: relative; aspect-ratio: 16/9; overflow: hidden; background: linear-gradient(135deg, var(--color-void) 0%, #2b2b2b 45%, var(--color-accent) 100%); }
 .featured-rail__banner::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 26% 20%, rgba(255,255,255,.35), transparent 55%); }
+/* v3.29 (GM): real cover art (dad_demo/_supplement-912/cover) for the 3
+   长线产品 — sits under the existing radial-glow ::after and above the
+   gradient fallback, so a product without a `cover` field is unaffected. */
+.featured-rail__banner img, .cp-card__banner img, .cd-hero__tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.featured-rail__banner::after, .cp-card__banner::after, .cd-hero__tile::after { z-index: 1; }
+/* both are already position:absolute further below — this just lifts them
+   above the new img/::after layers instead of behind (z-index:auto). */
+.featured-rail__tag, .cp-card__badge { z-index: 2; }
 .featured-rail__banner--v2 { background: linear-gradient(135deg, var(--color-culture) 0%, var(--color-brand) 100%); }
 .featured-rail__banner--v3 { background: linear-gradient(135deg, var(--color-hardware) 0%, var(--color-arch) 100%); }
 .featured-rail__banner--catalog { background: var(--color-surface-2); }
@@ -445,6 +484,46 @@ body.nav-menu-open { overflow: hidden; }
 
 /* ── COURSE PRODUCTS PAGE ── */
 .cp-page { max-width: 1120px; margin: 0 auto; padding: var(--space-8) var(--space-5) var(--space-9); }
+/* v3.25: back-link at the top of a 长线产品's full-page detail view
+   (#cp-product-subpage, see CourseProductsPage.showSubpage()) — plain
+   text-button style, consistent with the site's other ghost/ text nav
+   affordances rather than a full pill button, since it's a "go back"
+   action, not a primary CTA. */
+/* v3.31 (GM): v3.30's 2× sizing read as too big after all ("好像又有点大
+   了，，变回原来的大小吧") — back to ist_demo's own `.chain__toggle`
+   numbers (1×), keeping everything else from v3.30 (half-capsule
+   expand-on-hover mechanic, Chinese-only label, accent glow on hover).
+   Used both as the longform full-page route's own back link and the
+   catalog-overlay "← 返回课程目录" link. Markup: `<button
+   class="cp-product-back"><span class="cp-product-back__arrow">←</span>
+   <span class="cp-product-back__text">返回课程产品</span></button>`. */
+.cp-product-back {
+  all: unset; box-sizing: border-box;
+  position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 900;
+  display: flex; align-items: center; gap: var(--space-3);
+  height: 46px; width: 32px; padding: 0 0 0 9px; overflow: hidden; white-space: nowrap;
+  cursor: pointer;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-2, var(--color-border)); border-left: none;
+  border-radius: 0 999px 999px 0;
+  box-shadow: 0 12px 32px rgba(0,0,0,.35);
+  transition: width .32s var(--ease-out, var(--ease)), border-color .2s, box-shadow .2s;
+}
+.cp-product-back__arrow { flex: none; font-size: 16px; line-height: 1; color: var(--color-text-muted); transition: color .2s, transform .32s var(--ease-out, var(--ease)); }
+.cp-product-back__text { flex: none; opacity: 0; font-family: var(--font-cn); font-size: var(--text-sm); font-weight: 700; color: var(--color-text-muted); transition: opacity .2s, color .2s; }
+.cp-product-back:hover, .cp-product-back:focus-visible {
+  outline: none; width: 160px;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 32px rgba(0,0,0,.4), var(--glow-accent-soft, 0 0 24px rgba(255,214,10,.35));
+}
+.cp-product-back:hover .cp-product-back__arrow, .cp-product-back:focus-visible .cp-product-back__arrow { color: var(--color-accent); transform: translateX(-3px); }
+.cp-product-back:hover .cp-product-back__text, .cp-product-back:focus-visible .cp-product-back__text { opacity: 1; color: var(--color-accent); }
+@media (max-width: 760px) {
+  .cp-product-back { height: 40px; width: 28px; padding-left: 7px; gap: var(--space-2); }
+  .cp-product-back__arrow { font-size: 14px; }
+  .cp-product-back__text { font-size: var(--text-xs); }
+  .cp-product-back:hover, .cp-product-back:focus-visible { width: 130px; }
+}
 .cp-zone { margin-bottom: var(--space-9); }
 .cp-zone:last-child { margin-bottom: 0; }
 .cp-grid { display: flex; flex-direction: column; gap: 14px; margin-top: var(--space-5); }
@@ -529,3 +608,226 @@ body.nav-menu-open { overflow: hidden; }
 .tl-bar--gpa        { background: rgba(75,111,166,.14);      color: var(--color-ind-internet); box-shadow: inset 0 0 0 1px rgba(75,111,166,.3); }
 .tl-bar--milestone  { background: var(--color-accent-veil);  color: var(--color-accent); box-shadow: inset 0 0 0 1px rgba(255,255,0,.5); }
 .tl-gantt-empty { padding: 40px; text-align: center; color: var(--color-text-faint); font-size: 13px; writing-mode: horizontal-tb; }
+
+/* ── v3.26 — rich-content longform product pages (real docx-sourced
+   content, first shipped for longform2/UK; see course-demo.js's
+   buildRichLongformSections + PRODUCTS.longform2.useRichContent). ── */
+
+/* Hero: title + "查看比价" button share a row */
+.cd-hero__title-row { display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap; }
+.cd-compare-btn { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; border-radius: var(--radius-pill); background: var(--color-accent); color: var(--color-void); font-family: var(--font-cn); font-size: 13px; font-weight: 700; transition: transform var(--transition-fast), box-shadow var(--transition-fast); }
+.cd-compare-btn:hover { transform: translateY(-1px); box-shadow: var(--glow-accent); }
+.cd-compare-btn .u-en { font-family: var(--font-mono); font-weight: 500; opacity: .75; }
+
+.cd-lead { font-size: var(--text-md); line-height: 1.9; color: var(--color-text-muted); margin: 0; }
+
+/* 二 升学方向特性与优势 — trait → edge transform pairs */
+.cd-transform-grid { display: flex; flex-direction: column; gap: var(--space-4); }
+.cd-transform { display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch; gap: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; }
+.cd-transform__side { padding: var(--space-5); }
+.cd-transform__side--trait { background: var(--color-surface); }
+.cd-transform__side--edge { background: var(--color-accent-veil, rgba(255,255,0,.06)); border-left: 2px solid var(--color-accent); }
+.cd-transform__label { font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--color-text-faint); margin-bottom: var(--space-2); }
+.cd-transform__title { font-family: var(--font-cn); font-weight: 700; font-size: var(--text-base); margin-bottom: var(--space-2); }
+.cd-transform__desc { font-size: var(--text-sm); line-height: 1.75; color: var(--color-text-muted); margin: 0; }
+.cd-transform__arrow { display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--color-accent); }
+@media (max-width: 720px) { .cd-transform { grid-template-columns: 1fr; } .cd-transform__arrow { transform: rotate(90deg); padding: var(--space-2) 0; } }
+
+/* 四 产品分层与匹配 — tier / persona-fit cards */
+.cd-tier-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-4); }
+.cd-tier { border: 1px solid var(--color-border); border-top: 2px solid var(--color-accent); border-radius: var(--radius-md); padding: var(--space-5); background: var(--color-surface); }
+.cd-tier__name { font-family: var(--font-en); font-weight: 800; font-size: var(--text-md); color: var(--color-accent); margin-bottom: var(--space-2); }
+.cd-tier__audience { font-size: var(--text-sm); color: var(--color-text); line-height: 1.6; margin-bottom: var(--space-3); }
+.cd-tier__config { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.75; }
+
+/* 五/六 核心课程模块 — each item: text body + optional gallery cover
+   and/or an embedded 课程目录 catalog card */
+.cd-core-modules { display: flex; flex-direction: column; gap: var(--space-5); }
+.cd-core-module { border-top: 1px solid var(--color-border); padding-top: var(--space-5); display: grid; gap: var(--space-4); }
+.cd-core-module.has-gallery { grid-template-columns: 1fr 200px; align-items: start; }
+.cd-core-module__title { font-family: var(--font-cn); font-weight: 700; font-size: var(--text-md); color: var(--color-text); display: flex; align-items: baseline; gap: var(--space-3); flex-wrap: wrap; }
+.cd-core-module__subtitle { font-size: 11px; font-family: var(--font-mono); color: var(--color-text-faint); font-weight: 400; }
+.cd-core-module__desc { font-size: var(--text-sm); line-height: 1.85; color: var(--color-text-muted); margin: var(--space-2) 0 0; }
+.cd-core-module__bullets { margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); }
+.cd-core-module__bullet { display: flex; gap: var(--space-3); font-size: var(--text-xs); line-height: 1.7; }
+.cd-core-module__bullet-t { flex: none; font-weight: 700; color: var(--color-text); min-width: 84px; }
+.cd-core-module__bullet-d { color: var(--color-text-muted); }
+@media (max-width: 640px) { .cd-core-module.has-gallery { grid-template-columns: 1fr; } }
+
+/* Gallery cover thumbnail (click → GalleryViewer) */
+.cd-gallery-cover { position: relative; border-radius: var(--radius-md); overflow: hidden; cursor: pointer; aspect-ratio: 4/3; background: var(--color-surface-2); }
+.cd-gallery-cover img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s var(--ease); }
+.cd-gallery-cover:hover img { transform: scale(1.04); }
+.cd-gallery-cover__hint { position: absolute; left: 0; right: 0; bottom: 0; padding: 6px 10px; font-size: 11px; font-family: var(--font-mono); color: #fff; background: linear-gradient(to top, rgba(0,0,0,.75), transparent); }
+
+/* Embedded 课程目录 catalog card (bizpractice/summerwinter/internship) */
+.cd-catalog-embed { border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; background: var(--color-surface); grid-column: 1 / -1; }
+.cd-catalog-embed__head { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--color-border); }
+.cd-catalog-embed__tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-accent); background: var(--color-accent-veil, rgba(255,255,0,.08)); padding: 3px 8px; border-radius: var(--radius-pill); }
+.cd-catalog-embed__title { font-family: var(--font-cn); font-weight: 700; font-size: var(--text-sm); color: var(--color-text); }
+.cd-catalog-embed__grid { max-height: 360px; overflow: hidden; position: relative; padding: var(--space-4) var(--space-5) 0; }
+.cd-catalog-embed__grid::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 100px; background: linear-gradient(to bottom, transparent, var(--color-surface)); pointer-events: none; }
+.cd-catalog-embed__more { all: unset; display: block; width: 100%; text-align: center; cursor: pointer; padding: var(--space-3); font-family: var(--font-cn); font-size: 13px; font-weight: 600; color: var(--color-accent); border-top: 1px solid var(--color-border); transition: background var(--transition-fast); }
+.cd-catalog-embed__more:hover { background: var(--color-surface-2); }
+.cd-catalog-embed__more .u-en { font-family: var(--font-mono); font-weight: 400; opacity: .7; }
+
+/* 七 升学就业双路径方案 — simple two-step flow */
+.cd-flow { display: flex; align-items: stretch; gap: var(--space-4); flex-wrap: wrap; }
+.cd-flow__step { flex: 1; min-width: 220px; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-5); background: var(--color-surface); }
+.cd-flow__step--accent { border-color: var(--color-accent); background: var(--color-accent-veil, rgba(255,255,0,.06)); }
+.cd-flow__step-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-faint); margin-bottom: var(--space-2); }
+.cd-flow__step-title { font-size: var(--text-sm); line-height: 1.7; color: var(--color-text); font-weight: 600; }
+.cd-flow__arrow { display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--color-accent); flex: none; }
+@media (max-width: 640px) { .cd-flow__arrow { transform: rotate(90deg); } }
+
+/* 3.4 学生作品·产业方向选校与案例 — tab switcher + school list + case grid */
+.cd-ind-tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: var(--space-3); margin-bottom: var(--space-5); scrollbar-width: none; }
+.cd-ind-tabs::-webkit-scrollbar { display: none; }
+.cd-ind-tab { all: unset; flex: none; cursor: pointer; padding: 8px 16px; border-radius: var(--radius-pill); border: 1px solid var(--color-border); font-family: var(--font-cn); font-size: 13px; color: var(--color-text-muted); transition: all var(--transition-fast); }
+.cd-ind-tab.is-active { background: var(--tab-color, var(--color-accent)); border-color: var(--tab-color, var(--color-accent)); color: var(--color-void); font-weight: 700; }
+.cd-ind-panel { display: none; }
+.cd-ind-panel.is-active { display: block; }
+.cd-ind-panel__head { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); }
+.cd-ind-panel__dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.cd-ind-panel__name { font-family: var(--font-cn); font-weight: 700; font-size: var(--text-base); }
+.cd-ind-panel__name-en { font-size: 11px; color: var(--color-text-faint); }
+.cd-ind-schools { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-bottom: var(--space-6); }
+.cd-ind-school { display: block; padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-sm); text-decoration: none; transition: border-color var(--transition-fast), background var(--transition-fast); }
+.cd-ind-school:hover { border-color: var(--color-accent); background: var(--color-surface); }
+.cd-ind-school__name { display: block; font-family: var(--font-cn); font-size: 13px; font-weight: 700; color: var(--color-text); }
+.cd-ind-school__program { display: block; font-family: var(--font-en); font-size: 11px; color: var(--color-text-muted); margin-top: 2px; }
+.cd-ind-cases-label { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-faint); margin-bottom: var(--space-3); }
+.cd-ind-cases-label .u-en { font-size: 9px; opacity: .55; margin-left: 4px; }
+/* v3.27 (GM): 3-per-row on a normal desktop screen instead of the
+   previous auto-fill grid (which packed 5-7 thin columns) — a flex row
+   that wraps, each card's basis targeting exactly a third of the row,
+   same 3:4 card ratio as before. */
+.cd-ind-case-grid { display: flex; flex-wrap: wrap; gap: 14px; }
+/* v3.28 (GM): case-card source images are landscape boards (1400×863,
+   ratio ≈1.62:1), not portrait — aspect-ratio matches the real export
+   exactly so the thumbnail crops nothing. */
+.cd-ind-case { flex: 1 1 calc(33.333% - 10px); min-width: 220px; max-width: calc(33.333% - 10px); aspect-ratio: 1400/863; border-radius: var(--radius-sm); overflow: hidden; cursor: pointer; background: var(--color-surface-2); }
+.cd-ind-case img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s var(--ease); }
+.cd-ind-case:hover img { transform: scale(1.05); }
+@media (max-width: 720px) { .cd-ind-case { flex-basis: calc(50% - 7px); max-width: calc(50% - 7px); } }
+@media (max-width: 420px) { .cd-ind-case { flex-basis: 100%; max-width: 100%; } }
+
+/* ── v3.32 (GM): HK-style dual sub-product switcher (常规计划/学霸计划) —
+   a sticky left/right tab bar (two equal halves, not the pill-row tabs
+   .cd-ind-tab uses for 5-6 industry categories) that stays visible as the
+   visitor scrolls through either track's full set of sections, so they
+   can jump to the other plan at any point instead of scrolling back up.
+   v3.33 fix (GM: "needs to stick to top of page when scrolling outside
+   of viewport"): longform products (this one included) render on the
+   real full-page route (#course-products/<id>, `#cp-product-subpage` —
+   see course-products.js/v3.25), NOT inside `.course-overlay__panel`
+   like catalog products still do — that overlay path is dead for
+   longform in the live UI, it was only reachable by calling
+   `CourseOverlay.open()` directly (which is how this got verified against
+   the wrong container the first time). On the full-page route the scroll
+   root is the document itself, and the site's own `.navbar` is ALSO
+   sticky at `top:0` with `z-index:1000` (assets/css/style.css), so a bare
+   `top:0` here just sticks the tab bar underneath the navbar instead of
+   below it. `#cp-product-subpage .cd-track-tabs` below overrides `top` to
+   `var(--navbar-h)` (same pattern as `.cd-page__subnav-wrap`/
+   `.industry-nav`) so it docks right under the navbar instead. The base
+   rule's `top:0`/`z-index:1` stays as-is for the (currently unused)
+   overlay case, where it sits below `.course-overlay__close` (z-index 2)
+   with no navbar to clear.
+   A second, deeper bug surfaced once the navbar overlap was fixed:
+   `position:sticky` only holds an element pinned while its OWN containing
+   block (the nearest ancestor block box, here the `.cd-section` from
+   `sec('track-switch', ...)`) is still on screen -- once that block's
+   bottom edge scrolls past, the element unsticks and scrolls away with it.
+   The JS originally put `.cd-track-tabs` in its own thin `.cd-section`
+   (label + tab bar only) as a SIBLING of the separate `.cd-track-panels`
+   div, so that section was barely taller than the tab bar itself and the
+   tabs unstuck almost immediately -- nowhere near covering a full track's
+   scroll length. Fixed in course-demo.js by nesting `.cd-track-panels`
+   inside the SAME `.cd-section` as `.cd-track-tabs` (one `sec()` call),
+   so the section's height now matches whichever track panel is active
+   (the other is `display:none` and contributes no height) and the tab
+   bar stays docked at `var(--navbar-h)` for that track's entire scroll
+   length, unsticking only once the visitor scrolls past the track
+   section into the shared industry-cases/closing sections below. ── */
+.cd-track-tabs { position: sticky; top: 0; z-index: 1; display: flex; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; margin-bottom: var(--space-2); box-shadow: 0 2px 0 var(--color-bg); }
+#cp-product-subpage .cd-track-tabs { top: var(--navbar-h); z-index: 5; }
+.cd-track-tab { all: unset; box-sizing: border-box; flex: 1 1 50%; cursor: pointer; text-align: center; padding: 14px var(--space-4); display: flex; flex-direction: column; align-items: center; gap: 2px; font-family: var(--font-cn); color: var(--color-text-muted); background: var(--color-surface); transition: background var(--transition-fast), color var(--transition-fast); }
+.cd-track-tab + .cd-track-tab { border-left: 1px solid var(--color-border); }
+.cd-track-tab__label { font-size: var(--text-sm); font-weight: 700; }
+.cd-track-tab__sub { font-size: 11px; color: var(--color-text-faint); }
+.cd-track-tab.is-active { background: var(--color-accent); color: var(--color-void); }
+.cd-track-tab.is-active .cd-track-tab__sub { color: var(--color-void); opacity: .75; }
+.cd-track-tab:not(.is-active):hover { background: var(--color-surface-2); color: var(--color-text); }
+.cd-track-panel { display: none; }
+.cd-track-panel.is-active { display: block; }
+
+/* ── Gallery Viewer (vertical scroll, "cover + scroll through N images") ── */
+.gallery-viewer { position: fixed; inset: 0; z-index: 1420; display: none; flex-direction: column; background: rgba(5,6,8,.96); backdrop-filter: blur(6px); }
+.gallery-viewer.is-open { display: flex; }
+.gallery-viewer__bar { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) var(--space-5); border-bottom: 1px solid var(--color-border); }
+.gallery-viewer__title { flex: 1; min-width: 0; font-family: var(--font-cn); font-size: var(--text-sm); font-weight: 700; color: #fff; }
+.gallery-viewer__count { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); }
+.gallery-viewer__close { width: 32px; height: 32px; border-radius: 50%; background: var(--color-surface-2); color: #fff; border: 1px solid var(--color-border-2, var(--color-border)); cursor: pointer; font-size: 14px; }
+.gallery-viewer__close:hover { background: var(--color-accent); color: var(--color-void); }
+.gallery-viewer__stage { flex: 1; min-height: 0; overflow-y: auto; padding: var(--space-5); display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
+/* v3.34 (GM): "change all modal window's default bg color to black -
+   since most img in modal has black background... avoid weird white
+   edges" — .pdf-viewer__img/.slide-viewer__img below were `background:
+   #fff`, which showed through as a literal white edge/letterbox any time
+   the image's own aspect ratio didn't exactly fill its box (both use
+   width/height:auto or object-fit:contain) against real deck/PDF pages
+   that are themselves black-background renders. Set to black here too
+   (was already transparent, i.e. effectively fine, but made explicit for
+   the same reason and so all three viewers + ImageModal are consistent). */
+.gallery-viewer__img { max-width: min(880px, 100%); width: 100%; height: auto; border-radius: 6px; box-shadow: 0 24px 64px rgba(0,0,0,.6); background: #000; }
+
+/* ── PDF Viewer — v3.27: vertical scroll through every page in order
+   (GM: 比价单也改为垂直滑动), same shell as GalleryViewer. ── */
+.pdf-viewer { position: fixed; inset: 0; z-index: 1420; display: none; flex-direction: column; background: rgba(5,6,8,.96); backdrop-filter: blur(6px); }
+.pdf-viewer.is-open { display: flex; }
+.pdf-viewer__bar { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) var(--space-5); border-bottom: 1px solid var(--color-border); }
+.pdf-viewer__title { flex: 1; min-width: 0; font-family: var(--font-cn); font-size: var(--text-sm); font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pdf-viewer__count { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); }
+.pdf-viewer__close { width: 32px; height: 32px; border-radius: 50%; background: var(--color-surface-2); color: #fff; border: 1px solid var(--color-border-2, var(--color-border)); cursor: pointer; font-size: 14px; }
+.pdf-viewer__close:hover { background: var(--color-accent); color: var(--color-void); }
+.pdf-viewer__stage { flex: 1; min-height: 0; overflow-y: auto; padding: var(--space-5); display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
+.pdf-viewer__img { max-width: min(880px, 100%); width: 100%; height: auto; border-radius: 6px; box-shadow: 0 24px 64px rgba(0,0,0,.6); background: #000; }
+@media (max-width: 640px) {
+  .gallery-viewer__stage, .pdf-viewer__stage { padding: var(--space-3); }
+}
+
+/* ── Slide Viewer — v3.28, ported from ist_demo: a left/right PAGED flip
+   through a 冬夏校 course's real deck (keyboard/swipe/click-zoom), used
+   only where a catalog card carries a real `slides` deck (components.js's
+   SlideViewer). Distinct from the two vertical viewers above. ── */
+.slide-viewer { position: fixed; inset: 0; z-index: 1420; display: none; flex-direction: column; background: rgba(5,6,8,.96); backdrop-filter: blur(6px); }
+.slide-viewer.is-open { display: flex; animation: svFade .2s ease both; }
+@keyframes svFade { from { opacity: 0; } to { opacity: 1; } }
+.slide-viewer__bar { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) var(--space-5); border-bottom: 1px solid var(--color-border); }
+.slide-viewer__title { flex: 1; min-width: 0; font-family: var(--font-cn); font-size: var(--text-sm); font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.slide-viewer__count { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); }
+.slide-viewer__close { width: 32px; height: 32px; border-radius: 50%; background: var(--color-surface-2); color: #fff; border: 1px solid var(--color-border-2, var(--color-border)); cursor: pointer; font-size: 14px; line-height: 1; }
+.slide-viewer__close:hover { background: var(--color-accent); color: var(--color-void); }
+.slide-viewer__stage { position: relative; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: var(--space-3) 64px; overflow: auto; }
+.slide-viewer__img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 6px; box-shadow: 0 24px 64px rgba(0,0,0,.6); cursor: zoom-in; background: #000; }
+.slide-viewer.is-zoom .slide-viewer__stage { align-items: flex-start; justify-content: flex-start; }
+.slide-viewer.is-zoom .slide-viewer__img { max-width: none; max-height: none; width: max(1200px, 100%); cursor: zoom-out; }
+.slide-viewer__nav { position: fixed; top: 50%; transform: translateY(-50%); z-index: 2; width: 44px; height: 44px; border-radius: 50%; background: rgba(20,22,30,.85); color: #fff; border: 1px solid var(--color-border-2, var(--color-border)); font-size: 26px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; padding-bottom: 3px; }
+.slide-viewer__nav--prev { left: 12px; } .slide-viewer__nav--next { right: 12px; }
+.slide-viewer__nav:hover:not(:disabled) { background: var(--color-accent); color: var(--color-void); }
+.slide-viewer__nav:disabled { opacity: .25; cursor: default; }
+.slide-viewer__foot { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) var(--space-5); border-top: 1px solid var(--color-border); }
+.slide-viewer__range { flex: 1; accent-color: var(--color-accent); cursor: pointer; }
+.slide-viewer__hint { font-size: 11px; color: var(--color-text-muted); white-space: nowrap; }
+@media (max-width: 640px) {
+  .slide-viewer__bar, .slide-viewer__foot { padding: var(--space-2) var(--space-3); }
+  .slide-viewer__stage { padding: var(--space-2) 8px; }
+  .slide-viewer__nav { width: 38px; height: 38px; top: auto; bottom: 64px; transform: none; }
+  .slide-viewer__hint { display: none; }
+}
+
+/* Deck catalog cards (.port-card--deck): same card, poster is the deck
+   cover, CTA line names the page count under the tags. */
+.port-card__cta { margin-top: var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-accent); font-weight: 700; }
+.port-card--deck .port-card__img { cursor: pointer; }

@@ -64,9 +64,18 @@ const PlanningPage = {
     'AI创意科技': 'AI科创',
   },
 
+  // v3.20: "对口院校方向" country filter tab order (data/schools.json's
+  // own `country` values, already merged — 美国艺术类/美国综合类 → 美国,
+  // and the three 欧洲-* sub-sheets → 欧洲 — with the sub-category kept
+  // as each row's own `region` field for the card's tag, not lost).
+  // Fixed order here rather than "whatever order they first appear in
+  // the sheet" so the tab row reads the same way on every industry.
+  SCHOOL_COUNTRY_ORDER: ['英国', '美国', '香港', '澳门', '新加坡', '加拿大', '澳洲', '欧洲', '中外合办'],
+
   async render(data) {
     this.industries = data.industries;
     this.companies = data.companies;
+    this.schools = data.schools;
     this.renderHero();
     this.renderNav();
     // ── Content moved here from the homepage, 2026-09 restructuring:
@@ -264,6 +273,58 @@ const PlanningPage = {
       </div>`;
   },
 
+  // v3.20: which of SCHOOL_COUNTRY_ORDER actually have rows for this
+  // industry (品牌传播/互联网生态 have close to all of them; 教育学术 only
+  // has 英国/美国/香港) — only those render as tabs.
+  _schoolCountriesFor(indId) {
+    const rows = this.schools[indId] || [];
+    const present = new Set(rows.map(r => r.country));
+    return this.SCHOOL_COUNTRY_ORDER.filter(c => present.has(c));
+  },
+
+  // Each row becomes a whole-card external link (target=_blank — these
+  // send visitors off-site to the school's own program page) unless the
+  // source sheet had no usable URL for it (one row in the whole 326:
+  // SUTD's Human-Centred Design MSc, xlsx cell was a literal "/" — see
+  // PROJECT_NOTES.md), in which case it renders as a plain non-linking
+  // card instead of a dead link. The tag line surfaces country + the
+  // finer-grained region the country filter merges away (美国's
+  // 艺术类/综合类 split, 欧洲's 法国/意大利/北欧&荷兰 split) plus city,
+  // so that distinction isn't lost just because the tab groups by
+  // country only.
+  _schoolCardsHTML(indId, country) {
+    const rows = this.schools[indId] || [];
+    const list = country === 'all' ? rows : rows.filter(r => r.country === country);
+    if (!list.length) {
+      return `<p style="font-size:12.5px;color:var(--color-text-muted);padding:8px 0 0">该国家/地区暂无收录院校 · 敬请期待</p>`;
+    }
+    return list.map(r => {
+      // dedupe: a handful of rows have city === country (e.g. "新加坡"
+      // as both), which would otherwise show as "新加坡 · 新加坡".
+      const tagParts = [...new Set([r.country, r.region, r.city].filter(Boolean))];
+      const inner = `
+        <div class="school-card__head">
+          <div>
+            <div class="school-card__cn">${escapeHTML(r.schoolCn)}</div>
+            ${r.schoolEn ? `<div class="school-card__en">${escapeHTML(r.schoolEn)}</div>` : ''}
+          </div>
+          ${r.url ? `<span class="school-card__arrow">↗</span>` : ''}
+        </div>
+        <div class="school-card__program">${escapeHTML(r.program)}</div>
+        <span class="school-card__tag">${escapeHTML(tagParts.join(' · '))}</span>`;
+      return r.url
+        ? `<a class="school-card" href="${escapeHTML(r.url)}" target="_blank" rel="noopener noreferrer">${inner}</a>`
+        : `<div class="school-card school-card--static">${inner}</div>`;
+    }).join('');
+  },
+
+  filterSchools(indId, country, btn) {
+    document.querySelectorAll('#school-filter-bar .filter-btn').forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    const grid = document.getElementById('school-grid');
+    if (grid) grid.innerHTML = this._schoolCardsHTML(indId, country);
+  },
+
   _foldSection(index, title, bodyHTML) {
     return `
       <section class="fold-section is-open fade-up" data-fold="${index}">
@@ -422,15 +483,19 @@ const PlanningPage = {
           </div>
         `)}
 
-        ${this._foldSection(nextIndex(), '对口院校方向', `
-          <div class="schools-grid">
-            ${ind.schools ? Object.entries(ind.schools).map(([region, val]) => `
-              <div class="schools-col">
-                <h5>${escapeHTML({ uk: '英国', us: '美国', hkMacau: '港澳及其他' }[region] || region)}</h5>
-                <p>${escapeHTML(val)}</p>
-              </div>`).join('') : ''}
-          </div>
-        `)}
+        ${this._foldSection(nextIndex(), '对口院校方向', (() => {
+          const schoolRows = this.schools[ind.id] || [];
+          if (!schoolRows.length) {
+            return `<p style="font-size:12.5px;color:var(--color-text-muted)">该方向暂无收录院校数据 · 敬请期待</p>`;
+          }
+          const countries = this._schoolCountriesFor(ind.id);
+          return `
+            <div class="filter-bar filter-bar--scroll" id="school-filter-bar">
+              <button class="filter-btn is-active" onclick="PlanningPage.filterSchools('${ind.id}','all',this)">全部</button>
+              ${countries.map(c => `<button class="filter-btn" onclick="PlanningPage.filterSchools('${ind.id}','${escapeHTML(c)}',this)">${escapeHTML(c)}</button>`).join('')}
+            </div>
+            <div class="school-grid" id="school-grid">${this._schoolCardsHTML(ind.id, 'all')}</div>`;
+        })())}
       </section>`;
   },
 

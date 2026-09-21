@@ -49,11 +49,16 @@ const Router = {
       const ind = window.PlanningPage.industries.find(i => i.title === opts.industry);
       if (ind) industryId = ind.id;
     }
+    // v3.25: same deep-linkable-subpage pattern as planning's industryId,
+    // now for a 长线产品's full detail page (see CourseProductsPage.showSubpage()).
+    let productId = opts.productId || null;
 
     const hashPages = ['planning', 'timeline', 'course-products', 'portfolio'];
     let newHash;
     if (pageId === 'planning') {
       newHash = industryId ? `#planning/${industryId}` : '#planning';
+    } else if (pageId === 'course-products') {
+      newHash = productId ? `#course-products/${productId}` : '#course-products';
     } else {
       newHash = hashPages.includes(pageId) ? '#' + pageId : location.pathname + location.search;
     }
@@ -63,6 +68,9 @@ const Router = {
 
     if (pageId === 'planning' && window.PlanningPage) {
       window.PlanningPage.showSubpage(industryId);
+    }
+    if (pageId === 'course-products' && window.CourseProductsPage) {
+      window.CourseProductsPage.showSubpage(productId);
     }
 
     if (opts.scrollTo) {
@@ -113,7 +121,10 @@ window.addEventListener('popstate', () => {
   const [hashPage, hashSub] = hashRaw.split('/');
   const PAGES = ['planning', 'timeline', 'course-products', 'portfolio'];
   Router._fromPopstate = true;
-  Router.go(PAGES.includes(hashPage) ? hashPage : 'home', hashPage === 'planning' ? { industryId: hashSub || null } : {});
+  let opts = {};
+  if (hashPage === 'planning') opts = { industryId: hashSub || null };
+  else if (hashPage === 'course-products') opts = { productId: hashSub || null };
+  Router.go(PAGES.includes(hashPage) ? hashPage : 'home', opts);
   Router._fromPopstate = false;
 });
 

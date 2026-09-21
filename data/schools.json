@@ -1,0 +1,2746 @@
+{
+  "direction-1": [
+    {
+      "country": "英国",
+      "schoolEn": "University College London",
+      "schoolCn": "伦敦大学学院",
+      "city": "伦敦",
+      "program": "Design for Performance & Interaction MArch",
+      "url": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/design-performance-interaction-march"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University College London",
+      "schoolCn": "伦敦大学学院",
+      "city": "伦敦",
+      "program": "Digital Media: Production MA",
+      "url": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/digital-media-production-ma"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Royal College of Art",
+      "schoolCn": "皇家艺术学院",
+      "city": "伦敦",
+      "program": "MA Digital Direction",
+      "url": "https://www.rca.ac.uk/study/programme-finder/digital-direction-ma/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "London College of Communication",
+      "schoolCn": "伦敦传媒学院",
+      "city": "伦敦",
+      "program": "MA Design for Art Direction",
+      "url": "https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-design-for-art-direction-lcc"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Camberwell College of Arts",
+      "schoolCn": "坎伯韦尔艺术学院",
+      "city": "伦敦",
+      "program": "MA Fine art: Computational Arts",
+      "url": "https://www.arts.ac.uk/subjects/fine-art/postgraduate/ma-fine-art-camberwell"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Central Saint Martins College of Art and Design",
+      "schoolCn": "中央圣马丁艺术与设计学院",
+      "city": "伦敦",
+      "program": "MA Narrative Environments",
+      "url": "https://www.arts.ac.uk/subjects/architecture-spatial-and-interior-design/postgraduate/ma-narrative-environments-csm"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Creative Computing Institute",
+      "schoolCn": "创意计算机学院",
+      "city": "伦敦",
+      "program": "MSc Creative Computing",
+      "url": "https://www.arts.ac.uk/subjects/creative-computing/postgraduate/msc-creative-computing"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Creative Computing Institute",
+      "schoolCn": "创意计算机学院",
+      "city": "伦敦",
+      "program": "MA/MSc Computing and Creative Industry (Modular)",
+      "url": "https://www.arts.ac.uk/subjects/creative-computing/postgraduate/mamsc-computing-and-creative-industry-modular"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "The University of Edinburgh",
+      "schoolCn": "爱丁堡大学",
+      "city": "伦敦",
+      "program": "MSc Design and Digital Media",
+      "url": "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2023&id=37"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Loughborough University",
+      "schoolCn": "拉夫堡大学",
+      "city": "伦敦",
+      "program": "MSc Digital Creative Media",
+      "url": "https://www.lboro.ac.uk/study/postgraduate/masters-degrees/a-z/digital-creative-media/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University of Bristol",
+      "schoolCn": "布里斯托大学",
+      "city": "布里斯托",
+      "program": "MSc,PGDip, PGCert Immersive Technologies(Virtual & Augmented Reality)",
+      "url": "https://www.bristol.ac.uk/study/postgraduate/taught/msc-immersive-technologies-virtual-and-augmented-reality/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Goldsmiths, University of London",
+      "schoolCn": "伦敦大学金史密斯学院",
+      "city": "伦敦",
+      "program": "MA Digital Media",
+      "url": "https://www.gold.ac.uk/pg/ma-digital-media/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Goldsmiths, University of London",
+      "schoolCn": "伦敦大学金史密斯学院",
+      "city": "伦敦",
+      "program": "MA/ MFA Computational Arts",
+      "url": "https://www.gold.ac.uk/pg/ma-computational-arts/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University of Southampton",
+      "schoolCn": "南安普顿大学",
+      "city": "南安普顿",
+      "program": "MSc Creative Technologies",
+      "url": "https://www.southampton.ac.uk/courses/creative-technologies-masters-msc"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University of Leeds",
+      "schoolCn": "利兹大学",
+      "city": "利兹",
+      "program": "MA Digital Media",
+      "url": "https://courses.leeds.ac.uk/j692/digital-media-ma"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "University of Toronto",
+      "schoolCn": "多伦多大学",
+      "city": "多伦多",
+      "program": "Master of Information - C&T: Culture and Technology concentration",
+      "url": "https://ischool.utoronto.ca/master-of-information/"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of Melbourne",
+      "schoolCn": "墨尔本大学",
+      "city": "墨尔本",
+      "program": "Master of Design and Production",
+      "url": "https://study.unimelb.edu.au/find/courses/graduate/master-of-design-and-production/"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of Sydney",
+      "schoolCn": "悉尼大学",
+      "city": "悉尼",
+      "program": "Master of Interaction Design and Electronic Arts",
+      "url": "https://www.sydney.edu.au/courses/courses/pc/master-of-interaction-design-and-electronic-arts.html"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "The University of New South Wales",
+      "schoolCn": "新南威尔士大学",
+      "city": "悉尼",
+      "program": "Master of Simulation and Immersive Technologies",
+      "url": "https://www.unsw.edu.au/study/postgraduate/master-of-simulation-and-immersive-technologies?studentType=International"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "Royal Melbourne Institute of Technology",
+      "schoolCn": "皇家墨尔本理工",
+      "city": "墨尔本",
+      "program": "Master of Design Innovation and Technology",
+      "url": "https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters-by-coursework/master-of-design-innovation-and-technology-mc231"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "The University of Adelaide",
+      "schoolCn": "阿德莱德大学",
+      "city": "阿德莱德",
+      "program": "Master of Immersive Media Technologies",
+      "url": "https://www.adelaide.edu.au/degree-finder/2024/mimt_mimedtech.html"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The University of Hong Kong (HKU)",
+      "schoolCn": "香港大学",
+      "city": "香港",
+      "program": "Master of Science in Engineering (Innovative Design and Technology)",
+      "url": "https://admissions.hku.hk/tpg/programme/master-science-engineering-innovative-design-and-technology"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Hong Kong University of Science and Technology",
+      "schoolCn": "香港科技大学",
+      "city": "香港",
+      "program": "Master of Arts (MA) in Arts and Machine Creativity",
+      "url": "https://amc.hkust.edu.hk/master-arts-ma-program-program-objective"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Hong Kong Polytechnic University",
+      "schoolCn": "香港理工大学",
+      "city": "香港",
+      "program": "MSc Innovative Multimedia Entertainment",
+      "url": "https://www.polyu.edu.hk/sd/study/tpg/innovative-multimedia-entertainment/"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "City University of Hong Kong",
+      "schoolCn": "香港城市大学",
+      "city": "香港",
+      "program": "MFA Creative Media",
+      "url": "https://www.cityu.edu.hk/pg/programme/p80"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Hong Kong Baptist University",
+      "schoolCn": "香港浸会大学",
+      "city": "香港",
+      "program": "MA in Communication-Interactive Media Concentration",
+      "url": "https://ar.hkbu.edu.hk/tpg-admissions/programmes/master-of-arts-ma-in-communication"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Hong Kong Baptist University",
+      "schoolCn": "香港浸会大学",
+      "city": "香港",
+      "program": "Master of Science (MSc) in AI and Digital Media",
+      "url": "https://comm.hkbu.edu.hk/en/programmes/taught-postgraduate-programmes/aidm.html"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Beijing Normal University & Hong Kong Baptist University United International College",
+      "schoolCn": "北师港浸会大学",
+      "city": "珠海",
+      "program": "Interactive Media Studies Concentration",
+      "url": "https://gs.uic.edu.cn/graduate1/Taught_Postgraduate_Programme/imsc.htm"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Hong Kong Academy for Performing Arts",
+      "schoolCn": "香港演艺学院",
+      "city": "香港",
+      "program": "Master of Fine Arts in Theatre and Entertainment Arts",
+      "url": "https://www.hkapa.edu/tea/study-with-us/programme/master-of-fine-arts-in-theatre-and-entertainment-arts"
+    },
+    {
+      "country": "澳门",
+      "schoolEn": "Macao Polytechnic University",
+      "schoolCn": "澳门理工大学",
+      "city": "中国澳门",
+      "program": "Master of Interdisciplinary Arts，跨领域艺术",
+      "url": "https://www.mpu.edu.mo/esa/en/master_iarts.php"
+    },
+    {
+      "country": "澳门",
+      "schoolEn": "Macau University of Science and Technology",
+      "schoolCn": "澳门科技大学",
+      "city": "中国澳门",
+      "program": "Master of Design，设计学 Major: Communication Design，传播设计 Cultural Heritage Conservation，文化遗产保护 Design Management，设计管理",
+      "url": "https://fa.must.edu.mo/programmes/program/view/id-196.html?locale=en_US"
+    },
+    {
+      "country": "新加坡",
+      "schoolEn": "Nanyang Technological University",
+      "schoolCn": "南洋理工大学",
+      "city": "新加坡",
+      "program": "Master of Arts in Digital Humanities 数字人文",
+      "url": "https://www.ntu.edu.sg/education/graduate-programme/master-of-arts-(research)#admission"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Utrecht University",
+      "schoolCn": "乌特勒支大学",
+      "city": "",
+      "program": "New Media & Digital Culture 新媒体&数字文化，一年制",
+      "url": "https://www.uu.nl/en/masters/new-media-digital-culture",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Xi'an Jiaotong-Liverpool University",
+      "schoolCn": "西交利物浦大学",
+      "city": "江苏苏州",
+      "program": "MSc Cultural and Creative Industries，文化与创意产业",
+      "url": "https://www.xjtlu.edu.cn/zh/study/masters/cultural-and-creative-industries"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "The Hong Kong University of Science and Technology （Guangzhou）",
+      "schoolCn": "香港科技大学（广州）",
+      "city": "广东广州",
+      "program": "Master of Fine Arts Program in Computational Arts，计算艺术",
+      "url": "https://fytgs.hkust-gz.edu.cn/programs/computational-arts"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "California Institute of the Arts",
+      "schoolCn": "加州艺术学院",
+      "city": "洛杉矶",
+      "program": "MFA in Art and Technology",
+      "url": "https://art.calarts.edu/programs/art-and-technology",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Art Center College of Design",
+      "schoolCn": "加州艺术中心学院",
+      "city": "帕萨迪纳",
+      "program": "MFA Media Design Practices",
+      "url": "http://www.artcenter.edu/academics/graduate-degrees/media-design-practices/overview.html",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "School of Visual Arts",
+      "schoolCn": "纽约视觉艺术学院",
+      "city": "纽约",
+      "program": "MFA Computer Art",
+      "url": "https://sva.edu/academics/graduate/mfa-computer-art",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "School of the Art Institute of Chicago",
+      "schoolCn": "芝加哥艺术学院",
+      "city": "芝加哥",
+      "program": "MFA in Studio: Art and Technology Studies",
+      "url": "https://www.saic.edu/academics/departments/art-and-technology-studies",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Parsons the New School for Design",
+      "schoolCn": "帕森斯设计学院",
+      "city": "纽约",
+      "program": "MFA Design and Technology",
+      "url": "https://www.newschool.edu/parsons/mfa-design-technology/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Pratt Institute",
+      "schoolCn": "普瑞特艺术学院",
+      "city": "纽约",
+      "program": "MFA Digital Arts - Interactive Arts",
+      "url": "https://www.pratt.edu/art/digital-arts-and-animation/interactive-arts-digital-arts-mfa/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Massachusetts Institute of Technology",
+      "schoolCn": "麻省理工学院",
+      "city": "波士顿",
+      "program": "MAS Media Arts and Sciences",
+      "url": "https://www.media.mit.edu/graduate-program/about-media-arts-sciences/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of California Los Angeles",
+      "schoolCn": "加州大学洛杉矶分校",
+      "city": "洛杉矶",
+      "program": "MFA Design Media Arts",
+      "url": "https://www.design.ucla.edu/programs/mfa",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Columbia University",
+      "schoolCn": "哥伦比亚大学",
+      "city": "纽约",
+      "program": "MA in Instructional Technology & Media",
+      "url": "https://www.tc.columbia.edu/mathematics-science-and-technology/communication-media-and-learning-technologies-design/degrees--requirements/instructional-technology-and-media-ma/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "New York University",
+      "schoolCn": "纽约大学",
+      "city": "纽约",
+      "program": "MPS in Interactive Telecommunications",
+      "url": "https://tisch.nyu.edu/itp",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "New York University",
+      "schoolCn": "纽约大学",
+      "city": "纽约",
+      "program": "MS Integrated Digital Media",
+      "url": "https://engineering.nyu.edu/academics/programs/integrated-digital-media-ms-campus",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of Southern California",
+      "schoolCn": "南加州大学",
+      "city": "洛杉矶",
+      "program": "MS Integrated Design, Business and Technology",
+      "url": "https://iovine-young.usc.edu/learn/graduate/ms-integrated-design-business-tech",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Johns Hopkins University",
+      "schoolCn": "约翰霍普金斯大学",
+      "city": "巴尔地摩",
+      "program": "Master of Arts in Film and Media",
+      "url": "https://landing.advanced.jhu.edu/mafm/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Northeastern University",
+      "schoolCn": "东北大学",
+      "city": "波士顿",
+      "program": "Master of Professional Studies in Digital Media",
+      "url": "https://cps.northeastern.edu/program/master-of-professional-studies-in-digital-media-boston/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Ohio State University",
+      "schoolCn": "俄亥俄州立大学",
+      "city": "哥伦布",
+      "program": "MFA Art (Art and Technology)",
+      "url": "https://gpadmissions.osu.edu/programs/program.aspx?prog=0021",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Arizona State University",
+      "schoolCn": "亚利桑那州立大学",
+      "city": "凤凰城",
+      "program": "Art (Digital Technology), MFA",
+      "url": "https://art.asu.edu/degree-programs/art-digital-technology-mfa-mfa",
+      "region": "综合类"
+    }
+  ],
+  "direction-2": [
+    {
+      "country": "英国",
+      "schoolEn": "Royal College of Art",
+      "schoolCn": "皇家艺术学院",
+      "city": "伦敦",
+      "program": "MA Visual Communication",
+      "url": "https://www.rca.ac.uk/study/programme-finder/visual-communication-ma/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Royal College of Art",
+      "schoolCn": "皇家艺术学院",
+      "city": "伦敦",
+      "program": "MA Information Experience Design",
+      "url": "https://www.rca.ac.uk/study/programme-finder/information-experience-design-ma/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Imperial College London",
+      "schoolCn": "帝国理工学院",
+      "city": "伦敦",
+      "program": "MSc Science Communication",
+      "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/science-communication/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "London School of Economics and Political Science",
+      "schoolCn": "伦敦政治经济学院",
+      "city": "伦敦",
+      "program": "MSc Media and Communications",
+      "url": "https://www.lse.ac.uk/study-at-lse/graduate/msc-media-and-communications"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "London School of Economics and Political Science",
+      "schoolCn": "伦敦政治经济学院",
+      "city": "伦敦",
+      "program": "MSc Media, Communication and Development",
+      "url": "https://www.lse.ac.uk/study-at-lse/graduate/msc-media-communication-and-development"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University College London",
+      "schoolCn": "伦敦大学学院",
+      "city": "伦敦",
+      "program": "Digital Media: Production MA",
+      "url": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/digital-media-production-ma"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "London College of Communication",
+      "schoolCn": "伦敦传媒学院",
+      "city": "伦敦",
+      "program": "MA Graphic Media Design",
+      "url": "https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-graphic-media-design-lcc"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "London College of Communication",
+      "schoolCn": "伦敦传媒学院",
+      "city": "伦敦",
+      "program": "MA Design for Data Visualisation",
+      "url": "https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-data-visualisation-lcc"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Parsons the New School for Design",
+      "schoolCn": "帕森斯设计学院",
+      "city": "纽约",
+      "program": "MPS Communication Design",
+      "url": "https://www.newschool.edu/parsons/mps-communication-design/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Pratt Institute",
+      "schoolCn": "普瑞特艺术学院",
+      "city": "纽约",
+      "program": "MFA Communications Design",
+      "url": "https://www.pratt.edu/art/digital-arts-and-animation/digital-arts-mfa-interactive-arts-concentration/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Savannah College of Art and Design",
+      "schoolCn": "萨凡纳艺术设计学院",
+      "city": "萨凡纳",
+      "program": "M.F.A. in UX design",
+      "url": "https://www.scad.edu/academics/programs/user-experience-design/degrees/mfa",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Academy Of Art University",
+      "schoolCn": "旧金山艺术大学",
+      "city": "旧金山",
+      "program": "MA / MFA Interaction & UI/UX Design",
+      "url": "https://www.academyart.edu/academics/interaction-ui-ux-design/degrees/interaction-ui-ux-design-mfa/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Rhode Island School of Design",
+      "schoolCn": "罗德岛设计学院",
+      "city": "普罗维登斯",
+      "program": "MFA Graphic Design",
+      "url": "http://www.risd.edu/academics/graphic-design/graduate/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "School of Visual Arts",
+      "schoolCn": "纽约视觉艺术学院",
+      "city": "纽约",
+      "program": "MFA Design",
+      "url": "https://sva.edu/academics/graduate/mfa-design",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "School of Visual Arts",
+      "schoolCn": "纽约视觉艺术学院",
+      "city": "纽约",
+      "program": "MFA Design for Social Innovation",
+      "url": "https://dsi.sva.edu/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "New York University",
+      "schoolCn": "纽约大学",
+      "city": "纽约",
+      "program": "MS Integrated Digital Media",
+      "url": "https://engineering.nyu.edu/academics/programs/integrated-digital-media-ms-campus",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "New York University",
+      "schoolCn": "纽约大学",
+      "city": "纽约",
+      "program": "MA Interactive Media Arts (low-residency)",
+      "url": "https://tisch.nyu.edu/itp/admissions/ima-low-res-graduate-program",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "New York University",
+      "schoolCn": "纽约大学",
+      "city": "纽约",
+      "program": "MA Media, Culture, and Communication",
+      "url": "https://steinhardt.nyu.edu/degree/ma-media-culture-and-communication",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of Southern California",
+      "schoolCn": "南加州大学",
+      "city": "洛杉矶",
+      "program": "MS Integrated Design, Business and Technology",
+      "url": "https://iovine-young.usc.edu/learn/graduate/ms-integrated-design-business-tech",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of Southern California",
+      "schoolCn": "南加州大学",
+      "city": "洛杉矶",
+      "program": "Master of Communication Management",
+      "url": "https://annenberg.usc.edu/academics/communication-mcm",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Georgetown University",
+      "schoolCn": "乔治城大学",
+      "city": "圣路易斯县",
+      "program": "MA Communication Culture & Technology",
+      "url": "https://cct.georgetown.edu/",
+      "region": "综合类"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "OCAD University",
+      "schoolCn": "安大略艺术设计学院",
+      "city": "多伦多",
+      "program": "Interdisciplinary Master's in Art, Media and Design (MA, MDes and MFA)",
+      "url": "https://gradadmissions.ocadu.ca/program/IAMD"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "Emily Carr University of Art and Design",
+      "schoolCn": "艾米丽卡尔艺术与设计大学",
+      "city": "温哥华",
+      "program": "Master of Design",
+      "url": "http://www.ecuad.ca/academics/graduate-degrees/master-of-design"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "York University",
+      "schoolCn": "约克大学",
+      "city": "多伦多",
+      "program": "Master of Design",
+      "url": "https://futurestudents.yorku.ca/graduate/programs/design"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "University of Alberta",
+      "schoolCn": "阿尔伯塔大学",
+      "city": "埃德蒙顿",
+      "program": "Master of Design (MDes) in Design Studies",
+      "url": "https://www.ualberta.ca/art-design/graduate-programs/designstudies"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "NSCAD University",
+      "schoolCn": "诺瓦艺术与设计大学",
+      "city": "哈利法克斯",
+      "program": "Master of Design",
+      "url": "https://nscad.ca/undergraduate-programs/master-of-design/"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "Concordia University",
+      "schoolCn": "康考迪亚大学",
+      "city": "蒙特利尔",
+      "program": "Master of Design",
+      "url": "http://www.concordia.ca/academics/graduate/design.html"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "University of British Columbia 【Centre for Digital Media】",
+      "schoolCn": "加拿大英属哥伦比亚大学",
+      "city": "温哥华",
+      "program": "Master of Digital Media",
+      "url": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs/master-of-digital-media"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "Northeastern University",
+      "schoolCn": "东北大学",
+      "city": "温哥华",
+      "program": "Master of Professional Studies in Digital Media",
+      "url": "https://cps.northeastern.edu/program/master-of-professional-studies-in-digital-media-boston/"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "Simon Fraser University",
+      "schoolCn": "西蒙菲莎大学",
+      "city": "本拿比",
+      "program": "Interactive Arts and Technology MSc",
+      "url": "https://www.sfu.ca/students/calendar/2023/summer/programs/interactive-arts-and-technology/master-of-science.html"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of Melbourne",
+      "schoolCn": "墨尔本大学",
+      "city": "墨尔本",
+      "program": "Master of Design and Production",
+      "url": "https://study.unimelb.edu.au/find/courses/graduate/master-of-design-and-production/"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of Sydney",
+      "schoolCn": "悉尼大学",
+      "city": "悉尼",
+      "program": "Master of Design (Design Innovation)",
+      "url": "https://www.sydney.edu.au/courses/courses/pc/master-of-design-design-innovation.html"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of Sydney",
+      "schoolCn": "悉尼大学",
+      "city": "悉尼",
+      "program": "Master of Design (Strategic Design)",
+      "url": "https://www.sydney.edu.au/courses/courses/pc/master-of-design-strategic-design.html"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "The University of New South Wales",
+      "schoolCn": "新南威尔士大学",
+      "city": "悉尼",
+      "program": "Master of Design",
+      "url": "https://www.unsw.edu.au/study/postgraduate/master-of-design?studentType=International"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "The University of New South Wales",
+      "schoolCn": "新南威尔士大学",
+      "city": "悉尼",
+      "program": "Master of Design / Master of Public Relations & Advertising",
+      "url": "https://www.unsw.edu.au/study/postgraduate/master-of-public-relations-and-advertising-design?studentType=International"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "Monash University",
+      "schoolCn": "蒙纳士大学",
+      "city": "墨尔本",
+      "program": "Master of Design",
+      "url": "https://www.monash.edu/study/courses/find-a-course/design-f6002?international=true"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "Royal Melbourne Institute of Technology",
+      "schoolCn": "皇家墨尔本理工",
+      "city": "墨尔本",
+      "program": "Master of Communication Design",
+      "url": "https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters-by-coursework/mc250"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "Griffith University",
+      "schoolCn": "格里菲斯大学",
+      "city": "黄金海岸",
+      "program": "Master of Design",
+      "url": "https://www.griffith.edu.au/study/degrees/master-of-design-5720"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "The Queensland University of Technology",
+      "schoolCn": "昆士兰科技大学",
+      "city": "布里斯班",
+      "program": "Master of Digital Communication",
+      "url": "https://www.qut.edu.au/courses/master-of-digital-communication"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "Swinburne University",
+      "schoolCn": "斯威本科技大学",
+      "city": "墨尔本",
+      "program": "Master of Design",
+      "url": "https://www.swinburne.edu.au/study/course/Master-of-Design-MA-DESG/international"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The University of Hong Kong (HKU)",
+      "schoolCn": "香港大学",
+      "city": "香港",
+      "program": "Master of Arts in the field of Creative Communications",
+      "url": "https://admissions.hku.hk/tpg/programme/master-arts-field-creative-communications"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The University of Hong Kong (HKU)",
+      "schoolCn": "香港大学",
+      "city": "香港",
+      "program": "MSSc in the field of Media, Culture and Creative Cities",
+      "url": "https://sociology.hku.hk/taught-postgraduate/tpg-media-culture-creative-cities"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The University of Hong Kong (HKU)",
+      "schoolCn": "香港大学",
+      "city": "香港",
+      "program": "Master of Science in Engineering (Innovative Design and Technology)",
+      "url": "https://admissions.hku.hk/tpg/programme/master-science-engineering-innovative-design-and-technology"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Hong Kong University of Science and Technology",
+      "schoolCn": "香港科技大学",
+      "city": "香港",
+      "program": "Master of Arts (MA) in Arts and Machine Creativity",
+      "url": "https://amc.hkust.edu.hk/master-arts-ma-program-program-objective"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Hong Kong University of Science and Technology",
+      "schoolCn": "香港科技大学",
+      "city": "香港",
+      "program": "MSc Technology Leadership and Entrepreneurship",
+      "url": "https://isd.hkust.edu.hk/academics/msc-tle"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Chinese University of Hong Kong",
+      "schoolCn": "香港中文大学",
+      "city": "香港",
+      "program": "MSc in New Media",
+      "url": "https://pg.com.cuhk.edu.hk/pgp_nm/index.html"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Chinese University of Hong Kong",
+      "schoolCn": "香港中文大学",
+      "city": "香港",
+      "program": "MSSC.in Adversting",
+      "url": "https://pg.com.cuhk.edu.hk/pgp_adv/"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Chinese University of Hong Kong",
+      "schoolCn": "香港中文大学",
+      "city": "香港",
+      "program": "M.Sc. in Artificial Intelligence and Communication",
+      "url": "https://aicomm.com.cuhk.edu.hk"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Hong Kong Polytechnic University",
+      "schoolCn": "香港理工大学",
+      "city": "香港",
+      "program": "Multimedia & Entertainment Technology (MSc)",
+      "url": "https://www.sd.polyu.edu.hk/en/study-detail/multimedia-and-entertainment-technology"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Hong Kong Polytechnic University",
+      "schoolCn": "香港理工大学",
+      "city": "香港",
+      "program": "Innovative Business Design (MDes)",
+      "url": "https://www.sd.polyu.edu.hk/en/study-detail/innovative-business-design"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Hong Kong Baptist University",
+      "schoolCn": "香港浸会大学",
+      "city": "香港",
+      "program": "Master of Arts (MA) in Visual Arts",
+      "url": "https://ar.hkbu.edu.hk/tpg-admissions/programmes/master-of-arts-ma-in-visual-arts"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Education University of Hong Kong",
+      "schoolCn": "香港教育大学",
+      "city": "香港",
+      "program": "Master of Arts in New Media and Social Media",
+      "url": "https://aedi.eduhk.hk/programmes/postgraduate-programmes/master-of-arts-in-new-media-and-social-media"
+    },
+    {
+      "country": "澳门",
+      "schoolEn": "University of Macau",
+      "schoolCn": "澳门大学",
+      "city": "中国澳门",
+      "program": "Master of Design in Visual Communication Design，视传设计",
+      "url": "https://fah.um.edu.mo/mdesvcd/"
+    },
+    {
+      "country": "澳门",
+      "schoolEn": "Macau University of Science and Technology",
+      "schoolCn": "澳门科技大学",
+      "city": "中国澳门",
+      "program": "Master of Design，设计学 Major: Communication Design，传播设计 Cultural Heritage Conservation，文化遗产保护 Design Management，设计管理",
+      "url": "https://fa.must.edu.mo/programmes/program/view/id-196.html?locale=en_US"
+    },
+    {
+      "country": "澳门",
+      "schoolEn": "Macao Polytechnic University",
+      "schoolCn": "澳门理工大学",
+      "city": "中国澳门",
+      "program": "Master of Interdisciplinary Arts，跨领域艺术",
+      "url": "https://www.mpu.edu.mo/esa/en/master_iarts.php"
+    },
+    {
+      "country": "澳门",
+      "schoolEn": "City University of Macau",
+      "schoolCn": "澳门城市大学",
+      "city": "中国澳门",
+      "program": "Master of Design (Chinese)，设计",
+      "url": "https://fiad.cityu.edu.mo/en/page-80"
+    },
+    {
+      "country": "新加坡",
+      "schoolEn": "National University of Singapore",
+      "schoolCn": "新加坡国立大学",
+      "city": "新加坡",
+      "program": "Master of Communication 传播学",
+      "url": "https://fass.nus.edu.sg/cnm/study/master-of-communication/"
+    },
+    {
+      "country": "新加坡",
+      "schoolEn": "Nanyang Technological University",
+      "schoolCn": "南洋理工大学",
+      "city": "新加坡",
+      "program": "Master of Media and Communication 媒体与传播",
+      "url": "https://www.ntu.edu.sg/education/graduate-programme/master-of-media-and-communication"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Aalto University",
+      "schoolCn": "阿尔托大学",
+      "city": "芬兰",
+      "program": "Master’s Programme in Visual Communication Design",
+      "url": "https://www.aalto.fi/en/study-options/visual-communication-design-art-and-media-master-of-arts-art-and-design",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "KHiO - Oslo National Academy of the Arts",
+      "schoolCn": "奥斯陆国立艺术学院",
+      "city": "挪威",
+      "program": "Master’s in Design (Graphic Design and Illustration)",
+      "url": "https://khio.no/en/study-programmes/made",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "University of Bergen",
+      "schoolCn": "卑尔根大学",
+      "city": "挪威",
+      "program": "MA in Design",
+      "url": "https://kmd.uib.no/en/studies-and-admissions/ma-in-design",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Linköping University",
+      "schoolCn": "林雪平大学",
+      "city": "瑞典",
+      "program": "Design, Master's Programme ·Visual Media Design",
+      "url": "https://liu.se/en/education/program/6mdes",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "SUPINFOCOM RUBIKA",
+      "schoolCn": "法国高等视觉传媒学院",
+      "city": "瓦朗谢纳",
+      "program": "Digital Design Master",
+      "url": "https://en.rubika-edu.com/design-numerique-annee-4_copy_from_fr/",
+      "region": "法国"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Ecole Nationale Supérieure des Arts Décoratifs",
+      "schoolCn": "巴黎高等装饰艺术学院（ENSAD）",
+      "city": "巴黎",
+      "program": "Design graphique / multimedia",
+      "url": "https://www.ensad.fr/formations/cursus/2e-5e-annee-specialisations",
+      "region": "法国"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "École gratuite de dessin",
+      "schoolCn": "里昂国家美术高等学院",
+      "city": "里昂",
+      "program": "Design graphique",
+      "url": "http://www.ensba-lyon.fr/page_dnsepmaster-designgraphique",
+      "region": "法国"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Creative Schools & Community",
+      "schoolCn": "法国高等设计学院(ECV)",
+      "city": "巴黎",
+      "program": "Masters' degree in Design",
+      "url": "https://www.ecv.fr/en/design/programmes/masters-degree-in-design/",
+      "region": "法国"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "L'Institut Supérieur des Arts Appliqués LISAA",
+      "schoolCn": "巴黎高等应用艺术学院（LISAA）",
+      "city": "巴黎",
+      "program": "Master Digital Art Direction",
+      "url": "https://www.lisaa.com/en/art-courses/master?f%5B0%5D=field_add_program%253Afield_domaine%3A79",
+      "region": "法国"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "L'Institut Supérieur des Arts Appliqués LISAA",
+      "schoolCn": "巴黎高等应用艺术学院",
+      "city": "巴黎",
+      "program": "Master Digital Art Direction / UX/UI Design",
+      "url": "https://www.lisaa.com/en/courses/graphic-design-courses-master-digital-art-direction",
+      "region": "法国"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "L'Institut Supérieur des Arts Appliqués LISAA",
+      "schoolCn": "巴黎高等应用艺术学院",
+      "city": "巴黎",
+      "program": "Master Digital Communication",
+      "url": "https://www.lisaa.com/en/courses/courses-master-art-direction-communication-paris",
+      "region": "法国"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Esag-penninghen",
+      "schoolCn": "设计学院",
+      "city": "巴黎",
+      "program": "Formation Communication",
+      "url": "https://www.penninghen.fr/formation/mastere-communication",
+      "region": "法国"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "New York University Shanghai",
+      "schoolCn": "上海纽约大学",
+      "city": "上海",
+      "program": "MA in Interactive Media Arts，互动媒体艺术",
+      "url": "https://itp.nyu.edu/lowres/"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "University of Nottingham Ningbo China",
+      "schoolCn": "宁波诺丁汉大学",
+      "city": "浙江宁波",
+      "program": "MA International Communications Studies，国际传播学",
+      "url": "https://www.nottingham.edu.cn/cn/Study-with-us/Postgraduate-taught/Courses/Prospectus.aspx?id=32eced62-f3f5-4a20-afea-e8a242382eba&language=zh"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Beijing Normal-Hong Kong Baptist University",
+      "schoolCn": "北师香港浸会大学",
+      "city": "广东珠海",
+      "program": "Master of Arts in Communication - Media Management Concentration，媒体管理",
+      "url": "https://gs.bnbu.edu.cn/graduate1/Taught_Postgraduate_Programme/Media_Management_Concentration__MMGT_.htm"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Beijing Normal-Hong Kong Baptist University",
+      "schoolCn": "北师香港浸会大学",
+      "city": "广东珠海",
+      "program": "Master of Arts in Communication - Communication Studies Concentration，传媒研究",
+      "url": "https://fhss.bnbu.edu.cn/comm_en/info/1083/1242.htm"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Xi'an Jiaotong-Liverpool University",
+      "schoolCn": "西交利物浦大学",
+      "city": "江苏苏州",
+      "program": "MSc Media and Communication，媒介与传播",
+      "url": "https://www.xjtlu.edu.cn/en/study/masters/msc-media-and-communication"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Hainan International College of Communication University of China & Michigan State University",
+      "schoolCn": "中国传媒大学海南学院&美国密西根州立大学",
+      "city": "海南陵水",
+      "program": "Digital Advertising（MA），新媒体",
+      "url": "https://hainan.cuc.edu.cn/"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Hainan International College of Communication University of China & Coventry College",
+      "schoolCn": "中国传媒大学海南学院&英国考文垂大学",
+      "city": "海南陵水",
+      "program": "Design Management (MA), 设计学硕士",
+      "url": "https://hainan.cuc.edu.cn/2025/0326/c10637a252596/page.htm"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Zhejiang University of Media and Communications & University of Bolton, UK",
+      "schoolCn": "浙江传媒学院&英国博尔顿大学",
+      "city": "浙江杭州",
+      "program": "视觉传媒硕士",
+      "url": "https://byzc.cuz.edu.cn/info/1028/5767.htm"
+    }
+  ],
+  "direction-3": [
+    {
+      "country": "英国",
+      "schoolEn": "Royal College of Art",
+      "schoolCn": "皇家艺术学院",
+      "city": "伦敦",
+      "program": "MA Digital Direction MA",
+      "url": "https://www.rca.ac.uk/study/programme-finder/digital-direction-ma/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Royal College of Art",
+      "schoolCn": "皇家艺术学院",
+      "city": "伦敦",
+      "program": "MA Information Experience Design",
+      "url": "https://www.rca.ac.uk/study/programme-finder/information-experience-design-ma/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Imperial College London",
+      "schoolCn": "帝国理工学院",
+      "city": "伦敦",
+      "program": "MRes Artificial Intelligence and Machine Learning",
+      "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/artificial-intelligence-machine-learning/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Imperial College London",
+      "schoolCn": "帝国理工学院",
+      "city": "伦敦",
+      "program": "MSc Artificial Intelligence Applications and Innovation",
+      "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/applications-innovation/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Camberwell College of Arts",
+      "schoolCn": "坎伯韦尔艺术学院",
+      "city": "伦敦",
+      "program": "MA Fine art: Computational Arts",
+      "url": "https://www.arts.ac.uk/subjects/fine-art/postgraduate/ma-fine-art-camberwell"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Creative Computing Institute",
+      "schoolCn": "创意计算机学院",
+      "city": "伦敦",
+      "program": "MSc Data Science and AI",
+      "url": "https://www.arts.ac.uk/subjects/creative-computing/postgraduate/msc-data-science-and-ai#application-process"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Creative Computing Institute",
+      "schoolCn": "创意计算机学院",
+      "city": "伦敦",
+      "program": "MSc Applied Machine Learning for Creatives",
+      "url": "https://www.arts.ac.uk/subjects/creative-computing/postgraduate/msc-data-science-and-ai-for-the-creative-industries"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Creative Computing Institute",
+      "schoolCn": "创意计算机学院",
+      "city": "伦敦",
+      "program": "MSc Creative Computing",
+      "url": "https://www.arts.ac.uk/subjects/creative-computing/postgraduate/msc-creative-computing"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University of Bristol",
+      "schoolCn": "布里斯托大学",
+      "city": "布里斯托",
+      "program": "Immersive Technologies(Virtual & Augmented Reality) (MSc,PGDip, PGCert)",
+      "url": "https://www.bristol.ac.uk/study/postgraduate/taught/msc-immersive-technologies-virtual-and-augmented-reality/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Goldsmiths, University of London",
+      "schoolCn": "伦敦大学金史密斯学院",
+      "city": "伦敦",
+      "program": "MA/ MFA Computational Arts",
+      "url": "https://www.gold.ac.uk/pg/ma-computational-arts/"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "California Institute of the Arts",
+      "schoolCn": "加州艺术学院",
+      "city": "洛杉矶",
+      "program": "MFA in Art and Technology",
+      "url": "https://art.calarts.edu/programs/art-and-technology",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "School of the Art Institute of Chicago",
+      "schoolCn": "芝加哥艺术学院",
+      "city": "芝加哥",
+      "program": "MFA in Studio: Art and Technology Studies",
+      "url": "https://www.saic.edu/academics/departments/art-and-technology-studies",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Parsons the New School for Design",
+      "schoolCn": "帕森斯设计学院",
+      "city": "纽约",
+      "program": "MFA Design and Technology",
+      "url": "https://www.newschool.edu/parsons/mfa-design-technology/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Massachusetts Institute of Technology",
+      "schoolCn": "麻省理工学院",
+      "city": "波士顿",
+      "program": "Media Arts and Sciences (MAS) - Master's level",
+      "url": "https://www.media.mit.edu/graduate-program/about-media-arts-sciences/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Cornell University",
+      "schoolCn": "康奈尔大学",
+      "city": "伊萨卡",
+      "program": "Master of Science in Design Technology",
+      "url": "https://tech.cornell.edu/programs/masters-programs/master-of-science-in-design-technology/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "New York University",
+      "schoolCn": "纽约大学",
+      "city": "纽约",
+      "program": "MPS in Interactive Telecommunications",
+      "url": "https://tisch.nyu.edu/itp",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "New York University",
+      "schoolCn": "纽约大学",
+      "city": "纽约",
+      "program": "MS Emerging Technology",
+      "url": "https://engineering.nyu.edu/academics/programs/emerging-technologies-ms",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Duke University",
+      "schoolCn": "杜克大学",
+      "city": "达勒姆",
+      "program": "MA in Computational Media",
+      "url": "https://aahvs.duke.edu/graduate/ma-cmac",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Ohio State University",
+      "schoolCn": "俄亥俄州立大学",
+      "city": "哥伦布",
+      "program": "MFA Art (Art and Technology)",
+      "url": "https://gpadmissions.osu.edu/programs/program.aspx?prog=0021",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Arizona State University",
+      "schoolCn": "亚利桑那州立大学",
+      "city": "凤凰城",
+      "program": "Media Arts and Sciences, MS",
+      "url": "https://artsmediaengineering.asu.edu/masters-degrees-phds/majorinfo/HIDGCMS/graduate/false/50",
+      "region": "综合类"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "Ontario College of Art & Design University",
+      "schoolCn": "安大略艺术设计学院",
+      "city": "多伦多",
+      "program": "Digital Futures (MA, MDes, MFA)",
+      "url": "https://www.ocadu.ca/academics/graduate-studies/digital-futures"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of Sydney",
+      "schoolCn": "悉尼大学",
+      "city": "悉尼",
+      "program": "Master of Interaction Design and Electronic Arts",
+      "url": "https://www.sydney.edu.au/courses/courses/pc/master-of-interaction-design-and-electronic-arts.html"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "The University of New South Wales",
+      "schoolCn": "新南威尔士大学",
+      "city": "悉尼",
+      "program": "Master of Simulation and Immersive Technologies",
+      "url": "https://www.unsw.edu.au/study/postgraduate/master-of-simulation-and-immersive-technologies?studentType=International"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "The University of Adelaide",
+      "schoolCn": "阿德莱德大学",
+      "city": "阿德莱德",
+      "program": "Master of Immersive Media Technologies",
+      "url": "https://www.adelaide.edu.au/degree-finder/2024/mimt_mimedtech.html"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The University of Hong Kong (HKU)",
+      "schoolCn": "香港大学",
+      "city": "香港",
+      "program": "Master of Science in Engineering (Innovative Design and Technology)",
+      "url": "https://admissions.hku.hk/tpg/programme/master-science-engineering-innovative-design-and-technology"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The University of Hong Kong (HKU)",
+      "schoolCn": "香港大学",
+      "city": "香港",
+      "program": "Master of Science in Technology, Design and Leadership for Learning",
+      "url": "https://web.edu.hku.hk/programme/tdll"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Hong Kong University of Science and Technology",
+      "schoolCn": "香港科技大学",
+      "city": "香港",
+      "program": "Master of Arts (MA) in Arts and Machine Creativity",
+      "url": "https://amc.hkust.edu.hk/master-arts-ma-program-program-objective"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Hong Kong University of Science and Technology",
+      "schoolCn": "香港科技大学",
+      "city": "香港",
+      "program": "MSc Technology Leadership and Entrepreneurship",
+      "url": "https://isd.hkust.edu.hk/academics/msc-tle"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Hong Kong Polytechnic University",
+      "schoolCn": "香港理工大学",
+      "city": "香港",
+      "program": "MSc Innovative Multimedia Entertainment",
+      "url": "https://www.polyu.edu.hk/sd/study/tpg/innovative-multimedia-entertainment/"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Hong Kong Baptist University",
+      "schoolCn": "香港浸会大学",
+      "city": "香港",
+      "program": "Master of Science (MSc) in AI and Digital Media",
+      "url": "https://comm.hkbu.edu.hk/en/programmes/taught-postgraduate-programmes/aidm.html"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Education University of Hong Kong",
+      "schoolCn": "香港教育大学",
+      "city": "香港",
+      "program": "Master Of Arts In Emerging Technology For Future Workforce",
+      "url": "https://aapsef.eduhk.hk/study/prospective-students/academic-programmes/master-of-arts-in-emerging-technology-for-future-workforce"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Beijing Normal University & Hong Kong Baptist University United International College",
+      "schoolCn": "北师港浸会大学",
+      "city": "珠海",
+      "program": "Artificial Intelligence & Digital Media Concentration",
+      "url": "https://gs.uic.edu.cn/graduate1/Taught_Postgraduate_Programme/Artificial_Intelligence___Digital_Media_Concentrat.htm"
+    },
+    {
+      "country": "新加坡",
+      "schoolEn": "Singapore University of Technology and Design",
+      "schoolCn": "新加坡科技设计大学",
+      "city": "新加坡",
+      "program": "Master of Science in Technology and Design (Human-Centred Design) 技术与设计（以人为本的设计方向）",
+      "url": ""
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "KTH Royal Institute of Technology",
+      "schoolCn": "瑞典皇家理工大学",
+      "city": "",
+      "program": "MSc Interactive Media Technology 交互媒体技术",
+      "url": "https://www.kth.se/en/studies/master/interactive-media-technology/msc-interactive-media-technology-1.593765",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "The Hong Kong University of Science and Technology （Guangzhou）",
+      "schoolCn": "香港科技大学（广州）",
+      "city": "广东广州",
+      "program": "Computational Media and Arts，MPhil，计算媒体与艺术哲学硕士",
+      "url": "https://fytgs.hkust-gz.edu.cn/programs/computational-media-and-arts-5"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "The Hong Kong University of Science and Technology （Guangzhou）",
+      "schoolCn": "香港科技大学（广州）",
+      "city": "广东广州",
+      "program": "Master of Fine Arts Program in Computational Arts，计算艺术",
+      "url": "https://fytgs.hkust-gz.edu.cn/programs/computational-arts"
+    }
+  ],
+  "direction-4": [
+    {
+      "country": "英国",
+      "schoolEn": "University College London",
+      "schoolCn": "伦敦大学学院",
+      "city": "伦敦",
+      "program": "Digital Media: Production MA",
+      "url": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/digital-media-production-ma"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University College London",
+      "schoolCn": "伦敦大学学院",
+      "city": "伦敦",
+      "program": "Immersive Factual Storytelling MA",
+      "url": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/immersive-factual-storytelling-ma"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University College London",
+      "schoolCn": "伦敦大学学院",
+      "city": "伦敦",
+      "program": "Cinematic and Videogame Architecture MArch",
+      "url": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/cinematic-and-videogame-architecture"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Royal College of Art",
+      "schoolCn": "皇家艺术学院",
+      "city": "伦敦",
+      "program": "MA Digital Direction MA",
+      "url": "https://www.rca.ac.uk/study/programme-finder/digital-direction-ma/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Royal College of Art",
+      "schoolCn": "皇家艺术学院",
+      "city": "伦敦",
+      "program": "MA Animation",
+      "url": "https://www.rca.ac.uk/study/programme-finder/animation-ma/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "London College of Communication",
+      "schoolCn": "伦敦传媒学院",
+      "city": "伦敦",
+      "program": "MA Visual effects",
+      "url": "https://www.arts.ac.uk/subjects/animation-interactive-film-and-sound/postgraduate/ma-visual-effects-lcc"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "London College of Communication",
+      "schoolCn": "伦敦传媒学院",
+      "city": "伦敦",
+      "program": "MA Virtual Reality",
+      "url": "https://www.arts.ac.uk/subjects/animation-interactive-film-and-sound/postgraduate/ma-virtual-reality-lcc"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "The University of Edinburgh",
+      "schoolCn": "爱丁堡大学",
+      "city": "苏格兰，爱丁堡",
+      "program": "MSc Design and Digital Media",
+      "url": "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2023&id=37"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University of Bristol",
+      "schoolCn": "布里斯托大学",
+      "city": "布里斯托",
+      "program": "MSc,PGDip, PGCert Immersive Technologies(Virtual & Augmented Reality)",
+      "url": "https://www.bristol.ac.uk/study/postgraduate/taught/msc-immersive-technologies-virtual-and-augmented-reality/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Loughborough University",
+      "schoolCn": "拉夫堡大学",
+      "city": "伦敦",
+      "program": "MSc Digital Creative Media",
+      "url": "https://www.lboro.ac.uk/study/postgraduate/masters-degrees/a-z/digital-creative-media/"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Art Center College of Design",
+      "schoolCn": "加州艺术中心学院",
+      "city": "帕萨迪纳",
+      "program": "MFA Media Design Practices",
+      "url": "http://www.artcenter.edu/academics/graduate-degrees/media-design-practices/overview.html",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Pratt Institute",
+      "schoolCn": "普瑞特艺术学院",
+      "city": "纽约",
+      "program": "MFA Digital Arts - Interactive Arts",
+      "url": "https://www.pratt.edu/art/digital-arts-and-animation/interactive-arts-digital-arts-mfa/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "School of Visual Arts",
+      "schoolCn": "纽约视觉艺术学院",
+      "city": "纽约",
+      "program": "MFA Computer Art",
+      "url": "https://sva.edu/academics/graduate/mfa-computer-art",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Savannah College of Art and Design",
+      "schoolCn": "萨凡纳艺术设计学院",
+      "city": "萨凡纳",
+      "program": "MA/MFA Interactive Design and Game Development",
+      "url": "https://www.scad.edu/academics/programs/interactive-design-and-game-development/degrees/mfa",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of California Los Angeles",
+      "schoolCn": "加州大学洛杉矶分校",
+      "city": "洛杉矶",
+      "program": "MFA Design Media Arts",
+      "url": "https://www.design.ucla.edu/programs/mfa",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Carnegie Mellon University",
+      "schoolCn": "卡内基梅隆大学",
+      "city": "匹兹堡",
+      "program": "Entertainment Technology Center（MET）",
+      "url": "https://www.etc.cmu.edu/learn/curriculum/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Columbia University",
+      "schoolCn": "哥伦比亚大学",
+      "city": "纽约",
+      "program": "Master of Arts in Design and Development of Digital Games",
+      "url": "https://www.tc.columbia.edu/mathematics-science-and-technology/communication-media-and-learning-technologies-design/degrees--requirements/design-and-development-of-digital-games-ma/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of Pennsylvania",
+      "schoolCn": "宾夕法尼亚大学",
+      "city": "费城",
+      "program": "MSE in Computer Graphics and Game Technology",
+      "url": "https://catalog.upenn.edu/graduate/programs/computer-graphics-game-technology-mse/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of Southern California",
+      "schoolCn": "南加州大学",
+      "city": "洛杉矶",
+      "program": "MFA Interactive Media",
+      "url": "https://catalogue.usc.edu/preview_program.php?catoid=14&poid=16732&returnto=5360",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "New York University",
+      "schoolCn": "纽约大学",
+      "city": "纽约",
+      "program": "MA in Learning Technology and Experience Design",
+      "url": "https://steinhardt.nyu.edu/degree/ma-learning-technology-experience-design",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "New York University",
+      "schoolCn": "纽约大学",
+      "city": "纽约",
+      "program": "MPS Virtual Production",
+      "url": "https://tisch.nyu.edu/virtual-production",
+      "region": "综合类"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "University of British Columbia 【Centre for Digital Media】",
+      "schoolCn": "加拿大英属哥伦比亚大学",
+      "city": "温哥华",
+      "program": "Master of Digital Media",
+      "url": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs/master-of-digital-media"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "Northeastern University",
+      "schoolCn": "东北大学",
+      "city": "温哥华",
+      "program": "Master of Professional Studies in Digital Media",
+      "url": "https://cps.northeastern.edu/program/master-of-professional-studies-in-digital-media-boston/"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "Simon Fraser University",
+      "schoolCn": "西蒙菲莎大学",
+      "city": "本拿比",
+      "program": "Interactive Arts and Technology MSc",
+      "url": "https://www.sfu.ca/students/calendar/2023/summer/programs/interactive-arts-and-technology/master-of-science.html"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "York University",
+      "schoolCn": "约克大学",
+      "city": "多伦多",
+      "program": "MA/MSc in Digital Media,",
+      "url": "https://futurestudents.yorku.ca/graduate/programs/digital-media"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "Toronto Metropolitan University",
+      "schoolCn": "多伦多都会大学",
+      "city": "多伦多",
+      "program": "Master of Digital Media",
+      "url": "https://www.torontomu.ca/graduate/programs/digital-media/"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of Sydney",
+      "schoolCn": "悉尼大学",
+      "city": "悉尼",
+      "program": "Master of Interaction Design and Electronic Arts",
+      "url": "https://www.sydney.edu.au/courses/courses/pc/master-of-interaction-design-and-electronic-arts.html"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "The University of New South Wales",
+      "schoolCn": "新南威尔士大学",
+      "city": "悉尼",
+      "program": "Master of Simulation and Immersive Technologies",
+      "url": "https://www.unsw.edu.au/study/postgraduate/master-of-simulation-and-immersive-technologies?studentType=International"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "Royal Melbourne Institute of Technology",
+      "schoolCn": "皇家墨尔本理工",
+      "city": "墨尔本",
+      "program": "Master of Animation, Games and Interactivity",
+      "url": "https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters-by-coursework/mc232"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "The University of Adelaide",
+      "schoolCn": "阿德莱德大学",
+      "city": "阿德莱德",
+      "program": "Master of Immersive Media Technologies",
+      "url": "https://www.adelaide.edu.au/degree-finder/2024/mimt_mimedtech.html"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of Technology Sydney",
+      "schoolCn": "悉尼科技大学",
+      "city": "悉尼",
+      "program": "Master of Interaction Design",
+      "url": "https://www.uts.edu.au/study/find-a-course/master-interaction-design"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Hong Kong Polytechnic University",
+      "schoolCn": "香港理工大学",
+      "city": "香港",
+      "program": "MSc Innovative Multimedia Entertainment",
+      "url": "https://www.polyu.edu.hk/sd/study/tpg/innovative-multimedia-entertainment/"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "City University of Hong Kong",
+      "schoolCn": "香港城市大学",
+      "city": "香港",
+      "program": "MFA Creative Media",
+      "url": "https://www.cityu.edu.hk/pg/programme/p80"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "City University of Hong Kong",
+      "schoolCn": "香港城市大学",
+      "city": "香港",
+      "program": "MA Creative Media",
+      "url": "https://www.cityu.edu.hk/pg/programme/p81"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Hong Kong Baptist University",
+      "schoolCn": "香港浸会大学",
+      "city": "香港",
+      "program": "MA in Communication-Interactive Media Concentration",
+      "url": "https://ar.hkbu.edu.hk/tpg-admissions/programmes/master-of-arts-ma-in-communication"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Beijing Normal University & Hong Kong Baptist University United International College",
+      "schoolCn": "北师港浸会大学",
+      "city": "珠海",
+      "program": "Artificial Intelligence & Digital Media Concentration",
+      "url": "https://gs.uic.edu.cn/graduate1/Taught_Postgraduate_Programme/Artificial_Intelligence___Digital_Media_Concentrat.htm"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Beijing Normal University & Hong Kong Baptist University United International College",
+      "schoolCn": "北师港浸会大学",
+      "city": "珠海",
+      "program": "Interactive Media Studies Concentration",
+      "url": "https://gs.uic.edu.cn/graduate1/Taught_Postgraduate_Programme/imsc.htm"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Hang Seng University of Hong Kong",
+      "schoolCn": "香港恒生大学",
+      "city": "香港",
+      "program": "Master of Arts in Entertainment Media Management and Communication",
+      "url": "https://scom.hsu.edu.hk/en/master-of-arts-in-entertainment-media-management-and-communication/"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Royal Danish Academy of Fine Art",
+      "schoolCn": "丹麦皇家艺术学院",
+      "city": "丹麦",
+      "program": "Visual Game and Media Design",
+      "url": "https://royaldanishacademy.com/en/programme/visual-game-and-media-design",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "KTH Royal Institute of Technology",
+      "schoolCn": "瑞典皇家理工大学",
+      "city": "瑞典",
+      "program": "MSc Interactive Media Technology",
+      "url": "https://www.kth.se/en/studies/master/interactive-media-technology/msc-interactive-media-technology-1.593765",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Aalto University",
+      "schoolCn": "阿尔托大学",
+      "city": "芬兰",
+      "program": "New Media - Art and Media, Master of Arts (Art and Design)",
+      "url": "https://www.aalto.fi/en/study-options/new-media-art-and-media-master-of-arts-art-and-design",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "University of Bergen",
+      "schoolCn": "卑尔根大学",
+      "city": "挪威",
+      "program": "Media and Interaction Design",
+      "url": "https://www4.uib.no/en/programmes/media-and-interaction-design-masters",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "New York University Shanghai",
+      "schoolCn": "上海纽约大学",
+      "city": "上海",
+      "program": "MA in Interactive Media Arts，互动媒体艺术",
+      "url": "https://itp.nyu.edu/lowres/"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Beijing Normal-Hong Kong Baptist University",
+      "schoolCn": "北师香港浸会大学",
+      "city": "广东珠海",
+      "program": "Master of Arts in Communication - Interactive Media Studies Concentration，互动媒体研究",
+      "url": "https://gs.bnbu.edu.cn/graduate1/Taught_Postgraduate_Programme/imsc.htm"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Beijing Normal-Hong Kong Baptist University",
+      "schoolCn": "北师香港浸会大学",
+      "city": "广东珠海",
+      "program": "Master of Arts in Communication - Artificial Intelligence & Digital Media Concentration，AI与数字媒体",
+      "url": "https://gs.bnbu.edu.cn/graduate1/Taught_Postgraduate_Programme/Artificial_Intelligence___Digital_Media_Concentrat.htm"
+    }
+  ],
+  "direction-5": [
+    {
+      "country": "英国",
+      "schoolEn": "Imperial College London",
+      "schoolCn": "帝国理工学院",
+      "city": "伦敦",
+      "program": "MSc Science Media Production",
+      "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/science-media-production/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University College London",
+      "schoolCn": "伦敦大学学院",
+      "city": "伦敦",
+      "program": "Digital Media: Production MA",
+      "url": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/digital-media-production-ma"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University College London",
+      "schoolCn": "伦敦大学学院",
+      "city": "伦敦",
+      "program": "Immersive Factual Storytelling MA",
+      "url": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/immersive-factual-storytelling-ma"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "King's College London",
+      "schoolCn": "伦敦国王学院",
+      "city": "伦敦",
+      "program": "Contemporary Art and the Moving Image MA",
+      "url": "https://www.kcl.ac.uk/study/postgraduate-taught/courses/contemporary-art-and-the-moving-image-ma"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Goldsmiths, University of London",
+      "schoolCn": "伦敦大学金史密斯学院",
+      "city": "伦敦",
+      "program": "MA Artists' Film & Moving Image",
+      "url": "https://www.gold.ac.uk/pg/ma-artists-film-moving-image/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University of Westminster",
+      "schoolCn": "威斯敏斯特大学",
+      "city": "伦敦",
+      "program": "MA Digital Media: Storytelling and Production",
+      "url": "https://www.westminster.ac.uk/media-and-communication-courses/2024-25/september/full-time/digital-media-storytelling-and-production-ma"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Maryland Institute College of Art",
+      "schoolCn": "马里兰艺术学院",
+      "city": "巴尔的摩",
+      "program": "PHOTOGRAPHY + MEDIA & SOCIETY (MFA)",
+      "url": "https://www.mica.edu/graduate-programs/photography-media-society-mfa/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "School of the Art Institute of Chicago",
+      "schoolCn": "芝加哥艺术学院",
+      "city": "芝加哥",
+      "program": "MFA in Studio: Film, Video, New Media, and Animation",
+      "url": "http://saic.edu/academics/departments/fvnma/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Savannah College of Art and Design",
+      "schoolCn": "萨凡纳艺术设计学院",
+      "city": "萨凡纳",
+      "program": "MA/MFA in motion media design",
+      "url": "https://www.scad.edu/academics/programs/motion-media-design/degrees/mfa",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Carnegie Mellon University",
+      "schoolCn": "卡内基梅隆大学",
+      "city": "匹兹堡",
+      "program": "MFA Video & Media Design",
+      "url": "https://drama.cmu.edu/academics/graduate-programs/video-media-design/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Columbia University",
+      "schoolCn": "哥伦比亚大学",
+      "city": "纽约",
+      "program": "MA in Film and Media Studies",
+      "url": "https://arts.columbia.edu/film-and-media-studies/degree-concentrations",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Johns Hopkins University",
+      "schoolCn": "约翰霍普金斯大学",
+      "city": "巴尔的摩",
+      "program": "Master of Arts in Film and Media",
+      "url": "https://landing.advanced.jhu.edu/mafm/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Temple University",
+      "schoolCn": "天普大学",
+      "city": "费城",
+      "program": "mediaXarts: Cinema for New Technologies and Environments MA",
+      "url": "https://www.temple.edu/academics/degree-programs/mediaxarts-cinema-for-new-technologies-and-environments-ma-ca-mxar-ma",
+      "region": "综合类"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of Melbourne",
+      "schoolCn": "墨尔本大学",
+      "city": "墨尔本",
+      "program": "Master of Design and Production",
+      "url": "https://study.unimelb.edu.au/find/courses/graduate/master-of-design-and-production/"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of Sydney",
+      "schoolCn": "悉尼大学",
+      "city": "悉尼",
+      "program": "Master of Interaction Design and Electronic Arts",
+      "url": "https://www.sydney.edu.au/courses/courses/pc/master-of-interaction-design-and-electronic-arts.html"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "Griffith University",
+      "schoolCn": "格里菲斯大学",
+      "city": "布里斯班",
+      "program": "Master of Screen Production",
+      "url": "https://www.griffith.edu.au/study/degrees/master-of-screen-production-5736"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The University of Hong Kong",
+      "schoolCn": "香港大学",
+      "city": "香港",
+      "program": "Master of Arts in Artificial Intelligence Filmmaking and Media",
+      "url": "https://hkums.hku.hk/caifm/"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Hong Kong Baptist University",
+      "schoolCn": "香港浸会大学",
+      "city": "香港",
+      "program": "Master of Fine Arts (MFA) in Film, Television and Digital Media",
+      "url": "https://af.hkbu.edu.hk/en/programmes/mfa-ftdm.html"
+    }
+  ],
+  "direction-6": [
+    {
+      "country": "英国",
+      "schoolEn": "Royal College of Art",
+      "schoolCn": "皇家艺术学院",
+      "city": "伦敦",
+      "program": "MA Visual Communication",
+      "url": "https://www.rca.ac.uk/study/programme-finder/visual-communication-ma/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Royal College of Art",
+      "schoolCn": "皇家艺术学院",
+      "city": "伦敦",
+      "program": "MA Information Experience Design",
+      "url": "https://www.rca.ac.uk/study/programme-finder/information-experience-design-ma/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University College London",
+      "schoolCn": "伦敦大学学院",
+      "city": "伦敦",
+      "program": "MA Publishing",
+      "url": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/publishing-ma"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "London College of Communication",
+      "schoolCn": "伦敦传媒学院",
+      "city": "伦敦",
+      "program": "MA Graphic Branding And Identity",
+      "url": "https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-graphic-branding-and-identity-lcc"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "London College of Communication",
+      "schoolCn": "伦敦传媒学院",
+      "city": "伦敦",
+      "program": "MA Graphic Media Design",
+      "url": "https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-graphic-media-design-lcc"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "London College of Communication",
+      "schoolCn": "伦敦传媒学院",
+      "city": "伦敦",
+      "program": "MA Design for Art Direction",
+      "url": "https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-design-for-art-direction-lcc"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "London College of Communication",
+      "schoolCn": "伦敦传媒学院",
+      "city": "伦敦",
+      "program": "MA Advertising",
+      "url": "https://www.arts.ac.uk/subjects/journalism-pr-media-and-publishing/postgraduate/ma-advertising-lcc"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Central Saint Martins College of Art and Design",
+      "schoolCn": "中央圣马丁艺术与设计学院",
+      "city": "伦敦",
+      "program": "MA Graphic Communication Design",
+      "url": "https://www.arts.ac.uk/subjects/communication-and-graphic-design/postgraduate/ma-graphic-communication-design-csm"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University of Edinburgh",
+      "schoolCn": "爱丁堡大学",
+      "city": "爱丁堡",
+      "program": "Graphic Design MA (eca)",
+      "url": "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&id=735"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "The Glasgow School of Art",
+      "schoolCn": "格拉斯哥艺术学院",
+      "city": "格拉斯哥",
+      "program": "MDes Communication Design",
+      "url": "https://www.gsa.ac.uk/postgraduate-degrees/communication-design"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Rhode Island School of Design",
+      "schoolCn": "罗德岛设计学院",
+      "city": "普罗维登斯",
+      "program": "MFA Graphic Design",
+      "url": "http://www.risd.edu/academics/graphic-design/graduate/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "School of Visual Arts",
+      "schoolCn": "纽约视觉艺术学院",
+      "city": "纽约",
+      "program": "MFA Design",
+      "url": "https://sva.edu/academics/graduate/mfa-design",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Maryland Institute College of Art",
+      "schoolCn": "马里兰艺术学院",
+      "city": "巴尔的摩",
+      "program": "MFA Graphic Design",
+      "url": "https://www.mica.edu/graduate-programs/graphic-design-mfa/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Pratt Institute",
+      "schoolCn": "普瑞特艺术学院",
+      "city": "纽约",
+      "program": "MFA Communications Design",
+      "url": "https://www.pratt.edu/academics/school-of-design/graduate-school-of-design/grad-communications-design/communications-design-mfa/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Parsons School of Design",
+      "schoolCn": "帕森斯设计学院",
+      "city": "纽约",
+      "program": "MPS Communication Design",
+      "url": "https://www.newschool.edu/parsons/mps-communication-design/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Art Center College of Design",
+      "schoolCn": "艺术中心设计学院",
+      "city": "帕萨迪纳",
+      "program": "MFA Graphic Design",
+      "url": "http://www.artcenter.edu/academics/graduate-degrees/graphic-design/overview.html",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Yale University",
+      "schoolCn": "耶鲁大学",
+      "city": "纽黑文",
+      "program": "MFA Graphic Design",
+      "url": "https://art.yale.edu/program/graphic-design",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of Southern California",
+      "schoolCn": "南加州大学",
+      "city": "洛杉矶",
+      "program": "MFA Design",
+      "url": "https://roski.usc.edu/academic/mfa-design",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of Southern California",
+      "schoolCn": "南加州大学",
+      "city": "洛杉矶",
+      "program": "MS Integrated Design, Business and Technology",
+      "url": "https://iovine-young.usc.edu/learn/graduate/ms-integrated-design-business-tech",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of Florida",
+      "schoolCn": "佛罗里达大学",
+      "city": "盖恩斯维尔",
+      "program": "MFA Design & Visual Communications (MxD)",
+      "url": "https://arts.ufl.edu/academics/art-and-art-history/programs/design-and-visual-communications/mxd/overview-1/",
+      "region": "综合类"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "OCAD University",
+      "schoolCn": "安大略艺术设计学院",
+      "city": "多伦多",
+      "program": "Interdisciplinary Master's in Art, Media and Design (MA, MDes and MFA)",
+      "url": "https://gradadmissions.ocadu.ca/program/IAMD"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "Emily Carr University of Art and Design",
+      "schoolCn": "艾米丽卡尔艺术与设计大学",
+      "city": "温哥华",
+      "program": "Master of Design",
+      "url": "http://www.ecuad.ca/academics/graduate-degrees/master-of-design"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "York University",
+      "schoolCn": "约克大学",
+      "city": "多伦多",
+      "program": "Master of Design",
+      "url": "https://futurestudents.yorku.ca/graduate/programs/design"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "University of Alberta",
+      "schoolCn": "阿尔伯塔大学",
+      "city": "埃德蒙顿",
+      "program": "Master of Design (MDes) in Design Studies",
+      "url": "https://www.ualberta.ca/art-design/graduate-programs/designstudies"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "Concordia University",
+      "schoolCn": "康考迪亚大学",
+      "city": "蒙特利尔",
+      "program": "Master of Design",
+      "url": "http://www.concordia.ca/academics/graduate/design.html"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of Melbourne",
+      "schoolCn": "墨尔本大学",
+      "city": "墨尔本",
+      "program": "Master of Design and Production",
+      "url": "https://study.unimelb.edu.au/find/courses/graduate/master-of-design-and-production/"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of Sydney",
+      "schoolCn": "悉尼大学",
+      "city": "悉尼",
+      "program": "Master of Design (Strategic Design)",
+      "url": "https://www.sydney.edu.au/courses/courses/pc/master-of-design-strategic-design.html"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "The University of New South Wales",
+      "schoolCn": "新南威尔士大学",
+      "city": "悉尼",
+      "program": "Master of Design / Master of Public Relations & Advertising",
+      "url": "https://www.unsw.edu.au/study/postgraduate/master-of-public-relations-and-advertising-design?studentType=International"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "Royal Melbourne Institute of Technology",
+      "schoolCn": "皇家墨尔本理工",
+      "city": "墨尔本",
+      "program": "Master of Communication Design",
+      "url": "https://www.rmit.edu.au/study-with-us/levels-of-study/postgraduate-study/masters-by-coursework/mc250"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "The Queensland University of Technology",
+      "schoolCn": "昆士兰科技大学",
+      "city": "布里斯班",
+      "program": "Master of Digital Communication",
+      "url": "https://www.qut.edu.au/courses/master-of-digital-communication"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The University of Hong Kong (HKU)",
+      "schoolCn": "香港大学",
+      "city": "香港",
+      "program": "Master of Arts in the field of Creative Communications",
+      "url": "https://admissions.hku.hk/tpg/programme/master-arts-field-creative-communications"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Chinese University of Hong Kong",
+      "schoolCn": "香港中文大学",
+      "city": "香港",
+      "program": "MSc in New Media",
+      "url": "https://pg.com.cuhk.edu.hk/pgp_nm/index.html"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Chinese University of Hong Kong",
+      "schoolCn": "香港中文大学",
+      "city": "香港",
+      "program": "MSSC.in Adversting",
+      "url": "https://pg.com.cuhk.edu.hk/pgp_adv/"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "City University of Hong Kong",
+      "schoolCn": "香港城市大学",
+      "city": "香港",
+      "program": "MA Communication and New Media",
+      "url": "https://www.cityu.edu.hk/pg/programme/p25"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "Lingnan University",
+      "schoolCn": "香港岭南大学",
+      "city": "香港",
+      "program": "Master of Arts in Creative and Media Industries",
+      "url": "https://www.ln.edu.hk/daci/macmi"
+    },
+    {
+      "country": "澳门",
+      "schoolEn": "University of Macau",
+      "schoolCn": "澳门大学",
+      "city": "中国澳门",
+      "program": "Master of Design in Visual Communication Design，视传设计",
+      "url": "https://fah.um.edu.mo/mdesvcd/"
+    },
+    {
+      "country": "澳门",
+      "schoolEn": "Macau University of Science and Technology",
+      "schoolCn": "澳门科技大学",
+      "city": "中国澳门",
+      "program": "Master of Design，设计学 Major: Communication Design，传播设计",
+      "url": "https://fa.must.edu.mo/programmes/program/view/id-196.html?locale=en_US"
+    },
+    {
+      "country": "澳门",
+      "schoolEn": "Macao Polytechnic University",
+      "schoolCn": "澳门理工大学",
+      "city": "中国澳门",
+      "program": "Master of Interdisciplinary Arts，跨领域艺术",
+      "url": "https://www.mpu.edu.mo/esa/en/master_iarts.php"
+    },
+    {
+      "country": "澳门",
+      "schoolEn": "City University of Macau",
+      "schoolCn": "澳门城市大学",
+      "city": "中国澳门",
+      "program": "Master of Design (Chinese)，设计",
+      "url": "https://fiad.cityu.edu.mo/en/page-80"
+    },
+    {
+      "country": "新加坡",
+      "schoolEn": "National University of Singapore",
+      "schoolCn": "新加坡国立大学",
+      "city": "新加坡",
+      "program": "Master of Communication 传播学",
+      "url": "https://fass.nus.edu.sg/cnm/study/master-of-communication/"
+    },
+    {
+      "country": "新加坡",
+      "schoolEn": "Nanyang Technological University",
+      "schoolCn": "南洋理工大学",
+      "city": "新加坡",
+      "program": "Master of Media and Communication 媒体与传播",
+      "url": "https://www.ntu.edu.sg/education/graduate-programme/master-of-media-and-communication"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Aalto University",
+      "schoolCn": "阿尔托大学",
+      "city": "赫尔辛基",
+      "program": "Master’s Programme in Visual Communication Design",
+      "url": "https://www.aalto.fi/en/study-options/visual-communication-design-art-and-media-master-of-arts-art-and-design",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Design Academy Eindhoven",
+      "schoolCn": "埃因霍芬设计学院",
+      "city": "埃因霍温",
+      "program": "Master's Programme in Design ·Information Design",
+      "url": "https://www.designacademy.nl/p/study-at-dae/masters/information-design",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Royal Academy of Fine Arts",
+      "schoolCn": "安特卫普皇家艺术学院",
+      "city": "安特卫普",
+      "program": "Master in Graphic Design",
+      "url": "https://ap-arts.be/en/education/graphic-design",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Konstfack - University of Arts, Crafts and Design",
+      "schoolCn": "瑞典国立艺术与设计大学学院",
+      "city": "斯德哥尔摩",
+      "program": "Master's programme in Visual Communication",
+      "url": "https://www.konstfack.se/en/Education/Masters-Degree-Programmes/Visual-Communication/",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Royal Danish Academy",
+      "schoolCn": "丹麦皇家艺术学院",
+      "city": "哥本哈根",
+      "program": "Master Program in Visual Design-Graphic Communication Design",
+      "url": "https://royaldanishacademy.com/programme/graphic-communication-design",
+      "region": "北欧&荷兰"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "SUPINFOCOM RUBIKA",
+      "schoolCn": "法国高等视觉传媒学院",
+      "city": "瓦朗谢纳",
+      "program": "Digital Design Master",
+      "url": "https://en.rubika-edu.com/design-numerique-annee-4_copy_from_fr/",
+      "region": "法国"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Ecole Nationale Supérieure des Arts Décoratifs",
+      "schoolCn": "巴黎高等装饰艺术学院（ENSAD）",
+      "city": "巴黎",
+      "program": "Design graphique / multimedia",
+      "url": "https://www.ensad.fr/formations/cursus/2e-5e-annee-specialisations",
+      "region": "法国"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Creative Schools & Community",
+      "schoolCn": "法国高等设计学院（ECV）",
+      "city": "巴黎",
+      "program": "International Master: Graphic Design for Art Direction",
+      "url": "https://www.ecv.fr/en/english-programmes/international-master-graphic-design-for-art-direction/#non-eu-students",
+      "region": "法国"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "L'Institut Supérieur des Arts Appliqués LISAA",
+      "schoolCn": "巴黎高等应用艺术学院（LISAA）",
+      "city": "巴黎",
+      "program": "Master Digital Art Direction",
+      "url": "https://www.lisaa.com/en/art-courses/master?f%5B0%5D=field_add_program%253Afield_domaine%3A79",
+      "region": "法国"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Ecole de Condé",
+      "schoolCn": "法国孔岱高等艺术学院",
+      "city": "巴黎、里昂",
+      "program": "Master in Artistic Direction and Graphic Design",
+      "url": "https://www.ecoles-conde.com/en/program/graphic-design-and-art-direction/",
+      "region": "法国"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Politecnico di Milano",
+      "schoolCn": "米兰理工大学",
+      "city": "米兰",
+      "program": "Communication Design",
+      "url": "https://www.polimi.it/en/education/laurea-magistrale-programmes/programme-detail/communication-design-1",
+      "region": "意大利"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "NABA, Nuova Accademia di Belle Arti",
+      "schoolCn": "NABA米兰新美术学院",
+      "city": "米兰",
+      "program": "Visual design and integrated marketing communication",
+      "url": "https://www.naba.it/en/postgraduate/communication-design-courses",
+      "region": "意大利"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Sapienza University of Rome",
+      "schoolCn": "罗马第一大学",
+      "city": "罗马",
+      "program": "Design, Multimedia and Visual Communication",
+      "url": "https://corsidilaurea.uniroma1.it/en/corso/2025/33432/home",
+      "region": "意大利"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "IED Istituto Europeo di Design",
+      "schoolCn": "IED欧洲设计学院",
+      "city": "米兰",
+      "program": "Visual Communication",
+      "url": "https://www.ied.edu/courses/milan/master-of-arts/visual-communication",
+      "region": "意大利"
+    },
+    {
+      "country": "欧洲",
+      "schoolEn": "Domus Academy",
+      "schoolCn": "多莫斯设计学院",
+      "city": "米兰",
+      "program": "Visual Brand Design",
+      "url": "https://www.domusacademy.com/courses/design/master-in-visual-brand-design/",
+      "region": "意大利"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "University of Nottingham Ningbo China",
+      "schoolCn": "宁波诺丁汉大学",
+      "city": "浙江宁波",
+      "program": "MA International Communications Studies，国际传播学",
+      "url": "https://www.nottingham.edu.cn/cn/Study-with-us/Postgraduate-taught/Courses/Prospectus.aspx"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Beijing Normal-Hong Kong Baptist University",
+      "schoolCn": "北师香港浸会大学",
+      "city": "广东珠海",
+      "program": "Master of Arts in Communication - Media Management Concentration，媒体管理",
+      "url": "https://gs.bnbu.edu.cn/graduate1/Taught_Postgraduate_Programme/Media_Management_Concentration__MMGT_.htm"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Beijing Normal-Hong Kong Baptist University",
+      "schoolCn": "北师香港浸会大学",
+      "city": "广东珠海",
+      "program": "Master of Arts in Communication - Communication Studies Concentration，传媒研究",
+      "url": "https://fhss.bnbu.edu.cn/comm_en/info/1083/1242.htm"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Xi'an Jiaotong-Liverpool University",
+      "schoolCn": "西交利物浦大学",
+      "city": "江苏苏州",
+      "program": "MSc Media and Communication，媒介与传播",
+      "url": "https://www.xjtlu.edu.cn/en/study/masters/msc-media-and-communication"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "Hainan International College of Communication University of China & Michigan State University",
+      "schoolCn": "中国传媒大学海南国际学院 × 密歇根州立大学",
+      "city": "海南",
+      "program": "Digital Advertising（MA），新媒体",
+      "url": "https://hainan.cuc.edu.cn/"
+    }
+  ],
+  "direction-7": [
+    {
+      "country": "英国",
+      "schoolEn": "Imperial College London",
+      "schoolCn": "帝国理工学院",
+      "city": "伦敦",
+      "program": "MRes Artificial Intelligence and Machine Learning",
+      "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/artificial-intelligence-machine-learning/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "University College London",
+      "schoolCn": "伦敦大学学院",
+      "city": "伦敦",
+      "program": "Digital Media: Education MA",
+      "url": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/digital-media-education-ma"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Royal College of Art",
+      "schoolCn": "皇家艺术学院",
+      "city": "伦敦",
+      "program": "Master of Research",
+      "url": "https://www.rca.ac.uk/study/programme-finder/mres-rca/"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Creative Computing Institute",
+      "schoolCn": "创意计算机学院",
+      "city": "伦敦",
+      "program": "MSc Applied Machine Learning for Creatives",
+      "url": "https://www.arts.ac.uk/subjects/creative-computing/postgraduate/msc-data-science-and-ai-for-the-creative-industries"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Harvard University",
+      "schoolCn": "哈佛大学",
+      "city": "波士顿",
+      "program": "Ed.M. Learning Design, Innovation, and Technology",
+      "url": "https://www.gse.harvard.edu/masters/programs/ldit",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Carnegie Mellon University",
+      "schoolCn": "卡内基梅隆大学",
+      "city": "匹兹堡",
+      "program": "Master of Science in Learning Engineering (MSLE)",
+      "url": "https://msle.hcii.cmu.edu/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Northwestern University",
+      "schoolCn": "西北大学",
+      "city": "埃文斯顿",
+      "program": "Learning Sciences",
+      "url": "https://sesp.northwestern.edu/graduate-professional/teaching-learning-and-education/msed-learning-sciences/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Columbia University",
+      "schoolCn": "哥伦比亚大学",
+      "city": "纽约",
+      "program": "MA in Instructional Technology & Media",
+      "url": "https://www.tc.columbia.edu/mathematics-science-and-technology/communication-media-and-learning-technologies-design/degrees--requirements/instructional-technology-and-media-ma/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of Pennsylvania",
+      "schoolCn": "宾夕法尼亚大学",
+      "city": "费城",
+      "program": "Master of Science Learning Sciences and Technologies M.S.Ed.",
+      "url": "https://www.gse.upenn.edu/academics/programs/learning-sciences-technology-masters",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "New York University",
+      "schoolCn": "纽约大学",
+      "city": "纽约",
+      "program": "MA in Learning Technology and Experience Design",
+      "url": "https://steinhardt.nyu.edu/degree/ma-learning-technology-experience-design",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Georgetown University",
+      "schoolCn": "乔治城大学",
+      "city": "圣路易斯县",
+      "program": "Master of Arts in Learning, Design, and Technology (LDT)",
+      "url": "https://ldt.georgetown.edu/admissions/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of North Carolina at Chapel Hill",
+      "schoolCn": "北卡罗来纳大学教堂山分校",
+      "city": "教堂山",
+      "program": "Educational Innovation, Technology & Entrepreneurship",
+      "url": "https://ed.unc.edu/academics/programs/educational-innovation-technology-and-entrepreneurship/how-to-apply-deadlines/",
+      "region": "综合类"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The Education University of Hong Kong",
+      "schoolCn": "香港教育大学",
+      "city": "香港",
+      "program": "Master of Arts in Visual Arts Education and Creative Practice",
+      "url": "https://mavaecp.eduhk.hk/"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "The University of Hong Kong (HKU)",
+      "schoolCn": "香港大学",
+      "city": "香港",
+      "program": "Master of Science in Technology, Design and Leadership for Learning",
+      "url": "https://web.edu.hku.hk/programme/tdll"
+    }
+  ],
+  "direction-8": [
+    {
+      "country": "英国",
+      "schoolEn": "Royal College of Art",
+      "schoolCn": "皇家艺术学院",
+      "city": "伦敦",
+      "program": "MA Contemporary Art Practice",
+      "url": "https://www.rca.ac.uk/study/programme-finder/contemporary-art-practice-ma/?gad_source=1&gbraid=0AAAAACUWG5LD_63u6n1V1c0SV7X6eh6pd&gclid=CjwKCAjwn6LABhBSEiwAsNJrjpwDOMOYQYhHAEQ5ZabacPuWNbCZonBgWjr37grmMaD9bi96XLXm4hoCdaoQAvD_BwE&gclsrc=aw.ds"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Camberwell College of Arts",
+      "schoolCn": "坎伯韦尔艺术学院",
+      "city": "伦敦",
+      "program": "MA Fine art: Computational Arts",
+      "url": "https://www.arts.ac.uk/subjects/fine-art/postgraduate/ma-fine-art-camberwell"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "The University of Edinburgh",
+      "schoolCn": "爱丁堡大学",
+      "city": "苏格兰，爱丁堡",
+      "program": "Contemporary Art Practice, MA",
+      "url": "https://www.ed.ac.uk/studying/postgraduate/degrees/index.php?r=site/view&edition=2021&id=747"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "King's College London",
+      "schoolCn": "伦敦国王学院",
+      "city": "伦敦",
+      "program": "Contemporary Art and the Moving Image MA",
+      "url": "https://www.kcl.ac.uk/study/postgraduate-taught/courses/contemporary-art-and-the-moving-image-ma"
+    },
+    {
+      "country": "英国",
+      "schoolEn": "Central Saint Martins College of Art and Design",
+      "schoolCn": "中央圣马丁艺术与设计学院",
+      "city": "伦敦",
+      "program": "MA Fine Art: Digital（Online)",
+      "url": "https://www.arts.ac.uk/subjects/fine-art/postgraduate/ma-fine-art-digital-csm"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "California Institute of the Arts",
+      "schoolCn": "加州艺术学院",
+      "city": "洛杉矶",
+      "program": "MFA in Art and Technology",
+      "url": "https://art.calarts.edu/programs/art-and-technology",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Rhode Island School of Design",
+      "schoolCn": "罗德岛设计学院",
+      "city": "普罗维斯登",
+      "program": "MFA Digital + Media",
+      "url": "https://www.risd.edu/academics/digital-media/masters-program",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "School of Visual Arts",
+      "schoolCn": "纽约视觉艺术学院",
+      "city": "纽约",
+      "program": "MFA Art Practice",
+      "url": "https://sva.edu/academics/graduate/mfa-art-practice",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Maryland Institute College of Art",
+      "schoolCn": "马里兰艺术学院",
+      "city": "巴尔的摩",
+      "program": "Mount Royal School of Art (Multidisciplinary MFA)",
+      "url": "https://www.mica.edu/graduate-programs/mount-royal-school-of-art-multidisciplinary-mfa/",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Minneapolis College of Art and Design",
+      "schoolCn": "明尼阿波利斯艺术与设计学院",
+      "city": "明尼阿波利斯",
+      "program": "Master of Fine Arts: Design",
+      "url": "https://mcad.edu/academic-programs/visual-studies",
+      "region": "艺术类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Cornell University",
+      "schoolCn": "康奈尔大学",
+      "city": "伊萨卡",
+      "program": "Master of fine arts in Creative visual arts",
+      "url": "https://aap.cornell.edu/academics/art/master-fine-arts-creative-visual-arts",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Carnegie Mellon University",
+      "schoolCn": "卡内基梅隆大学",
+      "city": "匹兹堡",
+      "program": "MFA Fine Art",
+      "url": "https://art.cmu.edu/mfa/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of Pennsylvania",
+      "schoolCn": "宾夕法尼亚大学",
+      "city": "费城",
+      "program": "Fine Arts MFA",
+      "url": "https://www.design.upenn.edu/fine-arts/graduate/program",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Washington University in St. Louis",
+      "schoolCn": "圣路易斯华盛顿大学",
+      "city": "圣路易斯县",
+      "program": "Master of fine arts: Visual arts",
+      "url": "https://samfoxschool.wustl.edu/admissions/graduate/mfa-visual-art",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Purdue University",
+      "schoolCn": "普渡大学",
+      "city": "西拉法叶",
+      "program": "Master of Fine Arts in Design：Studio Arts",
+      "url": "https://www.cla.purdue.edu/academic/rueffschool/ad/mfa/faculty.html",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "University of Connecticut",
+      "schoolCn": "康涅狄格大学",
+      "city": "斯托尔斯",
+      "program": "Master of Fine Arts in Digital Media Design",
+      "url": "https://dmd.uconn.edu/major/degrees/mfa/",
+      "region": "综合类"
+    },
+    {
+      "country": "美国",
+      "schoolEn": "Minneapolis College of Art and Design",
+      "schoolCn": "明尼亚波利斯艺术及设计学院",
+      "city": "明尼阿波利斯",
+      "program": "Master of Fine Arts",
+      "url": "https://mcad.edu/academic-programs/visual-studies",
+      "region": "综合类"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "University of British Columbia",
+      "schoolCn": "不列颠哥伦比亚大学",
+      "city": "温哥华",
+      "program": "Master of Fine Arts in Visual Art (MFA)",
+      "url": "https://www.grad.ubc.ca/prospective-students/graduate-degree-programs/master-of-fine-arts-visual-art"
+    },
+    {
+      "country": "加拿大",
+      "schoolEn": "University of British Columbia",
+      "schoolCn": "不列颠哥伦比亚大学",
+      "city": "温哥华",
+      "program": "Masters of Fine Arts (MFA)",
+      "url": "https://theatrefilm.ubc.ca/graduate/mfa-film-production/"
+    },
+    {
+      "country": "澳洲",
+      "schoolEn": "University of South Australia",
+      "schoolCn": "南澳大学",
+      "city": "阿德莱德",
+      "program": "Master of Design (Contemporary Art)",
+      "url": "https://study.unisa.edu.au/degrees/master-of-design-contemporary-art?audience=int"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "City University of Hong Kong",
+      "schoolCn": "香港城市大学",
+      "city": "香港",
+      "program": "MFA Creative Media",
+      "url": "https://www.cityu.edu.hk/pg/programme/p80"
+    },
+    {
+      "country": "香港",
+      "schoolEn": "City University of Hong Kong",
+      "schoolCn": "香港城市大学",
+      "city": "香港",
+      "program": "MA Creative Media",
+      "url": "https://www.cityu.edu.hk/pg/programme/p81"
+    },
+    {
+      "country": "中外合办",
+      "schoolEn": "The Hong Kong University of Science and Technology （Guangzhou）",
+      "schoolCn": "香港科技大学（广州）",
+      "city": "广东广州",
+      "program": "Master of Fine Arts Program in Computational Arts，计算艺术",
+      "url": "https://fytgs.hkust-gz.edu.cn/programs/computational-arts"
+    }
+  ]
+}

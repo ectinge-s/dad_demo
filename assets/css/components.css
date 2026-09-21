@@ -283,9 +283,39 @@
 }
 .company-chip:hover { border-color: var(--color-text); background: var(--color-surface); }
 
-.schools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; margin-top: 16px; }
-.schools-col h5 { font-size: 12px; font-weight: 700; color: var(--color-text-faint); margin-bottom: 6px; }
-.schools-col p { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.6; }
+/* "对口院校方向" (v3.20, GM) — real per-industry school/program data
+   from _supplement-912/数艺-行业对应选校0911.xlsx (326 rows across 8
+   industries), replacing the old hand-written uk/us/hkMacau summary
+   paragraphs. Reuses .filter-bar/.filter-btn as-is for the country
+   filter (only new CSS: the --scroll modifier below, so the bar swipes
+   horizontally on touch instead of wrapping to a second line — GM
+   asked for a swipeable tab/tag row specifically) and a new
+   .school-card modeled directly on .company-chip/.person-card's own
+   border+radius+hover-lift language, just with more fields (CN name,
+   EN name, program, country/city tag) and a whole-card external link. */
+.filter-bar--scroll {
+  flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; padding-bottom: 2px;
+}
+.filter-bar--scroll::-webkit-scrollbar { display: none; }
+.filter-bar--scroll .filter-btn { flex-shrink: 0; white-space: nowrap; }
+
+.school-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 14px; }
+.school-card {
+  display: block; border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  padding: 14px 16px; text-align: left;
+  transition: border-color .15s var(--ease), background .15s var(--ease), transform .15s var(--ease), box-shadow .15s var(--ease);
+}
+.school-card:hover { border-color: var(--color-accent); background: var(--color-surface); transform: translateY(-2px); box-shadow: var(--glow-primary-soft); }
+.school-card--static { cursor: default; }
+.school-card--static:hover { border-color: var(--color-border); background: none; transform: none; box-shadow: none; }
+.school-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 3px; }
+.school-card__cn { font-size: 14px; font-weight: 800; color: var(--color-text); line-height: 1.35; }
+.school-card__en { font-size: 11px; font-style: italic; color: var(--color-text-muted); margin-bottom: 9px; line-height: 1.35; }
+.school-card__arrow { font-family: var(--font-mono); font-size: 13px; color: var(--color-text-faint); flex-shrink: 0; transition: color .15s var(--ease); }
+.school-card:hover .school-card__arrow { color: var(--color-accent); }
+.school-card__program { font-size: 12.5px; font-weight: 600; color: var(--color-text-secondary); line-height: 1.5; margin-bottom: 10px; }
+.school-card__tag { display: inline-block; font-size: 10.5px; font-weight: 700; color: var(--color-text-muted); background: var(--color-surface-2); border-radius: 999px; padding: 3px 10px; }
 
 /* ── PLANNING SUBPAGES (v3.3) ────────────────
    #pl-overview-subpage / #pl-industry-subpage — only one visible at a
@@ -429,20 +459,43 @@
 .jd-insight-block__insight { font-size: 12.5px; font-weight: 700; line-height: 1.6; }
 
 /* ── CAREER/INDUSTRY REEL — v3.1: an auto-looping marquee, same idiom
-   as the 精选课程/.featured-rail section (mask-fade edges, duplicated
+   as the 精选课程/.featured-rail section (edge-fade, duplicated
    list). Originally lived on the homepage as the 职业规划 teaser; v3.13
    (GM) moved that reel onto the /planning page's own 总览 overview tab
    instead (see PlanningPage.renderIndustriesOverview) and replaced the
    homepage section with a plain editorial teaser — this CSS is now
    used only there. Also v3.13: the scroll itself is driven by
    Marquee.init() (assets/js/marquee.js), not a CSS keyframe animation
-   — GM reported reels disappearing after running a while; see
-   marquee.js's header comment for why. */
-.career-rail-wrap {
-  position: relative; overflow: hidden; padding: 4px 0 14px;
-  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+   — GM reported reels disappearing after running a while.
+   v3.36 (GM): GM reported the SAME "disappears after running for a
+   while" symptom recurring even after the v3.13 rAF rewrite — so the
+   real cause was never the CSS-keyframe-vs-JS-loop choice, it was the
+   other ingredient v3.13 left untouched: `mask-image`/`-webkit-mask-
+   image` on this wrap, continuously re-compositing a GPU layer for a
+   CHILD that `will-change: transform` is updating every single frame.
+   Masking a live, continuously-transformed layer is a known WebKit/
+   Chromium compositor edge case — after the layer has been repainted
+   many thousands of times, the engine can drop/fail to reapply the
+   mask bitmap and the masked content renders blank (fully transparent)
+   until something forces a fresh layer (resize, tab refocus, etc.) —
+   exactly the "fine at first, empty after a while" pattern GM
+   described, and it recurs on JS-driven transforms just as much as
+   CSS ones since the trigger is the mask+compositing combo, not the
+   animation technology. Fix: stop masking the moving layer at all.
+   Same visual edge-fade, now painted as two ordinary (non-moving,
+   non-masked) gradient overlays sitting in front of the rail — normal
+   paint, no GPU mask ever applied to a transform-animated layer, so
+   there's nothing for the compositor to lose track of. `overflow:
+   hidden` (the actual horizontal clip) is untouched — only the mask-
+   image edge-fade is replaced. See featured-rail-wrap/coop-marquee-
+   wrap in ist-shared.css — same fix applied there for consistency,
+   since all three reels shared this exact latent bug. */
+.career-rail-wrap { position: relative; overflow: hidden; padding: 4px 0 14px; }
+.career-rail-wrap::before, .career-rail-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 6%; z-index: 50; pointer-events: none;
 }
+.career-rail-wrap::before { left: 0; background: linear-gradient(to right, var(--color-bg) 0%, transparent 100%); }
+.career-rail-wrap::after { right: 0; background: linear-gradient(to left, var(--color-bg) 0%, transparent 100%); }
 .career-rail { display: flex; gap: 16px; width: max-content; will-change: transform; }
 .career-card {
   flex: 0 0 240px; cursor: pointer;
@@ -502,6 +555,11 @@
   border-radius: 16px;
   box-shadow: 0 32px 80px -16px rgba(0,0,0,.9);
   line-height: 0;
+  /* v3.34 (GM): modal windows default to black behind their image, since
+     the real posters/case-card images are themselves black-background
+     renders — avoids a white edge for the instant before the image
+     loads, or if a poster doesn't perfectly fill this box. */
+  background: #000;
 }
 .img-modal-backdrop.is-visible .img-modal-inner {
   transform: rotateY(0deg) scale(1);
