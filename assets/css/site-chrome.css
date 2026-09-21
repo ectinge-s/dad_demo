@@ -50,6 +50,18 @@
    cleanly instead of wrapping onto a second line first. ═══════════ */
 
 /* ── NAVBAR ────────────────────────────────── */
+/* GM: "研究生navbar内容显示不全，可能整体navbar container宽度需要加宽" — confirmed:
+   `.navbar` reused the site's normal body-content `.container` (capped at
+   `--content-max`, 1180px), but graduate's own navbar row (logo + site-
+   switcher pill + 7 links + the CTA pill + hamburger toggle) actually
+   needs ~1285px to lay out in one line without clipping — `.navbar__links`
+   has `overflow: hidden`, so on every viewport above 1180px (i.e. any
+   normal desktop, not just narrow ones) the row was silently clipping its
+   last link ("课程产品") instead of wrapping or visibly overflowing, which
+   is why it looked fine in cursory checks but dropped an item in practice.
+   Only the navbar's own container is widened here — body content elsewhere
+   still reads at the narrower, more legible `--content-max`. */
+.navbar .container { max-width: 1360px; }
 .navbar {
   position: sticky; top: 0; z-index: 1000;
   height: var(--navbar-h);
@@ -102,8 +114,15 @@
 /* Item 1: collapse the link row into the hamburger before it would
    ever wrap. Raised from the graduate site's old 980px so the extra
    width now spent on the site-switcher (to the right of the logo)
-   never forces a mid-row wrap first. */
-@media (max-width: 1180px) {
+   never forces a mid-row wrap first.
+
+   Raised again, 1180px → 1300px, alongside the `.navbar .container`
+   widening above: graduate's full row (logo + switcher + 7 links + CTA +
+   toggle) needs ~1285px to lay out without clipping, so any viewport
+   between the old 1180px threshold and ~1285px used to show the link row
+   but silently clip its last item instead of collapsing to the hamburger
+   like it should have. 1300px leaves a clean margin above that. */
+@media (max-width: 1300px) {
   .navbar__links { display: none; }
 }
 
