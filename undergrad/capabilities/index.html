@@ -5,22 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="十二类作品产出背后，是五个可以互相组合的能力领域。学生不需要一开始决定终身方向，但需要在项目中逐渐形成主线与协作能力。">
 <title>五大能力 | SFK 数字艺术与设计本科</title>
-<link rel="icon" href="../assets/img/favicon/favicon-32.png" sizes="32x32">
-<link rel="icon" href="../assets/img/favicon/favicon.ico" sizes="any">
-<link rel="stylesheet" href="../assets/css/undergrad-fonts.css">
+<link rel="icon" href="../../assets/img/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../../assets/img/favicon/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../../assets/css/fonts.css">
 <link rel="stylesheet" href="../assets/css/undergrad.css">
+<!-- v3.38 (GM): navbar/menu/footer CSS, shared with the graduate site —
+     see assets/css/site-chrome.css's own header comment. -->
+<link rel="stylesheet" href="../../assets/css/site-chrome.css">
 </head>
 <body class="accent-cyan " data-sfk-site="undergrad" data-sfk-graduate="../../index.html">
   <a class="skip-link" href="#main-content">跳到主要内容</a>
 
-  <header class="detail-header">
-    <div class="header-primary">
-      <a class="brand" href="../">SFK DAD<span>本科专业路径</span></a>
+  <!-- v3.38 (GM): unified with the homepage's own navbar (previously a
+       separate, page-links-only .topic-nav here) — see main.template.html
+       and build-undergrad.cjs's renderNavbarLinks()/renderNavOverlay(). -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__logo" href="../">
+        <img class="navbar__logo-img" src="../../assets/img/logo-full.png" alt="SFK 数字艺术与设计科系 · Faculty of Digital Arts and Design">
+      </a>
+      <div class="navbar__links"><a class="navbar__btn" href="../">首页</a><span class="navbar__divider" aria-hidden="true"></span><a class="navbar__btn" href="../directions/">申请方向</a><a class="navbar__btn" href="../pathways/">升学路径</a><a class="navbar__btn is-active" href="../capabilities/">五大能力</a><a class="navbar__btn" href="../fit/">学生适配</a><a class="navbar__btn" href="../advantages/">专业优势</a><a class="navbar__btn" href="../works/">作品图册</a></div>
+      <button class="navbar__menu-toggle" id="nav-menu-toggle" aria-expanded="false" aria-controls="nav-menu-overlay" aria-label="展开全部导航">
+        <span></span><span></span>
+      </button>
     </div>
-    <nav class="topic-nav" aria-label="本科主题导航">
-      <div class="topic-nav-inner"><a href="../directions/">申请方向</a><a href="../pathways/">升学路径</a><a href="../capabilities/" aria-current="true">五大能力</a><a href="../fit/">学生适配</a><a href="../advantages/">专业优势</a><a href="../works/">作品图册</a><a href="../cases/">学生案例</a></div>
-    </nav>
-  </header>
+  </nav>
+  <div id="nav-menu-overlay" class="nav-menu-overlay" aria-hidden="true">
+    <div class="nav-menu-overlay__inner">
+      <div class="nav-menu-overlay__row">
+        <div class="nav-menu-overlay__col nav-menu-overlay__col--primary">
+          <a class="nav-menu-overlay__link nav-menu-overlay__link--page" href="../works/">作品图册</a>
+        </div>
+        <span class="nav-menu-overlay__div" aria-hidden="true"></span>
+        <div class="nav-menu-overlay__col nav-menu-overlay__col--secondary">
+          <a class="nav-menu-overlay__link" href="../">首页</a><a class="nav-menu-overlay__link" href="../directions/">申请方向</a><a class="nav-menu-overlay__link" href="../pathways/">升学路径</a><a class="nav-menu-overlay__link" aria-current="page" href="../capabilities/">五大能力</a><a class="nav-menu-overlay__link" href="../fit/">学生适配</a><a class="nav-menu-overlay__link" href="../advantages/">专业优势</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- v3.39 (GM): the data-driven "quick look" overlay used by hub
+       pages with children — see undergrad.css's own header comment
+       and assets/js/undergrad-topic.js's Overlay object. Empty string
+       (nothing rendered here) on every other page. -->
+  
+    <div id="content-overlay" class="content-overlay" aria-hidden="true">
+      <div class="content-overlay__backdrop" data-overlay-close></div>
+      <div class="content-overlay__panel" role="dialog" aria-modal="true" aria-label="五大能力详情">
+        <button type="button" class="content-overlay__close" data-overlay-close aria-label="关闭详情">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="content-overlay__body" id="content-overlay-body"></div>
+      </div>
+    </div>
+  
 
   <main id="main-content">
     <div class="breadcrumb-wrap">
@@ -52,6 +90,28 @@
   </div>
       </div>
     </section>
+
+    <!-- v3.39 (GM): "moving the function of each section's homepage
+         content to the beginning of each of their page" — the
+         interactive widget (tabs/accordion/filter-grid/profile-picker/
+         advantage-list) that used to live only on the homepage now
+         renders here, right under the hero, on its own topic's hub
+         page. Empty string on every page that isn't one of the 5
+         topic hubs. -->
+    
+    <section class="band topic-widget" aria-label="五大能力：从兴趣到完整项目速览">
+      <div class="container" data-topic-widget="capabilities">
+        
+      <div class="segment-control" id="output-filters" aria-label="能力类别筛选">
+        <button type="button" data-output-filter="all" aria-pressed="true">全部产出</button>
+        <button type="button" data-output-filter="art-tech" aria-pressed="false">艺术与科技</button>
+        <button type="button" data-output-filter="brand" aria-pressed="false">品牌与平面</button>
+      </div>
+      <div class="output-grid" id="output-grid"></div>
+    
+      </div>
+    </section>
+  
 
     <div class="detail-layout">
       <aside class="contents-rail" aria-label="本页目录">
@@ -159,106 +219,53 @@
     </div>
 
     
-    <section class="children-section" aria-labelledby="children-title">
-      <div class="children-inner">
-        <div class="block-heading">
-          <p>NEXT LEVEL</p>
-          <h2 id="children-title">继续进入具体方向</h2>
-        </div>
-        <div class="child-grid">
-          
-            <a class="child-card fade-up" href="../capabilities/visual-strategy/">
-              <img src="../images/output-brand.jpg" alt="" width="1200" height="750" loading="lazy">
-              <span class="child-card-copy">
-                <small>VISUAL LANGUAGE &amp; STRATEGY</small>
-                <h3>视觉策略</h3>
-                <p>从图形、符号、字体和版式出发，进一步理解品牌定位、内容组织与传播语境，让视觉不是装饰，而是系统表达。</p>
-                <span class="arrow" aria-hidden="true">查看详情 →</span>
-              </span>
-            </a>
-          
-            <a class="child-card fade-up" href="../capabilities/information-experience/">
-              <img src="../images/output-web.jpg" alt="" width="1200" height="750" loading="lazy">
-              <span class="child-card-copy">
-                <small>INFORMATION &amp; EXPERIENCE</small>
-                <h3>信息体验</h3>
-                <p>把复杂内容转化为可理解、可操作的界面与信息体验。重点不只是画屏幕，而是梳理结构、行为、反馈与使用场景。</p>
-                <span class="arrow" aria-hidden="true">查看详情 →</span>
-              </span>
-            </a>
-          
-            <a class="child-card fade-up" href="../capabilities/3d-virtual/">
-              <img src="../images/profile-acg.jpg" alt="" width="1200" height="750" loading="lazy">
-              <span class="child-card-copy">
-                <small>3D &amp; VIRTUAL ART</small>
-                <h3>3D 虚拟艺术</h3>
-                <p>用三维形态、虚拟空间和实时媒介构建角色、世界与沉浸体验。建模只是基础，真正的项目还需要叙事、空间、光影与交互判断。</p>
-                <span class="arrow" aria-hidden="true">查看详情 →</span>
-              </span>
-            </a>
-          
-            <a class="child-card fade-up" href="../capabilities/media-installation/">
-              <img src="../images/output-material.jpg" alt="" width="1200" height="750" loading="lazy">
-              <span class="child-card-copy">
-                <small>MEDIA &amp; INSTALLATION</small>
-                <h3>多媒介与装置</h3>
-                <p>把影像、声音、材料、身体、光与空间组合成现场体验。项目需要同时考虑观众、尺度、时间、动线与技术条件。</p>
-                <span class="arrow" aria-hidden="true">查看详情 →</span>
-              </span>
-            </a>
-          
-            <a class="child-card fade-up" href="../capabilities/creative-tech/">
-              <img src="../images/output-mechanical.jpg" alt="" width="1200" height="750" loading="lazy">
-              <span class="child-card-copy">
-                <small>CREATIVE TECHNOLOGY</small>
-                <h3>创意科技</h3>
-                <p>把人工智能、生成算法、代码、传感器与机械结构变成创作媒介。重点不是追逐某个工具，而是设计输入、规则、反馈和体验。</p>
-                <span class="arrow" aria-hidden="true">查看详情 →</span>
-              </span>
-            </a>
-          
-        </div>
-      </div>
-    </section>
-  
     
-    <nav class="related-section" aria-labelledby="related-title">
-      <div class="related-inner">
-        <div class="block-heading">
-          <p>KEEP EXPLORING</p>
-          <h2 id="related-title">从这里继续了解</h2>
-        </div>
-        <div class="related-list">
-          
-            <a class="related-link fade-up" href="../fit/">
-              <small>STUDENT FIT</small>
-              <strong>学生适配 →</strong>
-            </a>
-          
-            <a class="related-link fade-up" href="../works/">
-              <small>STUDENT WORKS</small>
-              <strong>作品图册 →</strong>
-            </a>
-          
-            <a class="related-link fade-up" href="../advantages/">
-              <small>WHY UNDERGRADUATE DESIGN</small>
-              <strong>专业优势 →</strong>
-            </a>
-          
-        </div>
-      </div>
-    </nav>
-  
   </main>
 
-  <footer class="detail-footer">
-    <div>
-      <span>SFK Digital Arts &amp; Design · Undergraduate</span>
-      <a href="../">返回本科主页</a>
+  
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <div>
+          <div class="site-footer__brand-name"><span class="u-en">SFK</span>数字艺术与设计 · 本科</div>
+          <p class="site-footer__brand-desc">从真实兴趣出发，用作品与项目建立通向升学与职业的个人路径 — 申请方向、升学路径、能力体系与学生案例，一站呈现。</p>
+        </div>
+      </div>
+      <div class="site-footer__grid">
+        <div class="site-footer__col">
+          <h2 class="site-footer__col-title">页面导航<span class="u-en">Pages</span></h2>
+          <a href="../"><strong>首页</strong><span class="u-en">Home</span></a>
+        <a href="../works/"><strong>作品图册</strong></a>
+        </div>
+        <div class="site-footer__col">
+          <h2 class="site-footer__col-title">专业板块<span class="u-en">Sections</span></h2>
+          <a href="../directions/"><strong>申请方向</strong></a>
+        <a href="../pathways/"><strong>升学路径</strong></a>
+        <a href="../capabilities/"><strong>五大能力</strong></a>
+        <a href="../fit/"><strong>学生适配</strong></a>
+        <a href="../advantages/"><strong>专业优势</strong></a>
+        </div>
+        <div class="site-footer__col">
+          <h2 class="site-footer__col-title">站点切换<span class="u-en">Sites</span></h2>
+          <a href="../../index.html"><strong>研究生站 · 行业就业方向</strong><span class="u-en">Graduate Site</span></a>
+        </div>
+        <div class="site-footer__col">
+          <h2 class="site-footer__col-title">规划咨询<span class="u-en">Get in Touch</span></h2>
+          <p class="site-footer__contact"><span class="u-en">Email</span>admissions@sfk-edu.demo</p>
+          <p class="site-footer__contact"><span class="u-en">Tel</span>400-000-0000</p>
+          <p class="site-footer__contact">上海市 · 校区地址待定</p>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© <span id="footer-year"></span> SFK 数字艺术与设计科系 · 本页面为课程与案例演示站点，数据仅供展示</p>
     </div>
   </footer>
 
-  <script src="../assets/js/undergrad-switcher.js"></script>
+  <script type="application/json" id="overlay-payload">{"capabilities/visual-strategy":"\n    \u003cdiv class=\"overlay-hero\">\n      \u003cp class=\"overlay-hero__eyebrow\">VISUAL LANGUAGE &amp; STRATEGY\u003c/p>\n      \u003ch2 class=\"overlay-hero__title\">视觉语言与策略传播\u003c/h2>\n      \u003cp class=\"overlay-hero__lead\">从图形、符号、字体和版式出发，进一步理解品牌定位、内容组织与传播语境，让视觉不是装饰，而是系统表达。\u003c/p>\n      \u003cdiv class=\"hero-facts\">\n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>品牌\u003c/strong>\n      \u003cspan>定位与识别\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>出版\u003c/strong>\n      \u003cspan>编辑与阅读体验\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>动态\u003c/strong>\n      \u003cspan>时间与传播节奏\u003c/span>\n    \u003c/div>\n  \u003c/div>\n    \u003c/div>\n    \u003cdiv class=\"detail-article overlay-article\">\n      \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-visual-strategy-section-1\" aria-labelledby=\"ov-capabilities-visual-strategy-section-title-1\">\n      \u003cp class=\"section-kicker\">WHAT TO LEARN\u003c/p>\n      \u003ch2 id=\"ov-capabilities-visual-strategy-section-title-1\">从单张画面到完整视觉系统\u003c/h2>\n      \n      \n    \u003cdiv class=\"content-items\">\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>品牌策略\u003c/h3>\n          \u003cp>研究定位、用户洞察、传播创意与品牌竞争力。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>品牌设计\u003c/h3>\n          \u003cp>建立品牌识别、VI、包装与跨触点视觉。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>书籍与出版\u003c/h3>\n          \u003cp>通过内容编排、字体、材料与阅读节奏组织信息。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>动态与运营\u003c/h3>\n          \u003cp>用时间、节奏、内容管理和视觉规范提升传播效率。\u003c/p>\n          \n        \u003c/article>\n      \n    \u003c/div>\n  \n      \n      \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-visual-strategy-section-2\" aria-labelledby=\"ov-capabilities-visual-strategy-section-title-2\">\n      \u003cp class=\"section-kicker\">PROJECT EXAMPLE\u003c/p>\n      \u003ch2 id=\"ov-capabilities-visual-strategy-section-title-2\">一个品牌项目应包含什么\u003c/h2>\n      \n      \n      \n      \n    \u003col class=\"process-steps\">\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>调研\u003c/h3>\n          \u003cp>理解受众、场景、竞品与文化语境。\u003c/p>\n        \u003c/li>\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>策略\u003c/h3>\n          \u003cp>确定定位、核心信息与视觉原则。\u003c/p>\n        \u003c/li>\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>系统\u003c/h3>\n          \u003cp>建立字体、色彩、图形、版式和内容规则。\u003c/p>\n        \u003c/li>\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>触点\u003c/h3>\n          \u003cp>在包装、界面、广告、出版或空间中验证一致性。\u003c/p>\n        \u003c/li>\n      \n    \u003c/ol>\n  \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-visual-strategy-section-3\" aria-labelledby=\"ov-capabilities-visual-strategy-section-title-3\">\n      \u003cp class=\"section-kicker\">OUTPUTS\u003c/p>\n      \u003ch2 id=\"ov-capabilities-visual-strategy-section-title-3\">可形成的代表产出\u003c/h2>\n      \n      \n      \u003cul class=\"content-list\">\u003cli>品牌识别与 VI\u003c/li>\u003cli>包装与广告\u003c/li>\u003cli>书籍、杂志与数字出版\u003c/li>\u003cli>动态视觉与社交传播\u003c/li>\u003cli>内容运营视觉系统\u003c/li>\u003c/ul>\n      \n      \n      \n    \u003c/section>\n  \n    \u003c/div>\n  ","capabilities/information-experience":"\n    \u003cdiv class=\"overlay-hero\">\n      \u003cp class=\"overlay-hero__eyebrow\">INFORMATION &amp; EXPERIENCE\u003c/p>\n      \u003ch2 class=\"overlay-hero__title\">信息体验与应用设计\u003c/h2>\n      \u003cp class=\"overlay-hero__lead\">把复杂内容转化为可理解、可操作的界面与信息体验。重点不只是画屏幕，而是梳理结构、行为、反馈与使用场景。\u003c/p>\n      \u003cdiv class=\"hero-facts\">\n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>信息\u003c/strong>\n      \u003cspan>结构与层级\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>界面\u003c/strong>\n      \u003cspan>视觉与交互\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>体验\u003c/strong>\n      \u003cspan>场景与反馈\u003c/span>\n    \u003c/div>\n  \u003c/div>\n    \u003c/div>\n    \u003cdiv class=\"detail-article overlay-article\">\n      \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-information-experience-section-1\" aria-labelledby=\"ov-capabilities-information-experience-section-title-1\">\n      \u003cp class=\"section-kicker\">WHAT TO LEARN\u003c/p>\n      \u003ch2 id=\"ov-capabilities-information-experience-section-title-1\">设计的对象是理解与行动\u003c/h2>\n      \n      \n    \u003cdiv class=\"content-items\">\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>界面视觉\u003c/h3>\n          \u003cp>通过布局、元素与视觉层级支持信息理解。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>App 与网页\u003c/h3>\n          \u003cp>建立信息架构、任务流程、状态与响应规则。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>信息设计\u003c/h3>\n          \u003cp>把复杂资料转化为清晰、易读和可比较的表达。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>数据可视化\u003c/h3>\n          \u003cp>根据数据关系选择图形编码，而不是只做装饰图表。\u003c/p>\n          \n        \u003c/article>\n      \n    \u003c/div>\n  \n      \n      \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-information-experience-section-2\" aria-labelledby=\"ov-capabilities-information-experience-section-title-2\">\n      \u003cp class=\"section-kicker\">PROJECT LOOP\u003c/p>\n      \u003ch2 id=\"ov-capabilities-information-experience-section-title-2\">从真实场景开始，而不是从模板开始\u003c/h2>\n      \n      \n      \n      \n    \u003col class=\"process-steps\">\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>识别用户与任务\u003c/h3>\n          \u003cp>明确谁在什么情境下解决什么问题。\u003c/p>\n        \u003c/li>\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>整理信息\u003c/h3>\n          \u003cp>建立内容层级、流程和关键决策点。\u003c/p>\n        \u003c/li>\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>制作原型\u003c/h3>\n          \u003cp>用低保真与高保真原型测试理解和操作。\u003c/p>\n        \u003c/li>\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>验证反馈\u003c/h3>\n          \u003cp>观察使用问题并调整结构、文字和视觉。\u003c/p>\n        \u003c/li>\n      \n    \u003c/ol>\n  \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-information-experience-section-3\" aria-labelledby=\"ov-capabilities-information-experience-section-title-3\">\n      \u003cp class=\"section-kicker\">OUTPUTS\u003c/p>\n      \u003ch2 id=\"ov-capabilities-information-experience-section-title-3\">可形成的代表产出\u003c/h2>\n      \n      \n      \u003cul class=\"content-list\">\u003cli>App 与网页原型\u003c/li>\u003cli>信息图表与数据可视化\u003c/li>\u003cli>社交媒体与 H5\u003c/li>\u003cli>动态界面与反馈\u003c/li>\u003cli>服务流程与体验地图\u003c/li>\u003c/ul>\n      \n      \n      \n    \u003c/section>\n  \n    \u003c/div>\n  ","capabilities/3d-virtual":"\n    \u003cdiv class=\"overlay-hero\">\n      \u003cp class=\"overlay-hero__eyebrow\">3D &amp; VIRTUAL ART\u003c/p>\n      \u003ch2 class=\"overlay-hero__title\">3D 虚拟艺术制作\u003c/h2>\n      \u003cp class=\"overlay-hero__lead\">用三维形态、虚拟空间和实时媒介构建角色、世界与沉浸体验。建模只是基础，真正的项目还需要叙事、空间、光影与交互判断。\u003c/p>\n      \u003cdiv class=\"hero-facts\">\n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>3D\u003c/strong>\n      \u003cspan>角色与空间\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>XR\u003c/strong>\n      \u003cspan>虚拟、增强与混合现实\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>实时\u003c/strong>\n      \u003cspan>叙事与沉浸体验\u003c/span>\n    \u003c/div>\n  \u003c/div>\n    \u003c/div>\n    \u003cdiv class=\"detail-article overlay-article\">\n      \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-3d-virtual-section-1\" aria-labelledby=\"ov-capabilities-3d-virtual-section-title-1\">\n      \u003cp class=\"section-kicker\">WHAT TO LEARN\u003c/p>\n      \u003ch2 id=\"ov-capabilities-3d-virtual-section-title-1\">从形态到虚拟世界\u003c/h2>\n      \n      \n    \u003cdiv class=\"content-items\">\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>人物与空间建模\u003c/h3>\n          \u003cp>理解结构、比例、材质、光照与空间关系。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>3D 叙事\u003c/h3>\n          \u003cp>通过镜头、环境、动作与节奏组织虚拟故事。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>视觉特效\u003c/h3>\n          \u003cp>把模拟、合成与动态效果服务于叙事和体验。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>AR/VR/MR\u003c/h3>\n          \u003cp>让虚拟信息进入身体、空间和交互场景。\u003c/p>\n          \n        \u003c/article>\n      \n    \u003c/div>\n  \n      \n      \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-3d-virtual-section-2\" aria-labelledby=\"ov-capabilities-3d-virtual-section-title-2\">\n      \u003cp class=\"section-kicker\">PROJECT QUESTIONS\u003c/p>\n      \u003ch2 id=\"ov-capabilities-3d-virtual-section-title-2\">虚拟项目也需要真实问题\u003c/h2>\n      \n      \n      \u003cul class=\"content-list\">\u003cli>这个世界为什么必须以 3D 或沉浸方式存在。\u003c/li>\u003cli>用户在空间中如何移动、发现和做出选择。\u003c/li>\u003cli>视觉风格如何连接项目主题，而不是只追求酷炫。\u003c/li>\u003cli>技术限制如何影响最终叙事与体验。\u003c/li>\u003c/ul>\n      \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-3d-virtual-section-3\" aria-labelledby=\"ov-capabilities-3d-virtual-section-title-3\">\n      \u003cp class=\"section-kicker\">OUTPUTS\u003c/p>\n      \u003ch2 id=\"ov-capabilities-3d-virtual-section-title-3\">可形成的代表产出\u003c/h2>\n      \n      \n      \u003cul class=\"content-list\">\u003cli>角色与空间模型\u003c/li>\u003cli>3D 叙事短片\u003c/li>\u003cli>虚拟舞台与实时视觉\u003c/li>\u003cli>AR/VR/MR 体验\u003c/li>\u003cli>游戏关卡与娱乐设计\u003c/li>\u003c/ul>\n      \n      \n      \n    \u003c/section>\n  \n    \u003c/div>\n  ","capabilities/media-installation":"\n    \u003cdiv class=\"overlay-hero\">\n      \u003cp class=\"overlay-hero__eyebrow\">MEDIA &amp; INSTALLATION\u003c/p>\n      \u003ch2 class=\"overlay-hero__title\">多媒介与装置艺术\u003c/h2>\n      \u003cp class=\"overlay-hero__lead\">把影像、声音、材料、身体、光与空间组合成现场体验。项目需要同时考虑观众、尺度、时间、动线与技术条件。\u003c/p>\n      \u003cdiv class=\"hero-facts\">\n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>空间\u003c/strong>\n      \u003cspan>尺度与动线\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>时间\u003c/strong>\n      \u003cspan>影像、声音与表演\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>材料\u003c/strong>\n      \u003cspan>触感与装置结构\u003c/span>\n    \u003c/div>\n  \u003c/div>\n    \u003c/div>\n    \u003cdiv class=\"detail-article overlay-article\">\n      \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-media-installation-section-1\" aria-labelledby=\"ov-capabilities-media-installation-section-title-1\">\n      \u003cp class=\"section-kicker\">MEDIA\u003c/p>\n      \u003ch2 id=\"ov-capabilities-media-installation-section-title-1\">媒介之间必须形成关系\u003c/h2>\n      \n      \n    \u003cdiv class=\"content-items\">\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>影像与投影\u003c/h3>\n          \u003cp>用画面、光与表面改变空间感知。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>声音艺术\u003c/h3>\n          \u003cp>通过声场、节奏和位置组织情绪与注意力。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>材料装置\u003c/h3>\n          \u003cp>让材料特性、结构与尺度参与表达。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>行为与表演\u003c/h3>\n          \u003cp>通过身体、动作、现场与观众关系传达观念。\u003c/p>\n          \n        \u003c/article>\n      \n    \u003c/div>\n  \n      \n      \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-media-installation-section-2\" aria-labelledby=\"ov-capabilities-media-installation-section-title-2\">\n      \u003cp class=\"section-kicker\">INSTALLATION LOOP\u003c/p>\n      \u003ch2 id=\"ov-capabilities-media-installation-section-title-2\">从桌面草图走到真实空间\u003c/h2>\n      \n      \n      \n      \n    \u003col class=\"process-steps\">\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>场地观察\u003c/h3>\n          \u003cp>记录尺度、光线、电力、声音、动线与安全限制。\u003c/p>\n        \u003c/li>\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>材料测试\u003c/h3>\n          \u003cp>小样验证结构、表面、投影和声音效果。\u003c/p>\n        \u003c/li>\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>空间原型\u003c/h3>\n          \u003cp>模拟观众视角、进入顺序与互动方式。\u003c/p>\n        \u003c/li>\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>布展复盘\u003c/h3>\n          \u003cp>现场校准并记录体验与反馈。\u003c/p>\n        \u003c/li>\n      \n    \u003c/ol>\n  \n      \n      \n    \u003cfigure class=\"section-image\">\n      \u003cimg src=\"../images/process-projection.jpg\" alt=\"从桌面草图走到真实空间相关课堂或作品画面\" width=\"1600\" height=\"900\" loading=\"lazy\">\n      \u003cfigcaption>从桌面草图走到真实空间 · 课堂与作品过程画面\u003c/figcaption>\n    \u003c/figure>\n  \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-media-installation-section-3\" aria-labelledby=\"ov-capabilities-media-installation-section-title-3\">\n      \u003cp class=\"section-kicker\">OUTPUTS\u003c/p>\n      \u003ch2 id=\"ov-capabilities-media-installation-section-title-3\">可形成的代表产出\u003c/h2>\n      \n      \n      \u003cul class=\"content-list\">\u003cli>影像与投影装置\u003c/li>\u003cli>声音艺术\u003c/li>\u003cli>材料与空间装置\u003c/li>\u003cli>实验表演\u003c/li>\u003cli>音画互动与现场展示\u003c/li>\u003c/ul>\n      \n      \n      \n    \u003c/section>\n  \n    \u003c/div>\n  ","capabilities/creative-tech":"\n    \u003cdiv class=\"overlay-hero\">\n      \u003cp class=\"overlay-hero__eyebrow\">CREATIVE TECHNOLOGY\u003c/p>\n      \u003ch2 class=\"overlay-hero__title\">AIGC 创意计算机与互动机械\u003c/h2>\n      \u003cp class=\"overlay-hero__lead\">把人工智能、生成算法、代码、传感器与机械结构变成创作媒介。重点不是追逐某个工具，而是设计输入、规则、反馈和体验。\u003c/p>\n      \u003cdiv class=\"hero-facts\">\n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>AI\u003c/strong>\n      \u003cspan>生成与协作工具\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>Code\u003c/strong>\n      \u003cspan>规则与实时系统\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>Physical\u003c/strong>\n      \u003cspan>硬件、机械与身体\u003c/span>\n    \u003c/div>\n  \u003c/div>\n    \u003c/div>\n    \u003cdiv class=\"detail-article overlay-article\">\n      \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-creative-tech-section-1\" aria-labelledby=\"ov-capabilities-creative-tech-section-title-1\">\n      \u003cp class=\"section-kicker\">WHAT TO LEARN\u003c/p>\n      \u003ch2 id=\"ov-capabilities-creative-tech-section-title-1\">技术不是单独的加分项\u003c/h2>\n      \n      \n    \u003cdiv class=\"content-items\">\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>AIGC 与生成系统\u003c/h3>\n          \u003cp>理解数据、提示、工作流、选择与质量控制。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>创意编程\u003c/h3>\n          \u003cp>通过代码定义视觉、声音、互动与实时规则。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>物理计算\u003c/h3>\n          \u003cp>连接传感器、输入、输出和反馈。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>机械与机器人艺术\u003c/h3>\n          \u003cp>用结构、运动与控制建立实体体验。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>智能可穿戴\u003c/h3>\n          \u003cp>把计算、传感与身体动作结合。\u003c/p>\n          \n        \u003c/article>\n      \n    \u003c/div>\n  \n      \n      \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-creative-tech-section-2\" aria-labelledby=\"ov-capabilities-creative-tech-section-title-2\">\n      \u003cp class=\"section-kicker\">PROJECT LOGIC\u003c/p>\n      \u003ch2 id=\"ov-capabilities-creative-tech-section-title-2\">从工具演示走向完整体验\u003c/h2>\n      \n      \n      \n      \n    \u003col class=\"process-steps\">\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>定义行为\u003c/h3>\n          \u003cp>明确系统接收什么输入、如何变化、给出什么反馈。\u003c/p>\n        \u003c/li>\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>制作最小原型\u003c/h3>\n          \u003cp>先验证核心机制，再扩展视觉与结构。\u003c/p>\n        \u003c/li>\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>观察交互\u003c/h3>\n          \u003cp>记录用户如何理解、误用与重新发现系统。\u003c/p>\n        \u003c/li>\n      \n        \u003cli class=\"fade-up\">\n          \u003ch3>处理边界\u003c/h3>\n          \u003cp>说明数据、版权、偏差、安全与维护问题。\u003c/p>\n        \u003c/li>\n      \n    \u003c/ol>\n  \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-capabilities-creative-tech-section-3\" aria-labelledby=\"ov-capabilities-creative-tech-section-title-3\">\n      \u003cp class=\"section-kicker\">AI POSITION\u003c/p>\n      \u003ch2 id=\"ov-capabilities-creative-tech-section-title-3\">AI 改变制作工具，不替代设计判断\u003c/h2>\n      \u003cdiv class=\"section-body\">\u003cp>学生需要学会调用工具，也需要保留问题定义、审美选择、验证、编辑与责任判断。项目评价不以生成数量为核心，而以系统和最终体验是否成立为核心。\u003c/p>\u003c/div>\n      \n      \n      \n      \u003cblockquote class=\"section-quote\">会生成只是起点，能判断才是能力。\u003c/blockquote>\n      \n    \u003c/section>\n  \n    \u003c/div>\n  "}</script>
+  <script src="../../assets/js/nav-menu.js"></script>
+  <script src="../../assets/js/site-switcher.js"></script>
   <script src="../assets/js/undergrad-detail.js"></script>
+  <script src="../assets/js/undergrad-topic.js"></script>
 </body>
 </html>

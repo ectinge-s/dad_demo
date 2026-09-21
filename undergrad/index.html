@@ -5,137 +5,301 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="SFK 数字艺术与设计本科方向：申请方向、升学路径、能力产出、学生适配、专业优势与学生作品。">
 <title>SFK 数字艺术与设计本科</title>
-<link rel="icon" href="assets/img/favicon/favicon-32.png" sizes="32x32">
-<link rel="icon" href="assets/img/favicon/favicon.ico" sizes="any">
-<link rel="stylesheet" href="assets/css/undergrad-fonts.css">
+<link rel="icon" href="../assets/img/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../assets/img/favicon/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/undergrad.css">
+<!-- v3.38 (GM): navbar/menu/footer CSS, shared with the graduate site —
+     see assets/css/site-chrome.css's own header comment. -->
+<link rel="stylesheet" href="../assets/css/site-chrome.css">
 </head>
 <body data-sfk-site="undergrad" data-sfk-graduate="../index.html">
   <a class="skip-link" href="#main-content">跳到主要内容</a>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="#top">SFK DAD<span>本科专业路径</span></a>
-      <nav class="section-nav" aria-label="本科页面章节">
-        <a href="#directions">申请方向</a>
-        <a href="#pathways">升学路径</a>
-        <a href="#outputs">能力产出</a>
-        <a href="#fit">学生适配</a>
-        <a href="#advantages">专业优势</a>
-        <a href="cases/">学生案例</a>
-      </nav>
+  <!-- v3.38 (GM): unified with the graduate site's own navbar structure
+       (assets/css/site-chrome.css) — see build-undergrad.cjs's
+       renderNavbarLinks()/renderNavOverlay() for how the two link
+       groups and this overlay are generated from one shared data
+       source (undergrad-pages.json's `navigation` array). -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__logo" href="#hero-root">
+        <img class="navbar__logo-img" src="../assets/img/logo-full.png" alt="SFK 数字艺术与设计科系 · Faculty of Digital Arts and Design">
+      </a>
+      <div class="navbar__links"><a class="navbar__btn is-active" href="#hero-root">首页</a><span class="navbar__divider" aria-hidden="true"></span><a class="navbar__btn" href="directions/">申请方向</a><a class="navbar__btn" href="pathways/">升学路径</a><a class="navbar__btn" href="capabilities/">五大能力</a><a class="navbar__btn" href="fit/">学生适配</a><a class="navbar__btn" href="advantages/">专业优势</a><a class="navbar__btn" href="works/">作品图册</a></div>
+      <button class="navbar__menu-toggle" id="nav-menu-toggle" aria-expanded="false" aria-controls="nav-menu-overlay" aria-label="展开全部导航">
+        <span></span><span></span>
+      </button>
     </div>
-  </header>
-
-  <main id="main-content">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <img class="hero-image" id="hero-image" alt="" fetchpriority="high">
-      <div class="hero-inner">
-        <p class="eyebrow" id="hero-eyebrow"></p>
-        <h1 id="hero-title"></h1>
-        <p class="hero-lead" id="hero-lead"></p>
-        <div class="hero-actions">
-          <a class="button-link primary" href="#directions">查看申请方向</a>
+  </nav>
+  <div id="nav-menu-overlay" class="nav-menu-overlay" aria-hidden="true">
+    <div class="nav-menu-overlay__inner">
+      <div class="nav-menu-overlay__row">
+        <div class="nav-menu-overlay__col nav-menu-overlay__col--primary">
+          <a class="nav-menu-overlay__link nav-menu-overlay__link--page" href="works/">作品图册</a>
+        </div>
+        <span class="nav-menu-overlay__div" aria-hidden="true"></span>
+        <div class="nav-menu-overlay__col nav-menu-overlay__col--secondary">
+          <a class="nav-menu-overlay__link" aria-current="page" href="#hero-root">首页</a><a class="nav-menu-overlay__link" href="directions/">申请方向</a><a class="nav-menu-overlay__link" href="pathways/">升学路径</a><a class="nav-menu-overlay__link" href="capabilities/">五大能力</a><a class="nav-menu-overlay__link" href="fit/">学生适配</a><a class="nav-menu-overlay__link" href="advantages/">专业优势</a>
         </div>
       </div>
-      <div class="hero-perspectives">
-        <p>让学生从真实兴趣出发，以设计连接艺术、科技与现实问题，把想法转化为完整作品，并建立通向升学与未来职业的个人路径。</p>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- v3.42 (GM): "hero也处理得与grad站类似，使用同样的cursor effect...拿掉
+         目前的homepage hero背景图" — the background photo is gone; this now
+         reuses graduate's exact decorative hero shell (grid/bloom/scan/
+         HUD corners/readout ticker, assets/css/site-chrome.css +
+         undergrad.css) and its custom cursor (#hero-root id + the same
+         inlined SVG + assets/js/hero-cursor.js, loaded below), so the
+         two sites' heroes read as the same product. Copy (eyebrow/title/
+         lead) is still injected by undergrad-home.js from
+         undergrad-content.json's `meta`; the two CTA buttons are fixed
+         per GM's spec, not data-driven. -->
+    <section class="hero" id="hero-root" aria-labelledby="hero-title">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__bloom hero__bloom--a" aria-hidden="true"></div>
+      <div class="hero__bloom hero__bloom--b" aria-hidden="true"></div>
+      <div class="hero__scan" aria-hidden="true"></div>
+      <div class="hero__hud hero__hud--tl" aria-hidden="true"></div>
+      <div class="hero__hud hero__hud--tr" aria-hidden="true"></div>
+      <div class="hero__hud hero__hud--bl" aria-hidden="true"></div>
+      <div class="hero__hud hero__hud--br" aria-hidden="true"></div>
+      <div class="hero__readout" aria-hidden="true">
+        <span>SFK International Art Education</span>
+        <span>31.2304°N · 121.4737°E</span>
+        <span class="hero__readout-live"><i></i> LIVE · AY 2026</span>
+      </div>
+      <div class="container hero__content">
+        <p class="eyebrow eyebrow--on-void" id="hero-eyebrow"></p>
+        <h1 id="hero-title"></h1>
+        <p class="hero__subtitle" id="hero-lead"></p>
+        <div class="hero__ctas">
+          <a class="button-link primary" href="directions/">了解申请方向</a>
+          <a class="button-link" href="works/">查看作品图册</a>
+        </div>
       </div>
     </section>
 
-    <nav class="depth-nav" aria-label="本科主题入口">
-      <div class="depth-nav-inner">
-        <div class="depth-nav-grid" id="depth-nav-grid"></div>
-      </div>
-    </nav>
+    <!-- v3.34/v3.42: same inlined cursor vector and driver script as the
+         graduate site's homepage hero — see assets/js/hero-cursor.js and
+         assets/css/site-chrome.css for the full history. -->
+    <svg id="hero-cursor" class="hero-cursor" aria-hidden="true" viewBox="0 0 300 300">
+      <defs>
+        <style>
+          .hc-st0 { fill: none; stroke: #ff0; stroke-linecap: round; stroke-linejoin: round; }
+          .hc-st1 { fill: #57571d; }
+          .hc-st2 { fill: #ff0; }
+        </style>
+      </defs>
+      <g>
+        <path class="hc-st1" d="M239.62,42.07l47.53,66.09-29.06,3.7-1.65.21-5.77-8.03-.54-.75-31.66-44.05-9.64-13.4c.55-.07,1.11-.13,1.66-.2,9.72-1.19,19.42-2.38,29.13-3.57Z"/>
+        <polygon points="287.15 108.16 267.62 125.11 236.88 129.06 256.44 112.07 258.09 111.86 287.15 108.16"/>
+        <path class="hc-st1" d="M167.99,118.62l88.6,123.4c-10.25,1.4-20.5,2.79-30.75,4.18l-95.05-132.44c9.67-1.22,19.35-2.44,29.03-3.66l6.29,8.76c.63-.08,1.25-.16,1.88-.24Z"/>
+        <path d="M256.59,242.02l-39,33.78c-10.27,1.42-20.54,2.83-30.81,4.25l20.88-18.09,18.18-15.76c10.25-1.39,20.5-2.78,30.75-4.18Z"/>
+        <polygon class="hc-st2" points="250.67 104.04 256.44 112.07 236.88 129.06 230.55 120.24 221.02 106.98 201.48 123.95 195.17 115.17 185.63 101.89 167.37 117.76 166.11 118.86 159.82 110.1 150.28 96.8 130.79 113.76 225.84 246.2 207.66 261.96 186.78 280.05 117.76 183.79 117.08 182.84 101.3 160.85 91.84 147.65 72.39 164.58 88.19 186.62 68.74 203.54 84.53 225.58 66.64 241.14 65.09 242.48 80.88 264.53 61.44 281.41 14.11 215.3 33.52 198.41 17.75 176.38 37.17 159.47 21.39 137.46 40.81 120.53 25.03 98.52 44.46 81.58 28.67 59.57 67.55 25.64 77.85 39.99 83.35 47.66 102.81 30.69 112.45 44.12 118.63 52.72 138.11 35.73 147.75 49.15 153.95 57.78 173.46 40.79 183.09 54.19 189.3 62.84 208.83 45.84 218.47 59.24 250.13 103.29 250.67 104.04"/>
+        <path d="M221.02,106.98l9.53,13.26c-9.69,1.24-19.38,2.47-29.07,3.71l19.54-16.97Z"/>
+        <path class="hc-st1" d="M204.3,37.03l6.19,8.61c-.55.07-1.11.13-1.66.2l-19.53,17-6.21-8.65-9.63-13.4c.58-.07,1.15-.14,1.73-.21,9.7-1.19,19.41-2.37,29.11-3.55Z"/>
+        <path d="M185.63,101.89l9.54,13.28c-9.06,1.14-18.12,2.3-27.18,3.45l-.62-.86,18.26-15.87Z"/>
+        <path class="hc-st1" d="M169.02,31.99l6.17,8.59c-.58.07-1.15.14-1.73.21l-19.51,16.99-6.2-8.63-9.64-13.42c.6-.07,1.21-.15,1.81-.22,9.71-1.18,19.4-2.34,29.1-3.52Z"/>
+        <path d="M150.28,96.8l9.54,13.3c-9.68,1.22-19.36,2.44-29.03,3.66l19.49-16.96Z"/>
+        <path class="hc-st1" d="M133.77,26.95l6.15,8.56c-.6.07-1.21.15-1.81.22l-19.48,16.99-6.18-8.6-9.64-13.43c.63-.08,1.25-.15,1.88-.23,9.69-1.17,19.39-2.34,29.08-3.51Z"/>
+        <path d="M117.08,182.84l.68.95-18.02,15.66c-10.33,1.36-20.67,2.72-31,4.09l19.45-16.92,28.89-3.78Z"/>
+        <path class="hc-st1" d="M101.3,160.85l15.78,21.99-28.89,3.78-15.8-22.04c9.63-1.24,19.27-2.49,28.91-3.73Z"/>
+        <path class="hc-st1" d="M99.74,199.45l15.77,22c-10.33,1.38-20.65,2.75-30.98,4.13l-15.79-22.04c10.33-1.37,20.67-2.73,31-4.09Z"/>
+        <path d="M115.51,221.45l-19.42,16.86c-9.57,1.29-19.14,2.57-28.71,3.86-.76.1-1.53.21-2.29.31l1.55-1.34,17.89-15.56c10.33-1.38,20.65-2.75,30.98-4.13Z"/>
+        <path class="hc-st1" d="M96.09,238.31l15.77,22.01c-9.57,1.3-19.12,2.59-28.69,3.9-.76.1-1.53.21-2.29.31l-15.79-22.05c.76-.1,1.53-.21,2.29-.31,9.57-1.29,19.14-2.57,28.71-3.86Z"/>
+        <path d="M111.86,260.32l-19.41,16.85c-10.34,1.41-20.67,2.83-31.01,4.24l19.44-16.88c.76-.1,1.53-.21,2.29-.31,9.57-1.31,19.12-2.6,28.69-3.9Z"/>
+        <path class="hc-st1" d="M98.56,21.92l6.13,8.54c-.63.08-1.25.15-1.88.23l-19.46,16.97-5.5-7.67-10.3-14.35c10.33-1.24,20.67-2.48,31.01-3.72Z"/>
+        <path d="M91.84,147.65l9.46,13.2c-9.64,1.24-19.28,2.49-28.91,3.73l19.45-16.93Z"/>
+      </g>
+      <g>
+        <path class="hc-st0" d="M230.55,120.24c-9.69,1.24-19.38,2.47-29.07,3.71"/>
+        <path class="hc-st0" d="M195.17,115.17c-9.06,1.14-18.12,2.3-27.18,3.45-.63.08-1.25.16-1.88.24"/>
+        <path class="hc-st0" d="M130.79,113.76c9.67-1.22,19.35-2.44,29.03-3.66"/>
+        <path class="hc-st0" d="M256.59,242.02l-39,33.78c-10.27,1.42-20.54,2.83-30.81,4.25"/>
+        <path class="hc-st0" d="M72.39,164.58c9.63-1.24,19.27-2.49,28.91-3.73"/>
+        <line class="hc-st0" x1="88.19" y1="186.62" x2="117.08" y2="182.84"/>
+        <path class="hc-st0" d="M68.74,203.54c10.33-1.37,20.67-2.73,31-4.09"/>
+        <line class="hc-st0" x1="96.09" y1="238.31" x2="111.86" y2="260.32"/>
+        <path class="hc-st0" d="M115.51,221.45l-19.42,16.86c-9.57,1.29-19.14,2.57-28.71,3.86-.76.1-1.53.21-2.29.31"/>
+        <path class="hc-st0" d="M210.49,45.64c9.72-1.19,19.42-2.38,29.13-3.57l47.53,66.09"/>
+        <polyline class="hc-st0" points="208.83 45.84 218.47 59.24 250.13 103.29 250.67 104.04 256.44 112.07"/>
+        <polyline class="hc-st0" points="61.44 281.41 14.11 215.3 33.52 198.41 17.75 176.38 37.17 159.47 21.39 137.46 40.81 120.53 25.03 98.52 44.46 81.58 28.67 59.57 67.55 25.64"/>
+        <polyline class="hc-st0" points="84.53 225.58 66.64 241.14 65.09 242.48 80.88 264.53"/>
+        <polyline class="hc-st0" points="225.84 246.2 207.66 261.96 186.78 280.05 117.76 183.79"/>
+        <polyline class="hc-st0" points="236.88 129.06 230.55 120.24 221.02 106.98 201.48 123.95 195.17 115.17 185.63 101.89 167.37 117.76"/>
+        <path class="hc-st0" d="M111.86,260.32l-19.41,16.85c-10.34,1.41-20.67,2.83-31.01,4.24l19.44-16.88c.76-.1,1.53-.21,2.29-.31,9.57-1.31,19.12-2.6,28.69-3.9Z"/>
+        <path class="hc-st0" d="M99.74,199.45l15.77,22c-10.33,1.38-20.65,2.75-30.98,4.13l-15.79-22.04,19.45-16.92-15.8-22.04,19.45-16.93,9.46,13.2,15.78,21.99.68.95-18.02,15.66Z"/>
+        <path class="hc-st0" d="M256.59,242.02c-10.25,1.4-20.5,2.79-30.75,4.18l-95.05-132.44,19.49-16.96,9.54,13.3,6.29,8.76,1.26-1.1.62.86,88.6,123.4Z"/>
+        <path class="hc-st0" d="M102.81,30.69l-19.46,16.97-5.5-7.67-10.3-14.35c10.33-1.24,20.67-2.48,31.01-3.72l6.13,8.54"/>
+        <path class="hc-st0" d="M138.11,35.73l-19.48,16.99-6.18-8.6-9.64-13.43c.63-.08,1.25-.15,1.88-.23,9.69-1.17,19.39-2.34,29.08-3.51l6.15,8.56"/>
+        <path class="hc-st0" d="M173.46,40.79l-19.51,16.99-6.2-8.63-9.64-13.42c.6-.07,1.21-.15,1.81-.22,9.71-1.18,19.4-2.34,29.1-3.52l6.17,8.59"/>
+        <path class="hc-st0" d="M210.49,45.64c-.55.07-1.11.13-1.66.2l-19.53,17-6.21-8.65-9.63-13.4c.58-.07,1.15-.14,1.73-.21,9.7-1.19,19.41-2.37,29.11-3.55l6.19,8.61Z"/>
+        <polygon class="hc-st0" points="287.15 108.16 267.62 125.11 236.88 129.06 256.44 112.07 258.09 111.86 287.15 108.16"/>
+      </g>
+    </svg>
 
+    <!-- v3.39 (GM): "simplify the homepage content, moving the
+         function of each section's homepage content to the beginning
+         of each of their page... a简化的 homepage section that has
+         only title + highest level intro, having只'进入XXX'button" —
+         each of these 5 bands used to also embed the full interactive
+         widget (tabs/accordion/filter-grid/profile-picker/advantage-
+         list); that widget now renders at the top of the topic's own
+         hub page instead (tools/undergrad/build-undergrad.cjs's
+         renderTopicWidget(), assets/js/undergrad-topic.js).
+
+         v3.42 (GM): "主页现在hero下的横向card与下面stack的部分功能重复。去掉
+         cards。stack的部分，文字信息太少... 起码需要一些完整的面向售卖/科普介绍的
+         paragraph。每个section加张图。" — the depth-nav card row that used
+         to sit here (id="depth-nav-grid"/renderDepthNav(), just above this
+         comment) was a second, redundant set of entry points to the same 5
+         topics these bands already are; removed outright rather than kept
+         alongside the bands below. Each band's one-line paragraph was
+         rewritten into a real paragraph grounded in this site's own data
+         (undergrad-content.json's directions/pathways/outputs/profiles/
+         advantages — see PROJECT_NOTES.md for the source figures behind
+         each rewrite), and each band now carries one real photo
+         (.band-layout/.band-media, undergrad.css) instead of running text
+         edge-to-edge — alternating which side the image sits on for
+         rhythm down the page. -->
     <section class="band white" id="directions" aria-labelledby="directions-title">
       <div class="container">
-        <div class="section-heading fade-up">
-          <p class="section-number">02 / 申请方向</p>
-          <div>
-            <h2 id="directions-title">我们能选择的申请方向</h2>
-            <p>只呈现国家、院校和专业方向，不把排名、语言分数或往届录取数字混入这一区域。</p>
-            <a class="section-detail-link" href="directions/">进入申请方向总览</a>
+        <div class="band-layout">
+          <div class="section-heading fade-up">
+            <p class="section-number">02 / 申请方向</p>
+            <div>
+              <h2 id="directions-title">我们能选择的申请方向</h2>
+              <p>覆盖美国、英国、香港三个申请方向：美国可按技术型数字媒体、工作室艺术基础与跨学科项目三条路线理解；英国同时覆盖综合大学与艺术院校，作品集重心在媒体研究、设计应用与创意计算之间明显分化；香港以设计、创意媒体、艺术科技与跨学科系统为主。这里只呈现国家、院校和专业方向，不把排名、语言分数或往届录取数字混入这一区域。</p>
+              <a class="section-detail-link" href="directions/">进入申请方向总览</a>
+            </div>
           </div>
+          <figure class="band-media fade-up">
+            <img src="full-time/offer-board.jpg" alt="斯芬克全日制学院本科 offer 榜单，覆盖英国、美国、澳洲、香港等多个国家和地区" loading="lazy" width="840" height="620">
+          </figure>
         </div>
-        <div class="segment-control" id="direction-tabs" role="tablist" aria-label="国家和地区"></div>
-        <div id="direction-panel" role="tabpanel" aria-live="polite"></div>
       </div>
     </section>
 
     <section class="band dark" id="pathways" aria-labelledby="pathways-title">
       <div class="container">
-        <div class="section-heading fade-up">
-          <p class="section-number">03 / 升学路径</p>
-          <div>
-            <h2 id="pathways-title">四大王牌录取路径</h2>
-            <p>四条路径同时保留，展开查看培养逻辑、适配学生、代表方向与当前证据边界。</p>
-            <a class="section-detail-link" href="pathways/">进入升学路径总览</a>
+        <div class="band-layout band-layout--reverse">
+          <figure class="band-media fade-up">
+            <img src="full-time/exhibition.jpg" alt="学生作品在校内展览中的真实展示现场" loading="lazy" width="840" height="620">
+          </figure>
+          <div class="section-heading fade-up">
+            <p class="section-number">03 / 升学路径</p>
+            <div>
+              <h2 id="pathways-title">四大王牌录取路径</h2>
+              <p>四条路径同时保留：英本全日制培养把基础、项目、审核与申请组织成连续培养链；UCL 路径用创作实践连接媒体研究、艺术科技与跨学科议题；香港本科以设计、创意媒体和跨学科系统形成组合申请；美本藤校与顶尖综合大学则把作品集放进综合学术、活动与个人叙事中评估。展开查看每条路径的培养逻辑、适配学生、代表方向与当前证据边界。</p>
+              <a class="section-detail-link" href="pathways/">进入升学路径总览</a>
+            </div>
           </div>
         </div>
-        <div class="pathway-list" id="pathway-list"></div>
       </div>
     </section>
 
     <section class="band" id="outputs" aria-labelledby="outputs-title">
       <div class="container">
-        <div class="section-heading fade-up">
-          <p class="section-number">04 / 能力产出</p>
-          <div>
-            <h2 id="outputs-title">我们会掌握的能力</h2>
-            <p>以最终能做出的作品理解专业。筛选只改变视觉强调，十二类产出始终保留在页面里。</p>
-            <a class="section-detail-link" href="capabilities/">进入五大能力体系</a>
+        <div class="band-layout">
+          <div class="section-heading fade-up">
+            <p class="section-number">04 / 能力产出</p>
+            <div>
+              <h2 id="outputs-title">我们会掌握的能力</h2>
+              <p>以最终能做出的作品理解专业，共五个领域：视觉语言与策略传播、信息体验与应用设计、3D 虚拟艺术制作、多媒介与装置艺术、AIGC 创意计算机与互动机械——彼此共享同一条从调研、概念、原型到迭代与复盘的项目闭环。筛选只改变视觉强调，十二类产出始终保留在页面里。</p>
+              <a class="section-detail-link" href="capabilities/">进入五大能力体系</a>
+            </div>
           </div>
+          <figure class="band-media fade-up">
+            <img src="images/output-3d.jpg" alt="3D 虚拟艺术制作方向的学生作品示例" loading="lazy" width="840" height="620">
+          </figure>
         </div>
-        <div class="segment-control" id="output-filters" aria-label="能力类别筛选">
-          <button type="button" data-output-filter="all" aria-pressed="true">全部产出</button>
-          <button type="button" data-output-filter="art-tech" aria-pressed="false">艺术与科技</button>
-          <button type="button" data-output-filter="brand" aria-pressed="false">品牌与平面</button>
-        </div>
-        <div class="output-grid" id="output-grid"></div>
       </div>
     </section>
 
     <section class="band white" id="fit" aria-labelledby="fit-title">
       <div class="container">
-        <div class="section-heading fade-up">
-          <p class="section-number">05 / 学生适配</p>
-          <div>
-            <h2 id="fit-title">哪些学生适合我们</h2>
-            <p>兴趣不是给学生贴标签，而是帮助他找到第一个值得长期做下去的项目入口。</p>
-            <a class="section-detail-link" href="fit/">进入学生适配总览</a>
+        <div class="band-layout band-layout--reverse">
+          <figure class="band-media fade-up">
+            <img src="images/profile-brand-strategy.jpg" alt="学生在工作室里推进品牌与视觉传播项目" loading="lazy" width="840" height="620">
+          </figure>
+          <div class="section-heading fade-up">
+            <p class="section-number">05 / 学生适配</p>
+            <div>
+              <h2 id="fit-title">哪些学生适合我们</h2>
+              <p>面向三类兴趣起点：喜欢 3D 虚拟、AI 互动与实验影像的 Tech &amp; Media；喜欢视觉语言、品牌与信息设计的 Brand &amp; Strategy；以及把游戏、动漫、潮流 IP 等亚文化兴趣转化为专业方向的二次元视觉学生。兴趣不是给学生贴标签，而是帮助他找到第一个值得长期做下去的项目入口。</p>
+              <a class="section-detail-link" href="fit/">进入学生适配总览</a>
+            </div>
           </div>
         </div>
-        <div class="profile-grid" id="profile-grid"></div>
-        <div class="profile-result" id="profile-result" aria-live="polite"></div>
       </div>
     </section>
 
     <section class="band cyan" id="advantages" aria-labelledby="advantages-title">
       <div class="container">
-        <div class="section-heading fade-up">
-          <p class="section-number">06 / 专业优势</p>
-          <div>
-            <h2 id="advantages-title">为什么适合在本科阶段学习</h2>
-            <p>不是用一个软件换一个岗位，而是在广泛试做中形成可迁移的判断、表达与项目能力。</p>
-            <a class="section-detail-link" href="advantages/">查看专业优势详解</a>
+        <div class="band-layout">
+          <div class="section-heading fade-up">
+            <p class="section-number">06 / 专业优势</p>
+            <div>
+              <h2 id="advantages-title">为什么适合在本科阶段学习</h2>
+              <p>不是用一个软件换一个岗位：兴趣可以直接成为项目起点，绘画之外，影像、代码、材料、声音与空间同样是表达工具；五个领域相互连通，减少被单一软件或岗位定义；完整的调研—原型—复盘训练，让学生在工具持续被 AI 改变时，仍保有可迁移的判断、表达与项目能力。</p>
+              <a class="section-detail-link" href="advantages/">查看专业优势详解</a>
+            </div>
           </div>
+          <figure class="band-media fade-up">
+            <img src="full-time/graduation.jpg" alt="斯芬克全日制学院师生在毕业典礼上的合影" loading="lazy" width="840" height="620">
+          </figure>
         </div>
-        <div class="advantage-list" id="advantage-list"></div>
       </div>
     </section>
 
   </main>
 
+  
   <footer class="site-footer">
-    <div class="footer-inner">
-      <span>SFK Digital Arts &amp; Design · Undergraduate</span>
-      <a href="../index.html">返回研究生站 · 行业就业方向</a>
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <div>
+          <div class="site-footer__brand-name"><span class="u-en">SFK</span>数字艺术与设计 · 本科</div>
+          <p class="site-footer__brand-desc">从真实兴趣出发，用作品与项目建立通向升学与职业的个人路径 — 申请方向、升学路径、能力体系与学生案例，一站呈现。</p>
+        </div>
+      </div>
+      <div class="site-footer__grid">
+        <div class="site-footer__col">
+          <h2 class="site-footer__col-title">页面导航<span class="u-en">Pages</span></h2>
+          <a href="#hero-root"><strong>首页</strong><span class="u-en">Home</span></a>
+        <a href="works/"><strong>作品图册</strong></a>
+        </div>
+        <div class="site-footer__col">
+          <h2 class="site-footer__col-title">专业板块<span class="u-en">Sections</span></h2>
+          <a href="directions/"><strong>申请方向</strong></a>
+        <a href="pathways/"><strong>升学路径</strong></a>
+        <a href="capabilities/"><strong>五大能力</strong></a>
+        <a href="fit/"><strong>学生适配</strong></a>
+        <a href="advantages/"><strong>专业优势</strong></a>
+        </div>
+        <div class="site-footer__col">
+          <h2 class="site-footer__col-title">站点切换<span class="u-en">Sites</span></h2>
+          <a href="../index.html"><strong>研究生站 · 行业就业方向</strong><span class="u-en">Graduate Site</span></a>
+        </div>
+        <div class="site-footer__col">
+          <h2 class="site-footer__col-title">规划咨询<span class="u-en">Get in Touch</span></h2>
+          <p class="site-footer__contact"><span class="u-en">Email</span>admissions@sfk-edu.demo</p>
+          <p class="site-footer__contact"><span class="u-en">Tel</span>400-000-0000</p>
+          <p class="site-footer__contact">上海市 · 校区地址待定</p>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© <span id="footer-year"></span> SFK 数字艺术与设计科系 · 本页面为课程与案例演示站点，数据仅供展示</p>
     </div>
   </footer>
 
-  <script src="assets/js/undergrad-switcher.js"></script>
+  <script src="../assets/js/nav-menu.js"></script>
+  <script src="../assets/js/site-switcher.js"></script>
+  <script src="../assets/js/hero-cursor.js"></script>
   <script src="assets/js/undergrad-home.js"></script>
 </body>
 </html>

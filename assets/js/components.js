@@ -68,25 +68,12 @@ function splitPhraseList(str, stripPrefixRe) {
    the scrollbar is actually removed, so the content column doesn't
    move. A small lock counter lets overlays nest/overlap safely (e.g.
    opening a modal from underneath an already-open one) without the
-   first `close()` prematurely restoring scrolling. */
-const ScrollLock = {
-  _count: 0,
-  lock() {
-    if (this._count === 0) {
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-      document.body.style.overflow = 'hidden';
-      if (scrollbarWidth > 0) document.body.style.paddingRight = scrollbarWidth + 'px';
-    }
-    this._count++;
-  },
-  unlock() {
-    this._count = Math.max(0, this._count - 1);
-    if (this._count === 0) {
-      document.body.style.overflow = '';
-      document.body.style.paddingRight = '';
-    }
-  },
-};
+   first `close()` prematurely restoring scrolling.
+   v3.38 (GM): ScrollLock itself moved to assets/js/nav-menu.js (loaded
+   before this file — see index.html) so the undergraduate site's own
+   nav menu can reuse the exact same implementation instead of a second
+   copy. It's still referenced below (course/image modals) exactly as
+   before — nothing here changes, just where it's defined. */
 
 const Accordion = {
   init(container) {
@@ -233,32 +220,16 @@ const RoleInsight = {
    were in place — the tiles are no longer clickable (see
    PROJECT_NOTES.md and planning.js's section-05 render). */
 
-/* ── EXPANDABLE NAV MENU (additive to .navbar — copied from IST) ── */
-const NavMenu = {
-  toggle() {
-    document.getElementById('nav-menu-overlay').classList.contains('is-open') ? this.close() : this.open();
-  },
-  open() {
-    document.getElementById('nav-menu-toggle').setAttribute('aria-expanded', 'true');
-    document.getElementById('nav-menu-overlay').classList.add('is-open');
-    document.getElementById('nav-menu-overlay').setAttribute('aria-hidden', 'false');
-    document.body.classList.add('nav-menu-open');
-    ScrollLock.lock();
-  },
-  close() {
-    document.getElementById('nav-menu-toggle').setAttribute('aria-expanded', 'false');
-    document.getElementById('nav-menu-overlay').classList.remove('is-open');
-    document.getElementById('nav-menu-overlay').setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('nav-menu-open');
-    ScrollLock.unlock();
-  },
-  go(pageId, opts) {
-    this.close();
-    Router.go(pageId, opts);
-  },
+/* ── EXPANDABLE NAV MENU ──
+   v3.38 (GM): NavMenu's open/close/toggle + its toggle-button/Escape-key
+   wiring moved to assets/js/nav-menu.js (loaded before this file — see
+   index.html), so the undergraduate site's identical hamburger menu can
+   share the exact same behavior instead of reimplementing it. Only the
+   router-specific navigation stays here, since Router is graduate-only. */
+NavMenu.go = function (pageId, opts) {
+  this.close();
+  Router.go(pageId, opts);
 };
-document.getElementById('nav-menu-toggle')?.addEventListener('click', () => NavMenu.toggle());
-document.addEventListener('keydown', e => { if (e.key === 'Escape') NavMenu.close(); });
 
 /* ── Shared Image Modal — ported from ist_demo's components.js
    (ImageModal). Used by the 课程目录 catalog cards (see home.js's

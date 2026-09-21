@@ -68,6 +68,17 @@
   --fs-small: 13px;
   --fs-tiny: 11px;
 
+  /* v3.42 (GM): these were missing entirely — assets/css/site-chrome.css
+     (shared with graduate) uses --text-xs/--text-sm/--text-md in its
+     .site-footer__* rules, and an undefined custom property resolves to
+     initial value (~16px "medium"), not grad's actual intended sizes —
+     so undergrad's footer column titles/contact lines/copyright line
+     were silently rendering a bit large instead of grad's fs-tiny-ish
+     sizing. Same values as graduate's style.css, so site-chrome.css now
+     resolves identically on both sites. */
+  --text-xs:   11px; --text-sm: 13px; --text-base: 15px; --text-md: 16px;
+  --text-lg:   20px; --text-xl: 28px; --text-2xl: 40px;
+
   /* Layout */
   --content-max: 1180px;
   --navbar-h: 60px;
@@ -89,12 +100,7 @@
   --transition-med:  0.32s var(--ease);
 
   --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px; --space-5: 24px;
-  --space-6: 32px; --space-7: 48px; --space-8: 64px; --space-9: 80px;
-
-  /* Undergraduate header: the detail pages stack a primary row + a
-     topic-nav row, the homepage only has the primary row. */
-  --ug-header-primary: 60px;
-  --ug-header-topics: 46px;
+  --space-6: 32px; --space-7: 48px; --space-8: 64px; --space-9: 80px; --space-10: 120px;
 
   color-scheme: dark;
 }
@@ -112,7 +118,10 @@ body.accent-acid {
 
 /* ── RESET / BASE ───────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+/* v3.38 (GM): was 120px, sized for the old two-row header (primary +
+   topic-nav); the unified single-row .navbar (site-chrome.css) only
+   needs its own height. */
+html { scroll-behavior: smooth; scroll-padding-top: var(--navbar-h); }
 body {
   margin: 0;
   background: var(--color-bg);
@@ -128,7 +137,18 @@ img, video { display: block; max-width: 100%; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 button { font: inherit; font-family: inherit; color: inherit; background: none; border: none; cursor: pointer; }
 strong { font-weight: 800; }
-h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-height: 1.2; }
+/* v3.42 (GM): "各级标题...样式全部需要与grad站统一" — matches graduate's own
+   global heading rule (assets/css/style.css) exactly, including the
+   font-family order (Argentum Sans before MiSans — undergrad's base
+   heading rule used to declare no font-family at all, so headings fell
+   back to body's MiSans-first stack and rendered any Latin text in the
+   wrong face) and the per-level line-height (undergrad used to flatten
+   all of h1-h3 to the same 1.2). More specific selectors elsewhere
+   (.hero h1, .section-heading h2, …) still set their own font-size. */
+h1, h2, h3, h4 { font-family: var(--font-en), var(--font-cn); margin: 0; font-weight: 700; letter-spacing: -.01em; }
+h1 { font-size: var(--fs-h1); line-height: 1.15; font-weight: 800; }
+h2 { font-size: var(--fs-h2); line-height: 1.25; }
+h3 { font-size: var(--fs-h3); line-height: 1.35; }
 ::selection { background: var(--color-accent); color: var(--color-accent-ink); }
 
 /* One focus treatment sitewide — a soft yellow ring, matching the
@@ -157,6 +177,10 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
   letter-spacing: .08em; text-transform: uppercase;
   color: var(--color-text-muted);
 }
+/* v3.42: matches graduate's style.css .eyebrow--on-void exactly — the
+   homepage hero's eyebrow sits on the void background, so it needs the
+   on-void muted color instead of the default surface-toned one. */
+.eyebrow--on-void { color: var(--color-text-on-void-muted); }
 .container { width: 100%; max-width: var(--content-max); margin: 0 auto; padding: 0 24px; }
 
 .section-kicker {
@@ -165,19 +189,25 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
   letter-spacing: .1em; text-transform: uppercase; color: var(--color-accent);
 }
 
-/* ── BUTTONS / CONTROLS — one interaction language ──────────────
-   Pill shape, .2s transition, no scale/translate on buttons (motion
-   belongs to cards only). Hover lifts the surface + brightens the
-   label; solid-accent controls only swap to the deeper yellow. */
+/* ── BUTTONS / CONTROLS — unified with the graduate site's .btn/
+   .btn--primary/.btn--ghost (assets/css/style.css) ──────────────
+   v3.42 (GM): "所有...按钮...样式全部需要与grad站统一" — this used to be a
+   self-consistent but undergrad-original interaction language (no
+   hover lift, an extra glow on the primary button, slightly different
+   padding/font-size). Selector names stay (.button-link is undergrad's
+   markup contract, used across 40+ generated pages) but every declared
+   value below now matches what graduate's .btn/.btn--primary/.btn--
+   ghost actually compute to, so the two sites' buttons are visually the
+   same control. */
 .button-link,
 .segment-control button,
 .content-detail-link {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  min-height: 42px; padding: 10px 20px;
+  min-height: 42px; padding: 12px 22px;
   border: 1px solid var(--color-border-2); border-radius: var(--radius-pill);
   background: transparent; color: var(--color-text-secondary);
-  font-size: var(--fs-small); font-weight: 700; white-space: nowrap;
-  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  font-size: 14px; font-weight: 700; white-space: nowrap;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
 }
 .button-link:hover,
 .segment-control button:hover,
@@ -186,9 +216,9 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
 }
 .button-link.primary {
   background: var(--color-accent); color: var(--color-accent-ink);
-  border-color: var(--color-accent); box-shadow: var(--glow-accent-soft);
+  border-color: var(--color-accent);
 }
-.button-link.primary:hover { background: var(--color-accent-deep); border-color: var(--color-accent-deep); color: var(--color-accent-ink); }
+.button-link.primary:hover { background: var(--color-accent-deep); border-color: var(--color-accent-deep); color: var(--color-accent-ink); transform: translateY(-1px); }
 
 /* The inline "detail link" variants stay text-weight links, just with
    the accent underline treatment instead of the source's ink rule. */
@@ -216,85 +246,36 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
 }
 
 /* ═══════════════════════════════════════════
-   HEADER — homepage (.site-header) + detail pages (.detail-header)
+   HEADER — v3.38 (GM): the homepage's own .site-header/.section-nav and
+   the detail pages' separate .detail-header/.topic-nav (GM: "this is
+   unbelievably messy in navigating the site") are both gone, replaced
+   by the graduate site's own .navbar/.navbar__inner/.navbar__logo/
+   .navbar__links/.navbar__btn structure — identical on every one of the
+   35 undergraduate pages now, and styled entirely by the shared
+   assets/css/site-chrome.css (see that file's header comment). The
+   legacy .site-switcher markup this used to make room for is gone too
+   — assets/js/site-switcher.js no longer looks for it.
 ═══════════════════════════════════════════ */
-.site-header,
-.detail-header {
-  position: sticky; top: 0; z-index: 1000;
-  background: rgba(0,0,0,.72);
-  backdrop-filter: blur(16px) saturate(1.4);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  border-bottom: 1px solid var(--color-border);
-}
-.header-inner,
-.header-primary {
-  width: 100%; max-width: 1320px; height: var(--ug-header-primary);
-  margin: 0 auto; padding: 0 24px;
-  display: flex; align-items: center; gap: 22px; min-width: 0;
-}
-
-.brand { flex: 0 0 auto; display: flex; flex-direction: column; gap: 2px; }
-.brand > :first-child,
-.brand { font-size: 15px; font-weight: 800; line-height: 1.15; }
-.brand span {
-  display: block; color: var(--color-text-muted);
-  font-family: var(--font-en); font-size: 9.5px; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; line-height: 1;
-}
-
-/* Legacy switcher (the source site's own 本科方向/行业就业 pair). The
-   unified site switch is injected by assets/js/undergrad-switcher.js;
-   these rules remain only so the legacy markup never looks broken if
-   it is rendered before/without the switcher. */
-.site-switcher {
-  display: inline-flex; flex: 0 0 auto;
-  border: 1px solid var(--color-border-2); border-radius: var(--radius-pill);
-  overflow: hidden; background: var(--color-surface);
-}
-.site-switcher a {
-  min-height: 32px; padding: 7px 14px;
-  display: inline-flex; align-items: center; justify-content: center;
-  font-size: var(--fs-tiny); font-weight: 700; color: var(--color-text-muted); white-space: nowrap;
-  transition: background var(--transition-fast), color var(--transition-fast);
-}
-.site-switcher a:hover { background: var(--color-surface-2); color: var(--color-text); }
-.site-switcher a.active { background: var(--color-accent); color: var(--color-accent-ink); }
-
-/* Homepage in-page section nav */
-.section-nav {
-  margin-left: auto; display: flex; align-items: center; gap: 2px; min-width: 0;
-}
-.section-nav a {
-  padding: 8px 12px; border-radius: var(--radius-pill);
-  font-size: var(--fs-small); font-weight: 600; color: var(--color-text-secondary);
-  white-space: nowrap;
-  transition: background var(--transition-fast), color var(--transition-fast);
-}
-.section-nav a:hover { background: var(--color-surface-2); color: var(--color-text); }
-
-/* Detail pages: the topic-nav row under the primary row */
-.topic-nav { border-top: 1px solid var(--color-border); overflow: hidden; }
-.topic-nav-inner {
-  max-width: 1320px; height: var(--ug-header-topics);
-  margin: 0 auto; padding: 0 24px;
-  display: flex; align-items: center; gap: 4px;
-  overflow-x: auto; scrollbar-width: none;
-}
-.topic-nav-inner::-webkit-scrollbar { display: none; }
-.topic-nav-inner a {
-  flex: 0 0 auto;
-  padding: 6px 14px; border-radius: var(--radius-pill);
-  font-size: var(--fs-tiny); font-weight: 700; color: var(--color-text-muted);
-  transition: background var(--transition-fast), color var(--transition-fast);
-}
-.topic-nav-inner a:hover { background: var(--color-surface-2); color: var(--color-text); }
-.topic-nav-inner a[aria-current="true"] {
-  background: var(--color-accent); color: var(--color-accent-ink); font-weight: 800;
-}
 
 /* ═══════════════════════════════════════════
    HOMEPAGE HERO
-═══════════════════════════════════════════ */
+   v3.42 (GM): "hero也处理得与grad站类似，使用同样的cursor effect...拿掉目前
+   的homepage hero背景图" — replaced the old two-pseudo-element treatment
+   (.hero::before grid + .hero::after single bloom) and the background
+   photo (.hero-image) with graduate's full real-DOM decorative shell
+   (grid + 2 blooms + scanlines + 4 HUD corners + a mono readout ticker
+   — assets/css/pages.css's .hero__* rules, copied here verbatim so the
+   two sites' homepage heroes are the same product) and its custom
+   cursor (#hero-root scope; cursor CSS itself now lives in the shared
+   assets/css/site-chrome.css since both sites use it — see that file).
+   Content area is simpler than graduate's (no .hero__stats/.hero__guide
+   rows — GM's spec was eyebrow+title+intro+exactly 2 buttons only).
+   `.hero-lead` used to be reused here for the homepage subtitle AND by
+   the detail-page hero-content block below with a different max-width;
+   since both rules had equal specificity the later one always won,
+   silently. Renaming the homepage's paragraph class to `.hero__subtitle`
+   (matching graduate's own name for this element) removes the
+   collision instead of just reordering it. */
 .hero {
   position: relative; isolation: isolate; overflow: hidden;
   min-height: min(780px, 88vh);
@@ -302,66 +283,48 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
   padding: 96px 0 56px;
   background: var(--color-void); color: var(--color-text-on-void);
 }
-.hero::before {
-  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+.hero__grid {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background:
     linear-gradient(rgba(255,255,0,.07) 1px, transparent 1px) 0 0 / 100% 56px,
     linear-gradient(90deg, rgba(255,255,0,.07) 1px, transparent 1px) 0 0 / 56px 100%;
   -webkit-mask-image: radial-gradient(120% 80% at 22% 26%, #000 0%, transparent 72%);
           mask-image: radial-gradient(120% 80% at 22% 26%, #000 0%, transparent 72%);
 }
-.hero::after {
-  content: ""; position: absolute; z-index: 0; pointer-events: none;
-  width: 720px; height: 720px; right: -180px; top: -220px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,0,.5) 0%, rgba(255,255,0,0) 70%);
-  filter: blur(60px); opacity: .5;
+.hero__bloom { position: absolute; z-index: 0; pointer-events: none; border-radius: 50%; filter: blur(60px); opacity: .5; }
+.hero__bloom--a { width: 720px; height: 720px; right: -180px; top: -220px; background: radial-gradient(circle, rgba(255,255,0,.5) 0%, rgba(255,255,0,0) 70%); animation: heroDrift 14s ease-in-out infinite; }
+.hero__bloom--b { width: 460px; height: 460px; left: -120px; bottom: -140px; background: radial-gradient(circle, rgba(213,212,0,.35) 0%, rgba(213,212,0,0) 70%); animation: heroDrift 18s ease-in-out infinite reverse; }
+@keyframes heroDrift { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-24px, 18px); } }
+.hero__scan { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .4; background: repeating-linear-gradient(0deg, rgba(255,255,255,.016) 0 1px, transparent 1px 3px); }
+.hero__hud { position: absolute; width: 24px; height: 24px; z-index: 2; pointer-events: none; border: 1px solid var(--color-accent-deep); opacity: .55; }
+.hero__hud--tl { top: 64px; left: 24px; border-right: 0; border-bottom: 0; }
+.hero__hud--tr { top: 64px; right: 24px; border-left: 0; border-bottom: 0; }
+.hero__hud--bl { bottom: 24px; left: 24px; border-right: 0; border-top: 0; }
+.hero__hud--br { bottom: 24px; right: 24px; border-left: 0; border-top: 0; }
+.hero__readout {
+  position: absolute; top: 64px; left: 0; right: 0; z-index: 2;
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 0 60px; font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--color-text-faint);
 }
-.hero-image {
-  position: absolute; inset: 0; z-index: 0;
-  width: 100%; height: 100%; object-fit: cover; object-position: center;
-  opacity: .34; filter: saturate(.85);
+.hero__readout-live { display: inline-flex; align-items: center; gap: 7px; color: var(--color-accent); }
+.hero__readout-live i { width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); box-shadow: var(--glow-accent); animation: heroGlowPulse 2s ease-in-out infinite; }
+@keyframes heroGlowPulse { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
+.hero__content { position: relative; z-index: 3; max-width: 860px; }
+.hero h1 { color: var(--color-text-on-void); }
+.hero__subtitle { font-size: 16px; color: var(--color-text-on-void-muted); margin-top: 20px; max-width: 620px; line-height: 1.8; }
+.hero__ctas { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+/* On-void ghost button: the default .button-link border
+   (var(--color-border-2), dark gray) reads as almost invisible against
+   the hero's pure-black background — matches graduate's own
+   .btn--ghost-on-void treatment for the same problem. */
+.hero .button-link:not(.primary) {
+  border-color: rgba(255,255,255,.3); color: var(--color-text-on-void);
 }
-.hero-inner {
-  position: relative; z-index: 2;
-  width: min(var(--content-max), calc(100% - 48px));
-  margin: 0 auto;
-  display: flex; flex-direction: column; align-items: flex-start;
+.hero .button-link:not(.primary):hover {
+  border-color: var(--color-text-on-void); background: rgba(255,255,255,.08);
+  color: var(--color-text-on-void); transform: translateY(-1px);
 }
-.hero h1 { color: var(--color-text-on-void); max-width: 900px; font-size: var(--fs-h1); }
-.hero-lead {
-  max-width: 720px; margin: 20px 0 0;
-  font-size: 16px; line-height: 1.8; color: var(--color-text-on-void-muted);
-}
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-.hero-perspectives {
-  position: relative; z-index: 2;
-  width: min(var(--content-max), calc(100% - 48px));
-  margin: 48px auto 0; padding-top: 16px;
-  border-top: 1px solid var(--color-border);
-}
-.hero-perspectives p {
-  margin: 0; max-width: 860px;
-  font-size: var(--fs-small); line-height: 1.75; color: var(--color-text-on-void-muted);
-}
-
-/* ── DEPTH NAV (homepage topic grid) ─────────────────────────── */
-.depth-nav {
-  padding: 40px 0;
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-}
-.depth-nav-inner { width: min(var(--content-max), calc(100% - 48px)); margin: 0 auto; }
-.depth-nav-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
-.depth-nav-card {
-  min-width: 0; min-height: 104px; padding: 18px;
-  background: var(--color-bg); border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
-}
-.depth-nav-card strong, .depth-nav-card span { display: block; }
-.depth-nav-card strong { font-size: 15px; font-weight: 800; line-height: 1.35; }
-.depth-nav-card span { margin-top: 7px; color: var(--color-text-muted); font-size: var(--fs-tiny); line-height: 1.55; }
-.depth-nav-card:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary); transform: translateY(-4px); }
 
 /* ── BANDS (homepage sections) ───────────────────────────────── */
 .band { padding: 88px 0; position: relative; }
@@ -393,6 +356,26 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
 .band.dark .section-heading p { color: var(--color-text-on-void-muted); }
 .band.cyan .section-heading p { color: var(--color-text-secondary); }
 
+/* v3.42 (GM): "每个section加张图" — one real photo per homepage band,
+   paired with its section-heading in a two-column layout; alternates
+   which side the image sits on (.band-layout--reverse) for rhythm down
+   the page. section-heading's own margin-bottom (above) existed to
+   clear a widget that no longer renders here, so it's zeroed inside
+   this layout — .band-layout's own `gap` does that spacing instead. */
+.band-layout {
+  display: grid; grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 48px; align-items: center;
+}
+.band-layout--reverse { grid-template-columns: 380px minmax(0, 1fr); }
+.band-layout--reverse .band-media { order: -1; }
+.band-layout .section-heading { margin-bottom: 0; }
+.band-media {
+  margin: 0; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--color-border); box-shadow: var(--shadow-card);
+  flex-shrink: 0;
+}
+.band-media img { display: block; width: 100%; height: 280px; object-fit: cover; }
+
 /* ── 申请方向 — direction tabs + cards ───────────────────────── */
 .direction-intro { max-width: 860px; margin: 0 0 34px; font-size: 17px; color: var(--color-text-secondary); }
 .direction-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
@@ -405,7 +388,7 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
 }
 .direction-group:nth-child(2) { border-top-color: var(--color-ind-ai, #B58FE0); }
 .direction-group:nth-child(3) { border-top-color: var(--color-ind-edu, #5FC2AE); }
-.direction-group:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary); transform: translateY(-4px); }
+.direction-group:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary); transform: translateY(-2px); }
 .direction-group h3 { font-size: var(--fs-h3); line-height: 1.3; }
 .direction-group > p { min-height: 78px; margin: 10px 0 20px; color: var(--color-text-muted); font-size: var(--fs-small); line-height: 1.65; }
 .program-list { border-top: 1px solid var(--color-border); }
@@ -472,7 +455,7 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
   transition: opacity var(--transition-med), filter var(--transition-med), border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 .output-card.is-dimmed { opacity: .32; filter: grayscale(.6); }
-.output-card:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary); transform: translateY(-4px); }
+.output-card:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary); transform: translateY(-2px); }
 .output-card img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: var(--color-surface-2); }
 .output-copy { min-height: 148px; padding: 18px; }
 .output-group {
@@ -491,7 +474,7 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
   border-radius: var(--radius); box-shadow: var(--shadow-card);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
-.profile-card:hover { border-color: var(--color-accent-deep); box-shadow: var(--glow-primary-soft); transform: translateY(-4px); }
+.profile-card:hover { border-color: var(--color-accent-deep); box-shadow: var(--glow-primary-soft); transform: translateY(-2px); }
 .profile-card[aria-pressed="true"] { border-color: var(--color-accent); box-shadow: var(--glow-primary); }
 .profile-card img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--color-surface-2); }
 .profile-copy { display: block; min-height: 236px; padding: 22px; }
@@ -526,20 +509,11 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
 .advantage-item h3 { margin: 0 0 8px; font-size: var(--fs-h3); line-height: 1.3; }
 .advantage-item p { margin: 0; color: var(--color-text-muted); font-size: var(--fs-small); line-height: 1.7; }
 
-/* ── FOOTER (both sites' shape, graduate-site colours) ───────── */
-.site-footer, .detail-footer {
-  margin-top: 0; padding: 28px 0;
-  background: var(--color-void); border-top: 1px solid rgba(255,255,255,.1);
-  color: var(--color-text-muted);
-}
-.footer-inner, .detail-footer > div {
-  width: min(var(--content-max), calc(100% - 48px));
-  margin: 0 auto;
-  display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
-  font-size: var(--fs-tiny);
-}
-.footer-inner a, .detail-footer a { color: var(--color-text); font-weight: 700; }
-.footer-inner a:hover, .detail-footer a:hover { color: var(--color-accent); }
+/* ── FOOTER — v3.38 (GM): the old single-line .site-footer/.detail-footer
+   (identical on every page, so there was nothing to actually unify) is
+   replaced by the graduate site's full 4-column .site-footer structure
+   — see assets/css/site-chrome.css and build-undergrad.cjs's
+   renderFooter(). ── */
 
 /* ═══════════════════════════════════════════
    DETAIL PAGES — breadcrumbs, hero, rail, article
@@ -611,7 +585,8 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
 
 .detail-article { min-width: 0; display: flex; flex-direction: column; gap: 56px; }
 .content-section {
-  scroll-margin-top: 130px;
+  /* v3.38 (GM): was 130px, sized for the old two-row header. */
+  scroll-margin-top: calc(var(--navbar-h) + 20px);
   padding: 32px;
   background: var(--color-surface); border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -628,7 +603,7 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
   border-radius: var(--radius);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
-.content-item:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary-soft); transform: translateY(-4px); }
+.content-item:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary-soft); transform: translateY(-2px); }
 .content-item p { margin: 8px 0 0; color: var(--color-text-muted); font-size: var(--fs-small); line-height: 1.7; }
 .content-item span {
   display: inline-block; margin-top: 12px; padding: 4px 12px;
@@ -654,7 +629,7 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
   border: 1px solid var(--color-border); border-radius: var(--radius);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
-.process-steps li:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary-soft); transform: translateY(-4px); }
+.process-steps li:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary-soft); transform: translateY(-2px); }
 .process-steps li::before {
   content: counter(step, decimal-leading-zero);
   display: block; margin-bottom: 10px;
@@ -672,13 +647,87 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
 .section-image img { width: 100%; height: auto; border-radius: var(--radius); background: var(--color-surface-2); }
 .section-image figcaption { margin-top: 10px; color: var(--color-text-faint); font-size: var(--fs-tiny); }
 
-/* ── children / related blocks ───────────────────────────────── */
-.children-section, .related-section {
+/* ── topic widget (v3.39, GM) ─────────────────────────────────
+   The interactive widget (tabs/accordion/filter-grid/profile-picker/
+   advantage-list) that used to live only on the homepage now renders
+   here too, at the top of its own hub page — assets/js/undergrad-
+   topic.js, build-undergrad.cjs's renderTopicWidget(). Reuses .band
+   for the same 88px vertical rhythm the homepage already established,
+   tightened on top since it sits directly under the hero (which
+   already carries the section's own title/lead) rather than under a
+   .section-heading intro block. All of the widget's own CSS
+   (.segment-control, .direction-grid, .pathway-item, .output-grid,
+   .profile-grid, .advantage-item, …) is already defined below,
+   unchanged — moving where the widget renders never changed how it
+   looks. */
+.topic-widget { padding-top: 56px; }
+
+/* ── content overlay (v3.39, GM) ──────────────────────────────
+   The data-driven "quick look" modal used by the 4 hub pages that
+   have children (directions/pathways/capabilities/fit) — GM: "let
+   navbar buttons direct to each of its page. then, make all the
+   current page into overlay." Every leaf page that used to be a
+   standalone, dead-end route now opens here instead — see
+   assets/js/undergrad-topic.js's Overlay object and build-undergrad.
+   cjs's renderOverlayShell()/renderOverlayPayload(). Mirrors the
+   graduate site's own .course-overlay pattern (ist-shared.css) —
+   same "backdrop + centered panel + sticky close button, no separate
+   URL" architecture — restyled here with undergrad's own tokens
+   rather than shared CSS, since the two overlays' content shapes
+   (product catalog vs. this site's editorial sections) are different
+   enough that a literal shared component would need as many
+   overrides as it saved. */
+.content-overlay { position: fixed; inset: 0; z-index: 1200; display: none; }
+.content-overlay.is-open { display: block; }
+.content-overlay__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.7); backdrop-filter: blur(2px); }
+.content-overlay__panel {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  margin: var(--space-6) auto; max-width: 960px; max-height: calc(100% - var(--space-7));
+  background: var(--color-bg); border: 1px solid var(--color-border-2); border-radius: var(--radius-lg);
+  overflow-y: auto; box-shadow: var(--shadow-card);
+  padding: var(--space-7) var(--space-6) var(--space-6);
+}
+.content-overlay.is-open .content-overlay__panel { animation: content-overlay-rise .32s var(--ease) both; }
+@keyframes content-overlay-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.content-overlay__close {
+  position: sticky; top: 0; float: right; margin-left: var(--space-4);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--color-surface-2); border: 1px solid var(--color-border-2); color: var(--color-text-muted);
+  display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2;
+  font-size: 22px; line-height: 1;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+.content-overlay__close:hover { color: var(--color-text); background: var(--color-surface); }
+.content-overlay__body { clear: both; }
+.overlay-hero { padding-bottom: var(--space-6); margin-bottom: var(--space-6); border-bottom: 1px solid var(--color-border); }
+.overlay-hero__eyebrow {
+  margin: 0;
+  font-family: var(--font-mono); font-size: var(--fs-tiny); font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-muted);
+}
+.overlay-hero__title { font-size: var(--fs-h2); margin: 10px 0 0; }
+.overlay-hero__lead { max-width: 700px; margin: 14px 0 0; font-size: 15px; line-height: 1.8; color: var(--color-text-secondary); }
+.overlay-hero .hero-facts { margin-top: 28px; }
+.overlay-article { gap: 40px; }
+@media (max-width: 640px) {
+  .content-overlay__panel { margin: 0; max-width: 100%; max-height: 100%; border-radius: 0; padding: var(--space-6) var(--space-4) var(--space-5); }
+}
+
+/* ── children block ───────────────────────────────────────────
+   v3.38 (GM): the "Keep Exploring" related-section this used to share
+   a container rule with is gone (GM: "take out 'keep exploring'...
+   it causes a lot of confusion") — renderRelated() in build-undergrad.cjs
+   now always returns '', and its own CSS (.related-list/.related-link,
+   formerly just below this block) was removed with it. */
+.children-section {
   width: min(var(--content-max), calc(100% - 48px));
   margin: 72px auto 0; padding-top: 40px;
   border-top: 1px solid var(--color-border);
 }
-.children-inner, .related-inner { width: 100%; }
+.children-inner { width: 100%; }
 .block-heading { margin-bottom: 24px; }
 .block-heading p {
   margin: 0 0 8px;
@@ -690,11 +739,12 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
 .child-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
 .child-card {
   display: flex; flex-direction: column; overflow: hidden;
+  width: 100%; text-align: left;
   background: var(--color-surface); border: 1px solid var(--color-border);
   border-radius: var(--radius); box-shadow: var(--shadow-card);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
-.child-card:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary); transform: translateY(-4px); }
+.child-card:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary); transform: translateY(-2px); }
 .child-card img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--color-surface-2); }
 .child-card-copy { display: block; padding: 20px; }
 .child-card-copy small {
@@ -704,21 +754,6 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
 .child-card-copy h3 { margin: 7px 0 6px; font-size: var(--fs-h3); }
 .child-card-copy p { margin: 0; color: var(--color-text-muted); font-size: var(--fs-small); line-height: 1.65; }
 .child-card-copy .arrow { display: block; margin-top: 14px; font-size: var(--fs-small); font-weight: 700; color: var(--color-accent); }
-
-.related-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
-.related-link {
-  display: block; padding: 18px 20px;
-  background: var(--color-surface); border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
-}
-.related-link:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary-soft); transform: translateY(-4px); }
-.related-link small {
-  display: block;
-  font-family: var(--font-en); font-size: 10px; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--color-text-faint);
-}
-.related-link strong { display: block; margin-top: 7px; font-size: var(--fs-body); }
 
 /* ═══════════════════════════════════════════
    FULL-TIME HANDBOOK layout (pathways/full-time)
@@ -744,7 +779,7 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
   border-radius: var(--radius);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
-.handbook-card:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary-soft); transform: translateY(-4px); }
+.handbook-card:hover { border-color: var(--color-accent); box-shadow: var(--glow-primary-soft); transform: translateY(-2px); }
 .handbook-card-kicker {
   margin: 0 0 8px;
   font-family: var(--font-en); font-size: 10px; font-weight: 700;
@@ -857,16 +892,19 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
    RESPONSIVE — same breakpoints as the graduate site's grid handling
 ═══════════════════════════════════════════ */
 @media (max-width: 1120px) {
-  .section-nav a:nth-child(n + 5) { display: none; }
   .direction-grid, .profile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .direction-group:last-child, .profile-card:last-child { grid-column: 1 / -1; }
   .output-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .depth-nav-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .band-layout, .band-layout--reverse { grid-template-columns: minmax(0, 1fr) 300px; gap: 32px; }
+  .band-layout--reverse { grid-template-columns: 300px minmax(0, 1fr); }
   .detail-layout { grid-template-columns: 200px minmax(0, 1fr); gap: 36px; }
   .handbook-section-heading, .acg-section-heading { grid-template-columns: 1fr; gap: 12px; }
 }
 
 @media (max-width: 900px) {
+  .band-layout, .band-layout--reverse { grid-template-columns: 1fr; gap: 28px; }
+  .band-layout--reverse .band-media { order: 0; }
+  .band-media img { height: 220px; }
   .detail-layout { grid-template-columns: 1fr; gap: 32px; padding-top: 40px; }
   .contents-rail { position: static; }
   .contents-rail ol { flex-direction: row; flex-wrap: wrap; }
@@ -875,20 +913,21 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
 }
 
 @media (max-width: 760px) {
-  :root { --ug-header-primary: 56px; --ug-header-topics: 42px; }
-  html { scroll-padding-top: 108px; }
-  .header-inner, .header-primary { width: 100%; padding: 0 16px; gap: 12px; }
-  .brand { font-size: 13.5px; }
-  .brand span, .section-nav { display: none; }
+  /* v3.38 (GM): the old per-element header/footer narrow-screen rules
+     here were removed — the unified .navbar and .site-footer
+     (site-chrome.css) carry their own responsive behavior (shared with
+     the graduate site) instead. */
   .hero { min-height: 72vh; padding: 76px 0 40px; }
-  .hero-inner, .hero-perspectives, .depth-nav-inner, .container,
-  .breadcrumbs, .detail-layout, .children-section, .related-section,
-  .footer-inner, .detail-footer > div { width: calc(100% - 32px); }
+  .container,
+  .breadcrumbs, .detail-layout, .children-section { width: calc(100% - 32px); }
   .hero-lead { font-size: 15px; }
-  .hero-perspectives p { font-size: 12.5px; }
+  /* Homepage hero (v3.42): matches graduate's pages.css breakpoints
+     (780px hides the readout ticker, 640px stacks the CTAs) folded into
+     this site's existing 760px block instead of new ones, per the
+     established "one consolidated RESPONSIVE section" convention. */
+  .hero__readout { display: none; }
+  .hero__ctas { flex-direction: column; align-items: stretch; }
   .band { padding: 64px 0; }
-  .depth-nav { padding: 32px 0; }
-  .depth-nav-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .section-heading { grid-template-columns: 1fr; gap: 8px; margin-bottom: 36px; }
   .section-heading p, .direction-intro { font-size: 15px; }
   .direction-grid, .profile-grid, .pathway-columns, .advantage-list { grid-template-columns: 1fr; }
@@ -913,8 +952,8 @@ h1, h2, h3, h4, h5 { margin: 0; font-weight: 800; letter-spacing: -.01em; line-h
 }
 
 @media (max-width: 430px) {
-  .depth-nav-grid, .output-grid { grid-template-columns: 1fr; }
-  .depth-nav-card, .output-copy { min-height: 0; }
+  .output-grid { grid-template-columns: 1fr; }
+  .output-copy { min-height: 0; }
   .hero-facts { flex-direction: column; width: 100%; }
   .hero-fact { border-right: 0; margin-right: 0; }
 }

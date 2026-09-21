@@ -5,22 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="判断适合度不从会不会画画开始，而是看学生愿意长期观察什么、愿意如何表达、能否接受实验与迭代。">
 <title>学生适配 | SFK 数字艺术与设计本科</title>
-<link rel="icon" href="../assets/img/favicon/favicon-32.png" sizes="32x32">
-<link rel="icon" href="../assets/img/favicon/favicon.ico" sizes="any">
-<link rel="stylesheet" href="../assets/css/undergrad-fonts.css">
+<link rel="icon" href="../../assets/img/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../../assets/img/favicon/favicon.ico" sizes="any">
+<link rel="stylesheet" href="../../assets/css/fonts.css">
 <link rel="stylesheet" href="../assets/css/undergrad.css">
+<!-- v3.38 (GM): navbar/menu/footer CSS, shared with the graduate site —
+     see assets/css/site-chrome.css's own header comment. -->
+<link rel="stylesheet" href="../../assets/css/site-chrome.css">
 </head>
 <body class="accent-purple " data-sfk-site="undergrad" data-sfk-graduate="../../index.html">
   <a class="skip-link" href="#main-content">跳到主要内容</a>
 
-  <header class="detail-header">
-    <div class="header-primary">
-      <a class="brand" href="../">SFK DAD<span>本科专业路径</span></a>
+  <!-- v3.38 (GM): unified with the homepage's own navbar (previously a
+       separate, page-links-only .topic-nav here) — see main.template.html
+       and build-undergrad.cjs's renderNavbarLinks()/renderNavOverlay(). -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__logo" href="../">
+        <img class="navbar__logo-img" src="../../assets/img/logo-full.png" alt="SFK 数字艺术与设计科系 · Faculty of Digital Arts and Design">
+      </a>
+      <div class="navbar__links"><a class="navbar__btn" href="../">首页</a><span class="navbar__divider" aria-hidden="true"></span><a class="navbar__btn" href="../directions/">申请方向</a><a class="navbar__btn" href="../pathways/">升学路径</a><a class="navbar__btn" href="../capabilities/">五大能力</a><a class="navbar__btn is-active" href="../fit/">学生适配</a><a class="navbar__btn" href="../advantages/">专业优势</a><a class="navbar__btn" href="../works/">作品图册</a></div>
+      <button class="navbar__menu-toggle" id="nav-menu-toggle" aria-expanded="false" aria-controls="nav-menu-overlay" aria-label="展开全部导航">
+        <span></span><span></span>
+      </button>
     </div>
-    <nav class="topic-nav" aria-label="本科主题导航">
-      <div class="topic-nav-inner"><a href="../directions/">申请方向</a><a href="../pathways/">升学路径</a><a href="../capabilities/">五大能力</a><a href="../fit/" aria-current="true">学生适配</a><a href="../advantages/">专业优势</a><a href="../works/">作品图册</a><a href="../cases/">学生案例</a></div>
-    </nav>
-  </header>
+  </nav>
+  <div id="nav-menu-overlay" class="nav-menu-overlay" aria-hidden="true">
+    <div class="nav-menu-overlay__inner">
+      <div class="nav-menu-overlay__row">
+        <div class="nav-menu-overlay__col nav-menu-overlay__col--primary">
+          <a class="nav-menu-overlay__link nav-menu-overlay__link--page" href="../works/">作品图册</a>
+        </div>
+        <span class="nav-menu-overlay__div" aria-hidden="true"></span>
+        <div class="nav-menu-overlay__col nav-menu-overlay__col--secondary">
+          <a class="nav-menu-overlay__link" href="../">首页</a><a class="nav-menu-overlay__link" href="../directions/">申请方向</a><a class="nav-menu-overlay__link" href="../pathways/">升学路径</a><a class="nav-menu-overlay__link" href="../capabilities/">五大能力</a><a class="nav-menu-overlay__link" aria-current="page" href="../fit/">学生适配</a><a class="nav-menu-overlay__link" href="../advantages/">专业优势</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- v3.39 (GM): the data-driven "quick look" overlay used by hub
+       pages with children — see undergrad.css's own header comment
+       and assets/js/undergrad-topic.js's Overlay object. Empty string
+       (nothing rendered here) on every other page. -->
+  
+    <div id="content-overlay" class="content-overlay" aria-hidden="true">
+      <div class="content-overlay__backdrop" data-overlay-close></div>
+      <div class="content-overlay__panel" role="dialog" aria-modal="true" aria-label="学生适配详情">
+        <button type="button" class="content-overlay__close" data-overlay-close aria-label="关闭详情">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="content-overlay__body" id="content-overlay-body"></div>
+      </div>
+    </div>
+  
 
   <main id="main-content">
     <div class="breadcrumb-wrap">
@@ -53,10 +91,28 @@
       </div>
     </section>
 
+    <!-- v3.39 (GM): "moving the function of each section's homepage
+         content to the beginning of each of their page" — the
+         interactive widget (tabs/accordion/filter-grid/profile-picker/
+         advantage-list) that used to live only on the homepage now
+         renders here, right under the hero, on its own topic's hub
+         page. Empty string on every page that isn't one of the 5
+         topic hubs. -->
+    
+    <section class="band topic-widget" aria-label="学生适配：兴趣是入口，不是标签速览">
+      <div class="container" data-topic-widget="fit">
+        
+      <div class="profile-grid" id="profile-grid"></div>
+      <div class="profile-result" id="profile-result" aria-live="polite"></div>
+    
+      </div>
+    </section>
+  
+
     <div class="detail-layout">
       <aside class="contents-rail" aria-label="本页目录">
         <p>本页内容</p>
-        <ol><li><a href="#section-1">三个问题比专业名称更有用</a></li><li><a href="#section-2">三种常见入口可以互相流动</a></li><li><a href="#section-3">常见误区</a></li></ol>
+        <ol><li><a href="#section-1">三个问题比专业名称更有用</a></li><li><a href="#section-2">常见误区</a></li></ol>
       </aside>
 
       <article class="detail-article">
@@ -72,41 +128,8 @@
     </section>
   
     <section class="content-section fade-up" id="section-2" aria-labelledby="section-title-2">
-      <p class="section-kicker">THREE ENTRIES</p>
-      <h2 id="section-title-2">三种常见入口可以互相流动</h2>
-      
-      
-    <div class="content-items">
-      
-        <article class="content-item fade-up">
-          <h3>Tech &amp; Media</h3>
-          <p>从 3D、互动、装置、影像或技术实验进入。</p>
-          
-        </article>
-      
-        <article class="content-item fade-up">
-          <h3>Brand &amp; Strategy</h3>
-          <p>从视觉语言、信息、出版、界面或品牌系统进入。</p>
-          
-        </article>
-      
-        <article class="content-item fade-up">
-          <h3>二次元 / 动漫 / 酷炫视觉</h3>
-          <p>从游戏、虚拟偶像、潮流文化或未来视觉进入，再转化为研究与项目。</p>
-          
-        </article>
-      
-    </div>
-  
-      
-      
-      
-      
-    </section>
-  
-    <section class="content-section fade-up" id="section-3" aria-labelledby="section-title-3">
       <p class="section-kicker">MISUNDERSTANDING</p>
-      <h2 id="section-title-3">常见误区</h2>
+      <h2 id="section-title-2">常见误区</h2>
       
       
     <div class="content-items">
@@ -140,86 +163,53 @@
     </div>
 
     
-    <section class="children-section" aria-labelledby="children-title">
-      <div class="children-inner">
-        <div class="block-heading">
-          <p>NEXT LEVEL</p>
-          <h2 id="children-title">继续进入具体方向</h2>
-        </div>
-        <div class="child-grid">
-          
-            <a class="child-card fade-up" href="../fit/tech-media/">
-              <img src="../images/output-sound.jpg" alt="" width="1200" height="750" loading="lazy">
-              <span class="child-card-copy">
-                <small>TECH &amp; MEDIA</small>
-                <h3>Tech &amp; Media</h3>
-                <p>适合会对新工具、虚拟世界、互动机制、空间装置或实验影像持续好奇，并愿意通过试错理解技术边界的学生。</p>
-                <span class="arrow" aria-hidden="true">查看详情 →</span>
-              </span>
-            </a>
-          
-            <a class="child-card fade-up" href="../fit/brand-strategy/">
-              <img src="../images/output-brand.jpg" alt="" width="1200" height="750" loading="lazy">
-              <span class="child-card-copy">
-                <small>BRAND &amp; STRATEGY</small>
-                <h3>Brand &amp; Strategy</h3>
-                <p>适合会留意字体、排版、品牌、书籍、界面和信息结构，并愿意理解受众、内容与传播场景的学生。</p>
-                <span class="arrow" aria-hidden="true">查看详情 →</span>
-              </span>
-            </a>
-          
-            <a class="child-card fade-up" href="../fit/acg-visual/">
-              <img src="../acg/page-45.jpg" alt="" width="1200" height="750" loading="lazy">
-              <span class="child-card-copy">
-                <small>ACG &amp; FUTURE VISUAL</small>
-                <h3>二次元与未来视觉</h3>
-                <p>游戏、虚拟偶像、潮流 IP 与未来视觉可以成为专业入口，但申请项目要从模仿喜爱的画面，走向对文化、身份、消费、技术和社群的独立研究。</p>
-                <span class="arrow" aria-hidden="true">查看详情 →</span>
-              </span>
-            </a>
-          
-        </div>
-      </div>
-    </section>
-  
     
-    <nav class="related-section" aria-labelledby="related-title">
-      <div class="related-inner">
-        <div class="block-heading">
-          <p>KEEP EXPLORING</p>
-          <h2 id="related-title">从这里继续了解</h2>
-        </div>
-        <div class="related-list">
-          
-            <a class="related-link fade-up" href="../capabilities/">
-              <small>FIVE CAPABILITY DOMAINS</small>
-              <strong>五大能力 →</strong>
-            </a>
-          
-            <a class="related-link fade-up" href="../advantages/">
-              <small>WHY UNDERGRADUATE DESIGN</small>
-              <strong>专业优势 →</strong>
-            </a>
-          
-            <a class="related-link fade-up" href="../directions/">
-              <small>APPLICATION DIRECTIONS</small>
-              <strong>申请方向 →</strong>
-            </a>
-          
-        </div>
-      </div>
-    </nav>
-  
   </main>
 
-  <footer class="detail-footer">
-    <div>
-      <span>SFK Digital Arts &amp; Design · Undergraduate</span>
-      <a href="../">返回本科主页</a>
+  
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <div>
+          <div class="site-footer__brand-name"><span class="u-en">SFK</span>数字艺术与设计 · 本科</div>
+          <p class="site-footer__brand-desc">从真实兴趣出发，用作品与项目建立通向升学与职业的个人路径 — 申请方向、升学路径、能力体系与学生案例，一站呈现。</p>
+        </div>
+      </div>
+      <div class="site-footer__grid">
+        <div class="site-footer__col">
+          <h2 class="site-footer__col-title">页面导航<span class="u-en">Pages</span></h2>
+          <a href="../"><strong>首页</strong><span class="u-en">Home</span></a>
+        <a href="../works/"><strong>作品图册</strong></a>
+        </div>
+        <div class="site-footer__col">
+          <h2 class="site-footer__col-title">专业板块<span class="u-en">Sections</span></h2>
+          <a href="../directions/"><strong>申请方向</strong></a>
+        <a href="../pathways/"><strong>升学路径</strong></a>
+        <a href="../capabilities/"><strong>五大能力</strong></a>
+        <a href="../fit/"><strong>学生适配</strong></a>
+        <a href="../advantages/"><strong>专业优势</strong></a>
+        </div>
+        <div class="site-footer__col">
+          <h2 class="site-footer__col-title">站点切换<span class="u-en">Sites</span></h2>
+          <a href="../../index.html"><strong>研究生站 · 行业就业方向</strong><span class="u-en">Graduate Site</span></a>
+        </div>
+        <div class="site-footer__col">
+          <h2 class="site-footer__col-title">规划咨询<span class="u-en">Get in Touch</span></h2>
+          <p class="site-footer__contact"><span class="u-en">Email</span>admissions@sfk-edu.demo</p>
+          <p class="site-footer__contact"><span class="u-en">Tel</span>400-000-0000</p>
+          <p class="site-footer__contact">上海市 · 校区地址待定</p>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© <span id="footer-year"></span> SFK 数字艺术与设计科系 · 本页面为课程与案例演示站点，数据仅供展示</p>
     </div>
   </footer>
 
-  <script src="../assets/js/undergrad-switcher.js"></script>
+  <script type="application/json" id="overlay-payload">{"fit/tech-media":"\n    \u003cdiv class=\"overlay-hero\">\n      \u003cp class=\"overlay-hero__eyebrow\">TECH &amp; MEDIA\u003c/p>\n      \u003ch2 class=\"overlay-hero__title\">Tech &amp; Media：把技术变成可体验的媒介\u003c/h2>\n      \u003cp class=\"overlay-hero__lead\">适合会对新工具、虚拟世界、互动机制、空间装置或实验影像持续好奇，并愿意通过试错理解技术边界的学生。\u003c/p>\n      \u003cdiv class=\"hero-facts\">\n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>好奇\u003c/strong>\n      \u003cspan>愿意拆解技术与体验\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>原型\u003c/strong>\n      \u003cspan>先测试再完善\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>跨媒介\u003c/strong>\n      \u003cspan>图像、声音、空间与代码\u003c/span>\n    \u003c/div>\n  \u003c/div>\n    \u003c/div>\n    \u003cdiv class=\"detail-article overlay-article\">\n      \n    \u003csection class=\"content-section fade-up\" id=\"ov-fit-tech-media-section-1\" aria-labelledby=\"ov-fit-tech-media-section-title-1\">\n      \u003cp class=\"section-kicker\">SIGNALS\u003c/p>\n      \u003ch2 id=\"ov-fit-tech-media-section-title-1\">可能适合你的信号\u003c/h2>\n      \n      \n      \u003cul class=\"content-list\">\u003cli>喜欢观察游戏、装置或数字产品如何回应人的行为。\u003c/li>\u003cli>愿意学习新工具，但不满足于照着教程复刻。\u003c/li>\u003cli>对声音、空间、机械、AI 或虚拟形象有持续兴趣。\u003c/li>\u003cli>面对技术故障时愿意排查、简化和重新测试。\u003c/li>\u003c/ul>\n      \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-fit-tech-media-section-2\" aria-labelledby=\"ov-fit-tech-media-section-title-2\">\n      \u003cp class=\"section-kicker\">STARTING PROJECTS\u003c/p>\n      \u003ch2 id=\"ov-fit-tech-media-section-title-2\">可以从这些小项目开始\u003c/h2>\n      \n      \n    \u003cdiv class=\"content-items\">\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>互动规则\u003c/h3>\n          \u003cp>为一个行为设计输入、变化与反馈。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>虚拟场景\u003c/h3>\n          \u003cp>用 3D 空间表达一个记忆、身份或未来议题。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>声音与影像\u003c/h3>\n          \u003cp>用音画关系组织情绪和叙事。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>材料与传感\u003c/h3>\n          \u003cp>让实体材料对触摸、距离或环境变化作出反应。\u003c/p>\n          \n        \u003c/article>\n      \n    \u003c/div>\n  \n      \n      \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-fit-tech-media-section-3\" aria-labelledby=\"ov-fit-tech-media-section-title-3\">\n      \u003cp class=\"section-kicker\">NEXT\u003c/p>\n      \u003ch2 id=\"ov-fit-tech-media-section-title-3\">优先补足的能力\u003c/h2>\n      \n      \n      \u003cul class=\"content-list\">\u003cli>调研与问题定义\u003c/li>\u003cli>基础视觉叙事\u003c/li>\u003cli>原型拆解\u003c/li>\u003cli>技术文档与复盘\u003c/li>\u003cli>协作与现场表达\u003c/li>\u003c/ul>\n      \n      \n      \n    \u003c/section>\n  \n    \u003c/div>\n  ","fit/brand-strategy":"\n    \u003cdiv class=\"overlay-hero\">\n      \u003cp class=\"overlay-hero__eyebrow\">BRAND &amp; STRATEGY\u003c/p>\n      \u003ch2 class=\"overlay-hero__title\">Brand &amp; Strategy：把复杂内容组织成清晰表达\u003c/h2>\n      \u003cp class=\"overlay-hero__lead\">适合会留意字体、排版、品牌、书籍、界面和信息结构，并愿意理解受众、内容与传播场景的学生。\u003c/p>\n      \u003cdiv class=\"hero-facts\">\n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>观察\u003c/strong>\n      \u003cspan>关注视觉细节\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>结构\u003c/strong>\n      \u003cspan>愿意整理复杂信息\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>受众\u003c/strong>\n      \u003cspan>理解表达对象\u003c/span>\n    \u003c/div>\n  \u003c/div>\n    \u003c/div>\n    \u003cdiv class=\"detail-article overlay-article\">\n      \n    \u003csection class=\"content-section fade-up\" id=\"ov-fit-brand-strategy-section-1\" aria-labelledby=\"ov-fit-brand-strategy-section-title-1\">\n      \u003cp class=\"section-kicker\">SIGNALS\u003c/p>\n      \u003ch2 id=\"ov-fit-brand-strategy-section-title-1\">可能适合你的信号\u003c/h2>\n      \n      \n      \u003cul class=\"content-list\">\u003cli>会主动比较字体、包装、海报或界面的差异。\u003c/li>\u003cli>喜欢整理资料，并寻找更清楚的呈现顺序。\u003c/li>\u003cli>愿意理解品牌、文化与受众，而不只追求个人风格。\u003c/li>\u003cli>能反复调整细节，也愿意解释为什么这样调整。\u003c/li>\u003c/ul>\n      \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-fit-brand-strategy-section-2\" aria-labelledby=\"ov-fit-brand-strategy-section-title-2\">\n      \u003cp class=\"section-kicker\">STARTING PROJECTS\u003c/p>\n      \u003ch2 id=\"ov-fit-brand-strategy-section-title-2\">可以从这些小项目开始\u003c/h2>\n      \n      \n    \u003cdiv class=\"content-items\">\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>个人档案出版\u003c/h3>\n          \u003cp>把一组长期收藏或观察编辑成书籍。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>信息重构\u003c/h3>\n          \u003cp>把复杂说明转化为图表、地图或网页。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>品牌重塑\u003c/h3>\n          \u003cp>为真实小型品牌重新定义定位与视觉系统。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>数字体验\u003c/h3>\n          \u003cp>围绕一个具体任务设计界面与交互流程。\u003c/p>\n          \n        \u003c/article>\n      \n    \u003c/div>\n  \n      \n      \n      \n      \n    \u003c/section>\n  \n    \u003csection class=\"content-section fade-up\" id=\"ov-fit-brand-strategy-section-3\" aria-labelledby=\"ov-fit-brand-strategy-section-title-3\">\n      \u003cp class=\"section-kicker\">NEXT\u003c/p>\n      \u003ch2 id=\"ov-fit-brand-strategy-section-title-3\">优先补足的能力\u003c/h2>\n      \n      \n      \u003cul class=\"content-list\">\u003cli>字体与版式\u003c/li>\u003cli>信息层级\u003c/li>\u003cli>用户与传播调研\u003c/li>\u003cli>系统一致性\u003c/li>\u003cli>项目提案与复盘\u003c/li>\u003c/ul>\n      \n      \n      \n    \u003c/section>\n  \n    \u003c/div>\n  ","fit/acg-visual":"\n    \u003cdiv class=\"overlay-hero\">\n      \u003cp class=\"overlay-hero__eyebrow\">ACG &amp; FUTURE VISUAL\u003c/p>\n      \u003ch2 class=\"overlay-hero__title\">二次元、动漫与酷炫视觉：把喜欢推进成研究\u003c/h2>\n      \u003cp class=\"overlay-hero__lead\">游戏、虚拟偶像、潮流 IP 与未来视觉可以成为专业入口，但申请项目要从模仿喜爱的画面，走向对文化、身份、消费、技术和社群的独立研究。\u003c/p>\n      \u003cdiv class=\"hero-facts\">\n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>兴趣\u003c/strong>\n      \u003cspan>建立持续观察\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>转译\u003c/strong>\n      \u003cspan>从 IP 到独立问题\u003c/span>\n    \u003c/div>\n  \n    \u003cdiv class=\"hero-fact\">\n      \u003cstrong>原创\u003c/strong>\n      \u003cspan>不依赖第三方角色复制\u003c/span>\n    \u003c/div>\n  \u003c/div>\n    \u003c/div>\n    \u003cdiv class=\"detail-article overlay-article\">\n      \n    \u003csection class=\"content-section acg-section acg-section--1 fade-up\" id=\"ov-fit-acg-visual-section-1\" aria-labelledby=\"ov-fit-acg-visual-section-title-1\">\n      \u003cdiv class=\"acg-section-inner\">\n        \u003cheader class=\"acg-section-heading\">\n          \u003cdiv>\n            \u003cp class=\"section-kicker\">FROM FANDOM TO RESEARCH\u003c/p>\n            \u003ch2 id=\"ov-fit-acg-visual-section-title-1\">先问为什么喜欢\u003c/h2>\n          \u003c/div>\n          \n        \u003c/header>\n        \n    \u003cdiv class=\"content-items\">\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>视觉语言\u003c/h3>\n          \u003cp>分析字体、色彩、角色、界面与世界观如何共同建立吸引力。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>文化与社群\u003c/h3>\n          \u003cp>观察应援、虚拟身份、消费、收藏与社群行为。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>媒介与技术\u003c/h3>\n          \u003cp>研究游戏规则、虚拟舞台、AR、3D 与数字表演如何改变参与。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>个人经验\u003c/h3>\n          \u003cp>把童年记忆、身份、情感或身体经验转化为独立主题。\u003c/p>\n          \n        \u003c/article>\n      \n    \u003c/div>\n  \n        \n        \n        \n        \n    \u003cdiv class=\"acg-gallery\">\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-02.jpg\" alt=\"不同二次元项目的字形与标识研究\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>观察样本：字形与标识如何建立情绪\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-14.jpg\" alt=\"虚拟舞台与演唱会视觉画面\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>观察样本：舞台、角色与观看关系\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-20.jpg\" alt=\"增强现实中的虚拟角色互动\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>观察样本：虚拟角色进入真实空间\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-44.jpg\" alt=\"偶像应援物与视觉系统设计\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>观察样本：社群、应援与视觉系统\u003c/figcaption>\n        \u003c/figure>\n      \n    \u003c/div>\n  \n      \u003c/div>\n    \u003c/section>\n  \n    \u003csection class=\"content-section acg-section acg-section--2 fade-up\" id=\"ov-fit-acg-visual-section-2\" aria-labelledby=\"ov-fit-acg-visual-section-title-2\">\n      \u003cdiv class=\"acg-section-inner\">\n        \u003cheader class=\"acg-section-heading\">\n          \u003cdiv>\n            \u003cp class=\"section-kicker\">TRANSLATION\u003c/p>\n            \u003ch2 id=\"ov-fit-acg-visual-section-title-2\">兴趣可以转化成多种项目\u003c/h2>\n          \u003c/div>\n          \n        \u003c/header>\n        \n        \u003cul class=\"content-list\">\u003cli>字体、海报、书籍与杂志\u003c/li>\u003cli>品牌、包装、周边与视觉系统\u003c/li>\u003cli>UI/UX、网页与互动原型\u003c/li>\u003cli>AR/MR、虚拟可穿戴与数字表演\u003c/li>\u003cli>3D 场景、机械艺术与 AIGC 实验\u003c/li>\u003c/ul>\n        \n    \u003cdiv class=\"acg-visual-groups\">\n      \n        \u003csection class=\"acg-visual-group\" aria-labelledby=\"acg-group-1\">\n          \u003cheader>\n            \u003cspan>01\u003c/span>\n            \u003cdiv>\n              \u003ch3 id=\"acg-group-1\">视觉传播与出版\u003c/h3>\n              \u003cp>把角色气质和世界观转译为字体、海报、书籍、包装与完整视觉系统。\u003c/p>\n            \u003c/div>\n          \u003c/header>\n          \n    \u003cdiv class=\"acg-gallery acg-gallery--compact\">\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-03.jpg\" alt=\"游戏主题字体设计案例\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>字体系统\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-06.jpg\" alt=\"二次元主题海报设计案例\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>海报与信息层级\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-08.jpg\" alt=\"二次元主题书籍设计案例\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>书籍与出版物\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-16.jpg\" alt=\"潮流 IP 的包装、周边与形象系统\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>IP、包装与周边\u003c/figcaption>\n        \u003c/figure>\n      \n    \u003c/div>\n  \n        \u003c/section>\n      \n        \u003csection class=\"acg-visual-group\" aria-labelledby=\"acg-group-2\">\n          \u003cheader>\n            \u003cspan>02\u003c/span>\n            \u003cdiv>\n              \u003ch3 id=\"acg-group-2\">界面与虚拟身份\u003c/h3>\n              \u003cp>让角色不只是一张图，而是在界面、品牌、社交关系与数字身体中持续运作。\u003c/p>\n            \u003c/div>\n          \u003c/header>\n          \n    \u003cdiv class=\"acg-gallery acg-gallery--compact\">\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-11.jpg\" alt=\"二次元界面与 UI UX 设计案例\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>界面与体验\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-12.jpg\" alt=\"虚拟偶像品牌与角色视觉\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>虚拟偶像品牌\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-18.jpg\" alt=\"角色、应用界面与三维场景组合\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>角色资产与应用\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-21.jpg\" alt=\"虚拟可穿戴设计案例\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>虚拟可穿戴\u003c/figcaption>\n        \u003c/figure>\n      \n    \u003c/div>\n  \n        \u003c/section>\n      \n        \u003csection class=\"acg-visual-group\" aria-labelledby=\"acg-group-3\">\n          \u003cheader>\n            \u003cspan>03\u003c/span>\n            \u003cdiv>\n              \u003ch3 id=\"acg-group-3\">空间、表演与世界观\u003c/h3>\n              \u003cp>把声音、灯光、身体、场景与叙事规则连接起来，让观众真正进入一个世界。\u003c/p>\n            \u003c/div>\n          \u003c/header>\n          \n    \u003cdiv class=\"acg-gallery acg-gallery--compact\">\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-22.jpg\" alt=\"数字表演与虚拟角色现场\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>数字表演\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-23.jpg\" alt=\"未来感三维场景建模\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>3D 场景\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-28.jpg\" alt=\"舞台灯光与舞台背景视觉\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>舞台灯光与背景\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-49.jpg\" alt=\"国际太空城轨道乌托邦项目\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>空间世界观\u003c/figcaption>\n        \u003c/figure>\n      \n    \u003c/div>\n  \n        \u003c/section>\n      \n        \u003csection class=\"acg-visual-group\" aria-labelledby=\"acg-group-4\">\n          \u003cheader>\n            \u003cspan>04\u003c/span>\n            \u003cdiv>\n              \u003ch3 id=\"acg-group-4\">未来媒介与创意科技\u003c/h3>\n              \u003cp>用机械、生成工具、虚拟配饰与身体技术，发展具有个人判断的未来视觉。\u003c/p>\n            \u003c/div>\n          \u003c/header>\n          \n    \u003cdiv class=\"acg-gallery acg-gallery--compact\">\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-25.jpg\" alt=\"机械艺术装置与结构实验\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>机械艺术\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-26.jpg\" alt=\"AIGC 未来场景与角色实验\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>AIGC 视觉实验\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-48.jpg\" alt=\"虚拟配饰与数字身份项目\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>虚拟配饰\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-50.jpg\" alt=\"科技神明与机械化身体项目\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>机械化身体与世界观\u003c/figcaption>\n        \u003c/figure>\n      \n    \u003c/div>\n  \n        \u003c/section>\n      \n    \u003c/div>\n  \n        \n        \n      \u003c/div>\n    \u003c/section>\n  \n    \u003csection class=\"content-section acg-section acg-section--3 fade-up\" id=\"ov-fit-acg-visual-section-3\" aria-labelledby=\"ov-fit-acg-visual-section-title-3\">\n      \u003cdiv class=\"acg-section-inner\">\n        \u003cheader class=\"acg-section-heading\">\n          \u003cdiv>\n            \u003cp class=\"section-kicker\">FROM REFERENCE TO PROJECT\u003c/p>\n            \u003ch2 id=\"ov-fit-acg-visual-section-title-3\">从喜欢的画面，走到自己的问题\u003c/h2>\n          \u003c/div>\n          \u003cdiv class=\"section-body\">\u003cp>真正有说服力的项目，不是把熟悉的角色换一套配色，而是先提炼自己持续关注的情绪、关系或文化现象，再寻找合适的媒介。\u003c/p>\u003cp>童年经验、虚拟情感、数字身份与消费文化都可以成为入口；最终要让调研、过程实验和视觉结果共同证明这是学生自己的判断。\u003c/p>\u003c/div>\n        \u003c/header>\n        \n    \u003cdiv class=\"content-items\">\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>提炼关键词\u003c/h3>\n          \u003cp>把“喜欢”拆成色彩、节奏、情绪、关系和叙事规则。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>建立问题\u003c/h3>\n          \u003cp>把个人经验连接到身份、社群、技术或消费现象。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>选择媒介\u003c/h3>\n          \u003cp>根据问题选择出版、空间、影像、交互、3D 或装置。\u003c/p>\n          \n        \u003c/article>\n      \n        \u003carticle class=\"content-item fade-up\">\n          \u003ch3>形成系统\u003c/h3>\n          \u003cp>让调研、草图、测试、迭代和最终呈现保持同一逻辑。\u003c/p>\n          \n        \u003c/article>\n      \n    \u003c/div>\n  \n        \n        \n        \n        \n    \u003cdiv class=\"acg-gallery\">\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-46.jpg\" alt=\"虚拟情感与现实人际关系项目\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>从虚拟情感切入现实关系\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-47.jpg\" alt=\"经典童年符号的当代重构项目\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>把童年符号转化为当代议题\u003c/figcaption>\n        \u003c/figure>\n      \n    \u003c/div>\n  \n      \u003c/div>\n    \u003c/section>\n  \n    \u003csection class=\"content-section acg-section acg-section--4 fade-up\" id=\"ov-fit-acg-visual-section-4\" aria-labelledby=\"ov-fit-acg-visual-section-title-4\">\n      \u003cdiv class=\"acg-section-inner\">\n        \u003cheader class=\"acg-section-heading\">\n          \u003cdiv>\n            \u003cp class=\"section-kicker\">COPYRIGHT\u003c/p>\n            \u003ch2 id=\"ov-fit-acg-visual-section-title-4\">从临摹走向原创的边界\u003c/h2>\n          \u003c/div>\n          \u003cdiv class=\"section-body\">\u003cp>公开作品集不应依赖未经授权的角色、品牌或艺术家画面作为主要视觉资产。可以研究其文化机制，但最终需要建立自己的问题、角色、系统和视觉语言。\u003c/p>\u003c/div>\n        \u003c/header>\n        \n        \n        \n        \u003cblockquote class=\"section-quote\">兴趣提供入口，原创判断决定项目能走多远。\u003c/blockquote>\n        \n    \u003cdiv class=\"acg-gallery\">\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-51.jpg\" alt=\"由情绪关键词发展出的二次元拼贴视觉诗\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>从情绪关键词发展视觉语汇\u003c/figcaption>\n        \u003c/figure>\n      \n        \u003cfigure class=\"acg-figure\">\n          \u003cimg src=\"../acg/page-52.jpg\" alt=\"两组具有个人色彩系统的拼贴视觉\" width=\"1600\" height=\"900\" loading=\"lazy\">\n          \u003cfigcaption>从审美偏好建立独立画面\u003c/figcaption>\n        \u003c/figure>\n      \n    \u003c/div>\n  \n      \u003c/div>\n    \u003c/section>\n  \n    \u003c/div>\n  "}</script>
+  <script src="../../assets/js/nav-menu.js"></script>
+  <script src="../../assets/js/site-switcher.js"></script>
   <script src="../assets/js/undergrad-detail.js"></script>
+  <script src="../assets/js/undergrad-topic.js"></script>
 </body>
 </html>

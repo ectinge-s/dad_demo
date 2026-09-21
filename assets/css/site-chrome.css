@@ -1,0 +1,267 @@
+/* ═══════════════════════════════════════════
+   SITE CHROME — navbar, expandable nav menu, footer, and (v3.42) the
+   homepage hero's custom cursor, SHARED between the graduate site
+   (dad_demo/index.html) and the undergraduate site (undergrad/**).
+   Loaded by both as `assets/css/site-chrome.css` (grad) /
+   `__ROOT__assets/css/site-chrome.css` (undergrad).
+
+   v3.38 (GM): extracted from style.css + ist-shared.css (graduate-only
+   before this) per GM's explicit request that the two sites "share the
+   same design structure so that things dont need to be modified twice"
+   — e.g. moving the site-switcher tab, or restyling the navbar, now
+   only requires editing this one file for both sites at once, instead
+   of keeping graduate's and undergrad's copies in sync by hand.
+
+   Both sites' :root token blocks declare the same variable names with
+   the same values (undergrad/assets/css/undergrad.css's header comment
+   explains why its copy is a deliberate re-declaration rather than an
+   @import), so this file's rules resolve identically on either site
+   without any extra reconciliation.
+
+   Markup contract (identical on both sites — see index.html and
+   undergrad/tools/undergrad/build-undergrad.cjs's renderNavbar() /
+   renderNavOverlay() / renderFooter()):
+     <nav class="navbar">
+       <div class="container navbar__inner">
+         <span/a class="navbar__logo">…</span/a>          (site-switcher.js
+                                                             inserts its
+                                                             control here,
+                                                             AFTER this)
+         <div class="navbar__links">
+           <a/button class="navbar__btn [is-active]">…</a/button> ×N   (anchor-scroll group)
+           <span class="navbar__divider"></span>
+           <a/button class="navbar__btn navbar__btn--page [is-active]">…</a/button> ×N  (page-link group)
+         </div>
+         <button class="navbar__cta">…</button>            (graduate only — no undergrad equivalent page yet)
+         <button class="navbar__menu-toggle" id="nav-menu-toggle">…</button>
+       </div>
+     </nav>
+     <div id="nav-menu-overlay" class="nav-menu-overlay">
+       <div class="nav-menu-overlay__inner">…</div>
+     </div>
+     <footer class="site-footer">…</footer>
+
+   Item 1 (GM, 2026-09): the switcher used to mount to the LEFT of the
+   logo/brand; site-switcher.js now appends it to the right instead —
+   see that file's own v3.38 comment. Item 1 also asked for everything
+   to fit in one row instead of wrapping: `.navbar__links` below is
+   `flex-wrap: nowrap`, and the hamburger-collapse breakpoint is raised
+   from 980px to 1180px so the row collapses into the menu overlay
+   cleanly instead of wrapping onto a second line first. ═══════════ */
+
+/* ── NAVBAR ────────────────────────────────── */
+.navbar {
+  position: sticky; top: 0; z-index: 1000;
+  height: var(--navbar-h);
+  display: flex; align-items: center;
+  background: rgba(0,0,0,.72);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--color-border);
+}
+.navbar__inner {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+}
+.navbar__logo {
+  display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: 15px;
+  flex-shrink: 0; text-decoration: none; color: inherit;
+}
+.navbar__logo-img { height: 27.2px; width: auto; display: block; }
+.navbar__links { display: flex; align-items: center; gap: 4px; flex-wrap: nowrap; min-width: 0; overflow: hidden; }
+.navbar__btn {
+  font-size: 13px; font-weight: 600; padding: 8px 12px; border-radius: 999px;
+  color: var(--color-text-secondary); transition: background .15s var(--ease), color .15s var(--ease);
+  white-space: nowrap; text-decoration: none; display: inline-flex; align-items: center;
+}
+.navbar__btn:hover, .navbar__btn.is-active { background: var(--color-surface-2); color: var(--color-text); }
+.navbar__divider { width: 1px; height: 20px; background: var(--color-border-2); margin: 0 8px; flex-shrink: 0; }
+.navbar__cta {
+  font-size: 13px; font-weight: 800; padding: 9px 18px; border-radius: 999px;
+  background: var(--color-accent); color: var(--color-accent-ink);
+  box-shadow: var(--glow-accent-soft);
+  white-space: nowrap; flex-shrink: 0;
+  transition: transform .15s var(--ease), box-shadow .15s var(--ease), background .15s var(--ease);
+}
+.navbar__cta:hover, .navbar__cta:focus-visible {
+  background: var(--color-accent-deep);
+  box-shadow: var(--glow-accent), var(--glow-accent-soft);
+  transform: translateY(-1px);
+}
+/* The full "就业全景 × 职业规划" label wraps to two lines and turns the
+   pill into an oval blob below ~600px, where the navbar has little
+   room left beside the logo + hamburger toggle — swap to a short
+   "职业规划"-only label there instead of shrinking type past
+   legibility. */
+.navbar__cta-short { display: none; }
+@media (max-width: 600px) {
+  .navbar__cta-full { display: none; }
+  .navbar__cta-short { display: inline; }
+}
+
+/* Item 1: collapse the link row into the hamburger before it would
+   ever wrap. Raised from the graduate site's old 980px so the extra
+   width now spent on the site-switcher (to the right of the logo)
+   never forces a mid-row wrap first. */
+@media (max-width: 1180px) {
+  .navbar__links { display: none; }
+}
+
+/* v3.38 (GM): "think of proper narrow screen display logic too and
+   implement" — found via testing at real phone widths (this row was
+   overflowing off-screen below ~500px, cutting off the hamburger
+   entirely: logo + switcher + CTA + toggle simply don't fit in one row
+   on a narrow phone once none of them are allowed to wrap). The CTA is
+   dropped first (its action is still reachable — it's duplicated as
+   .nav-menu-overlay__cta inside the hamburger menu), then, only on the
+   narrowest phones, the row is tightened further (logo shrinks
+   slightly, gaps and the toggle button tighten up) rather than
+   overflowing. */
+@media (max-width: 560px) {
+  .navbar__cta { display: none; }
+}
+@media (max-width: 430px) {
+  .navbar .container { padding: 0 16px; }
+  .navbar__inner { gap: 10px; }
+  .navbar__logo-img { height: 20px; }
+  .navbar__menu-toggle { width: 30px; height: 30px; margin-left: var(--space-2); }
+}
+
+/* ── NAV MENU TOGGLE (lives in the navbar, after the CTA) ── */
+.navbar__menu-toggle {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 34px; height: 34px; margin-left: var(--space-3);
+  background: none; border: 1px solid transparent; border-radius: var(--radius-sm);
+  cursor: pointer; flex-shrink: 0;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.navbar__menu-toggle:hover { background: var(--color-surface); border-color: var(--color-border-2); }
+.navbar__menu-toggle span {
+  display: block; width: 18px; height: 1.5px; background: var(--color-text);
+  border-radius: 1px; transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+.navbar__menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.25px) rotate(45deg); }
+.navbar__menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.25px) rotate(-45deg); }
+
+/* ── EXPANDABLE NAV MENU (full-screen takeover) ── */
+.nav-menu-overlay {
+  position: fixed; top: var(--navbar-h); left: 0; right: 0; bottom: 0; z-index: 950;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--color-void);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: translateY(-12px);
+  transition: opacity var(--transition-med), transform var(--transition-med), visibility var(--transition-med);
+}
+.nav-menu-overlay::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(720px 420px at 82% -10%, var(--color-accent-veil), transparent 62%),
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px) 0 0 / 100% 44px,
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px) 0 0 / 44px 100%;
+}
+.nav-menu-overlay.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+.nav-menu-overlay__inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: var(--space-6); max-width: 720px; padding: var(--space-6); }
+/* Row of two columns — bigger standalone-page links sit on the left as
+   the primary column; smaller in-page anchor links sit on the right as
+   the secondary column. */
+.nav-menu-overlay__row { display: flex; flex-direction: row; align-items: flex-start; justify-content: center; gap: var(--space-8); }
+.nav-menu-overlay__col { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+.nav-menu-overlay__col--secondary { gap: var(--space-2); padding-top: 8px; }
+.nav-menu-overlay__div { width: 1px; align-self: stretch; background: var(--color-border-2); }
+.nav-menu-overlay__link {
+  font-family: var(--font-cn); font-weight: 700; font-size: var(--text-xl);
+  color: var(--color-text-on-void-muted); cursor: pointer; text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+.nav-menu-overlay__link:hover { color: var(--color-text-on-void); transform: translateY(-1px); }
+.nav-menu-overlay__link--accent { color: var(--color-accent); }
+.nav-menu-overlay__link--accent:hover { color: var(--color-accent); }
+.nav-menu-overlay__link--page { font-size: var(--text-2xl); color: var(--color-text-on-void); }
+.nav-menu-overlay__link--page::after { content: "↗"; font-size: .5em; margin-left: 6px; vertical-align: super; color: var(--color-text-on-void-muted); }
+.nav-menu-overlay__link--page:hover::after { color: var(--color-accent); }
+.nav-menu-overlay__cta {
+  margin-top: var(--space-2); cursor: pointer; text-decoration: none;
+  font-size: 13px; font-weight: 800; padding: 9px 18px; border-radius: 999px;
+  background: var(--color-accent); color: var(--color-accent-ink);
+  box-shadow: var(--glow-accent-soft);
+  transition: transform .15s var(--ease), box-shadow .15s var(--ease), background .15s var(--ease);
+}
+.nav-menu-overlay__cta:hover {
+  background: var(--color-accent-deep);
+  box-shadow: var(--glow-accent), var(--glow-accent-soft);
+  transform: translateY(-1px);
+}
+body.nav-menu-open { overflow: hidden; }
+@keyframes navMenuRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .nav-menu-overlay.is-open .nav-menu-overlay__col,
+  .nav-menu-overlay.is-open .nav-menu-overlay__cta { animation: navMenuRise .5s var(--ease-out) both; }
+  .nav-menu-overlay.is-open .nav-menu-overlay__col--secondary { animation-delay: .07s; }
+  .nav-menu-overlay.is-open .nav-menu-overlay__cta { animation-delay: .14s; }
+}
+@media (max-width: 640px) {
+  .nav-menu-overlay__link { font-size: var(--text-lg); }
+  .nav-menu-overlay__link--page { font-size: var(--text-xl); }
+  .nav-menu-overlay__row { flex-direction: column; align-items: center; gap: var(--space-5); }
+  .nav-menu-overlay__col { align-items: center; }
+  .nav-menu-overlay__col--secondary { padding-top: 0; }
+  .nav-menu-overlay__div { width: 64px; height: 1px; align-self: center; }
+}
+
+/* ── SITE FOOTER (shared across all pages, both sites) ── */
+.site-footer { position: relative; margin-top: var(--space-10); background: var(--color-void); border-top: 1px solid rgba(255,255,255,.1); overflow: hidden; }
+.site-footer::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(600px 340px at 12% 0%, var(--color-accent-veil), transparent 62%),
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px) 0 0 / 100% 44px,
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px) 0 0 / 44px 100%;
+}
+.site-footer__inner { position: relative; z-index: 1; max-width: var(--content-max); margin: 0 auto; padding: var(--space-9) var(--space-6) var(--space-8); display: flex; flex-direction: column; gap: var(--space-8); }
+.site-footer__brand { display: flex; gap: var(--space-3); align-items: flex-start; max-width: 460px; }
+.site-footer__logo { flex-shrink: 0; color: var(--color-accent); margin-top: 2px; }
+.site-footer__brand-name { font-family: var(--font-cn); font-weight: 700; font-size: var(--text-md); color: var(--color-text-on-void); margin-bottom: 6px; }
+.site-footer__brand-name .u-en { font-family: var(--font-en); color: var(--color-accent); letter-spacing: .06em; margin-right: 5px; }
+.site-footer__brand-desc { font-size: var(--text-sm); color: var(--color-text-on-void-muted); line-height: 1.7; }
+.site-footer__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-6); }
+.site-footer__col { display: flex; flex-direction: column; gap: 11px; }
+.site-footer__col-title { font-family: var(--font-cn); font-weight: 700; font-size: var(--text-xs); letter-spacing: .04em; color: var(--color-text-on-void-muted); text-transform: uppercase; margin-bottom: var(--space-1); padding-bottom: var(--space-2); border-bottom: 1px solid rgba(255,255,255,.12); display: flex; flex-direction: column; gap: 3px; }
+.site-footer__col-title .u-en { font-family: var(--font-en); font-weight: 500; font-size: 10px; letter-spacing: .1em; color: var(--color-text-on-void-muted); text-transform: none; opacity: .7; }
+.site-footer__col a { display: flex; flex-direction: column; gap: 1px; cursor: pointer; width: fit-content; font-family: var(--font-cn); font-size: var(--text-sm); color: var(--color-text-on-void-muted); transition: color var(--transition-fast); text-decoration: none; }
+.site-footer__col a:hover { color: var(--color-text-on-void); }
+.site-footer__col a strong { font-weight: 500; }
+.site-footer__col a .u-en { font-family: var(--font-en); font-size: 10px; color: var(--color-text-on-void-muted); letter-spacing: .04em; opacity: .7; }
+.site-footer__cta { display: flex; align-items: flex-start; width: fit-content; font-family: var(--font-cn); font-weight: 800; background: var(--color-accent); color: var(--color-accent-ink); padding: 9px 18px; border-radius: var(--radius-pill); margin-bottom: 4px; text-decoration: none; }
+.site-footer__contact { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-on-void-muted); }
+.site-footer__contact .u-en { color: var(--color-text-on-void-muted); margin-right: 6px; letter-spacing: .04em; }
+.site-footer__bottom { position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,.1); padding: var(--space-4) var(--space-6); text-align: center; }
+.site-footer__bottom p { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-on-void-muted); letter-spacing: .01em; }
+@media (max-width: 900px) { .site-footer__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-6) var(--space-5); } }
+@media (max-width: 560px) { .site-footer__grid { grid-template-columns: 1fr; } .site-footer__inner { padding: var(--space-8) var(--space-5) var(--space-6); } }
+
+/* ── HERO CUSTOM CURSOR (v3.34, moved here in v3.42) ─────────────
+   Replaces the OS cursor with a chunky yellow extruded arrow while the
+   mouse is over a homepage hero specifically (#hero-root) — not every
+   page's `.hero` section. Originally graduate-only (assets/css/style.css);
+   moved here in v3.42 (GM: "hero也处理得与grad站类似，使用同样的cursor
+   effect") once undergrad's own homepage hero adopted the same
+   #hero-root id, the same inlined SVG markup and the same
+   assets/js/hero-cursor.js script, making this genuinely shared rather
+   than graduate-only. JS shows/hides/positions it via a mousemove
+   listener scoped to #hero-root only, and holds the matching
+   TIP_X/TIP_Y offset for the shape's actual arrow tip (not just its
+   bounding-box corner). */
+#hero-root, #hero-root * { cursor: none !important; }
+.hero-cursor {
+  position: fixed; top: 0; left: 0; width: 80px; height: 80px;
+  pointer-events: none; z-index: 9999; overflow: visible;
+  opacity: 0; transform: translate3d(-200px, -200px, 0);
+  transition: opacity .12s var(--ease), transform .06s linear;
+  will-change: transform, opacity;
+}
+.hero-cursor.is-visible { opacity: 1; }
+/* .is-pressed's scale is applied by hero-cursor.js directly in the same
+   inline `transform` it uses for position (an inline style always wins
+   over a class rule for the same property, so a separate CSS rule here
+   would never actually apply). */

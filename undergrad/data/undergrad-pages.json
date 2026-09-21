@@ -1,13 +1,51 @@
 {
   "updated": "2026-08-10",
   "navigation": [
-    {"id": "directions", "label": "申请方向", "route": "/undergraduate/directions/", "summary": "美国、英国、香港三类申请版图"},
-    {"id": "pathways", "label": "升学路径", "route": "/undergraduate/pathways/", "summary": "全日制、UCL、香港与美本四条路线"},
-    {"id": "capabilities", "label": "五大能力", "homepageLabel": "作品类型", "route": "/undergraduate/capabilities/", "summary": "从视觉策略到创意科技的五领域体系"},
-    {"id": "fit", "label": "学生适配", "route": "/undergraduate/fit/", "summary": "从真实兴趣判断项目入口"},
-    {"id": "advantages", "label": "专业优势", "route": "/undergraduate/advantages/", "summary": "本科阶段为什么适合跨媒介探索"},
-    {"id": "works", "label": "作品图册", "homepageVisible": false, "route": "/undergraduate/works/", "summary": "夏校与三届作品的静态关键画面"},
-    {"id": "cases", "label": "学生案例", "homepageVisible": false, "route": "/undergraduate/cases/", "summary": "匿名案例、项目证据与录取结果"}
+    {
+      "id": "directions",
+      "label": "申请方向",
+      "route": "/undergraduate/directions/",
+      "summary": "美国、英国、香港三类申请版图"
+    },
+    {
+      "id": "pathways",
+      "label": "升学路径",
+      "route": "/undergraduate/pathways/",
+      "summary": "全日制、UCL、香港与美本四条路线"
+    },
+    {
+      "id": "capabilities",
+      "label": "五大能力",
+      "homepageLabel": "作品类型",
+      "route": "/undergraduate/capabilities/",
+      "summary": "从视觉策略到创意科技的五领域体系"
+    },
+    {
+      "id": "fit",
+      "label": "学生适配",
+      "route": "/undergraduate/fit/",
+      "summary": "从真实兴趣判断项目入口"
+    },
+    {
+      "id": "advantages",
+      "label": "专业优势",
+      "route": "/undergraduate/advantages/",
+      "summary": "本科阶段为什么适合跨媒介探索"
+    },
+    {
+      "id": "works",
+      "label": "作品图册",
+      "homepageVisible": false,
+      "route": "/undergraduate/works/",
+      "summary": "夏校与三届作品的静态关键画面"
+    },
+    {
+      "id": "cases",
+      "label": "学生案例",
+      "homepageVisible": false,
+      "route": "/undergraduate/cases/",
+      "summary": "匿名案例、项目证据与录取结果"
+    }
   ],
   "pages": [
     {
@@ -22,26 +60,27 @@
       "heroImage": "/undergraduate/images/output-information.jpg",
       "accent": "coral",
       "facts": [
-        {"value": "3", "label": "国家与地区路径"},
-        {"value": "3", "label": "美国申请模型"},
-        {"value": "动态", "label": "项目选择持续更新"}
+        {
+          "value": "3",
+          "label": "国家与地区路径"
+        },
+        {
+          "value": "3",
+          "label": "美国申请模型"
+        },
+        {
+          "value": "动态",
+          "label": "项目选择持续更新"
+        }
       ],
       "sourceNote": "内容依据《本科-选校类目》41 页材料，并结合 2026-08-10 可访问的院校官方页面校正。",
       "sections": [
         {
-          "kicker": "DECISION 01",
-          "title": "三个地区解决的是不同问题",
-          "body": ["国家不是先按排名选择，而是先看学生希望作品集承担什么任务：证明技术与创作并行、证明个人艺术语言，还是证明跨学科整合能力。"],
-          "items": [
-            {"title": "美国", "text": "综合申请与专业方向共同评估。作品集需要和课程、活动、文书形成同一个人物逻辑。", "meta": "Media Art + Tech / Studio Art / Interdisciplinary"},
-            {"title": "英国", "text": "课程名称与作品要求更细。综合大学重研究语境，艺术院校重过程、实验与个人方向。", "meta": "Media / Art & Technology / Creative Computing / Design"},
-            {"title": "香港", "text": "设计学院、创意媒体学院和跨学科项目并存，同一项目需要针对专业语境重新排序和解释。", "meta": "Design / Creative Media / Art-Tech / Systems"}
-          ]
-        },
-        {
           "kicker": "DECISION 02",
           "title": "一份作品集不能只换学校封面",
-          "body": ["核心项目可以复用，但项目顺序、过程证据、文字说明与强调能力需要跟随项目语境调整。"],
+          "body": [
+            "核心项目可以复用，但项目顺序、过程证据、文字说明与强调能力需要跟随项目语境调整。"
+          ],
           "list": [
             "技术型项目突出原型、交互逻辑、测试和个人贡献。",
             "艺术型项目突出研究语境、材料实验、形式判断和反思。",
@@ -52,12 +91,21 @@
         {
           "kicker": "DECISION 03",
           "title": "让方向判断跟随申请进程逐步变得具体",
-          "body": ["项目名称、招生安排、作品集格式和面试方式会持续更新。先建立稳定的方向判断，再结合申请年份完成选校、项目排序与材料匹配。"],
+          "body": [
+            "项目名称、招生安排、作品集格式和面试方式会持续更新。先建立稳定的方向判断，再结合申请年份完成选校、项目排序与材料匹配。"
+          ],
           "quote": "方向提前规划，细节随申请进程逐步落实。"
         }
       ],
-      "children": ["directions/us", "directions/uk", "directions/hong-kong"],
-      "related": ["pathways", "capabilities"]
+      "children": [
+        "directions/us",
+        "directions/uk",
+        "directions/hong-kong"
+      ],
+      "related": [
+        "pathways",
+        "capabilities"
+      ]
     },
     {
       "id": "directions/us",
@@ -72,41 +120,86 @@
       "heroImage": "/undergraduate/images/output-3d.jpg",
       "accent": "purple",
       "facts": [
-        {"value": "3", "label": "主要申请模型"},
-        {"value": "整体", "label": "作品与个人叙事协同"},
-        {"value": "2027", "label": "多个项目进入调整期"}
+        {
+          "value": "3",
+          "label": "主要申请模型"
+        },
+        {
+          "value": "整体",
+          "label": "作品与个人叙事协同"
+        },
+        {
+          "value": "2027",
+          "label": "多个项目进入调整期"
+        }
       ],
       "sourceNote": "学校与项目来自本科选校材料；宾大、UCLA、芝加哥大学、康奈尔与 CMU 状态按 2026 年官网复核。",
       "sections": [
         {
           "kicker": "TRACK 01",
           "title": "Media Art + Tech",
-          "body": ["适合希望把计算、互动、游戏、实时媒体或数字体验作为创作媒介的学生。作品不必只证明软件熟练，更要呈现技术为什么服务于这个问题。"],
+          "body": [
+            "适合希望把计算、互动、游戏、实时媒体或数字体验作为创作媒介的学生。作品不必只证明软件熟练，更要呈现技术为什么服务于这个问题。"
+          ],
           "items": [
-            {"title": "UPenn", "text": "Digital Media Design BSE 正处于项目交接期。官网标注 DMD 于 2026 招收最后一届新生，2027 起由 Visual and Interactive Computing 接续。"},
-            {"title": "NYU", "text": "Interactive Media Arts BFA 连接互动媒体、创意计算与实践项目。"},
-            {"title": "UCLA", "text": "Design Media Arts 正在向 Computational Art、Design 与 Games 三个方向过渡，申请规划会对应具体入学年份。"},
-            {"title": "UC San Diego", "text": "ICAM 连接计算机、视觉艺术、音乐与数字媒介。"}
+            {
+              "title": "UPenn",
+              "text": "Digital Media Design BSE 正处于项目交接期。官网标注 DMD 于 2026 招收最后一届新生，2027 起由 Visual and Interactive Computing 接续。"
+            },
+            {
+              "title": "NYU",
+              "text": "Interactive Media Arts BFA 连接互动媒体、创意计算与实践项目。"
+            },
+            {
+              "title": "UCLA",
+              "text": "Design Media Arts 正在向 Computational Art、Design 与 Games 三个方向过渡，申请规划会对应具体入学年份。"
+            },
+            {
+              "title": "UC San Diego",
+              "text": "ICAM 连接计算机、视觉艺术、音乐与数字媒介。"
+            }
           ]
         },
         {
           "kicker": "TRACK 02",
           "title": "Studio Art + Art Foundation",
-          "body": ["适合希望在影像、摄影、绘画、雕塑、材料或综合媒介中建立个人语言的学生。项目过程、批判性思考与工作室实践比统一的商业交付更重要。"],
+          "body": [
+            "适合希望在影像、摄影、绘画、雕塑、材料或综合媒介中建立个人语言的学生。项目过程、批判性思考与工作室实践比统一的商业交付更重要。"
+          ],
           "items": [
-            {"title": "Columbia University", "text": "Visual Arts BA 强调多媒介工作室实践与个人视野。"},
-            {"title": "NYU Studio Art", "text": "以工作室训练为核心，可进一步连接跨媒介与纽约城市资源。"},
-            {"title": "RISD / Parsons / SVA", "text": "艺术与设计院校适合希望通过基础训练逐步明确媒介方向的学生。"}
+            {
+              "title": "Columbia University",
+              "text": "Visual Arts BA 强调多媒介工作室实践与个人视野。"
+            },
+            {
+              "title": "NYU Studio Art",
+              "text": "以工作室训练为核心，可进一步连接跨媒介与纽约城市资源。"
+            },
+            {
+              "title": "RISD / Parsons / SVA",
+              "text": "艺术与设计院校适合希望通过基础训练逐步明确媒介方向的学生。"
+            }
           ]
         },
         {
           "kicker": "TRACK 03",
           "title": "Interdisciplinary Studies",
-          "body": ["跨学院项目不是把两个兴趣并排写在申请表里，而是要证明一个问题确实需要艺术、科学、工程、人文或环境研究共同解决。"],
+          "body": [
+            "跨学院项目不是把两个兴趣并排写在申请表里，而是要证明一个问题确实需要艺术、科学、工程、人文或环境研究共同解决。"
+          ],
           "items": [
-            {"title": "CMU BXA", "text": "支持艺术与人文、科学、计算机或工程之间形成跨学院学位路径。"},
-            {"title": "UChicago MADD", "text": "Media Arts and Design 已形成主修体系，连接媒体理论、历史、实践、作品集与可选毕业项目。"},
-            {"title": "Cornell DEA", "text": "Design + Environmental Analysis 将设计工作室、人类行为、材料与环境研究结合。"}
+            {
+              "title": "CMU BXA",
+              "text": "支持艺术与人文、科学、计算机或工程之间形成跨学院学位路径。"
+            },
+            {
+              "title": "UChicago MADD",
+              "text": "Media Arts and Design 已形成主修体系，连接媒体理论、历史、实践、作品集与可选毕业项目。"
+            },
+            {
+              "title": "Cornell DEA",
+              "text": "Design + Environmental Analysis 将设计工作室、人类行为、材料与环境研究结合。"
+            }
           ]
         },
         {
@@ -120,13 +213,32 @@
           ]
         }
       ],
-      "related": ["pathways/us-top", "capabilities/creative-tech", "fit/tech-media"],
+      "related": [
+        "pathways/us-top",
+        "capabilities/creative-tech",
+        "fit/tech-media"
+      ],
       "sources": [
-        {"label": "UPenn DMD catalog", "url": "https://catalog.upenn.edu/undergraduate/programs/digital-media-design-bse/"},
-        {"label": "UCLA undergraduate programmes", "url": "https://www.design.ucla.edu/programs/ba"},
-        {"label": "CMU BXA", "url": "https://www.cmu.edu/interdisciplinary/programs/"},
-        {"label": "UChicago MADD", "url": "https://collegecatalog.uchicago.edu/thecollege/MediaArtsandDesign/"},
-        {"label": "Cornell DEA", "url": "https://human.cornell.edu/degrees/design-environmental-analysis"}
+        {
+          "label": "UPenn DMD catalog",
+          "url": "https://catalog.upenn.edu/undergraduate/programs/digital-media-design-bse/"
+        },
+        {
+          "label": "UCLA undergraduate programmes",
+          "url": "https://www.design.ucla.edu/programs/ba"
+        },
+        {
+          "label": "CMU BXA",
+          "url": "https://www.cmu.edu/interdisciplinary/programs/"
+        },
+        {
+          "label": "UChicago MADD",
+          "url": "https://collegecatalog.uchicago.edu/thecollege/MediaArtsandDesign/"
+        },
+        {
+          "label": "Cornell DEA",
+          "url": "https://human.cornell.edu/degrees/design-environmental-analysis"
+        }
       ]
     },
     {
@@ -142,30 +254,61 @@
       "heroImage": "/undergraduate/images/output-performance.jpg",
       "accent": "coral",
       "facts": [
-        {"value": "2", "label": "综合大学与艺术院校"},
-        {"value": "4", "label": "主要能力语境"},
-        {"value": "定向", "label": "项目要求逐校匹配"}
+        {
+          "value": "2",
+          "label": "综合大学与艺术院校"
+        },
+        {
+          "value": "4",
+          "label": "主要能力语境"
+        },
+        {
+          "value": "定向",
+          "label": "项目要求逐校匹配"
+        }
       ],
       "sourceNote": "内容依据本科选校材料中的英本梯队与专业关键词，并删除排名、语言分数和静态录取口径。",
       "sections": [
         {
           "kicker": "ROUTE 01",
           "title": "综合大学中的媒体与艺术科技",
-          "body": ["这类课程通常要求学生既能制作，也能解释媒体、技术与社会文化的关系。作品集需要看到研究、过程和反思。"],
+          "body": [
+            "这类课程通常要求学生既能制作，也能解释媒体、技术与社会文化的关系。作品集需要看到研究、过程和反思。"
+          ],
           "items": [
-            {"title": "UCL", "text": "Media BA、Art and Technology BA、Creative Arts and Humanities BA 分别对应媒体实践、艺术科技与跨创意学科。Art and Technology 官网当前标注 2027 年开课。"},
-            {"title": "Warwick / Manchester / KCL", "text": "可从媒体与创意产业、数字媒体文化、传播与研究等语境切入。"},
-            {"title": "Southampton / Goldsmiths / Leeds", "text": "可进一步匹配数字媒体、创意计算、信息与传播方向。"}
+            {
+              "title": "UCL",
+              "text": "Media BA、Art and Technology BA、Creative Arts and Humanities BA 分别对应媒体实践、艺术科技与跨创意学科。Art and Technology 官网当前标注 2027 年开课。"
+            },
+            {
+              "title": "Warwick / Manchester / KCL",
+              "text": "可从媒体与创意产业、数字媒体文化、传播与研究等语境切入。"
+            },
+            {
+              "title": "Southampton / Goldsmiths / Leeds",
+              "text": "可进一步匹配数字媒体、创意计算、信息与传播方向。"
+            }
           ]
         },
         {
           "kicker": "ROUTE 02",
           "title": "艺术院校中的设计与计算",
-          "body": ["艺术院校更重视作品集内部的个人方向、视觉判断、实验过程与媒介选择。"],
+          "body": [
+            "艺术院校更重视作品集内部的个人方向、视觉判断、实验过程与媒介选择。"
+          ],
           "items": [
-            {"title": "UAL LCC", "text": "Interaction Design Arts、Design for Art Direction、Media Communications 等方向覆盖交互、视觉叙事与传播。"},
-            {"title": "UAL Camberwell / CCI", "text": "Computational Arts 与 Creative Computing 连接艺术、代码、AI 与数字实践。"},
-            {"title": "Glasgow / UCA", "text": "Interaction Design 与 Digital Art 可作为交互或数字艺术方向的延展。"}
+            {
+              "title": "UAL LCC",
+              "text": "Interaction Design Arts、Design for Art Direction、Media Communications 等方向覆盖交互、视觉叙事与传播。"
+            },
+            {
+              "title": "UAL Camberwell / CCI",
+              "text": "Computational Arts 与 Creative Computing 连接艺术、代码、AI 与数字实践。"
+            },
+            {
+              "title": "Glasgow / UCA",
+              "text": "Interaction Design 与 Digital Art 可作为交互或数字艺术方向的延展。"
+            }
           ]
         },
         {
@@ -180,11 +323,24 @@
           "quote": "完成度重要，但只放漂亮成品无法替代过程证据。"
         }
       ],
-      "related": ["pathways/full-time", "pathways/ucl", "capabilities"],
+      "related": [
+        "pathways/full-time",
+        "pathways/ucl",
+        "capabilities"
+      ],
       "sources": [
-        {"label": "UCL Art and Technology BA", "url": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/art-and-technology-ba"},
-        {"label": "UCL Media BA", "url": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/media-ba"},
-        {"label": "UAL Interaction Design Arts", "url": "https://www.arts.ac.uk/subjects/animation-interactive-film-and-sound/undergraduate/ba-hons-interaction-design-arts-lcc"}
+        {
+          "label": "UCL Art and Technology BA",
+          "url": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/art-and-technology-ba"
+        },
+        {
+          "label": "UCL Media BA",
+          "url": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/media-ba"
+        },
+        {
+          "label": "UAL Interaction Design Arts",
+          "url": "https://www.arts.ac.uk/subjects/animation-interactive-film-and-sound/undergraduate/ba-hons-interaction-design-arts-lcc"
+        }
       ]
     },
     {
@@ -200,37 +356,70 @@
       "heroImage": "/undergraduate/images/output-material.jpg",
       "accent": "cyan",
       "facts": [
-        {"value": "3", "label": "主要项目类型"},
-        {"value": "组合", "label": "学术与作品并行"},
-        {"value": "变化", "label": "项目名称持续更新"}
+        {
+          "value": "3",
+          "label": "主要项目类型"
+        },
+        {
+          "value": "组合",
+          "label": "学术与作品并行"
+        },
+        {
+          "value": "变化",
+          "label": "项目名称持续更新"
+        }
       ],
       "sourceNote": "内容依据港本院校分析材料；作品集、面试与项目名称只保留方向性说明。",
       "sections": [
         {
           "kicker": "TYPE 01",
           "title": "设计与交互",
-          "body": ["适合希望从用户、信息、产品、服务或沉浸体验进入设计的学生。"],
+          "body": [
+            "适合希望从用户、信息、产品、服务或沉浸体验进入设计的学生。"
+          ],
           "items": [
-            {"title": "PolyU Design", "text": "本科设计计划覆盖 Interaction Design、Information Design 等方向；Media Design 正在向 Immersive Media and Game Design 调整，目前处于审批阶段。"},
-            {"title": "项目重点", "text": "作品需要呈现调研、设计方法、原型、测试与系统表达，而不只是界面成品。"}
+            {
+              "title": "PolyU Design",
+              "text": "本科设计计划覆盖 Interaction Design、Information Design 等方向；Media Design 正在向 Immersive Media and Game Design 调整，目前处于审批阶段。"
+            },
+            {
+              "title": "项目重点",
+              "text": "作品需要呈现调研、设计方法、原型、测试与系统表达，而不只是界面成品。"
+            }
           ]
         },
         {
           "kicker": "TYPE 02",
           "title": "创意媒体与艺术科技",
-          "body": ["适合希望连接影像、声音、动画、游戏、编程、电子装置与媒体艺术的学生。"],
+          "body": [
+            "适合希望连接影像、声音、动画、游戏、编程、电子装置与媒体艺术的学生。"
+          ],
           "items": [
-            {"title": "CityU School of Creative Media", "text": "Creative Media BA、New Media BAS 与 Creative Media BSc 分别提供艺术、艺术科学与技术强度不同的入口。"},
-            {"title": "Hong Kong Baptist University", "text": "可关注创意艺术、电影、媒体与跨媒介相关方向，并结合目标专业建立申请组合。"}
+            {
+              "title": "CityU School of Creative Media",
+              "text": "Creative Media BA、New Media BAS 与 Creative Media BSc 分别提供艺术、艺术科学与技术强度不同的入口。"
+            },
+            {
+              "title": "Hong Kong Baptist University",
+              "text": "可关注创意艺术、电影、媒体与跨媒介相关方向，并结合目标专业建立申请组合。"
+            }
           ]
         },
         {
           "kicker": "TYPE 03",
           "title": "跨学科与数字未来",
-          "body": ["这类项目把设计作为解决复杂问题的方法，需要同时证明学术基础、系统思考与实践能力。"],
+          "body": [
+            "这类项目把设计作为解决复杂问题的方法，需要同时证明学术基础、系统思考与实践能力。"
+          ],
           "items": [
-            {"title": "HKU", "text": "Humanities and Digital Technologies、Global Creative Industries 等方向连接数字人文、创意产业与跨学科实践。"},
-            {"title": "HKUST", "text": "Integrative Systems and Design 以项目制、系统思维和技术创新为核心；学院项目命名正在更新，选校时根据招生目录确定目标方向。"}
+            {
+              "title": "HKU",
+              "text": "Humanities and Digital Technologies、Global Creative Industries 等方向连接数字人文、创意产业与跨学科实践。"
+            },
+            {
+              "title": "HKUST",
+              "text": "Integrative Systems and Design 以项目制、系统思维和技术创新为核心；学院项目命名正在更新，选校时根据招生目录确定目标方向。"
+            }
           ]
         },
         {
@@ -244,11 +433,24 @@
           ]
         }
       ],
-      "related": ["pathways/hong-kong", "capabilities/information-experience", "capabilities/creative-tech"],
+      "related": [
+        "pathways/hong-kong",
+        "capabilities/information-experience",
+        "capabilities/creative-tech"
+      ],
       "sources": [
-        {"label": "PolyU Design undergraduate programmes", "url": "https://www.polyu.edu.hk/sd/study/admissions/ug/"},
-        {"label": "CityU BAS New Media", "url": "https://www.scm.cityu.edu.hk/en/programmes/undergraduate/bas"},
-        {"label": "HKUST Integrative Systems and Design", "url": "https://isd.hkust.edu.hk/about-isd/"}
+        {
+          "label": "PolyU Design undergraduate programmes",
+          "url": "https://www.polyu.edu.hk/sd/study/admissions/ug/"
+        },
+        {
+          "label": "CityU BAS New Media",
+          "url": "https://www.scm.cityu.edu.hk/en/programmes/undergraduate/bas"
+        },
+        {
+          "label": "HKUST Integrative Systems and Design",
+          "url": "https://isd.hkust.edu.hk/about-isd/"
+        }
       ]
     },
     {
@@ -263,42 +465,67 @@
       "heroImage": "/undergraduate/images/product-nyu-summer.jpg",
       "accent": "acid",
       "facts": [
-        {"value": "4", "label": "重点升学路线"},
-        {"value": "5", "label": "学习与申请阶段"},
-        {"value": "同步", "label": "课程、作品与语言"}
+        {
+          "value": "4",
+          "label": "重点升学路线"
+        },
+        {
+          "value": "5",
+          "label": "学习与申请阶段"
+        },
+        {
+          "value": "同步",
+          "label": "课程、作品与语言"
+        }
       ],
       "sourceNote": "全日制路线依据 128 页手册；UCL、香港与美本路线依据本科优势录取材料及院校官网。",
       "sections": [
         {
-          "kicker": "PATH MAP",
-          "title": "四条路线对应四种核心需求",
-          "items": [
-            {"title": "英本全日制", "text": "需要稳定学习节奏、课程体系、项目推进与多角色管理支持。"},
-            {"title": "UCL", "text": "需要把实践与研究、媒体文化或艺术科技语境结合。"},
-            {"title": "香港本科", "text": "需要同时协调学术成绩、作品集、面试与多院校组合。"},
-            {"title": "美本藤校与顶尖综合大学", "text": "需要让学术、活动、文书与作品形成长期人物逻辑。"}
-          ]
-        },
-        {
           "kicker": "PROCESS",
           "title": "从零开始的五个阶段",
           "steps": [
-            {"title": "评估与定位", "text": "识别兴趣、基础、学术条件、时间和目标国家。"},
-            {"title": "基础与方法", "text": "建立观察、视觉语言、调研、批判性思维和工具基础。"},
-            {"title": "项目与审核", "text": "完成开题、过程测试、阶段评审、迭代和最终呈现。"},
-            {"title": "申请协同", "text": "同步推进语言、文书、选校、材料和面试。"},
-            {"title": "公开呈现", "text": "通过展览、讲评、活动或真实场景检验表达能力。"}
+            {
+              "title": "评估与定位",
+              "text": "识别兴趣、基础、学术条件、时间和目标国家。"
+            },
+            {
+              "title": "基础与方法",
+              "text": "建立观察、视觉语言、调研、批判性思维和工具基础。"
+            },
+            {
+              "title": "项目与审核",
+              "text": "完成开题、过程测试、阶段评审、迭代和最终呈现。"
+            },
+            {
+              "title": "申请协同",
+              "text": "同步推进语言、文书、选校、材料和面试。"
+            },
+            {
+              "title": "公开呈现",
+              "text": "通过展览、讲评、活动或真实场景检验表达能力。"
+            }
           ]
         },
         {
           "kicker": "BOUNDARY",
           "title": "培养过程与升学成果共同构成判断",
-          "body": ["课程成绩、作品发展、直本与 Offer 成果共同呈现不同路线的培养结果。路径页先帮助学生理解过程，再进入具体课程和成果数据。"],
+          "body": [
+            "课程成绩、作品发展、直本与 Offer 成果共同呈现不同路线的培养结果。路径页先帮助学生理解过程，再进入具体课程和成果数据。"
+          ],
           "quote": "看见结果，也看见结果如何被一步步建立。"
         }
       ],
-      "children": ["pathways/full-time", "pathways/ucl", "pathways/hong-kong", "pathways/us-top"],
-      "related": ["directions", "capabilities", "advantages"]
+      "children": [
+        "pathways/full-time",
+        "pathways/ucl",
+        "pathways/hong-kong",
+        "pathways/us-top"
+      ],
+      "related": [
+        "directions",
+        "capabilities",
+        "advantages"
+      ]
     },
     {
       "id": "pathways/full-time",
@@ -315,23 +542,76 @@
       "heroMobileImage": "/undergraduate/full-time/hero-mobile.jpg",
       "accent": "acid",
       "facts": [
-        {"value": "5", "label": "数字艺术与设计领域"},
-        {"value": "6", "label": "连续学习阶段"},
-        {"value": "4", "label": "课程与升学路线"}
+        {
+          "value": "5",
+          "label": "数字艺术与设计领域"
+        },
+        {
+          "value": "6",
+          "label": "连续学习阶段"
+        },
+        {
+          "value": "4",
+          "label": "课程与升学路线"
+        }
       ],
       "sections": [
-        {"id": "academy", "kicker": "01 / 学院", "title": "把国际课程、作品集与申请放进同一条培养链"},
-        {"id": "fields", "kicker": "02 / 科系", "title": "五大领域，覆盖从视觉传播到创意科技的完整跨度"},
-        {"id": "environment", "kicker": "03 / 环境", "title": "专属学习空间，让长期项目可以稳定发生"},
-        {"id": "journey", "kicker": "04 / 学习路径", "title": "从入学评估到背景提升，六个阶段连续推进"},
-        {"id": "management", "kicker": "05 / 管理", "title": "班主任、教务与专业导师共同守住学习节奏"},
-        {"id": "review", "kicker": "06 / 审核", "title": "四级审核，让作品在关键节点得到真实反馈"},
-        {"id": "curriculum", "kicker": "07 / 课程", "title": "四条课程路线，共用一套扎实的专业方法"},
-        {"id": "international", "kicker": "08 / 国际课堂", "title": "用一个假期，进入海外院校的工作室方法"},
-        {"id": "activities", "kicker": "09 / 学院活动", "title": "在展览、社会与公开表达中检验课堂能力"},
-        {"id": "outcomes", "kicker": "10 / 毕业与成果", "title": "从阶段成绩到本科录取，成果最终回到学生的个人方向"}
+        {
+          "id": "academy",
+          "kicker": "01 / 学院",
+          "title": "把国际课程、作品集与申请放进同一条培养链"
+        },
+        {
+          "id": "fields",
+          "kicker": "02 / 科系",
+          "title": "五大领域，覆盖从视觉传播到创意科技的完整跨度"
+        },
+        {
+          "id": "environment",
+          "kicker": "03 / 环境",
+          "title": "专属学习空间，让长期项目可以稳定发生"
+        },
+        {
+          "id": "journey",
+          "kicker": "04 / 学习路径",
+          "title": "从入学评估到背景提升，六个阶段连续推进"
+        },
+        {
+          "id": "management",
+          "kicker": "05 / 管理",
+          "title": "班主任、教务与专业导师共同守住学习节奏"
+        },
+        {
+          "id": "review",
+          "kicker": "06 / 审核",
+          "title": "四级审核，让作品在关键节点得到真实反馈"
+        },
+        {
+          "id": "curriculum",
+          "kicker": "07 / 课程",
+          "title": "四条课程路线，共用一套扎实的专业方法"
+        },
+        {
+          "id": "international",
+          "kicker": "08 / 国际课堂",
+          "title": "用一个假期，进入海外院校的工作室方法"
+        },
+        {
+          "id": "activities",
+          "kicker": "09 / 学院活动",
+          "title": "在展览、社会与公开表达中检验课堂能力"
+        },
+        {
+          "id": "outcomes",
+          "kicker": "10 / 毕业与成果",
+          "title": "从阶段成绩到本科录取，成果最终回到学生的个人方向"
+        }
       ],
-      "related": ["capabilities", "works/summer-school", "directions/uk"]
+      "related": [
+        "capabilities",
+        "works/summer-school",
+        "directions/uk"
+      ]
     },
     {
       "id": "pathways/ucl",
@@ -346,9 +626,18 @@
       "heroImage": "/undergraduate/images/output-audiovisual.jpg",
       "accent": "purple",
       "facts": [
-        {"value": "3", "label": "代表课程语境"},
-        {"value": "过程", "label": "研究与反思证据"},
-        {"value": "2027", "label": "Art and Technology 当前开课标注"}
+        {
+          "value": "3",
+          "label": "代表课程语境"
+        },
+        {
+          "value": "过程",
+          "label": "研究与反思证据"
+        },
+        {
+          "value": "2027",
+          "label": "Art and Technology 当前开课标注"
+        }
       ],
       "sourceNote": "课程概述按 UCL 2026-08-10 官方页面整理，申请材料以目标入学年份页面为准。",
       "sections": [
@@ -356,9 +645,18 @@
           "kicker": "PROGRAMME FIT",
           "title": "先区分课程，再决定项目组合",
           "items": [
-            {"title": "Media BA", "text": "连接电影、游戏、互动与新兴媒体，并要求学生理解媒体的文化、社会与伦理语境。"},
-            {"title": "Art and Technology BA", "text": "连接创意编程、AI、物理计算、网络技术、沉浸环境与艺术实践。"},
-            {"title": "Creative Arts and Humanities BA", "text": "在写作、表演、移动影像与人文研究之间形成跨创意实践。"}
+            {
+              "title": "Media BA",
+              "text": "连接电影、游戏、互动与新兴媒体，并要求学生理解媒体的文化、社会与伦理语境。"
+            },
+            {
+              "title": "Art and Technology BA",
+              "text": "连接创意编程、AI、物理计算、网络技术、沉浸环境与艺术实践。"
+            },
+            {
+              "title": "Creative Arts and Humanities BA",
+              "text": "在写作、表演、移动影像与人文研究之间形成跨创意实践。"
+            }
           ]
         },
         {
@@ -375,17 +673,39 @@
           "kicker": "PREPARATION",
           "title": "从兴趣到可递交项目",
           "steps": [
-            {"title": "建立问题", "text": "从媒体、技术、身份、文化或社会现象中找到持续关注。"},
-            {"title": "扩展媒介", "text": "让研究通过影像、交互、游戏、声音、代码或空间被测试。"},
-            {"title": "记录过程", "text": "保留草图、实验、失败、反馈与迭代。"},
-            {"title": "匹配课程", "text": "根据课程语境调整项目顺序、说明与个人陈述。"}
+            {
+              "title": "建立问题",
+              "text": "从媒体、技术、身份、文化或社会现象中找到持续关注。"
+            },
+            {
+              "title": "扩展媒介",
+              "text": "让研究通过影像、交互、游戏、声音、代码或空间被测试。"
+            },
+            {
+              "title": "记录过程",
+              "text": "保留草图、实验、失败、反馈与迭代。"
+            },
+            {
+              "title": "匹配课程",
+              "text": "根据课程语境调整项目顺序、说明与个人陈述。"
+            }
           ]
         }
       ],
-      "related": ["directions/uk", "capabilities/creative-tech", "capabilities/media-installation"],
+      "related": [
+        "directions/uk",
+        "capabilities/creative-tech",
+        "capabilities/media-installation"
+      ],
       "sources": [
-        {"label": "UCL Media BA", "url": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/media-ba"},
-        {"label": "UCL Art and Technology BA", "url": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/art-and-technology-ba"}
+        {
+          "label": "UCL Media BA",
+          "url": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/media-ba"
+        },
+        {
+          "label": "UCL Art and Technology BA",
+          "url": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/art-and-technology-ba"
+        }
       ]
     },
     {
@@ -401,9 +721,18 @@
       "heroImage": "/undergraduate/images/output-information.jpg",
       "accent": "cyan",
       "facts": [
-        {"value": "4", "label": "代表院校入口"},
-        {"value": "多轨", "label": "设计、媒体、系统"},
-        {"value": "面试", "label": "口头还原项目过程"}
+        {
+          "value": "4",
+          "label": "代表院校入口"
+        },
+        {
+          "value": "多轨",
+          "label": "设计、媒体、系统"
+        },
+        {
+          "value": "面试",
+          "label": "口头还原项目过程"
+        }
       ],
       "sourceNote": "路径依据 HKU、HKUST、PolyU、CityU 等材料整理；不发布静态分数与面试口径。",
       "sections": [
@@ -411,10 +740,22 @@
           "kicker": "SCHOOL MAP",
           "title": "先按学院逻辑建立组合",
           "items": [
-            {"title": "HKU", "text": "适合数字人文、创意产业与跨学科叙事。"},
-            {"title": "HKUST", "text": "适合系统设计、技术创新、项目制与跨学科解决问题。"},
-            {"title": "PolyU Design", "text": "适合信息、交互、媒体、服务和设计方法。"},
-            {"title": "CityU Creative Media", "text": "适合影像、声音、动画、游戏、新媒体与艺术科技。"}
+            {
+              "title": "HKU",
+              "text": "适合数字人文、创意产业与跨学科叙事。"
+            },
+            {
+              "title": "HKUST",
+              "text": "适合系统设计、技术创新、项目制与跨学科解决问题。"
+            },
+            {
+              "title": "PolyU Design",
+              "text": "适合信息、交互、媒体、服务和设计方法。"
+            },
+            {
+              "title": "CityU Creative Media",
+              "text": "适合影像、声音、动画、游戏、新媒体与艺术科技。"
+            }
           ]
         },
         {
@@ -430,11 +771,17 @@
         {
           "kicker": "INTERVIEW",
           "title": "面试要能从结果退回过程",
-          "body": ["学生需要在没有长篇稿件的情况下说明项目为什么开始、调研发现了什么、做过哪些选择、哪里失败、最终如何判断。"],
+          "body": [
+            "学生需要在没有长篇稿件的情况下说明项目为什么开始、调研发现了什么、做过哪些选择、哪里失败、最终如何判断。"
+          ],
           "quote": "面试不是背作品说明，而是证明项目确实由你推进。"
         }
       ],
-      "related": ["directions/hong-kong", "fit", "capabilities/information-experience"]
+      "related": [
+        "directions/hong-kong",
+        "fit",
+        "capabilities/information-experience"
+      ]
     },
     {
       "id": "pathways/us-top",
@@ -449,9 +796,18 @@
       "heroImage": "/undergraduate/images/profile-acg.jpg",
       "accent": "purple",
       "facts": [
-        {"value": "整体", "label": "综合评估"},
-        {"value": "长期", "label": "兴趣与活动连续"},
-        {"value": "个人", "label": "贡献必须可解释"}
+        {
+          "value": "整体",
+          "label": "综合评估"
+        },
+        {
+          "value": "长期",
+          "label": "兴趣与活动连续"
+        },
+        {
+          "value": "个人",
+          "label": "贡献必须可解释"
+        }
       ],
       "sourceNote": "路线依据美国本科申请维度与代表院校材料整理，不提供录取保证或静态排名承诺。",
       "sections": [
@@ -459,10 +815,22 @@
           "kicker": "PROFILE",
           "title": "四组证据共同组成申请者",
           "items": [
-            {"title": "学术", "text": "课程选择、成绩与研究兴趣支撑学生进入目标学科。"},
-            {"title": "活动", "text": "长期行动证明兴趣如何进入社群、竞赛、研究或真实项目。"},
-            {"title": "作品", "text": "项目把问题意识、创造力、技术和个人判断变成可见证据。"},
-            {"title": "文书", "text": "解释这些经历为什么属于同一个人，而不是分别包装。"}
+            {
+              "title": "学术",
+              "text": "课程选择、成绩与研究兴趣支撑学生进入目标学科。"
+            },
+            {
+              "title": "活动",
+              "text": "长期行动证明兴趣如何进入社群、竞赛、研究或真实项目。"
+            },
+            {
+              "title": "作品",
+              "text": "项目把问题意识、创造力、技术和个人判断变成可见证据。"
+            },
+            {
+              "title": "文书",
+              "text": "解释这些经历为什么属于同一个人，而不是分别包装。"
+            }
           ]
         },
         {
@@ -479,13 +847,26 @@
           "kicker": "SCHOOL FIT",
           "title": "同一学生可以有三种专业入口",
           "items": [
-            {"title": "技术媒体", "text": "适合互动、计算、游戏与数字体验。"},
-            {"title": "工作室艺术", "text": "适合影像、材料、空间与个人艺术语言。"},
-            {"title": "跨学院", "text": "适合明确连接艺术与计算、工程、人文或环境议题。"}
+            {
+              "title": "技术媒体",
+              "text": "适合互动、计算、游戏与数字体验。"
+            },
+            {
+              "title": "工作室艺术",
+              "text": "适合影像、材料、空间与个人艺术语言。"
+            },
+            {
+              "title": "跨学院",
+              "text": "适合明确连接艺术与计算、工程、人文或环境议题。"
+            }
           ]
         }
       ],
-      "related": ["directions/us", "fit/acg-visual", "capabilities/creative-tech"]
+      "related": [
+        "directions/us",
+        "fit/acg-visual",
+        "capabilities/creative-tech"
+      ]
     },
     {
       "id": "capabilities",
@@ -499,9 +880,18 @@
       "heroImage": "/undergraduate/images/output-mechanical.jpg",
       "accent": "cyan",
       "facts": [
-        {"value": "5", "label": "专业能力领域"},
-        {"value": "12", "label": "代表产出形式"},
-        {"value": "1", "label": "完整项目闭环"}
+        {
+          "value": "5",
+          "label": "专业能力领域"
+        },
+        {
+          "value": "12",
+          "label": "代表产出形式"
+        },
+        {
+          "value": "1",
+          "label": "完整项目闭环"
+        }
       ],
       "sourceNote": "五领域来自全日制手册，十二类产出来自《我们会掌握的能力（产出形式）》。",
       "sections": [
@@ -509,22 +899,52 @@
           "kicker": "SYSTEM",
           "title": "五个领域不是五个互不相干的专业",
           "items": [
-            {"title": "视觉语言与策略传播", "text": "品牌、出版、动态设计与视觉运营。"},
-            {"title": "信息体验与应用设计", "text": "界面、信息图表、数据可视化与数字传播。"},
-            {"title": "3D 虚拟艺术制作", "text": "建模、虚拟叙事、AR/VR/MR 与沉浸体验。"},
-            {"title": "多媒介与装置艺术", "text": "影像、投影、声音、材料、空间与表演。"},
-            {"title": "AIGC 创意计算机与互动机械", "text": "生成算法、创意编程、物理计算、机器人与可穿戴。"}
+            {
+              "title": "视觉语言与策略传播",
+              "text": "品牌、出版、动态设计与视觉运营。"
+            },
+            {
+              "title": "信息体验与应用设计",
+              "text": "界面、信息图表、数据可视化与数字传播。"
+            },
+            {
+              "title": "3D 虚拟艺术制作",
+              "text": "建模、虚拟叙事、AR/VR/MR 与沉浸体验。"
+            },
+            {
+              "title": "多媒介与装置艺术",
+              "text": "影像、投影、声音、材料、空间与表演。"
+            },
+            {
+              "title": "AIGC 创意计算机与互动机械",
+              "text": "生成算法、创意编程、物理计算、机器人与可穿戴。"
+            }
           ]
         },
         {
           "kicker": "PROJECT LOOP",
           "title": "所有领域共享一条项目闭环",
           "steps": [
-            {"title": "观察与调研", "text": "从兴趣或真实问题建立证据。"},
-            {"title": "概念与方法", "text": "决定项目立场、受众与实验方式。"},
-            {"title": "原型与测试", "text": "让想法通过画面、材料、代码或空间被验证。"},
-            {"title": "迭代与交付", "text": "依据反馈调整并形成完整呈现。"},
-            {"title": "复盘与表达", "text": "说明取舍、个人贡献与下一步。"}
+            {
+              "title": "观察与调研",
+              "text": "从兴趣或真实问题建立证据。"
+            },
+            {
+              "title": "概念与方法",
+              "text": "决定项目立场、受众与实验方式。"
+            },
+            {
+              "title": "原型与测试",
+              "text": "让想法通过画面、材料、代码或空间被验证。"
+            },
+            {
+              "title": "迭代与交付",
+              "text": "依据反馈调整并形成完整呈现。"
+            },
+            {
+              "title": "复盘与表达",
+              "text": "说明取舍、个人贡献与下一步。"
+            }
           ]
         },
         {
@@ -538,8 +958,18 @@
           ]
         }
       ],
-      "children": ["capabilities/visual-strategy", "capabilities/information-experience", "capabilities/3d-virtual", "capabilities/media-installation", "capabilities/creative-tech"],
-      "related": ["fit", "works", "advantages"]
+      "children": [
+        "capabilities/visual-strategy",
+        "capabilities/information-experience",
+        "capabilities/3d-virtual",
+        "capabilities/media-installation",
+        "capabilities/creative-tech"
+      ],
+      "related": [
+        "fit",
+        "works",
+        "advantages"
+      ]
     },
     {
       "id": "capabilities/visual-strategy",
@@ -554,9 +984,18 @@
       "heroImage": "/undergraduate/images/output-brand.jpg",
       "accent": "coral",
       "facts": [
-        {"value": "品牌", "label": "定位与识别"},
-        {"value": "出版", "label": "编辑与阅读体验"},
-        {"value": "动态", "label": "时间与传播节奏"}
+        {
+          "value": "品牌",
+          "label": "定位与识别"
+        },
+        {
+          "value": "出版",
+          "label": "编辑与阅读体验"
+        },
+        {
+          "value": "动态",
+          "label": "时间与传播节奏"
+        }
       ],
       "sourceNote": "领域内容来自全日制手册中的品牌策略、书籍设计、动态设计与视觉运营。",
       "sections": [
@@ -564,29 +1003,63 @@
           "kicker": "WHAT TO LEARN",
           "title": "从单张画面到完整视觉系统",
           "items": [
-            {"title": "品牌策略", "text": "研究定位、用户洞察、传播创意与品牌竞争力。"},
-            {"title": "品牌设计", "text": "建立品牌识别、VI、包装与跨触点视觉。"},
-            {"title": "书籍与出版", "text": "通过内容编排、字体、材料与阅读节奏组织信息。"},
-            {"title": "动态与运营", "text": "用时间、节奏、内容管理和视觉规范提升传播效率。"}
+            {
+              "title": "品牌策略",
+              "text": "研究定位、用户洞察、传播创意与品牌竞争力。"
+            },
+            {
+              "title": "品牌设计",
+              "text": "建立品牌识别、VI、包装与跨触点视觉。"
+            },
+            {
+              "title": "书籍与出版",
+              "text": "通过内容编排、字体、材料与阅读节奏组织信息。"
+            },
+            {
+              "title": "动态与运营",
+              "text": "用时间、节奏、内容管理和视觉规范提升传播效率。"
+            }
           ]
         },
         {
           "kicker": "PROJECT EXAMPLE",
           "title": "一个品牌项目应包含什么",
           "steps": [
-            {"title": "调研", "text": "理解受众、场景、竞品与文化语境。"},
-            {"title": "策略", "text": "确定定位、核心信息与视觉原则。"},
-            {"title": "系统", "text": "建立字体、色彩、图形、版式和内容规则。"},
-            {"title": "触点", "text": "在包装、界面、广告、出版或空间中验证一致性。"}
+            {
+              "title": "调研",
+              "text": "理解受众、场景、竞品与文化语境。"
+            },
+            {
+              "title": "策略",
+              "text": "确定定位、核心信息与视觉原则。"
+            },
+            {
+              "title": "系统",
+              "text": "建立字体、色彩、图形、版式和内容规则。"
+            },
+            {
+              "title": "触点",
+              "text": "在包装、界面、广告、出版或空间中验证一致性。"
+            }
           ]
         },
         {
           "kicker": "OUTPUTS",
           "title": "可形成的代表产出",
-          "list": ["品牌识别与 VI", "包装与广告", "书籍、杂志与数字出版", "动态视觉与社交传播", "内容运营视觉系统"]
+          "list": [
+            "品牌识别与 VI",
+            "包装与广告",
+            "书籍、杂志与数字出版",
+            "动态视觉与社交传播",
+            "内容运营视觉系统"
+          ]
         }
       ],
-      "related": ["fit/brand-strategy", "capabilities/information-experience", "works/portfolio"]
+      "related": [
+        "fit/brand-strategy",
+        "capabilities/information-experience",
+        "works/portfolio"
+      ]
     },
     {
       "id": "capabilities/information-experience",
@@ -601,9 +1074,18 @@
       "heroImage": "/undergraduate/images/output-web.jpg",
       "accent": "cyan",
       "facts": [
-        {"value": "信息", "label": "结构与层级"},
-        {"value": "界面", "label": "视觉与交互"},
-        {"value": "体验", "label": "场景与反馈"}
+        {
+          "value": "信息",
+          "label": "结构与层级"
+        },
+        {
+          "value": "界面",
+          "label": "视觉与交互"
+        },
+        {
+          "value": "体验",
+          "label": "场景与反馈"
+        }
       ],
       "sourceNote": "领域内容来自全日制手册中的界面设计、信息设计与数字传播。",
       "sections": [
@@ -611,29 +1093,63 @@
           "kicker": "WHAT TO LEARN",
           "title": "设计的对象是理解与行动",
           "items": [
-            {"title": "界面视觉", "text": "通过布局、元素与视觉层级支持信息理解。"},
-            {"title": "App 与网页", "text": "建立信息架构、任务流程、状态与响应规则。"},
-            {"title": "信息设计", "text": "把复杂资料转化为清晰、易读和可比较的表达。"},
-            {"title": "数据可视化", "text": "根据数据关系选择图形编码，而不是只做装饰图表。"}
+            {
+              "title": "界面视觉",
+              "text": "通过布局、元素与视觉层级支持信息理解。"
+            },
+            {
+              "title": "App 与网页",
+              "text": "建立信息架构、任务流程、状态与响应规则。"
+            },
+            {
+              "title": "信息设计",
+              "text": "把复杂资料转化为清晰、易读和可比较的表达。"
+            },
+            {
+              "title": "数据可视化",
+              "text": "根据数据关系选择图形编码，而不是只做装饰图表。"
+            }
           ]
         },
         {
           "kicker": "PROJECT LOOP",
           "title": "从真实场景开始，而不是从模板开始",
           "steps": [
-            {"title": "识别用户与任务", "text": "明确谁在什么情境下解决什么问题。"},
-            {"title": "整理信息", "text": "建立内容层级、流程和关键决策点。"},
-            {"title": "制作原型", "text": "用低保真与高保真原型测试理解和操作。"},
-            {"title": "验证反馈", "text": "观察使用问题并调整结构、文字和视觉。"}
+            {
+              "title": "识别用户与任务",
+              "text": "明确谁在什么情境下解决什么问题。"
+            },
+            {
+              "title": "整理信息",
+              "text": "建立内容层级、流程和关键决策点。"
+            },
+            {
+              "title": "制作原型",
+              "text": "用低保真与高保真原型测试理解和操作。"
+            },
+            {
+              "title": "验证反馈",
+              "text": "观察使用问题并调整结构、文字和视觉。"
+            }
           ]
         },
         {
           "kicker": "OUTPUTS",
           "title": "可形成的代表产出",
-          "list": ["App 与网页原型", "信息图表与数据可视化", "社交媒体与 H5", "动态界面与反馈", "服务流程与体验地图"]
+          "list": [
+            "App 与网页原型",
+            "信息图表与数据可视化",
+            "社交媒体与 H5",
+            "动态界面与反馈",
+            "服务流程与体验地图"
+          ]
         }
       ],
-      "related": ["fit/brand-strategy", "directions/hong-kong", "capabilities/visual-strategy"]
+      "related": [
+        "fit/brand-strategy",
+        "directions/hong-kong",
+        "capabilities/visual-strategy"
+      ]
     },
     {
       "id": "capabilities/3d-virtual",
@@ -648,9 +1164,18 @@
       "heroImage": "/undergraduate/images/profile-acg.jpg",
       "accent": "purple",
       "facts": [
-        {"value": "3D", "label": "角色与空间"},
-        {"value": "XR", "label": "虚拟、增强与混合现实"},
-        {"value": "实时", "label": "叙事与沉浸体验"}
+        {
+          "value": "3D",
+          "label": "角色与空间"
+        },
+        {
+          "value": "XR",
+          "label": "虚拟、增强与混合现实"
+        },
+        {
+          "value": "实时",
+          "label": "叙事与沉浸体验"
+        }
       ],
       "sourceNote": "领域内容来自全日制手册中的 3D 建模与 AR/VR/MR。",
       "sections": [
@@ -658,10 +1183,22 @@
           "kicker": "WHAT TO LEARN",
           "title": "从形态到虚拟世界",
           "items": [
-            {"title": "人物与空间建模", "text": "理解结构、比例、材质、光照与空间关系。"},
-            {"title": "3D 叙事", "text": "通过镜头、环境、动作与节奏组织虚拟故事。"},
-            {"title": "视觉特效", "text": "把模拟、合成与动态效果服务于叙事和体验。"},
-            {"title": "AR/VR/MR", "text": "让虚拟信息进入身体、空间和交互场景。"}
+            {
+              "title": "人物与空间建模",
+              "text": "理解结构、比例、材质、光照与空间关系。"
+            },
+            {
+              "title": "3D 叙事",
+              "text": "通过镜头、环境、动作与节奏组织虚拟故事。"
+            },
+            {
+              "title": "视觉特效",
+              "text": "把模拟、合成与动态效果服务于叙事和体验。"
+            },
+            {
+              "title": "AR/VR/MR",
+              "text": "让虚拟信息进入身体、空间和交互场景。"
+            }
           ]
         },
         {
@@ -677,10 +1214,20 @@
         {
           "kicker": "OUTPUTS",
           "title": "可形成的代表产出",
-          "list": ["角色与空间模型", "3D 叙事短片", "虚拟舞台与实时视觉", "AR/VR/MR 体验", "游戏关卡与娱乐设计"]
+          "list": [
+            "角色与空间模型",
+            "3D 叙事短片",
+            "虚拟舞台与实时视觉",
+            "AR/VR/MR 体验",
+            "游戏关卡与娱乐设计"
+          ]
         }
       ],
-      "related": ["fit/tech-media", "fit/acg-visual", "capabilities/creative-tech"]
+      "related": [
+        "fit/tech-media",
+        "fit/acg-visual",
+        "capabilities/creative-tech"
+      ]
     },
     {
       "id": "capabilities/media-installation",
@@ -695,9 +1242,18 @@
       "heroImage": "/undergraduate/images/output-material.jpg",
       "accent": "coral",
       "facts": [
-        {"value": "空间", "label": "尺度与动线"},
-        {"value": "时间", "label": "影像、声音与表演"},
-        {"value": "材料", "label": "触感与装置结构"}
+        {
+          "value": "空间",
+          "label": "尺度与动线"
+        },
+        {
+          "value": "时间",
+          "label": "影像、声音与表演"
+        },
+        {
+          "value": "材料",
+          "label": "触感与装置结构"
+        }
       ],
       "sourceNote": "领域内容来自全日制手册中的影像、行为表演与多媒介装置。",
       "sections": [
@@ -705,30 +1261,64 @@
           "kicker": "MEDIA",
           "title": "媒介之间必须形成关系",
           "items": [
-            {"title": "影像与投影", "text": "用画面、光与表面改变空间感知。"},
-            {"title": "声音艺术", "text": "通过声场、节奏和位置组织情绪与注意力。"},
-            {"title": "材料装置", "text": "让材料特性、结构与尺度参与表达。"},
-            {"title": "行为与表演", "text": "通过身体、动作、现场与观众关系传达观念。"}
+            {
+              "title": "影像与投影",
+              "text": "用画面、光与表面改变空间感知。"
+            },
+            {
+              "title": "声音艺术",
+              "text": "通过声场、节奏和位置组织情绪与注意力。"
+            },
+            {
+              "title": "材料装置",
+              "text": "让材料特性、结构与尺度参与表达。"
+            },
+            {
+              "title": "行为与表演",
+              "text": "通过身体、动作、现场与观众关系传达观念。"
+            }
           ]
         },
         {
           "kicker": "INSTALLATION LOOP",
           "title": "从桌面草图走到真实空间",
           "steps": [
-            {"title": "场地观察", "text": "记录尺度、光线、电力、声音、动线与安全限制。"},
-            {"title": "材料测试", "text": "小样验证结构、表面、投影和声音效果。"},
-            {"title": "空间原型", "text": "模拟观众视角、进入顺序与互动方式。"},
-            {"title": "布展复盘", "text": "现场校准并记录体验与反馈。"}
+            {
+              "title": "场地观察",
+              "text": "记录尺度、光线、电力、声音、动线与安全限制。"
+            },
+            {
+              "title": "材料测试",
+              "text": "小样验证结构、表面、投影和声音效果。"
+            },
+            {
+              "title": "空间原型",
+              "text": "模拟观众视角、进入顺序与互动方式。"
+            },
+            {
+              "title": "布展复盘",
+              "text": "现场校准并记录体验与反馈。"
+            }
           ],
           "image": "/undergraduate/images/process-projection.jpg"
         },
         {
           "kicker": "OUTPUTS",
           "title": "可形成的代表产出",
-          "list": ["影像与投影装置", "声音艺术", "材料与空间装置", "实验表演", "音画互动与现场展示"]
+          "list": [
+            "影像与投影装置",
+            "声音艺术",
+            "材料与空间装置",
+            "实验表演",
+            "音画互动与现场展示"
+          ]
         }
       ],
-      "related": ["works/summer-school", "fit/tech-media", "capabilities/creative-tech"]
+      "related": [
+        "works/summer-school",
+        "fit/tech-media",
+        "capabilities/creative-tech"
+      ]
     },
     {
       "id": "capabilities/creative-tech",
@@ -743,9 +1333,18 @@
       "heroImage": "/undergraduate/images/output-mechanical.jpg",
       "accent": "acid",
       "facts": [
-        {"value": "AI", "label": "生成与协作工具"},
-        {"value": "Code", "label": "规则与实时系统"},
-        {"value": "Physical", "label": "硬件、机械与身体"}
+        {
+          "value": "AI",
+          "label": "生成与协作工具"
+        },
+        {
+          "value": "Code",
+          "label": "规则与实时系统"
+        },
+        {
+          "value": "Physical",
+          "label": "硬件、机械与身体"
+        }
       ],
       "sourceNote": "领域内容来自全日制手册中的 AIGC、算法艺术、创意编程、硬件交互与机械艺术。",
       "sections": [
@@ -753,31 +1352,64 @@
           "kicker": "WHAT TO LEARN",
           "title": "技术不是单独的加分项",
           "items": [
-            {"title": "AIGC 与生成系统", "text": "理解数据、提示、工作流、选择与质量控制。"},
-            {"title": "创意编程", "text": "通过代码定义视觉、声音、互动与实时规则。"},
-            {"title": "物理计算", "text": "连接传感器、输入、输出和反馈。"},
-            {"title": "机械与机器人艺术", "text": "用结构、运动与控制建立实体体验。"},
-            {"title": "智能可穿戴", "text": "把计算、传感与身体动作结合。"}
+            {
+              "title": "AIGC 与生成系统",
+              "text": "理解数据、提示、工作流、选择与质量控制。"
+            },
+            {
+              "title": "创意编程",
+              "text": "通过代码定义视觉、声音、互动与实时规则。"
+            },
+            {
+              "title": "物理计算",
+              "text": "连接传感器、输入、输出和反馈。"
+            },
+            {
+              "title": "机械与机器人艺术",
+              "text": "用结构、运动与控制建立实体体验。"
+            },
+            {
+              "title": "智能可穿戴",
+              "text": "把计算、传感与身体动作结合。"
+            }
           ]
         },
         {
           "kicker": "PROJECT LOGIC",
           "title": "从工具演示走向完整体验",
           "steps": [
-            {"title": "定义行为", "text": "明确系统接收什么输入、如何变化、给出什么反馈。"},
-            {"title": "制作最小原型", "text": "先验证核心机制，再扩展视觉与结构。"},
-            {"title": "观察交互", "text": "记录用户如何理解、误用与重新发现系统。"},
-            {"title": "处理边界", "text": "说明数据、版权、偏差、安全与维护问题。"}
+            {
+              "title": "定义行为",
+              "text": "明确系统接收什么输入、如何变化、给出什么反馈。"
+            },
+            {
+              "title": "制作最小原型",
+              "text": "先验证核心机制，再扩展视觉与结构。"
+            },
+            {
+              "title": "观察交互",
+              "text": "记录用户如何理解、误用与重新发现系统。"
+            },
+            {
+              "title": "处理边界",
+              "text": "说明数据、版权、偏差、安全与维护问题。"
+            }
           ]
         },
         {
           "kicker": "AI POSITION",
           "title": "AI 改变制作工具，不替代设计判断",
-          "body": ["学生需要学会调用工具，也需要保留问题定义、审美选择、验证、编辑与责任判断。项目评价不以生成数量为核心，而以系统和最终体验是否成立为核心。"],
+          "body": [
+            "学生需要学会调用工具，也需要保留问题定义、审美选择、验证、编辑与责任判断。项目评价不以生成数量为核心，而以系统和最终体验是否成立为核心。"
+          ],
           "quote": "会生成只是起点，能判断才是能力。"
         }
       ],
-      "related": ["fit/tech-media", "directions/us", "directions/hong-kong"]
+      "related": [
+        "fit/tech-media",
+        "directions/us",
+        "directions/hong-kong"
+      ]
     },
     {
       "id": "fit",
@@ -791,9 +1423,18 @@
       "heroImage": "/undergraduate/images/profile-acg.jpg",
       "accent": "purple",
       "facts": [
-        {"value": "3", "label": "典型兴趣入口"},
-        {"value": "多媒介", "label": "绘画不是唯一基础"},
-        {"value": "项目", "label": "用行动验证适配"}
+        {
+          "value": "3",
+          "label": "典型兴趣入口"
+        },
+        {
+          "value": "多媒介",
+          "label": "绘画不是唯一基础"
+        },
+        {
+          "value": "项目",
+          "label": "用行动验证适配"
+        }
       ],
       "sourceNote": "学生画像来自能力产出页、二次元偏好材料与全日制五领域框架。",
       "sections": [
@@ -807,26 +1448,34 @@
           ]
         },
         {
-          "kicker": "THREE ENTRIES",
-          "title": "三种常见入口可以互相流动",
-          "items": [
-            {"title": "Tech & Media", "text": "从 3D、互动、装置、影像或技术实验进入。"},
-            {"title": "Brand & Strategy", "text": "从视觉语言、信息、出版、界面或品牌系统进入。"},
-            {"title": "二次元 / 动漫 / 酷炫视觉", "text": "从游戏、虚拟偶像、潮流文化或未来视觉进入，再转化为研究与项目。"}
-          ]
-        },
-        {
           "kicker": "MISUNDERSTANDING",
           "title": "常见误区",
           "items": [
-            {"title": "不会画画就不适合", "text": "观察与视觉基础需要训练，但影像、文字、声音、代码、材料和空间都可以成为入口。"},
-            {"title": "喜欢动漫就只能画角色", "text": "兴趣可以进一步转化为字体、品牌、出版、界面、AR、虚拟世界与装置。"},
-            {"title": "会软件就是会设计", "text": "工具不能替代研究、概念、判断、测试和表达。"}
+            {
+              "title": "不会画画就不适合",
+              "text": "观察与视觉基础需要训练，但影像、文字、声音、代码、材料和空间都可以成为入口。"
+            },
+            {
+              "title": "喜欢动漫就只能画角色",
+              "text": "兴趣可以进一步转化为字体、品牌、出版、界面、AR、虚拟世界与装置。"
+            },
+            {
+              "title": "会软件就是会设计",
+              "text": "工具不能替代研究、概念、判断、测试和表达。"
+            }
           ]
         }
       ],
-      "children": ["fit/tech-media", "fit/brand-strategy", "fit/acg-visual"],
-      "related": ["capabilities", "advantages", "directions"]
+      "children": [
+        "fit/tech-media",
+        "fit/brand-strategy",
+        "fit/acg-visual"
+      ],
+      "related": [
+        "capabilities",
+        "advantages",
+        "directions"
+      ]
     },
     {
       "id": "fit/tech-media",
@@ -841,9 +1490,18 @@
       "heroImage": "/undergraduate/images/output-sound.jpg",
       "accent": "cyan",
       "facts": [
-        {"value": "好奇", "label": "愿意拆解技术与体验"},
-        {"value": "原型", "label": "先测试再完善"},
-        {"value": "跨媒介", "label": "图像、声音、空间与代码"}
+        {
+          "value": "好奇",
+          "label": "愿意拆解技术与体验"
+        },
+        {
+          "value": "原型",
+          "label": "先测试再完善"
+        },
+        {
+          "value": "跨媒介",
+          "label": "图像、声音、空间与代码"
+        }
       ],
       "sourceNote": "画像来自能力清单中的艺术与科技方向及全日制五领域。",
       "sections": [
@@ -861,19 +1519,41 @@
           "kicker": "STARTING PROJECTS",
           "title": "可以从这些小项目开始",
           "items": [
-            {"title": "互动规则", "text": "为一个行为设计输入、变化与反馈。"},
-            {"title": "虚拟场景", "text": "用 3D 空间表达一个记忆、身份或未来议题。"},
-            {"title": "声音与影像", "text": "用音画关系组织情绪和叙事。"},
-            {"title": "材料与传感", "text": "让实体材料对触摸、距离或环境变化作出反应。"}
+            {
+              "title": "互动规则",
+              "text": "为一个行为设计输入、变化与反馈。"
+            },
+            {
+              "title": "虚拟场景",
+              "text": "用 3D 空间表达一个记忆、身份或未来议题。"
+            },
+            {
+              "title": "声音与影像",
+              "text": "用音画关系组织情绪和叙事。"
+            },
+            {
+              "title": "材料与传感",
+              "text": "让实体材料对触摸、距离或环境变化作出反应。"
+            }
           ]
         },
         {
           "kicker": "NEXT",
           "title": "优先补足的能力",
-          "list": ["调研与问题定义", "基础视觉叙事", "原型拆解", "技术文档与复盘", "协作与现场表达"]
+          "list": [
+            "调研与问题定义",
+            "基础视觉叙事",
+            "原型拆解",
+            "技术文档与复盘",
+            "协作与现场表达"
+          ]
         }
       ],
-      "related": ["capabilities/3d-virtual", "capabilities/media-installation", "capabilities/creative-tech"]
+      "related": [
+        "capabilities/3d-virtual",
+        "capabilities/media-installation",
+        "capabilities/creative-tech"
+      ]
     },
     {
       "id": "fit/brand-strategy",
@@ -888,9 +1568,18 @@
       "heroImage": "/undergraduate/images/output-brand.jpg",
       "accent": "coral",
       "facts": [
-        {"value": "观察", "label": "关注视觉细节"},
-        {"value": "结构", "label": "愿意整理复杂信息"},
-        {"value": "受众", "label": "理解表达对象"}
+        {
+          "value": "观察",
+          "label": "关注视觉细节"
+        },
+        {
+          "value": "结构",
+          "label": "愿意整理复杂信息"
+        },
+        {
+          "value": "受众",
+          "label": "理解表达对象"
+        }
       ],
       "sourceNote": "画像来自能力清单中的品牌与平面方向及全日制视觉、信息领域。",
       "sections": [
@@ -908,19 +1597,41 @@
           "kicker": "STARTING PROJECTS",
           "title": "可以从这些小项目开始",
           "items": [
-            {"title": "个人档案出版", "text": "把一组长期收藏或观察编辑成书籍。"},
-            {"title": "信息重构", "text": "把复杂说明转化为图表、地图或网页。"},
-            {"title": "品牌重塑", "text": "为真实小型品牌重新定义定位与视觉系统。"},
-            {"title": "数字体验", "text": "围绕一个具体任务设计界面与交互流程。"}
+            {
+              "title": "个人档案出版",
+              "text": "把一组长期收藏或观察编辑成书籍。"
+            },
+            {
+              "title": "信息重构",
+              "text": "把复杂说明转化为图表、地图或网页。"
+            },
+            {
+              "title": "品牌重塑",
+              "text": "为真实小型品牌重新定义定位与视觉系统。"
+            },
+            {
+              "title": "数字体验",
+              "text": "围绕一个具体任务设计界面与交互流程。"
+            }
           ]
         },
         {
           "kicker": "NEXT",
           "title": "优先补足的能力",
-          "list": ["字体与版式", "信息层级", "用户与传播调研", "系统一致性", "项目提案与复盘"]
+          "list": [
+            "字体与版式",
+            "信息层级",
+            "用户与传播调研",
+            "系统一致性",
+            "项目提案与复盘"
+          ]
         }
       ],
-      "related": ["capabilities/visual-strategy", "capabilities/information-experience", "works/portfolio"]
+      "related": [
+        "capabilities/visual-strategy",
+        "capabilities/information-experience",
+        "works/portfolio"
+      ]
     },
     {
       "id": "fit/acg-visual",
@@ -937,9 +1648,18 @@
       "heroMobileImage": "/undergraduate/acg/hero-mobile.jpg",
       "accent": "purple",
       "facts": [
-        {"value": "兴趣", "label": "建立持续观察"},
-        {"value": "转译", "label": "从 IP 到独立问题"},
-        {"value": "原创", "label": "不依赖第三方角色复制"}
+        {
+          "value": "兴趣",
+          "label": "建立持续观察"
+        },
+        {
+          "value": "转译",
+          "label": "从 IP 到独立问题"
+        },
+        {
+          "value": "原创",
+          "label": "不依赖第三方角色复制"
+        }
       ],
       "sourceNote": "内容与视觉样本依据《二次元偏好》52 页材料整理。",
       "sections": [
@@ -947,32 +1667,82 @@
           "kicker": "FROM FANDOM TO RESEARCH",
           "title": "先问为什么喜欢",
           "items": [
-            {"title": "视觉语言", "text": "分析字体、色彩、角色、界面与世界观如何共同建立吸引力。"},
-            {"title": "文化与社群", "text": "观察应援、虚拟身份、消费、收藏与社群行为。"},
-            {"title": "媒介与技术", "text": "研究游戏规则、虚拟舞台、AR、3D 与数字表演如何改变参与。"},
-            {"title": "个人经验", "text": "把童年记忆、身份、情感或身体经验转化为独立主题。"}
+            {
+              "title": "视觉语言",
+              "text": "分析字体、色彩、角色、界面与世界观如何共同建立吸引力。"
+            },
+            {
+              "title": "文化与社群",
+              "text": "观察应援、虚拟身份、消费、收藏与社群行为。"
+            },
+            {
+              "title": "媒介与技术",
+              "text": "研究游戏规则、虚拟舞台、AR、3D 与数字表演如何改变参与。"
+            },
+            {
+              "title": "个人经验",
+              "text": "把童年记忆、身份、情感或身体经验转化为独立主题。"
+            }
           ],
           "gallery": [
-            {"src": "/undergraduate/acg/page-02.jpg", "alt": "不同二次元项目的字形与标识研究", "caption": "观察样本：字形与标识如何建立情绪"},
-            {"src": "/undergraduate/acg/page-14.jpg", "alt": "虚拟舞台与演唱会视觉画面", "caption": "观察样本：舞台、角色与观看关系"},
-            {"src": "/undergraduate/acg/page-20.jpg", "alt": "增强现实中的虚拟角色互动", "caption": "观察样本：虚拟角色进入真实空间"},
-            {"src": "/undergraduate/acg/page-44.jpg", "alt": "偶像应援物与视觉系统设计", "caption": "观察样本：社群、应援与视觉系统"}
+            {
+              "src": "/undergraduate/acg/page-02.jpg",
+              "alt": "不同二次元项目的字形与标识研究",
+              "caption": "观察样本：字形与标识如何建立情绪"
+            },
+            {
+              "src": "/undergraduate/acg/page-14.jpg",
+              "alt": "虚拟舞台与演唱会视觉画面",
+              "caption": "观察样本：舞台、角色与观看关系"
+            },
+            {
+              "src": "/undergraduate/acg/page-20.jpg",
+              "alt": "增强现实中的虚拟角色互动",
+              "caption": "观察样本：虚拟角色进入真实空间"
+            },
+            {
+              "src": "/undergraduate/acg/page-44.jpg",
+              "alt": "偶像应援物与视觉系统设计",
+              "caption": "观察样本：社群、应援与视觉系统"
+            }
           ]
         },
         {
           "kicker": "TRANSLATION",
           "title": "兴趣可以转化成多种项目",
-          "list": ["字体、海报、书籍与杂志", "品牌、包装、周边与视觉系统", "UI/UX、网页与互动原型", "AR/MR、虚拟可穿戴与数字表演", "3D 场景、机械艺术与 AIGC 实验"],
+          "list": [
+            "字体、海报、书籍与杂志",
+            "品牌、包装、周边与视觉系统",
+            "UI/UX、网页与互动原型",
+            "AR/MR、虚拟可穿戴与数字表演",
+            "3D 场景、机械艺术与 AIGC 实验"
+          ],
           "visualGroups": [
             {
               "index": "01",
               "title": "视觉传播与出版",
               "text": "把角色气质和世界观转译为字体、海报、书籍、包装与完整视觉系统。",
               "gallery": [
-                {"src": "/undergraduate/acg/page-03.jpg", "alt": "游戏主题字体设计案例", "caption": "字体系统"},
-                {"src": "/undergraduate/acg/page-06.jpg", "alt": "二次元主题海报设计案例", "caption": "海报与信息层级"},
-                {"src": "/undergraduate/acg/page-08.jpg", "alt": "二次元主题书籍设计案例", "caption": "书籍与出版物"},
-                {"src": "/undergraduate/acg/page-16.jpg", "alt": "潮流 IP 的包装、周边与形象系统", "caption": "IP、包装与周边"}
+                {
+                  "src": "/undergraduate/acg/page-03.jpg",
+                  "alt": "游戏主题字体设计案例",
+                  "caption": "字体系统"
+                },
+                {
+                  "src": "/undergraduate/acg/page-06.jpg",
+                  "alt": "二次元主题海报设计案例",
+                  "caption": "海报与信息层级"
+                },
+                {
+                  "src": "/undergraduate/acg/page-08.jpg",
+                  "alt": "二次元主题书籍设计案例",
+                  "caption": "书籍与出版物"
+                },
+                {
+                  "src": "/undergraduate/acg/page-16.jpg",
+                  "alt": "潮流 IP 的包装、周边与形象系统",
+                  "caption": "IP、包装与周边"
+                }
               ]
             },
             {
@@ -980,10 +1750,26 @@
               "title": "界面与虚拟身份",
               "text": "让角色不只是一张图，而是在界面、品牌、社交关系与数字身体中持续运作。",
               "gallery": [
-                {"src": "/undergraduate/acg/page-11.jpg", "alt": "二次元界面与 UI UX 设计案例", "caption": "界面与体验"},
-                {"src": "/undergraduate/acg/page-12.jpg", "alt": "虚拟偶像品牌与角色视觉", "caption": "虚拟偶像品牌"},
-                {"src": "/undergraduate/acg/page-18.jpg", "alt": "角色、应用界面与三维场景组合", "caption": "角色资产与应用"},
-                {"src": "/undergraduate/acg/page-21.jpg", "alt": "虚拟可穿戴设计案例", "caption": "虚拟可穿戴"}
+                {
+                  "src": "/undergraduate/acg/page-11.jpg",
+                  "alt": "二次元界面与 UI UX 设计案例",
+                  "caption": "界面与体验"
+                },
+                {
+                  "src": "/undergraduate/acg/page-12.jpg",
+                  "alt": "虚拟偶像品牌与角色视觉",
+                  "caption": "虚拟偶像品牌"
+                },
+                {
+                  "src": "/undergraduate/acg/page-18.jpg",
+                  "alt": "角色、应用界面与三维场景组合",
+                  "caption": "角色资产与应用"
+                },
+                {
+                  "src": "/undergraduate/acg/page-21.jpg",
+                  "alt": "虚拟可穿戴设计案例",
+                  "caption": "虚拟可穿戴"
+                }
               ]
             },
             {
@@ -991,10 +1777,26 @@
               "title": "空间、表演与世界观",
               "text": "把声音、灯光、身体、场景与叙事规则连接起来，让观众真正进入一个世界。",
               "gallery": [
-                {"src": "/undergraduate/acg/page-22.jpg", "alt": "数字表演与虚拟角色现场", "caption": "数字表演"},
-                {"src": "/undergraduate/acg/page-23.jpg", "alt": "未来感三维场景建模", "caption": "3D 场景"},
-                {"src": "/undergraduate/acg/page-28.jpg", "alt": "舞台灯光与舞台背景视觉", "caption": "舞台灯光与背景"},
-                {"src": "/undergraduate/acg/page-49.jpg", "alt": "国际太空城轨道乌托邦项目", "caption": "空间世界观"}
+                {
+                  "src": "/undergraduate/acg/page-22.jpg",
+                  "alt": "数字表演与虚拟角色现场",
+                  "caption": "数字表演"
+                },
+                {
+                  "src": "/undergraduate/acg/page-23.jpg",
+                  "alt": "未来感三维场景建模",
+                  "caption": "3D 场景"
+                },
+                {
+                  "src": "/undergraduate/acg/page-28.jpg",
+                  "alt": "舞台灯光与舞台背景视觉",
+                  "caption": "舞台灯光与背景"
+                },
+                {
+                  "src": "/undergraduate/acg/page-49.jpg",
+                  "alt": "国际太空城轨道乌托邦项目",
+                  "caption": "空间世界观"
+                }
               ]
             },
             {
@@ -1002,10 +1804,26 @@
               "title": "未来媒介与创意科技",
               "text": "用机械、生成工具、虚拟配饰与身体技术，发展具有个人判断的未来视觉。",
               "gallery": [
-                {"src": "/undergraduate/acg/page-25.jpg", "alt": "机械艺术装置与结构实验", "caption": "机械艺术"},
-                {"src": "/undergraduate/acg/page-26.jpg", "alt": "AIGC 未来场景与角色实验", "caption": "AIGC 视觉实验"},
-                {"src": "/undergraduate/acg/page-48.jpg", "alt": "虚拟配饰与数字身份项目", "caption": "虚拟配饰"},
-                {"src": "/undergraduate/acg/page-50.jpg", "alt": "科技神明与机械化身体项目", "caption": "机械化身体与世界观"}
+                {
+                  "src": "/undergraduate/acg/page-25.jpg",
+                  "alt": "机械艺术装置与结构实验",
+                  "caption": "机械艺术"
+                },
+                {
+                  "src": "/undergraduate/acg/page-26.jpg",
+                  "alt": "AIGC 未来场景与角色实验",
+                  "caption": "AIGC 视觉实验"
+                },
+                {
+                  "src": "/undergraduate/acg/page-48.jpg",
+                  "alt": "虚拟配饰与数字身份项目",
+                  "caption": "虚拟配饰"
+                },
+                {
+                  "src": "/undergraduate/acg/page-50.jpg",
+                  "alt": "科技神明与机械化身体项目",
+                  "caption": "机械化身体与世界观"
+                }
               ]
             }
           ]
@@ -1018,28 +1836,62 @@
             "童年经验、虚拟情感、数字身份与消费文化都可以成为入口；最终要让调研、过程实验和视觉结果共同证明这是学生自己的判断。"
           ],
           "items": [
-            {"title": "提炼关键词", "text": "把“喜欢”拆成色彩、节奏、情绪、关系和叙事规则。"},
-            {"title": "建立问题", "text": "把个人经验连接到身份、社群、技术或消费现象。"},
-            {"title": "选择媒介", "text": "根据问题选择出版、空间、影像、交互、3D 或装置。"},
-            {"title": "形成系统", "text": "让调研、草图、测试、迭代和最终呈现保持同一逻辑。"}
+            {
+              "title": "提炼关键词",
+              "text": "把“喜欢”拆成色彩、节奏、情绪、关系和叙事规则。"
+            },
+            {
+              "title": "建立问题",
+              "text": "把个人经验连接到身份、社群、技术或消费现象。"
+            },
+            {
+              "title": "选择媒介",
+              "text": "根据问题选择出版、空间、影像、交互、3D 或装置。"
+            },
+            {
+              "title": "形成系统",
+              "text": "让调研、草图、测试、迭代和最终呈现保持同一逻辑。"
+            }
           ],
           "gallery": [
-            {"src": "/undergraduate/acg/page-46.jpg", "alt": "虚拟情感与现实人际关系项目", "caption": "从虚拟情感切入现实关系"},
-            {"src": "/undergraduate/acg/page-47.jpg", "alt": "经典童年符号的当代重构项目", "caption": "把童年符号转化为当代议题"}
+            {
+              "src": "/undergraduate/acg/page-46.jpg",
+              "alt": "虚拟情感与现实人际关系项目",
+              "caption": "从虚拟情感切入现实关系"
+            },
+            {
+              "src": "/undergraduate/acg/page-47.jpg",
+              "alt": "经典童年符号的当代重构项目",
+              "caption": "把童年符号转化为当代议题"
+            }
           ]
         },
         {
           "kicker": "COPYRIGHT",
           "title": "从临摹走向原创的边界",
-          "body": ["公开作品集不应依赖未经授权的角色、品牌或艺术家画面作为主要视觉资产。可以研究其文化机制，但最终需要建立自己的问题、角色、系统和视觉语言。"],
+          "body": [
+            "公开作品集不应依赖未经授权的角色、品牌或艺术家画面作为主要视觉资产。可以研究其文化机制，但最终需要建立自己的问题、角色、系统和视觉语言。"
+          ],
           "quote": "兴趣提供入口，原创判断决定项目能走多远。",
           "gallery": [
-            {"src": "/undergraduate/acg/page-51.jpg", "alt": "由情绪关键词发展出的二次元拼贴视觉诗", "caption": "从情绪关键词发展视觉语汇"},
-            {"src": "/undergraduate/acg/page-52.jpg", "alt": "两组具有个人色彩系统的拼贴视觉", "caption": "从审美偏好建立独立画面"}
+            {
+              "src": "/undergraduate/acg/page-51.jpg",
+              "alt": "由情绪关键词发展出的二次元拼贴视觉诗",
+              "caption": "从情绪关键词发展视觉语汇"
+            },
+            {
+              "src": "/undergraduate/acg/page-52.jpg",
+              "alt": "两组具有个人色彩系统的拼贴视觉",
+              "caption": "从审美偏好建立独立画面"
+            }
           ]
         }
       ],
-      "related": ["capabilities/visual-strategy", "capabilities/3d-virtual", "capabilities/creative-tech"]
+      "related": [
+        "capabilities/visual-strategy",
+        "capabilities/3d-virtual",
+        "capabilities/creative-tech"
+      ]
     },
     {
       "id": "advantages",
@@ -1053,45 +1905,78 @@
       "heroImage": "/undergraduate/images/process-making.jpg",
       "accent": "acid",
       "facts": [
-        {"value": "开放", "label": "媒介入口多"},
-        {"value": "探索", "label": "适合本科阶段"},
-        {"value": "迁移", "label": "面对工具变化"}
+        {
+          "value": "开放",
+          "label": "媒介入口多"
+        },
+        {
+          "value": "探索",
+          "label": "适合本科阶段"
+        },
+        {
+          "value": "迁移",
+          "label": "面对工具变化"
+        }
       ],
       "sourceNote": "六项优势来自《优势》3 页材料，并用五领域与完整项目训练补足其可解释性。",
       "sections": [
         {
           "kicker": "ADVANTAGE 01",
           "title": "兴趣度高，但不止于好玩",
-          "body": ["学生可以从游戏、影像、品牌、声音、技术、社会问题或个人经验进入。兴趣提高投入意愿，专业训练则把兴趣推进为研究、方法与成果。"]
+          "body": [
+            "学生可以从游戏、影像、品牌、声音、技术、社会问题或个人经验进入。兴趣提高投入意愿，专业训练则把兴趣推进为研究、方法与成果。"
+          ]
         },
         {
           "kicker": "ADVANTAGE 02",
           "title": "媒介限制低，允许发挥不同基础",
-          "body": ["绘画基础重要但不是唯一门槛。学生也可以通过摄影、文字、影像、声音、代码、材料、空间或交互建立项目，再逐步补足视觉基础。"]
+          "body": [
+            "绘画基础重要但不是唯一门槛。学生也可以通过摄影、文字、影像、声音、代码、材料、空间或交互建立项目，再逐步补足视觉基础。"
+          ]
         },
         {
           "kicker": "ADVANTAGE 03",
           "title": "本科阶段拥有更大的探索空间",
-          "body": ["五领域让学生在视觉、信息、3D、装置和创意科技之间试做，再逐渐形成主线，而不是在没有项目经验时被专业名称锁定。"]
+          "body": [
+            "五领域让学生在视觉、信息、3D、装置和创意科技之间试做，再逐渐形成主线，而不是在没有项目经验时被专业名称锁定。"
+          ]
         },
         {
           "kicker": "ADVANTAGE 04",
           "title": "完整项目训练形成可迁移能力",
           "items": [
-            {"title": "定义问题", "text": "判断什么值得做、为谁做、为什么做。"},
-            {"title": "建立方法", "text": "通过调研、实验、原型和测试推进。"},
-            {"title": "整合系统", "text": "协调视觉、信息、技术、空间与团队。"},
-            {"title": "表达判断", "text": "解释过程、取舍、结果和下一步。"}
+            {
+              "title": "定义问题",
+              "text": "判断什么值得做、为谁做、为什么做。"
+            },
+            {
+              "title": "建立方法",
+              "text": "通过调研、实验、原型和测试推进。"
+            },
+            {
+              "title": "整合系统",
+              "text": "协调视觉、信息、技术、空间与团队。"
+            },
+            {
+              "title": "表达判断",
+              "text": "解释过程、取舍、结果和下一步。"
+            }
           ]
         },
         {
           "kicker": "ADVANTAGE 05",
           "title": "AI 时代更需要上层判断",
-          "body": ["AI 会加速生成和制作，也会放大同质化、版权、数据与质量问题。学生需要把工具纳入工作流，同时保留审美、编辑、验证和责任判断。"],
+          "body": [
+            "AI 会加速生成和制作，也会放大同质化、版权、数据与质量问题。学生需要把工具纳入工作流，同时保留审美、编辑、验证和责任判断。"
+          ],
           "quote": "未来适应性来自方法和判断，不来自记住某个版本的软件。"
         }
       ],
-      "related": ["capabilities", "fit", "pathways"]
+      "related": [
+        "capabilities",
+        "fit",
+        "pathways"
+      ]
     },
     {
       "id": "works",
@@ -1105,9 +1990,18 @@
       "heroImage": "/undergraduate/images/product-26fall.jpg",
       "accent": "coral",
       "facts": [
-        {"value": "4", "label": "静态项目图册"},
-        {"value": "0", "label": "视频文件与请求"},
-        {"value": "多媒介", "label": "从平面到空间"}
+        {
+          "value": "4",
+          "label": "静态项目图册"
+        },
+        {
+          "value": "0",
+          "label": "视频文件与请求"
+        },
+        {
+          "value": "多媒介",
+          "label": "从平面到空间"
+        }
       ],
       "sourceNote": "画面来自 NYU 本科夏校、25fall 与 26fall 学生作品原始素材；页面只发布压缩 JPEG。",
       "sections": [
@@ -1125,20 +2019,34 @@
           "kicker": "RANGE",
           "title": "四组图册覆盖的能力范围",
           "items": [
-            {"title": "NYU 本科夏校", "text": "投影、空间装置、材料、表演与现场制作。"},
-            {"title": "25fall 合集 1", "text": "品牌、信息叙事、编辑设计与跨媒介表达。"},
-            {"title": "25fall 合集 2", "text": "互动装置、虚拟体验、机械、可穿戴与 3D。"},
-            {"title": "26fall 合集", "text": "机械、生态、文化研究、UI/AR、3D 与装置。"}
+            {
+              "title": "NYU 本科夏校",
+              "text": "投影、空间装置、材料、表演与现场制作。"
+            },
+            {
+              "title": "25fall 合集 1",
+              "text": "品牌、信息叙事、编辑设计与跨媒介表达。"
+            },
+            {
+              "title": "25fall 合集 2",
+              "text": "互动装置、虚拟体验、机械、可穿戴与 3D。"
+            },
+            {
+              "title": "26fall 合集",
+              "text": "机械、生态、文化研究、UI/AR、3D 与装置。"
+            }
           ]
-        },
-        {
-          "kicker": "TRAFFIC",
-          "title": "静态优先的发布方式",
-          "body": ["首屏只加载一张压缩主图，其余图册按滚动懒加载。没有 video 标签、MP4 路径或后台媒体请求，适合当前 Firebase 流量边界。"]
         }
       ],
-      "children": ["works/summer-school", "works/portfolio"],
-      "related": ["capabilities", "fit", "pathways/full-time"]
+      "children": [
+        "works/summer-school",
+        "works/portfolio"
+      ],
+      "related": [
+        "capabilities",
+        "fit",
+        "pathways/full-time"
+      ]
     },
     {
       "id": "works/summer-school",
@@ -1153,9 +2061,18 @@
       "heroImage": "/undergraduate/images/product-nyu-summer.jpg",
       "accent": "acid",
       "facts": [
-        {"value": "Studio", "label": "工作室制"},
-        {"value": "短周期", "label": "跨媒介试做"},
-        {"value": "静态", "label": "零视频加载"}
+        {
+          "value": "Studio",
+          "label": "工作室制"
+        },
+        {
+          "value": "短周期",
+          "label": "跨媒介试做"
+        },
+        {
+          "value": "静态",
+          "label": "零视频加载"
+        }
       ],
       "sourceNote": "教学逻辑来自全日制手册冬夏校章节；展示画面来自 NYU 本科夏校原始素材。",
       "sections": [
@@ -1163,26 +2080,51 @@
           "kicker": "STUDIO MODEL",
           "title": "短周期内经历一条完整项目线",
           "steps": [
-            {"title": "Lecture 与观察", "text": "理解主题、参考与现场条件。"},
-            {"title": "每日辅导", "text": "围绕概念、媒介和技术持续调整。"},
-            {"title": "制作与实验", "text": "完成材料、软件、影像或空间测试。"},
-            {"title": "布展与讲评", "text": "在真实空间中校准作品并公开表达。"}
+            {
+              "title": "Lecture 与观察",
+              "text": "理解主题、参考与现场条件。"
+            },
+            {
+              "title": "每日辅导",
+              "text": "围绕概念、媒介和技术持续调整。"
+            },
+            {
+              "title": "制作与实验",
+              "text": "完成材料、软件、影像或空间测试。"
+            },
+            {
+              "title": "布展与讲评",
+              "text": "在真实空间中校准作品并公开表达。"
+            }
           ],
           "image": "/undergraduate/images/process-collaboration.jpg"
         },
         {
           "kicker": "MEDIA RANGE",
           "title": "试过足够多种媒介，才更容易判断方向",
-          "list": ["品牌与符号系统", "图像、字体与版式", "装置、空间与材料", "互动与界面", "行为、声音与档案", "投影与影像叙事"]
+          "list": [
+            "品牌与符号系统",
+            "图像、字体与版式",
+            "装置、空间与材料",
+            "互动与界面",
+            "行为、声音与档案",
+            "投影与影像叙事"
+          ]
         },
         {
           "kicker": "GALLERY",
           "title": "四个关键画面",
-          "body": ["图册展示投影装置、材料制作、团队协作与最终空间呈现。"],
+          "body": [
+            "图册展示投影装置、材料制作、团队协作与最终空间呈现。"
+          ],
           "image": "/undergraduate/images/product-nyu-summer.jpg"
         }
       ],
-      "related": ["pathways/full-time", "capabilities/media-installation", "fit/tech-media"]
+      "related": [
+        "pathways/full-time",
+        "capabilities/media-installation",
+        "fit/tech-media"
+      ]
     },
     {
       "id": "works/portfolio",
@@ -1197,37 +2139,61 @@
       "heroImage": "/undergraduate/images/product-25fall-2.jpg",
       "accent": "purple",
       "facts": [
-        {"value": "3", "label": "届别作品图册"},
-        {"value": "12+", "label": "可见媒介类型"},
-        {"value": "多样", "label": "不设统一风格"}
+        {
+          "value": "3",
+          "label": "届别作品图册"
+        },
+        {
+          "value": "12+",
+          "label": "可见媒介类型"
+        },
+        {
+          "value": "多样",
+          "label": "不设统一风格"
+        }
       ],
       "sourceNote": "画面来自 25fall 学生作品合集 1、合集 2 与 26fall 学生作品合集。",
       "sections": [
         {
           "kicker": "25FALL 01",
           "title": "品牌、编辑与信息叙事",
-          "body": ["第一组图册可见研究型出版、书籍、视觉系统和图像叙事。重点是内容如何被重新组织，而不只是版面是否漂亮。"],
+          "body": [
+            "第一组图册可见研究型出版、书籍、视觉系统和图像叙事。重点是内容如何被重新组织，而不只是版面是否漂亮。"
+          ],
           "image": "/undergraduate/images/product-25fall-1.jpg"
         },
         {
           "kicker": "25FALL 02",
           "title": "互动、可穿戴与跨媒介体验",
-          "body": ["第二组图册可见虚拟界面、可穿戴、材料与现场行为，体现从屏幕向身体和空间扩展。"],
+          "body": [
+            "第二组图册可见虚拟界面、可穿戴、材料与现场行为，体现从屏幕向身体和空间扩展。"
+          ],
           "image": "/undergraduate/images/product-25fall-2.jpg"
         },
         {
           "kicker": "26FALL",
           "title": "机械、生态、3D 与装置",
-          "body": ["第三组图册把机械结构、虚拟世界、生态议题与空间呈现放在同一届作品横截面中。"],
+          "body": [
+            "第三组图册把机械结构、虚拟世界、生态议题与空间呈现放在同一届作品横截面中。"
+          ],
           "image": "/undergraduate/images/product-26fall.jpg"
         },
         {
           "kicker": "READING WORK",
           "title": "评价项目时看四件事",
-          "list": ["问题与研究是否清楚", "媒介选择是否必要", "过程与迭代是否可见", "学生能否解释个人判断与贡献"]
+          "list": [
+            "问题与研究是否清楚",
+            "媒介选择是否必要",
+            "过程与迭代是否可见",
+            "学生能否解释个人判断与贡献"
+          ]
         }
       ],
-      "related": ["capabilities/visual-strategy", "capabilities/3d-virtual", "capabilities/creative-tech"]
+      "related": [
+        "capabilities/visual-strategy",
+        "capabilities/3d-virtual",
+        "capabilities/creative-tech"
+      ]
     },
     {
       "id": "cases",
@@ -1241,40 +2207,79 @@
       "heroImage": "/undergraduate/images/case-ritual-world.jpg",
       "accent": "coral",
       "facts": [
-        {"value": "7", "label": "匿名案例"},
-        {"value": "3", "label": "能力主题"},
-        {"value": "0", "label": "姓名与个人信息"}
+        {
+          "value": "7",
+          "label": "匿名案例"
+        },
+        {
+          "value": "3",
+          "label": "能力主题"
+        },
+        {
+          "value": "0",
+          "label": "姓名与个人信息"
+        }
       ],
       "sourceNote": "案例来自全日制手册优秀毕业生页；网页发布图已裁去姓名与身份信息。",
       "sections": [
         {
           "kicker": "PRIVACY",
           "title": "匿名不是只把姓氏换成字母",
-          "body": ["网页不显示姓名、班级、联系方式和可识别的个人肖像。每个案例使用能力类别与序号命名，作品图只保留项目版面。"],
+          "body": [
+            "网页不显示姓名、班级、联系方式和可识别的个人肖像。每个案例使用能力类别与序号命名，作品图只保留项目版面。"
+          ],
           "items": [
-            {"title": "保留", "text": "作品主题、媒介组合、可见过程、项目结果与院校录取。"},
-            {"title": "删除", "text": "姓名、班级、联系方式、个人肖像和与项目无关的身份线索。"},
-            {"title": "不补写", "text": "物料未说明的家庭背景、初始基础、成绩与个人故事。"}
+            {
+              "title": "保留",
+              "text": "作品主题、媒介组合、可见过程、项目结果与院校录取。"
+            },
+            {
+              "title": "删除",
+              "text": "姓名、班级、联系方式、个人肖像和与项目无关的身份线索。"
+            },
+            {
+              "title": "不补写",
+              "text": "物料未说明的家庭背景、初始基础、成绩与个人故事。"
+            }
           ]
         },
         {
           "kicker": "READING CASES",
           "title": "每个案例从三个层面阅读",
           "steps": [
-            {"title": "项目问题", "text": "作品围绕什么主题或体验展开。"},
-            {"title": "媒介与系统", "text": "版面可见哪些视觉、空间、3D 或互动证据。"},
-            {"title": "申请结果", "text": "只记录原始材料明确列出的院校与方向。"}
+            {
+              "title": "项目问题",
+              "text": "作品围绕什么主题或体验展开。"
+            },
+            {
+              "title": "媒介与系统",
+              "text": "版面可见哪些视觉、空间、3D 或互动证据。"
+            },
+            {
+              "title": "申请结果",
+              "text": "只记录原始材料明确列出的院校与方向。"
+            }
           ]
         },
         {
           "kicker": "BOUNDARY",
           "title": "案例用于理解可能性，不构成录取承诺",
-          "body": ["作品与录取结果可以帮助学生比较路径，但不能单独解释录取原因，也不能代表后续申请会得到同样结果。"],
+          "body": [
+            "作品与录取结果可以帮助学生比较路径，但不能单独解释录取原因，也不能代表后续申请会得到同样结果。"
+          ],
           "quote": "看案例的重点不是复制风格，而是看一个兴趣如何被组织成完整项目。"
         }
       ],
-      "children": ["cases/visual-strategy", "cases/media-narrative", "cases/creative-tech"],
-      "related": ["works", "capabilities", "pathways"]
+      "children": [
+        "cases/visual-strategy",
+        "cases/media-narrative",
+        "cases/creative-tech"
+      ],
+      "related": [
+        "works",
+        "capabilities",
+        "pathways"
+      ]
     },
     {
       "id": "cases/visual-strategy",
@@ -1289,35 +2294,70 @@
       "heroImage": "/undergraduate/images/case-visual-system.jpg",
       "accent": "acid",
       "facts": [
-        {"value": "3", "label": "匿名案例"},
-        {"value": "出版", "label": "主要媒介"},
-        {"value": "系统", "label": "核心能力"}
+        {
+          "value": "3",
+          "label": "匿名案例"
+        },
+        {
+          "value": "出版",
+          "label": "主要媒介"
+        },
+        {
+          "value": "系统",
+          "label": "核心能力"
+        }
       ],
       "sourceNote": "案例图来自全日制手册毕业生作品页，已裁去姓名与个人信息。",
       "sections": [
         {
           "kicker": "SHARED LOGIC",
           "title": "视觉风格背后先有内容结构",
-          "body": ["案例虽然色彩与主题差异很大，但都能看到从研究材料、图形语言到书籍或传播触点的系统组织。"],
-          "list": ["建立可重复的字体、色彩与图形规则", "让材料和装帧参与叙事", "用信息层级控制阅读顺序", "把同一概念扩展到多个触点"]
+          "body": [
+            "案例虽然色彩与主题差异很大，但都能看到从研究材料、图形语言到书籍或传播触点的系统组织。"
+          ],
+          "list": [
+            "建立可重复的字体、色彩与图形规则",
+            "让材料和装帧参与叙事",
+            "用信息层级控制阅读顺序",
+            "把同一概念扩展到多个触点"
+          ]
         },
         {
           "kicker": "EVIDENCE",
           "title": "案例页只描述作品版面能证明的内容",
-          "body": ["对于未展示的调研过程、个人背景与导师反馈不做补写；项目方法以画面中的草图、系统表、模型和最终成果为判断依据。"]
+          "body": [
+            "对于未展示的调研过程、个人背景与导师反馈不做补写；项目方法以画面中的草图、系统表、模型和最终成果为判断依据。"
+          ]
         },
         {
           "kicker": "APPLICATION",
           "title": "适合匹配的能力语境",
           "items": [
-            {"title": "Graphic Communication", "text": "关注视觉语言、编辑、出版与传播系统。"},
-            {"title": "Information Design", "text": "关注复杂内容的层级、导航与可理解性。"},
-            {"title": "Design Strategy", "text": "关注受众、语境、系统规则与跨触点表达。"}
+            {
+              "title": "Graphic Communication",
+              "text": "关注视觉语言、编辑、出版与传播系统。"
+            },
+            {
+              "title": "Information Design",
+              "text": "关注复杂内容的层级、导航与可理解性。"
+            },
+            {
+              "title": "Design Strategy",
+              "text": "关注受众、语境、系统规则与跨触点表达。"
+            }
           ]
         }
       ],
-      "children": ["cases/visual-strategy/case-vs01", "cases/visual-strategy/case-vs02", "cases/visual-strategy/case-vs03"],
-      "related": ["capabilities/visual-strategy", "capabilities/information-experience", "works/portfolio"]
+      "children": [
+        "cases/visual-strategy/case-vs01",
+        "cases/visual-strategy/case-vs02",
+        "cases/visual-strategy/case-vs03"
+      ],
+      "related": [
+        "capabilities/visual-strategy",
+        "capabilities/information-experience",
+        "works/portfolio"
+      ]
     },
     {
       "id": "cases/media-narrative",
@@ -1332,34 +2372,65 @@
       "heroImage": "/undergraduate/images/case-youth-3d.jpg",
       "accent": "purple",
       "facts": [
-        {"value": "2", "label": "匿名案例"},
-        {"value": "3D", "label": "场景与角色"},
-        {"value": "叙事", "label": "跨媒介组织"}
+        {
+          "value": "2",
+          "label": "匿名案例"
+        },
+        {
+          "value": "3D",
+          "label": "场景与角色"
+        },
+        {
+          "value": "叙事",
+          "label": "跨媒介组织"
+        }
       ],
       "sourceNote": "案例图来自全日制手册毕业生作品页，已裁去姓名与个人信息。",
       "sections": [
         {
           "kicker": "WORLD BUILDING",
           "title": "世界观不是一张效果图",
-          "body": ["案例版面能看到概念研究、场景、角色或物件、视觉规则与最终传播画面之间的对应关系。"],
-          "list": ["主题与世界规则", "场景和角色设计", "3D 建模与材质", "动画、海报或 AR 延展"]
+          "body": [
+            "案例版面能看到概念研究、场景、角色或物件、视觉规则与最终传播画面之间的对应关系。"
+          ],
+          "list": [
+            "主题与世界规则",
+            "场景和角色设计",
+            "3D 建模与材质",
+            "动画、海报或 AR 延展"
+          ]
         },
         {
           "kicker": "TWO ENTRIES",
           "title": "个人审美与社会议题都可以成为入口",
           "items": [
-            {"title": "视觉世界入口", "text": "先建立独特世界，再用研究和系统防止只剩风格。"},
-            {"title": "议题入口", "text": "先识别真实现象，再用角色、场景和动画形成可体验表达。"}
+            {
+              "title": "视觉世界入口",
+              "text": "先建立独特世界，再用研究和系统防止只剩风格。"
+            },
+            {
+              "title": "议题入口",
+              "text": "先识别真实现象，再用角色、场景和动画形成可体验表达。"
+            }
           ]
         },
         {
           "kicker": "APPLICATION",
           "title": "适合匹配的能力语境",
-          "body": ["可对应数字媒体、动画、游戏艺术、3D 视觉、媒体艺术与创意计算，项目解释会针对目标课程突出不同能力。"]
+          "body": [
+            "可对应数字媒体、动画、游戏艺术、3D 视觉、媒体艺术与创意计算，项目解释会针对目标课程突出不同能力。"
+          ]
         }
       ],
-      "children": ["cases/media-narrative/case-mn01", "cases/media-narrative/case-mn02"],
-      "related": ["capabilities/3d-virtual", "fit/acg-visual", "works/portfolio"]
+      "children": [
+        "cases/media-narrative/case-mn01",
+        "cases/media-narrative/case-mn02"
+      ],
+      "related": [
+        "capabilities/3d-virtual",
+        "fit/acg-visual",
+        "works/portfolio"
+      ]
     },
     {
       "id": "cases/creative-tech",
@@ -1374,33 +2445,59 @@
       "heroImage": "/undergraduate/images/case-mechanical-3d.jpg",
       "accent": "cyan",
       "facts": [
-        {"value": "2", "label": "匿名案例"},
-        {"value": "原型", "label": "从结构到体验"},
-        {"value": "跨域", "label": "物理与虚拟"}
+        {
+          "value": "2",
+          "label": "匿名案例"
+        },
+        {
+          "value": "原型",
+          "label": "从结构到体验"
+        },
+        {
+          "value": "跨域",
+          "label": "物理与虚拟"
+        }
       ],
       "sourceNote": "案例图来自全日制手册毕业生作品页，已裁去姓名与个人信息。",
       "sections": [
         {
           "kicker": "SYSTEM FIRST",
           "title": "先说明系统如何运行",
-          "body": ["创意科技项目需要看到输入、变化、反馈与用户体验。作品集中的结构图、制作照片、3D 流程和最终场景共同构成证据。"]
+          "body": [
+            "创意科技项目需要看到输入、变化、反馈与用户体验。作品集中的结构图、制作照片、3D 流程和最终场景共同构成证据。"
+          ]
         },
         {
           "kicker": "MEDIA RANGE",
           "title": "物理原型与虚拟世界可以并行",
           "items": [
-            {"title": "机械与装置", "text": "关注材料、结构、交互行为与现场使用。"},
-            {"title": "3D 与游戏", "text": "关注世界规则、场景、角色、玩法与视觉反馈。"}
+            {
+              "title": "机械与装置",
+              "text": "关注材料、结构、交互行为与现场使用。"
+            },
+            {
+              "title": "3D 与游戏",
+              "text": "关注世界规则、场景、角色、玩法与视觉反馈。"
+            }
           ]
         },
         {
           "kicker": "APPLICATION",
           "title": "适合匹配的能力语境",
-          "body": ["可对应交互设计、创意计算、游戏设计、艺术科技与数字媒体，并在申请材料中清楚标注个人技术和团队贡献。"]
+          "body": [
+            "可对应交互设计、创意计算、游戏设计、艺术科技与数字媒体，并在申请材料中清楚标注个人技术和团队贡献。"
+          ]
         }
       ],
-      "children": ["cases/creative-tech/case-ct01", "cases/creative-tech/case-ct02"],
-      "related": ["capabilities/creative-tech", "fit/tech-media", "pathways/us-top"]
+      "children": [
+        "cases/creative-tech/case-ct01",
+        "cases/creative-tech/case-ct02"
+      ],
+      "related": [
+        "capabilities/creative-tech",
+        "fit/tech-media",
+        "pathways/us-top"
+      ]
     },
     {
       "id": "cases/visual-strategy/case-vs01",
@@ -1415,32 +2512,62 @@
       "heroImage": "/undergraduate/images/case-visual-system.jpg",
       "accent": "coral",
       "facts": [
-        {"value": "Book", "label": "主要产出"},
-        {"value": "System", "label": "视觉方法"},
-        {"value": "4", "label": "材料列出的录取方向"}
+        {
+          "value": "Book",
+          "label": "主要产出"
+        },
+        {
+          "value": "System",
+          "label": "视觉方法"
+        },
+        {
+          "value": "4",
+          "label": "材料列出的录取方向"
+        }
       ],
-      "privacy": {"alias": "VS-01", "removed": ["姓名", "班级", "联系方式", "个人肖像"]},
+      "privacy": {
+        "alias": "VS-01",
+        "removed": [
+          "姓名",
+          "班级",
+          "联系方式",
+          "个人肖像"
+        ]
+      },
       "sourceNote": "原始物料列出 LCC GMD、LCC GBI、Camberwell 与 University of Leeds 录取。",
       "sections": [
         {
           "kicker": "PROJECT FOCUS",
           "title": "从一个主题建立整套视觉语言",
-          "body": ["从公开版面可见，项目围绕情绪主题组织图形、色彩、字体和书籍结构，并将同一套规则扩展到封面、内页与实体制作。"],
+          "body": [
+            "从公开版面可见，项目围绕情绪主题组织图形、色彩、字体和书籍结构，并将同一套规则扩展到封面、内页与实体制作。"
+          ],
           "image": "/undergraduate/images/case-visual-system.jpg"
         },
         {
           "kicker": "VISIBLE EVIDENCE",
           "title": "版面中可以确认的能力",
-          "list": ["色彩与图形规则的连续性", "书籍折页、封面与阅读顺序", "字体和图标系统", "从屏幕设计到实体成品的落地"]
+          "list": [
+            "色彩与图形规则的连续性",
+            "书籍折页、封面与阅读顺序",
+            "字体和图标系统",
+            "从屏幕设计到实体成品的落地"
+          ]
         },
         {
           "kicker": "ADMISSION RESULT",
           "title": "原始材料记录的录取结果",
-          "body": ["LCC Graphic and Media Design、LCC Graphic Branding and Identity、Camberwell 与 University of Leeds。"],
+          "body": [
+            "LCC Graphic and Media Design、LCC Graphic Branding and Identity、Camberwell 与 University of Leeds。"
+          ],
           "quote": "案例只证明这组作品与结果同时出现在原始物料中，不把录取归因于单一项目。"
         }
       ],
-      "related": ["capabilities/visual-strategy", "directions/uk", "cases/visual-strategy/case-vs02"]
+      "related": [
+        "capabilities/visual-strategy",
+        "directions/uk",
+        "cases/visual-strategy/case-vs02"
+      ]
     },
     {
       "id": "cases/visual-strategy/case-vs02",
@@ -1455,31 +2582,61 @@
       "heroImage": "/undergraduate/images/case-family-archive.jpg",
       "accent": "acid",
       "facts": [
-        {"value": "Archive", "label": "研究入口"},
-        {"value": "Book", "label": "叙事载体"},
-        {"value": "4", "label": "材料列出的录取院校"}
+        {
+          "value": "Archive",
+          "label": "研究入口"
+        },
+        {
+          "value": "Book",
+          "label": "叙事载体"
+        },
+        {
+          "value": "4",
+          "label": "材料列出的录取院校"
+        }
       ],
-      "privacy": {"alias": "VS-02", "removed": ["姓名", "班级", "联系方式", "个人肖像"]},
+      "privacy": {
+        "alias": "VS-02",
+        "removed": [
+          "姓名",
+          "班级",
+          "联系方式",
+          "个人肖像"
+        ]
+      },
       "sourceNote": "原始物料列出 CSM、LCC、Edinburgh 与 Glasgow School of Art 录取。",
       "sections": [
         {
           "kicker": "PROJECT FOCUS",
           "title": "把私人材料转成公共叙事",
-          "body": ["从版面可见，项目收集家庭物件和图像，并通过分类、线性连接、书籍模型与材料试验重组记忆。"],
+          "body": [
+            "从版面可见，项目收集家庭物件和图像，并通过分类、线性连接、书籍模型与材料试验重组记忆。"
+          ],
           "image": "/undergraduate/images/case-family-archive.jpg"
         },
         {
           "kicker": "VISIBLE EVIDENCE",
           "title": "版面中可以确认的能力",
-          "list": ["档案收集与内容分类", "书籍结构和装帧测试", "材料、线与空间关系", "从研究图到最终出版物的对应"]
+          "list": [
+            "档案收集与内容分类",
+            "书籍结构和装帧测试",
+            "材料、线与空间关系",
+            "从研究图到最终出版物的对应"
+          ]
         },
         {
           "kicker": "ADMISSION RESULT",
           "title": "原始材料记录的录取结果",
-          "body": ["Central Saint Martins、London College of Communication、University of Edinburgh 与 Glasgow School of Art。"]
+          "body": [
+            "Central Saint Martins、London College of Communication、University of Edinburgh 与 Glasgow School of Art。"
+          ]
         }
       ],
-      "related": ["capabilities/visual-strategy", "capabilities/media-installation", "cases/visual-strategy/case-vs03"]
+      "related": [
+        "capabilities/visual-strategy",
+        "capabilities/media-installation",
+        "cases/visual-strategy/case-vs03"
+      ]
     },
     {
       "id": "cases/visual-strategy/case-vs03",
@@ -1494,31 +2651,61 @@
       "heroImage": "/undergraduate/images/case-city-system.jpg",
       "accent": "cyan",
       "facts": [
-        {"value": "City", "label": "观察场景"},
-        {"value": "Type", "label": "系统语言"},
-        {"value": "4", "label": "材料列出的录取院校"}
+        {
+          "value": "City",
+          "label": "观察场景"
+        },
+        {
+          "value": "Type",
+          "label": "系统语言"
+        },
+        {
+          "value": "4",
+          "label": "材料列出的录取院校"
+        }
       ],
-      "privacy": {"alias": "VS-03", "removed": ["姓名", "班级", "联系方式", "个人肖像"]},
+      "privacy": {
+        "alias": "VS-03",
+        "removed": [
+          "姓名",
+          "班级",
+          "联系方式",
+          "个人肖像"
+        ]
+      },
       "sourceNote": "原始物料列出 HKU、PolyU、CSM 与 Chelsea 录取。",
       "sections": [
         {
           "kicker": "PROJECT FOCUS",
           "title": "从现场碎片建立信息秩序",
-          "body": ["从版面可见，项目使用现场照片、地图、字形模块、拼贴和编辑版面，建立可扩展的城市信息语言。"],
+          "body": [
+            "从版面可见，项目使用现场照片、地图、字形模块、拼贴和编辑版面，建立可扩展的城市信息语言。"
+          ],
           "image": "/undergraduate/images/case-city-system.jpg"
         },
         {
           "kicker": "VISIBLE EVIDENCE",
           "title": "版面中可以确认的能力",
-          "list": ["现场观察与素材采集", "模块化字体和符号", "地图与信息层级", "出版、物件与空间触点之间的延展"]
+          "list": [
+            "现场观察与素材采集",
+            "模块化字体和符号",
+            "地图与信息层级",
+            "出版、物件与空间触点之间的延展"
+          ]
         },
         {
           "kicker": "ADMISSION RESULT",
           "title": "原始材料记录的录取结果",
-          "body": ["The University of Hong Kong、The Hong Kong Polytechnic University、Central Saint Martins 与 Chelsea College of Arts。"]
+          "body": [
+            "The University of Hong Kong、The Hong Kong Polytechnic University、Central Saint Martins 与 Chelsea College of Arts。"
+          ]
         }
       ],
-      "related": ["capabilities/information-experience", "directions/hong-kong", "cases/visual-strategy/case-vs01"]
+      "related": [
+        "capabilities/information-experience",
+        "directions/hong-kong",
+        "cases/visual-strategy/case-vs01"
+      ]
     },
     {
       "id": "cases/media-narrative/case-mn01",
@@ -1533,31 +2720,61 @@
       "heroImage": "/undergraduate/images/case-ritual-world.jpg",
       "accent": "purple",
       "facts": [
-        {"value": "World", "label": "世界观构建"},
-        {"value": "3D", "label": "场景与资产"},
-        {"value": "4", "label": "材料列出的录取院校"}
+        {
+          "value": "World",
+          "label": "世界观构建"
+        },
+        {
+          "value": "3D",
+          "label": "场景与资产"
+        },
+        {
+          "value": "4",
+          "label": "材料列出的录取院校"
+        }
       ],
-      "privacy": {"alias": "MN-01", "removed": ["姓名", "班级", "联系方式", "个人肖像"]},
+      "privacy": {
+        "alias": "MN-01",
+        "removed": [
+          "姓名",
+          "班级",
+          "联系方式",
+          "个人肖像"
+        ]
+      },
       "sourceNote": "原始物料列出 UCL、KCL、LCC 与 CCI 录取。",
       "sections": [
         {
           "kicker": "PROJECT FOCUS",
           "title": "风格需要被世界规则支撑",
-          "body": ["从版面可见，项目不是单张暗黑效果图，而是包含研究、场景、视觉资产、图形界面与传播触点的完整世界。"],
+          "body": [
+            "从版面可见，项目不是单张暗黑效果图，而是包含研究、场景、视觉资产、图形界面与传播触点的完整世界。"
+          ],
           "image": "/undergraduate/images/case-ritual-world.jpg"
         },
         {
           "kicker": "VISIBLE EVIDENCE",
           "title": "版面中可以确认的能力",
-          "list": ["主题研究与世界观设定", "环境和物件视觉统一", "3D 场景与视觉资产", "海报、界面或传播系统延展"]
+          "list": [
+            "主题研究与世界观设定",
+            "环境和物件视觉统一",
+            "3D 场景与视觉资产",
+            "海报、界面或传播系统延展"
+          ]
         },
         {
           "kicker": "ADMISSION RESULT",
           "title": "原始材料记录的录取结果",
-          "body": ["University College London、King's College London、London College of Communication 与 UAL Creative Computing Institute。"]
+          "body": [
+            "University College London、King's College London、London College of Communication 与 UAL Creative Computing Institute。"
+          ]
         }
       ],
-      "related": ["capabilities/3d-virtual", "fit/acg-visual", "cases/media-narrative/case-mn02"]
+      "related": [
+        "capabilities/3d-virtual",
+        "fit/acg-visual",
+        "cases/media-narrative/case-mn02"
+      ]
     },
     {
       "id": "cases/media-narrative/case-mn02",
@@ -1572,31 +2789,61 @@
       "heroImage": "/undergraduate/images/case-youth-3d.jpg",
       "accent": "coral",
       "facts": [
-        {"value": "Issue", "label": "社会议题入口"},
-        {"value": "Animation", "label": "主要表达"},
-        {"value": "2", "label": "材料列出的录取院校"}
+        {
+          "value": "Issue",
+          "label": "社会议题入口"
+        },
+        {
+          "value": "Animation",
+          "label": "主要表达"
+        },
+        {
+          "value": "2",
+          "label": "材料列出的录取院校"
+        }
       ],
-      "privacy": {"alias": "MN-02", "removed": ["姓名", "班级", "联系方式", "个人肖像"]},
+      "privacy": {
+        "alias": "MN-02",
+        "removed": [
+          "姓名",
+          "班级",
+          "联系方式",
+          "个人肖像"
+        ]
+      },
       "sourceNote": "原始物料列出 LCC 与 Goldsmiths 录取。",
       "sections": [
         {
           "kicker": "PROJECT FOCUS",
           "title": "把数字生活现象转成可见世界",
-          "body": ["从版面可见，项目将青年网络使用主题转化为夸张的 3D 场景和角色，并进一步发展动画、海报和 AR 触点。"],
+          "body": [
+            "从版面可见，项目将青年网络使用主题转化为夸张的 3D 场景和角色，并进一步发展动画、海报和 AR 触点。"
+          ],
           "image": "/undergraduate/images/case-youth-3d.jpg"
         },
         {
           "kicker": "VISIBLE EVIDENCE",
           "title": "版面中可以确认的能力",
-          "list": ["社会现象到视觉概念的转译", "角色与场景设计", "3D 建模和动画", "海报与 AR 等传播延展"]
+          "list": [
+            "社会现象到视觉概念的转译",
+            "角色与场景设计",
+            "3D 建模和动画",
+            "海报与 AR 等传播延展"
+          ]
         },
         {
           "kicker": "ADMISSION RESULT",
           "title": "原始材料记录的录取结果",
-          "body": ["London College of Communication 与 Goldsmiths, University of London。"]
+          "body": [
+            "London College of Communication 与 Goldsmiths, University of London。"
+          ]
         }
       ],
-      "related": ["capabilities/3d-virtual", "capabilities/creative-tech", "cases/media-narrative/case-mn01"]
+      "related": [
+        "capabilities/3d-virtual",
+        "capabilities/creative-tech",
+        "cases/media-narrative/case-mn01"
+      ]
     },
     {
       "id": "cases/creative-tech/case-ct01",
@@ -1611,31 +2858,61 @@
       "heroImage": "/undergraduate/images/case-mechanical-3d.jpg",
       "accent": "cyan",
       "facts": [
-        {"value": "2", "label": "物理与虚拟项目"},
-        {"value": "Prototype", "label": "过程证据"},
-        {"value": "4", "label": "材料列出的录取院校"}
+        {
+          "value": "2",
+          "label": "物理与虚拟项目"
+        },
+        {
+          "value": "Prototype",
+          "label": "过程证据"
+        },
+        {
+          "value": "4",
+          "label": "材料列出的录取院校"
+        }
       ],
-      "privacy": {"alias": "CT-01", "removed": ["姓名", "班级", "联系方式", "个人肖像"]},
+      "privacy": {
+        "alias": "CT-01",
+        "removed": [
+          "姓名",
+          "班级",
+          "联系方式",
+          "个人肖像"
+        ]
+      },
       "sourceNote": "原始物料列出 UCL、KCL、LCC 与 CCI 录取。",
       "sections": [
         {
           "kicker": "PROJECT FOCUS",
           "title": "跨媒介不是把两个项目并排放置",
-          "body": ["从版面可见，机械项目呈现结构与操作过程，数字项目呈现场景和 3D 制作；两者共同证明从机制到体验的项目能力。"],
+          "body": [
+            "从版面可见，机械项目呈现结构与操作过程，数字项目呈现场景和 3D 制作；两者共同证明从机制到体验的项目能力。"
+          ],
           "image": "/undergraduate/images/case-mechanical-3d.jpg"
         },
         {
           "kicker": "VISIBLE EVIDENCE",
           "title": "版面中可以确认的能力",
-          "list": ["机械结构和物件原型", "制作照片与操作方式", "3D 建模和场景呈现", "不同媒介中的交互逻辑"]
+          "list": [
+            "机械结构和物件原型",
+            "制作照片与操作方式",
+            "3D 建模和场景呈现",
+            "不同媒介中的交互逻辑"
+          ]
         },
         {
           "kicker": "ADMISSION RESULT",
           "title": "原始材料记录的录取结果",
-          "body": ["University College London、King's College London、London College of Communication 与 UAL Creative Computing Institute。"]
+          "body": [
+            "University College London、King's College London、London College of Communication 与 UAL Creative Computing Institute。"
+          ]
         }
       ],
-      "related": ["capabilities/creative-tech", "fit/tech-media", "cases/creative-tech/case-ct02"]
+      "related": [
+        "capabilities/creative-tech",
+        "fit/tech-media",
+        "cases/creative-tech/case-ct02"
+      ]
     },
     {
       "id": "cases/creative-tech/case-ct02",
@@ -1650,31 +2927,61 @@
       "heroImage": "/undergraduate/images/case-buddy-blocks.jpg",
       "accent": "acid",
       "facts": [
-        {"value": "Game", "label": "多人搭建概念"},
-        {"value": "World", "label": "场景与角色系统"},
-        {"value": "6", "label": "材料列出的录取院校"}
+        {
+          "value": "Game",
+          "label": "多人搭建概念"
+        },
+        {
+          "value": "World",
+          "label": "场景与角色系统"
+        },
+        {
+          "value": "6",
+          "label": "材料列出的录取院校"
+        }
       ],
-      "privacy": {"alias": "CT-02", "removed": ["姓名", "班级", "联系方式", "个人肖像"]},
+      "privacy": {
+        "alias": "CT-02",
+        "removed": [
+          "姓名",
+          "班级",
+          "联系方式",
+          "个人肖像"
+        ]
+      },
       "sourceNote": "原始物料列出 UCL、KCL、LCC、Goldsmiths、University of Melbourne 与 University of Sydney 录取。",
       "sections": [
         {
           "kicker": "PROJECT FOCUS",
           "title": "从玩法概念发展到可见世界",
-          "body": ["从版面可见，项目将多人搭建机制落实为岛屿场景、角色、动画与不同关卡画面，说明游戏概念如何形成完整视觉提案。"],
+          "body": [
+            "从版面可见，项目将多人搭建机制落实为岛屿场景、角色、动画与不同关卡画面，说明游戏概念如何形成完整视觉提案。"
+          ],
           "image": "/undergraduate/images/case-buddy-blocks.jpg"
         },
         {
           "kicker": "VISIBLE EVIDENCE",
           "title": "版面中可以确认的能力",
-          "list": ["玩法与世界规则", "岛屿和场景建模", "角色系统与动画", "从过程板到最终设计的完整呈现"]
+          "list": [
+            "玩法与世界规则",
+            "岛屿和场景建模",
+            "角色系统与动画",
+            "从过程板到最终设计的完整呈现"
+          ]
         },
         {
           "kicker": "ADMISSION RESULT",
           "title": "原始材料记录的录取结果",
-          "body": ["University College London、King's College London、London College of Communication、Goldsmiths, University of London、The University of Melbourne 与 The University of Sydney。"]
+          "body": [
+            "University College London、King's College London、London College of Communication、Goldsmiths, University of London、The University of Melbourne 与 The University of Sydney。"
+          ]
         }
       ],
-      "related": ["capabilities/creative-tech", "directions/us", "cases/creative-tech/case-ct01"]
+      "related": [
+        "capabilities/creative-tech",
+        "directions/us",
+        "cases/creative-tech/case-ct01"
+      ]
     }
   ]
 }

@@ -22,8 +22,11 @@
 <link rel="stylesheet" href="assets/css/components.css">
 <link rel="stylesheet" href="assets/css/pages.css">
 <link rel="stylesheet" href="assets/css/ist-shared.css">
+<!-- v3.38 (GM): navbar/menu/footer CSS, shared with the undergraduate
+     site — see site-chrome.css's own header comment. -->
+<link rel="stylesheet" href="assets/css/site-chrome.css">
 </head>
-<body>
+<body data-sfk-site="graduate">
 
 <!-- ═══ NAVBAR (same two-part structure as IST: anchor-scroll buttons,
      then separate-page buttons, then the CTA) ═══ -->
@@ -375,6 +378,10 @@
 <script src="assets/js/hero-cursor.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/ist-data.js"></script>
+<!-- v3.38 (GM): NavMenu/ScrollLock, shared with the undergraduate site —
+     must load before components.js, which adds the router-specific
+     NavMenu.go() on top of it. -->
+<script src="assets/js/nav-menu.js"></script>
 <script src="assets/js/components.js"></script>
 <script src="assets/js/router.js"></script>
 <script src="assets/js/course-demo.js"></script>
@@ -383,7 +390,7 @@
 <script src="assets/js/pages/timeline.js"></script>
 <script src="assets/js/pages/course-products.js"></script>
 <script src="assets/js/pages/portfolio.js"></script>
-<script src="undergrad/assets/js/undergrad-switcher.js"></script>
+<script src="assets/js/site-switcher.js"></script>
 <script>
 (async function boot() {
   try {

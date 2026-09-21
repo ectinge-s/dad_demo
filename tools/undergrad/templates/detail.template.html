@@ -5,22 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="__PAGE_DESCRIPTION__">
 <title>__PAGE_TITLE__ | SFK 数字艺术与设计本科</title>
-<link rel="icon" href="__PREFIX__assets/img/favicon/favicon-32.png" sizes="32x32">
-<link rel="icon" href="__PREFIX__assets/img/favicon/favicon.ico" sizes="any">
-<link rel="stylesheet" href="__PREFIX__assets/css/undergrad-fonts.css">
+<link rel="icon" href="__ROOT__assets/img/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="__ROOT__assets/img/favicon/favicon.ico" sizes="any">
+<link rel="stylesheet" href="__ROOT__assets/css/fonts.css">
 <link rel="stylesheet" href="__PREFIX__assets/css/undergrad.css">
+<!-- v3.38 (GM): navbar/menu/footer CSS, shared with the graduate site —
+     see assets/css/site-chrome.css's own header comment. -->
+<link rel="stylesheet" href="__ROOT__assets/css/site-chrome.css">
 </head>
 <body class="accent-__PAGE_ACCENT__ __PAGE_CLASS__" data-sfk-site="undergrad" data-sfk-graduate="__GRADUATE_ENTRY__">
   <a class="skip-link" href="#main-content">跳到主要内容</a>
 
-  <header class="detail-header">
-    <div class="header-primary">
-      <a class="brand" href="__HOME__">SFK DAD<span>本科专业路径</span></a>
+  <!-- v3.38 (GM): unified with the homepage's own navbar (previously a
+       separate, page-links-only .topic-nav here) — see main.template.html
+       and build-undergrad.cjs's renderNavbarLinks()/renderNavOverlay(). -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__logo" href="__HOME__">
+        <img class="navbar__logo-img" src="__ROOT__assets/img/logo-full.png" alt="SFK 数字艺术与设计科系 · Faculty of Digital Arts and Design">
+      </a>
+      <div class="navbar__links">__NAVBAR_LINKS__</div>
+      <button class="navbar__menu-toggle" id="nav-menu-toggle" aria-expanded="false" aria-controls="nav-menu-overlay" aria-label="展开全部导航">
+        <span></span><span></span>
+      </button>
     </div>
-    <nav class="topic-nav" aria-label="本科主题导航">
-      <div class="topic-nav-inner">__TOPIC_NAV__</div>
-    </nav>
-  </header>
+  </nav>
+  <div id="nav-menu-overlay" class="nav-menu-overlay" aria-hidden="true">__NAV_MENU_OVERLAY__</div>
+
+  <!-- v3.39 (GM): the data-driven "quick look" overlay used by hub
+       pages with children — see undergrad.css's own header comment
+       and assets/js/undergrad-topic.js's Overlay object. Empty string
+       (nothing rendered here) on every other page. -->
+  __CONTENT_OVERLAY__
 
   <main id="main-content">
     <div class="breadcrumb-wrap">
@@ -38,6 +54,15 @@
       </div>
     </section>
 
+    <!-- v3.39 (GM): "moving the function of each section's homepage
+         content to the beginning of each of their page" — the
+         interactive widget (tabs/accordion/filter-grid/profile-picker/
+         advantage-list) that used to live only on the homepage now
+         renders here, right under the hero, on its own topic's hub
+         page. Empty string on every page that isn't one of the 5
+         topic hubs. -->
+    __TOPIC_WIDGET__
+
     <div class="detail-layout">
       <aside class="contents-rail" aria-label="本页目录">
         <p>本页内容</p>
@@ -51,14 +76,12 @@
     __RELATED_BLOCK__
   </main>
 
-  <footer class="detail-footer">
-    <div>
-      <span>SFK Digital Arts &amp; Design · Undergraduate</span>
-      <a href="__HOME__">返回本科主页</a>
-    </div>
-  </footer>
+  __FOOTER__
 
-  <script src="__PREFIX__assets/js/undergrad-switcher.js"></script>
+  __OVERLAY_PAYLOAD_SCRIPT__
+  <script src="__ROOT__assets/js/nav-menu.js"></script>
+  <script src="__ROOT__assets/js/site-switcher.js"></script>
   <script src="__PREFIX__assets/js/undergrad-detail.js"></script>
+  <script src="__PREFIX__assets/js/undergrad-topic.js"></script>
 </body>
 </html>
