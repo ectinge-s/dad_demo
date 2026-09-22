@@ -1026,17 +1026,7 @@ function buildProductHTML(product, productId) {
     }
   }
 
-  // v3.28 (GM): "需要加上返回按钮回到上一级（课程目录）" — catalog-group
-  // products (bizpractice/summerwinter/internship/masterclass) only ever
-  // render inside CourseOverlay, which previously had just an X close
-  // button (reads as "close everything", not "go back a level"). Reuses
-  // the same .cp-product-back link CourseProductsPage's full-page longform
-  // route already uses for "← 返回课程产品", just closing the overlay
-  // instead of routing.
-  const overlayBack = product.group === 'catalog' ? `
-    <button type="button" class="cp-product-back" onclick="CourseOverlay.close()" aria-label="返回课程目录"><span class="cp-product-back__arrow">←</span><span class="cp-product-back__text">返回课程目录</span></button>` : '';
-
-  let html = `${overlayBack}
+  let html = `
     <div class="cd-hero">
       <div class="cd-hero__content">
         <div class="cd-hero__eyebrow">${product.meta.eyebrow}</div>
