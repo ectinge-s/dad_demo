@@ -1,6 +1,7 @@
 [
   {
     "tab": "winter 27",
+    "status": "current",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "27冬校-UCL艺术与科技本科班",
@@ -23,6 +24,7 @@
   },
   {
     "tab": "winter 27",
+    "status": "current",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "27冬校-费俊xRCA 生命艺术研究生班",
@@ -50,6 +52,7 @@
   },
   {
     "tab": "winter 27",
+    "status": "current",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "27冬校-费俊xUCLA 生命艺术研究生班",
@@ -77,6 +80,7 @@
   },
   {
     "tab": "winter 27",
+    "status": "current",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "27冬校-阿里xRCA数字媒体研究生班",
@@ -104,6 +108,7 @@
   },
   {
     "tab": "winter 27",
+    "status": "current",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "27冬校-香港科技大学（广）官方课程数字媒体研究生班",
@@ -131,6 +136,7 @@
   },
   {
     "tab": "winter 27",
+    "status": "current",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "27冬校-同济x香港大学 后人类媒介场研究生班",
@@ -164,6 +170,7 @@
   },
   {
     "tab": "winter 27",
+    "status": "current",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "27冬校-香港理工大学官方课程",
@@ -197,6 +204,7 @@
   },
   {
     "tab": "summer 26",
+    "status": "archive",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "NYU数媒交互本科班",
@@ -219,6 +227,7 @@
   },
   {
     "tab": "summer 26",
+    "status": "archive",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "UAL视觉传达本科班",
@@ -241,6 +250,7 @@
   },
   {
     "tab": "summer 26",
+    "status": "archive",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "UCL生物艺术与科技本科班",
@@ -263,6 +273,7 @@
   },
   {
     "tab": "summer 26",
+    "status": "archive",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "同济｜UCB算据艺术创作研究生班",
@@ -270,7 +281,9 @@
     "location": "同济",
     "level": "研究生",
     "outcomes": "实习证明海外教授推荐信高校课程证书高校教授推荐信科研论文艺术展览作品集项目",
-    "poster": "assets/img/courses/夏冬校/同济｜UCB算据艺术创作研究生班.jpeg",
+    "poster": "assets/img/course-products/summerwinter/posters/archive-ucb-tongji.webp",
+    "slug": "archive-ucb-tongji",
+    "slides": { "dir": "assets/img/course-products/summerwinter/pdf/archive-ucb-tongji", "count": 10 },
     "university": "UCB",
     "professor": "Greg",
     "type": "高校合作",
@@ -285,6 +298,7 @@
   },
   {
     "tab": "summer 26",
+    "status": "archive",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "华科｜哈佛响应式环境建筑数媒交互研究生班",
@@ -292,7 +306,9 @@
     "location": "武汉",
     "level": "研究生",
     "outcomes": "作品集项目海外教授推荐信高校课程证书高校教授推荐信艺术展览",
-    "poster": "assets/img/courses/夏冬校/华科｜哈佛响应式环境建筑数媒交互研究生班.jpeg",
+    "poster": "assets/img/course-products/summerwinter/posters/archive-harvard-hust.webp",
+    "slug": "archive-harvard-hust",
+    "slides": { "dir": "assets/img/course-products/summerwinter/pdf/archive-harvard-hust", "count": 10 },
     "university": "Harvard",
     "professor": "Allen",
     "type": "高校合作",
@@ -307,6 +323,7 @@
   },
   {
     "tab": "summer 26",
+    "status": "archive",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "BranD x The Rodina Studio荷兰著名工作室 | 视传研究生班",
@@ -329,6 +346,7 @@
   },
   {
     "tab": "summer 26",
+    "status": "archive",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "曹雨西 | NYU数媒研究生班",
@@ -336,7 +354,9 @@
     "location": "北京今日美术馆",
     "level": "研究生",
     "outcomes": "海外教授推荐信实习证明艺术展览作品集项目",
-    "poster": "assets/img/courses/夏冬校/曹雨西 | NYU数媒研究生班.png",
+    "poster": "assets/img/course-products/summerwinter/posters/archive-nyu-caoyuxi.webp",
+    "slug": "archive-nyu-caoyuxi",
+    "slides": { "dir": "assets/img/course-products/summerwinter/pdf/archive-nyu-caoyuxi", "count": 18 },
     "university": "NYU",
     "professor": "Kevin",
     "type": "大师共创",
@@ -351,6 +371,7 @@
   },
   {
     "tab": "summer 26",
+    "status": "archive",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "费俊x某集体 | 艺术与科技研究生班",
@@ -358,7 +379,9 @@
     "location": "北京今日美术馆",
     "level": "研究生",
     "outcomes": "海外教授推荐信实习证明高校教授推荐信艺术展览作品集项目",
-    "poster": "assets/img/courses/夏冬校/费俊x某集体 | 艺术与科技研究生班.jpeg",
+    "poster": "assets/img/course-products/summerwinter/posters/archive-feijun-collective.webp",
+    "slug": "archive-feijun-collective",
+    "slides": { "dir": "assets/img/course-products/summerwinter/pdf/archive-feijun-collective", "count": 15 },
     "university": "Harvard",
     "professor": "Krzysztof",
     "type": "大师共创",
@@ -373,6 +396,7 @@
   },
   {
     "tab": "summer 26",
+    "status": "archive",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "同济｜MIT Media Lab官方夏校",
@@ -380,7 +404,9 @@
     "location": "同济",
     "level": "研究生",
     "outcomes": "高校课程证书海外教授推荐信实习证明艺术展览作品集项目",
-    "poster": "assets/img/courses/夏冬校/同济｜MIT Media Lab官方夏校.png",
+    "poster": "assets/img/course-products/summerwinter/posters/archive-mit-media-lab.webp",
+    "slug": "archive-mit-media-lab",
+    "slides": { "dir": "assets/img/course-products/summerwinter/pdf/archive-mit-media-lab", "count": 15 },
     "university": "MIT Media Lab",
     "professor": "",
     "type": "高校合作",
@@ -395,6 +421,7 @@
   },
   {
     "tab": "summer 26",
+    "status": "archive",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "香港理工官方课程",
@@ -402,7 +429,9 @@
     "location": "香港理工",
     "level": "研究生",
     "outcomes": "作品集项目艺术展览高校课程证书",
-    "poster": "",
+    "poster": "assets/img/course-products/summerwinter/posters/archive-polyu.webp",
+    "slug": "archive-polyu",
+    "slides": { "dir": "assets/img/course-products/summerwinter/pdf/archive-polyu", "count": 6 },
     "university": "港理工",
     "professor": "Sky",
     "type": "高校合作",
@@ -417,6 +446,7 @@
   },
   {
     "tab": "summer 26",
+    "status": "archive",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "TEA | UCL光影科技艺术研究生班",
@@ -424,7 +454,9 @@
     "location": "重庆",
     "level": "研究生",
     "outcomes": "海外教授推荐信实习证明企业推荐信艺术展览作品集项目",
-    "poster": "assets/img/courses/夏冬校/TEA | UCL光影科技艺术研究生班.jpeg",
+    "poster": "assets/img/course-products/summerwinter/posters/archive-ucl-tea.webp",
+    "slug": "archive-ucl-tea",
+    "slides": { "dir": "assets/img/course-products/summerwinter/pdf/archive-ucl-tea", "count": 20 },
     "university": "UCL",
     "professor": "Brigitta",
     "type": "名企实战",
@@ -439,6 +471,7 @@
   },
   {
     "tab": "summer 26",
+    "status": "archive",
     "program_type": "海外冬夏校",
     "category": "数字艺术与设计科系",
     "role_or_course": "沉浸式视听媒体与空间装置展研究生班",
@@ -458,6 +491,57 @@
         "fileExt": "pdf"
       }
     ]
+  },
+  {
+    "tab": "winter 26",
+    "status": "archive",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "约翰霍普金斯x费俊数字媒体研究生班",
+    "suitable_for": "数字媒体、视觉传达、艺术与科技",
+    "location": "北京",
+    "level": "研究生",
+    "outcomes": "作品集项目海外教授推荐信艺术展览",
+    "poster": "assets/img/course-products/summerwinter/posters/archive-jhu-feijun.webp",
+    "slug": "archive-jhu-feijun",
+    "slides": { "dir": "assets/img/course-products/summerwinter/pdf/archive-jhu-feijun", "count": 13 },
+    "university": "约翰霍普金斯大学",
+    "professor": "费俊",
+    "type": "大师共创"
+  },
+  {
+    "tab": "winter 26",
+    "status": "archive",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "哈佛数字媒体研究生班",
+    "suitable_for": "数字媒体、视觉传达、艺术与科技",
+    "location": "北京",
+    "level": "研究生",
+    "outcomes": "作品集项目海外教授推荐信艺术展览",
+    "poster": "assets/img/course-products/summerwinter/posters/archive-harvard-winter.webp",
+    "slug": "archive-harvard-winter",
+    "slides": { "dir": "assets/img/course-products/summerwinter/pdf/archive-harvard-winter", "count": 15 },
+    "university": "Harvard",
+    "professor": "",
+    "type": "大师共创"
+  },
+  {
+    "tab": "winter 26",
+    "status": "archive",
+    "program_type": "海外冬夏校",
+    "category": "数字艺术与设计科系",
+    "role_or_course": "RCA x 大城小村可持续设计与生态研究生班",
+    "suitable_for": "空间、服务设计、艺术与科技",
+    "location": "北京",
+    "level": "研究生",
+    "outcomes": "作品集项目海外教授推荐信艺术展览",
+    "poster": "assets/img/course-products/summerwinter/posters/archive-rca-city-village.webp",
+    "slug": "archive-rca-city-village",
+    "slides": { "dir": "assets/img/course-products/summerwinter/pdf/archive-rca-city-village", "count": 9 },
+    "university": "RCA",
+    "professor": "",
+    "type": "名企实战"
   },
   {
     "tab": "masterclass 26",

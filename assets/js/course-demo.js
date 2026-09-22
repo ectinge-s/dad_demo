@@ -183,6 +183,13 @@ const PRODUCTS = {
       { t: '高端教研人设挖掘', d: '从教授项目课、研创项目等经历中挖掘学生的独特申请人设，并让这一视角贯穿文书与面试。' },
       { t: '国际奖项投递', d: '协助学生梳理项目成果，规划适合的国际竞赛与奖项投递方向，充实申请背景。' },
     ],
+    featuredStories: [
+      { title: '拒绝保底，只申名校！我一边崩溃大哭，一边拿纽大/皇艺', url: 'https://mp.weixin.qq.com/s/0J3hUP6v14r8eCcZYxq58A' },
+      { title: '保研边缘、工作还没方向……大三才决定留学，一年后我拿下了康奈尔+IC+皇艺！', url: 'https://mp.weixin.qq.com/s/51JU3M6hiPgeVBxnVHu0Mg' },
+      { title: '0基础，8个月，拿下哈佛录取！', url: 'https://mp.weixin.qq.com/s/yMuQkTn9uktQ2l7XFBqGzQ' },
+      { title: '美院冲综大，心里没底… 提前3年布局，拿下纽大+南加大双顶尖录取！', url: 'https://mp.weixin.qq.com/s/EM3tvq8ht6sPVkdwGL6V_g' },
+      { title: '年级前5，从保研到出国：她的数字媒体作品集，每一页都写着“我是谁”', url: 'https://mp.weixin.qq.com/s/nYfx7u6fuI94kfhVeoUIrA' },
+    ],
     closingStatementCn: '作品集见深度，申请见格局 —— 冲刺美国顶尖院校，我们一起规划。',
     closingStatement: 'Portfolio depth, application vision — built together for top US programs.',
   },
@@ -361,6 +368,19 @@ const PRODUCTS = {
       { t: '真实线下实习分层交付', d: '根据产品配置头部大厂、行业名企、创意工作室或海外实习，强调岗位任务、团队协作和真实交付。' },
       { t: '作品集从申请语言转向求职语言', d: '通过商业化改造、求职作品集指导和简历重塑，让企业看懂学生能解决什么问题。' },
       { t: '求职陪跑可灵活升级', d: '对就业需求强的学生，可在升学产品上增加行业导师、AI 商业应用、代投递、笔试面试与入职指导。' },
+    ],
+    featuredStories: [
+      { title: '计划有变：不考研了，我申皇艺最难的专业', url: 'https://mp.weixin.qq.com/s/YVMmHzpV6nUqNjKoq8-f0w' },
+      { title: '油画跨申数媒交互，皇艺冬校太重要了', url: 'https://mp.weixin.qq.com/s/dhaGVvLNawW918R58MviXw' },
+      { title: '皇艺DDL不足1年，双非+双项目同开？Buff叠满，我就想硬磕“最难”视传！', url: 'https://mp.weixin.qq.com/s/M_yyk3vmQAzc9Fj8bi-EWQ' },
+      { title: '双非的我，只想求个保底，结果10申10中！把“低配局”打成“大满贯”', url: 'https://mp.weixin.qq.com/s/OhJCFIpPkqhv3-hFOAT_Qw' },
+      { title: '大三才转专业，将舞台经验转成视觉表达，零基础学技术，成皇艺的准研究生！', url: 'https://mp.weixin.qq.com/s/O8WBHsetzemRgGFIVO-gCw' },
+      { title: '民办二本，求职简历被卡，Gap两年拿下英国大满贯', url: 'https://mp.weixin.qq.com/s/mgHSRNtpPJk_4oQ4BwYV-w' },
+      { title: '手握鲁美保研资格，她却拒绝“安全牌”，坚定奔赴皇艺', url: 'https://mp.weixin.qq.com/s/03FuIxNn1JD4VKgqp6xf5g' },
+      { title: '双非民办，靠视传逆袭，仅6天拿下全球第一皇艺！', url: 'https://mp.weixin.qq.com/s/rt-j5bKchmm-TvwW8NEWIQ' },
+      { title: '我不是艺术生，零基础跨申数字媒体，敲开皇艺！', url: 'https://mp.weixin.qq.com/s/5swjpgs0uVXnLc07n0Hcjg' },
+      { title: '不能保研也不怕！我半年极限混申，UCL、南洋理工大满贯', url: 'https://mp.weixin.qq.com/s/HyYXiO1RL202oheL1T-YZg' },
+      { title: '大三才转专业，零基础申数媒，14天速拿皇艺offer！', url: 'https://mp.weixin.qq.com/s/oSzDjX5d4QI2-Bogit7UrQ' },
     ],
     closingStatementCn: '从名校申请，到真实入职 —— 一条连续的成长路径。',
     closingStatement: 'From admission to employment — one continuous growth path.',
@@ -670,6 +690,12 @@ const PRODUCTS = {
           { school: '香港大学', program: 'Master of Science in Technology, Design and Leadership for Learning', url: 'https://web.edu.hku.hk/programme/tdll' },
         ] },
     ],
+    featuredStories: [
+      { title: '均分70+起步，我用“艺术+科技”搞定绩点竞赛毕设，“一鱼多吃”拿下港三录取！', url: 'https://mp.weixin.qq.com/s/kJPs7OxhTUHKz7DcpP240g' },
+      { title: '雅思6分，我“放弃”语言！先拿皇艺+伦艺+港理工等9枚offer', url: 'https://mp.weixin.qq.com/s/NLuM2v6HJuuBOFPmPx21_A' },
+      { title: '武大学霸、万粉运动博主，我用“数字媒体”的多元创作，跨界拿下港大offer！', url: 'https://mp.weixin.qq.com/s/hRG6DMTb3AmvvtUfgL2Sgg' },
+      { title: '港浸会秋招，让我完美切换职场人！到底是谁还在劝退视传？', url: 'https://mp.weixin.qq.com/s/jtZlCQxaOC0cZAvggu6TRQ' },
+    ],
     closingStatementCn: '常规打基础，学霸提效率 —— 两条路径，同一个港校offer目标。',
     closingStatement: 'Two tracks, one Hong Kong offer — built to fit where you\'re starting from.',
   },
@@ -739,17 +765,18 @@ const PRODUCTS = {
     // 费俊×某集体×RCAxUCLA 27冬校 poster's title/art panel, cropped above
     // the speaker headshots.
     cover: 'assets/img/course-products/covers/summerwinter.webp',
-    catalogSource: { file: 'academic', tabs: ['summer'], extraFilter: c => c.season === 'winter 27' && c.level === '研究生' },
-    count: 6,
+    // 冬夏校数据同时含本科与研究生项目；本目录仅面向研究生课程。
+    catalogSource: { file: 'academic', tabs: ['summer'], extraFilter: c => (c.status === 'current' || c.status === 'archive') && c.level === '研究生', statusFilter: true },
+    count: 18,
     meta: {
       eyebrow: 'Academic Track｜海外院校冬夏校',
       titleEn: 'Overseas Summer & Winter School',
       titleCn: '海外冬夏校课程 · 顶尖院校在地学习',
       desc: '走进海外顶尖院校的官方冬夏校项目，在真实校园环境中体验前沿学术方向，积累院校认可的学术背景与教授推荐资源。',
-      chips: ['6个项目', '27冬校 · 研究生', '在地学习', '招募中'],
+      chips: ['27冬校 · 当前课程', '26年往期课程', '在地学习', '招募中'],
     },
     snapshot: [
-      { k: '6个',      v: '27冬校研究生项目（本科/26年课程筹备中）' },
+      { k: '当前 / 往期', v: '27冬校与26年课程均可查阅' },
       { k: '在地体验', v: '真实校园与课堂环境' },
       { k: '多学术方向', v: '覆盖设计 / 商科 / 工程等' },
       { k: '官方认证', v: '院校官方项目背书' },
@@ -947,7 +974,7 @@ function buildCatalogGridHTML(product) {
   if (src.extraFilter) items = items.filter(src.extraFilter);
   return src.file === 'industry'
     ? window.HomePage._buildCourseGrid(items)
-    : window.HomePage._buildAcademicGrid(items);
+    : window.HomePage._buildAcademicGrid(items, { statusFilter: !!src.statusFilter });
 }
 
 // v3.22 (GM, temporary): "暂时去掉短期课程目录overlay中除title block与速览外
@@ -1510,6 +1537,24 @@ function buildRichLongformSections(product, productId, sec) {
               }).join('')}
             </div>
           </div>`).join('')}
+      </div>`);
+  }
+
+  // Module 14 adapted without its image banner: the supplied Word lists
+  // contain article headlines and original WeChat links, so a compact
+  // text-first card keeps the success-story module's hierarchy while
+  // giving each story a clear external destination.
+  if (product.featuredStories) {
+    out += sec('featured-stories', '优秀学子推文', 'Student Stories', `
+      <div class="cd-case-grid cd-story-grid">
+        ${product.featuredStories.map((story, i) => `
+          <article class="cd-case cd-story-card">
+            <div class="cd-case__body">
+              <div class="cd-story-card__meta">优秀学子 ${String(i + 1).padStart(2, '0')} <span class="u-en">Student Story</span></div>
+              <a class="cd-story-card__title" href="${escapeHTML(story.url)}" target="_blank" rel="noopener">${escapeHTML(story.title)} <span aria-hidden="true">↗</span></a>
+              <a class="cd-story-card__link" href="${escapeHTML(story.url)}" target="_blank" rel="noopener">阅读推文 <span class="u-en">Read story</span></a>
+            </div>
+          </article>`).join('')}
       </div>`);
   }
 

@@ -287,7 +287,8 @@ const HomePage = {
      forget. Order here is the deliberate tab order (kept even for
      校友导师, which currently has 0 records, so its empty state still
      shows — see the comment above). ── */
-  INSTRUCTOR_CATEGORIES: ['海外教授', '教研导师', '学术导师', '业界导师', '校友导师', '顶尖学者'],
+  // 校友导师资料仍在整理，暂不向访客展示该筛选项。
+  INSTRUCTOR_CATEGORIES: ['海外教授', '教研导师', '学术导师', '业界导师', '顶尖学者'],
   INSTRUCTOR_ROWS: 4,
   _instExpanded: false,
   _activeInstType: 'all',
@@ -545,7 +546,7 @@ const HomePage = {
   // SlideViewer (a left/right paged flip through the deck, components.js)
   // instead of ImageModal, and a CTA line under the tags names the page
   // count — same pattern as ist_demo's SlideViewer.open(slug).
-  _buildCatalogCard({ poster, title, sub, tagLabel, tags, deckSlug, deckCount }) {
+  _buildCatalogCard({ poster, title, sub, tagLabel, tags, deckSlug, deckCount, externalUrl }) {
     const hasImg = !!poster;
     const imgStyle = hasImg ? '' : ' style="background:linear-gradient(135deg, var(--color-void) 0%, #2b2b2b 45%, var(--color-accent) 100%)"';
     // click-to-open-poster: ImageModal (assets/js/components.js, ported
@@ -560,9 +561,11 @@ const HomePage = {
     // fixes it without touching the source data.
     const jsEscape = s => String(s || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\r?\n/g, '\\n');
     const isDeck = hasImg && !!deckSlug;
+    const hasExternalDetail = hasImg && !!externalUrl;
     const posterClick = isDeck
       ? ` onclick="SlideViewer.open('${jsEscape(deckSlug)}')" style="cursor:pointer"`
-      : (hasImg ? ` onclick="ImageModal.open('${jsEscape(poster)}','${jsEscape(title)}')" style="cursor:pointer"` : '');
+      : (hasExternalDetail ? ` onclick="window.open('${jsEscape(externalUrl)}','_blank','noopener')" style="cursor:pointer"`
+      : (hasImg ? ` onclick="ImageModal.open('${jsEscape(poster)}','${jsEscape(title)}')" style="cursor:pointer"` : ''));
     return `
       <div class="port-card${isDeck ? ' port-card--deck' : ''}"${posterClick}>
         <div class="port-card__img"${imgStyle}>
@@ -573,7 +576,7 @@ const HomePage = {
           <div class="port-card__title">${escapeHTML(title || '')}</div>
           ${sub ? `<div class="port-card__program">${escapeHTML(sub)}</div>` : ''}
           ${tags && tags.length ? `<div class="port-card__tags">${tags.map(t => `<span class="port-card__tag">${escapeHTML(t)}</span>`).join('')}</div>` : ''}
-          ${isDeck ? `<div class="port-card__cta">查看课程详情 · ${deckCount || ''}页 →</div>` : ''}
+          ${isDeck ? `<div class="port-card__cta">查看课程详情 · ${deckCount || ''}页 →</div>` : (hasExternalDetail ? `<div class="port-card__cta">查看课程介绍 →</div>` : '')}
         </div>
       </div>`;
   },
@@ -608,9 +611,9 @@ const HomePage = {
     return `<div class="card-grid">${cards}</div>`;
   },
   // Called with the already-tab-filtered `academic` items (summerwinter/masterclass).
-  _buildAcademicGrid(items) {
+  _buildAcademicGrid(items, { statusFilter = false } = {}) {
     if (!items || !items.length) return this._emptyCatalogHTML();
-    const cards = items.map(c => this._buildCatalogCard({
+    const renderCards = list => list.map(c => this._buildCatalogCard({
       poster: c.poster,
       title: c.role_or_course,
       sub: c.university,
@@ -622,8 +625,35 @@ const HomePage = {
       // unaffected (deckSlug undefined → _buildCatalogCard's normal path).
       deckSlug: c.slides ? c.slug : undefined,
       deckCount: c.slides ? c.slides.count : undefined,
+      externalUrl: c.slides ? undefined : c['课程介绍']?.[0]?.url,
     })).join('');
-    return `<div class="card-grid">${cards}</div>`;
+    if (!statusFilter) return `<div class="card-grid">${renderCards(items)}</div>`;
+
+    const statuses = [
+      { key: 'all', label: '全部' },
+      { key: 'current', label: '当前课程' },
+      { key: 'archive', label: '往期课程' },
+    ];
+    // Each long-form product can embed this catalog. Scope updates to the
+    // clicked catalog instance so an embedded filter never targets a hidden
+    // or separate course-overlay grid with the same content.
+    window.HomePage.filterAcademicCatalog = (key, btn) => {
+      const root = btn && btn.closest('.academic-catalog');
+      if (!root) return;
+      const list = key === 'all' ? items : items.filter(c => c.status === key);
+      const grid = root.querySelector('.academic-catalog__grid');
+      if (grid) grid.innerHTML = renderCards(list);
+      root.querySelectorAll('.filter-btn').forEach(filterBtn => {
+        filterBtn.classList.toggle('is-active', filterBtn.dataset.courseStatus === key);
+      });
+    };
+    return `
+      <div class="academic-catalog">
+        <div class="filter-bar academic-catalog-filter" aria-label="冬夏校课程筛选">
+          ${statuses.map((s, i) => `<button class="filter-btn${i === 0 ? ' is-active' : ''}" type="button" data-course-status="${s.key}" onclick="HomePage.filterAcademicCatalog('${s.key}', this)">${s.label}</button>`).join('')}
+        </div>
+        <div class="card-grid academic-catalog__grid">${renderCards(items)}</div>
+      </div>`;
   },
 };
 window.HomePage = HomePage;
