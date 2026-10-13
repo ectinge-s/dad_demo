@@ -1,0 +1,130 @@
+[
+ {
+  "id": "p1",
+  "name": "Prof. A",
+  "school": "纽约大学",
+  "dept": "Interactive Media Arts",
+  "class": "空间装置与投影",
+  "season": "夏校",
+  "photo": "",
+  "cover": "site/product-nyu-summer.jpg",
+  "bio": "教授简介待补充：任教院校、研究方向与代表作品（占位）。",
+  "outputs": [
+   "site/product-nyu-summer.jpg"
+  ],
+  "posters": 3,
+  "pdf": ""
+ },
+ {
+  "id": "p2",
+  "name": "Prof. B",
+  "school": "伦敦艺术大学",
+  "dept": "Graphic Communication",
+  "class": "实验字体与出版",
+  "season": "冬校",
+  "photo": "",
+  "cover": "fulltime/work-01.jpg",
+  "bio": "教授简介待补充：任教院校、研究方向与代表作品（占位）。",
+  "outputs": [
+   "fulltime/work-01.jpg"
+  ],
+  "posters": 3,
+  "pdf": ""
+ },
+ {
+  "id": "p3",
+  "name": "Prof. C",
+  "school": "罗德岛设计学院",
+  "dept": "Illustration",
+  "class": "绘本与角色叙事",
+  "season": "夏校",
+  "photo": "",
+  "cover": "acg/page-46.jpg",
+  "bio": "教授简介待补充：任教院校、研究方向与代表作品（占位）。",
+  "outputs": [
+   "acg/page-46.jpg"
+  ],
+  "posters": 3,
+  "pdf": ""
+ },
+ {
+  "id": "p4",
+  "name": "Prof. D",
+  "school": "皇家艺术学院",
+  "dept": "Information Experience Design",
+  "class": "信息体验设计",
+  "season": "冬校",
+  "photo": "",
+  "cover": "fulltime/work-05.jpg",
+  "bio": "教授简介待补充：任教院校、研究方向与代表作品（占位）。",
+  "outputs": [
+   "fulltime/work-05.jpg"
+  ],
+  "posters": 3,
+  "pdf": ""
+ },
+ {
+  "id": "p5",
+  "name": "Prof. E",
+  "school": "卡内基梅隆大学",
+  "dept": "Art & Computation",
+  "class": "创意编程与生成艺术",
+  "season": "夏校",
+  "photo": "",
+  "cover": "fulltime/work-09.jpg",
+  "bio": "教授简介待补充：任教院校、研究方向与代表作品（占位）。",
+  "outputs": [
+   "fulltime/work-09.jpg"
+  ],
+  "posters": 3,
+  "pdf": ""
+ },
+ {
+  "id": "p6",
+  "name": "Prof. F",
+  "school": "伦敦大学学院",
+  "dept": "Bartlett",
+  "class": "建筑与空间叙事",
+  "season": "冬校",
+  "photo": "",
+  "cover": "site/process-making.jpg",
+  "bio": "教授简介待补充：任教院校、研究方向与代表作品（占位）。",
+  "outputs": [
+   "site/process-making.jpg"
+  ],
+  "posters": 3,
+  "pdf": ""
+ },
+ {
+  "id": "p7",
+  "name": "Prof. G",
+  "school": "帕森斯设计学院",
+  "dept": "Design & Technology",
+  "class": "交互产品原型",
+  "season": "夏校",
+  "photo": "",
+  "cover": "site/output-web.jpg",
+  "bio": "教授简介待补充：任教院校、研究方向与代表作品（占位）。",
+  "outputs": [
+   "site/output-web.jpg"
+  ],
+  "posters": 3,
+  "pdf": ""
+ },
+ {
+  "id": "p8",
+  "name": "Prof. H",
+  "school": "芝加哥艺术学院",
+  "dept": "Performance",
+  "class": "身体、影像与现场",
+  "season": "冬校",
+  "photo": "",
+  "cover": "site/process-presentation.jpg",
+  "bio": "教授简介待补充：任教院校、研究方向与代表作品（占位）。",
+  "outputs": [
+   "site/process-presentation.jpg"
+  ],
+  "posters": 3,
+  "pdf": ""
+ }
+]

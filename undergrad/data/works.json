@@ -1,0 +1,355 @@
+{
+ "categories": [
+  {
+   "id": "multimedia",
+   "label": "多媒体艺术",
+   "sub": "影像 · 装置 · TouchDesigner",
+   "cover": "site/output-audiovisual.jpg"
+  },
+  {
+   "id": "3d",
+   "label": "3D 建模 · 虚拟技术",
+   "sub": "角色 · 场景 · 虚拟世界",
+   "cover": "site/output-3d.jpg"
+  },
+  {
+   "id": "tech",
+   "label": "机械 · 编程",
+   "sub": "传感器 · 机械结构 · 创意编程",
+   "cover": "site/output-mechanical.jpg"
+  },
+  {
+   "id": "design",
+   "label": "设计",
+   "sub": "平面 · 交互产品 · 卡牌",
+   "cover": "site/output-brand.jpg"
+  },
+  {
+   "id": "acg",
+   "label": "绘本插画 · 二次元 IP",
+   "sub": "角色设定 · 绘本 · 周边",
+   "cover": "acg/page-52.jpg"
+  },
+  {
+   "id": "performance",
+   "label": "表演",
+   "sub": "身体 · 影像 · 现场",
+   "cover": "site/output-performance.jpg"
+  }
+ ],
+ "ages": [
+  {
+   "id": "junior",
+   "label": "低龄友好",
+   "sub": "初中及以下"
+  },
+  {
+   "id": "senior",
+   "label": "高中生友好",
+   "sub": "高中阶段"
+  }
+ ],
+ "works": [
+  {
+   "id": "w01",
+   "title": "Echoes of Home 家族档案",
+   "category": "multimedia",
+   "ages": [
+    "senior"
+   ],
+   "student": "林同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "fulltime/work-03.jpg",
+    "site/case-family-archive.jpg"
+   ],
+   "desc": "用老照片、口述与实物搭建一个可以走进去的家族记忆装置。"
+  },
+  {
+   "id": "w02",
+   "title": "声音地图",
+   "category": "multimedia",
+   "ages": [
+    "senior"
+   ],
+   "student": "陈同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "fulltime/work-04.jpg"
+   ],
+   "desc": "收集城市声音样本，编排成随观众位置变化的声场。"
+  },
+  {
+   "id": "w03",
+   "title": "光的呼吸",
+   "category": "multimedia",
+   "ages": [
+    "junior",
+    "senior"
+   ],
+   "student": "王同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "site/process-projection.jpg"
+   ],
+   "desc": "投影与半透明材料组成的互动光影小装置。"
+  },
+  {
+   "id": "w04",
+   "title": "Ritual of Decay",
+   "category": "3d",
+   "ages": [
+    "senior"
+   ],
+   "student": "张同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "fulltime/work-07.jpg",
+    "site/case-ritual-world.jpg"
+   ],
+   "desc": "以「腐朽仪式」为题构建的虚拟世界与角色。"
+  },
+  {
+   "id": "w05",
+   "title": "Internet Use Among Younger People",
+   "category": "3d",
+   "ages": [
+    "senior"
+   ],
+   "student": "刘同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "fulltime/work-08.jpg",
+    "site/case-youth-3d.jpg"
+   ],
+   "desc": "三维动画短片，讨论青少年的网络使用。"
+  },
+  {
+   "id": "w06",
+   "title": "Embrace the Soul",
+   "category": "3d",
+   "ages": [
+    "senior"
+   ],
+   "student": "周同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "fulltime/work-02.jpg"
+   ],
+   "desc": "柔软材质与雕塑感角色的 3D 视觉系列。"
+  },
+  {
+   "id": "w07",
+   "title": "Buddy Blocks 积木伙伴",
+   "category": "3d",
+   "ages": [
+    "junior"
+   ],
+   "student": "吴同学",
+   "grade": "G7",
+   "school": "",
+   "images": [
+    "fulltime/work-10.jpg",
+    "site/case-buddy-blocks.jpg"
+   ],
+   "desc": "给小朋友设计的积木玩具与动物角色。"
+  },
+  {
+   "id": "w08",
+   "title": "暗夜表达",
+   "category": "3d",
+   "ages": [
+    "senior"
+   ],
+   "student": "郑同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "fulltime/work-06.jpg"
+   ],
+   "desc": "游戏氛围场景与道具设计。"
+  },
+  {
+   "id": "w09",
+   "title": "机械记忆",
+   "category": "tech",
+   "ages": [
+    "senior"
+   ],
+   "student": "赵同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "fulltime/work-09.jpg",
+    "site/case-mechanical-3d.jpg"
+   ],
+   "desc": "由齿轮与传感器驱动的机械互动装置。"
+  },
+  {
+   "id": "w10",
+   "title": "会画画的小车",
+   "category": "tech",
+   "ages": [
+    "junior"
+   ],
+   "student": "孙同学",
+   "grade": "G7",
+   "school": "",
+   "images": [
+    "site/process-collaboration.jpg"
+   ],
+   "desc": "Arduino 小车沿程序路径作画（占位）。"
+  },
+  {
+   "id": "w11",
+   "title": "Dissent Patterns 图案系统",
+   "category": "design",
+   "ages": [
+    "junior",
+    "senior"
+   ],
+   "student": "许同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "fulltime/work-01.jpg",
+    "site/case-visual-system.jpg"
+   ],
+   "desc": "从传统纹样出发的视觉识别与包装系统。"
+  },
+  {
+   "id": "w12",
+   "title": "Tong Lau 唐楼城市系统",
+   "category": "design",
+   "ages": [
+    "senior"
+   ],
+   "student": "何同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "fulltime/work-05.jpg",
+    "site/case-city-system.jpg"
+   ],
+   "desc": "香港唐楼研究与信息设计。"
+  },
+  {
+   "id": "w13",
+   "title": "口袋怪兽卡牌",
+   "category": "design",
+   "ages": [
+    "junior"
+   ],
+   "student": "罗同学",
+   "grade": "G7",
+   "school": "",
+   "images": [
+    "acg/page-20.jpg"
+   ],
+   "desc": "原创卡牌规则与角色插画（占位）。"
+  },
+  {
+   "id": "w14",
+   "title": "潮玩 IP 设计",
+   "category": "acg",
+   "ages": [
+    "junior",
+    "senior"
+   ],
+   "student": "高同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "acg/page-16.jpg",
+    "acg/page-18.jpg"
+   ],
+   "desc": "潮玩角色设定、周边与包装。"
+  },
+  {
+   "id": "w15",
+   "title": "偶像应援视觉",
+   "category": "acg",
+   "ages": [
+    "senior"
+   ],
+   "student": "梁同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "acg/page-02.jpg",
+    "acg/page-06.jpg"
+   ],
+   "desc": "字体设计与应援视觉系列。"
+  },
+  {
+   "id": "w16",
+   "title": "梦幻手账绘本",
+   "category": "acg",
+   "ages": [
+    "junior"
+   ],
+   "student": "宋同学",
+   "grade": "G7",
+   "school": "",
+   "images": [
+    "acg/page-46.jpg",
+    "acg/page-47.jpg"
+   ],
+   "desc": "手账风格绘本与贴纸周边。"
+  },
+  {
+   "id": "w17",
+   "title": "二次元角色宣传",
+   "category": "acg",
+   "ages": [
+    "junior",
+    "senior"
+   ],
+   "student": "唐同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "acg/page-51.jpg",
+    "acg/page-52.jpg"
+   ],
+   "desc": "角色立绘与宣传物料。"
+  },
+  {
+   "id": "w18",
+   "title": "身体与投影",
+   "category": "performance",
+   "ages": [
+    "senior"
+   ],
+   "student": "韩同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "site/process-presentation.jpg"
+   ],
+   "desc": "表演者与实时影像共同完成的现场作品（占位）。"
+  },
+  {
+   "id": "w19",
+   "title": "虚拟舞台",
+   "category": "performance",
+   "ages": [
+    "senior"
+   ],
+   "student": "冯同学",
+   "grade": "G10",
+   "school": "",
+   "images": [
+    "acg/page-14.jpg",
+    "acg/page-23.jpg"
+   ],
+   "desc": "虚拟演唱会舞台视觉设计。"
+  }
+ ]
+}
