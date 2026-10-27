@@ -3,10 +3,11 @@
    router, navbar / tabs / footer, shared overlay, small helpers.
 
    Routes (hash):  #<page>[/<tab>][?key=value&…]
-     us/overview|dad|talent|risd    美本爬藤 (hero + tabs)
-     cw/ft|p12|uk|hk|sgau           英联邦问鼎 (hero + tabs)
+     us/overview|dad|talent|risd    美本爬藤 (hero + track switcher)
+     cw/overview|ft|p12|uk|hk|sgau  英联邦问鼎 (hero + track switcher)
      camp                           冬夏校 (hero, no tabs)
      offers  cuilu  works           regular pages (no hero)
+     offers?school=<key>            offer 一览 with that school expanded
    Content lives in data/*.json (see data/README.md); renderers in
    du-blocks.js (tab blocks) and du-pages.js (heroes + regular pages).
 ═══════════════════════════════════════════ */
@@ -19,7 +20,7 @@ const DU = {
   data: {},
 
   async load() {
-    const files = ['site', 'offers', 'cases', 'works', 'professors'];
+    const files = ['site', 'offers', 'cases', 'works', 'professors', 'rankings'];
     const res = await Promise.all(files.map(f => fetch(`data/${f}.json`).then(r => {
       if (!r.ok) throw new Error(`data/${f}.json ${r.status}`);
       return r.json();
@@ -40,18 +41,52 @@ const DU = {
     if (q.metric === 'schools') return new Set(list.map(o => o.zh)).size;
     return list.length;
   },
-  /** schools aggregated from the offer list, sorted by count */
-  schoolsFor(q = {}) {
+  /** school record from offers.json (key = zh, UAL colleges grouped as 伦敦艺术大学) */
+  school(key) {
+    if (!this._schoolIdx) this._schoolIdx = new Map(this.data.offers.schools.map(s => [s.key, s]));
+    return this._schoolIdx.get(key);
+  },
+  /** schools aggregated from the offer list (respects q filters).
+      sort 'rank' (default): ranking tier from rankings.json, unranked last, then offer count. */
+  schoolsFor(q = {}, sort = 'rank') {
     const map = new Map();
     this.offers(q).forEach(o => {
-      const s = map.get(o.zh) || { zh: o.zh, en: o.en, country: o.country, count: 0, top: false };
-      s.count++; s.top = s.top || o.top; map.set(o.zh, s);
+      const k = o.s || o.zh;
+      let s = map.get(k);
+      if (!s) {
+        const m = this.school(k) || {};
+        s = { key: k, zh: m.zh || k, en: m.en || o.en, country: o.country, rank: m.rank, rid: m.rid, count: 0, top: false, cases: 0 };
+        map.set(k, s);
+      }
+      s.count++; s.top = s.top || o.top; if (o.case) s.cases++;
     });
-    return [...map.values()].sort((a, b) => b.count - a.count || a.zh.localeCompare(b.zh, 'zh'));
+    return this.sortSchools([...map.values()], sort);
   },
+  sortSchools(list, sort = 'rank') {
+    const r = (s) => s.rank == null ? 999 : s.rank;
+    return list.sort((a, b) => (sort === 'rank' ? r(a) - r(b) : 0) || b.count - a.count || a.zh.localeCompare(b.zh, 'zh'));
+  },
+  /** offer count by school name (offers key / zh) or by ranking id */
   offerCountFor(zh) {
-    const s = this.data.offers.schools.find(x => x.zh === zh);
+    const s = this.school(zh) || this.data.offers.schools.find(x => x.zh === zh);
     return s ? s.count : 0;
+  },
+  offersForRid(rid, country) {
+    return this.data.offers.schools.filter(s => s.rid === rid && (!country || s.country === country));
+  },
+  /** ranking-file schools for one or more lists, merged & de-duplicated, in ranking order */
+  rankedSchools(lists) {
+    const seen = new Map();
+    (lists || []).forEach(id => {
+      const l = this.data.rankings.lists[id];
+      if (!l) return console.warn('unknown ranking list', id);
+      l.schools.forEach((s, i) => {
+        const prev = seen.get(s.id);
+        if (!prev) seen.set(s.id, { ...s, country: l.country, _o: i });
+        else if (s.rank < prev.rank) Object.assign(prev, { rank: s.rank, _o: Math.min(prev._o, i) });
+      });
+    });
+    return [...seen.values()].sort((a, b) => a.rank - b.rank || a._o - b._o);
   },
   casesFor(track) { return this.data.cases.filter(c => (c.tracks || []).includes(track)); },
   navItem(id) { return this.data.site.nav.find(n => n.id === id); },
@@ -192,17 +227,58 @@ const Nav = {
   },
 };
 
-/* ── 2nd-level tabs — graduate .industry-nav pills, horizontally scrolled ── */
+/* ── TRACK SWITCHER — 2nd-level tabs as big product-style cards; each
+   track has its own icon + colour theme (data/site.json → nav[].tabs[]:
+   icon, theme 0–5, sub). Compacts once it docks under the navbar. ── */
+const ICONS = {
+  overview: '<path d="M4 4h7v7H4zM13 4h7v4h-7zM13 10h7v10h-7zM4 13h7v7H4z"/>',
+  cursor: '<path d="M5 3l14 7-6 2-2 6z"/><path d="M13 12l5 5"/>',
+  atom: '<circle cx="12" cy="12" r="1.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)"/>',
+  brush: '<path d="M14 4l6 6-8 8-6-6z"/><path d="M6 12l-2 6 6-2"/><path d="M11 7l6 6"/>',
+  cap: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/><path d="M22 9v6"/>',
+  path: '<circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="6" r="2.4"/><path d="M7.4 18H15a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h7.6"/>',
+  crown: '<path d="M3 8l4 4 5-7 5 7 4-4-2 11H5z"/><path d="M5 19h14"/>',
+  skyline: '<path d="M3 21V11h4v10M9 21V4h5v17M16 21V8h5v13"/><path d="M2 21h20"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/>',
+  star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+};
+const icon = (name, cls = '') => `<svg class="du-ico ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ICONS.star}</svg>`;
+
 const Tabs = {
   render(nav, active) {
     const bar = document.getElementById('du-tabs');
     if (!nav.tabs) { bar.hidden = true; return; }
     bar.hidden = false;
-    const scroll = document.getElementById('du-tabs-scroll');
-    scroll.innerHTML = nav.tabs.map(t =>
-      `<a class="industry-nav__btn${t.id === active ? ' is-active' : ''}" href="${Router.href(nav.id, t.id)}">${esc(t.label)}</a>`).join('');
-    const on = scroll.querySelector('.is-active');
-    if (on) scroll.scrollTo({ left: on.offsetLeft - (scroll.clientWidth - on.offsetWidth) / 2, behavior: 'smooth' });
+    const row = document.getElementById('du-tabs-scroll');
+    row.innerHTML = nav.tabs.map((t, i) => `
+      <a class="du-track${t.id === active ? ' is-active' : ''}" data-theme="${t.theme || 0}" href="${Router.href(nav.id, t.id)}"${t.id === active ? ' aria-current="page"' : ''}>
+        <span class="du-track__ico">${icon(t.icon)}</span>
+        <span class="du-track__txt">
+          <b>${esc(t.label)}</b>
+          ${t.sub ? `<small>${esc(t.sub)}</small>` : ''}
+        </span>
+        <span class="du-track__no u-mono" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+      </a>`).join('');
+    const on = row.querySelector('.is-active');
+    if (on) row.scrollTo({ left: on.offsetLeft - (row.clientWidth - on.offsetWidth) / 2, behavior: 'smooth' });
+    this.watch();
+  },
+  /** .is-stuck while docked under the navbar → compact cards */
+  watch() {
+    if (this._watching) return;
+    this._watching = true;
+    const bar = document.getElementById('du-tabs');
+    const check = () => {
+      if (bar.hidden) return;
+      bar.classList.toggle('is-stuck', bar.getBoundingClientRect().top <= Nav.height() + 1 && window.scrollY > 40);
+    };
+    window.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', check);
+    check();
+  },
+  theme(nav, tab) {
+    const t = (nav.tabs || []).find(x => x.id === tab);
+    return t ? (t.theme || 0) : null;
   },
 };
 
@@ -256,4 +332,4 @@ const Poster = {
   },
 };
 
-window.DU = DU; window.Router = Router; window.Nav = Nav; window.Tabs = Tabs; window.Overlay = Overlay; window.Poster = Poster;
+window.icon = icon; window.DU = DU; window.Router = Router; window.Nav = Nav; window.Tabs = Tabs; window.Overlay = Overlay; window.Poster = Poster;

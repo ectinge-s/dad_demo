@@ -63,11 +63,13 @@ const Pages = {
     const site = DU.data.site;
     if (site.heroes[page]) {
       const key = tab ? `${page}/${tab}` : page;
-      main.innerHTML = Blocks.render(site.tabs[key]);
+      main.innerHTML = Blocks.render(site.tabs[key], { nav: DU.navItem(page), tab: (DU.navItem(page).tabs || []).find(t => t.id === tab) });
     } else {
       main.innerHTML = this[page](query);
     }
     main.dataset.page = page;
+    const theme = Tabs.theme(DU.navItem(page), tab);
+    if (theme == null) delete main.dataset.theme; else main.dataset.theme = theme;
     OfferGrid.clampAll(main);
     if (page === 'offers') OffersPage.draw();
     if (page === 'works') WorksPage.draw();
@@ -91,85 +93,228 @@ const Pages = {
   works(query) { return WorksPage.html(query); },
 };
 
-/* ── offer 一览: 院校榜 / offer 墙 ── */
+/* ── offer 一览: school cards (ranking order) → click to expand that school's
+   signature offers (≤ 20). Offers that belong to a 案例卡 carry a
+   「作品集案例」 tag that opens the case. Query: country, top, city, sort, case, school. ── */
 const OffersPage = {
-  state: { view: 'wall', country: '', top: false, city: '', shown: 48 },
+  state: {},
+  MAX: 20,
   COUNTRY_ORDER: ['英国', '美国', '中国香港', '新加坡', '澳大利亚', '加拿大', '韩国'],
 
-  html(query = {}) {
-    const meta = DU.data.offers.meta;
-    this.state = { view: query.view || 'wall', country: query.country || '', top: query.top === '1', city: query.city || '', shown: 48 };
-    const countries = meta.countries.map(c => c[0]).sort((a, b) => {
+  countries() {
+    return DU.data.offers.meta.countries.map(c => c[0]).sort((a, b) => {
       const ia = this.COUNTRY_ORDER.indexOf(a), ib = this.COUNTRY_ORDER.indexOf(b);
       return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
     });
+  },
+
+  html(query = {}) {
+    const meta = DU.data.offers.meta;
+    this.state = {
+      country: query.country || '', top: query.top === '1', city: query.city || '',
+      sort: query.sort === 'count' ? 'count' : 'rank', withCase: query.case === '1', school: query.school || '',
+    };
+    // a deep-linked school must stay visible: drop a conflicting country filter
+    const linked = this.state.school && DU.school(this.state.school);
+    if (linked && this.state.country && linked.country !== this.state.country) this.state.country = '';
     const stats = [
       { v: meta.offers, l: '本科 offer' }, { v: meta.students, l: '录取学生' },
       { v: meta.schools, l: '录取院校' }, { v: meta.topOffers, l: '顶尖院校 offer' },
     ];
+    const caseOffers = DU.data.offers.wall.filter(o => o.case).length;
     return Pages.pagehead('offers', `
       <div class="du-bubbles du-bubbles--head">
         ${stats.map((s, i) => `<div class="du-bubble du-bubble--${i % 4}"><b class="u-mono">${s.v}</b><span>${s.l}</span></div>`).join('')}
       </div>`) + `
       <section class="section du-sec du-sec--flush"><div class="container">
         <div class="du-toolbar">
-          <div class="du-seg" role="tablist">
-            <button class="du-seg__btn" data-view="wall" onclick="OffersPage.set({view:'wall'})">offer 墙</button>
-            <button class="du-seg__btn" data-view="schools" onclick="OffersPage.set({view:'schools'})">院校榜</button>
+          <div class="du-seg" role="tablist" aria-label="排序">
+            <button class="du-seg__btn" data-sort="rank" onclick="OffersPage.set({sort:'rank'})">按院校排名</button>
+            <button class="du-seg__btn" data-sort="count" onclick="OffersPage.set({sort:'count'})">按 offer 数</button>
           </div>
-          <label class="du-toggle"><input type="checkbox" ${this.state.top ? 'checked' : ''} onchange="OffersPage.set({top:this.checked})"><span></span>只看顶尖院校</label>
+          <div class="du-toolbar__toggles">
+            <label class="du-toggle"><input type="checkbox" id="du-off-top" onchange="OffersPage.set({top:this.checked})"><span></span>只看顶尖院校</label>
+            <label class="du-toggle"><input type="checkbox" id="du-off-case" onchange="OffersPage.set({withCase:this.checked})"><span></span>有作品集案例 <small class="u-mono">${caseOffers}</small></label>
+          </div>
         </div>
         <div class="filter-bar filter-bar--scroll du-filter" id="du-offer-country">
           <button class="filter-btn" data-c="" onclick="OffersPage.set({country:''})">全部国家</button>
-          ${countries.map(c => `<button class="filter-btn" data-c="${esc(c)}" onclick="OffersPage.set({country:'${jsq(c)}'})">${esc(c)}</button>`).join('')}
+          ${this.countries().map(c => `<button class="filter-btn" data-c="${esc(c)}" onclick="OffersPage.set({country:'${jsq(c)}'})">${esc(c)}</button>`).join('')}
         </div>
         <div id="du-offer-city"></div>
         <div id="du-offer-body"></div>
       </div></section>`;
   },
 
+  query() {
+    const s = this.state;
+    return { country: s.country ? [s.country] : null, top: s.top ? true : null, city: s.city || null };
+  },
+
+  syncUrl() {
+    const s = this.state;
+    history.replaceState(null, '', Router.href('offers', null, {
+      country: s.country, top: s.top ? '1' : '', city: s.city, sort: s.sort === 'count' ? 'count' : '',
+      case: s.withCase ? '1' : '', school: s.school,
+    }));
+  },
+
   set(patch) {
-    Object.assign(this.state, patch, { shown: 48 });
-    const q = { view: this.state.view === 'wall' ? '' : this.state.view, country: this.state.country, top: this.state.top ? '1' : '', city: this.state.city };
-    history.replaceState(null, '', Router.href('offers', null, q));
+    Object.assign(this.state, patch);
+    if (!('school' in patch)) this.state.school = '';
+    this.syncUrl();
     this.draw();
+  },
+
+  /** offers for one school under the current filters */
+  offersOf(key) {
+    return DU.offers(this.query()).filter(o => (o.s || o.zh) === key && (!this.state.withCase || o.case));
+  },
+
+  schools() {
+    const q = this.query();
+    let list = DU.schoolsFor(q, this.state.sort);
+    if (this.state.withCase) list = list.filter(s => s.cases);
+    return list;
   },
 
   draw() {
     const s = this.state;
-    document.querySelectorAll('.du-seg__btn').forEach(b => b.classList.toggle('is-active', b.dataset.view === s.view));
+    document.querySelectorAll('.du-seg__btn[data-sort]').forEach(b => b.classList.toggle('is-active', b.dataset.sort === s.sort));
     document.querySelectorAll('#du-offer-country .filter-btn').forEach(b => b.classList.toggle('is-active', b.dataset.c === s.country));
+    document.getElementById('du-off-top').checked = s.top;
+    document.getElementById('du-off-case').checked = s.withCase;
     document.getElementById('du-offer-city').innerHTML = s.city
       ? `<div class="du-citytag">生源地：<b>${esc(s.city)}</b><button onclick="OffersPage.set({city:''})" aria-label="清除生源地">✕</button></div>` : '';
-    const q = { country: s.country ? [s.country] : null, top: s.top ? true : null, city: s.city || null };
+
+    const list = this.schools();
     const body = document.getElementById('du-offer-body');
-    if (s.view === 'schools') {
-      body.innerHTML = OfferGrid.html(DU.schoolsFor(q), 'du-offer-schools', 99);
-      return Effects.init(body);
+    if (!list.length) {
+      body.innerHTML = `<div class="du-empty du-empty--cute">没有符合条件的 offer，换个筛选试试</div>`;
+      return;
     }
-    const list = DU.offers(q).slice().sort((a, b) => b.top - a.top);
-    body.innerHTML = list.length ? `
-      <p class="du-count">共 <b class="u-mono">${list.length}</b> 份 offer</p>
-      <div class="du-wall">${list.slice(0, s.shown).map((o, i) => this.letter(o, i)).join('')}</div>
-      ${list.length > s.shown ? `<div class="du-center"><button class="section-cta" onclick="OffersPage.more()">加载更多 <span class="u-en">/ ${list.length - s.shown} more</span></button></div>` : ''}`
-      : `<div class="du-empty du-empty--cute">没有符合条件的 offer，换个筛选试试</div>`;
+    const total = list.reduce((n, x) => n + (s.withCase ? x.cases : x.count), 0);
+    const groups = s.country ? [[s.country, list]] : this.countries()
+      .map(c => [c, list.filter(x => x.country === c)]).filter(([, l]) => l.length);
+    body.innerHTML = `
+      <p class="du-count">共 <b class="u-mono">${list.length}</b> 所院校 · <b class="u-mono">${total}</b> 份 offer
+        <span class="du-count__hint">${s.sort === 'rank' ? '按数字艺术与设计院校排名排序' : '按 offer 数排序'} · 点击院校查看代表 offer</span></p>
+      ${groups.map(([c, l]) => `
+        <div class="du-ogroup">
+          ${groups.length > 1 ? `<h2 class="du-ogroup__head"><span>${esc(c)}</span><small><b class="u-mono">${l.length}</b> 所院校 · <b class="u-mono">${l.reduce((n, x) => n + (s.withCase ? x.cases : x.count), 0)}</b> 份 offer</small></h2>` : ''}
+          <div class="du-schoolcards">${l.map((x, i) => this.card(x, i)).join('')}</div>
+        </div>`).join('')}`;
+    if (s.school) {
+      const card = body.querySelector(`.du-sc[data-key="${CSS.escape(s.school)}"]`);
+      if (card) { this.open(card, false); setTimeout(() => Router.scrollTo(card), 120); }  // after Router's own scroll-to-top
+    }
   },
 
-  more() {
-    this.state.shown += 48;
-    const y = window.scrollY;
-    this.draw();
-    window.scrollTo({ top: y });
+  card(x, i) {
+    const n = this.state.withCase ? x.cases : x.count;
+    const mono = x.key === '伦敦艺术大学' ? 'UAL' : monogram(x.en, x.zh);
+    return `
+      <button class="du-sc${x.top ? ' is-top' : ''}" data-key="${esc(x.key)}" aria-expanded="false" onclick="OffersPage.toggle(this)">
+        <span class="du-sc__mono du-orb du-orb--${i % 3} u-en">${esc(mono)}</span>
+        <span class="du-sc__name"><b>${esc(x.zh)}</b><small class="u-en">${esc(x.en)}</small></span>
+        <span class="du-sc__num"><b class="u-mono">${n}</b><small>offers</small></span>
+        <span class="du-sc__tags">
+          ${x.top ? '<i class="du-sc__tag du-sc__tag--top">★ 顶尖</i>' : ''}
+          ${x.cases ? `<i class="du-sc__tag du-sc__tag--case">作品集案例 ${x.cases}</i>` : ''}
+        </span>
+        <span class="du-sc__chev" aria-hidden="true"></span>
+      </button>`;
+  },
+
+  toggle(card) {
+    const was = card.classList.contains('is-open');
+    this.closeAll();
+    if (!was) this.open(card, true);
+    this.state.school = was ? '' : card.dataset.key;
+    this.syncUrl();
+  },
+
+  closeAll() {
+    document.querySelectorAll('.du-sc.is-open').forEach(c => { c.classList.remove('is-open'); c.setAttribute('aria-expanded', 'false'); });
+    document.querySelectorAll('.du-sc-panel').forEach(p => p.remove());
+  },
+
+  open(card, scroll) {
+    const key = card.dataset.key;
+    card.classList.add('is-open');
+    card.setAttribute('aria-expanded', 'true');
+    const panel = document.createElement('div');
+    panel.className = 'du-sc-panel';
+    panel.innerHTML = this.panel(key);
+    card.after(panel);  // grid-auto-flow: dense lets the rest of the row back-fill above the full-width panel
+    if (scroll) requestAnimationFrame(() => {
+      const r = panel.getBoundingClientRect();
+      if (r.bottom > innerHeight || r.top < Nav.height()) Router.scrollTo(card);
+    });
+  },
+
+  /** normalised major for grouping: "BA (Hons) Media" = "Media BA" = "media" */
+  majorKey(m) {
+    return (m || '').toLowerCase().replace(/\(hons\)|\bhons\b|\bba\b|\bbsc\b|\bbfa\b|\bbdes\b|\bbasc\b|\bma\b|\bbs\b|\bin\b|\bof\b|&|\band\b/g, ' ')
+      .replace(/[^a-z一-龥]+/g, ' ').trim().split(/\s+/).sort().join(' ') || (m || '').trim();
+  },
+
+  /** pick ≤ MAX offers: one per distinct (college, major) first — a case-linked one when there is one —
+      then the remaining case-linked offers, then top / newest. Shown grouped by major, case-linked first. */
+  signature(list) {
+    const seen = new Set();
+    const uniq = list.filter(o => { const k = o.student + o.city + o.major + o.zh; if (seen.has(k)) return false; seen.add(k); return true; });
+    const score = (o) => (o.case ? 4 : 0) + (o.top ? 2 : 0);
+    uniq.sort((a, b) => score(b) - score(a) || (b.date > a.date ? 1 : -1));
+    const picked = new Set(), groups = new Set();
+    const take = (o) => { if (picked.size < this.MAX) picked.add(o); };
+    uniq.forEach(o => { const g = (o.college || '') + '|' + this.majorKey(o.major); if (!groups.has(g)) { groups.add(g); take(o); } });
+    uniq.forEach(o => { if (o.case && !picked.has(o)) take(o); });
+    uniq.forEach(o => { if (!picked.has(o)) take(o); });
+    const freq = {};
+    picked.forEach(o => { const k = this.majorKey(o.major); freq[k] = (freq[k] || 0) + 1; });
+    return [...picked].sort((a, b) => (b.case ? 1 : 0) - (a.case ? 1 : 0)
+      || freq[this.majorKey(b.major)] - freq[this.majorKey(a.major)]
+      || this.majorKey(a.major).localeCompare(this.majorKey(b.major)));
+  },
+
+  panel(key) {
+    const sch = DU.school(key) || { zh: key, en: '' };
+    const all = this.offersOf(key);
+    const pick = this.signature(all);
+    const majors = {};  // normalised key → { n, label (most common spelling) }
+    all.forEach(o => {
+      const k = this.majorKey(o.major);
+      const m = majors[k] = majors[k] || { n: 0, spell: {} };
+      m.n++; m.spell[o.major] = (m.spell[o.major] || 0) + 1;
+    });
+    const topMajors = Object.values(majors).sort((a, b) => b.n - a.n).slice(0, 4)
+      .map(m => [Object.entries(m.spell).sort((a, b) => b[1] - a[1])[0][0], m.n]);
+    const colleges = {};
+    all.forEach(o => { if (o.college) colleges[o.college] = (colleges[o.college] || 0) + 1; });
+    const cases = all.filter(o => o.case).length;
+    return `
+      <div class="du-sc-panel__head">
+        <div>
+          <span class="eyebrow u-en">Signature Offers</span>
+          <h3>${esc(sch.zh)} <small class="u-en">${esc(sch.en)}</small></h3>
+          <p>共 <b class="u-mono">${all.length}</b> 份 offer${cases ? ` · <b class="u-mono">${cases}</b> 份附作品集案例` : ''}${all.length > pick.length ? ` · 展示 ${pick.length} 份代表 offer` : ''}</p>
+        </div>
+        <button class="du-sc-panel__close" onclick="OffersPage.closeAll(); OffersPage.state.school=''; OffersPage.syncUrl()" aria-label="收起">✕</button>
+      </div>
+      ${Object.keys(colleges).length ? `<div class="du-chips du-sc-panel__chips"><span class="du-sc-panel__k">学院</span>${Object.entries(colleges).sort((a, b) => b[1] - a[1]).map(([c, n]) => `<span class="du-chip">${esc(c)} <b class="u-mono">${n}</b></span>`).join('')}</div>` : ''}
+      ${topMajors.length > 1 ? `<div class="du-chips du-sc-panel__chips"><span class="du-sc-panel__k">热门专业</span>${topMajors.map(([m, n]) => `<span class="du-chip u-en">${esc(m)} <b class="u-mono">${n}</b></span>`).join('')}</div>` : ''}
+      <div class="du-wall du-wall--panel">${pick.map((o, i) => this.letter(o, i)).join('')}</div>`;
   },
 
   letter(o, i) {
     return `
-      <article class="du-letter${o.top ? ' is-top' : ''}" style="--tilt:${((i * 37) % 5) - 2}deg">
+      <article class="du-letter${o.top ? ' is-top' : ''}${o.case ? ' has-case' : ''}" style="--tilt:${((i * 37) % 5) - 2}deg">
         <div class="du-letter__stamp u-en">${o.top ? '★ TOP' : 'OFFER'}</div>
-        <div class="du-letter__school">${esc(o.zh)}</div>
-        <div class="du-letter__en u-en">${esc(o.en)}</div>
-        <div class="du-letter__major u-en">${esc(o.major)}</div>
-        <div class="du-letter__foot"><b>${esc(o.student)}</b><span>${esc(o.city)}</span><span>${esc(o.country)}</span></div>
+        ${o.college ? `<div class="du-letter__college">${esc(o.college)}</div>` : ''}
+        <div class="du-letter__major u-en">${esc(/^[a-z0-9 ,&()\-]+$/.test(o.major) ? o.major.replace(/\b[a-z]/g, c => c.toUpperCase()) : o.major)}</div>
+        <div class="du-letter__foot"><b>${esc(o.student)}</b><span>${esc(o.city)}</span><span>${esc(o.season)}</span></div>
+        ${o.case ? `<button class="du-letter__case" onclick="event.stopPropagation(); Detail.case('${jsq(o.case)}')">作品集案例 <i>→</i></button>` : ''}
       </article>`;
   },
 };

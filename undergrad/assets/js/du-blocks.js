@@ -10,13 +10,49 @@
 const WORK_LABEL = () => Object.fromEntries(DU.data.works.categories.map(c => [c.id, c.label]));
 
 const Blocks = {
-  render(list) {
-    return (list || []).map((b, i) => {
+  ctx: {},
+  /** ctx: { nav, tab } — the track being rendered (track block reads icon / jump links from it) */
+  render(list, ctx = {}) {
+    this.ctx = ctx;
+    this.list = (list || []).map((b, i) => ({ ...b, id: b.id || `sec-${i}` }));
+    return this.list.map((b, i) => {
       const fn = this[b.type];
       if (!fn) { console.warn('unknown block', b.type); return ''; }
       const alt = i % 2 ? ' du-sec--alt' : '';
-      return `<section class="section du-sec${alt}"${b.id ? ` id="${b.id}"` : ''}><div class="container">${fn.call(this, b, i)}</div></section>`;
+      const cls = b.type === 'track' ? ' du-sec--track' : '';
+      return `<section class="section du-sec${alt}${cls}" id="${b.id}"><div class="container">${fn.call(this, b, i)}</div></section>`;
     }).join('');
+  },
+
+  /* ── track: standard intro that opens every track (icon + theme from the tab).
+       fields: eyebrow, title, tagline, text, img, fit[], facts[{k,v}], stats[{q|cases|value, label}], sticker ── */
+  track(b) {
+    const tab = this.ctx.tab || {};
+    const statVal = (s) => s.value != null ? s.value : s.cases ? DU.casesFor(s.cases).length : DU.count(s.q);
+    const jumps = this.list.filter(x => x !== b && x.title);
+    return `
+      <div class="du-trackintro fade-up">
+        <div class="du-trackintro__text">
+          <div class="du-trackintro__badge">
+            <span class="du-trackintro__ico">${icon(b.icon || tab.icon)}</span>
+            <span class="u-en">${esc(b.eyebrow)}</span>
+          </div>
+          <h2>${esc(b.title)}</h2>
+          ${b.tagline ? `<p class="du-trackintro__tag">${esc(b.tagline)}</p>` : ''}
+          <p class="du-trackintro__lead">${esc(b.text)}</p>
+          ${b.fit ? `<div class="du-trackintro__fit"><h3>适合谁</h3><ul class="du-checks">${b.fit.map(f => `<li>${esc(f)}</li>`).join('')}</ul></div>` : ''}
+          ${b.facts ? `<dl class="du-trackintro__facts">${b.facts.map(f => `<div><dt>${esc(f.k)}</dt><dd>${esc(f.v)}</dd></div>`).join('')}</dl>` : ''}
+          ${jumps.length ? `<nav class="du-jumps" aria-label="本页内容"><span>本页</span>${jumps.map(x =>
+            `<button onclick="Router.scrollTo(document.getElementById('${x.id}'))">${esc(x.title)}</button>`).join('')}</nav>` : ''}
+        </div>
+        <div class="du-trackintro__media">
+          <div class="du-trackintro__img du-blob"><img src="${IMG(b.img)}" alt="${esc(b.title)}" loading="lazy"></div>
+          ${b.sticker ? `<span class="du-sticker du-trackintro__sticker">${esc(b.sticker)}</span>` : ''}
+          <div class="du-trackintro__stats">
+            ${(b.stats || []).map((s, i) => `<div class="du-trackintro__stat du-trackintro__stat--${i}"><b class="u-mono">${esc(statVal(s))}</b><span>${esc(s.label)}</span></div>`).join('')}
+          </div>
+        </div>
+      </div>`;
   },
 
   head(b, extra = '') {
@@ -39,10 +75,19 @@ const Blocks = {
       </div>`;
   },
 
-  /* ── offers: school offer grid from offers.json ── */
+  /* ── offers: school offer grid from offers.json, in ranking order.
+       `countries: [...]` adds a country switch (grid shows one country at a time) ── */
   offers(b) {
     const uid = 'og-' + Math.random().toString(36).slice(2, 7);
-    return this.head(b) + OfferGrid.html(DU.schoolsFor(b.q), uid, b.rows || 2);
+    const rows = b.rows || 2;
+    if (!b.countries) return this.head(b) + OfferGrid.html(DU.schoolsFor(b.q), uid, rows);
+    OfferGrid._q[uid] = b.q || {};
+    return this.head(b) + `
+      <div class="du-countryswitch fade-up" role="tablist">
+        ${b.countries.map((c, i) => `<button class="du-countryswitch__btn${i ? '' : ' is-active'}" role="tab" onclick="OfferGrid.country('${uid}','${jsq(c)}',this)">
+          ${esc(c)}<b class="u-mono">${DU.count({ ...(b.q || {}), country: [c] })}</b></button>`).join('')}
+      </div>
+      <div id="${uid}-wrap">${OfferGrid.html(DU.schoolsFor({ ...(b.q || {}), country: [b.countries[0]] }), uid, rows)}</div>`;
   },
 
   /* ── compare: two-column Maker vs Art ── */
@@ -96,16 +141,23 @@ const Blocks = {
       </div>`;
   },
 
-  /* ── schools: grid map of target schools ── */
+  /* ── schools: target-school list from rankings.json (cleaned 排名文件), ranking order.
+       groups: [{ label, lists:['us-dm', …] }]; first `top` (5) shown as feature tiles,
+       the rest behind 展开. Ranking numbers are never printed. ── */
   schools(b) {
-    const groups = DU.data.site.schoolLists[b.list] || [];
-    return this.head(b) + groups.map((g, gi) => `
+    const top = b.top || 5;
+    return this.head(b) + (b.groups || []).map((g, gi) => {
+      const list = DU.rankedSchools(g.lists);
+      const uid = 'sl-' + Math.random().toString(36).slice(2, 7);
+      return `
       <div class="du-schoolgroup fade-up">
-        <h3 class="du-subhead"><i class="du-dot du-dot--${gi % 3}"></i>${esc(g.group)}</h3>
-        <div class="du-schoolmap">
-          ${g.schools.map((s, i) => SchoolTile.html(s, gi * 3 + i)).join('')}
-        </div>
-      </div>`).join('');
+        <h3 class="du-subhead"><i class="du-dot du-dot--${gi % 3}"></i>${esc(g.label)}<small>${list.length} 所</small></h3>
+        <div class="du-toplist">${list.slice(0, top).map((s, i) => SchoolTile.feature(s, i)).join('')}</div>
+        ${list.length > top ? `
+          <div class="du-schoolmap du-schoolmap--rest" id="${uid}" hidden>${list.slice(top).map((s, i) => SchoolTile.ranked(s, i + top)).join('')}</div>
+          <div class="du-center"><button class="section-cta" aria-controls="${uid}" aria-expanded="false" onclick="SchoolList.toggle('${uid}', this)">展开其余 ${list.length - top} 所 <span class="u-en">/ more</span></button></div>` : ''}
+      </div>`;
+    }).join('');
   },
 
   /* ── cases: case cards with an optional work-type filter ── */
@@ -276,12 +328,67 @@ const Blocks = {
 };
 
 /* ── school tile (monogram + name + offer count) ── */
+const MONO_STOP = new Set(['of', 'the', 'and', 'at', 'for', 'in', 'de', 'di', '&']);
+/** short monogram from the English name: "(HKU)" → HKU, University College London → UCL */
+function monogram(en, zh) {
+  const m = (en || '').match(/\(([A-Z]{2,6})\)/);
+  if (m) return m[1];
+  const words = (en || '').replace(/[^A-Za-z\s]/g, ' ').split(/\s+/).filter(w => w && !MONO_STOP.has(w.toLowerCase()));
+  if (words.length === 1) return words[0].slice(0, 4);
+  const ini = words.map(w => w[0].toUpperCase()).join('').slice(0, 4);
+  return ini || (zh || '').slice(0, 2);
+}
+
+/* ── ranked school list: expand / collapse ── */
+const SchoolList = {
+  toggle(id, btn) {
+    const el = document.getElementById(id);
+    const open = el.hidden;
+    el.hidden = !open;
+    btn.setAttribute('aria-expanded', String(open));
+    btn.innerHTML = open ? '收起' : `展开其余 ${el.children.length} 所 <span class="u-en">/ more</span>`;
+    if (!open) Router.scrollTo(el.parentElement);
+  },
+};
+
 const SchoolTile = {
+  /** offers.json schools that match a ranking school (same country) */
+  offerInfo(s) {
+    const hits = DU.offersForRid(s.id, s.country);
+    return { key: hits[0] && hits[0].key, count: hits.reduce((n, h) => n + h.count, 0), cases: hits.reduce((n, h) => n + (h.cases || 0), 0) };
+  },
+  programLine(s) {
+    const p = (s.programs || [])[0];
+    if (!p) return '';
+    return esc(p.name) + (s.programs.length > 1 ? ` <i>+${s.programs.length - 1}</i>` : '');
+  },
+  /** top-5 feature tile */
+  feature(s, i) {
+    const o = this.offerInfo(s);
+    const tag = o.count ? 'a' : 'div';
+    return `
+      <${tag} class="du-card du-topschool"${o.count ? ` href="${Router.href('offers', null, { school: o.key })}"` : ''}>
+        <div class="du-topschool__mono du-orb du-orb--${i % 3} u-en">${esc(s.id === 'ual' ? 'UAL' : monogram(s.en, s.zh))}</div>
+        <b class="du-topschool__zh">${esc(s.zh)}</b>
+        <span class="du-topschool__en u-en">${esc(s.en)}</span>
+        <span class="du-topschool__prog u-en">${this.programLine(s)}</span>
+        <span class="du-topschool__foot">
+          ${o.count ? `<span class="du-pill">26 季 offer × ${o.count}</span>` : '<span class="du-chip">目标院校</span>'}
+          ${o.cases ? `<span class="du-chip du-chip--accent">案例 ${o.cases}</span>` : ''}
+        </span>
+      </${tag}>`;
+  },
+  /** compact tile for the expanded rest of a ranked list */
+  ranked(s, i) {
+    const o = this.offerInfo(s);
+    return this.html({ zh: s.zh, en: s.en, program: (s.programs || [])[0]?.name, count: o.count, href: o.count ? Router.href('offers', null, { school: o.key }) : '' }, i);
+  },
   html(s, i = 0, badge) {
     const n = s.count != null ? s.count : DU.offerCountFor(s.zh);
-    const mono = (s.en || s.zh).replace(/[^A-Za-z]/g, '').slice(0, 4) || s.zh.slice(0, 2);
+    const mono = monogram(s.en, s.zh);
+    const tag = s.href ? 'a' : 'div';
     return `
-      <div class="du-school">
+      <${tag} class="du-school"${s.href ? ` href="${s.href}"` : ''}>
         <div class="du-school__mono du-orb du-orb--${i % 3} u-en">${esc(mono)}</div>
         <div class="du-school__body">
           <b>${esc(s.zh)}</b>
@@ -289,27 +396,37 @@ const SchoolTile = {
         </div>
         ${badge ? `<span class="du-school__count du-school__count--text">${esc(badge)}</span>`
           : n ? `<span class="du-school__count u-mono" title="26 季 offer 数">${n}</span>` : ''}
-      </div>`;
+      </${tag}>`;
   },
 };
 
 /* ── offer grid (graduate .offer-card) with clamp + expand ── */
 const OfferGrid = {
-  _rows: {},
+  _rows: {}, _q: {},
   html(list, uid, rows = 2) {
     this._rows[uid] = rows;
     if (!list.length) return `<div class="du-empty">暂无 offer 数据</div>`;
     return `
       <div class="rough-grid du-offers fade-up" id="${uid}" data-rows="${rows}">
         ${list.map(s => `
-          <div class="offer-card du-offer${s.top ? ' is-top' : ''}">
+          <a class="offer-card du-offer${s.top ? ' is-top' : ''}" href="${Router.href('offers', null, { school: s.key })}" title="查看 ${esc(s.zh)} 的 offer">
             ${s.top ? '<span class="du-offer__star" title="顶尖院校">★</span>' : ''}
             <div class="offer-card__count u-mono">${s.count}</div>
             <div class="offer-card__school-zh">${esc(s.zh)}</div>
             <div class="offer-card__school-en u-en">${esc(s.en)}</div>
-          </div>`).join('')}
+            ${s.cases ? `<span class="du-offer__case">作品集案例 ${s.cases}</span>` : ''}
+          </a>`).join('')}
       </div>
       <div class="du-center" id="${uid}-more"></div>`;
+  },
+  /** country switch of an `offers` block */
+  country(uid, c, btn) {
+    btn.parentElement.querySelectorAll('button').forEach(b => b.classList.toggle('is-active', b === btn));
+    const wrap = document.getElementById(uid + '-wrap');
+    wrap.innerHTML = this.html(DU.schoolsFor({ ...(this._q[uid] || {}), country: [c] }), uid, this._rows[uid]);
+    wrap.querySelectorAll('.fade-up').forEach(e => e.classList.add('is-visible'));
+    const g = document.getElementById(uid);
+    if (g) this.clamp(g);
   },
   /** clamp every grid on the page to its rows, add 查看更多 */
   clampAll(root = document) {
@@ -524,3 +641,4 @@ const Detail = {
 
 window.Blocks = Blocks; window.OfferGrid = OfferGrid; window.CaseGrid = CaseGrid; window.CaseCard = CaseCard;
 window.Directions = Directions; window.Detail = Detail; window.SchoolTile = SchoolTile; window.VideoBox = VideoBox;
+window.SchoolList = SchoolList; window.monogram = monogram;
