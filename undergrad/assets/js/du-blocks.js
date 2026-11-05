@@ -14,7 +14,8 @@ const Blocks = {
   /** ctx: { nav, tab } — the track being rendered (track block reads icon / jump links from it) */
   render(list, ctx = {}) {
     this.ctx = ctx;
-    this.list = (list || []).map((b, i) => ({ ...b, id: b.id || `sec-${i}` }));
+    this.list = (list || []).map((b, i) => ({ ...b, id: b.id || `sec-${i}` }))
+      .filter(b => b.type !== 'cases' || DU.casesFor(b.track).length);
     return this.list.map((b, i) => {
       const fn = this[b.type];
       if (!fn) { console.warn('unknown block', b.type); return ''; }
@@ -49,7 +50,7 @@ const Blocks = {
           <div class="du-trackintro__img du-blob"><img src="${IMG(b.img)}" alt="${esc(b.title)}" loading="lazy"></div>
           ${b.sticker ? `<span class="du-sticker du-trackintro__sticker">${esc(b.sticker)}</span>` : ''}
           <div class="du-trackintro__stats">
-            ${(b.stats || []).map((s, i) => `<div class="du-trackintro__stat du-trackintro__stat--${i}"><b class="u-mono">${esc(statVal(s))}</b><span>${esc(s.label)}</span></div>`).join('')}
+            ${(b.stats || []).filter(s => !s.cases || DU.casesFor(s.cases).length).map((s, i) => `<div class="du-trackintro__stat du-trackintro__stat--${i}"><b class="u-mono">${esc(statVal(s))}</b><span>${esc(s.label)}</span></div>`).join('')}
           </div>
         </div>
       </div>`;
@@ -109,7 +110,7 @@ const Blocks = {
   /* ── routes: big image cards linking to tabs ── */
   routes(b) {
     return this.head(b) + `
-      <div class="du-routes fade-up">
+      <div class="du-routes du-routes--n${b.items.length} fade-up">
         ${b.items.map((r, i) => `
           <a class="du-card du-route" href="#${r.go}">
             <div class="du-route__img"><img src="${IMG(r.img)}" alt="${esc(r.title)}" loading="lazy">
@@ -123,22 +124,49 @@ const Blocks = {
       </div>`;
   },
 
-  /* ── product: 产品解读 card → overlay ── */
+  /* ── product: 产品解读 card → overlay (data/products.json). Block `title`
+       is the section heading; the card shows the product's own meta, plus its
+       报价单 / 比价 buttons (same PdfViewer as the graduate site). ── */
   product(b) {
-    const p = DU.data.site.products[b.product];
+    const p = DU.data.products[b.product];
     if (!p) return '';
+    const m = p.meta;
     return this.head(b) + `
-      <div class="du-card du-product fade-up" onclick="Detail.product('${jsq(b.product)}')" role="button" tabindex="0">
-        <div class="du-product__img du-blob"><img src="${IMG(p.img)}" alt="${esc(p.title)}" loading="lazy"></div>
+      <div class="du-card du-product fade-up" role="button" tabindex="0"
+           onclick="if(!event.target.closest('.cd-compare-btn'))Detail.product('${jsq(b.product)}')"
+           onkeydown="if(event.key==='Enter'&&event.target===this)Detail.product('${jsq(b.product)}')">
+        <div class="du-product__img du-blob"><img src="${IMG(p.cover)}" alt="${esc(m.titleCn)}" loading="lazy"></div>
         <div class="du-product__body">
-          ${p.badge ? `<span class="du-sticker du-sticker--1">${esc(p.badge)}</span>` : ''}
-          <span class="eyebrow u-en">${esc(p.en)}</span>
-          <h3>${esc(p.title)}</h3>
-          <p>${esc(p.summary)}</p>
-          <div class="du-chips">${(p.chips || []).map(c => `<span class="du-chip">${esc(c)}</span>`).join('')}</div>
-          <span class="btn btn--primary du-btn">查看产品解读</span>
+          <span class="eyebrow u-en">${esc(m.titleEn)}</span>
+          <h3>${esc(m.titleCn)}</h3>
+          <p>${esc(m.desc)}</p>
+          <div class="du-chips">${(m.chips || []).map(c => `<span class="du-chip">${esc(c)}</span>`).join('')}</div>
+          <div class="du-product__actions">
+            <span class="btn btn--primary du-btn">查看产品解读</span>
+            ${renderCompareButtons('card-' + b.product, p.comparePdf)}
+          </div>
         </div>
       </div>`;
+  },
+
+  /* ── choose: product / route selector — one card per route with
+       目标 / 适合 / 交付 rows, linking to its tab; optional `foot` list ── */
+  choose(b) {
+    const row = (k, v) => `<div class="du-choose__row"><dt>${k}</dt><dd>${esc(v)}</dd></div>`;
+    return this.head(b) + `
+      <div class="du-choose fade-up">
+        ${b.items.map((it, i) => `
+          <a class="du-card du-choose__item" href="#${it.go}">
+            <div class="du-choose__top">
+              <h3>${esc(it.name)}</h3>
+              ${it.sticker ? `<span class="du-sticker du-sticker--${i % 3}">${esc(it.sticker)}</span>` : ''}
+            </div>
+            <dl>${row('申请目标', it.goal)}${row('适合学生', it.fit)}${row('核心交付', it.deliver)}</dl>
+            <span class="du-more">查看路线 <i>→</i></span>
+          </a>`).join('')}
+      </div>
+      ${b.foot ? `<div class="du-choose__foot fade-up"><h3 class="du-subhead">${esc(b.foot.title)}</h3>
+        <ul class="du-checks">${b.foot.items.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}`;
   },
 
   /* ── schools: target-school list from rankings.json (cleaned 排名文件), ranking order.
@@ -264,7 +292,7 @@ const Blocks = {
     return this.head(b) + `
       <div class="du-pathway fade-up">
         ${b.items.map((it, i) => `
-          ${i ? '<div class="du-pathway__arrow" aria-hidden="true"><span></span></div>' : ''}
+          ${i ? (b.alt ? '<div class="du-pathway__or" aria-hidden="true">或</div>' : '<div class="du-pathway__arrow" aria-hidden="true"><span></span></div>') : ''}
           <div class="du-card du-pathway__item">
             <div class="du-pathway__img"><img src="${IMG(it.img)}" alt="${esc(it.school)}" loading="lazy"><span class="du-step u-mono">${esc(it.step)}</span></div>
             <div class="du-pathway__body">
@@ -272,7 +300,10 @@ const Blocks = {
               <span class="du-en u-en">${esc(it.en)}</span>
               <p>${esc(it.text)}</p>
               <div class="du-chips">${(it.tags || []).map(t => `<span class="du-chip">${esc(t)}</span>`).join('')}</div>
-              ${DU.offerCountFor(it.school) ? `<span class="du-pill">26 季 offer × ${DU.offerCountFor(it.school)}</span>` : ''}
+              <div class="du-pathway__foot">
+                ${DU.offerCountFor(it.school) ? `<span class="du-pill">26 季 offer × ${DU.offerCountFor(it.school)}</span>` : ''}
+                ${it.gallery ? GalleryBtn.html(it.gallery, '课程介绍') : ''}
+              </div>
             </div>
           </div>`).join('')}
       </div>`;
@@ -311,7 +342,8 @@ const Blocks = {
 
   /* ── profs: 合作教授 grid map → overlay ── */
   profs(b) {
-    return this.head(b) + `
+    const quote = b.comparePdf ? `<div class="du-head__actions">${renderCompareButtons('profs', b.comparePdf)}</div>` : '';
+    return this.head(b, quote) + `
       <div class="du-profs fade-up">
         ${DU.data.professors.map((p, i) => `
           <button class="du-card du-prof" onclick="Detail.prof('${p.id}')">
@@ -473,14 +505,15 @@ const CaseCard = {
       <button class="du-card du-case" data-type="${esc(c.workType)}" onclick="Detail.case('${c.id}')">
         <div class="du-case__img">
           <img src="${IMG(c.thumb)}" alt="${esc(c.student)}作品" loading="lazy">
-          ${lead.top ? `<span class="du-sticker du-sticker--${i % 3}">顶尖院校</span>` : ''}
+          ${c.decision ? `<span class="du-sticker du-sticker--${i % 3}">${esc(c.decision)}</span>`
+            : lead.top ? `<span class="du-sticker du-sticker--${i % 3}">顶尖院校</span>` : ''}
           <span class="du-case__type">${esc(labels[c.workType] || '')}</span>
         </div>
         <div class="du-case__body">
-          <div class="du-case__who"><b>${esc(c.student)}</b><span>${esc(c.city)}</span>${c.direction ? `<span class="du-chip du-chip--accent">${esc(c.direction)}</span>` : ''}</div>
+          <div class="du-case__who"><b>${esc(c.student)}</b><span>${esc([c.country, c.city].filter(Boolean).join(' · '))}</span></div>
           <div class="du-case__lead">${esc(lead.zh || '')}</div>
           <div class="du-case__major u-en">${esc(lead.major || '')}</div>
-          ${more.length ? `<div class="du-case__more">${more.map(o => `<span>${esc(o.zh)}</span>`).join('')}${c.offers.length > 4 ? `<span>+${c.offers.length - 4}</span>` : ''}</div>` : ''}
+          ${more.length ? `<div class="du-case__more">${more.map(o => `<span>${esc(o.abbr)}</span>`).join('')}${c.offers.length > 4 ? `<span>+${c.offers.length - 4}</span>` : ''}</div>` : ''}
         </div>
       </button>`;
   },
@@ -506,6 +539,17 @@ const Directions = {
   },
 };
 
+/* ── button that opens a course-introduction deck in GalleryViewer
+   (same registry/dir convention as buildGalleryCoverHTML) ── */
+const GalleryBtn = {
+  html(g, label = '查看') {
+    const dir = `assets/img/course-products/${g.market}/core/${g.slug}`;
+    const key = `${g.market}-${g.slug}`;
+    GalleryRegistry[key] = { dir, count: g.count, alt: g.alt };
+    return `<button type="button" class="section-cta du-gallerybtn" onclick="GalleryViewer.open('${key}')">${esc(label)} <span class="u-en">/ ${g.count} 页</span></button>`;
+  },
+};
+
 /* ── video placeholder ── */
 const VideoBox = {
   html(poster, caption, src, small) {
@@ -528,52 +572,88 @@ const Detail = {
     }).join('')}</div>`;
   },
 
+  /* product 解读 overlay — same .cd-* markup as the graduate product pages,
+     built from the shared helpers in assets/js/product-sections.js.
+     `sections` is an ordered list; each type maps to one renderer below. */
   product(id) {
-    const p = DU.data.site.products[id];
+    const p = DU.data.products[id];
+    if (!p) return;
+    const m = p.meta;
+    const sec = (label, inner) => `
+      <section class="cd-section">
+        <div class="cd-section__label">${esc(label[0])} <span class="u-en">${esc(label[1])}</span></div>
+        ${inner}
+      </section>`;
+    const note = (t) => t ? `<p class="du-note du-note--block">${esc(t)}</p>` : '';
+    const R = {
+      lead: (s) => `<p class="cd-lead">${esc(s.text)}</p>`,
+      why: (s) => renderWhyGrid(s.items),
+      tiers: (s) => renderTierGrid(s.items),
+      modules: (s) => renderModuleGrid(s.items, p.market, `cm-${id}`),
+      table: (s) => renderCompareTable(s) + note(s.note),
+      list: (s) => renderBulletList(s.items),
+      timeline: (s) => renderTimeline(s.items),
+      fit: (s) => `
+        <div class="du-fit${s.notFor ? '' : ' du-fit--single'}">
+          <div><h4 class="du-fit__h">适合</h4>${renderBulletList(s.fit)}</div>
+          ${s.notFor ? `<div class="du-fit__no"><h4 class="du-fit__h">不建议直接选择</h4>${renderBulletList(s.notFor)}</div>` : ''}
+        </div>`,
+    };
     Overlay.open(`
       <div class="cd-hero">
         <div class="cd-hero__content">
-          <div class="cd-hero__eyebrow u-en">${esc(p.en)}</div>
-          <h1 class="cd-hero__title">${esc(p.title)}</h1>
-          <p class="cd-hero__desc">${esc(p.summary)}</p>
-          <div class="cd-chips">${(p.chips || []).map(c => `<span class="cd-chip">${esc(c)}</span>`).join('')}</div>
+          <div class="cd-hero__eyebrow">${esc(m.eyebrow)}</div>
+          <div class="cd-hero__title-row">
+            <h1 class="cd-hero__title">${esc(m.titleCn)}</h1>
+            ${renderCompareButtons(id, p.comparePdf)}
+          </div>
+          <div class="cd-hero__subtitle"><span class="u-en">${esc(m.titleEn)}</span></div>
+          <p class="cd-hero__desc">${esc(m.desc)}</p>
+          <div class="cd-chips">${(m.chips || []).map(c => `<span class="cd-chip">${esc(c)}</span>`).join('')}</div>
         </div>
-        <div class="cd-hero__tile du-blob"><img src="${IMG(p.img)}" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="cd-hero__tile du-blob" aria-hidden="true"><img src="${IMG(p.cover)}" alt="" loading="lazy"></div>
       </div>
-      ${p.stats ? `<div class="cd-section"><div class="cd-section__label">产品概览 <span class="u-en">Overview</span></div>
-        <div class="cd-stat-grid">${p.stats.map(s => `<div class="cd-stat"><div class="cd-stat__k">${esc(s.k)}</div><div class="cd-stat__v">${esc(s.v)}</div></div>`).join('')}</div></div>` : ''}
-      ${p.why ? `<div class="cd-section"><div class="cd-section__label">产品亮点 <span class="u-en">Highlights</span></div>
-        <div class="cd-why-grid">${p.why.map((w, i) => `<div class="cd-why"><div class="cd-why__num u-mono">${String(i + 1).padStart(2, '0')}</div><div class="cd-why__title">${esc(w.title)}</div><div class="cd-why__desc">${esc(w.text)}</div></div>`).join('')}</div></div>` : ''}
-      ${p.timeline ? `<div class="cd-section"><div class="cd-section__label">规划节奏 <span class="u-en">Timeline</span></div>
-        <div class="du-steps">${p.timeline.map((t, i) => `<div class="du-steps__item"><span class="du-step u-mono">${i + 1}</span><b>${esc(t.title)}</b><em class="u-mono">${esc(t.day)}</em><p>${esc(t.desc)}</p></div>`).join('')}</div></div>` : ''}
-      ${p.posters ? `<div class="cd-section"><div class="cd-section__label">课程海报墙 <span class="u-en">Posters</span></div>${this.posterWall(p.title, p.posters, '课程海报')}</div>` : ''}
+      ${p.snapshot ? sec(['速览', 'Snapshot'], `<div class="cd-stat-grid">${p.snapshot.map(x => `<div class="cd-stat"><div class="cd-stat__k">${esc(x.k)}</div><div class="cd-stat__v">${esc(x.v)}</div></div>`).join('')}</div>`) : ''}
+      ${(p.sections || []).map(s => R[s.type] ? sec(s.label, R[s.type](s)) : (console.warn('unknown product section', s.type), '')).join('')}
+      ${note(p.note)}
     `, { wide: true });
   },
 
+  /* 案例卡: the full card image (offer letters blurred at build time — see
+     tools/build-ug-case-images.py) + its content as text */
   case(id) {
     const c = DU.data.cases.find(x => x.id === id);
+    if (!c) return;
     const labels = WORK_LABEL();
     Overlay.open(`
-      <div class="du-detail">
-        <div class="du-detail__media">
-          <button class="du-detail__img" onclick="ImageModal.open('${jsq(IMG(c.full))}','${jsq(c.student)}')"><img src="${IMG(c.full)}" alt="${esc(c.student)}作品"></button>
-          <p class="du-note">案例卡海报待上传，当前为作品占位图</p>
-        </div>
-        <div class="du-detail__info">
-          <span class="eyebrow u-en">Case Card</span>
-          <h2>${esc(c.student)}<small>${esc(c.city)}</small></h2>
-          <div class="du-chips">
-            ${c.bg ? `<span class="du-chip">${esc(c.bg)}</span>` : ''}
-            <span class="du-chip">${esc(c.major)}</span>
-            ${c.workType ? `<span class="du-chip du-chip--accent">${esc(labels[c.workType] || '')}</span>` : ''}
-            ${c.direction ? `<span class="du-chip du-chip--accent">${esc(c.direction)}</span>` : ''}
+      <div class="du-casedetail">
+        <button class="du-detail__img du-casedetail__card" onclick="ImageModal.open('${jsq(IMG(c.full))}','${jsq(c.student)} 案例卡')">
+          <img src="${IMG(c.full)}" alt="${esc(c.student)} 学生录取案例卡"></button>
+        <div class="du-casedetail__cols">
+          <div>
+            <span class="eyebrow u-en">Student Portfolio &amp; Offer Case</span>
+            <h2>${esc(c.student)}<small>${esc([c.country, c.city].filter(Boolean).join(' · '))}</small></h2>
+            <div class="du-chips">
+              ${c.tags.filter(t => t !== c.country && !(c.country === '澳大利亚' && t === '澳洲')).map(t => `<span class="du-chip">${esc(t)}</span>`).join('')}
+              ${c.workType ? `<span class="du-chip du-chip--accent">${esc(labels[c.workType] || '')}</span>` : ''}
+            </div>
+            <dl class="du-meta">${c.profile.map(p => `<dt>${esc(p.k)}</dt><dd>${esc(p.v)}</dd>`).join('')}</dl>
+            ${c.notes.length ? `<h3 class="du-subhead">文书与背景提升</h3>
+              ${c.notes.map(n => `<div class="du-casedetail__note"><span class="du-pill">${esc(n.label)}</span>
+                <ul>${n.items.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`).join('')}` : ''}
           </div>
-          <h3 class="du-subhead">录取 offer</h3>
-          <ul class="du-offerlist">
-            ${c.offers.map(o => `<li class="${o.top ? 'is-top' : ''}">
-              <b>${esc(o.zh)}</b><span class="u-en">${esc(o.en)}</span><em class="u-en">${esc(o.major)}</em>
-              ${o.top ? '<i class="du-pill">顶尖</i>' : ''}</li>`).join('')}
-          </ul>
+          <div>
+            <h3 class="du-subhead">作品方向</h3>
+            <div class="du-chips">${c.directions.map(d => `<span class="du-chip du-chip--accent">${esc(d)}</span>`).join('')}</div>
+            <h3 class="du-subhead">作品展示</h3>
+            <ol class="du-casedetail__projects">${c.projects.map(p => `<li>${esc(p)}</li>`).join('')}</ol>
+            <h3 class="du-subhead">部分录取院校${c.decision ? `<small>${esc(c.decision)}</small>` : ''}</h3>
+            <ul class="du-offerlist">
+              ${c.offers.map(o => `<li class="${o.top ? 'is-top' : ''}">
+                <b>${esc(o.zh)}</b><span class="u-en">${esc(o.abbr)}${o.en ? ' · ' + esc(o.en) : ''}</span><em class="u-en">${esc(o.major)}</em>
+                ${o.top ? '<i class="du-pill">顶尖</i>' : ''}</li>`).join('')}
+            </ul>
+          </div>
         </div>
       </div>`, { wide: true });
   },
@@ -641,4 +721,4 @@ const Detail = {
 
 window.Blocks = Blocks; window.OfferGrid = OfferGrid; window.CaseGrid = CaseGrid; window.CaseCard = CaseCard;
 window.Directions = Directions; window.Detail = Detail; window.SchoolTile = SchoolTile; window.VideoBox = VideoBox;
-window.SchoolList = SchoolList; window.monogram = monogram;
+window.SchoolList = SchoolList; window.monogram = monogram; window.GalleryBtn = GalleryBtn;

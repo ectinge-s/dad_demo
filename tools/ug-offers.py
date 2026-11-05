@@ -89,8 +89,11 @@ def city_of(v):
 cases = json.loads((DATA / "cases.json").read_text(encoding="utf-8"))
 CASE_KEY = {}
 for c in cases:
+    # each 案例卡 offer that was matched to an export row carries `link: {zh, major}`
+    # (the export's own spelling); unmatched card offers simply aren't linked
     for o in c.get("offers", []):
-        CASE_KEY.setdefault((c["student"], c["city"], o["zh"], (o.get("major") or "").strip()), c["id"])
+        if o.get("link"):
+            CASE_KEY.setdefault((c["student"], c["city"], o["link"]["zh"], o["link"]["major"].strip()), c["id"])
 
 schools = {}
 cities = collections.defaultdict(lambda: {"students": set(), "offers": 0, "schools": collections.Counter(), "top": 0})
@@ -158,7 +161,7 @@ city_list = sorted(({
 } for k, v in cities.items()), key=lambda c: -c["offers"])
 
 linked = sum(1 for w in wall if "case" in w)
-case_offers = sum(len(c.get("offers", [])) for c in cases)
+case_offers = sum(1 for c in cases for o in c.get("offers", []) if o.get("link"))
 out = {
     "meta": {
         "season": "26 申请季",

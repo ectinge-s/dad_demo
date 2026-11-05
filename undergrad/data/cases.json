@@ -1,1970 +1,2278 @@
 [
  {
-  "id": "c001",
-  "student": "夏同学",
-  "city": "北京海淀",
-  "bg": "国际高中 · AP",
-  "major": "数字媒体设计",
+  "id": "us-bacc-a1",
+  "card": "US-BACC-A1",
+  "student": "于同学",
+  "country": "美国",
+  "city": "",
+  "tags": [
+   "美国",
+   "艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "中芯国际学校"
+   },
+   {
+    "k": "国际课程",
+    "v": "AP"
+   },
+   {
+    "k": "均分/GPA",
+    "v": "3.8"
+   },
+   {
+    "k": "语言成绩",
+    "v": "TOEFL 95"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术"
+  ],
+  "workType": "multimedia",
   "tracks": [
    "risd"
   ],
-  "workType": "3d",
+  "projects": [
+   "综合材料",
+   "综合材料",
+   "字体 · 品牌",
+   "观察性绘画"
+  ],
+  "notes": [
+   {
+    "label": "活动",
+    "items": [
+     "WABC，爱百福公益活动",
+     "学生会年级代表",
+     "大师课",
+     "RISD 夏校"
+    ]
+   }
+  ],
   "offers": [
    {
+    "abbr": "RISD",
     "zh": "罗德岛设计学院",
     "en": "Rhode Island School of Design",
-    "major": "Art and Computation",
+    "major": "BFA in Graphic Design",
     "top": true
    },
    {
+    "abbr": "ACCD",
+    "zh": "艺术中心设计学院",
+    "en": "ArtCenter College of Design",
+    "major": "BFA in Graphic Design",
+    "top": true
+   },
+   {
+    "abbr": "CalArts",
+    "zh": "加州艺术学院(CalArts)",
+    "en": "California Institute of the Arts",
+    "major": "BFA Graphic Design",
+    "top": false
+   }
+  ],
+  "thumb": "cases/us-bacc-a1-thumb.webp",
+  "full": "cases/us-bacc-a1.webp"
+ },
+ {
+  "id": "us-bacc-a2",
+  "card": "US-BACC-A2",
+  "student": "李同学",
+  "country": "美国",
+  "city": "杭州",
+  "tags": [
+   "美国",
+   "艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "宁波镇海肯特高中"
+   },
+   {
+    "k": "国际课程",
+    "v": "AP 2D 5"
+   },
+   {
+    "k": "均分/GPA",
+    "v": "4.1/4.6"
+   },
+   {
+    "k": "语言成绩",
+    "v": "IELTS 7.0"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术"
+  ],
+  "workType": "multimedia",
+  "tracks": [
+   "risd"
+  ],
+  "projects": [
+   "空间叙事材料书籍",
+   "编制材料装置",
+   "综合材料",
+   "观察性绘画"
+  ],
+  "notes": [
+   {
+    "label": "竞赛",
+    "items": [
+     "安徒生艺术银奖",
+     "包豪斯国际设计竞赛",
+     "HKDADC 艺术竞赛",
+     "Panda Cup 艺术竞赛",
+     "每年校内 High Honor Roll"
+    ]
+   },
+   {
+    "label": "活动",
+    "items": [
+     "学校非遗社团手作工艺品；校内多次艺术展参展布展",
+     "罗德岛官方夏校（获多封教授推荐信）",
+     "斯芬克 SVA 冬校",
+     "校内社团（为特殊儿童上美术课）；校内活动志愿者；学校公益展会参展，作品被拍卖后所得款项用于捐赠",
+     "校内活动项目组长"
+    ]
+   }
+  ],
+  "offers": [
+   {
+    "abbr": "RISD",
+    "zh": "罗德岛设计学院",
+    "en": "Rhode Island School of Design",
+    "major": "BFA in Graphic Design",
+    "top": true,
+    "link": {
+     "zh": "罗德岛设计学院",
+     "major": "BFA in Graphic Design"
+    }
+   },
+   {
+    "abbr": "ACCD",
+    "zh": "艺术中心设计学院",
+    "en": "ArtCenter College of Design",
+    "major": "BFA in Graphic Design",
+    "top": true,
+    "link": {
+     "zh": "艺术中心设计学院",
+     "major": "BFA in Graphic Design"
+    }
+   }
+  ],
+  "thumb": "cases/us-bacc-a2-thumb.webp",
+  "full": "cases/us-bacc-a2.webp"
+ },
+ {
+  "id": "us-bacc-c1",
+  "card": "US-BACC-C1",
+  "student": "夏同学",
+  "country": "美国",
+  "city": "北京海淀",
+  "tags": [
+   "美国",
+   "综大",
+   "艺术爬藤",
+   "康奈尔 BFA",
+   "CMU BFA"
+  ],
+  "decision": "RD 录取",
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "101 中学"
+   },
+   {
+    "k": "国际课程",
+    "v": "AP 55443"
+   },
+   {
+    "k": "均分/GPA",
+    "v": "GPA 88+"
+   },
+   {
+    "k": "语言成绩",
+    "v": "托福 112"
+   },
+   {
+    "k": "SAT/ACT",
+    "v": "SAT 1520"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术"
+  ],
+  "workType": "multimedia",
+  "tracks": [
+   "us-dad",
+   "us-mix",
+   "risd"
+  ],
+  "projects": [
+   "投影影像 · 材料装置",
+   "平面设计 · 材料装置",
+   "康奈尔夏校 · 创意绘画",
+   "观察绘画"
+  ],
+  "notes": [
+   {
+    "label": "活动",
+    "items": [
+     "专业相关：Art History Club 创始人；校园设计师（校园杂志刊物设计、10+ 社团海报）",
+     "实习游学：故宫博物院古画修复学徒；同济大学意大利艺术夏令营",
+     "学术研究：Lumiere Research，完成关于社会学习如何影响音乐审美的跨学科论文",
+     "夏校经历：SFK × 康奈尔 Leeza 教授爬藤班",
+     "个人特质：Penguin Classics 读书会会长；校足球队首发后卫；植树"
+    ]
+   },
+   {
+    "label": "推荐信",
+    "items": [
+     "参加康奈尔 Leeza 教授爬藤班，增加艺术方向专业背书；成功拿到 RISD 教授的推荐信"
+    ]
+   },
+   {
+    "label": "亮点",
+    "items": [
+     "作品主题（部分展示，多媒介探索）：以个人正畸经历为起点，延伸出自画像、平面设计与影像装置，探索身体、身份与“不完美”的关系",
+     "故宫古画修复实践",
+     "以战争为主题的实验画创作，从个人走向更宏观的社会观察"
+    ]
+   }
+  ],
+  "offers": [
+   {
+    "abbr": "Cornell",
     "zh": "康奈尔大学",
     "en": "Cornell University",
-    "major": "Fine Art",
-    "top": true
+    "major": "B.F.A",
+    "top": true,
+    "link": {
+     "zh": "康奈尔大学",
+     "major": "Fine Art"
+    }
    },
    {
-    "zh": "加州大学圣地亚哥分校",
-    "en": "University of California, San Diego",
-    "major": "Speculative Design",
-    "top": true
+    "abbr": "WashU",
+    "zh": "圣路易斯华盛顿大学",
+    "en": "Washington University in St. Louis",
+    "major": "Studio Art - Communication Design",
+    "top": true,
+    "link": {
+     "zh": "圣路易斯华盛顿大学",
+     "major": "Communication Design"
+    }
    },
    {
+    "abbr": "CMU",
+    "zh": "卡内基梅隆大学",
+    "en": "Carnegie Mellon University",
+    "major": "BFA Art",
+    "top": true,
+    "link": {
+     "zh": "卡内基梅隆大学",
+     "major": "Fine Arts"
+    }
+   },
+   {
+    "abbr": "RISD",
+    "zh": "罗德岛设计学院",
+    "en": "Rhode Island School of Design",
+    "major": "BFA",
+    "top": true,
+    "link": {
+     "zh": "罗德岛设计学院",
+     "major": "Art and Computation"
+    }
+   },
+   {
+    "abbr": "牛津",
+    "zh": "牛津大学",
+    "en": "University of Oxford",
+    "major": "Fine Art 面邀",
+    "top": false,
+    "link": {
+     "zh": "牛津大学",
+     "major": "Fine Art"
+    }
+   }
+  ],
+  "thumb": "cases/us-bacc-c1-thumb.webp",
+  "full": "cases/us-bacc-c1.webp"
+ },
+ {
+  "id": "us-bacc-c2",
+  "card": "US-BACC-C2",
+  "student": "孙同学",
+  "country": "美国",
+  "city": "重庆",
+  "tags": [
+   "美国",
+   "综大",
+   "设计爬藤",
+   "康奈尔 DEA"
+  ],
+  "decision": "ED 录取",
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "巴蜀常春藤"
+   },
+   {
+    "k": "国际课程",
+    "v": "AP 5555444"
+   },
+   {
+    "k": "均分/GPA",
+    "v": "GPA 4.42"
+   },
+   {
+    "k": "语言成绩",
+    "v": "托福 109"
+   },
+   {
+    "k": "SAT/ACT",
+    "v": "SAT 1530"
+   }
+  ],
+  "directions": [
+   "多媒介与装置艺术",
+   "信息体验与设计应用",
+   "AI创意计算机与互动机械"
+  ],
+  "workType": "tech",
+  "tracks": [
+   "us-dad"
+  ],
+  "projects": [
+   "影像 · 材料装置 · 平面设计",
+   "互动机械 · 表演 · 编程",
+   "平面设计 · 卡牌与桌游",
+   "AR · 互动艺术"
+  ],
+  "notes": [
+   {
+    "label": "活动",
+    "items": [
+     "学校艺术与体育系学生会主席",
+     "学校学生会公共事务部成员",
+     "作品《三体人》被中国成都 LUXELAKES A4 美术馆永久收藏",
+     "第三届中国·重庆国际光影艺术节作品展示",
+     "2023 绘本《鲸遇》获九龙坡区图书馆签约出版",
+     "2025 年悦来美术馆《鲸遇》作品展出",
+     "新东方志愿“小书包”乡村留守儿童设计集体活动 LOGO",
+     "缙云山植被恢复志愿者"
+    ]
+   },
+   {
+    "label": "奖项",
+    "items": [
+     "2022 JCCO 获 Special Merit Award 和 China National Silver Award",
+     "2023 HOSA BCE 项目获初阶赛 Regional Bronze Honor，晋级全国站",
+     "2024 BBO 全球铜奖",
+     "2025 ICVA 提名奖"
+    ]
+   },
+   {
+    "label": "亮点",
+    "items": [
+     "文书以木工经历喻人生，情感真挚，叙事流畅，富有感染力；立意深刻，将手作温度与生命感悟自然融合"
+    ]
+   }
+  ],
+  "offers": [
+   {
+    "abbr": "Cornell",
+    "zh": "康奈尔大学",
+    "en": "Cornell University",
+    "major": "Design Environmental Analysis",
+    "top": true,
+    "link": {
+     "zh": "康奈尔大学",
+     "major": "Design and Environmental Analysis"
+    }
+   }
+  ],
+  "thumb": "cases/us-bacc-c2-thumb.webp",
+  "full": "cases/us-bacc-c2.webp"
+ },
+ {
+  "id": "us-bacc-c3",
+  "card": "US-BACC-C3",
+  "student": "杨同学",
+  "country": "美国",
+  "city": "北京CBD",
+  "tags": [
+   "美国",
+   "综大",
+   "设计爬藤",
+   "华大圣路易斯"
+  ],
+  "decision": "ED 录取",
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "海淀外国语"
+   },
+   {
+    "k": "国际课程",
+    "v": "AP 5444444"
+   },
+   {
+    "k": "均分/GPA",
+    "v": "93.4"
+   },
+   {
+    "k": "语言成绩",
+    "v": "托福 105"
+   },
+   {
+    "k": "SAT/ACT",
+    "v": "SAT 1490"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术"
+  ],
+  "workType": "design",
+  "tracks": [
+   "us-dad"
+  ],
+  "projects": [
+   "桌游 · 卡牌平面设计",
+   "品牌设计 · 图形视觉设计",
+   "平面设计 · 影像装置",
+   "材料装置 · 表演"
+  ],
+  "notes": [
+   {
+    "label": "活动",
+    "items": [
+     "专业相关：Muse Club 联合创始人；学生会艺术部副主席；校刊《Hey! World!》编辑",
+     "夏校：SFK 康奈尔爬藤夏校；SFK 圣马丁大师课",
+     "公益与社会责任感：自闭症社团 + 心理研究；磁州窑遗产项目研究"
+    ]
+   },
+   {
+    "label": "奖项",
+    "items": [
+     "新加坡艺术设计大赛铜奖",
+     "CTB 入围全国",
+     "啦啦操比赛"
+    ]
+   },
+   {
+    "label": "亮点",
+    "items": [
+     "作品与文书主人设相互呼应：Creating art that is both fun and significant",
+     "个人创意视频：在宿舍与朋友一起化妆打扮，找到生活中小小的乐趣"
+    ]
+   }
+  ],
+  "offers": [
+   {
+    "abbr": "WashU",
     "zh": "圣路易斯华盛顿大学",
     "en": "Washington University in St. Louis",
     "major": "Communication Design",
-    "top": true
-   },
-   {
-    "zh": "卡内基梅隆大学",
-    "en": "Carnegie Mellon University",
-    "major": "Fine Arts",
-    "top": true
-   },
-   {
-    "zh": "加州大学圣芭芭拉分校",
-    "en": "University of California, Santa Barbara",
-    "major": "Art",
-    "top": false
+    "top": true,
+    "link": {
+     "zh": "圣路易斯华盛顿大学",
+     "major": "BFA in Communication Design"
+    }
    }
   ],
-  "thumb": "fulltime/work-07.jpg",
-  "full": "fulltime/work-07.jpg"
+  "thumb": "cases/us-bacc-c3-thumb.webp",
+  "full": "cases/us-bacc-c3.webp"
  },
  {
-  "id": "c002",
-  "student": "李同学",
-  "city": "杭州",
-  "bg": "国际高中 · 国内美高体系",
-  "major": "视觉传达",
-  "tracks": [
-   "risd"
+  "id": "us-bacc-c4",
+  "card": "US-BACC-C4",
+  "student": "杨同学",
+  "country": "美国",
+  "city": "北京海淀",
+  "tags": [
+   "美国",
+   "综大",
+   "设计爬藤",
+   "华大圣路易斯"
   ],
-  "workType": "acg",
-  "offers": [
+  "decision": "ED 录取",
+  "profile": [
    {
-    "zh": "罗德岛设计学院",
-    "en": "Rhode Island School of Design",
-    "major": "BFA in Graphic Design",
-    "top": true
+    "k": "高中院校",
+    "v": "曼谷 ISB"
    },
    {
-    "zh": "艺术中心设计学院",
-    "en": "ArtCenter College of Design",
-    "major": "BFA in Graphic Design",
-    "top": true
+    "k": "国际课程",
+    "v": "IB 36"
    },
    {
-    "zh": "迈阿密大学（佛罗里达州）",
-    "en": "University of Miami",
-    "major": "BFA in Art",
-    "top": false
+    "k": "均分/GPA",
+    "v": "4.0"
+   },
+   {
+    "k": "语言成绩",
+    "v": "托福 105"
+   },
+   {
+    "k": "SAT/ACT",
+    "v": "SAT 1440 · 未提交"
    }
   ],
-  "thumb": "acg/page-16.jpg",
-  "full": "acg/page-16.jpg"
- },
- {
-  "id": "c003",
-  "student": "孙同学",
-  "city": "重庆",
-  "bg": "国际高中 · AP",
-  "major": "数字媒体设计",
-  "tracks": [
-   "us-talent"
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术"
   ],
-  "direction": "环境科学",
   "workType": "multimedia",
-  "offers": [
-   {
-    "zh": "康奈尔大学",
-    "en": "Cornell University",
-    "major": "Design and Environmental Analysis",
-    "top": true
-   }
-  ],
-  "thumb": "fulltime/work-04.jpg",
-  "full": "fulltime/work-04.jpg"
- },
- {
-  "id": "c004",
-  "student": "闵同学",
-  "city": "北京海淀",
-  "bg": "国际高中",
-  "major": "数字媒体设计",
-  "tracks": [
-   "us-talent"
-  ],
-  "direction": "物理工程",
-  "workType": "tech",
-  "offers": [
-   {
-    "zh": "康奈尔大学",
-    "en": "Cornell University",
-    "major": "Engineering physics",
-    "top": true
-   }
-  ],
-  "thumb": "fulltime/work-09.jpg",
-  "full": "fulltime/work-09.jpg"
- },
- {
-  "id": "c005",
-  "student": "蒋同学",
-  "city": "北京海淀",
-  "bg": "国际课程中学",
-  "major": "数字媒体设计",
-  "tracks": [
-   "us-talent"
-  ],
-  "direction": "艺术史",
-  "workType": "design",
-  "offers": [
-   {
-    "zh": "达特茅斯学院",
-    "en": "Dartmouth College",
-    "major": "艺术史",
-    "top": true
-   }
-  ],
-  "thumb": "fulltime/work-01.jpg",
-  "full": "fulltime/work-01.jpg"
- },
- {
-  "id": "c006",
-  "student": "罗同学",
-  "city": "北京海淀",
-  "bg": "国际课程中学",
-  "major": "数字媒体设计",
   "tracks": [
    "us-dad"
   ],
-  "workType": "3d",
+  "projects": [
+   "光雕投影 · 装置艺术",
+   "实验字体设计",
+   "实验影像 · 影像装置",
+   "创意多材料绘画"
+  ],
+  "notes": [
+   {
+    "label": "活动",
+    "items": [
+     "专业相关：G10–12 Visual Art IASAS 校际艺术代表",
+     "夏校：G10 UCLA 纯艺夏校",
+     "公益与社会责任感：G9–10 WildLifesOurLives 公益平台产品设计师；G11 UNDP / ACEF / CPRA 设计与研究实习生",
+     "领导力：G10–12 校内艺术社团社长，G9 中国文化夜联合项目负责人",
+     "个人爱好：G10–11 校队羽毛球 Varsity 成员，PADI 认证潜水员"
+    ]
+   },
+   {
+    "label": "奖项",
+    "items": [
+     "G9–11 High Honor Roll",
+     "G9 Honor Roll"
+    ]
+   },
+   {
+    "label": "亮点",
+    "items": [
+     "以家庭中“不说对不起，而是采取行动”的价值观为核心，通过一次学业压力下的家庭冲突与反思，讲述学生如何从情绪崩溃走向自我觉察，并将“行动导向”的思维方式内化为个人成长与领导力模式"
+    ]
+   }
+  ],
   "offers": [
    {
-    "zh": "加州大学洛杉矶分校",
-    "en": "University of California, Los Angeles",
-    "major": "BA in Design Media Arts",
-    "top": true
+    "abbr": "WashU",
+    "zh": "圣路易斯华盛顿大学",
+    "en": "Washington University in St. Louis",
+    "major": "Studio Art: Time-Based + Media Art",
+    "top": true,
+    "link": {
+     "zh": "圣路易斯华盛顿大学",
+     "major": "Design & Visual Arts"
+    }
+   }
+  ],
+  "thumb": "cases/us-bacc-c4-thumb.webp",
+  "full": "cases/us-bacc-c4.webp"
+ },
+ {
+  "id": "us-bacc-c5",
+  "card": "US-BACC-C5",
+  "student": "勇同学",
+  "country": "美国",
+  "city": "上海徐汇",
+  "tags": [
+   "美国",
+   "综大",
+   "艺术爬藤",
+   "NYU-IMA"
+  ],
+  "decision": "ED 录取",
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "UWC 常熟"
    },
    {
-    "zh": "南加州大学",
-    "en": "University of Southern California",
-    "major": "Media Arts and Practice BA",
-    "top": true
+    "k": "国际课程",
+    "v": "IB 36"
    },
    {
+    "k": "语言成绩",
+    "v": "托福 108"
+   },
+   {
+    "k": "SAT/ACT",
+    "v": "无"
+   }
+  ],
+  "directions": [
+   "多媒介与装置艺术",
+   "3D虚拟艺术制作",
+   "AI创意计算机与互动机械"
+  ],
+  "workType": "tech",
+  "tracks": [
+   "us-dad"
+  ],
+  "projects": [
+   "材料装置 · 实验影像",
+   "交互机械装置 · 创意编程",
+   "3D 建模 · 虚构设计",
+   "3D 扫描 · 3D 建模"
+  ],
+  "notes": [
+   {
+    "label": "活动",
+    "items": [
+     "专业相关：G10–12 Slate Film 社团负责人 / 电影创作；G11 电影《Hot Water》剪辑 / 调色 / 音效设计",
+     "夏校：G11 USC 海外夏校",
+     "公益与社会责任感：G11–12 重新设计学校工作人员休息室",
+     "领导力：G10–12 可持续发展委员会联合创始人 / 纪录片导演 / 设计师",
+     "个人爱好：摄影；乐队演出"
+    ]
+   },
+   {
+    "label": "奖项",
+    "items": [
+     "Cannes World Film Festival：Best Young Filmmaker",
+     "香港数字媒体大赛二等奖"
+    ]
+   },
+   {
+    "label": "亮点",
+    "items": [
+     "主文书专注于学生的摄影创作历程，由执着于理论到专注当下的感受，展现了学生独特的感知力和作为创作者的成长"
+    ]
+   }
+  ],
+  "offers": [
+   {
+    "abbr": "NYU",
     "zh": "纽约大学",
     "en": "New York University",
-    "major": "BFA Interactive Media Arts",
-    "top": true
-   },
-   {
-    "zh": "加州大学戴维斯分校",
-    "en": "University of California, Davis",
-    "major": "Applied Physics",
-    "top": false
-   },
-   {
-    "zh": "马里兰大学帕克分校",
-    "en": "University of Maryland-College Park",
-    "major": "Bachelor of Arts in Technology and Information Design (InfoDesign) : 26FALL",
-    "top": false
-   },
-   {
-    "zh": "东北大学",
-    "en": "Northeastern University",
-    "major": "CAMD Undecided",
-    "top": false
+    "major": "Interactive Media Arts",
+    "top": true,
+    "link": {
+     "zh": "纽约大学",
+     "major": "BFA Interactive Media Arts"
+    }
    }
   ],
-  "thumb": "fulltime/work-08.jpg",
-  "full": "fulltime/work-08.jpg"
+  "thumb": "cases/us-bacc-c5-thumb.webp",
+  "full": "cases/us-bacc-c5.webp"
  },
  {
-  "id": "c007",
-  "student": "朱同学",
-  "city": "上海徐汇",
-  "bg": "国际高中",
-  "major": "数字媒体设计",
-  "tracks": [
-   "us-dad"
+  "id": "uk-bacc-1",
+  "card": "UK-BACC-1",
+  "student": "全同学",
+  "country": "英国",
+  "city": "武汉",
+  "tags": [
+   "英国",
+   "综合 & 艺术"
   ],
-  "workType": "multimedia",
-  "offers": [
+  "decision": null,
+  "profile": [
    {
-    "zh": "加州大学洛杉矶分校",
-    "en": "University of California, Los Angeles",
-    "major": "BA in Design Media Arts",
-    "top": true
+    "k": "高中院校",
+    "v": "武汉英中"
    },
    {
+    "k": "国际课程",
+    "v": "A-Level A*A*AAB"
+   },
+   {
+    "k": "均分/GPA",
+    "v": "3.5"
+   },
+   {
+    "k": "语言成绩",
+    "v": "IELTS 7.0"
+   }
+  ],
+  "directions": [
+   "多媒介与装置艺术",
+   "3D虚拟艺术制作",
+   "信息体验与设计应用",
+   "AI创意计算机与互动机械"
+  ],
+  "workType": "tech",
+  "tracks": [
+   "cw-uk"
+  ],
+  "projects": [
+   "声音代码 · 材料装置",
+   "实验性声音 · 互动装置",
+   "3D 动态",
+   "信息设计 · 互动装置"
+  ],
+  "notes": [],
+  "offers": [
+   {
+    "abbr": "UCL",
     "zh": "伦敦大学学院",
     "en": "University College London",
-    "major": "Art and Technology BA",
-    "top": true
+    "major": "Art and Technology",
+    "top": true,
+    "link": {
+     "zh": "伦敦大学学院",
+     "major": "Art and Technology BA"
+    }
    },
    {
-    "zh": "纽约大学",
-    "en": "New York University",
-    "major": "BFA Interactive Media Arts",
-    "top": true
+    "abbr": "KCL",
+    "zh": "伦敦国王学院",
+    "en": "King's College London",
+    "major": "Digital Media and Culture",
+    "top": false,
+    "link": {
+     "zh": "伦敦国王学院",
+     "major": "Digital Media and Culture BA"
+    }
    },
    {
-    "zh": "艺术中心设计学院",
-    "en": "ArtCenter College of Design",
-    "major": "Bachelor of Fine Arts in Fine Art",
-    "top": true
+    "abbr": "UAL LCC",
+    "zh": "伦敦艺术大学 · 伦敦传媒学院",
+    "en": "University of the Arts London",
+    "major": "BA Interaction Design",
+    "top": true,
+    "link": {
+     "zh": "伦艺-伦敦传媒学院",
+     "major": "BA (Hons) Interaction Design"
+    }
    },
    {
+    "abbr": "UAL CCI",
+    "zh": "伦敦艺术大学 · 创意计算学院",
+    "en": "University of the Arts London",
+    "major": "BSc Creative Computing",
+    "top": true
+   }
+  ],
+  "thumb": "cases/uk-bacc-1-thumb.webp",
+  "full": "cases/uk-bacc-1.webp"
+ },
+ {
+  "id": "uk-bacc-2",
+  "card": "UK-BACC-2",
+  "student": "姚同学",
+  "country": "英国",
+  "city": "上海徐汇",
+  "tags": [
+   "英国",
+   "综合 & 艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "澳洲高中"
+   },
+   {
+    "k": "国际课程",
+    "v": "VCE 94.05 · BTEC D"
+   },
+   {
+    "k": "语言成绩",
+    "v": "免语言"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播"
+  ],
+  "workType": "design",
+  "tracks": [
+   "cw-uk"
+  ],
+  "projects": [
+   "书籍",
+   "书籍场景叙事",
+   "纸媒展览",
+   "虚拟品牌"
+  ],
+  "notes": [],
+  "offers": [
+   {
+    "abbr": "UCL",
+    "zh": "伦敦大学学院",
+    "en": "University College London",
+    "major": "Media BA",
+    "top": true,
+    "link": {
+     "zh": "伦敦大学学院",
+     "major": "Media BA"
+    }
+   },
+   {
+    "abbr": "UAL CSM",
+    "zh": "伦敦艺术大学 · 中央圣马丁艺术学院",
+    "en": "University of the Arts London",
+    "major": "Graphic Communication Design",
+    "top": true,
+    "link": {
+     "zh": "伦艺-中央圣马丁艺术学院",
+     "major": "BA (Hons) Graphic Communication Design"
+    }
+   },
+   {
+    "abbr": "UAL LCC",
+    "zh": "伦敦艺术大学 · 伦敦传媒学院",
+    "en": "University of the Arts London",
+    "major": "Graphic and Media Design",
+    "top": true,
+    "link": {
+     "zh": "伦艺-伦敦传媒学院",
+     "major": "BA (Hons) Graphic and Media Design"
+    }
+   }
+  ],
+  "thumb": "cases/uk-bacc-2-thumb.webp",
+  "full": "cases/uk-bacc-2.webp"
+ },
+ {
+  "id": "uk-bacc-3",
+  "card": "UK-BACC-3",
+  "student": "龚同学",
+  "country": "英国",
+  "city": "杭州",
+  "tags": [
+   "英国",
+   "艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "萧山惠立国际学校"
+   },
+   {
+    "k": "国际课程",
+    "v": "A-Level ABB · BTEC M"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "信息体验与设计应用"
+  ],
+  "workType": "design",
+  "tracks": [
+   "cw-uk"
+  ],
+  "projects": [
+   "书籍 · 大师课",
+   "UI/UX",
+   "品牌 · 周边",
+   "品牌"
+  ],
+  "notes": [
+   {
+    "label": "推荐信",
+    "items": [
+     "大师课 UAL 教授推荐信"
+    ]
+   }
+  ],
+  "offers": [
+   {
+    "abbr": "UAL LCC",
+    "zh": "伦敦艺术大学 · 伦敦传媒学院",
+    "en": "University of the Arts London",
+    "major": "BA Graphic Branding and Identity",
+    "top": true,
+    "link": {
+     "zh": "伦艺-伦敦传媒学院",
+     "major": "BA (Hons) Graphic Branding and Identity"
+    }
+   },
+   {
+    "abbr": "UAL LCC",
+    "zh": "伦敦艺术大学 · 伦敦传媒学院",
+    "en": "University of the Arts London",
+    "major": "BA Graphic Media Design",
+    "top": true,
+    "link": {
+     "zh": "伦艺-伦敦传媒学院",
+     "major": "BA (Hons) Graphic Media Design"
+    }
+   },
+   {
+    "abbr": "UAL CAM",
+    "zh": "伦敦艺术大学 · 坎伯韦尔艺术学院",
+    "en": "University of the Arts London",
+    "major": "BA Graphic Design",
+    "top": true,
+    "link": {
+     "zh": "伦艺-坎伯韦尔艺术学院",
+     "major": "BA (Hons) Graphic Design"
+    }
+   }
+  ],
+  "thumb": "cases/uk-bacc-3-thumb.webp",
+  "full": "cases/uk-bacc-3.webp"
+ },
+ {
+  "id": "uk-bacc-4",
+  "card": "UK-BACC-4",
+  "student": "何同学",
+  "country": "英国",
+  "city": "广州",
+  "tags": [
+   "英国",
+   "综合 & 艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "广美 GMAA"
+   },
+   {
+    "k": "国际课程",
+    "v": "A-Level A*AB"
+   },
+   {
+    "k": "语言成绩",
+    "v": "IELTS 6.0"
+   }
+  ],
+  "directions": [
+   "多媒介与装置艺术",
+   "3D虚拟艺术制作",
+   "信息体验与设计应用"
+  ],
+  "workType": "3d",
+  "tracks": [
+   "cw-uk"
+  ],
+  "projects": [
+   "3D 建模严肃游戏",
+   "材料可穿戴",
+   "动态影像",
+   "UI 用户体验"
+  ],
+  "notes": [
+   {
+    "label": "活动",
+    "items": [
+     "10 年级参加经济学科竞赛",
+     "2025.02 参加 GCROSS 比赛，并获得铜奖"
+    ]
+   },
+   {
+    "label": "推荐信",
+    "items": [
+     "冬校 A-Level 平面班教授的推荐信"
+    ]
+   }
+  ],
+  "offers": [
+   {
+    "abbr": "UCL",
+    "zh": "伦敦大学学院",
+    "en": "University College London",
+    "major": "Media BA",
+    "top": true,
+    "link": {
+     "zh": "伦敦大学学院",
+     "major": "Media BA"
+    }
+   },
+   {
+    "abbr": "KCL",
     "zh": "伦敦国王学院",
     "en": "King's College London",
     "major": "Digital Media and Culture BA",
-    "top": false
+    "top": false,
+    "link": {
+     "zh": "伦敦国王学院",
+     "major": "Digital Media and Culture BA"
+    }
    },
    {
-    "zh": "伊利诺伊大学香槟分校",
-    "en": "University of Illinois at Urbana-Champaign",
-    "major": "Studio Art",
-    "top": false
-   }
-  ],
-  "thumb": "site/case-family-archive.jpg",
-  "full": "site/case-family-archive.jpg"
- },
- {
-  "id": "c008",
-  "student": "丰同学",
-  "city": "北京CBD",
-  "bg": "国际高中 · AP国际课程",
-  "major": "数字媒体设计",
-  "tracks": [
-   "us-dad"
-  ],
-  "workType": "tech",
-  "offers": [
-   {
-    "zh": "艺术中心设计学院",
-    "en": "ArtCenter College of Design",
-    "major": "BS in Interaction Design",
-    "top": true
+    "abbr": "UAL LCC",
+    "zh": "伦敦艺术大学 · 伦敦传媒学院",
+    "en": "University of the Arts London",
+    "major": "BA Immersive Media and Mixed Reality",
+    "top": true,
+    "link": {
+     "zh": "伦艺-伦敦传媒学院",
+     "major": "BA (Hons) Immersive Media and Mixed Reality"
+    }
    },
    {
-    "zh": "加州大学圣芭芭拉分校",
-    "en": "University of California, Santa Barbara",
-    "major": "Art BA",
-    "top": false
-   },
-   {
-    "zh": "加州大学尔湾分校",
-    "en": "University of California, Irvine",
-    "major": "Art, B.A.",
-    "top": false
-   },
-   {
-    "zh": "伊利诺伊大学香槟分校",
-    "en": "University of Illinois at Urbana-Champaign",
-    "major": "BFA in Studio Art: New Media",
-    "top": false
-   },
-   {
-    "zh": "加州大学戴维斯分校",
-    "en": "University of California, Davis",
-    "major": "BA Design",
-    "top": false
-   },
-   {
-    "zh": "帕森斯设计学院",
-    "en": "Parsons School of Design at The New School",
-    "major": "Design and Technology",
-    "top": false
-   }
-  ],
-  "thumb": "site/case-mechanical-3d.jpg",
-  "full": "site/case-mechanical-3d.jpg"
- },
- {
-  "id": "c009",
-  "student": "唐同学",
-  "city": "上海徐汇",
-  "bg": "国际高中",
-  "major": "平面设计",
-  "tracks": [
-   "us-dad"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "艺术中心设计学院",
-    "en": "ArtCenter College of Design",
-    "major": "BFA in Graphic Design",
-    "top": true
-   },
-   {
-    "zh": "马里兰艺术学院",
-    "en": "Maryland Institute College of Art",
-    "major": "BFA in Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "旧金山艺术大学",
-    "en": "Academy of Art University",
-    "major": "BFA in Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "芝加哥艺术学院",
-    "en": "School of the Art Institute of Chicago",
-    "major": "BFA in Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "纽约视觉艺术学院",
-    "en": "School of Visual Arts",
-    "major": "English and the Visual Arts Program at SVA",
-    "top": false
-   },
-   {
-    "zh": "萨凡纳艺术与设计学院",
-    "en": "Savannah College of Art and Design",
-    "major": "BFA/BA in Graphic Design",
-    "top": false
-   }
-  ],
-  "thumb": "acg/page-46.jpg",
-  "full": "acg/page-46.jpg"
- },
- {
-  "id": "c010",
-  "student": "蔡同学",
-  "city": "广州",
-  "bg": "国际高中",
-  "major": "平面设计",
-  "tracks": [
-   "us-dad"
-  ],
-  "workType": "design",
-  "offers": [
-   {
-    "zh": "艺术中心设计学院",
-    "en": "ArtCenter College of Design",
-    "major": "BFA in Graphic Design",
-    "top": true
-   },
-   {
-    "zh": "普瑞特艺术学院",
-    "en": "Pratt Institute",
-    "major": "BFA Communications Design",
-    "top": false
-   },
-   {
-    "zh": "纽约视觉艺术学院",
-    "en": "School of Visual Arts",
-    "major": "BFA in Design - Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "帕森斯设计学院",
-    "en": "Parsons School of Design at The New School",
-    "major": "Communication Design BFA",
-    "top": false
-   },
-   {
-    "zh": "马里兰艺术学院",
-    "en": "Maryland Institute College of Art",
-    "major": "BFA in Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "萨凡纳艺术与设计学院",
-    "en": "Savannah College of Art and Design",
-    "major": "BFA in Graphic Design",
-    "top": false
-   }
-  ],
-  "thumb": "site/case-visual-system.jpg",
-  "full": "site/case-visual-system.jpg"
- },
- {
-  "id": "c011",
-  "student": "肖同学",
-  "city": "南京",
-  "bg": "国际高中",
-  "major": "数字媒体设计",
-  "tracks": [
-   "us-dad"
-  ],
-  "workType": "3d",
-  "offers": [
-   {
-    "zh": "南加州大学",
-    "en": "University of Southern California",
-    "major": "Media Arts Practice",
-    "top": true
-   },
-   {
-    "zh": "艺术中心设计学院",
-    "en": "ArtCenter College of Design",
-    "major": "BS in Interaction Design",
-    "top": true
-   },
-   {
-    "zh": "加州大学圣芭芭拉分校",
-    "en": "University of California, Santa Barbara",
-    "major": "Art BA",
-    "top": false
-   },
-   {
-    "zh": "东北大学",
-    "en": "Northeastern University",
-    "major": "Media Arts, BFA",
-    "top": false
-   },
-   {
-    "zh": "华威大学",
-    "en": "The University of Warwick",
-    "major": "Design for Sustainable Innovation",
-    "top": false
-   },
-   {
-    "zh": "罗彻斯特大学",
-    "en": "University of Rochester",
-    "major": "Digital Media Studies(BA)",
-    "top": false
-   }
-  ],
-  "thumb": "site/case-youth-3d.jpg",
-  "full": "site/case-youth-3d.jpg"
- },
- {
-  "id": "c012",
-  "student": "王同学",
-  "city": "深圳",
-  "bg": "国际高中",
-  "major": "视觉传达",
-  "tracks": [
-   "us-dad"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "艺术中心设计学院",
-    "en": "ArtCenter College of Design",
-    "major": "BFA in Graphic Design",
-    "top": true
-   },
-   {
-    "zh": "帕森斯设计学院",
-    "en": "Parsons School of Design at The New School",
-    "major": "BFA in Communication Design",
-    "top": false
-   },
-   {
-    "zh": "萨凡纳艺术与设计学院",
-    "en": "Savannah College of Art and Design",
-    "major": "BFA in Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "普瑞特艺术学院",
-    "en": "Pratt Institute",
-    "major": "BFA in Communication Design-Emphasis in Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "纽约视觉艺术学院",
-    "en": "School of Visual Arts",
-    "major": "BFA in Design-Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "马里兰艺术学院",
-    "en": "Maryland Institute College of Art",
-    "major": "BFA in Graphic Design",
-    "top": false
-   }
-  ],
-  "thumb": "acg/page-52.jpg",
-  "full": "acg/page-52.jpg"
- },
- {
-  "id": "c013",
-  "student": "彭同学",
-  "city": "北京海淀",
-  "bg": "国际高中 · IB",
-  "major": "数字媒体设计",
-  "tracks": [
-   "us-dad"
-  ],
-  "workType": "tech",
-  "offers": [
-   {
-    "zh": "加州大学洛杉矶分校",
-    "en": "University of California, Los Angeles",
-    "major": "BA in Design Media Arts",
-    "top": true
-   },
-   {
-    "zh": "纽约大学",
-    "en": "New York University",
-    "major": "BFA Interactive Media Arts",
-    "top": true
-   },
-   {
-    "zh": "爱丁堡大学",
-    "en": "University of Edinburgh",
-    "major": "MA Interdisciplinary Futures",
-    "top": false
-   },
-   {
-    "zh": "伊利诺伊大学香槟分校",
-    "en": "University of Illinois at Urbana-Champaign",
-    "major": "BFA studio art",
-    "top": false
-   }
-  ],
-  "thumb": "fulltime/work-09.jpg",
-  "full": "fulltime/work-09.jpg"
- },
- {
-  "id": "c014",
-  "student": "张同学",
-  "city": "北京CBD",
-  "bg": "国际高中",
-  "major": "数字媒体设计",
-  "tracks": [
-   "us-dad"
-  ],
-  "workType": "3d",
-  "offers": [
-   {
-    "zh": "艺术中心设计学院",
-    "en": "ArtCenter College of Design",
-    "major": "Interaction Design",
-    "top": true
-   },
-   {
-    "zh": "伦敦国王学院",
-    "en": "King's College London",
-    "major": "International Foundation Programme Politics, Culture & Social Sciences Pathway",
-    "top": false
-   },
-   {
-    "zh": "旧金山艺术大学",
-    "en": "Academy of Art University",
-    "major": "Interaction & UI/UX Design BFA",
-    "top": false
-   },
-   {
-    "zh": "芝加哥艺术学院",
-    "en": "School of the Art Institute of Chicago",
-    "major": "Visual Communication Design",
-    "top": false
-   },
-   {
-    "zh": "帕森斯设计学院",
-    "en": "Parsons School of Design at The New School",
-    "major": "Design and Technology",
-    "top": false
-   },
-   {
-    "zh": "纽约视觉艺术学院",
-    "en": "School of Visual Arts",
-    "major": "BFA Design",
-    "top": false
-   }
-  ],
-  "thumb": "fulltime/work-02.jpg",
-  "full": "fulltime/work-02.jpg"
- },
- {
-  "id": "c015",
-  "student": "范同学",
-  "city": "成都",
-  "bg": "普高",
-  "major": "数字媒体设计",
-  "tracks": [
-   "us-dad"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "艺术中心设计学院",
-    "en": "ArtCenter College of Design",
-    "major": "Interaction Design",
-    "top": true
-   },
-   {
-    "zh": "加州大学圣克鲁兹分校",
-    "en": "University of California, Santa Cruz",
-    "major": "BA: Film and Digital Media",
-    "top": false
-   },
-   {
-    "zh": "纽约视觉艺术学院",
-    "en": "School of Visual Arts",
-    "major": "BFA Design",
-    "top": false
-   },
-   {
-    "zh": "萨凡纳艺术与设计学院",
-    "en": "Savannah College of Art and Design",
-    "major": "BFA in Game Development",
-    "top": false
-   },
-   {
-    "zh": "芝加哥艺术学院",
-    "en": "School of the Art Institute of Chicago",
-    "major": "BFA in Studio",
-    "top": false
-   }
-  ],
-  "thumb": "acg/page-16.jpg",
-  "full": "acg/page-16.jpg"
- },
- {
-  "id": "c016",
-  "student": "何同学",
-  "city": "杭州",
-  "bg": "普高 · 普高+ALEVEL,普高+ALEVEL",
-  "major": "视觉传达",
-  "tracks": [
-   "cw-ft"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA (Hons) Graphic and Media Design",
-    "top": true
-   }
-  ],
-  "thumb": "acg/page-46.jpg",
-  "full": "acg/page-46.jpg"
- },
- {
-  "id": "c017",
-  "student": "刘同学",
-  "city": "成都",
-  "bg": "普高",
-  "major": "平面设计",
-  "tracks": [
-   "cw-ft"
-  ],
-  "workType": "design",
-  "offers": [
-   {
+    "abbr": "UniMelb",
     "zh": "墨尔本大学",
     "en": "The University of Melbourne",
+    "major": "Bachelor of Design",
+    "top": true,
+    "link": {
+     "zh": "墨尔本大学",
+     "major": "Bachelor of Design"
+    }
+   }
+  ],
+  "thumb": "cases/uk-bacc-4-thumb.webp",
+  "full": "cases/uk-bacc-4.webp"
+ },
+ {
+  "id": "ukft-bacc-1",
+  "card": "UKFT-BACC-1",
+  "student": "于同学",
+  "country": "英国",
+  "city": "",
+  "tags": [
+   "英国",
+   "综合 & 艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "斯芬克全日制学院"
+   },
+   {
+    "k": "国际课程",
+    "v": "A-Level 中文 A* · 纯艺 A · A · BTEC D"
+   },
+   {
+    "k": "均分/GPA",
+    "v": "94/100"
+   },
+   {
+    "k": "语言成绩",
+    "v": "IELTS 5.5"
+   }
+  ],
+  "directions": [
+   "多媒介与装置艺术",
+   "3D虚拟艺术制作"
+  ],
+  "workType": "multimedia",
+  "tracks": [
+   "cw-ft"
+  ],
+  "projects": [
+   "实验影像 · 表演",
+   "沉浸式 3D 体验",
+   "材料装置 & 影像",
+   "综合材料装置"
+  ],
+  "notes": [
+   {
+    "label": "活动",
+    "items": [
+     "“丹青墨画”水拓丝巾非遗公益活动",
+     "行走的中轴线 · 平行时空的眺望",
+     "SFK 海外大师课 - Game Design 主题"
+    ]
+   }
+  ],
+  "offers": [
+   {
+    "abbr": "UAL CAM",
+    "zh": "伦敦艺术大学 · 坎伯韦尔艺术学院",
+    "en": "University of the Arts London",
+    "major": "BA Fine Art: Computational Arts",
+    "top": true
+   },
+   {
+    "abbr": "USYD",
+    "zh": "悉尼大学",
+    "en": "University of Sydney",
     "major": "Bachelor of Design",
     "top": true
    },
    {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA (Hons) Graphic and Media Design",
-    "top": true
-   },
-   {
-    "zh": "伦艺-切尔西艺术设计学院",
-    "en": "UAL-Chelsea college of arts",
-    "major": "BA (Hons) Graphic Design Communication",
-    "top": true
-   },
-   {
-    "zh": "利兹大学",
-    "en": "The University of Leeds",
-    "major": "BA (Hons) Graphic and Communication Design",
-    "top": false
-   },
-   {
-    "zh": "金斯顿大学",
-    "en": "Kingston University London",
-    "major": "BA (Hons) Graphic Design",
+    "abbr": "UNSW",
+    "zh": "新南威尔士大学",
+    "en": "The University of New South Wales",
+    "major": "Bachelor of Design",
     "top": false
    }
   ],
-  "thumb": "fulltime/work-05.jpg",
-  "full": "fulltime/work-05.jpg"
+  "thumb": "cases/ukft-bacc-1-thumb.webp",
+  "full": "cases/ukft-bacc-1.webp"
  },
  {
-  "id": "c018",
-  "student": "周同学",
-  "city": "上海徐汇",
-  "bg": "普高 · A-Level+btec",
-  "major": "平面设计",
-  "tracks": [
-   "cw-ft"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "Certificate of Higher Education: Preparation for Design, Media and Screen",
-    "top": true
-   },
-   {
-    "zh": "伦艺-切尔西艺术设计学院",
-    "en": "UAL-Chelsea college of arts",
-    "major": "BA (Hons) Graphic Design Communication",
-    "top": true
-   },
-   {
-    "zh": "伦艺-中央圣马丁&坎伯韦尔合并预科",
-    "en": "UAL-中央圣马丁&坎伯韦尔合并预科",
-    "major": "UAL Foundation Diploma in Art and Design",
-    "top": true
-   },
-   {
-    "zh": "爱丁堡大学",
-    "en": "University of Edinburgh",
-    "major": "BA Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "伯明翰城市大学",
-    "en": "Birmingham City University",
-    "major": "Graphic Design - BA (Hons)",
-    "top": false
-   },
-   {
-    "zh": "金斯顿大学",
-    "en": "Kingston University London",
-    "major": "BA (Hons) Graphic Design",
-    "top": false
-   }
-  ],
-  "thumb": "acg/page-52.jpg",
-  "full": "acg/page-52.jpg"
- },
- {
-  "id": "c019",
-  "student": "徐同学",
-  "city": "南京",
-  "bg": "国际高中 · A-level课程",
-  "major": "平面设计",
-  "tracks": [
-   "cw-ft"
-  ],
-  "workType": "design",
-  "offers": [
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA (Hons) Graphic and Media Design",
-    "top": true
-   },
-   {
-    "zh": "伦艺-中央圣马丁艺术学院",
-    "en": "UAL-Central Saint Martins",
-    "major": "BA (Hons) Graphic Communication Design",
-    "top": true
-   },
-   {
-    "zh": "爱丁堡大学",
-    "en": "University of Edinburgh",
-    "major": "Graphic Design-2nd year",
-    "top": false
-   },
-   {
-    "zh": "利兹大学",
-    "en": "The University of Leeds",
-    "major": "BA (Hons) Graphic and Communication Design",
-    "top": false
-   },
-   {
-    "zh": "金斯顿大学",
-    "en": "Kingston University London",
-    "major": "BA (Hons) Graphic Design",
-    "top": false
-   }
-  ],
-  "thumb": "site/case-city-system.jpg",
-  "full": "site/case-city-system.jpg"
- },
- {
-  "id": "c020",
-  "student": "徐同学",
-  "city": "上海徐汇",
-  "bg": "普高",
-  "major": "平面设计",
-  "tracks": [
-   "cw-ft"
-  ],
-  "workType": "design",
-  "offers": [
-   {
-    "zh": "伦艺-坎伯韦尔艺术学院",
-    "en": "UAL-Camberwell College of Arts",
-    "major": "BA (Hons) Graphic Design",
-    "top": true
-   },
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA (Hons) Graphic Branding and Identity",
-    "top": true
-   },
-   {
-    "zh": "伦艺-中央圣马丁&坎伯韦尔合并预科",
-    "en": "UAL-中央圣马丁&坎伯韦尔合并预科",
-    "major": "UAL Foundation Diploma in Art and Design",
-    "top": true
-   },
-   {
-    "zh": "谢菲尔德哈勒姆大学",
-    "en": "Sheffield Hallam University",
-    "major": "BA (Hons) Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "创意艺术大学",
-    "en": "University for the Creative Arts",
-    "major": "Graphic Design BA (Hons)",
-    "top": false
-   },
-   {
-    "zh": "金斯顿大学",
-    "en": "Kingston University London",
-    "major": "BA (Hons) Graphic Design",
-    "top": false
-   }
-  ],
-  "thumb": "fulltime/work-01.jpg",
-  "full": "fulltime/work-01.jpg"
- },
- {
-  "id": "c021",
-  "student": "吴同学",
-  "city": "杭州",
-  "bg": "国际高中 · 中文+数学+艺术,艺术",
-  "major": "平面设计",
-  "tracks": [
-   "cw-ft"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA Graphic and Media Design",
-    "top": true
-   },
-   {
-    "zh": "伦艺-中央圣马丁&坎伯韦尔合并预科",
-    "en": "UAL-中央圣马丁&坎伯韦尔合并预科",
-    "major": "UAL Level 3 Foundation Diploma in Art and Design",
-    "top": true
-   },
-   {
-    "zh": "伦艺-坎伯韦尔艺术学院",
-    "en": "UAL-Camberwell College of Arts",
-    "major": "BA Graphic Design",
-    "top": true
-   },
-   {
-    "zh": "伦敦大学金史密斯学院",
-    "en": "Goldsmiths, University of London",
-    "major": "BA Design",
-    "top": false
-   }
-  ],
-  "thumb": "acg/page-16.jpg",
-  "full": "acg/page-16.jpg"
- },
- {
-  "id": "c022",
-  "student": "于同学",
+  "id": "ukft-bacc-2",
+  "card": "UKFT-BACC-2",
+  "student": "赵同学",
+  "country": "英国",
   "city": "北京海淀",
-  "bg": "国际课程中学 · 实考A*B预估A+BTEC预估D",
-  "major": "数字媒体设计",
+  "tags": [
+   "英国",
+   "综合 & 艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "斯芬克全日制学院"
+   },
+   {
+    "k": "国际课程",
+    "v": "A-Level 中文 A · 平面 A · 综合 A · BTEC D"
+   }
+  ],
+  "directions": [
+   "多媒介与装置艺术",
+   "3D虚拟艺术制作"
+  ],
+  "workType": "3d",
   "tracks": [
    "cw-ft"
+  ],
+  "projects": [
+   "影像装置 · 夏校项目",
+   "3D 建模动态",
+   "材料装置 & 影像",
+   "影像 · 虚拟穿戴"
+  ],
+  "notes": [
+   {
+    "label": "展览",
+    "items": [
+     "夏校 NYU 本科展览"
+    ]
+   },
+   {
+    "label": "推荐信",
+    "items": [
+     "夏校 NYU 教授推荐信"
+    ]
+   }
+  ],
+  "offers": [
+   {
+    "abbr": "UCL",
+    "zh": "伦敦大学学院",
+    "en": "University College London",
+    "major": "Media BA",
+    "top": true,
+    "link": {
+     "zh": "伦敦大学学院",
+     "major": "Media"
+    }
+   },
+   {
+    "abbr": "UAL LCC",
+    "zh": "伦敦艺术大学 · 伦敦传媒学院",
+    "en": "University of the Arts London",
+    "major": "Media Communications",
+    "top": true,
+    "link": {
+     "zh": "伦艺-伦敦传媒学院",
+     "major": "Media Communications"
+    }
+   },
+   {
+    "abbr": "UAL LCC",
+    "zh": "伦敦艺术大学 · 伦敦传媒学院",
+    "en": "University of the Arts London",
+    "major": "BA Design for Art Direction",
+    "top": true,
+    "link": {
+     "zh": "伦艺-伦敦传媒学院",
+     "major": "BA (Hons) Design for Art Direction"
+    }
+   }
+  ],
+  "thumb": "cases/ukft-bacc-2-thumb.webp",
+  "full": "cases/ukft-bacc-2.webp"
+ },
+ {
+  "id": "ukft-bacc-3",
+  "card": "UKFT-BACC-3",
+  "student": "管同学",
+  "country": "英国",
+  "city": "苏州",
+  "tags": [
+   "英国",
+   "综合 & 艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "斯芬克全日制学院"
+   },
+   {
+    "k": "国际课程",
+    "v": "A-Level 中文 A · 平面 B · 综合 B · BTEC D"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术"
   ],
   "workType": "multimedia",
-  "offers": [
-   {
-    "zh": "伦敦大学学院",
-    "en": "University College London",
-    "major": "Creative Arts and Humanities",
-    "top": true
-   },
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA (Hons) Illustration and Visual Media",
-    "top": true
-   },
-   {
-    "zh": "伦敦大学金史密斯学院",
-    "en": "Goldsmiths, University of London",
-    "major": "Media & Communications",
-    "top": false
-   },
-   {
-    "zh": "金斯顿大学",
-    "en": "Kingston University London",
-    "major": "Digital Media Technology BSc (Hons)",
-    "top": false
-   }
-  ],
-  "thumb": "fulltime/work-03.jpg",
-  "full": "fulltime/work-03.jpg"
- },
- {
-  "id": "c023",
-  "student": "王同学",
-  "city": "北京海淀",
-  "bg": "国际高中",
-  "major": "数字媒体设计",
   "tracks": [
    "cw-ft"
   ],
-  "workType": "tech",
+  "projects": [
+   "动态字体 · 沉浸式空间",
+   "材料影像装置 · 夏校项目",
+   "网页 · 综合材料",
+   "品牌策略"
+  ],
+  "notes": [
+   {
+    "label": "展览",
+    "items": [
+     "夏校 NYU 本科展览"
+    ]
+   },
+   {
+    "label": "推荐信",
+    "items": [
+     "夏校 NYU 教授推荐信"
+    ]
+   }
+  ],
   "offers": [
    {
+    "abbr": "UCL",
     "zh": "伦敦大学学院",
     "en": "University College London",
-    "major": "Creative Arts and Humanities",
-    "top": true
+    "major": "Media BA",
+    "top": true,
+    "link": {
+     "zh": "伦敦大学学院",
+     "major": "Media BA"
+    }
    },
    {
-    "zh": "爱丁堡大学",
-    "en": "University of Edinburgh",
-    "major": "Interdisciplinary Futures",
-    "top": false
+    "abbr": "UAL LCC",
+    "zh": "伦敦艺术大学 · 伦敦传媒学院",
+    "en": "University of the Arts London",
+    "major": "Graphic Branding and Identity",
+    "top": true,
+    "link": {
+     "zh": "伦艺-伦敦传媒学院",
+     "major": "BA (Hons) Graphic Branding and Identity"
+    }
    },
    {
-    "zh": "曼彻斯特大学",
-    "en": "The University of Manchester",
-    "major": "Digital Media, Culture and Society",
-    "top": false
-   },
-   {
-    "zh": "伦敦国王学院",
-    "en": "King's College London",
-    "major": "Digital Media and Culture",
-    "top": false
+    "abbr": "UAL CSM",
+    "zh": "伦敦艺术大学 · 中央圣马丁艺术学院",
+    "en": "University of the Arts London",
+    "major": "BA Graphic Communication Design",
+    "top": true,
+    "link": {
+     "zh": "伦艺-中央圣马丁艺术学院",
+     "major": "BA (Hons) Graphic Communication Design"
+    }
    }
   ],
-  "thumb": "site/case-mechanical-3d.jpg",
-  "full": "site/case-mechanical-3d.jpg"
+  "thumb": "cases/ukft-bacc-3-thumb.webp",
+  "full": "cases/ukft-bacc-3.webp"
  },
  {
-  "id": "c024",
-  "student": "沈同学",
-  "city": "上海虹口",
-  "bg": "国际高中",
-  "major": "平面设计",
-  "tracks": [
-   "cw-ft"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "Level 3：International Introduction to the Study of Design, Media and Screen",
-    "top": true
-   },
-   {
-    "zh": "伦艺-切尔西艺术设计学院",
-    "en": "UAL-Chelsea college of arts",
-    "major": "BA (Hons) Graphic Design Communication",
-    "top": true
-   },
-   {
-    "zh": "创意艺术大学",
-    "en": "University for the Creative Arts",
-    "major": "Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "金斯顿大学",
-    "en": "Kingston University London",
-    "major": "Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "威斯敏斯特大学",
-    "en": "University of Westminster",
-    "major": "Graphic Design",
-    "top": false
-   }
-  ],
-  "thumb": "acg/page-46.jpg",
-  "full": "acg/page-46.jpg"
- },
- {
-  "id": "c025",
-  "student": "杨同学",
+  "id": "ukft-bacc-4",
+  "card": "UKFT-BACC-4",
+  "student": "林同学",
+  "country": "英国",
   "city": "北京CBD",
-  "bg": "国际高中",
-  "major": "平面设计",
-  "tracks": [
-   "cw-ft"
+  "tags": [
+   "英国",
+   "综合 & 艺术",
+   "双非"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "斯芬克全日制学院"
+   },
+   {
+    "k": "国际课程",
+    "v": "A-Level 中文 A* · 综合 A* · 平面 A · BTEC D"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术"
   ],
   "workType": "design",
+  "tracks": [
+   "cw-ft"
+  ],
+  "projects": [
+   "材料书籍装置",
+   "书籍装置",
+   "书籍档案 · 大师课",
+   "投影装置"
+  ],
+  "notes": [
+   {
+    "label": "竞赛",
+    "items": [
+     "2025 ART NOW 全球设计大赛金奖",
+     "2025 环球视觉国际艺术设计奖金奖",
+     "2025 英国国际艺术设计大赛金奖",
+     "2025 第五届 GCROSS 跨界艺术创意奖铜奖",
+     "HKDADC 香港数字艺术设计大赛（秋季赛）二等奖"
+    ]
+   },
+   {
+    "label": "活动",
+    "items": [
+     "CSM 大师课"
+    ]
+   },
+   {
+    "label": "推荐信",
+    "items": [
+     "大师课 CSM 教授推荐信"
+    ]
+   }
+  ],
   "offers": [
    {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA (Hons) Graphic and Media Design",
-    "top": true
+    "abbr": "UAL CSM",
+    "zh": "伦敦艺术大学 · 中央圣马丁艺术学院",
+    "en": "University of the Arts London",
+    "major": "BA Graphic Communication Design",
+    "top": true,
+    "link": {
+     "zh": "伦艺-中央圣马丁艺术学院",
+     "major": "BA (Hons) Graphic Communication Design"
+    }
    },
    {
-    "zh": "伦艺-坎伯韦尔艺术学院",
-    "en": "UAL-Camberwell College of Arts",
-    "major": "BA (Hons) Graphic Design",
-    "top": true
+    "abbr": "UAL LCC",
+    "zh": "伦敦艺术大学 · 伦敦传媒学院",
+    "en": "University of the Arts London",
+    "major": "BA Graphic Communication Design",
+    "top": true,
+    "link": {
+     "zh": "伦艺-伦敦传媒学院",
+     "major": "BA (Hons) Graphic and Media Design"
+    }
    },
    {
+    "abbr": "EDIN",
     "zh": "爱丁堡大学",
     "en": "University of Edinburgh",
-    "major": "BA Graphic Design 2nd Year",
+    "major": "Graphic Design BA",
+    "top": false,
+    "link": {
+     "zh": "爱丁堡大学",
+     "major": "Graphic Design BA (Hons)"
+    }
+   }
+  ],
+  "thumb": "cases/ukft-bacc-4-thumb.webp",
+  "full": "cases/ukft-bacc-4.webp"
+ },
+ {
+  "id": "sk-bacc-1",
+  "card": "SK-BACC-1",
+  "student": "徐同学",
+  "country": "韩国",
+  "city": "武汉",
+  "tags": [
+   "韩国",
+   "综合 & 艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "武汉精英学校"
+   },
+   {
+    "k": "语言成绩",
+    "v": "TOPIK 2 · IELTS 6.0"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播"
+  ],
+  "workType": "acg",
+  "tracks": [
+   "kr"
+  ],
+  "projects": [
+   "专业项目：插图 · 书籍 · 周边",
+   "精微素描",
+   "精微素描",
+   "色彩"
+  ],
+  "notes": [],
+  "offers": [
+   {
+    "abbr": "高丽大学",
+    "zh": "高丽大学",
+    "en": "고려대학교",
+    "major": "视觉传达",
+    "top": false,
+    "link": {
+     "zh": "高丽大学",
+     "major": "영어영문학과"
+    }
+   },
+   {
+    "abbr": "弘益大学",
+    "zh": "弘益大学",
+    "en": "홍익대학교",
+    "major": "视觉传达",
+    "top": false,
+    "link": {
+     "zh": "弘益大学",
+     "major": "디자인학부"
+    }
+   },
+   {
+    "abbr": "汉阳大学",
+    "zh": "汉阳大学",
+    "en": "Hanyang University",
+    "major": "视觉传达",
+    "top": false,
+    "link": {
+     "zh": "汉阳大学",
+     "major": "디자인계열"
+    }
+   },
+   {
+    "abbr": "世宗大学",
+    "zh": "世宗大学",
+    "en": "Sejong University",
+    "major": "视觉传达",
+    "top": false,
+    "link": {
+     "zh": "世宗大学",
+     "major": "창의소프트학부 디자인이노베이션전공"
+    }
+   },
+   {
+    "abbr": "中央大学",
+    "zh": "韩国中央大学",
+    "en": "Chung-Ang University",
+    "major": "视觉传达",
+    "top": false,
+    "link": {
+     "zh": "韩国中央大学",
+     "major": "예술대학 디자인학부 시각디자인"
+    }
+   }
+  ],
+  "thumb": "cases/sk-bacc-1-thumb.webp",
+  "full": "cases/sk-bacc-1.webp"
+ },
+ {
+  "id": "sk-bacc-2",
+  "card": "SK-BACC-2",
+  "student": "孙同学",
+  "country": "韩国",
+  "city": "",
+  "tags": [
+   "韩国",
+   "综合 & 艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "郑州市实验中等专业学校"
+   },
+   {
+    "k": "语言成绩",
+    "v": "TOPIK 4"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术",
+   "3D虚拟艺术制作"
+  ],
+  "workType": "3d",
+  "tracks": [
+   "kr"
+  ],
+  "projects": [
+   "品牌 · 3D 建模",
+   "实验影像",
+   "精微素描",
+   "精微素描"
+  ],
+  "notes": [],
+  "offers": [
+   {
+    "abbr": "弘益大学",
+    "zh": "弘益大学",
+    "en": "홍익대학교",
+    "major": "数字媒体设计",
     "top": false
    },
    {
-    "zh": "利兹大学",
-    "en": "The University of Leeds",
-    "major": "BA Art and Design",
+    "abbr": "梨花女子",
+    "zh": "梨花女子大学",
+    "en": "이화여자대학교",
+    "major": "数字媒体设计",
+    "top": false
+   },
+   {
+    "abbr": "世宗大学",
+    "zh": "世宗大学",
+    "en": "Sejong University",
+    "major": "数字媒体设计",
+    "top": false
+   },
+   {
+    "abbr": "建国大学",
+    "zh": "建国大学",
+    "en": "",
+    "major": "数字媒体设计",
     "top": false
    }
   ],
-  "thumb": "site/case-visual-system.jpg",
-  "full": "site/case-visual-system.jpg"
+  "thumb": "cases/sk-bacc-2-thumb.webp",
+  "full": "cases/sk-bacc-2.webp"
  },
  {
-  "id": "c026",
-  "student": "冯同学",
-  "city": "上海徐汇",
-  "bg": "国际高中",
-  "major": "视觉传达",
-  "tracks": [
-   "cw-12"
+  "id": "sk-bacc-3",
+  "card": "SK-BACC-3",
+  "student": "邱同学",
+  "country": "韩国",
+  "city": "成都",
+  "tags": [
+   "韩国",
+   "综合"
   ],
-  "workType": "acg",
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "郫堵嘉祥"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术"
+  ],
+  "workType": "multimedia",
+  "tracks": [
+   "kr"
+  ],
+  "projects": [
+   "海报 · 综合材料 · 影像",
+   "字体 · 沉浸式空间影像",
+   "精微素描",
+   "精微素描"
+  ],
+  "notes": [],
   "offers": [
    {
-    "zh": "考文垂大学",
-    "en": "Coventry University",
-    "major": "Graphic Design BA (Hons) degree",
-    "top": false
+    "abbr": "梨花女子",
+    "zh": "梨花女子大学",
+    "en": "이화여자대학교",
+    "major": "视觉传达",
+    "top": false,
+    "link": {
+     "zh": "梨花女子大学",
+     "major": "视觉传达"
+    }
    },
    {
+    "abbr": "中央大学",
+    "zh": "韩国中央大学",
+    "en": "Chung-Ang University",
+    "major": "视觉传达",
+    "top": false
+   }
+  ],
+  "thumb": "cases/sk-bacc-3-thumb.webp",
+  "full": "cases/sk-bacc-3.webp"
+ },
+ {
+  "id": "sg-bacc-1",
+  "card": "SG-BACC-1",
+  "student": "邓同学",
+  "country": "新加坡",
+  "city": "广州",
+  "tags": [
+   "新加坡",
+   "艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "桂华中学"
+   },
+   {
+    "k": "均分/GPA",
+    "v": "88/100"
+   },
+   {
+    "k": "国际课程",
+    "v": "BTEC Level 4 Distinction"
+   },
+   {
+    "k": "语言成绩",
+    "v": "IELTS 6.0"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术"
+  ],
+  "workType": "multimedia",
+  "tracks": [
+   "sgau"
+  ],
+  "projects": [
+   "AR 档案",
+   "影像空间",
+   "可穿戴装置",
+   "材料装置"
+  ],
+  "notes": [
+   {
+    "label": "竞赛",
+    "items": [
+     "SGADC（新加坡金沙艺术设计大赛）铜奖",
+     "BICC（中英国际创意大赛）铜奖"
+    ]
+   },
+   {
+    "label": "文书人设",
+    "items": [
+     "艺术热忱；多元探索；自我认识和艺术表达"
+    ]
+   }
+  ],
+  "offers": [
+   {
+    "abbr": "LASALLE",
+    "zh": "新加坡拉萨尔艺术学院",
+    "en": "LASALLE College of the Arts",
+    "major": "Design For Social Futures",
+    "top": false,
+    "link": {
+     "zh": "新加坡拉萨尔艺术学院",
+     "major": "DESIGN FOR SOCIAL FUTURES"
+    }
+   },
+   {
+    "abbr": "NAFA",
+    "zh": "新加坡南洋艺术学院",
+    "en": "Nanyang Academy of Fine Arts",
+    "major": "BA Design Practice",
+    "top": false,
+    "link": {
+     "zh": "新加坡南洋艺术学院",
+     "major": "BACHELOR OF ARTS (HONOURS) DESIGN PRACTICE"
+    }
+   },
+   {
+    "abbr": "UAL LCC",
+    "zh": "伦敦艺术大学 · 伦敦传媒学院",
+    "en": "University of the Arts London",
+    "major": "BA Design for Art Direction",
+    "top": true,
+    "link": {
+     "zh": "伦艺-伦敦传媒学院",
+     "major": "BA Design For Art Direction"
+    }
+   }
+  ],
+  "thumb": "cases/sg-bacc-1-thumb.webp",
+  "full": "cases/sg-bacc-1.webp"
+ },
+ {
+  "id": "sg-bacc-2",
+  "card": "SG-BACC-2",
+  "student": "杨同学",
+  "country": "新加坡",
+  "city": "成都",
+  "tags": [
+   "新加坡",
+   "综合"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "新加坡华中国际学校"
+   },
+   {
+    "k": "国际课程",
+    "v": "IB 38/45"
+   },
+   {
+    "k": "语言成绩",
+    "v": "IELTS 7.5"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术"
+  ],
+  "workType": "design",
+  "tracks": [
+   "sgau"
+  ],
+  "projects": [
+   "字体 · 书籍",
+   "动态影像",
+   "材料装置",
+   "摄影装置"
+  ],
+  "notes": [],
+  "offers": [
+   {
+    "abbr": "NTU",
+    "zh": "南洋理工大学",
+    "en": "Nanyang Technological University",
+    "major": "BFA Art, Design and Media",
+    "top": true,
+    "link": {
+     "zh": "南洋理工大学",
+     "major": "艺术，设计与媒体"
+    }
+   }
+  ],
+  "thumb": "cases/sg-bacc-2-thumb.webp",
+  "full": "cases/sg-bacc-2.webp"
+ },
+ {
+  "id": "sg-bacc-3",
+  "card": "SG-BACC-3",
+  "student": "黄同学",
+  "country": "新加坡",
+  "city": "武汉",
+  "tags": [
+   "新加坡",
+   "综合"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "武汉外国语高中"
+   },
+   {
+    "k": "国际课程",
+    "v": "VCE 99.25"
+   },
+   {
+    "k": "语言成绩",
+    "v": "IELTS 8.0"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术",
+   "3D虚拟艺术制作"
+  ],
+  "workType": "3d",
+  "tracks": [
+   "sgau",
+   "hk"
+  ],
+  "projects": [
+   "3D 虚拟体验",
+   "书籍档案",
+   "品牌策略",
+   "纸媒装置"
+  ],
+  "notes": [
+   {
+    "label": "竞赛",
+    "items": [
+     "SFK 芬兰 AG 设计奖银奖，香港青年设计比赛二等奖，华夏奖优秀奖"
+    ]
+   },
+   {
+    "label": "活动",
+    "items": [
+     "参与校内校庆 logo 设计，担任音乐剧导演和制作，校园 Best Cheerleader"
+    ]
+   },
+   {
+    "label": "课程",
+    "items": [
+     "John Locke Essay Competition（心理学方向）入围并获得 Recognition"
+    ]
+   },
+   {
+    "label": "志愿",
+    "items": [
+     "湖北省博物馆实习、武汉自然博物馆实习"
+    ]
+   },
+   {
+    "label": "推荐信",
+    "items": [
+     "夏校 UAL 教授推荐信"
+    ]
+   }
+  ],
+  "offers": [
+   {
+    "abbr": "NUS",
+    "zh": "新加坡国立大学",
+    "en": "National University of Singapore",
+    "major": "Bachelor of Science in Business Analytics",
+    "top": true,
+    "link": {
+     "zh": "新加坡国立大学",
+     "major": "Bachelor of Science in Business Analytics"
+    }
+   },
+   {
+    "abbr": "NTU",
+    "zh": "南洋理工大学",
+    "en": "Nanyang Technological University",
+    "major": "BFA Art, Design and Media",
+    "top": true,
+    "link": {
+     "zh": "南洋理工大学",
+     "major": "BFA ART, DESIGN AND MEDIA"
+    }
+   },
+   {
+    "abbr": "CityU",
+    "zh": "香港城市大学",
+    "en": "City University of Hong Kong",
+    "major": "Creative Media",
+    "top": false,
+    "link": {
+     "zh": "香港城市大学",
+     "major": "Creative Media"
+    }
+   },
+   {
+    "abbr": "UAL CSM",
+    "zh": "伦敦艺术大学 · 中央圣马丁艺术学院",
+    "en": "University of the Arts London",
+    "major": "BA Graphic Communication Design",
+    "top": true,
+    "link": {
+     "zh": "伦艺-中央圣马丁艺术学院",
+     "major": "BA (Hons) Graphic Communication Design"
+    }
+   },
+   {
+    "abbr": "UAL LCC",
+    "zh": "伦敦艺术大学 · 伦敦传媒学院",
+    "en": "University of the Arts London",
+    "major": "BA Graphic and Media Design",
+    "top": true,
+    "link": {
+     "zh": "伦艺-伦敦传媒学院",
+     "major": "BA (Hons) Graphic and Media Design"
+    }
+   },
+   {
+    "abbr": "KCL",
+    "zh": "伦敦国王学院",
+    "en": "King's College London",
+    "major": "Digital Media and Culture BA",
+    "top": false,
+    "link": {
+     "zh": "伦敦国王学院",
+     "major": "Digital Media and Culture BA"
+    }
+   }
+  ],
+  "thumb": "cases/sg-bacc-3-thumb.webp",
+  "full": "cases/sg-bacc-3.webp"
+ },
+ {
+  "id": "au-bacc-1",
+  "card": "AU-BACC-1",
+  "student": "杨同学",
+  "country": "澳大利亚",
+  "city": "北京海淀",
+  "tags": [
+   "澳洲",
+   "综合 & 艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "斯芬克全日制"
+   },
+   {
+    "k": "国际课程",
+    "v": "A-Level A*BB"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "多媒介与装置艺术"
+  ],
+  "workType": "design",
+  "tracks": [
+   "sgau",
+   "cw-ft"
+  ],
+  "projects": [
+   "影像装置",
+   "编辑物 · 夏校",
+   "立体书",
+   "桌游"
+  ],
+  "notes": [],
+  "offers": [
+   {
+    "abbr": "UniMelb",
+    "zh": "墨尔本大学",
+    "en": "The University of Melbourne",
+    "major": "Bachelor of Design",
+    "top": true,
+    "link": {
+     "zh": "墨尔本大学",
+     "major": "Bachelor of Design"
+    }
+   },
+   {
+    "abbr": "Monash",
+    "zh": "蒙纳士大学",
+    "en": "Monash University",
+    "major": "Bachelor of Design",
+    "top": false,
+    "link": {
+     "zh": "蒙纳士大学",
+     "major": "Bachelor of Design"
+    }
+   },
+   {
+    "abbr": "RMIT",
+    "zh": "皇家墨尔本理工大学",
+    "en": "Royal Melbourne Institute of Technology",
+    "major": "Bachelor of Graphic Design",
+    "top": false,
+    "link": {
+     "zh": "皇家墨尔本理工大学",
+     "major": "Bachelor of Graphic Design"
+    }
+   }
+  ],
+  "thumb": "cases/au-bacc-1-thumb.webp",
+  "full": "cases/au-bacc-1.webp"
+ },
+ {
+  "id": "au-bacc-2",
+  "card": "AU-BACC-2",
+  "student": "聂同学",
+  "country": "澳大利亚",
+  "city": "",
+  "tags": [
+   "澳洲",
+   "综合"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "武外英中"
+   },
+   {
+    "k": "国际课程",
+    "v": "A-Level A*A*BA"
+   },
+   {
+    "k": "语言成绩",
+    "v": "IELTS 6.5"
+   }
+  ],
+  "directions": [
+   "多媒介与装置艺术",
+   "3D虚拟艺术制作",
+   "信息体验与设计应用"
+  ],
+  "workType": "3d",
+  "tracks": [
+   "sgau",
+   "hk"
+  ],
+  "projects": [
+   "3D 建模叙事",
+   "表演影像",
+   "虚拟现实",
+   "UI 用户体验"
+  ],
+  "notes": [
+   {
+    "label": "竞赛",
+    "items": [
+     "学术竞赛：Extended Project Qualification（EPQ）：A",
+     "学术竞赛：中国全国经济学挑战赛地区团队铜奖",
+     "中国全国经济学挑战赛地区杰出个人奖"
+    ]
+   },
+   {
+    "label": "活动",
+    "items": [
+     "手工社团",
+     "Linking Academic Creation（LAC）Arduino 工作坊",
+     "CITIC SECURITIES Project Eagle"
+    ]
+   }
+  ],
+  "offers": [
+   {
+    "abbr": "UniMelb",
+    "zh": "墨尔本大学",
+    "en": "The University of Melbourne",
+    "major": "Bachelor of Commerce",
+    "top": true
+   },
+   {
+    "abbr": "UCL",
     "zh": "伦敦大学学院",
     "en": "University College London",
     "major": "Media BA",
     "top": true
    },
    {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA (Hons) Graphic and Media Design",
-    "top": true
-   },
-   {
-    "zh": "爱丁堡大学",
-    "en": "University of Edinburgh",
-    "major": "BA Graphic Design",
+    "abbr": "PolyU",
+    "zh": "香港理工大学",
+    "en": "The Hong Kong Polytechnic University",
+    "major": "BA Scheme in Design",
     "top": false
    },
    {
-    "zh": "伦敦大学布鲁内尔学院",
-    "en": "Brunel University of London",
-    "major": "Media and Communication BSc",
-    "top": false
-   },
-   {
-    "zh": "伯明翰城市大学",
-    "en": "Birmingham City University",
-    "major": "Graphic Design - BA (Hons)",
-    "top": false
-   }
-  ],
-  "thumb": "acg/page-52.jpg",
-  "full": "acg/page-52.jpg"
- },
- {
-  "id": "c027",
-  "student": "杜同学",
-  "city": "北京CBD",
-  "bg": "普高 · 3门A-Level实考 A*AB",
-  "major": "数字媒体设计",
-  "tracks": [
-   "cw-12"
-  ],
-  "workType": "multimedia",
-  "offers": [
-   {
-    "zh": "考文垂大学",
-    "en": "Coventry University",
-    "major": "Digital Media BA (Hons)",
-    "top": false
-   },
-   {
-    "zh": "伦敦大学学院",
-    "en": "University College London",
-    "major": "BA Art and Technology",
-    "top": true
-   },
-   {
-    "zh": "华威大学",
-    "en": "The University of Warwick",
-    "major": "Media and Creative Industries BA",
-    "top": false
-   },
-   {
-    "zh": "利兹大学",
-    "en": "The University of Leeds",
-    "major": "Digital Media BA",
-    "top": false
-   },
-   {
+    "abbr": "KCL",
     "zh": "伦敦国王学院",
     "en": "King's College London",
     "major": "Digital Media and Culture",
     "top": false
    }
   ],
-  "thumb": "fulltime/work-04.jpg",
-  "full": "fulltime/work-04.jpg"
+  "thumb": "cases/au-bacc-2-thumb.webp",
+  "full": "cases/au-bacc-2.webp"
  },
  {
-  "id": "c028",
-  "student": "刘同学",
-  "city": "深圳",
-  "bg": "国际高中",
-  "major": "数字媒体设计",
-  "tracks": [
-   "cw-12"
-  ],
-  "workType": "tech",
-  "offers": [
-   {
-    "zh": "伦敦大学金史密斯学院",
-    "en": "Goldsmiths, University of London",
-    "major": "Digital Arts Computing",
-    "top": false
-   },
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA Design For Art Direction",
-    "top": true
-   },
-   {
-    "zh": "金斯顿大学",
-    "en": "Kingston University London",
-    "major": "Digital Media Technology BSc",
-    "top": false
-   }
-  ],
-  "thumb": "fulltime/work-09.jpg",
-  "full": "fulltime/work-09.jpg"
- },
- {
-  "id": "c029",
-  "student": "李同学",
-  "city": "上海徐汇",
-  "bg": "普高",
-  "major": "数字媒体设计",
-  "tracks": [
-   "cw-12"
-  ],
-  "workType": "3d",
-  "offers": [
-   {
-    "zh": "伦敦大学金史密斯学院",
-    "en": "Goldsmiths, University of London",
-    "major": "BA (Hons) Media & Communications",
-    "top": false
-   },
-   {
-    "zh": "伦艺-中央圣马丁&坎伯韦尔合并预科",
-    "en": "UAL-中央圣马丁&坎伯韦尔合并预科",
-    "major": "UAL Foundation Diploma in Art and Design",
-    "top": true
-   },
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "Immersive Media and Mixed Reality",
-    "top": true
-   },
-   {
-    "zh": "伦艺-创意计算机学院",
-    "en": "UAL- Creative Computing Institute",
-    "major": "BSc Creative Computing",
-    "top": true
-   },
-   {
-    "zh": "创意艺术大学",
-    "en": "University for the Creative Arts",
-    "major": "BA (Hons) Digital Art",
-    "top": false
-   },
-   {
-    "zh": "金斯顿大学",
-    "en": "Kingston University London",
-    "major": "BSc Digital Media Technology",
-    "top": false
-   }
-  ],
-  "thumb": "site/case-ritual-world.jpg",
-  "full": "site/case-ritual-world.jpg"
- },
- {
-  "id": "c030",
-  "student": "黄同学",
-  "city": "武汉",
-  "bg": "国际高中 · 澳洲VCE课程",
-  "major": "视觉传达",
-  "tracks": [
-   "cw-uk"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "新加坡国立大学",
-    "en": "National University of Singapore",
-    "major": "Bachelor of Science in Business Analytics",
-    "top": true
-   },
-   {
-    "zh": "南洋理工大学",
-    "en": "Nanyang Technological University",
-    "major": "BFA ART, DESIGN AND MEDIA",
-    "top": true
-   },
-   {
-    "zh": "伦艺-中央圣马丁艺术学院",
-    "en": "UAL-Central Saint Martins",
-    "major": "BA (Hons) Graphic Communication Design",
-    "top": true
-   },
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA (Hons) Graphic and Media Design",
-    "top": true
-   },
-   {
-    "zh": "墨尔本大学",
-    "en": "The University of Melbourne",
-    "major": "Bachelor of Design",
-    "top": true
-   },
-   {
-    "zh": "悉尼大学",
-    "en": "University of Sydney",
-    "major": "Bachelor of Media and Communications",
-    "top": true
-   }
-  ],
-  "thumb": "acg/page-16.jpg",
-  "full": "acg/page-16.jpg"
- },
- {
-  "id": "c031",
-  "student": "吴同学",
-  "city": "广州",
-  "bg": "国际高中 · AL 数学 物理 艺术",
-  "major": "视觉艺术",
-  "tracks": [
-   "cw-uk"
-  ],
-  "workType": "multimedia",
-  "offers": [
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA (Hons) Graphic Branding and Identity",
-    "top": true
-   },
-   {
-    "zh": "伦艺-坎伯韦尔艺术学院",
-    "en": "UAL-Camberwell College of Arts",
-    "major": "Graphic Design BA (Hons)",
-    "top": true
-   },
-   {
-    "zh": "墨尔本大学",
-    "en": "The University of Melbourne",
-    "major": "Bachelor of Design",
-    "top": true
-   },
-   {
-    "zh": "香港都会大学",
-    "en": "Hong Kong Metropolitan University",
-    "major": "BA (Hons) Creative Advertising and Media Design",
-    "top": false
-   },
-   {
-    "zh": "香港树仁大学",
-    "en": "Hong Kong Shue Yan University",
-    "major": "Bachelor of Arts (Hons) in Media Design and Immersive Technology",
-    "top": false
-   },
-   {
-    "zh": "香港岭南大学",
-    "en": "Lingnan University",
-    "major": "Bachelor of Arts (Hons) in Animation and Digital Arts",
-    "top": false
-   }
-  ],
-  "thumb": "site/case-family-archive.jpg",
-  "full": "site/case-family-archive.jpg"
- },
- {
-  "id": "c032",
-  "student": "许同学",
-  "city": "广州",
-  "bg": "普高",
-  "major": "平面设计",
-  "tracks": [
-   "cw-uk"
-  ],
-  "workType": "design",
-  "offers": [
-   {
-    "zh": "伦艺-切尔西艺术设计学院",
-    "en": "UAL-Chelsea college of arts",
-    "major": "Graphic Design Communication",
-    "top": true
-   },
-   {
-    "zh": "创意艺术大学",
-    "en": "University for the Creative Arts",
-    "major": "Graphic Design",
-    "top": false
-   }
-  ],
-  "thumb": "fulltime/work-05.jpg",
-  "full": "fulltime/work-05.jpg"
- },
- {
-  "id": "c033",
-  "student": "韦同学",
-  "city": "北京CBD",
-  "bg": "国际高中 · 平面专业",
-  "major": "平面设计",
-  "tracks": [
-   "cw-uk"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA (Hons) Graphic and Media Design",
-    "top": true
-   },
-   {
-    "zh": "爱丁堡大学",
-    "en": "University of Edinburgh",
-    "major": "Graphic Design BA (Hons)",
-    "top": false
-   },
-   {
-    "zh": "南安普顿大学",
-    "en": "University of Southampton",
-    "major": "Graphic Communication (BA",
-    "top": false
-   },
-   {
-    "zh": "利兹大学",
-    "en": "The University of Leeds",
-    "major": "BA (Hons) Graphic and Communication Design",
-    "top": false
-   }
-  ],
-  "thumb": "acg/page-46.jpg",
-  "full": "acg/page-46.jpg"
- },
- {
-  "id": "c034",
-  "student": "褚同学",
-  "city": "北京CBD",
-  "bg": "普高 · 高一",
-  "major": "平面设计",
-  "tracks": [
-   "cw-uk"
-  ],
-  "workType": "design",
-  "offers": [
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "CertHE Preparation for Design, Media and Screen",
-    "top": true
-   },
-   {
-    "zh": "威斯敏斯特大学",
-    "en": "University of Westminster",
-    "major": "BA Hons Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "格拉斯哥艺术学院",
-    "en": "The Glasgow School of Art",
-    "major": "BA (Hons) Communication Design (Year 2)",
-    "top": false
-   },
-   {
-    "zh": "南安普顿大学",
-    "en": "University of Southampton",
-    "major": "BA Graphic Communication",
-    "top": false
-   },
-   {
-    "zh": "金斯顿大学",
-    "en": "Kingston University London",
-    "major": "BA (Hons) Graphic Design",
-    "top": false
-   }
-  ],
-  "thumb": "site/case-city-system.jpg",
-  "full": "site/case-city-system.jpg"
- },
- {
-  "id": "c035",
-  "student": "张同学",
-  "city": "郑州",
-  "bg": "国际高中",
-  "major": "视觉传达",
-  "tracks": [
-   "cw-uk"
-  ],
-  "workType": "design",
-  "offers": [
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "Graphic Branding and ldentity",
-    "top": true
-   },
-   {
-    "zh": "伦艺-切尔西艺术设计学院",
-    "en": "UAL-Chelsea college of arts",
-    "major": "Graphic Design",
-    "top": true
-   },
-   {
-    "zh": "格拉斯哥艺术学院",
-    "en": "The Glasgow School of Art",
-    "major": "Communication Design",
-    "top": false
-   },
-   {
-    "zh": "创意艺术大学",
-    "en": "University for the Creative Arts",
-    "major": "Graphic Design",
-    "top": false
-   },
-   {
-    "zh": "威斯敏斯特大学",
-    "en": "University of Westminster",
-    "major": "Graphic Design（BA)",
-    "top": false
-   }
-  ],
-  "thumb": "fulltime/work-01.jpg",
-  "full": "fulltime/work-01.jpg"
- },
- {
-  "id": "c036",
-  "student": "郭同学",
-  "city": "郑州",
-  "bg": "普高 · 平面",
-  "major": "平面设计",
-  "tracks": [
-   "cw-uk"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "Graphic and Media Design",
-    "top": true
-   },
-   {
-    "zh": "伦艺-切尔西艺术设计学院",
-    "en": "UAL-Chelsea college of arts",
-    "major": "Graphic Design",
-    "top": true
-   },
-   {
-    "zh": "南安普顿大学",
-    "en": "University of Southampton",
-    "major": "Graphic Communication",
-    "top": false
-   },
-   {
-    "zh": "创意艺术大学",
-    "en": "University for the Creative Arts",
-    "major": "Graphic Design",
-    "top": false
-   }
-  ],
-  "thumb": "acg/page-52.jpg",
-  "full": "acg/page-52.jpg"
- },
- {
-  "id": "c037",
-  "student": "邱同学",
-  "city": "成都",
-  "bg": "普高",
-  "major": "视觉传达",
-  "tracks": [
-   "cw-uk"
-  ],
-  "workType": "design",
-  "offers": [
-   {
-    "zh": "伦艺-切尔西艺术设计学院",
-    "en": "UAL-Chelsea college of arts",
-    "major": "BA (Hons) Graphic Design Communication",
-    "top": true
-   },
-   {
-    "zh": "梨花女子大学",
-    "en": "이화여자대학교",
-    "major": "视觉传达",
-    "top": false
-   }
-  ],
-  "thumb": "site/case-visual-system.jpg",
-  "full": "site/case-visual-system.jpg"
- },
- {
-  "id": "c038",
-  "student": "陈同学",
-  "city": "深圳",
-  "bg": "国际高中",
-  "major": "数字媒体设计",
-  "tracks": [
-   "hk"
-  ],
-  "workType": "tech",
-  "offers": [
-   {
-    "zh": "香港树仁大学",
-    "en": "Hong Kong Shue Yan University",
-    "major": "BSs in Arts, Culture&Technology (ACT)",
-    "top": false
-   },
-   {
-    "zh": "香港恒生大学",
-    "en": "The Hang Seng University of Hong Kong",
-    "major": "BA (Hons) in Convergent Media Communication Technology",
-    "top": false
-   }
-  ],
-  "thumb": "site/case-mechanical-3d.jpg",
-  "full": "site/case-mechanical-3d.jpg"
- },
- {
-  "id": "c039",
-  "student": "古同学",
-  "city": "深圳",
-  "bg": "普高",
-  "major": "数字媒体设计",
-  "tracks": [
-   "hk"
-  ],
-  "workType": "3d",
-  "offers": [
-   {
-    "zh": "香港树仁大学",
-    "en": "Hong Kong Shue Yan University",
-    "major": "BSs in Arts, Culture&Technology (ACT)",
-    "top": false
-   },
-   {
-    "zh": "香港恒生大学",
-    "en": "The Hang Seng University of Hong Kong",
-    "major": "Convergent Media and Communication Technology",
-    "top": false
-   }
-  ],
-  "thumb": "fulltime/work-06.jpg",
-  "full": "fulltime/work-06.jpg"
- },
- {
-  "id": "c040",
-  "student": "杨同学",
-  "city": "深圳",
-  "bg": "双非院校",
-  "major": "视觉传达",
-  "tracks": [
-   "hk"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "香港理工大学",
-    "en": "The Hong Kong Polytechnic University",
-    "major": "Topup-Bachelor of Arts (Honours) in Media and Communication Design year 3",
-    "top": false
-   }
-  ],
-  "thumb": "acg/page-16.jpg",
-  "full": "acg/page-16.jpg"
- },
- {
-  "id": "c041",
-  "student": "肖同学",
-  "city": "武汉",
-  "bg": "普高",
-  "major": "视觉传达",
-  "tracks": [
-   "hk"
-  ],
-  "workType": "design",
-  "offers": [
-   {
-    "zh": "香港高等教育科技学院",
-    "en": "Technological and Higher Education Institute of Hong Kong",
-    "major": "创新及多媒体科技(荣誉)理学士",
-    "top": false
-   }
-  ],
-  "thumb": "fulltime/work-05.jpg",
-  "full": "fulltime/work-05.jpg"
- },
- {
-  "id": "c042",
-  "student": "左同学",
-  "city": "深圳",
-  "bg": "国际高中",
-  "major": "平面设计",
-  "tracks": [
-   "hk"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "香港大学",
-    "en": "The University of Hong Kong",
-    "major": "BASc Design +",
-    "top": true
-   },
-   {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "BA (Hons) Graphic and Media Design",
-    "top": true
-   },
-   {
-    "zh": "伦艺-中央圣马丁艺术学院",
-    "en": "UAL-Central Saint Martins",
-    "major": "BA (Hons) Graphic Communication Design",
-    "top": true
-   },
-   {
-    "zh": "伦艺-切尔西艺术设计学院",
-    "en": "UAL-Chelsea college of arts",
-    "major": "BA (Hons) Graphic Design Communication",
-    "top": true
-   },
-   {
-    "zh": "金斯顿大学",
-    "en": "Kingston University London",
-    "major": "Graphic Design BA (Hons)",
-    "top": false
-   },
-   {
-    "zh": "香港理工大学",
-    "en": "The Hong Kong Polytechnic University",
-    "major": "BA (Hons) scheme in Design",
-    "top": false
-   }
-  ],
-  "thumb": "acg/page-46.jpg",
-  "full": "acg/page-46.jpg"
- },
- {
-  "id": "c043",
-  "student": "温同学",
+  "id": "au-bacc-3",
+  "card": "AU-BACC-3",
+  "student": "葛同学",
+  "country": "澳大利亚",
   "city": "北京海淀",
-  "bg": "国际高中 · SAT 1500+2门AP 3 5+4门AP预估5543",
-  "major": "数字媒体设计",
-  "tracks": [
-   "hk"
+  "tags": [
+   "澳洲",
+   "综合"
   ],
-  "workType": "tech",
-  "offers": [
+  "decision": null,
+  "profile": [
    {
-    "zh": "香港浸会大学",
-    "en": "Hong Kong Baptist University",
-    "major": "Bachelor of Arts and Science (Hons) in Digital Futures and Humanities",
-    "top": false
+    "k": "就读院校",
+    "v": "斯芬克全日制"
    },
    {
-    "zh": "悉尼大学",
-    "en": "University of Sydney",
-    "major": "Bachelor of Design (Interaction Design)",
-    "top": true
+    "k": "国际课程",
+    "v": "A-Level ABB"
    },
    {
-    "zh": "香港教育大学",
-    "en": "The Education University of Hong Kong",
-    "major": "Bachelor of Arts (Honours) in Creative and Digital Arts and Bachelor of Education (Honours) (Visual",
-    "top": false
+    "k": "语言成绩",
+    "v": "IELTS 5.5"
    }
   ],
-  "thumb": "fulltime/work-09.jpg",
-  "full": "fulltime/work-09.jpg"
- },
- {
-  "id": "c044",
-  "student": "杨同学",
-  "city": "成都",
-  "bg": "国际课程中学",
-  "major": "视觉传达",
-  "tracks": [
-   "sgau"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "南洋理工大学",
-    "en": "Nanyang Technological University",
-    "major": "艺术，设计与媒体",
-    "top": true
-   }
-  ],
-  "thumb": "acg/page-52.jpg",
-  "full": "acg/page-52.jpg"
- },
- {
-  "id": "c045",
-  "student": "吴同学",
-  "city": "上海徐汇",
-  "bg": "普高",
-  "major": "平面设计",
-  "tracks": [
-   "sgau"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "新加坡莱佛士设计学院",
-    "en": "Raffles Design Institute Singapore",
-    "major": "BA Graphic Design (Visual Communication)",
-    "top": false
-   }
-  ],
-  "thumb": "acg/page-16.jpg",
-  "full": "acg/page-16.jpg"
- },
- {
-  "id": "c046",
-  "student": "马同学",
-  "city": "上海徐汇",
-  "bg": "普高",
-  "major": "平面设计",
-  "tracks": [
-   "sgau"
-  ],
-  "workType": "design",
-  "offers": [
-   {
-    "zh": "新加坡莱佛士设计学院",
-    "en": "Raffles Design Institute Singapore",
-    "major": "BA Graphic Design (Visual Communication)",
-    "top": false
-   }
-  ],
-  "thumb": "site/case-city-system.jpg",
-  "full": "site/case-city-system.jpg"
- },
- {
-  "id": "c047",
-  "student": "阮同学",
-  "city": "北京CBD",
-  "bg": "普高",
-  "major": "平面设计",
-  "tracks": [
-   "sgau"
-  ],
-  "workType": "design",
-  "offers": [
-   {
-    "zh": "新加坡拉萨尔艺术学院",
-    "en": "LASALLE College of the Arts",
-    "major": "music business",
-    "top": false
-   },
-   {
-    "zh": "新加坡莱佛士设计学院",
-    "en": "Raffles Design Institute Singapore",
-    "major": "graphic. design",
-    "top": false
-   }
-  ],
-  "thumb": "fulltime/work-01.jpg",
-  "full": "fulltime/work-01.jpg"
- },
- {
-  "id": "c048",
-  "student": "王同学",
-  "city": "苏州",
-  "bg": "普高",
-  "major": "视觉传达",
-  "tracks": [
-   "sgau"
-  ],
-  "workType": "acg",
-  "offers": [
-   {
-    "zh": "悉尼大学",
-    "en": "University of Sydney",
-    "major": "视觉传达",
-    "top": true
-   }
-  ],
-  "thumb": "acg/page-46.jpg",
-  "full": "acg/page-46.jpg"
- },
- {
-  "id": "c049",
-  "student": "洪同学",
-  "city": "上海徐汇",
-  "bg": "国际高中",
-  "major": "数字媒体设计",
-  "tracks": [
-   "sgau"
+  "directions": [
+   "多媒介与装置艺术",
+   "3D虚拟艺术制作",
+   "AI创意计算机与互动机械"
   ],
   "workType": "3d",
+  "tracks": [
+   "sgau",
+   "cw-ft"
+  ],
+  "projects": [
+   "AR 模型",
+   "材料桌游",
+   "书籍",
+   "综合纸媒"
+  ],
+  "notes": [],
   "offers": [
    {
-    "zh": "悉尼大学",
-    "en": "University of Sydney",
-    "major": "Bachelor of Design (Interaction Design)",
-    "top": true
-   },
-   {
+    "abbr": "UniMelb",
     "zh": "墨尔本大学",
     "en": "The University of Melbourne",
     "major": "Bachelor of Design",
-    "top": true
+    "top": true,
+    "link": {
+     "zh": "墨尔本大学",
+     "major": "Bachelor of Design"
+    }
+   },
+   {
+    "abbr": "UNSW",
+    "zh": "新南威尔士大学",
+    "en": "The University of New South Wales",
+    "major": "Bachelor of Design",
+    "top": false
+   },
+   {
+    "abbr": "RMIT",
+    "zh": "皇家墨尔本理工大学",
+    "en": "Royal Melbourne Institute of Technology",
+    "major": "Bachelor of Graphic Design",
+    "top": false
+   },
+   {
+    "abbr": "Monash",
+    "zh": "蒙纳士大学",
+    "en": "Monash University",
+    "major": "Bachelor of Design",
+    "top": false
    }
   ],
-  "thumb": "fulltime/work-07.jpg",
-  "full": "fulltime/work-07.jpg"
+  "thumb": "cases/au-bacc-3-thumb.webp",
+  "full": "cases/au-bacc-3.webp"
  },
  {
-  "id": "c050",
-  "student": "金同学",
+  "id": "ca-bacc-1",
+  "card": "CA-BACC-1",
+  "student": "姚同学",
+  "country": "加拿大",
   "city": "上海徐汇",
-  "bg": "国际高中 · A-Level",
-  "major": "数字媒体设计",
+  "tags": [
+   "加拿大",
+   "综合"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "上海市天华英澳美学校"
+   }
+  ],
+  "directions": [
+   "多媒介与装置艺术"
+  ],
+  "workType": "multimedia",
   "tracks": [
    "sgau"
   ],
-  "workType": "acg",
+  "projects": [
+   "音画互动 · 实验影像",
+   "影像装置"
+  ],
+  "notes": [],
   "offers": [
    {
-    "zh": "墨尔本大学",
-    "en": "The University of Melbourne",
-    "major": "art",
-    "top": true
-   },
-   {
-    "zh": "伦敦大学学院",
-    "en": "University College London",
-    "major": "BA Media",
-    "top": true
-   },
-   {
-    "zh": "悉尼大学",
-    "en": "University of Sydney",
-    "major": "Bachelor of Media and Communications at the University of Sydney",
-    "top": true
-   },
-   {
-    "zh": "华威大学",
-    "en": "The University of Warwick",
-    "major": "Media and Creative Industries",
-    "top": false
-   },
-   {
-    "zh": "伦敦国王学院",
-    "en": "King's College London",
-    "major": "Digital Media and Culture",
-    "top": false
-   },
-   {
-    "zh": "利兹大学",
-    "en": "The University of Leeds",
-    "major": "digital media",
-    "top": false
+    "abbr": "UBC",
+    "zh": "不列颠哥伦比亚大学",
+    "en": "University of British Columbia",
+    "major": "Bachelor of Media Studies",
+    "top": false,
+    "link": {
+     "zh": "不列颠哥伦比亚大学",
+     "major": "Bachelor of Media Studies"
+    }
    }
   ],
-  "thumb": "acg/page-52.jpg",
-  "full": "acg/page-52.jpg"
+  "thumb": "cases/ca-bacc-1-thumb.webp",
+  "full": "cases/ca-bacc-1.webp"
  },
  {
-  "id": "c051",
-  "student": "张同学",
-  "city": "南京",
-  "bg": "普高",
-  "major": "数字媒体设计",
+  "id": "ca-bacc-2",
+  "card": "CA-BACC-2",
+  "student": "盛同学",
+  "country": "加拿大",
+  "city": "上海徐汇",
+  "tags": [
+   "加拿大",
+   "综合 & 艺术"
+  ],
+  "decision": null,
+  "profile": [
+   {
+    "k": "高中院校",
+    "v": "加拿大高中"
+   }
+  ],
+  "directions": [
+   "视觉语言与策略传播",
+   "信息体验与设计应用"
+  ],
+  "workType": "design",
   "tracks": [
    "sgau"
   ],
-  "workType": "3d",
+  "projects": [
+   "品牌策略",
+   "书籍",
+   "纸媒 · 装置",
+   "UI 界面"
+  ],
+  "notes": [],
   "offers": [
    {
-    "zh": "墨尔本大学",
-    "en": "The University of Melbourne",
-    "major": "视觉传达",
-    "top": true
+    "abbr": "ECUAD",
+    "zh": "艾米丽卡尔艺术设计学院",
+    "en": "Emily Carr University of Art & Design",
+    "major": "Bachelor of Media Arts",
+    "top": false,
+    "link": {
+     "zh": "艾米丽卡尔艺术设计学院",
+     "major": "Bachelor of Media Arts"
+    }
    },
    {
-    "zh": "伦敦大学学院",
-    "en": "University College London",
-    "major": "数字媒体",
-    "top": true
+    "abbr": "OCAD",
+    "zh": "安大略艺术设计学院",
+    "en": "Ontario College of Art & Design University",
+    "major": "Graphic Design",
+    "top": false,
+    "link": {
+     "zh": "安大略艺术设计学院",
+     "major": "Graphic Design"
+    }
    },
    {
-    "zh": "伦艺-伦敦传媒学院",
-    "en": "UAL-London College of Communication",
-    "major": "数字媒体",
-    "top": true
+    "abbr": "NSCAD",
+    "zh": "诺瓦艺术与设计大学",
+    "en": "NSCAD University",
+    "major": "Interdisciplinary Design",
+    "top": false,
+    "link": {
+     "zh": "诺瓦艺术与设计大学",
+     "major": "Interdisciplinary Design"
+    }
    },
    {
-    "zh": "伦敦国王学院",
-    "en": "King's College London",
-    "major": "数字媒体",
-    "top": false
+    "abbr": "AUArts",
+    "zh": "阿尔伯塔艺术大学",
+    "en": "Alberta University of the Arts",
+    "major": "Visual Communication Design",
+    "top": false,
+    "link": {
+     "zh": "阿尔伯塔艺术大学",
+     "major": "Visual Communication Design"
+    }
+   },
+   {
+    "abbr": "UofT",
+    "zh": "多伦多大学",
+    "en": "University of Toronto",
+    "major": "Bachelor of Arts Degree, Visual Studies",
+    "top": true,
+    "link": {
+     "zh": "多伦多大学",
+     "major": "Bachelor of Arts Degree, Visual Studies"
+    }
    }
   ],
-  "thumb": "fulltime/work-08.jpg",
-  "full": "fulltime/work-08.jpg"
+  "thumb": "cases/ca-bacc-2-thumb.webp",
+  "full": "cases/ca-bacc-2.webp"
  }
 ]

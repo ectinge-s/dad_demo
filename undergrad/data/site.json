@@ -1,625 +1,1638 @@
 {
-  "nav": [
+ "nav": [
+  {
+   "id": "us",
+   "label": "美本爬藤",
+   "en": "US Ivy",
+   "hero": true,
+   "tabs": [
     {
-      "id": "us",
-      "label": "美本爬藤",
-      "en": "US Ivy",
-      "hero": true,
-      "tabs": [
-        {"id": "overview", "label": "总览", "icon": "overview", "theme": 0, "sub": "offer 榜 · 三条路线"},
-        {"id": "dad", "label": "数字艺术与设计爬藤", "icon": "cursor", "theme": 2, "sub": "媒体艺术 · 交互 · 设计"},
-        {"id": "talent", "label": "特长爬藤", "icon": "atom", "theme": 5, "sub": "学术兴趣 × 创作项目"},
-        {"id": "risd", "label": "RISD 艺术问鼎", "icon": "brush", "theme": 1, "sub": "纯艺与设计作品集"}
-      ]
+     "id": "overview",
+     "label": "总览",
+     "icon": "overview",
+     "theme": 0,
+     "sub": "offer 榜 · 四条路线"
     },
     {
-      "id": "cw",
-      "label": "英联邦问鼎",
-      "en": "UK · HK · SG · AU",
-      "hero": true,
-      "tabs": [
-        {"id": "overview", "label": "总览", "icon": "overview", "theme": 0, "sub": "offer 榜 · 五条路线"},
-        {"id": "ft", "label": "全日制与国际课程", "icon": "cap", "theme": 3, "sub": "A-Level · BTEC · 作品集"},
-        {"id": "p12", "label": "1+2 国际本科", "icon": "path", "theme": 4, "sub": "国内 1 年 + 英国 2 年"},
-        {"id": "uk", "label": "常规英本", "icon": "crown", "theme": 2, "sub": "在校生 · UCAS 申请"},
-        {"id": "hk", "label": "香港", "icon": "skyline", "theme": 1, "sub": "JUPAS / Non-JUPAS"},
-        {"id": "sgau", "label": "新加坡 · 澳洲", "icon": "globe", "theme": 5, "sub": "新加坡 · 澳洲院校"}
-      ]
+     "id": "dad",
+     "label": "数字艺术与设计爬藤",
+     "icon": "cursor",
+     "theme": 2,
+     "sub": "艺术专业爬藤 · T1–T5"
     },
-    {"id": "camp", "label": "冬夏校", "en": "Winter & Summer", "hero": true},
-    {"id": "offers", "label": "offer 一览", "en": "Offers", "page": true},
-    {"id": "cuilu", "label": "翠鹿榜", "en": "Verified", "page": true},
-    {"id": "works", "label": "作品案例", "en": "Works", "page": true}
-  ],
-  "heroes": {
-    "us": {
-      "eyebrow": "US Undergraduate · Ivy League & Top Art Schools",
-      "title": "美本爬藤",
-      "accent": "让作品集为你说话",
-      "subtitle": "数字艺术与设计、学术特长、RISD 艺术问鼎三条路线：作品集、活动经历与文书放进同一份申请里推进。",
-      "ctas": [
-        {"label": "看美本 offer 榜", "go": "us/overview", "anchor": "us-offers", "primary": true},
-        {"label": "三条爬藤路线", "go": "us/overview", "anchor": "us-routes"}
-      ],
-      "stats": [
-        {"q": {"country": ["美国"]}, "label": "26 季美国本科 offer"},
-        {"q": {"country": ["美国"], "top": true}, "label": "顶尖院校 offer"},
-        {"q": {"country": ["美国"], "metric": "schools"}, "label": "录取院校"}
-      ],
-      "bubbles": [
-        {"img": "site/case-ritual-world.jpg", "label": "3D 虚拟世界"},
-        {"img": "fulltime/work-08.jpg", "label": "动画短片"},
-        {"img": "site/case-buddy-blocks.jpg", "label": "玩具设计"},
-        {"img": "site/product-nyu-summer.jpg", "label": "NYU 夏校"}
-      ]
+    {
+     "id": "talent",
+     "label": "特长爬藤",
+     "icon": "atom",
+     "theme": 5,
+     "sub": "非艺术专业 · 艺术特长"
     },
-    "cw": {
-      "eyebrow": "UK · Hong Kong · Singapore · Australia",
-      "title": "英联邦问鼎",
-      "accent": "从 A-Level 课堂到 UAL、UCL",
-      "subtitle": "全日制国际课程、1+2 国际本科、常规英本与港新澳申请，作品集和学业成绩一起准备。",
-      "ctas": [
-        {"label": "五条问鼎路线", "go": "cw/overview", "primary": true, "anchor": "cw-routes"},
-        {"label": "看英联邦 offer 榜", "go": "cw/overview", "anchor": "cw-offers"}
-      ],
-      "stats": [
-        {"q": {"country": ["英国"]}, "label": "26 季英国本科 offer"},
-        {"q": {"country": ["英国"], "top": true}, "label": "G5 / UAL 等顶尖 offer"},
-        {"q": {"country": ["中国香港", "新加坡", "澳大利亚"]}, "label": "港新澳 offer"}
-      ],
-      "bubbles": [
-        {"img": "fulltime/graduation.jpg", "label": "毕业典礼"},
-        {"img": "fulltime/exhibition.jpg", "label": "学院展览"},
-        {"img": "fulltime/work-01.jpg", "label": "A-Level 作品"},
-        {"img": "fulltime/opening.jpg", "label": "开学季"}
-      ]
+    {
+     "id": "mix",
+     "label": "艺术综合混申",
+     "icon": "star",
+     "theme": 4,
+     "sub": "艺术院校 × 综合大学"
     },
-    "camp": {
-      "eyebrow": "Winter & Summer School",
-      "title": "冬夏校",
-      "accent": "一个假期，做完一个工作室项目",
-      "subtitle": "跟随海外院校教授完成选题、制作、讲评与展出，作品直接进入作品集，表现优秀可获教授推荐信。",
-      "ctas": [
-        {"label": "看合作教授", "go": "camp", "anchor": "camp-profs", "primary": true},
-        {"label": "看往期 showreel", "go": "camp", "anchor": "camp-reel"}
-      ],
-      "stats": [
-        {"value": "2", "label": "冬季 / 夏季两期"},
-        {"count": "professors", "label": "合作教授"},
-        {"value": "1:8", "label": "师生比（占位）"}
-      ],
-      "bubbles": [
-        {"img": "fulltime/summer-school.jpg", "label": "工作室课堂"},
-        {"img": "site/process-making.jpg", "label": "动手制作"},
-        {"img": "site/process-projection.jpg", "label": "投影装置"},
-        {"img": "site/process-presentation.jpg", "label": "结课展演"}
-      ]
+    {
+     "id": "risd",
+     "label": "RISD 艺术问鼎",
+     "icon": "brush",
+     "theme": 1,
+     "sub": "艺术领袖计划"
     }
+   ]
   },
-  "pages": {
-    "offers": {
-      "eyebrow": "Offers · 26 Season",
-      "title": "offer 一览",
-      "lead": "26 申请季数字艺术与设计本科录取：按国家和院校排名查看，点击院校展开代表 offer，带「作品集案例」标记的可直接查看作品。"
+  {
+   "id": "cw",
+   "label": "英联邦问鼎",
+   "en": "UK · HK · SG · AU",
+   "hero": true,
+   "tabs": [
+    {
+     "id": "overview",
+     "label": "总览",
+     "icon": "overview",
+     "theme": 0,
+     "sub": "offer 榜 · 五条路线"
     },
-    "cuilu": {"eyebrow": "Cuilu Verified", "title": "翠鹿榜", "lead": "查询录取成果、导师资历与学生生源地。"},
-    "works": {"eyebrow": "Student Works", "title": "作品案例", "lead": "按作品类型和年龄段找到和你相近的作品，点击卡片查看完整项目。"}
+    {
+     "id": "ft",
+     "label": "全日制 A-Level",
+     "icon": "cap",
+     "theme": 3,
+     "sub": "短 · 中 · 长期定制班"
+    },
+    {
+     "id": "p12",
+     "label": "1+2 国际本科",
+     "icon": "path",
+     "theme": 4,
+     "sub": "考文垂 · 金史密斯"
+    },
+    {
+     "id": "uk",
+     "label": "常规英本",
+     "icon": "crown",
+     "theme": 2,
+     "sub": "名校直录 · 爬藤计划"
+    },
+    {
+     "id": "hk",
+     "label": "香港",
+     "icon": "skyline",
+     "theme": 1,
+     "sub": "港三 · JUPAS / Non-JUPAS"
+    },
+    {
+     "id": "sgau",
+     "label": "新澳加",
+     "icon": "globe",
+     "theme": 5,
+     "sub": "新加坡 · 澳洲 · 加拿大"
+    }
+   ]
   },
-  "tabs": {
-    "us/overview": [
-      {
-        "type": "offers",
-        "id": "us-offers",
-        "eyebrow": "US Offers",
-        "title": "美本 offer 榜单",
-        "text": "26 申请季美国本科录取，按院校排名排序，黄色标记为顶尖院校，点击院校查看 offer。",
-        "q": {"country": ["美国"]},
-        "rows": 2
-      },
-      {
-        "type": "compare",
-        "eyebrow": "Portfolio",
-        "title": "Maker 作品集和 Art 作品集，有什么区别？",
-        "text": "同一个学生可能两份都要准备：申请艺术类专业交 Art 作品集，申请综合大学的工程、计算机或设计专业，可以额外提交 Maker 作品集。",
-        "left": {
-          "label": "Maker Portfolio",
-          "title": "做出来的东西",
-          "points": ["适合综合大学的工程、计算机、设计类专业", "展示原型、硬件、代码和反复迭代的过程", "过程照片、草图和测试视频与成品同样重要", "通常作为补充材料提交"]
-        },
-        "right": {
-          "label": "Art Portfolio",
-          "title": "看得见的表达",
-          "points": ["艺术学院和综合大学艺术专业的主申材料", "展示观察、媒介探索和个人视觉语言", "按院校要求整理 10–20 件作品与说明", "多数通过 SlideRoom 或院校系统提交"]
-        }
-      },
-      {
-        "type": "routes",
-        "id": "us-routes",
-        "eyebrow": "Routes",
-        "title": "三条爬藤路线",
-        "items": [
-          {
-            "go": "us/dad",
-            "img": "site/profile-tech-media.jpg",
-            "title": "数字艺术与设计爬藤",
-            "text": "媒体艺术、交互设计、设计与技术方向，冲刺综合名校与顶尖艺术院校。",
-            "sticker": "主线"
-          },
-          {
-            "go": "us/talent",
-            "img": "fulltime/work-03.jpg",
-            "title": "特长爬藤",
-            "text": "生物、物理、艺术史、商科……用一个创作项目把学术兴趣讲清楚。",
-            "sticker": "跨学科"
-          },
-          {
-            "go": "us/risd",
-            "img": "site/product-26fall.jpg",
-            "title": "RISD 艺术问鼎",
-            "text": "以纯艺术与设计作品集冲刺 RISD 等顶尖艺术院校。",
-            "sticker": "顶尖艺术"
-          }
-        ]
-      }
-    ],
-    "us/dad": [
-      {
-        "type": "track",
-        "eyebrow": "Digital Arts & Design · Ivy",
-        "title": "数字艺术与设计爬藤",
-        "tagline": "媒体艺术、交互设计、设计与技术",
-        "text": "以数字艺术与设计作品集为核心，同时冲刺综合名校的设计 / 媒体专业与顶尖艺术院校。作品集、活动经历与文书放在同一条时间线里推进。",
-        "img": "site/case-city-system.jpg",
-        "sticker": "主线路线",
-        "fit": ["想读媒体艺术、交互设计、设计与技术等方向", "希望同时申请综合大学与艺术院校", "已有绘画、编程、3D 或影像中任一项基础"],
-        "facts": [{"k": "目标", "v": "美国综合名校 · 顶尖艺术院校"}, {"k": "作品集", "v": "Art / Maker 作品集"}, {"k": "服务", "v": "作品集 + 活动 + 文书"}],
-        "stats": [
-          {"q": {"country": ["美国"]}, "label": "26 季美本 offer"},
-          {"q": {"country": ["美国"], "top": true}, "label": "顶尖院校 offer"},
-          {"cases": "us-dad", "label": "本路线案例"}
-        ]
-      },
-      {"type": "product", "eyebrow": "Program", "title": "产品解读", "product": "us-dad"},
-      {
-        "type": "schools",
-        "eyebrow": "School List",
-        "title": "院校 list",
-        "text": "依据数字艺术与设计院校排名文件排序，先看前 5 所，展开查看全部；数字为 26 季 SFK 学员 offer 数，点击跳转 offer 一览。",
-        "groups": [{"label": "数字媒体 · 交互方向", "lists": ["us-dm"]}, {"label": "视觉传达方向", "lists": ["us-vc"]}]
-      },
-      {"type": "cases", "eyebrow": "Cases", "title": "录取案例", "track": "us-dad", "filter": "workType"}
-    ],
-    "us/talent": [
-      {
-        "type": "track",
-        "eyebrow": "Academic Talent · Ivy",
-        "title": "特长爬藤",
-        "tagline": "把学术兴趣做成一个作品",
-        "text": "面向以生物、化学、人类学、艺术史、商科、物理工程等学术方向申请美本的学生：用一个创作项目把学术兴趣讲清楚，让作品成为申请里最有说服力的证据。",
-        "img": "site/output-information.jpg",
-        "sticker": "跨学科",
-        "fit": ["主申专业不是艺术，但希望用创作项目体现特长", "对某个学术方向有持续投入，想把它可视化", "目标为藤校与综合名校"],
-        "facts": [{"k": "目标", "v": "藤校 · 综合名校"}, {"k": "产出", "v": "学术创作项目 · 作品集"}, {"k": "方向", "v": "按学术兴趣定制"}],
-        "stats": [{"q": {"country": ["美国"], "top": true}, "label": "美本顶尖院校 offer"}, {"cases": "us-talent", "label": "本路线案例"}]
-      },
-      {"type": "product", "eyebrow": "Program", "title": "产品解读", "product": "us-talent"},
-      {
-        "type": "quote",
-        "eyebrow": "Why",
-        "text": "藤校录取的是一个人，而不是一份成绩单。把你的学术兴趣做成一个作品，它会成为申请里最有说服力的证据。",
-        "by": "为什么可以特长爬藤"
-      },
-      {
-        "type": "directions",
-        "eyebrow": "Directions",
-        "title": "方向分类",
-        "text": "选择你的学术方向，查看对应院校与录取案例。",
-        "list": "talent"
-      }
-    ],
-    "us/risd": [
-      {
-        "type": "track",
-        "eyebrow": "RISD · Fine Art & Design",
-        "title": "RISD 艺术问鼎",
-        "tagline": "以纯艺术与设计作品集冲刺顶尖艺术院校",
-        "text": "罗德岛设计学院（RISD）是美国顶尖的艺术与设计院校。申请以作品集为核心，同时考察绘画基础、观察能力和持续创作的状态。",
-        "img": "site/product-26fall.jpg",
-        "sticker": "顶尖艺术",
-        "fit": ["目标 RISD 等顶尖艺术与设计院校", "绘画基础扎实，愿意长期投入创作", "希望建立个人视觉语言的学生"],
-        "facts": [{"k": "目标", "v": "RISD 及顶尖艺术院校"}, {"k": "核心", "v": "作品集 · 绘画基础"}, {"k": "背书", "v": "官方合作与认证"}],
-        "stats": [
-          {"q": {"country": ["美国"], "schoolKw": "罗德岛"}, "label": "26 季 RISD offer"},
-          {"cases": "risd", "label": "本路线案例"}
-        ]
-      },
-      {
-        "type": "endorse",
-        "eyebrow": "Endorsement",
-        "title": "官方合作与认证",
-        "items": [
-          {"kind": "doc", "title": "官方合作背书", "text": "合作协议与授权文件（待上传）"},
-          {"kind": "badge", "title": "课程认证", "text": "合作课程结业认证（待上传）"},
-          {"kind": "video", "title": "RISD 教授寄语", "text": "教授介绍视频（待上传）", "poster": "site/process-presentation.jpg"}
-        ]
-      },
-      {"type": "cases", "eyebrow": "Cases", "title": "RISD 录取案例", "track": "risd"}
-    ],
-    "cw/overview": [
-      {
-        "type": "offers",
-        "id": "cw-offers",
-        "eyebrow": "Commonwealth Offers",
-        "title": "英联邦 offer 榜单",
-        "text": "26 申请季英国、香港、新加坡、澳洲本科录取，按院校排名排序，黄色标记为顶尖院校，点击院校查看 offer。",
-        "q": {},
-        "countries": ["英国", "中国香港", "新加坡", "澳大利亚"],
-        "rows": 2
-      },
-      {
-        "type": "routes",
-        "id": "cw-routes",
-        "eyebrow": "Routes",
-        "title": "五条问鼎路线",
-        "items": [
-          {
-            "go": "cw/ft",
-            "img": "fulltime/academy.jpg",
-            "title": "全日制与国际课程",
-            "text": "A-Level、BTEC 与作品集在同一学年推进，全日制学院带班。",
-            "sticker": "全日制"
-          },
-          {
-            "go": "cw/p12",
-            "img": "fulltime/work-02.jpg",
-            "title": "1+2 国际本科",
-            "text": "国内一年国际课程与作品集，后两年赴英完成本科。",
-            "sticker": "三年学位"
-          },
-          {
-            "go": "cw/uk",
-            "img": "fulltime/exhibition.jpg",
-            "title": "常规英本",
-            "text": "在校生同步准备作品集与 UCAS，冲刺 UAL、UCL、KCL 等。",
-            "sticker": "UCAS"
-          },
-          {
-            "go": "cw/hk",
-            "img": "site/case-visual-system.jpg",
-            "title": "香港",
-            "text": "JUPAS / Non-JUPAS 两条申请路径，设计与创意媒体专业。",
-            "sticker": "港本"
-          },
-          {
-            "go": "cw/sgau",
-            "img": "site/output-web.jpg",
-            "title": "新加坡 · 澳洲",
-            "text": "招生办资源与作品集反馈，NTU、LASALLE、墨大、悉大等。",
-            "sticker": "新澳"
-          }
-        ]
-      }
-    ],
-    "cw/ft": [
-      {
-        "type": "track",
-        "eyebrow": "Full-time Academy",
-        "title": "全日制与国际课程",
-        "tagline": "A-Level / BTEC 与作品集在同一学年推进",
-        "text": "数字艺术与设计全日制学院成立于 2021 年，把 A-Level、BTEC、国际 1+2、雅思、专业基础、作品集与申请放进同一个学年里推进，班主任、教务与专业导师三方带班。",
-        "img": "fulltime/academy.jpg",
-        "sticker": "全日制学院",
-        "fit": ["计划以国际课程成绩申请英国及英联邦本科", "希望学业与作品集由同一团队统筹", "需要全日制学习环境与班级管理"],
-        "facts": [{"k": "课程", "v": "A-Level · BTEC · 1+2"}, {"k": "成立", "v": "2021 年"}, {"k": "带班", "v": "班主任 · 教务 · 导师"}],
-        "stats": [
-          {"q": {"country": ["英国"]}, "label": "26 季英本 offer"},
-          {"value": "169", "label": "A-Level A* / A"},
-          {"cases": "cw-ft", "label": "本路线案例"}
-        ]
-      },
-      {
-        "type": "handbook",
-        "id": "ft-handbook",
-        "eyebrow": "Handbook",
-        "title": "全日制手册",
-        "text": "每个学年的课程路线、带班方式、作品审核与学院生活，一本手册看完。",
-        "stats": [
-          {"value": "2012", "label": "SFK 成立"},
-          {"value": "2016", "label": "加入新东方"},
-          {"value": "2021", "label": "全日制学院成立"},
-          {"value": "13", "label": "国内外教学城市"}
-        ],
-        "cards": [
-          {
-            "img": "fulltime/fields.jpg",
-            "title": "五大领域",
-            "text": "视觉传播、信息体验、3D 虚拟艺术、多媒介装置、AIGC 与互动机械。",
-            "tags": ["品牌", "UI", "3D", "装置", "创意编程"]
-          },
-          {
-            "img": "fulltime/alevel.jpg",
-            "title": "四条课程路线",
-            "text": "A-Level、BTEC、国际 1+2 与基础进阶课程，按目标国家和升学时间选择。",
-            "tags": ["A-Level", "BTEC", "1+2"]
-          },
-          {
-            "img": "fulltime/faculty.jpg",
-            "title": "三方带班",
-            "text": "班主任管日常，教务管进度，专业导师管作品，家长会定期同步。",
-            "tags": ["班主任", "教务", "导师"]
-          },
-          {
-            "img": "fulltime/review.jpg",
-            "title": "四级审核",
-            "text": "导师、教研团队与海外教授分阶段审作品，结果进入「艺术阶梯评估报告」。",
-            "tags": ["开题", "中期", "排版", "终审"]
-          },
-          {
-            "img": "fulltime/environment.jpg",
-            "title": "独立校区",
-            "text": "独立楼层，课堂区、自习区、讨论区与储物柜一应俱全。",
-            "tags": ["课堂", "自习", "展示"]
-          },
-          {
-            "img": "fulltime/activities.jpg",
-            "title": "学院活动",
-            "text": "看展、写生、公益与策展，把课堂里的方法带到真实场景。",
-            "tags": ["看展", "写生", "策展"]
-          }
-        ],
-        "pages": [
-          "fulltime/academy.jpg",
-          "fulltime/fields.jpg",
-          "fulltime/alevel.jpg",
-          "fulltime/btec.jpg",
-          "fulltime/faculty.jpg",
-          "fulltime/review.jpg",
-          "fulltime/environment.jpg",
-          "fulltime/activities.jpg",
-          "fulltime/exhibition.jpg",
-          "fulltime/graduation.jpg"
-        ]
-      },
-      {
-        "type": "video",
-        "eyebrow": "Graduation",
-        "title": "毕业典礼",
-        "text": "每一届毕业生在典礼上展出作品、领取录取通知。",
-        "poster": "fulltime/graduation.jpg",
-        "caption": "2025 届毕业典礼（视频待上传）"
-      },
-      {
-        "type": "rank",
-        "eyebrow": "A-Level Results",
-        "title": "全日制 A-Level 高分率榜单",
-        "text": "2025 届全日制学院成绩与升学数据（截至 2025 年 5 月）。",
-        "stats": [
-          {"value": "169", "label": "A-Level A* / A"},
-          {"value": "239", "label": "BTEC Distinction"},
-          {"value": "354", "label": "BTEC 本科直升"},
-          {"value": "466", "label": "2025 本科 offer"}
-        ],
-        "board": "fulltime/offer-board.jpg"
-      },
-      {"type": "offers", "eyebrow": "UK Offers", "title": "英国院校 offer", "q": {"country": ["英国"]}, "rows": 2},
-      {"type": "cases", "eyebrow": "Cases & Offers", "title": "录取案例与 offer", "track": "cw-ft"}
-    ],
-    "cw/p12": [
-      {
-        "type": "track",
-        "eyebrow": "1+2 International Degree",
-        "title": "1+2 国际本科",
-        "tagline": "国内 1 年 + 英国 2 年，三年取得英国学士学位",
-        "text": "第一年在国内完成国际课程与作品集，后两年赴英国就读本科，三年取得英国学士学位。",
-        "img": "fulltime/work-05.jpg",
-        "sticker": "三年学位",
-        "fit": ["希望缩短本科学制、更早进入专业学习", "需要在国内过渡一年再出国", "目标金史密斯、考文垂等合作院校"],
-        "facts": [{"k": "学制", "v": "1 + 2 年"}, {"k": "衔接院校", "v": "金史密斯 · 考文垂"}, {"k": "学位", "v": "英国学士学位"}],
-        "stats": [
-          {"q": {"country": ["英国"], "schoolKw": "金史密斯"}, "label": "26 季金史密斯 offer"},
-          {"q": {"country": ["英国"], "schoolKw": "考文垂"}, "label": "26 季考文垂 offer"},
-          {"cases": "cw-12", "label": "本路线案例"}
-        ]
-      },
-      {
-        "type": "pathway",
-        "eyebrow": "Partner Schools",
-        "title": "衔接院校",
-        "text": "两所衔接院校，第一年的课程与作品集按衔接专业设计。",
-        "items": [
-          {
-            "step": "01",
-            "school": "伦敦大学金史密斯学院",
-            "en": "Goldsmiths, University of London",
-            "img": "fulltime/work-02.jpg",
-            "text": "伦敦大学成员学院，以艺术、媒体与文化研究见长。项目设置与衔接专业以当年合作方案为准（占位）。",
-            "tags": ["伦敦", "艺术 · 媒体"]
-          },
-          {
-            "step": "02",
-            "school": "考文垂大学",
-            "en": "Coventry University",
-            "img": "fulltime/work-05.jpg",
-            "text": "设计与数字媒体专业实践导向，衔接 Graphic Design、Digital Media 等本科课程（占位）。",
-            "tags": ["考文垂", "设计 · 数字媒体"]
-          }
-        ]
-      },
-      {"type": "cases", "eyebrow": "Cases", "title": "1+2 录取案例", "track": "cw-12"}
-    ],
-    "cw/uk": [
-      {
-        "type": "track",
-        "eyebrow": "UK Undergraduate",
-        "title": "常规英本",
-        "tagline": "在校生同步准备作品集与 UCAS",
-        "text": "在校生同步准备作品集与 UCAS 申请：UAL、UCL、KCL、爱丁堡、利兹等院校的艺术、设计与媒体专业。",
-        "img": "fulltime/exhibition.jpg",
-        "sticker": "UCAS",
-        "fit": ["国际学校或普高在读，课余准备作品集", "目标 UAL、UCL、KCL、爱丁堡等艺术 / 设计 / 媒体专业", "需要作品集与申请文书一体规划"],
-        "facts": [{"k": "申请", "v": "UCAS · 院校直申"}, {"k": "方向", "v": "数字媒体 · 平面 · 交互"}, {"k": "备选", "v": "预科 Foundation"}],
-        "stats": [
-          {"q": {"country": ["英国"]}, "label": "26 季英本 offer"},
-          {"q": {"country": ["英国"], "top": true}, "label": "G5 / UAL 等顶尖 offer"},
-          {"cases": "cw-uk", "label": "本路线案例"}
-        ]
-      },
-      {
-        "type": "schools",
-        "eyebrow": "School List",
-        "title": "英国院校 list",
-        "text": "依据数字媒体 · 平面方向院校排名排序（UAL 各学院合并显示），数字为 26 季 SFK 学员 offer 数。",
-        "groups": [{"label": "数字媒体 · 平面方向", "lists": ["uk"]}]
-      },
-      {"type": "cases", "eyebrow": "Cases", "title": "英本录取案例", "track": "cw-uk"}
-    ],
-    "cw/hk": [
-      {
-        "type": "track",
-        "eyebrow": "Hong Kong & Macau",
-        "title": "香港",
-        "tagline": "设计与创意媒体专业，JUPAS / Non-JUPAS 双路径",
-        "text": "港校设计与创意媒体专业普遍要求作品集与面试。按学生课程体系选择 JUPAS 或 Non-JUPAS 路径，作品集与面试准备同步进行；澳门院校可作为同区域的补充选择。",
-        "img": "site/case-visual-system.jpg",
-        "sticker": "港本",
-        "fit": ["A-Level / IB / AP 或高考学生，目标港校", "想就近读书、同时保留英美申请", "申请设计、创意媒体、数字艺术类专业"],
-        "facts": [{"k": "路径", "v": "JUPAS · Non-JUPAS"}, {"k": "考核", "v": "作品集 · 面试"}, {"k": "院校", "v": "港大 · 科大 · 理大 · 城大"}],
-        "stats": [{"q": {"country": ["中国香港"]}, "label": "26 季港校 offer"}, {"cases": "hk", "label": "本路线案例"}]
-      },
-      {
-        "type": "routes2",
-        "eyebrow": "How to Apply",
-        "title": "申请路径：JUPAS / Non-JUPAS",
-        "items": [
-          {
-            "label": "JUPAS",
-            "title": "大学联合招生办法",
-            "points": ["主要面向参加香港中学文凭考试（HKDSE）的学生", "通过 JUPAS 统一系统填报志愿", "按 DSE 成绩与志愿排序录取"]
-          },
-          {
-            "label": "Non-JUPAS",
-            "title": "直接向院校申请",
-            "points": ["A-Level、IB、AP 等国际课程与内地高考学生", "分别在各院校官网递交申请", "设计与创意媒体专业通常要求作品集与面试"]
-          }
-        ]
-      },
-      {
-        "type": "schools",
-        "eyebrow": "School List",
-        "title": "港澳院校 list",
-        "text": "依据视传 · 数媒方向院校排名排序，数字为 26 季 SFK 学员 offer 数。",
-        "groups": [{"label": "香港", "lists": ["hk"]}, {"label": "澳门", "lists": ["mo"]}]
-      },
-      {"type": "cases", "eyebrow": "Cases", "title": "香港录取案例", "track": "hk"}
-    ],
-    "cw/sgau": [
-      {
-        "type": "track",
-        "eyebrow": "Singapore & Australia",
-        "title": "新加坡 · 澳洲",
-        "tagline": "招生办资源 + 作品集反馈",
-        "text": "与新加坡、澳洲院校招生官保持沟通，宣讲会与作品集反馈第一时间同步。新加坡侧重艺术设计学院与综合大学传播专业，澳洲以设计学士（交互 / 数字媒体 / 视觉传达）为主。",
-        "img": "site/output-web.jpg",
-        "sticker": "新澳",
-        "fit": ["目标 NTU、LASALLE、墨大、悉大等院校", "希望学制灵活、可与英国申请并行", "申请交互、数字媒体、视觉传达类专业"],
-        "facts": [
-          {"k": "新加坡", "v": "NTU · LASALLE · NAFA"},
-          {"k": "澳洲", "v": "墨大 · 悉大 · 新南 · RMIT"},
-          {"k": "资源", "v": "招生办 · 宣讲会"}
-        ],
-        "stats": [
-          {"q": {"country": ["新加坡"]}, "label": "26 季新加坡 offer"},
-          {"q": {"country": ["澳大利亚"]}, "label": "26 季澳洲 offer"},
-          {"cases": "sgau", "label": "本路线案例"}
-        ]
-      },
-      {
-        "type": "resources",
-        "eyebrow": "Admissions",
-        "title": "资源与招生办",
-        "text": "招生宣讲、专业答疑与作品集评审日等资源（具体场次以当季安排为准）。",
-        "items": [
-          {"school": "新加坡国立大学", "en": "NUS", "text": "招生宣讲 · 专业答疑（占位）"},
-          {"school": "南洋理工大学", "en": "NTU", "text": "ADM 艺术设计媒体学院（占位）"},
-          {"school": "拉萨尔艺术学院", "en": "LASALLE", "text": "作品集评审日（占位）"},
-          {"school": "墨尔本大学", "en": "Melbourne", "text": "招生官见面会（占位）"},
-          {"school": "悉尼大学", "en": "Sydney", "text": "专业介绍会（占位）"},
-          {"school": "皇家墨尔本理工大学", "en": "RMIT", "text": "设计学院作品集指导（占位）"}
-        ]
-      },
-      {
-        "type": "schools",
-        "eyebrow": "School List",
-        "title": "新澳院校 list",
-        "text": "依据视传 · 数媒方向院校排名排序，数字为 26 季 SFK 学员 offer 数。",
-        "groups": [{"label": "新加坡", "lists": ["sg"]}, {"label": "澳大利亚", "lists": ["au"]}]
-      },
-      {"type": "cases", "eyebrow": "Cases", "title": "新加坡 · 澳洲录取案例", "track": "sgau"}
-    ],
-    "camp": [
-      {
-        "type": "showreel",
-        "id": "camp-reel",
-        "eyebrow": "Showreel",
-        "title": "往期 showreel",
-        "items": [
-          {"poster": "site/product-nyu-summer.jpg", "title": "NYU 夏校 · 空间装置"},
-          {"poster": "site/process-projection.jpg", "title": "投影与身体"},
-          {"poster": "site/process-making.jpg", "title": "材料工作坊"},
-          {"poster": "fulltime/summer-school.jpg", "title": "工作室讲评"},
-          {"poster": "site/process-collaboration.jpg", "title": "小组协作"},
-          {"poster": "site/process-presentation.jpg", "title": "结课展演"}
-        ]
-      },
-      {"type": "profs", "id": "camp-profs", "eyebrow": "Professors", "title": "合作教授", "text": "点击教授查看课程介绍、往期海报与学生产出。"}
-    ]
+  {
+   "id": "camp",
+   "label": "冬夏校",
+   "en": "Winter & Summer",
+   "hero": true
   },
-  "products": {
-    "us-dad": {
-      "title": "数字艺术与设计爬藤",
-      "en": "Digital Art & Design · Ivy Track",
+  {
+   "id": "offers",
+   "label": "offer 一览",
+   "en": "Offers",
+   "page": true
+  },
+  {
+   "id": "cuilu",
+   "label": "翠鹿榜",
+   "en": "Verified",
+   "page": true
+  },
+  {
+   "id": "works",
+   "label": "作品案例",
+   "en": "Works",
+   "page": true
+  }
+ ],
+ "heroes": {
+  "us": {
+   "eyebrow": "US Undergraduate · Ivy League & Top Art Schools",
+   "title": "美本爬藤",
+   "accent": "让作品集为你说话",
+   "subtitle": "艺术专业爬藤、艺术特长爬藤、艺术综合混申与 RISD 艺术问鼎四条路线：按目标院校而不是排名配置课程，作品集、学术背书与申请材料放在同一条主线里推进。",
+   "ctas": [
+    {
+     "label": "看美本 offer 榜",
+     "go": "us/overview",
+     "anchor": "us-offers",
+     "primary": true
+    },
+    {
+     "label": "四条爬藤路线",
+     "go": "us/overview",
+     "anchor": "us-routes"
+    }
+   ],
+   "stats": [
+    {
+     "q": {
+      "country": [
+       "美国"
+      ]
+     },
+     "label": "26 季美国本科 offer"
+    },
+    {
+     "q": {
+      "country": [
+       "美国"
+      ],
+      "top": true
+     },
+     "label": "顶尖院校 offer"
+    },
+    {
+     "q": {
+      "country": [
+       "美国"
+      ],
+      "metric": "schools"
+     },
+     "label": "录取院校"
+    }
+   ],
+   "bubbles": [
+    {
+     "img": "site/case-ritual-world.jpg",
+     "label": "3D 虚拟世界"
+    },
+    {
+     "img": "fulltime/work-08.jpg",
+     "label": "动画短片"
+    },
+    {
+     "img": "site/case-buddy-blocks.jpg",
+     "label": "玩具设计"
+    },
+    {
+     "img": "site/product-nyu-summer.jpg",
+     "label": "NYU 夏校"
+    }
+   ]
+  },
+  "cw": {
+   "eyebrow": "UK · Hong Kong · Singapore · Australia · Canada",
+   "title": "英联邦问鼎",
+   "accent": "从 A-Level 课堂到 UAL、UCL",
+   "subtitle": "全日制 A-Level 定制班、1+2 国际本科、英国名校直录与 G5 · 港三 · 新二爬藤计划：专业能力、学术背书、背景经历与申请表达一起推进。",
+   "ctas": [
+    {
+     "label": "五条问鼎路线",
+     "go": "cw/overview",
+     "primary": true,
+     "anchor": "cw-routes"
+    },
+    {
+     "label": "看英联邦 offer 榜",
+     "go": "cw/overview",
+     "anchor": "cw-offers"
+    }
+   ],
+   "stats": [
+    {
+     "q": {
+      "country": [
+       "英国"
+      ]
+     },
+     "label": "26 季英国本科 offer"
+    },
+    {
+     "q": {
+      "country": [
+       "英国"
+      ],
+      "top": true
+     },
+     "label": "G5 / UAL 等顶尖 offer"
+    },
+    {
+     "q": {
+      "country": [
+       "中国香港",
+       "新加坡",
+       "澳大利亚",
+       "加拿大"
+      ]
+     },
+     "label": "港新澳加 offer"
+    }
+   ],
+   "bubbles": [
+    {
+     "img": "fulltime/graduation.jpg",
+     "label": "毕业典礼"
+    },
+    {
+     "img": "fulltime/exhibition.jpg",
+     "label": "学院展览"
+    },
+    {
+     "img": "fulltime/work-01.jpg",
+     "label": "A-Level 作品"
+    },
+    {
+     "img": "fulltime/opening.jpg",
+     "label": "开学季"
+    }
+   ]
+  },
+  "camp": {
+   "eyebrow": "Winter & Summer School",
+   "title": "冬夏校",
+   "accent": "一个假期，做完一个工作室项目",
+   "subtitle": "跟随海外院校教授完成选题、制作、讲评与展出，作品直接进入作品集，表现优秀可获教授推荐信。",
+   "ctas": [
+    {
+     "label": "看合作教授",
+     "go": "camp",
+     "anchor": "camp-profs",
+     "primary": true
+    },
+    {
+     "label": "看往期 showreel",
+     "go": "camp",
+     "anchor": "camp-reel"
+    }
+   ],
+   "stats": [
+    {
+     "value": "2",
+     "label": "冬季 / 夏季两期"
+    },
+    {
+     "count": "professors",
+     "label": "合作教授"
+    },
+    {
+     "value": "1:8",
+     "label": "师生比（占位）"
+    }
+   ],
+   "bubbles": [
+    {
+     "img": "fulltime/summer-school.jpg",
+     "label": "工作室课堂"
+    },
+    {
+     "img": "site/process-making.jpg",
+     "label": "动手制作"
+    },
+    {
+     "img": "site/process-projection.jpg",
+     "label": "投影装置"
+    },
+    {
+     "img": "site/process-presentation.jpg",
+     "label": "结课展演"
+    }
+   ]
+  }
+ },
+ "pages": {
+  "offers": {
+   "eyebrow": "Offers · 26 Season",
+   "title": "offer 一览",
+   "lead": "26 申请季数字艺术与设计本科录取：按国家和院校排名查看，点击院校展开代表 offer，带「作品集案例」标记的可直接查看作品。"
+  },
+  "cuilu": {
+   "eyebrow": "Cuilu Verified",
+   "title": "翠鹿榜",
+   "lead": "查询录取成果、导师资历与学生生源地。"
+  },
+  "works": {
+   "eyebrow": "Student Works",
+   "title": "作品案例",
+   "lead": "按作品类型和年龄段找到和你相近的作品，点击卡片查看完整项目。"
+  }
+ },
+ "tabs": {
+  "us/overview": [
+   {
+    "type": "offers",
+    "id": "us-offers",
+    "eyebrow": "US Offers",
+    "title": "美本 offer 榜单",
+    "text": "26 申请季美国本科录取，按院校排名排序，黄色标记为顶尖院校，点击院校查看 offer。",
+    "q": {
+     "country": [
+      "美国"
+     ]
+    },
+    "rows": 2
+   },
+   {
+    "type": "compare",
+    "eyebrow": "Portfolio",
+    "title": "Maker 作品集和 Art 作品集，有什么区别？",
+    "text": "同一个学生可能两份都要准备：申请艺术类专业交 Art 作品集，申请综合大学的工程、计算机或设计专业，可以额外提交 Maker 作品集。",
+    "left": {
+     "label": "Maker Portfolio",
+     "title": "做出来的东西",
+     "points": [
+      "适合综合大学的工程、计算机、设计类专业",
+      "展示原型、硬件、代码和反复迭代的过程",
+      "过程照片、草图和测试视频与成品同样重要",
+      "通常作为补充材料提交"
+     ]
+    },
+    "right": {
+     "label": "Art Portfolio",
+     "title": "看得见的表达",
+     "points": [
+      "艺术学院和综合大学艺术专业的主申材料",
+      "展示观察、媒介探索和个人视觉语言",
+      "按院校要求整理 10–20 件作品与说明",
+      "多数通过 SlideRoom 或院校系统提交"
+     ]
+    }
+   },
+   {
+    "type": "choose",
+    "id": "us-choose",
+    "eyebrow": "Which Program",
+    "title": "四条路线怎么选",
+    "text": "选择建立在申请专业、目标院校、学术基础、艺术能力和准备周期之上——建议先完成专业与背景评估，再确定产品类型和课程组合。",
+    "items": [
+     {
+      "go": "us/dad",
+      "name": "艺术专业爬藤",
+      "sticker": "T1–T5",
+      "goal": "以艺术、设计、数字媒体或跨学科创意专业进入美国顶尖综合大学",
+      "fit": "目标专业明确，希望用作品集、学术与研究能力冲刺高位院校",
+      "deliver": "专业作品集、AP 与基础能力、海外教授项目、差异化材料及申请支持"
+     },
+     {
+      "go": "us/talent",
+      "name": "艺术特长爬藤",
+      "sticker": "非艺术专业",
+      "goal": "申请非艺术专业，以艺术能力构建个人差异化",
+      "fit": "不申请艺术专业，但已有艺术兴趣、经历或长期特长",
+      "deliver": "艺术主题项目、个人创意视频、活动叙事与补充材料"
+     },
+     {
+      "go": "us/mix",
+      "name": "艺术综合混申",
+      "sticker": "A–D 四档",
+      "goal": "同时申请艺术院校与综合大学",
+      "fit": "希望兼顾专业艺术教育、综合大学资源与录取梯度",
+      "deliver": "艺术作品集、学术规划、海外教授项目及双线申请材料"
+     },
+     {
+      "go": "us/risd",
+      "name": "RISD 艺术问鼎",
+      "sticker": "RISD",
+      "goal": "以纯艺术与设计作品集冲刺 RISD",
+      "fit": "绘画基础扎实，目标明确指向 RISD 等顶尖艺术院校",
+      "deliver": "AP 艺术、观察绘画、Art Works / Studies、罗德岛在职教授项目与冲刺营"
+     }
+    ],
+    "foot": {
+     "title": "共同培养底座",
+     "items": [
+      "专业定位：从目标院校、专业方向、现有能力和申请时间反推课程与项目安排",
+      "基础能力：视传与数媒方向配置视觉观察、设计基础、研究方法和软件课程",
+      "学术协同：匹配 AP 艺术课程、国际课程同步辅导及学术规划",
+      "过程审核：教研 Critique、阶段审核、终期审核和排版审核控制项目质量",
+      "申请衔接：作品集、个人叙事、文书、面试与网申材料围绕同一申请定位推进"
+     ]
+    }
+   },
+   {
+    "type": "routes",
+    "id": "us-routes",
+    "eyebrow": "Routes",
+    "title": "四条爬藤路线",
+    "items": [
+     {
+      "go": "us/dad",
       "img": "site/profile-tech-media.jpg",
-      "summary": "面向媒体艺术、交互设计、设计与技术方向，冲刺 UCLA、NYU、USC、CMU 等综合名校与顶尖艺术院校。",
-      "chips": ["作品集", "活动规划", "文书", "选校"],
-      "stats": [
-        {"k": "适合年级", "v": "G9–G12"},
-        {"k": "周期", "v": "1–3 年（占位）"},
-        {"k": "作品数量", "v": "10–20 件"},
-        {"k": "目标", "v": "综合名校 · 艺术院校"}
-      ],
-      "why": [
-        {"title": "作品与学术同一条主线", "text": "作品主题来自学生自己的学术兴趣，活动和文书围绕同一个人物逻辑展开。"},
-        {"title": "双轨选校", "text": "综合大学与艺术院校分别准备材料，一份作品集适配两类审核。"},
-        {"title": "阶段审核", "text": "开题、中期、排版、终审四次审核，每次都有书面反馈。"}
-      ],
-      "timeline": [
-        {"day": "G9–G10", "title": "兴趣探索", "desc": "基础课程与短期项目，找到长期方向"},
-        {"day": "G10–G11", "title": "核心项目", "desc": "完成 2–3 个深度项目，参加夏校与竞赛"},
-        {"day": "G11 暑假", "title": "作品集成型", "desc": "整理作品、排版、撰写作品说明"},
-        {"day": "G12 秋", "title": "申请递交", "desc": "ED/EA 与常规批次，补充材料与面试"}
-      ],
-      "posters": 6
-    },
-    "us-talent": {
+      "title": "数字艺术与设计爬藤",
+      "text": "艺术专业爬藤定制方案：按 T1–T5 目标院校配置 AP、项目与海外教授资源，冲刺顶尖综合大学艺术与创意专业。",
+      "sticker": "主线"
+     },
+     {
+      "go": "us/talent",
+      "img": "site/output-information.jpg",
       "title": "特长爬藤",
-      "en": "Academic Talent · Ivy Track",
-      "img": "fulltime/work-03.jpg",
-      "badge": "VIP 专属",
-      "summary": "产品解读由文书团队提供，内容整理中（占位）。",
-      "chips": ["学术方向", "创作项目", "文书"],
-      "stats": [{"k": "适合方向", "v": "理工 · 人文 · 商科"}, {"k": "目标", "v": "藤校与顶尖综合大学"}],
-      "why": [{"title": "内容待补充", "text": "请文书团队提供产品解读。"}],
-      "posters": 3
+      "text": "不申请艺术专业：两项艺术特长项目 + Personal Video，让艺术成为申请里可信的差异化证据。",
+      "sticker": "跨学科"
+     },
+     {
+      "go": "us/mix",
+      "img": "site/case-ritual-world.jpg",
+      "title": "艺术综合混申",
+      "text": "一套规划同时应对艺术院校与综合大学，混申 A–D 四档对应不同院校组合。",
+      "sticker": "双线"
+     },
+     {
+      "go": "us/risd",
+      "img": "site/product-26fall.jpg",
+      "title": "RISD 艺术问鼎",
+      "text": "为 RISD 单独研发的艺术领袖计划，罗德岛在职教授项目课与两期实地冲刺营。",
+      "sticker": "顶尖艺术"
+     }
+    ]
+   }
+  ],
+  "us/dad": [
+   {
+    "type": "track",
+    "eyebrow": "Digital Arts & Design · Ivy",
+    "title": "数字艺术与设计爬藤",
+    "tagline": "以艺术与设计专业竞争力，冲刺美国顶尖综合大学",
+    "text": "不只是完成一套作品集：围绕目标院校的专业要求，统筹学术成绩、艺术基础、技术能力、研究项目、海外教授资源和申请表达。课程与交付按具体目标院校配置，而不是按排名复制同一套课表。",
+    "img": "site/case-city-system.jpg",
+    "sticker": "主线路线",
+    "fit": [
+     "目标是综合大学的艺术、设计、数字媒体或跨学科创意专业",
+     "希望用作品集、学术与研究能力冲刺高位院校",
+     "愿意提前准备 Process Board、Home Test、Personal Video 等院校命题"
+    ],
+    "facts": [
+     {
+      "k": "梯度",
+      "v": "T1–T5 · 按目标院校定制"
+     },
+     {
+      "k": "学术",
+      "v": "AP 成绩认证 · AP 5 分计划"
+     },
+     {
+      "k": "资源",
+      "v": "IvyLink / TopLink 藤校联盟教授"
+     }
+    ],
+    "stats": [
+     {
+      "q": {
+       "country": [
+        "美国"
+       ]
+      },
+      "label": "26 季美本 offer"
+     },
+     {
+      "q": {
+       "country": [
+        "美国"
+       ],
+       "top": true
+      },
+      "label": "顶尖院校 offer"
+     },
+     {
+      "cases": "us-dad",
+      "label": "本路线案例"
+     }
+    ]
+   },
+   {
+    "type": "product",
+    "eyebrow": "Program",
+    "title": "产品解读",
+    "product": "us-pro"
+   },
+   {
+    "type": "schools",
+    "eyebrow": "School List",
+    "title": "院校 list",
+    "text": "依据数字艺术与设计院校排名文件排序，先看前 5 所，展开查看全部；数字为 26 季 SFK 学员 offer 数，点击跳转 offer 一览。",
+    "groups": [
+     {
+      "label": "数字媒体 · 交互方向",
+      "lists": [
+       "us-dm"
+      ]
+     },
+     {
+      "label": "视觉传达方向",
+      "lists": [
+       "us-vc"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "cases",
+    "eyebrow": "Cases",
+    "title": "录取案例",
+    "track": "us-dad",
+    "filter": "workType"
+   }
+  ],
+  "us/talent": [
+   {
+    "type": "track",
+    "eyebrow": "Academic Talent · Ivy",
+    "title": "特长爬藤",
+    "tagline": "不申请艺术专业，也能让艺术成为可信的差异化证据",
+    "text": "面向申请人文、社会科学、商科、传播、科技等非艺术专业，但拥有艺术兴趣、学习经历或创作能力的学生：把艺术特长转化为支持综合大学申请的项目成果、活动证据和个人叙事。",
+    "img": "site/output-information.jpg",
+    "sticker": "跨学科",
+    "fit": [
+     "明确不申请艺术专业，但有绘画、影像、设计、摄影或数字创作基础",
+     "活动经历较分散，希望围绕一个议题形成长期项目",
+     "学术成绩有竞争力，但个人特色不足"
+    ],
+    "facts": [
+     {
+      "k": "目标",
+      "v": "美国综合大学 TOP20 / TOP30"
+     },
+     {
+      "k": "产出",
+      "v": "两项定制项目 · Personal Video"
+     },
+     {
+      "k": "方向",
+      "v": "按学术兴趣与议题定制"
+     }
+    ],
+    "stats": [
+     {
+      "q": {
+       "country": [
+        "美国"
+       ],
+       "top": true
+      },
+      "label": "美本顶尖院校 offer"
+     },
+     {
+      "cases": "us-talent",
+      "label": "本路线案例"
+     }
+    ]
+   },
+   {
+    "type": "product",
+    "eyebrow": "Program",
+    "title": "产品解读",
+    "product": "us-talent"
+   },
+   {
+    "type": "quote",
+    "eyebrow": "Why",
+    "text": "它解决的不是“怎样把学生包装成艺术生”，而是“怎样让艺术经历真实地解释这个学生是谁、长期关注什么、如何思考问题，以及能为未来校园带来什么”。",
+    "by": "为什么可以特长爬藤"
+   },
+   {
+    "type": "directions",
+    "eyebrow": "Directions",
+    "title": "方向分类",
+    "text": "选择你的学术方向，查看对应院校与录取案例。",
+    "list": "talent"
+   }
+  ],
+  "us/risd": [
+   {
+    "type": "track",
+    "eyebrow": "RISD · Fine Art & Design",
+    "title": "RISD 艺术问鼎",
+    "tagline": "为 RISD 单独研发，课程全程契合 RISD",
+    "text": "罗德岛设计学院（RISD）申请以作品集为核心，要求 12–20 件体现思考与制作过程的近期作品，同时考察绘画基础、观察能力和持续创作的状态。艺术领袖计划由罗德岛在职教授直接参与项目课、实地冲刺营与多轮 critique。",
+    "img": "site/product-26fall.jpg",
+    "sticker": "顶尖艺术",
+    "fit": [
+     "目标 RISD 等顶尖艺术与设计院校",
+     "绘画基础扎实，愿意长期投入创作",
+     "希望建立个人视觉语言的学生"
+    ],
+    "facts": [
+     {
+      "k": "目标",
+      "v": "RISD 及顶尖艺术院校"
+     },
+     {
+      "k": "核心",
+      "v": "AP 艺术 · 观察绘画 · Art Studies"
+     },
+     {
+      "k": "教授",
+      "v": "罗德岛在职教授 · 两期冲刺营"
+     }
+    ],
+    "stats": [
+     {
+      "q": {
+       "country": [
+        "美国"
+       ],
+       "schoolKw": "罗德岛"
+      },
+      "label": "26 季 RISD offer"
+     },
+     {
+      "cases": "risd",
+      "label": "本路线案例"
+     }
+    ]
+   },
+   {
+    "type": "product",
+    "eyebrow": "Program",
+    "title": "产品解读",
+    "product": "us-risd"
+   },
+   {
+    "type": "endorse",
+    "eyebrow": "Endorsement",
+    "title": "官方合作与认证",
+    "items": [
+     {
+      "kind": "doc",
+      "title": "官方合作背书",
+      "text": "合作协议与授权文件（待上传）"
+     },
+     {
+      "kind": "badge",
+      "title": "课程认证",
+      "text": "合作课程结业认证（待上传）"
+     },
+     {
+      "kind": "video",
+      "title": "RISD 教授寄语",
+      "text": "教授介绍视频（待上传）",
+      "poster": "site/process-presentation.jpg"
+     }
+    ]
+   },
+   {
+    "type": "cases",
+    "eyebrow": "Cases",
+    "title": "RISD 录取案例",
+    "track": "risd",
+    "filter": "workType"
+   }
+  ],
+  "cw/overview": [
+   {
+    "type": "offers",
+    "id": "cw-offers",
+    "eyebrow": "Commonwealth Offers",
+    "title": "英联邦 offer 榜单",
+    "text": "26 申请季英国、香港、新加坡、澳洲、加拿大本科录取，按院校排名排序，黄色标记为顶尖院校，点击院校查看 offer。",
+    "q": {},
+    "countries": [
+     "英国",
+     "中国香港",
+     "新加坡",
+     "澳大利亚",
+     "加拿大"
+    ],
+    "rows": 2
+   },
+   {
+    "type": "choose",
+    "id": "cw-choose",
+    "eyebrow": "Which Route",
+    "title": "英联邦路线怎么选",
+    "text": "先判断目标院校层级、申请方向（艺术人文还是科学技术）、现有成绩与语言、作品集基础和可用准备时间，再选择路径与档位。",
+    "items": [
+     {
+      "go": "cw/ft",
+      "name": "全日制 A-Level 定制班",
+      "sticker": "全日制",
+      "goal": "以 A-Level / BTEC 成绩与作品集申请英联邦本科",
+      "fit": "需要全日制学习环境，学业与作品集由同一团队统筹",
+      "deliver": "A-Level 成绩认证、BTEC 文凭、作品集、雅思与全程申请"
+     },
+     {
+      "go": "cw/p12",
+      "name": "1+2 国际本科",
+      "sticker": "三年学位",
+      "goal": "国内大一衔接考文垂 / 金史密斯本科大二",
+      "fit": "方向明确，接受合作院校与开放专业，不想额外读预科",
+      "deliver": "120 学分课程、结业作品集、雅思与大二衔接申请"
+     },
+     {
+      "go": "cw/uk",
+      "name": "英国名校直录",
+      "sticker": "TOP1–TOP8",
+      "goal": "英国艺术设计本科常规申请",
+      "fit": "目标清晰，以作品集和常规申请为主",
+      "deliver": "专业课、作品集、BTEC；高配档含 A-Level 与海外教授"
+     },
+     {
+      "go": "cw/hk",
+      "name": "爬藤多元版 / 经典版",
+      "sticker": "G5 · 港三 · 新二",
+      "goal": "G5、港三、新二等高竞争院校",
+      "fit": "愿意承担 A-Level A、项目与背景活动的更高投入",
+      "deliver": "A-Level A 学术背书、竞赛科研、强化文书与面试"
+     }
+    ]
+   },
+   {
+    "type": "routes",
+    "id": "cw-routes",
+    "eyebrow": "Routes",
+    "title": "五条问鼎路线",
+    "items": [
+     {
+      "go": "cw/ft",
+      "img": "fulltime/academy.jpg",
+      "title": "全日制 A-Level",
+      "text": "短期、中期、长期三种学制 × TOP5 / TOP3 / TOP1，A-Level、BTEC 与作品集在同一学年推进。",
+      "sticker": "全日制"
+     },
+     {
+      "go": "cw/p12",
+      "img": "fulltime/work-02.jpg",
+      "title": "1+2 国际本科",
+      "text": "国内一年完成 120 学分与结业作品集，衔接考文垂或金史密斯本科大二，三年取得学位。",
+      "sticker": "三年学位"
+     },
+     {
+      "go": "cw/uk",
+      "img": "fulltime/exhibition.jpg",
+      "title": "常规英本",
+      "text": "名校直录 TOP1–TOP8 与 G5 爬藤计划，冲刺 UAL、UCL、KCL、爱丁堡等。",
+      "sticker": "UCAS"
+     },
+     {
+      "go": "cw/hk",
+      "img": "site/case-visual-system.jpg",
+      "title": "香港",
+      "text": "爬藤计划面向港三，JUPAS / Non-JUPAS 两条申请路径，设计与创意媒体专业。",
+      "sticker": "港本"
+     },
+     {
+      "go": "cw/sgau",
+      "img": "site/output-web.jpg",
+      "title": "新加坡 · 澳洲 · 加拿大",
+      "text": "爬藤计划面向新二，招生办资源与作品集反馈，NTU、LASALLE、墨大、悉大、UBC、OCAD 等。",
+      "sticker": "新澳"
+     }
+    ]
+   }
+  ],
+  "cw/ft": [
+   {
+    "type": "track",
+    "eyebrow": "Full-time Academy",
+    "title": "全日制 A-Level 定制班",
+    "tagline": "A-Level / BTEC、雅思与作品集在同一学年推进",
+    "text": "数字艺术与设计全日制学院成立于 2021 年。A-Level 定制班按学制分为短期、中期、长期三种，每种再按目标院校分 TOP5、TOP3、TOP1 三档：学术背书、作品集、海外教授项目与申请服务由班主任、教务与专业导师三方带班统筹。",
+    "img": "fulltime/academy.jpg",
+    "sticker": "全日制学院",
+    "fit": [
+     "计划以国际课程成绩申请英国及英联邦本科",
+     "希望学业与作品集由同一团队统筹",
+     "需要全日制学习环境与班级管理"
+    ],
+    "facts": [
+     {
+      "k": "学制",
+      "v": "短期 · 中期 · 长期"
+     },
+     {
+      "k": "学术背书",
+      "v": "A-Level 成绩认证 · BTEC 文凭"
+     },
+     {
+      "k": "带班",
+      "v": "班主任 · 教务 · 导师"
+     }
+    ],
+    "stats": [
+     {
+      "q": {
+       "country": [
+        "英国"
+       ]
+      },
+      "label": "26 季英本 offer"
+     },
+     {
+      "value": "169",
+      "label": "A-Level A* / A"
+     },
+     {
+      "cases": "cw-ft",
+      "label": "本路线案例"
+     }
+    ]
+   },
+   {
+    "type": "product",
+    "eyebrow": "Program",
+    "title": "产品解读",
+    "product": "cw-ft"
+   },
+   {
+    "type": "handbook",
+    "id": "ft-handbook",
+    "eyebrow": "Handbook",
+    "title": "全日制手册",
+    "text": "每个学年的课程路线、带班方式、作品审核与学院生活，一本手册看完。",
+    "stats": [
+     {
+      "value": "2012",
+      "label": "SFK 成立"
+     },
+     {
+      "value": "2016",
+      "label": "加入新东方"
+     },
+     {
+      "value": "2021",
+      "label": "全日制学院成立"
+     },
+     {
+      "value": "13",
+      "label": "国内外教学城市"
+     }
+    ],
+    "cards": [
+     {
+      "img": "fulltime/fields.jpg",
+      "title": "五大领域",
+      "text": "视觉传播、信息体验、3D 虚拟艺术、多媒介装置、AIGC 与互动机械。",
+      "tags": [
+       "品牌",
+       "UI",
+       "3D",
+       "装置",
+       "创意编程"
+      ]
+     },
+     {
+      "img": "fulltime/alevel.jpg",
+      "title": "三种学制",
+      "text": "短期、中期、长期 A-Level 定制班，中长期增加海外高中学历认证，长期班从 IGCSE 开始。",
+      "tags": [
+       "A-Level",
+       "BTEC",
+       "IGCSE"
+      ]
+     },
+     {
+      "img": "fulltime/faculty.jpg",
+      "title": "三方带班",
+      "text": "班主任管日常，教务管进度，专业导师管作品，家长会定期同步。",
+      "tags": [
+       "班主任",
+       "教务",
+       "导师"
+      ]
+     },
+     {
+      "img": "fulltime/review.jpg",
+      "title": "四级审核",
+      "text": "导师、教研团队与海外教授分阶段审作品，结果进入「艺术阶梯评估报告」。",
+      "tags": [
+       "开题",
+       "中期",
+       "排版",
+       "终审"
+      ]
+     },
+     {
+      "img": "fulltime/environment.jpg",
+      "title": "独立校区",
+      "text": "独立楼层，课堂区、自习区、讨论区与储物柜一应俱全。",
+      "tags": [
+       "课堂",
+       "自习",
+       "展示"
+      ]
+     },
+     {
+      "img": "fulltime/activities.jpg",
+      "title": "学院活动",
+      "text": "看展、写生、公益与策展，把课堂里的方法带到真实场景。",
+      "tags": [
+       "看展",
+       "写生",
+       "策展"
+      ]
+     }
+    ],
+    "pages": [
+     "fulltime/academy.jpg",
+     "fulltime/fields.jpg",
+     "fulltime/alevel.jpg",
+     "fulltime/btec.jpg",
+     "fulltime/faculty.jpg",
+     "fulltime/review.jpg",
+     "fulltime/environment.jpg",
+     "fulltime/activities.jpg",
+     "fulltime/exhibition.jpg",
+     "fulltime/graduation.jpg"
+    ]
+   },
+   {
+    "type": "video",
+    "eyebrow": "Graduation",
+    "title": "毕业典礼",
+    "text": "每一届毕业生在典礼上展出作品、领取录取通知。",
+    "poster": "fulltime/graduation.jpg",
+    "caption": "2025 届毕业典礼（视频待上传）"
+   },
+   {
+    "type": "rank",
+    "eyebrow": "A-Level Results",
+    "title": "全日制 A-Level 高分率榜单",
+    "text": "2025 届全日制学院成绩与升学数据（截至 2025 年 5 月）。",
+    "stats": [
+     {
+      "value": "169",
+      "label": "A-Level A* / A"
+     },
+     {
+      "value": "239",
+      "label": "BTEC Distinction"
+     },
+     {
+      "value": "354",
+      "label": "BTEC 本科直升"
+     },
+     {
+      "value": "466",
+      "label": "2025 本科 offer"
+     }
+    ],
+    "board": "fulltime/offer-board.jpg"
+   },
+   {
+    "type": "offers",
+    "eyebrow": "UK Offers",
+    "title": "英国院校 offer",
+    "q": {
+     "country": [
+      "英国"
+     ]
+    },
+    "rows": 2
+   },
+   {
+    "type": "cases",
+    "eyebrow": "Cases & Offers",
+    "title": "录取案例与 offer",
+    "track": "cw-ft",
+    "filter": "workType"
+   }
+  ],
+  "cw/p12": [
+   {
+    "type": "track",
+    "eyebrow": "1+2 International Degree",
+    "title": "1+2 国际本科",
+    "tagline": "国内 1 年 + 英国 2 年，按英国三年制本科节奏完成学位",
+    "text": "第一年在 SFK 全日制学院完成与英国大学一年级衔接的专业课程、120 学分、雅思与大一结业作品集；达到合作院校当年度升读条件后，赴英国完成本科二、三年级。它不是预科，也不是无条件保录。",
+    "img": "fulltime/work-05.jpg",
+    "sticker": "三年学位",
+    "fit": [
+     "计划赴英学习艺术、设计、数字媒体或传播类本科",
+     "希望三年完成本科，不想额外增加一年预科",
+     "语言尚未达到直入要求，希望国内一年同步提高雅思"
+    ],
+    "facts": [
+     {
+      "k": "学制",
+      "v": "1 + 2 年"
+     },
+     {
+      "k": "衔接院校",
+      "v": "考文垂 · 金史密斯"
+     },
+     {
+      "k": "升读条件",
+      "v": "120 学分 · 雅思 6.0（单项 5.5）"
+     }
+    ],
+    "stats": [
+     {
+      "q": {
+       "country": [
+        "英国"
+       ],
+       "schoolKw": "金史密斯"
+      },
+      "label": "26 季金史密斯 offer"
+     },
+     {
+      "q": {
+       "country": [
+        "英国"
+       ],
+       "schoolKw": "考文垂"
+      },
+      "label": "26 季考文垂 offer"
+     },
+     {
+      "cases": "cw-12",
+      "label": "本路线案例"
+     }
+    ]
+   },
+   {
+    "type": "pathway",
+    "eyebrow": "Partner Schools",
+    "title": "衔接院校",
+    "text": "两所合作院校二选一：入学前结合创作兴趣、技术基础和职业方向选择对应路径，第一年的课程与作品集按衔接专业设计。",
+    "items": [
+     {
+      "step": "A",
+      "school": "考文垂大学",
+      "en": "Coventry University",
+      "img": "course-products/cw/core/coventry-12/01.webp",
+      "text": "设计与数字媒体专业实践导向。重点衔接 BA Graphic Design、BA Digital Media、BA Media and Communication，覆盖视觉设计、数字媒体与媒体传播。",
+      "tags": [
+       "平面设计",
+       "数字媒体",
+       "媒体传播"
+      ],
+      "gallery": {
+       "market": "cw",
+       "slug": "coventry-12",
+       "count": 36,
+       "alt": "考文垂大学 · 1+2 国际本科课程介绍"
+      }
+     },
+     {
+      "step": "B",
+      "school": "伦敦大学金史密斯学院",
+      "en": "Goldsmiths, University of London",
+      "img": "course-products/cw/core/goldsmiths-12/01.webp",
+      "text": "伦敦大学成员学院，以艺术、媒体与文化研究见长。重点衔接 BA (Hons) Media & Communications 与 BSc (Hons) Creative Computing，覆盖媒介文化、影像传播与创意编程、AI、交互。",
+      "tags": [
+       "媒体与传播",
+       "创意计算",
+       "伦敦"
+      ],
+      "gallery": {
+       "market": "cw",
+       "slug": "goldsmiths-12",
+       "count": 40,
+       "alt": "金史密斯学院 · 1+2 国际本科课程介绍"
+      }
+     }
+    ],
+    "alt": true
+   },
+   {
+    "type": "product",
+    "eyebrow": "Program",
+    "title": "产品解读",
+    "product": "cw-p12"
+   },
+   {
+    "type": "cases",
+    "eyebrow": "Cases",
+    "title": "1+2 录取案例",
+    "track": "cw-12",
+    "filter": "workType"
+   }
+  ],
+  "cw/uk": [
+   {
+    "type": "track",
+    "eyebrow": "UK Undergraduate",
+    "title": "常规英本",
+    "tagline": "名校直录与 G5 爬藤计划，专业 · 学术 · 背景 · 申请四线并进",
+    "text": "以正常本科申请为核心，不绑定单一院校衔接：名校直录按 TOP1–TOP8 解决英国艺术设计本科常规申请；爬藤多元版、经典版面向 G5 等高竞争目标，叠加 A-Level A、竞赛科研与强化文书面试。",
+    "img": "fulltime/exhibition.jpg",
+    "sticker": "UCAS",
+    "fit": [
+     "国际学校或普高在读，目标 UAL、UCL、KCL、爱丁堡等艺术 / 设计 / 媒体专业",
+     "需要从专业定位、基础训练到作品集的完整路径",
+     "冲刺 G5，需要同时强化学术与综合背景"
+    ],
+    "facts": [
+     {
+      "k": "路径",
+      "v": "名校直录 · 爬藤多元 / 经典"
+     },
+     {
+      "k": "学术背书",
+      "v": "A-Level · BTEC"
+     },
+     {
+      "k": "申请",
+      "v": "UCAS · 院校直申"
+     }
+    ],
+    "stats": [
+     {
+      "q": {
+       "country": [
+        "英国"
+       ]
+      },
+      "label": "26 季英本 offer"
+     },
+     {
+      "q": {
+       "country": [
+        "英国"
+       ],
+       "top": true
+      },
+      "label": "G5 / UAL 等顶尖 offer"
+     },
+     {
+      "cases": "cw-uk",
+      "label": "本路线案例"
+     }
+    ]
+   },
+   {
+    "type": "product",
+    "eyebrow": "Program",
+    "title": "产品解读",
+    "product": "cw-classic"
+   },
+   {
+    "type": "schools",
+    "eyebrow": "School List",
+    "title": "英国院校 list",
+    "text": "依据数字媒体 · 平面方向院校排名排序（UAL 各学院合并显示），数字为 26 季 SFK 学员 offer 数。",
+    "groups": [
+     {
+      "label": "数字媒体 · 平面方向",
+      "lists": [
+       "uk"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "cases",
+    "eyebrow": "Cases",
+    "title": "英本录取案例",
+    "track": "cw-uk",
+    "filter": "workType"
+   }
+  ],
+  "cw/hk": [
+   {
+    "type": "track",
+    "eyebrow": "Hong Kong & Macau",
+    "title": "香港",
+    "tagline": "设计与创意媒体专业，JUPAS / Non-JUPAS 双路径",
+    "text": "港校设计与创意媒体专业普遍要求作品集与面试。按学生课程体系选择 JUPAS 或 Non-JUPAS 路径；冲刺港三（港大、港中文、港科大）可选择英联邦本科爬藤计划，以 A-Level A 与背景项目补强综合竞争力。澳门院校可作为同区域的补充选择。",
+    "img": "site/case-visual-system.jpg",
+    "sticker": "港本",
+    "fit": [
+     "A-Level / IB / AP 或高考学生，目标港校",
+     "想就近读书、同时保留英美申请",
+     "申请设计、创意媒体、数字艺术类专业"
+    ],
+    "facts": [
+     {
+      "k": "路径",
+      "v": "JUPAS · Non-JUPAS"
+     },
+     {
+      "k": "考核",
+      "v": "作品集 · 面试"
+     },
+     {
+      "k": "院校",
+      "v": "港大 · 科大 · 理大 · 城大"
+     }
+    ],
+    "stats": [
+     {
+      "q": {
+       "country": [
+        "中国香港"
+       ]
+      },
+      "label": "26 季港校 offer"
+     },
+     {
+      "cases": "hk",
+      "label": "本路线案例"
+     }
+    ]
+   },
+   {
+    "type": "routes2",
+    "eyebrow": "How to Apply",
+    "title": "申请路径：JUPAS / Non-JUPAS",
+    "items": [
+     {
+      "label": "JUPAS",
+      "title": "大学联合招生办法",
+      "points": [
+       "主要面向参加香港中学文凭考试（HKDSE）的学生",
+       "通过 JUPAS 统一系统填报志愿",
+       "按 DSE 成绩与志愿排序录取"
+      ]
+     },
+     {
+      "label": "Non-JUPAS",
+      "title": "直接向院校申请",
+      "points": [
+       "A-Level、IB、AP 等国际课程与内地高考学生",
+       "分别在各院校官网递交申请",
+       "设计与创意媒体专业通常要求作品集与面试"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "product",
+    "eyebrow": "Program",
+    "title": "港三目标：英联邦本科爬藤计划",
+    "product": "cw-classic"
+   },
+   {
+    "type": "schools",
+    "eyebrow": "School List",
+    "title": "港澳院校 list",
+    "text": "依据视传 · 数媒方向院校排名排序，数字为 26 季 SFK 学员 offer 数。",
+    "groups": [
+     {
+      "label": "香港",
+      "lists": [
+       "hk"
+      ]
+     },
+     {
+      "label": "澳门",
+      "lists": [
+       "mo"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "cases",
+    "eyebrow": "Cases",
+    "title": "香港录取案例",
+    "track": "hk",
+    "filter": "workType"
+   }
+  ],
+  "cw/sgau": [
+   {
+    "type": "track",
+    "eyebrow": "Singapore · Australia · Canada",
+    "title": "新加坡 · 澳洲 · 加拿大",
+    "tagline": "招生办资源 + 作品集反馈",
+    "text": "与新加坡、澳洲院校招生官保持沟通，宣讲会与作品集反馈第一时间同步。冲刺新二（NUS、NTU）可选择英联邦本科爬藤计划；新加坡侧重艺术设计学院与综合大学传播专业，澳洲以设计学士（交互 / 数字媒体 / 视觉传达）为主。加拿大以艺术设计院校（OCAD、Emily Carr、NSCAD、AUArts）与综合大学媒体 / 视觉专业（UBC、多伦多大学）为主。",
+    "img": "site/output-web.jpg",
+    "sticker": "新澳",
+    "fit": [
+     "目标 NTU、LASALLE、墨大、悉大、UBC、OCAD 等院校",
+     "希望学制灵活、可与英国申请并行",
+     "申请交互、数字媒体、视觉传达类专业"
+    ],
+    "facts": [
+     {
+      "k": "新加坡",
+      "v": "NTU · LASALLE · NAFA"
+     },
+     {
+      "k": "澳洲",
+      "v": "墨大 · 悉大 · 新南 · RMIT"
+     },
+     {
+      "k": "资源",
+      "v": "招生办 · 宣讲会"
+     },
+     {
+      "k": "加拿大",
+      "v": "UBC · 多伦多大学 · OCAD · Emily Carr"
+     }
+    ],
+    "stats": [
+     {
+      "q": {
+       "country": [
+        "新加坡"
+       ]
+      },
+      "label": "26 季新加坡 offer"
+     },
+     {
+      "q": {
+       "country": [
+        "澳大利亚"
+       ]
+      },
+      "label": "26 季澳洲 offer"
+     },
+     {
+      "q": {
+       "country": [
+        "加拿大"
+       ]
+      },
+      "label": "26 季加拿大 offer"
+     },
+     {
+      "cases": "sgau",
+      "label": "本路线案例"
+     }
+    ]
+   },
+   {
+    "type": "resources",
+    "eyebrow": "Admissions",
+    "title": "资源与招生办",
+    "text": "招生宣讲、专业答疑与作品集评审日等资源（具体场次以当季安排为准）。",
+    "items": [
+     {
+      "school": "新加坡国立大学",
+      "en": "NUS",
+      "text": "招生宣讲 · 专业答疑（占位）"
+     },
+     {
+      "school": "南洋理工大学",
+      "en": "NTU",
+      "text": "ADM 艺术设计媒体学院（占位）"
+     },
+     {
+      "school": "拉萨尔艺术学院",
+      "en": "LASALLE",
+      "text": "作品集评审日（占位）"
+     },
+     {
+      "school": "墨尔本大学",
+      "en": "Melbourne",
+      "text": "招生官见面会（占位）"
+     },
+     {
+      "school": "悉尼大学",
+      "en": "Sydney",
+      "text": "专业介绍会（占位）"
+     },
+     {
+      "school": "皇家墨尔本理工大学",
+      "en": "RMIT",
+      "text": "设计学院作品集指导（占位）"
+     }
+    ]
+   },
+   {
+    "type": "product",
+    "eyebrow": "Program",
+    "title": "新二目标：英联邦本科爬藤计划",
+    "product": "cw-classic"
+   },
+   {
+    "type": "schools",
+    "eyebrow": "School List",
+    "title": "新澳加院校 list",
+    "text": "依据视传 · 数媒方向院校排名排序，数字为 26 季 SFK 学员 offer 数。",
+    "groups": [
+     {
+      "label": "新加坡",
+      "lists": [
+       "sg"
+      ]
+     },
+     {
+      "label": "澳大利亚",
+      "lists": [
+       "au"
+      ]
+     },
+     {
+      "label": "加拿大",
+      "lists": [
+       "ca"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "cases",
+    "eyebrow": "Cases",
+    "title": "新加坡 · 澳洲 · 加拿大录取案例",
+    "track": "sgau",
+    "filter": "workType"
+   }
+  ],
+  "camp": [
+   {
+    "type": "showreel",
+    "id": "camp-reel",
+    "eyebrow": "Showreel",
+    "title": "往期 showreel",
+    "items": [
+     {
+      "poster": "site/product-nyu-summer.jpg",
+      "title": "NYU 夏校 · 空间装置"
+     },
+     {
+      "poster": "site/process-projection.jpg",
+      "title": "投影与身体"
+     },
+     {
+      "poster": "site/process-making.jpg",
+      "title": "材料工作坊"
+     },
+     {
+      "poster": "fulltime/summer-school.jpg",
+      "title": "工作室讲评"
+     },
+     {
+      "poster": "site/process-collaboration.jpg",
+      "title": "小组协作"
+     },
+     {
+      "poster": "site/process-presentation.jpg",
+      "title": "结课展演"
+     }
+    ]
+   },
+   {
+    "type": "profs",
+    "id": "camp-profs",
+    "eyebrow": "Professors",
+    "title": "合作教授",
+    "text": "点击教授查看课程介绍、往期海报与学生产出。",
+    "comparePdf": {
+     "label": "海外教授项目课 · IvyLink / TopLink / CreativeLink 报价单",
+     "btn": "海外教授项目课报价",
+     "btnEn": "Pricing",
+     "dir": "assets/img/course-products/shared/pdf-masterclass",
+     "count": 1
     }
-  },
-  "talentDirections": [
-    {"id": "bio", "label": "生物", "text": "生物形态、生态观察与科学插画。", "schools": ["康奈尔大学", "布朗大学", "约翰霍普金斯大学"]},
-    {"id": "chem", "label": "化学", "text": "材料实验、色彩化学与可视化表达。", "schools": ["哥伦比亚大学", "宾夕法尼亚大学"]},
-    {"id": "anthro", "label": "人类学", "text": "田野调查、口述史与影像民族志。", "schools": ["芝加哥大学", "布朗大学", "西北大学"]},
-    {"id": "arthist", "label": "艺术史", "text": "从研究到策展，用写作和展览讲作品背后的历史。", "schools": ["达特茅斯学院", "耶鲁大学", "哥伦比亚大学"]},
-    {"id": "biz", "label": "商科", "text": "品牌、创业与设计管理，把创意做成产品。", "schools": ["宾夕法尼亚大学", "纽约大学", "康奈尔大学"]},
-    {"id": "phys", "label": "物理工程", "text": "机械装置、光学实验与工程原型。", "schools": ["康奈尔大学", "卡内基梅隆大学", "麻省理工学院"]},
-    {"id": "env", "label": "环境科学", "text": "环境设计、可持续材料与城市生态。", "schools": ["康奈尔大学", "加州大学伯克利分校", "杜克大学"]},
-    {"id": "more", "label": "更多方向", "text": "心理学、计算机、建筑与城市研究……按学生兴趣定制（占位）。", "schools": []}
+   }
+  ],
+  "us/mix": [
+   {
+    "type": "track",
+    "eyebrow": "Art School × University",
+    "title": "艺术综合混申",
+    "tagline": "用一套统一规划，同时应对艺术院校与综合大学",
+    "text": "以艺术作品集为核心，同时兼顾综合大学对学术能力、活动背景和整体申请叙事的要求。先确定核心方向，再根据院校类型调整项目选择、作品数量、补充材料和表达重点。",
+    "img": "site/case-ritual-world.jpg",
+    "sticker": "双线申请",
+    "fit": [
+     "希望同时申请美国艺术院校和综合大学",
+     "想兼顾专业艺术教育、综合大学资源与录取梯度",
+     "能同步推进学术课程、作品集与文书"
+    ],
+    "facts": [
+     {
+      "k": "梯度",
+      "v": "混申 A / B / C / D"
+     },
+     {
+      "k": "作品集",
+      "v": "Art Works · Art Studies · Art Challenge"
+     },
+     {
+      "k": "资源",
+      "v": "CreativeLink 海外教授 · 冲刺营"
+     }
+    ],
+    "stats": [
+     {
+      "q": {
+       "country": [
+        "美国"
+       ]
+      },
+      "label": "26 季美本 offer"
+     },
+     {
+      "q": {
+       "country": [
+        "美国"
+       ],
+       "top": true
+      },
+      "label": "顶尖院校 offer"
+     },
+     {
+      "cases": "us-mix",
+      "label": "本路线案例"
+     }
+    ]
+   },
+   {
+    "type": "product",
+    "eyebrow": "Program",
+    "title": "产品解读",
+    "product": "us-mix"
+   },
+   {
+    "type": "schools",
+    "eyebrow": "School List",
+    "title": "院校 list",
+    "text": "依据数字艺术与设计院校排名文件排序；混申同时覆盖艺术院校与综合大学，数字为 26 季 SFK 学员 offer 数。",
+    "groups": [
+     {
+      "label": "数字媒体 · 交互方向",
+      "lists": [
+       "us-dm"
+      ]
+     },
+     {
+      "label": "视觉传达方向",
+      "lists": [
+       "us-vc"
+      ]
+     }
+    ]
+   },
+   {
+    "type": "cases",
+    "eyebrow": "Cases",
+    "title": "混申录取案例",
+    "track": "us-mix"
+   }
   ]
+ },
+ "talentDirections": [
+  {
+   "id": "bio",
+   "label": "生物",
+   "text": "生物形态、生态观察与科学插画。",
+   "schools": [
+    "康奈尔大学",
+    "布朗大学",
+    "约翰霍普金斯大学"
+   ]
+  },
+  {
+   "id": "chem",
+   "label": "化学",
+   "text": "材料实验、色彩化学与可视化表达。",
+   "schools": [
+    "哥伦比亚大学",
+    "宾夕法尼亚大学"
+   ]
+  },
+  {
+   "id": "anthro",
+   "label": "人类学",
+   "text": "田野调查、口述史与影像民族志。",
+   "schools": [
+    "芝加哥大学",
+    "布朗大学",
+    "西北大学"
+   ]
+  },
+  {
+   "id": "arthist",
+   "label": "艺术史",
+   "text": "从研究到策展，用写作和展览讲作品背后的历史。",
+   "schools": [
+    "达特茅斯学院",
+    "耶鲁大学",
+    "哥伦比亚大学"
+   ]
+  },
+  {
+   "id": "biz",
+   "label": "商科",
+   "text": "品牌、创业与设计管理，把创意做成产品。",
+   "schools": [
+    "宾夕法尼亚大学",
+    "纽约大学",
+    "康奈尔大学"
+   ]
+  },
+  {
+   "id": "phys",
+   "label": "物理工程",
+   "text": "机械装置、光学实验与工程原型。",
+   "schools": [
+    "康奈尔大学",
+    "卡内基梅隆大学",
+    "麻省理工学院"
+   ]
+  },
+  {
+   "id": "env",
+   "label": "环境科学",
+   "text": "环境设计、可持续材料与城市生态。",
+   "schools": [
+    "康奈尔大学",
+    "加州大学伯克利分校",
+    "杜克大学"
+   ]
+  },
+  {
+   "id": "more",
+   "label": "更多方向",
+   "text": "心理学、计算机、建筑与城市研究……按学生兴趣定制（占位）。",
+   "schools": []
+  }
+ ]
 }

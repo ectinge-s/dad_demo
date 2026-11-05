@@ -3,7 +3,7 @@
    router, navbar / tabs / footer, shared overlay, small helpers.
 
    Routes (hash):  #<page>[/<tab>][?key=value&…]
-     us/overview|dad|talent|risd    美本爬藤 (hero + track switcher)
+     us/overview|dad|talent|mix|risd  美本爬藤 (hero + track switcher)
      cw/overview|ft|p12|uk|hk|sgau  英联邦问鼎 (hero + track switcher)
      camp                           冬夏校 (hero, no tabs)
      offers  cuilu  works           regular pages (no hero)
@@ -20,7 +20,7 @@ const DU = {
   data: {},
 
   async load() {
-    const files = ['site', 'offers', 'cases', 'works', 'professors', 'rankings'];
+    const files = ['site', 'products', 'offers', 'cases', 'works', 'professors', 'rankings'];
     const res = await Promise.all(files.map(f => fetch(`data/${f}.json`).then(r => {
       if (!r.ok) throw new Error(`data/${f}.json ${r.status}`);
       return r.json();
@@ -289,8 +289,9 @@ const Overlay = {
     el.querySelector('.course-overlay__backdrop').addEventListener('click', () => this.close());
     el.querySelector('.course-overlay__close').addEventListener('click', () => this.close());
     document.addEventListener('keydown', e => {
-      // ImageModal handles its own Escape; close only the topmost layer
-      if (e.key === 'Escape' && this.isOpen() && !document.querySelector('.img-modal-backdrop.is-visible')) this.close();
+      // ImageModal / PdfViewer / GalleryViewer handle their own Escape; close only the topmost layer
+      const above = document.querySelector('.img-modal-backdrop.is-visible') || window.PdfViewer?.isOpen() || window.GalleryViewer?.isOpen();
+      if (e.key === 'Escape' && this.isOpen() && !above) this.close();
     });
   },
   isOpen() { return document.getElementById('course-overlay').classList.contains('is-open'); },

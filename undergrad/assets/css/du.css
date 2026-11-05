@@ -601,3 +601,57 @@ a.du-offer { display: block; color: inherit; text-decoration: none; }
   .du-wall--panel .du-letter { padding: 18px 12px 12px; }
   .du-count__hint { display: block; margin: 4px 0 0; }
 }
+
+/* ═══ 2026-11 product rewrite (products.json) ═══ */
+.du-routes--n4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1100px) { .du-routes--n4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 860px) { .du-routes--n4 { grid-template-columns: 1fr; } }
+
+/* product card: 解读 + 报价单 / 比价 buttons */
+.du-product__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: var(--space-5); }
+.du-product__actions .du-btn { margin: 0; }
+.du-head__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: var(--space-4); }
+
+/* choose: route selector cards */
+.du-choose { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.du-choose__item { padding: 22px 22px 20px; display: flex; flex-direction: column; color: inherit; text-decoration: none; }
+.du-choose__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+.du-choose__top h3 { font-size: 19px; line-height: 1.35; }
+.du-choose__top .du-sticker { flex-shrink: 0; position: static; }
+.du-choose dl { margin: 0; display: grid; gap: 12px; }
+.du-choose__row dt { font-size: 11px; font-weight: 800; letter-spacing: .06em; color: var(--color-accent); margin-bottom: 3px; }
+.du-choose__row dd { margin: 0; font-size: 13px; line-height: 1.65; color: var(--color-text-secondary); }
+.du-choose__foot { margin-top: var(--space-6); padding: 24px 28px; border-radius: var(--du-r); border: 1.5px dashed var(--color-border-2); }
+.du-choose__foot .du-subhead { margin: 0; }
+
+/* product overlay: fit / not-for columns, notes */
+.du-fit { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+.du-fit--single { grid-template-columns: 1fr; }
+.du-fit > div { border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-5); background: var(--color-surface); }
+.du-fit__h { font-size: var(--text-sm); font-weight: 800; color: var(--color-accent); margin: 0 0 var(--space-3); }
+.du-fit__no .du-fit__h { color: var(--du-pink); }
+@media (max-width: 720px) { .du-fit { grid-template-columns: 1fr; } }
+.du-note--block { line-height: 1.7; margin: var(--space-4) 0 0; }
+.cd-section > .du-note--block { margin-top: var(--space-3); }
+
+/* pathway: alternative partners + deck button */
+.du-pathway__or { align-self: center; justify-self: center; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-weight: 900; font-size: 15px; color: var(--color-void); background: var(--du-grad-0); }
+.du-pathway__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: var(--space-4); }
+.du-pathway__foot .du-pill { margin-top: 0; }
+.du-gallerybtn { margin: 0; }
+.du-pathway__img { aspect-ratio: 16 / 9; }  /* covers are 16:9 course-deck slides */
+@media (max-width: 600px) { #course-overlay .cd-hero__tile.du-blob { display: none; } }
+@media (max-width: 760px) { .du-pathway__or { margin: 12px auto; } }
+
+/* ═══ 2026-11 案例卡 (cases.json from ba案例卡) ═══ */
+.du-casedetail { padding: 56px 40px 40px; }
+.du-casedetail__card { width: 100%; }
+.du-casedetail__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: var(--space-6); }
+.du-casedetail__cols h2 { font-size: 32px; margin: 6px 0 10px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.du-casedetail__cols h2 small { font-size: 14px; font-weight: 600; color: var(--color-text-muted); }
+.du-casedetail__cols .du-subhead small { margin-left: auto; color: var(--color-accent); }
+.du-casedetail__note { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; margin-bottom: 14px; }
+.du-casedetail__note .du-pill { margin-top: 2px; white-space: nowrap; }
+.du-casedetail__note ul, .du-casedetail__projects { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 13px; line-height: 1.7; color: var(--color-text-secondary); }
+.du-casedetail__projects li::marker { color: var(--color-accent); font-family: var(--font-mono); }
+@media (max-width: 760px) { .du-casedetail { padding: 56px 16px 24px; } .du-casedetail__cols { grid-template-columns: 1fr; gap: 8px; } }

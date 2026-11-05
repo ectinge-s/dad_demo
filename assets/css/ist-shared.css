@@ -530,6 +530,14 @@
 .cd-tier__name { font-family: var(--font-en); font-weight: 800; font-size: var(--text-md); color: var(--color-accent); margin-bottom: var(--space-2); }
 .cd-tier__audience { font-size: var(--text-sm); color: var(--color-text); line-height: 1.6; margin-bottom: var(--space-3); }
 .cd-tier__config { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.75; }
+/* comparison table (product-sections.js renderCompareTable) */
+.cd-table-wrap { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.cd-table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: var(--text-sm); line-height: 1.65; }
+.cd-table th, .cd-table td { padding: var(--space-3) var(--space-4); text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-border); }
+.cd-table thead th { font-family: var(--font-cn); font-weight: 700; color: var(--color-accent); font-size: var(--text-xs); letter-spacing: .04em; background: var(--color-surface-2); }
+.cd-table tbody th { font-weight: 700; color: var(--color-text); white-space: nowrap; }
+.cd-table td { color: var(--color-text-secondary); }
+.cd-table tbody tr:last-child th, .cd-table tbody tr:last-child td { border-bottom: 0; }
 
 /* 五/六 核心课程模块 — each item: text body + optional gallery cover
    and/or an embedded 课程目录 catalog card */
